@@ -179,9 +179,6 @@ El Lean UX Canvas de CraveWallet se estructura en torno a los ocho bloques del m
 | **6. Hypotheses** | Ver sección 1.2.2.3 (cinco Hypothesis Statements). |
 | **7. What's the Most Important Thing to Learn First?** | Validar si los usuarios están dispuestos a cargar manualmente sus suscripciones al momento del onboarding, o si la fricción de entrada es tan alta que desincentiva la adopción. |
 | **8. What's the Least Amount of Work to Learn What We Need to Learn?** | Construir un prototipo de onboarding en Figma con un flujo de carga de 3 suscripciones y someterlo a prueba con 5 usuarios del segmento primario, midiendo el tiempo de completitud y el NPS post-tarea. |
-
-*Nota: El artefacto visual completo del Lean UX Canvas se elaboró en UXPressia y se adjunta en la sección de Anexos.*
-
 ---
 
 ## 1.3. Segmentos objetivo
