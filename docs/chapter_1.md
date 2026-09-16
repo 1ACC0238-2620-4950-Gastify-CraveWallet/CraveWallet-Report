@@ -4,11 +4,11 @@
 
 ### 1.1.1. Descripción de la Startup
 
-**CraveTech** es una startup de tecnología financiera personal fundada en Lima, Perú, en 2026, por estudiantes de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC). Su producto insignia, **CraveWallet**, es un gestor integral de suscripciones y gastos recurrentes diseñado para el mercado latinoamericano, con foco en el segmento de universitarios y profesionales jóvenes que enfrentan la proliferación de servicios digitales de suscripción, membresías físicas y plataformas de entrega a domicilio.
+**Gastify** es una startup de tecnología financiera personal fundada en Lima, Perú, en 2026, por estudiantes de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC). Su producto insignia, **CraveWallet**, es un gestor integral de suscripciones y gastos recurrentes diseñado para el mercado latinoamericano, con foco en el segmento de universitarios y profesionales jóvenes que enfrentan la proliferación de servicios digitales de suscripción, membresías físicas y plataformas de entrega a domicilio.
 
-La **misión** de CraveTech es democratizar la salud financiera personal mediante herramientas móviles inteligentes que devuelvan el control del presupuesto al usuario, eliminando la fricción y la opacidad que genera el ecosistema fragmentado de cobros automáticos, contratos recurrentes y micro-gastos.
+La **misión** de Gastify es democratizar la salud financiera personal mediante herramientas móviles inteligentes que devuelvan el control del presupuesto al usuario, eliminando la fricción y la opacidad que genera el ecosistema fragmentado de cobros automáticos, contratos recurrentes y micro-gastos.
 
-La **visión** de CraveTech es posicionarse, al término de 2027, como la plataforma de referencia para la gestión de compromisos financieros recurrentes en los principales mercados de habla hispana de Latinoamérica, con foco inicial en Perú y expansión proyectada a Colombia y México.
+La **visión** de Gastify es posicionarse, al término de 2027, como la plataforma de referencia para la gestión de compromisos financieros recurrentes en los principales mercados de habla hispana de Latinoamérica, con foco inicial en Perú y expansión proyectada a Colombia y México.
 
 CraveWallet centraliza en una única experiencia móvil tres categorías de gasto históricamente invisibles para el usuario:
 
@@ -16,7 +16,7 @@ CraveWallet centraliza en una única experiencia móvil tres categorías de gast
 2. **Suscripciones digitales y herramientas:** Plataformas de entretenimiento, educación en línea (Netzun, Cisco Networking Academy), herramientas de productividad (PedidosYa Plus), servicios de infraestructura cloud (MongoDB Atlas) y tiendas de videojuegos (Steam), incluyendo gestión automática de tipos de cambio para suscripciones facturadas en dólares estadounidenses.
 3. **Gastos recurrentes de delivery:** Categorización y registro de consumos habituales en establecimientos frecuentes como Up Burger, Dunkin', Popeyes, Little Caesars, Papa John's, Burgerboy, Pollivoro, Chifa Delicious y Chifa Monteoro, permitiendo al usuario visualizar el impacto acumulado de sus hábitos de entrega a domicilio.
 
-Los valores fundacionales de CraveTech son: **transparencia financiera**, **diseño centrado en el usuario**, **aprendizaje continuo** y **responsabilidad técnica**. Este último valor se materializa directamente en el Student Outcome 7 del presente curso: la capacidad del equipo de investigar, evaluar e integrar tecnologías nuevas —como el SDK de Stripe y la ExchangeRate-API— de forma autónoma, documentando el proceso de aprendizaje como parte intrínseca del ciclo de vida del producto.
+Los valores fundacionales de Gastify son: **transparencia financiera**, **diseño centrado en el usuario**, **aprendizaje continuo** y **responsabilidad técnica**. Este último valor se materializa directamente en el Student Outcome 7 del presente curso: la capacidad del equipo de investigar, evaluar e integrar tecnologías nuevas —como el SDK de Stripe y la ExchangeRate-API— de forma autónoma, documentando el proceso de aprendizaje como parte intrínseca del ciclo de vida del producto.
 
 ---
 
