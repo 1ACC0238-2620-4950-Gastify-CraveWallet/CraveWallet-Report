@@ -143,44 +143,6 @@ El layout web usa un sistema de 12 columnas con gutters de 24px en desktop y 16p
 
 ---
 
-##### Componentes Angular Material — configuración de tema
-
-El tema de Angular Material se configura con las variables de la paleta de CraveWallet vía `@angular/material` theming API (M3). Los tokens principales:
-
-```scss
-// _theme.scss
-$cravewallet-primary: mat.define-palette($mat-indigo, 600, 300, 900);
-$cravewallet-accent:  mat.define-palette($mat-deep-orange, 500);
-$cravewallet-warn:    mat.define-palette($mat-red, 500);
-
-$cravewallet-theme: mat.define-light-theme((
-  color: (
-    primary: $cravewallet-primary,
-    accent:  $cravewallet-accent,
-    warn:    $cravewallet-warn,
-  ),
-  typography: mat.define-typography-config(
-    $font-family: 'Inter, Poppins, sans-serif',
-  ),
-  density: 0,
-));
-```
-
-**Componentes clave y su mapeo al diseño:**
-
-| Componente Angular Material | Uso en CraveWallet web |
-| --- | --- |
-| `mat-card` | Tarjeta de suscripción individual en el dashboard |
-| `mat-chip` | Etiqueta de categoría (Streaming, Educación, Fitness…) |
-| `mat-progress-bar` | Indicador de uso del presupuesto mensual |
-| `mat-dialog` | Modal de confirmación de cancelación o activación Premium |
-| `mat-snack-bar` | Notificación de tipo de cambio actualizado |
-| `mat-form-field` | Campos de registro de nueva suscripción |
-| `mat-stepper` | Flujo de alta de suscripción en 3 pasos |
-| `mat-sidenav` | Navegación lateral en la vista de aplicación web |
-
----
-
 ##### Elevación y sombras
 
 El sistema de sombras sigue los niveles de elevación de Material Design 3. Las tarjetas de suscripción usan elevación 1 (`box-shadow: 0 1px 3px rgba(0,0,0,0.12)`); los modales y Bottom Sheets usan elevación 3 (`box-shadow: 0 4px 8px rgba(0,0,0,0.16)`). El FAB usa elevación 6 en estado reposo.
@@ -229,21 +191,6 @@ Los tamaños tipográficos siguen la escala de Material Design 3 expresada en `s
 | Body Medium | Inter | Regular 400 | 14sp |
 | Label Large | Inter | Medium 500 | 14sp |
 | Label Small | Inter | Regular 400 | 11sp |
-
----
-
-##### Componentes nativos clave
-
-| Componente Material 3 | Uso en CraveWallet móvil |
-| --- | --- |
-| `NavigationBar` | Barra de navegación inferior con 4 destinos |
-| `Card` (Elevated / Filled) | Tarjeta de suscripción individual |
-| `FloatingActionButton` | Agregar nuevo gasto recurrente |
-| `BottomSheet` (Modal) | Detalle de suscripción y opciones de acción |
-| `Chip` (Filter / Assist) | Filtros de categoría en el Dashboard |
-| `LinearProgressIndicator` | Progreso de presupuesto mensual |
-| `Snackbar` | Confirmación de acciones (cancelación, registro) |
-| `DatePicker` (Modal) | Selector de fecha de renovación |
 
 ---
 
