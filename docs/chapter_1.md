@@ -32,7 +32,7 @@ Carrera: Ingeniería de Software — Universidad Peruana de Ciencias Aplicadas (
 
 *[Foto del integrante — adjuntar imagen en la versión final del informe]*
 
-Mario es estudiante de Ingeniería de Software con interés especializado en el desarrollo de aplicaciones móviles nativas y multiplataforma, arquitectura de software orientada al dominio (Domain-Driven Design) y tecnologías de integración de pagos digitales. Cuenta con conocimientos técnicos en Kotlin para Android nativo, Flutter para desarrollo multiplataforma, Spring Boot para servicios web RESTful, y Angular para aplicaciones web. Ha explorado de forma autónoma la integración de SDKs de terceros, incluyendo el SDK de Stripe para procesamiento de pagos y APIs de tipo de cambio como ExchangeRate-API para la conversión dinámica de monedas en aplicaciones fintech.
+Mario es estudiante de Ingeniería de Software con interés en arquitectura de software orientada al dominio (Domain-Driven Design), modelado con el C4 Model y diseño de bases de datos relacionales y no relacionales. Cuenta con conocimientos en Python para scripting y procesamiento de datos, estructuras de datos y algoritmos, y modelado arquitectónico con Structurizr. Ha explorado de forma autónoma la integración de APIs de terceros, incluyendo APIs de tipo de cambio como ExchangeRate-API para la conversión dinámica de monedas, y está cursando actualmente el desarrollo de aplicaciones para dispositivos móviles como parte de su formación en Ingeniería de Software.
 
 ---
 
