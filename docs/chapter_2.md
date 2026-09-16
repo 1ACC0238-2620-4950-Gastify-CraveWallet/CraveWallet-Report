@@ -386,11 +386,11 @@ El análisis se realizará por segmento objetivo, a partir de los resúmenes de 
 
 ## 2.3. Needfinding
 
-En esta sección se presentarán los artefactos resultantes del análisis de la información recolectada en las entrevistas de la sección 2.2. A partir de los patrones identificados en los dos segmentos objetivo se construirán los arquetipos de usuario, se mapearán las tareas que realizan hoy con independencia de la existencia de CraveWallet, se representarán sus recorridos actuales y su marco emocional frente al descubrimiento de cobros no anticipados, y se consolidará el lenguaje del dominio que el equipo utilizará de forma uniforme durante el resto del proyecto. Cada característica que se incorpore a los arquetipos deberá provenir de los resúmenes y del análisis estadístico de la sección 2.2.3; no se incorporará ningún atributo que no tenga respaldo directo en las entrevistas registradas.
+El Needfinding traduce los hallazgos de la sección 2.2 en los artefactos de diseño que sirven de puente hacia la especificación de requisitos de la sección 2.4: primero los arquetipos de usuario, luego las tareas y los recorridos que esos arquetipos ejecutan hoy sin CraveWallet, y finalmente el vocabulario compartido del dominio. El criterio de trabajo para todas las subsecciones es el mismo que ya rigió el diseño de las entrevistas en 2.2.1: cualquier dato que aparezca en un persona, una tarea o un evento debe poder rastrearse hasta una respuesta concreta registrada en 2.2.2 y cuantificada en 2.2.3, sin excepción.
 
 ### 2.3.1. User Personas
 
-Se elaborará una ficha de User Persona por cada segmento objetivo en UXPressia, contrastando sus características con los resultados consolidados de la sección 2.2.3.
+Se elaborará una ficha de User Persona por cada segmento objetivo en UXPressia. Cada atributo de la ficha —demográfico, tecnológico o de comportamiento— deberá poder rastrearse hasta el porcentaje o la cita correspondiente del análisis de la sección 2.2.3, sin añadir ningún rasgo que no tenga ese respaldo.
 
 [[PENDIENTE]]
 
@@ -408,7 +408,7 @@ Se elaborará una ficha de User Persona por cada segmento objetivo en UXPressia,
 
 ### 2.3.5. Big Picture EventStorming
 
-El Big Picture EventStorming se realizará en Miro para representar de manera colaborativa cómo un usuario administra hoy sus suscripciones y gastos recurrentes sin CraveWallet, identificando los eventos, actores, sistemas externos (bancos, billeteras digitales, calendario del celular) y puntos de fricción relevantes, a partir de los hallazgos de las entrevistas y sin incorporar todavía funcionalidades específicas del producto.
+Antes de diseñar cualquier pantalla, el equipo reconstruirá en Miro, con la técnica del Big Picture EventStorming, la manera en que un usuario del segmento maneja hoy sus suscripciones, membresías y gastos de delivery sin ayuda de ninguna herramienta dedicada. La sesión ubicará en una línea de tiempo los eventos del proceso actual —desde que se contrata un servicio hasta que se descubre, o no, el cobro de su renovación— junto con los actores involucrados, los sistemas que hoy intervienen (la aplicación del banco, el correo de notificación, el calendario del celular) y los puntos donde ese proceso falla. El insumo de la sesión son los hallazgos de la sección 2.2.3; el resultado se limita a describir el problema tal como existe hoy, sin proponer todavía ninguna función de CraveWallet.
 
 [[PENDIENTE]]
 
@@ -418,11 +418,11 @@ El Big Picture EventStorming se realizará en Miro para representar de manera co
 
 ## 2.4. Requirements specification
 
-En esta sección se especificarán los requisitos de los productos digitales de CraveWallet a partir de la información obtenida en la investigación: las entrevistas a los dos segmentos objetivo, su análisis, los User Personas, el User Task Matrix, los User Journey Maps y el Big Picture EventStorming de la sección 2.3, leídos en conjunto con las Feature Assumptions y los Hypothesis Statements del Lean UX Process del Capítulo I. La especificación cubrirá los tres productos del alcance —la aplicación móvil, los servicios RESTful de desarrollo propio y el sitio web estático del landing page— y se organiza en tres partes: las User Stories, agrupadas en Epics e incluyendo Technical Stories y Spike Stories; el Impact Map, que vincula los Business Outcome Assumptions del Capítulo I con las historias; y el Product Backlog, con la estimación y priorización de cada historia.
+La especificación que sigue traduce en requisitos concretos lo que las entrevistas y el Needfinding revelen sobre el comportamiento real de los dos segmentos, leído junto con las Feature Assumptions y los Hypothesis Statements ya declarados en el Capítulo I, y alcanza a la aplicación móvil, al backend propio y al landing page: los tres productos definidos en el alcance del proyecto. El resultado se organiza en tres piezas complementarias. Primero, el catálogo de historias (User Stories agrupadas en Epics, junto con las Technical Stories de infraestructura y las Spike Stories de investigación). Segundo, un Impact Map que conecta cada historia con los Business Outcome Assumptions de la sección 1.2.2.2. Tercero, el Product Backlog, donde esas historias reciben estimación de esfuerzo y prioridad.
 
 ### 2.4.1. User Stories
 
-Las historias se redactarán desde la perspectiva de los dos actores del dominio (el segmento Estudiante Universitario Digital y el segmento Profesional Joven Activo, unificados bajo el rol **usuario** cuando una historia les aplica por igual), el **visitante** para el landing page y el rol **Developer** para las Technical Stories y Spike Stories. Los criterios de aceptación seguirán la estructura Gherkin (Dado, Cuando, Entonces) y la prioridad reflejará el valor de negocio según las Hypothesis Statements de la sección 1.2.2.3: Alta para lo que sostiene el Dashboard unificado, la anticipación de cobros y la reducción de la fricción de onboarding; Media para lo que completa el ciclo de uso; Baja para lo que amplía la propuesta.
+Cada historia adoptará el punto de vista de uno de los dos segmentos objetivo del Capítulo I, agrupados bajo el rol genérico **usuario** cuando la historia les aplique a ambos por igual; se exceptúan las historias del landing page, escritas desde quien todavía no tiene cuenta, y las Technical Stories y Spike Stories, que documentan trabajo interno del equipo de desarrollo. Los criterios de aceptación se expresarán en Gherkin (Dado, Cuando, Entonces) y la prioridad de cada historia se derivará de las Hypothesis Statements de la sección 1.2.2.3: Alta cuando sostiene el Dashboard, la anticipación del cobro o la reducción de la fricción de onboarding; Media cuando completa un ciclo de uso ya cubierto por esas historias de prioridad Alta; Baja para lo que extiende la propuesta sin ser indispensable para validar las hipótesis.
 
 #### Epics
 
@@ -430,16 +430,16 @@ A partir de las Feature Assumptions del Capítulo I y de las tácticas de la sec
 
 | Epic ID | Nombre | Descripción |
 | --- | --- | --- |
-| EP01 | Acceso y cuenta | Ingreso a CraveWallet y administración del perfil del usuario. |
+| EP01 | Autenticación y perfil | Inicio de sesión en CraveWallet y edición de los datos del perfil del usuario. |
 | EP02 | Alta de suscripciones | Registro de una suscripción, membresía o gasto recurrente, con plantillas preconfiguradas de los servicios más frecuentes del segmento para reducir la fricción de onboarding. |
 | EP03 | Dashboard unificado | Vista consolidada de las suscripciones activas, agrupadas por categoría y ordenadas por próxima fecha de renovación. |
 | EP04 | Recordatorios vía calendario nativo | Agendado automático de un recordatorio 24 horas antes de cada cobro, integrado con el calendario del dispositivo. |
 | EP05 | Conversión de divisas en tiempo real | Expresión del portafolio completo en soles, con conversión diaria de los montos facturados en dólares vía ExchangeRate-API. |
 | EP06 | Categorización de gastos de delivery | Registro y categorización de pedidos de delivery, con catálogo precargado de comercios limeños frecuentes. |
 | EP07 | CraveWallet Premium | Conversión al nivel Premium mediante el SDK de Stripe, con analítica avanzada y registro ilimitado de suscripciones. |
-| EP08 | Landing page | Sitio web estático que presenta el problema, la propuesta de valor y la vía de acceso a la aplicación. |
-| EP09 | Servicios RESTful | Technical Stories de los servicios web que sostienen la aplicación móvil. |
-| EP10 | Investigación técnica | Spike Stories para reducir la incertidumbre técnica antes de implementar, en particular sobre la integración con Stripe y ExchangeRate-API. |
+| EP08 | Landing page | Sitio informativo que explica el problema de los cobros recurrentes no anticipados, la propuesta de CraveWallet y el enlace de descarga de la aplicación. |
+| EP09 | Servicios RESTful | Technical Stories del backend propio que expone los endpoints consumidos por la aplicación móvil. |
+| EP10 | Investigación técnica | Spike Stories orientadas a despejar la incertidumbre técnica de las integraciones con Stripe y ExchangeRate-API antes de comprometerlas en el backlog. |
 
 [[PENDIENTE: historias de usuario individuales, con criterios de aceptación Gherkin, una vez completado el Needfinding]]
 
@@ -457,11 +457,13 @@ El backlog consolidará las historias de la sección 2.4.1 con su estimación de
 
 ## 2.5. Strategic-Level Domain-Driven Design
 
-En esta sección se explicará el proceso que seguirá el equipo para tomar las decisiones de nivel estratégico de Domain-Driven Design [@evans2003ddd]: descomponer el dominio de la gestión de suscripciones y gastos recurrentes en subconjuntos con límites naturales, los Bounded Contexts, y definir cómo se relacionan entre sí antes de diseñar una sola clase o tabla. El punto de partida será el Big Picture EventStorming del Needfinding (sección 2.3.5) y el Ubiquitous Language consolidado a partir de él (sección 2.3.6). Sobre esa base, y con las User Stories ya especificadas en la sección 2.4, el equipo repetirá el EventStorming con un objetivo distinto: ya no explorar cómo el usuario administra hoy sus suscripciones sin CraveWallet, sino modelar la solución con el mayor detalle posible, incorporando los comandos, políticas, agregados y vistas de lectura que la aplicación necesita para que un usuario registre una suscripción, la vea reflejada en el Dashboard, reciba el recordatorio 24 horas antes del cobro y, si corresponde, convierta a Premium.
+El hallazgo central de la sección 2.1.1 —que ningún competidor trata la suscripción como una entidad de dominio con ciclo de vida propio— es la razón por la que el diseño estratégico de Domain-Driven Design [@evans2003ddd] pesa tanto como el resto del capítulo: antes de escribir una sola clase, el equipo debe fijar dónde termina un Bounded Context y empieza otro, para que esa diferenciación competitiva no se diluya al mezclar la lógica de suscripciones con la del acceso a la cuenta o el envío de recordatorios.
 
-A partir de ese EventStorm de nivel de diseño se identificarán los Bounded Contexts candidatos en una sesión de Candidate Context Discovery, combinando start-with-value —para aislar primero la parte del dominio que sostiene la hipótesis principal de CraveWallet, la anticipación del cobro y la transparencia del portafolio en soles— y look-for-pivotal-events, para reconocer los eventos que marcan un cambio de estado relevante (suscripción registrada, cobro anticipado, pago convertido a Premium) y usarlos como fronteras entre contextos. El contexto core, el que concentra el ciclo de vida de la suscripción y su conversión monetaria, deberá quedar aislado de los subdominios de apoyo y genéricos, como el acceso a la cuenta o el envío de recordatorios, para que la lógica que diferencia a CraveWallet de sus competidores (sección 2.1.1) no dependa de decisiones tomadas en otros contextos. Las relaciones entre contextos se expresarán con los patrones de Context Mapping de Domain-Driven Design (Customer/Supplier, Conformist, Anti-corruption Layer, Shared Kernel), discutiendo alternativas antes de fijar el mapa definitivo; el Anti-corruption Layer será particularmente relevante para aislar las integraciones con Stripe y ExchangeRate-API, conforme a la Estrategia 4 de la sección 2.1.2.
+El trabajo partirá del Big Picture EventStorming y del Ubiquitous Language que resulten del Needfinding (secciones 2.3.5 y 2.3.6), que describen cómo un usuario administra sus compromisos recurrentes hoy, sin CraveWallet. Con las User Stories de la sección 2.4 ya redactadas, el equipo repetirá el ejercicio de EventStorming con un propósito distinto: ya no reconstruir el proceso actual, sino diseñar el de la solución, incorporando los comandos, las políticas, los agregados y las vistas de lectura necesarios para que un usuario registre una suscripción, la vea en el Dashboard, reciba el recordatorio con 24 horas de anticipación y, si corresponde, pase a Premium.
 
-La sección cerrará con la arquitectura de software de la solución, representada con el C4 Model en sus niveles de contexto, contenedores y despliegue.
+De ese segundo EventStorming saldrán los Bounded Contexts candidatos, identificados en una sesión de Candidate Context Discovery con dos técnicas complementarias: start-with-value, que delimita primero el subconjunto del dominio del que depende directamente la ventaja competitiva de CraveWallet (anticipar el cobro y mantener el portafolio expresado en soles), y look-for-pivotal-events, que toma los cambios de estado más significativos del ciclo —una suscripción queda registrada, un cobro queda anticipado, una cuenta pasa a Premium— como frontera entre un contexto y el siguiente. El contexto core deberá quedar separado de los subdominios de apoyo y genéricos para proteger esa ventaja de decisiones tomadas en otra parte del sistema, y las relaciones entre contextos se documentarán con los patrones de Context Mapping (Customer/Supplier, Conformist, Anti-corruption Layer, Shared Kernel); el Anti-corruption Layer será obligatorio frente a Stripe y ExchangeRate-API, conforme a la Estrategia 4 de la sección 2.1.2.
+
+La arquitectura de software que cierra la sección se representará con el C4 Model, en sus niveles de contexto, contenedores y despliegue.
 
 ### 2.5.1. EventStorming
 
