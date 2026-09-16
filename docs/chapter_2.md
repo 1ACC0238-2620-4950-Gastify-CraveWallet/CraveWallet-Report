@@ -197,156 +197,67 @@ El instrumento se elaboró siguiendo las prácticas recomendadas para la investi
 
 #### Trazabilidad entre atributos del arquetipo y preguntas
 
-La siguiente matriz garantiza que cada característica exigida para la construcción de los User Personas tenga al menos una pregunta que la levante, de modo que ningún atributo del arquetipo de la sección 2.3.1 provenga de la intuición del equipo.
+La siguiente matriz garantiza que cada característica exigida para la construcción de los User Personas tenga al menos una pregunta que la levante, de modo que ningún atributo del arquetipo de la sección 2.3.1 provenga de la intuición del equipo. Ambos guiones se numeraron en paralelo, de modo que la pregunta *n* de un segmento cubre el mismo atributo que la pregunta *n* del otro.
 
-| Atributo del User Persona | Bloque del guion | Preguntas |
+| Atributo del User Persona | Pregunta (Segmento 1) | Pregunta (Segmento 2) |
 | --- | --- | --- |
-| Edad, género, distrito, estado civil, composición familiar | Bloque A | A1, A2, A3 |
-| Ocupación, nivel educativo, ingresos | Bloque A | A4, A5 |
-| Antecedentes y biografía | Bloque A | A6 |
-| Personalidad y actitud frente al dinero | Bloque B | B1, B2, B3 |
-| Habilidades y alfabetización digital y financiera | Bloque B | B4, B5 |
-| Dispositivos preferidos y sistema operativo | Bloque C | C1, C2 |
-| Canales digitales de interacción y navegador | Bloque C | C3, C4 |
-| Afinidad por marcas e influencias | Bloque C | C5, C6 |
-| Portafolio de suscripciones y divisa | Bloque D | D1, D2, D3 |
-| Hábitos de delivery y gasto asociado | Bloque D (Segmento 1) / Bloque E (Segmento 2) | D6, E1 a E4 |
-| Objetivos y motivaciones | Bloque F | F1, F2 |
-| Frustraciones y puntos de dolor | Bloque F | F3, F4, F5 |
+| Edad, distrito, estado civil, composición familiar | 1, 2 | 1, 2 |
+| Ocupación, nivel educativo, ingresos | 3, 4 | 3, 4 |
+| Antecedentes y biografía | 5 | 5 |
+| Personalidad y actitud frente al dinero | 6, 7 | 6, 7 |
+| Habilidades y alfabetización digital y financiera | 8 | 8 |
+| Dispositivos preferidos y sistema operativo | 9 | 9 |
+| Canales digitales de interacción y navegador | 10 | 10 |
+| Afinidad por marcas e influencias | 11 | 11 |
+| Portafolio de suscripciones y divisa | 12, 13 | 12, 13 |
+| Hábitos de delivery y gasto asociado | 14 | 14 |
+| Objetivos, frustraciones y reacción al concepto | 15 | 15 |
+
+*(El género de cada entrevistado no se pregunta directamente: se registra por observación del entrevistador en la ficha de la página siguiente, igual que la edad y el distrito quedan confirmados ahí una vez respondida la pregunta 1.)*
 
 ***
 
 #### Guion de entrevista — Segmento 1: Estudiante Universitario Digital
 
-**Bloque A. Apertura, demografía y biografía**
+Las 15 preguntas se aplican en el mismo orden a los 3 a 5 entrevistados del segmento; lo que varía entre entrevistas son las respuestas, no el guion.
 
-| # | Pregunta principal | Preguntas complementarias |
-| --- | --- | --- |
-| A1 | Para empezar, cuéntame quién eres: tu nombre, tu edad y en qué distrito vives. | ¿Vives solo, con tu familia o compartes departamento? ¿Hace cuánto vives ahí? |
-| A2 | ¿Cómo está compuesta tu familia o el hogar donde vives? | ¿Compartes algún gasto con ellos? ¿Quién decide en qué se gasta? |
-| A3 | ¿Cuál es tu estado civil o situación sentimental actual? | ¿Comparten gastos o suscripciones con tu pareja o con amigos? |
-| A4 | ¿Qué carrera estudias, en qué universidad y en qué ciclo vas? | ¿Trabajas o haces prácticas además de estudiar? ¿Cuántas horas a la semana? |
-| A5 | ¿De dónde proviene el dinero que administras cada mes? | Sin necesidad de darme la cifra exacta, ¿dirías que está más cerca de S/ 500, de S/ 1 000 o de S/ 1 500? ¿Es un monto fijo o variable? |
-| A6 | Cuéntame cómo fue que empezaste a manejar tu propio dinero. | ¿Qué te enseñaron en casa sobre el ahorro? ¿Recuerdas la primera suscripción que pagaste tú mismo? |
-
-**Bloque B. Personalidad, habilidades y relación con el dinero**
-
-| # | Pregunta principal | Preguntas complementarias |
-| --- | --- | --- |
-| B1 | ¿Cómo describirías tu forma de gastar: más planificada o más impulsiva? | ¿Puedes darme un ejemplo reciente de cada una? |
-| B2 | ¿Llevas algún tipo de control de tus gastos? Cuéntame cómo lo haces. | ¿Usas una app, una hoja de cálculo, papel, o lo llevas mentalmente? ¿Desde cuándo? ¿Qué te hizo empezar o dejarlo? |
-| B3 | ¿Qué sientes cuando revisas tu estado de cuenta a fin de mes? | ¿Te ha pasado que encuentras algo que no esperabas? ¿Qué hiciste? |
-| B4 | ¿Qué tan cómodo te sientes probando una aplicación nueva? | ¿Eres de los que la explora solo o prefieres que alguien te la enseñe? ¿Lees los tutoriales? |
-| B5 | ¿Has usado alguna vez una app de finanzas personales o de presupuesto? | ¿Cuál? ¿Por qué la dejaste? ¿Qué fue lo que más te costó de usarla? |
-
-**Bloque C. Tecnología, canales digitales, marcas e influencias**
-
-| # | Pregunta principal | Preguntas complementarias |
-| --- | --- | --- |
-| C1 | ¿Qué celular usas y hace cuánto lo tienes? | ¿Android o iPhone? ¿Qué modelo? ¿Se te llena la memoria o va fluido? |
-| C2 | Además del celular, ¿qué otros dispositivos usas en el día? | ¿Laptop, tablet, smartwatch? ¿Para qué usas cada uno? |
-| C3 | ¿Cuáles son las tres aplicaciones que más abres al día? | ¿Cuál es la primera que abres al despertar? |
-| C4 | ¿Por dónde te enteras de las cosas: notificaciones, correo, redes? | ¿Revisas tu correo personal a diario? ¿Qué navegador usas en la laptop? ¿Cuántas notificaciones sin leer tienes ahora mismo? |
-| C5 | ¿Hay alguna marca o aplicación que consideres bien hecha y que te guste usar? | ¿Qué es lo que te gusta de ella? ¿La recomendarías? |
-| C6 | ¿A quién sigues o escuchas cuando quieres aprender algo sobre dinero o tecnología? | ¿Creadores de contenido, amigos, profesores, familia? ¿En qué plataforma? |
-
-**Bloque D. Portafolio de suscripciones y gastos recurrentes**
-
-| # | Pregunta principal | Preguntas complementarias |
-| --- | --- | --- |
-| D1 | Hagamos una lista: ¿qué servicios te cobran todos los meses de forma automática? | ¿Streaming, música, videojuegos, plataformas de estudio, gimnasio, instituto? ¿Se te ocurre alguno más? |
-| D2 | ¿Alguno de esos te cobra en dólares? | ¿Sabes cuánto terminas pagando en soles? ¿Cómo te enteras del monto final? |
-| D3 | ¿Con qué medio se pagan esos servicios? | ¿Tarjeta propia o de un familiar? ¿Débito o crédito? ¿Alguna es compartida con amigos? |
-| D4 | Cuéntame la última vez que te cobraron algo que no tenías presente. | ¿Cómo te diste cuenta? ¿Cuánto tiempo pasó desde el cobro? ¿Qué hiciste después? ¿Llegaste a cancelarlo? |
-| D5 | ¿Cómo sabes hoy cuándo se te va a renovar una suscripción? | ¿Te llega correo, notificación, o simplemente aparece el cargo? ¿Le haces caso a esos avisos? |
-| D6 | Pensando en la última semana, ¿cuántas veces pediste delivery? | ¿De qué locales? ¿Tienes alguna membresía de delivery? Si tuvieras que estimar cuánto gastaste en delivery el mes pasado, ¿qué monto dirías? |
-| D7 | ¿Hay alguna suscripción que pagues y casi no uses? | ¿Por qué no la has cancelado? ¿Qué tendría que pasar para que la canceles? |
-
-**Bloque E. Contexto académico y de consumo**
-
-| # | Pregunta principal | Preguntas complementarias |
-| --- | --- | --- |
-| E1 | ¿Pagas alguna plataforma o herramienta por motivos de estudio? | ¿La paga la universidad o tú? ¿La seguirías pagando si no fuera obligatoria? |
-| E2 | ¿Tus gastos cambian según la época del ciclo? | ¿Gastas distinto en semana de exámenes? ¿Y en vacaciones? |
-| E3 | ¿Compartes alguna cuenta o plan familiar con otras personas? | ¿Quién paga y quién devuelve el dinero? ¿Cómo llevan esa cuenta entre ustedes? |
-
-**Bloque F. Objetivos, frustraciones y cierre**
-
-| # | Pregunta principal | Preguntas complementarias |
-| --- | --- | --- |
-| F1 | Si pudieras cambiar una cosa de cómo manejas tu dinero hoy, ¿cuál sería? | ¿Por qué esa y no otra? ¿Lo has intentado antes? |
-| F2 | ¿Estás ahorrando para algo en particular? | ¿Cuánto llevas? ¿Qué te dificulta avanzar? |
-| F3 | ¿Qué es lo que más te molesta del manejo de tus suscripciones? | ¿Qué tan seguido te pasa? ¿Cómo te hace sentir? |
-| F4 | ¿Has intentado cancelar alguna suscripción? Cuéntame cómo fue. | ¿Lo lograste al primer intento? ¿Cuánto tiempo te tomó? |
-| F5 | Si una aplicación pudiera resolverte un solo problema con tus gastos, ¿cuál escogerías? | ¿Pagarías por ella? ¿Cuánto te parecería razonable al mes? |
-| F6 | *(Solo al cierre)* Te cuento brevemente en qué estamos trabajando: una app que reúne todas tus suscripciones, te avisa un día antes de cada cobro y te muestra el total en soles. ¿Qué opinas? | ¿Qué le falta? ¿Qué te haría desinstalarla en la primera semana? ¿A quién de tus amigos se la recomendarías? |
+1. Para empezar, cuéntame quién eres: tu nombre, tu edad, en qué distrito vives y con quién (solo, con tu familia o compartiendo departamento), y hace cuánto.
+2. ¿Cómo está compuesta tu familia o el hogar donde vives, y cuál es tu estado civil o situación sentimental actual? ¿Comparten gastos o suscripciones con tu pareja, tu familia o tus amigos?
+3. ¿Qué carrera estudias, en qué universidad y en qué ciclo vas? ¿Trabajas o haces prácticas además de estudiar, y cuántas horas a la semana?
+4. ¿De dónde proviene el dinero que administras cada mes? Sin necesidad de la cifra exacta, ¿dirías que está más cerca de S/ 500, S/ 1 000 o S/ 1 500, y es un monto fijo o variable?
+5. Cuéntame cómo fue que empezaste a manejar tu propio dinero: ¿qué te enseñaron en casa sobre el ahorro y recuerdas cuál fue la primera suscripción que pagaste tú mismo?
+6. ¿Cómo describirías tu forma de gastar: más planificada o más impulsiva? Dame un ejemplo reciente de cada una.
+7. ¿Llevas algún control de tus gastos? Cuéntame cómo lo haces (app, hoja de cálculo, papel o mentalmente), desde cuándo, y qué sientes cuando revisas tu estado de cuenta a fin de mes.
+8. ¿Qué tan cómodo te sientes probando una aplicación nueva, la exploras solo o prefieres que alguien te la enseñe? ¿Has usado alguna vez una app de finanzas personales o presupuesto? ¿Cuál y por qué la dejaste?
+9. ¿Qué celular usas, hace cuánto lo tienes, y qué otros dispositivos usas en el día (laptop, tablet, smartwatch)?
+10. ¿Cuáles son las tres aplicaciones que más abres al día, y por dónde te enteras de las cosas: notificaciones, correo o redes? ¿Qué navegador usas en la laptop?
+11. ¿Hay alguna marca o aplicación que consideres bien hecha y te guste usar? ¿A quién sigues o escuchas cuando quieres aprender algo sobre dinero o tecnología?
+12. Hagamos una lista: ¿qué servicios te cobran todos los meses de forma automática, con qué medio se pagan, y cuáles de esos te cobran en dólares? ¿Sabes cuánto terminas pagando en soles?
+13. Cuéntame la última vez que te cobraron algo que no tenías presente: ¿cómo te diste cuenta, cuánto tiempo pasó y qué hiciste después? ¿Cómo sabes hoy cuándo se te va a renovar una suscripción?
+14. ¿Pagas alguna plataforma por motivos de estudio y tus gastos cambian según la época del ciclo? Pensando en la última semana, ¿cuántas veces pediste delivery, y cuánto crees que gastaste en delivery el mes pasado?
+15. Si pudieras cambiar una cosa de cómo manejas tu dinero hoy, ¿cuál sería? ¿Qué es lo que más te molesta del manejo de tus suscripciones y has intentado cancelar alguna? *(Cierre)* Te cuento brevemente en qué estamos trabajando: una app que reúne todas tus suscripciones, te avisa un día antes de cada cobro y te muestra el total en soles. ¿Qué opinas, qué le falta y la recomendarías a tus amigos?
 
 ***
 
 #### Guion de entrevista — Segmento 2: Profesional Joven Activo
 
-**Bloque A. Apertura, demografía y biografía**
+Las 15 preguntas se aplican en el mismo orden a los 3 a 5 entrevistados del segmento; lo que varía entre entrevistas son las respuestas, no el guion.
 
-| # | Pregunta principal | Preguntas complementarias |
-| --- | --- | --- |
-| A1 | Cuéntame quién eres: tu nombre, tu edad y en qué distrito vives. | ¿Vives solo, en pareja, con roommates o con tu familia? ¿Hace cuánto? |
-| A2 | ¿Cómo está compuesto tu hogar? | ¿Tienes dependientes o apoyas económicamente a alguien? ¿Comparten gastos fijos? |
-| A3 | ¿Cuál es tu estado civil? | Si vives en pareja, ¿cómo organizan los gastos comunes? ¿Hay cuentas compartidas? |
-| A4 | ¿A qué te dedicas y hace cuánto trabajas en eso? | ¿Trabajas en planilla, por recibos o de forma independiente? ¿Presencial, híbrido o remoto? |
-| A5 | ¿Tus ingresos son fijos o varían mes a mes? | ¿Recibes bonos o ingresos por proyectos aparte? ¿En qué moneda te pagan? |
-| A6 | Cuéntame cómo llegaste a la forma en que hoy organizas tu dinero. | ¿Cambió algo cuando empezaste a trabajar? ¿Qué aprendiste por las malas? |
-
-**Bloque B. Personalidad, habilidades y relación con el dinero**
-
-| # | Pregunta principal | Preguntas complementarias |
-| --- | --- | --- |
-| B1 | ¿Cómo describirías tu perfil financiero: ordenado, improvisado, o depende del mes? | ¿Puedes darme un ejemplo concreto del último mes? |
-| B2 | ¿Qué herramienta usas hoy para llevar el control de tus gastos? | ¿Excel, la app del banco, una app de finanzas, ninguna? ¿Qué tan seguido la revisas? |
-| B3 | ¿Separas tus gastos personales de los profesionales? | ¿Cómo lo haces? ¿Usas tarjetas distintas? ¿Qué pasa cuando se mezclan? |
-| B4 | ¿Qué tan cómodo te sientes conectando tus cuentas bancarias a una aplicación de terceros? | ¿Lo has hecho antes? ¿Qué te daría confianza o desconfianza? |
-| B5 | ¿Has probado alguna app de finanzas personales? | ¿Cuál? ¿Cuánto tiempo la usaste? ¿Por qué la dejaste? |
-
-**Bloque C. Tecnología, canales digitales, marcas e influencias**
-
-| # | Pregunta principal | Preguntas complementarias |
-| --- | --- | --- |
-| C1 | ¿Qué celular usas y con qué sistema operativo? | ¿Lo cambias con frecuencia? ¿Qué te hizo elegirlo? |
-| C2 | ¿Qué otros dispositivos usas para trabajar? | ¿Laptop personal o de la empresa? ¿Usas tablet o smartwatch? |
-| C3 | ¿Qué aplicaciones son parte de tu rutina de trabajo diaria? | ¿Cuáles pagas tú y cuáles paga tu empresa? |
-| C4 | ¿Cómo prefieres que te avisen de algo importante: correo, notificación push, WhatsApp, calendario? | ¿Usas el calendario del celular para tu vida personal o solo para el trabajo? ¿Qué navegador usas? |
-| C5 | ¿Qué producto digital consideras que está bien hecho y por qué? | ¿Pagarías más por una alternativa mejor diseñada? |
-| C6 | ¿Dónde te informas sobre finanzas, inversión o tecnología? | ¿Sigues a alguien en particular? ¿Boletines, pódcast, LinkedIn? |
-
-**Bloque D. Portafolio de suscripciones, membresías y divisas**
-
-| # | Pregunta principal | Preguntas complementarias |
-| --- | --- | --- |
-| D1 | Listemos todo lo que se te cobra de forma recurrente, personal y de trabajo. | ¿Herramientas de productividad, servicios cloud, streaming, gimnasio, instituto de idiomas? |
-| D2 | ¿Cuántas de esas se te cobran en dólares? | ¿Sabes cuánto te terminan costando en soles? ¿Revisas el tipo de cambio que te aplicó el banco? |
-| D3 | ¿Tienes alguna suscripción cuyo monto cambia según cuánto la uses? | ¿Cómo controlas ese gasto variable? ¿Te ha sorprendido alguna factura? |
-| D4 | ¿Tienes alguna membresía con contrato anual o de varios meses? | ¿Recuerdas cuándo se renueva? ¿Qué pasó la última vez que se renovó? |
-| D5 | Cuéntame la última vez que un cobro automático te descuadró el mes. | ¿Cómo te enteraste? ¿Qué hiciste? ¿Cambiaste algo después de eso? |
-| D6 | ¿Cómo decides si una suscripción vale lo que cuesta? | ¿Has hecho ese cálculo alguna vez? ¿Con qué frecuencia depuras lo que pagas? |
-
-**Bloque E. Hábitos de consumo y delivery**
-
-| # | Pregunta principal | Preguntas complementarias |
-| --- | --- | --- |
-| E1 | ¿Cómo resuelves tus almuerzos y cenas en un día típico de trabajo? | ¿Cocinas, pides, comes fuera? ¿Cambia si trabajas desde casa? |
-| E2 | ¿Tienes alguna membresía de delivery? | ¿Sientes que la recuperas con lo que pides? ¿La has calculado? |
-| E3 | ¿Qué aplicaciones de delivery usas y por qué esas? | ¿Comparas precios entre ellas? ¿Te influyen las promociones? |
-| E4 | ¿Cuánto crees que gastaste en delivery el mes pasado? | ¿Te sorprende esa cifra al decirla en voz alta? ¿La has revisado alguna vez en tu estado de cuenta? |
-
-**Bloque F. Objetivos, frustraciones y cierre**
-
-| # | Pregunta principal | Preguntas complementarias |
-| --- | --- | --- |
-| F1 | ¿Cuáles son tus metas financieras para los próximos dos años? | ¿Qué te está frenando hoy? ¿Qué parte depende de tus gastos fijos? |
-| F2 | ¿Qué información te gustaría tener sobre tu dinero y hoy no tienes? | ¿Por qué esa? ¿Qué decisión tomarías con ella? |
-| F3 | ¿Qué es lo más frustrante de administrar tus pagos recurrentes? | ¿Con qué frecuencia te ocurre? ¿Te ha causado algún problema concreto? |
-| F4 | ¿Has pagado alguna vez por algo que ya no usabas? | ¿Cuánto tiempo pasó hasta que lo notaste? ¿Cuánto calculas que perdiste? |
-| F5 | ¿Pagarías por una herramienta que te resuelva esto? | ¿Cuánto al mes te parecería razonable? ¿Qué tendría que hacer para que valga la pena? |
-| F6 | *(Solo al cierre)* Estamos construyendo una app que centraliza tus suscripciones, te avisa un día antes de cada renovación y convierte todo a soles automáticamente. ¿Qué te parece? | ¿Qué le falta para que la uses? ¿Qué te generaría desconfianza? ¿La recomendarías en tu trabajo? |
+1. Cuéntame quién eres: tu nombre, tu edad, en qué distrito vives y con quién (solo, en pareja, con roommates o con tu familia), y hace cuánto.
+2. ¿Cómo está compuesto tu hogar (tienes dependientes o apoyas económicamente a alguien) y cuál es tu estado civil? Si vives en pareja, ¿cómo organizan los gastos comunes?
+3. ¿A qué te dedicas y hace cuánto trabajas en eso? ¿Trabajas en planilla, por recibos o de forma independiente, y de manera presencial, híbrida o remota?
+4. ¿Tus ingresos son fijos o varían mes a mes? ¿Recibes bonos o ingresos por proyectos aparte, y en qué moneda te pagan?
+5. Cuéntame cómo llegaste a la forma en que hoy organizas tu dinero: ¿cambió algo cuando empezaste a trabajar?
+6. ¿Cómo describirías tu perfil financiero: ordenado, improvisado, o depende del mes? Dame un ejemplo concreto del último mes.
+7. ¿Qué herramienta usas hoy para llevar el control de tus gastos (Excel, la app del banco, una app de finanzas, ninguna), y separas tus gastos personales de los profesionales?
+8. ¿Qué tan cómodo te sientes conectando tus cuentas bancarias a una aplicación de terceros? ¿Has probado alguna app de finanzas personales? ¿Cuál y por qué la dejaste?
+9. ¿Qué celular usas y con qué sistema operativo, y qué otros dispositivos usas para trabajar?
+10. ¿Qué aplicaciones son parte de tu rutina de trabajo diaria (cuáles pagas tú y cuáles tu empresa), y cómo prefieres que te avisen de algo importante: correo, notificación push, WhatsApp o calendario?
+11. ¿Qué producto digital consideras que está bien hecho y por qué? ¿Dónde te informas sobre finanzas, inversión o tecnología?
+12. Listemos todo lo que se te cobra de forma recurrente, personal y de trabajo: ¿cuántas de esas se te cobran en dólares y sabes cuánto te terminan costando en soles?
+13. ¿Tienes alguna suscripción cuyo monto cambia según cuánto la uses, o alguna membresía con contrato anual? Cuéntame la última vez que un cobro automático te descuadró el mes.
+14. ¿Cómo resuelves tus almuerzos y cenas en un día típico de trabajo? ¿Tienes alguna membresía de delivery y cuánto crees que gastaste en delivery el mes pasado?
+15. ¿Cuáles son tus metas financieras para los próximos dos años y qué es lo más frustrante de administrar tus pagos recurrentes? *(Cierre)* Estamos construyendo una app que centraliza tus suscripciones, te avisa un día antes de cada renovación y convierte todo a soles automáticamente. ¿Qué te parece, qué le falta y la recomendarías en tu trabajo?
 
 ***
 
@@ -361,6 +272,7 @@ Cada entrevista se registra con la siguiente ficha, que se completa durante la s
 | Campo | Contenido |
 | --- | --- |
 | Nombres y apellidos | |
+| Género | |
 | Edad | |
 | Distrito de residencia | |
 | Ocupación | |
