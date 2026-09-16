@@ -392,241 +392,29 @@ El Needfinding traduce los hallazgos de la sección 2.2 en los artefactos de dis
 
 Se elaborará una ficha de User Persona por cada segmento objetivo en UXPressia. Cada atributo de la ficha —demográfico, tecnológico o de comportamiento— deberá poder rastrearse hasta el porcentaje o la cita correspondiente del análisis de la sección 2.2.3, sin añadir ningún rasgo que no tenga ese respaldo.
 
-#### User Persona 1 — Segmento 1: Estudiante Universitario Digital
-
-**Nombre:** Diego Alcántara Torres
-**Edad:** 21 años
-**Ocupación:** Estudiante de Ingeniería de Sistemas — UPC (5.° ciclo)
-**Distrito:** San Miguel, Lima Metropolitana
-**Estado civil:** Soltero, vive con sus padres
-
----
-
-**Demografía y contexto económico**
-
-Diego dispone de aproximadamente S/ 900 al mes, distribuidos entre la mesada que recibe de sus padres (S/ 600) y lo que genera diseñando logos por encargo en redes sociales (S/ 300 promedio). No tiene tarjeta de crédito propia; usa la débito del BCP vinculada a su cuenta de ahorros y ocasionalmente la tarjeta Visa de su madre para suscripciones en dólares. Estudia a tiempo completo y dedica entre 10 y 12 horas semanales a proyectos freelance.
-
-**Portafolio de gastos recurrentes (referencial)**
-
-| Servicio | Tipo | Monto | Moneda |
-| --- | --- | --- | --- |
-| Netflix (cuota de plan familiar compartido) | Streaming | S/ 10 | PEN |
-| Spotify Premium | Música | S/ 15 | PEN |
-| Smart Fit — Plan Black | Membresía física | S/ 79.90 | PEN |
-| Netzun | Educación tecnológica | S/ 49 | PEN |
-| Cisco Networking Academy | Certificación técnica | Gratuito | — |
-| Binance (comisiones y compras de cripto) | Criptomonedas | Variable | USD |
-| PedidosYa / Up Burger (sin membresía, pero recurrente) | Delivery fast-food | ~S/ 130 | PEN |
-
-**Personalidad**
-
-Explorador digital: instala aplicaciones sin leer tutoriales y las desinstala si no entiende su valor en los primeros dos minutos. Impulsivo con los gastos pequeños ("es solo S/ 15"), pero responsable con objetivos grandes (ahorra para una laptop). Le incomoda revisar su estado de cuenta porque suele encontrar cargos que no recuerda. Sigue a creadores de contenido de finanzas personales en TikTok pero no aplica sus consejos de forma sistemática.
-
-**Objetivos**
-
-- Ahorrar S/ 2,000 en seis meses para renovar su laptop de trabajo.
-- Entender cuánto gasta realmente cada mes, sin sorpresas a fin de periodo.
-- Cancelar los servicios que no usa sin tener que recordar contraseñas ni navegar menús complejos.
-
-**Frustraciones**
-
-- Descubrió el cargo mensual de Smart Fit Plan Black tres meses después de dejar de asistir al gimnasio; había pagado S/ 239.70 sin usar el servicio.
-- Binance le cobró comisiones de custodia que no anticipó; no identificó el cargo hasta que consultó a un amigo técnico.
-- Netzun se renovó automáticamente un mes en que su cuenta tenía saldo justo; el cargo dejó la cuenta en negativo y generó una penalidad adicional.
-
-**Marcas de referencia (positivas)**
-
-Notion, Figma (plan gratuito), Discord, Rappi, TikTok.
-
-**Canales digitales**
-
-Android (Samsung Galaxy A54). Redes principales: TikTok, Instagram, WhatsApp. Gmail revisado una vez al día. Notificaciones push activas solo en apps bancarias y de mensajería; las demás están silenciadas.
-
----
-
-#### User Persona 2 — Segmento 2: Profesional Joven Activo
-
-**Nombre:** Valentina Ríos Paredes
-**Edad:** 28 años
-**Ocupación:** UX Designer en startup fintech (contrato a tiempo completo, modalidad híbrida)
-**Distrito:** San Borja, Lima Metropolitana
-**Estado civil:** Soltera, vive sola en departamento alquilado
-
----
-
-**Demografía y contexto económico**
-
-Valentina percibe S/ 3,800 mensuales fijos más ingresos freelance que oscilan entre S/ 400 y S/ 800 en proyectos esporádicos de diseño. Tiene tarjeta de crédito Visa Scotiabank (línea S/ 8,000) y una cuenta en dólares en el BCP para pagar suscripciones internacionales. Sus gastos fijos (alquiler, servicios del departamento) consumen el 42 % de su ingreso fijo; el resto se distribuye entre suscripciones, alimentación y ahorro.
-
-**Portafolio de gastos recurrentes (referencial)**
-
-| Servicio | Tipo | Monto | Moneda |
-| --- | --- | --- | --- |
-| Netflix 4K | Streaming | S/ 49 | PEN |
-| Spotify Family (cuota proporcional, comparte con 2 amigos) | Música | S/ 11 | PEN |
-| Smart Fit — Plan Black | Membresía física | S/ 79.90 | PEN |
-| Adobe Creative Cloud (plan individual) | Diseño profesional | USD 54.99 | USD |
-| Figma Professional | Diseño UI/UX | USD 15 | USD |
-| Lemon Cash | Ahorro en criptomonedas | Variable | USD |
-| PedidosYa Plus | Membresía de delivery | S/ 19.90 | PEN |
-| Instituto Británico (nivel avanzado) | Educación / idiomas | S/ 350 | PEN |
-| Dropbox Plus | Almacenamiento cloud | USD 9.99 | USD |
-
-**Personalidad**
-
-Metódica en el trabajo y creativa en el diseño, pero no aplica esa sistematización a sus finanzas personales porque "el banco ya lleva la cuenta". Revisa su tarjeta de crédito una vez al mes, cerca del vencimiento. Alta alfabetización digital; adopta herramientas nuevas si el onboarding es limpio y rápido. Valora la privacidad: no conectaría su cuenta bancaria a una app de terceros sin leer los términos. Le incomoda no poder saber cuánto le cuestan realmente sus suscripciones en dólares después de que el banco aplica su propio tipo de cambio.
-
-**Objetivos**
-
-- Saber exactamente cuánto gasta cada mes en soles, incluyendo los servicios que paga en dólares al tipo de cambio real.
-- Ahorrar S/ 6,000 para un viaje a Colombia en ocho meses sin sacrificar su estilo de vida digital.
-- Depurar el portafolio: cancelar al menos dos servicios que usa menos de una vez por semana.
-
-**Frustraciones**
-
-- Adobe Creative Cloud la cobró USD 54.99 en un mes en que el tipo de cambio subió a S/ 3.87; terminó pagando S/ 212.77 cuando había presupuestado S/ 198. La diferencia la descubrió revisando el estado de cuenta en papel, no en la app del banco.
-- PedidosYa Plus se renovó el mismo día en que pagó el Británico; no había previsto esos dos cargos juntos y tuvo que posponer una transferencia de ahorro.
-- Tiene una suscripción activa a Dropbox Plus que migró al plan gratuito hace cuatro meses en su laptop, pero el cobro automático en tarjeta no se detuvo; lleva pagando USD 9.99 sin usar el servicio.
-
-**Marcas de referencia (positivas)**
-
-Notion, Linear, Figma, Apple Wallet (como referente de UX), Nubank.
-
-**Canales digitales**
-
-iPhone 14 Pro y MacBook Air M2. Redes: LinkedIn, Instagram, Twitter/X. Correo personal y profesional revisados varias veces al día. Google Calendar como herramienta central de organización personal y profesional. Notificaciones gestionadas con Do Not Disturb activado en bloques de trabajo profundo.
-
+[[PENDIENTE]]
 
 ### 2.3.2. User Task Matrix
 
-La siguiente tabla compara la frecuencia e importancia con que cada arquetipo ejecuta las tareas centrales del problema, prescindiendo de cualquier herramienta específica. La escala utilizada es la siguiente:
-
-- **Frecuencia:** Alta (varias veces por semana o de forma mensual consciente) / Media (ocasionalmente, cuando surge una necesidad puntual) / Baja (raramente o solo ante una crisis económica).
-- **Importancia:** Alta / Media / Baja (según el impacto que la tarea tiene en el presupuesto o la tranquilidad financiera del usuario).
-
-| # | Tarea (agnóstica al software) | Diego — Frecuencia | Diego — Importancia | Valentina — Frecuencia | Valentina — Importancia |
-| --- | --- | --- | --- | --- | --- |
-| T01 | Llevar la cuenta de las suscripciones y membresías activas | Baja | Alta | Media | Alta |
-| T02 | Recordar cuándo se renueva o vence cada servicio recurrente | Baja | Alta | Media | Alta |
-| T03 | Calcular el gasto mensual total en servicios digitales y membresías físicas | Baja | Alta | Media | Alta |
-| T04 | Convertir el costo de una suscripción en dólares a soles para saber cuánto pagará realmente | Baja | Media | Alta | Alta |
-| T05 | Cancelar un servicio que ya no se usa o que se renovó de forma no deseada | Baja | Alta | Baja | Alta |
-| T06 | Registrar y estimar el gasto mensual acumulado en delivery y fast-food (PedidosYa Plus, Up Burger, Popeyes, Dunkin') | Baja | Media | Media | Media |
-| T07 | Identificar qué servicios se usan con poca frecuencia y podrían cancelarse | Baja | Media | Baja | Alta |
-
+[[PENDIENTE]]
 
 ### 2.3.3. User Journey Mapping
 
-#### As-Is User Journey — Diego Alcántara Torres descubre y cancela Smart Fit Plan Black
-
-**Contexto:** Diego dejó de ir al gimnasio hace tres meses. Un martes por la noche revisa su estado de cuenta del BCP y encuentra un cargo de S/ 79.90 que no reconoce de inmediato.
-
-| Fase | Paso | Acción del usuario | Pensamientos / Emociones | Canal / Herramienta | Puntos de dolor |
-| --- | --- | --- | --- | --- | --- |
-| **Descubrimiento del cargo** | 1 | Revisa el estado de cuenta de su cuenta BCP en la app bancaria | "¿Qué es este cargo de S/ 79.90? No recuerdo haber comprado nada así." | App bancaria BCP (Android) | El concepto del cargo aparece como "SMARTFIT*PLANBLACK" — texto truncado, poco descriptivo |
-| | 2 | Hace un screenshot del cargo y lo busca en Google para identificar el comercio | "Ah, es el gimnasio. Pensé que ya me habían dado de baja cuando dejé de ir." | Google Chrome (Android) | Tuvo que hacer búsqueda manual; la app bancaria no explica qué es el cargo |
-| **Búsqueda del método de cancelación** | 3 | Intenta recordar qué correo usó para registrarse en Smart Fit; revisa Gmail con la búsqueda "smart fit" | "¿Usé mi correo de Gmail o el de la universidad?" | Gmail (Android) | Encuentra 3 correos distintos de Smart Fit (bienvenida, recordatorio de pago, promoción); ninguno tiene enlace de cancelación claro |
-| | 4 | Abre el sitio web de Smart Fit en el navegador del celular y busca la opción "Mi cuenta" | "Esto es muy complicado en el celular, no se ve bien." | Chrome (Android) — sitio web no optimizado para mobile | La navegación del portal de socio está diseñada para escritorio; los botones son pequeños y el flujo no es intuitivo |
-| **Proceso de cancelación** | 5 | Inicia sesión con la contraseña que, tras dos intentos fallidos, recupera por correo | "¿Por qué tengo que pedir recuperación de contraseña si me acabo de registrar hace meses?" | Portal web Smart Fit + Gmail | El proceso de recuperación tarda 4 minutos y requiere cambiar la contraseña antes de acceder |
-| | 6 | Navega hasta "Gestión de mi membresía" y encuentra el botón "Congelar o cancelar plan" | "Por fin. Pero dice que tengo que ir a la sede o llamar. No puedo cancelar online." | Portal web Smart Fit | La cancelación en línea no está disponible para el Plan Black; exige llamada telefónica o visita presencial |
-| | 7 | Llama al número de atención al cliente de Smart Fit; espera 9 minutos en línea | "Esto es una trampa. Hacen difícil cancelar a propósito." | Llamada telefónica | Tiempo de espera largo; sensación de retención deliberada |
-| | 8 | Atiende un agente que solicita su número de socio, DNI y correo de registro; Diego no tiene el número de socio a mano | "No tengo ese número. ¿Cómo lo consigo ahora por teléfono?" | Llamada telefónica | Información que Diego no tiene disponible en el momento; debe interrumpir la llamada para buscarla |
-| **Confirmación** | 9 | Recupera el número de socio desde un correo antiguo de bienvenida; vuelve a llamar (segunda llamada, 6 minutos de espera adicional) | "Perdí 20 minutos solo para cancelar algo que ya no uso." | Gmail + Llamada telefónica | Proceso de dos llamadas, discontinuo e ineficiente |
-| | 10 | El agente confirma la cancelación y le dice que el próximo cobro no se realizará; no le envía confirmación por escrito en el momento | "¿Cómo sé que realmente lo cancelaron? No me mandaron nada." | Llamada telefónica | No recibe confirmación inmediata; la confirmación por correo llega 2 horas después |
-| **Monitoreo posterior** | 11 | Revisa su estado de cuenta el siguiente mes para verificar que no se haya cobrado nuevamente | "Voy a revisar esto el próximo mes por si acaso." | App bancaria BCP | Carga cognitiva adicional: debe recordar verificar el mes siguiente sin ningún recordatorio |
-
-**Duración total del proceso:** aproximadamente 40 minutos distribuidos en dos días.
-**Cargos pagados de más:** S/ 239.70 (tres meses × S/ 79.90) por un servicio que no utilizaba.
-**Emoción dominante al final:** alivio mezclado con frustración; sensación de haber sido atrapado en un sistema diseñado para retener suscriptores.
-
+[[PENDIENTE]]
 
 ### 2.3.4. Empathy Mapping
 
-#### Empathy Map — Valentina Ríos Paredes (Segmento 2: Profesional Joven Activo)
-
-**Contexto de análisis:** Valentina es la primera quincena del mes. Acaba de recibir su estado de cuenta de la tarjeta Scotiabank y constata que el total es S/ 280 más alto de lo que había estimado, sin saber exactamente qué causó la diferencia.
-
----
-
-**¿Qué piensa y siente?**
-
-1. "Sé que gasto en suscripciones, pero nunca tengo claro cuánto es en total. Cada servicio parece poco, pero al sumar son demasiados."
-2. "Me da ansiedad abrir el estado de cuenta porque sé que voy a encontrar algo que no esperaba. Y luego igual no puedo hacer nada hasta el siguiente mes."
-3. "Quiero ahorrar para mi viaje, pero cada vez que reviso cuánto llevo, me doy cuenta de que gasté más de lo planeado sin saber exactamente en qué."
-
-**¿Qué escucha?**
-
-1. Sus compañeras de trabajo le comentan: "Yo cancelé Adobe y uso la versión gratuita de Canva para lo personal; el Creative Cloud solo lo uso cuando el cliente paga." Valentina sabe que debería hacer lo mismo pero no se decide.
-2. Un podcast de finanzas personales que escucha en el trayecto al trabajo repite: "La mayoría de personas paga en promedio tres suscripciones que no usa. ¿Cuáles son las tuyas?" La frase le resuena, pero no actúa porque no tiene una lista actualizada de sus servicios.
-3. Su madre le dice: "¿Para qué pagas tanto por el gimnasio si también pagas ese servicio de comida a domicilio? Vas a engordar y a quebrar al mismo tiempo." La observación la incomoda porque tiene algo de razón.
-
-**¿Qué ve?**
-
-1. Ve en LinkedIn publicaciones de personas de su edad que presumen de haber "depurado" sus gastos y ahorraron X soles en un mes. Le genera una mezcla de inspiración y culpa.
-2. Ve en la app de su banco una lista de transacciones sin categorizar: "ADOBE*CRTVCLOUD", "FIGMA.COM", "DROPBOX", "PY PLUS MEMBRESIA". Todos parecen cargos distintos y sin contexto de si los está usando o no.
-3. Ve que sus amigas comparten planes de suscripción (Spotify Family, Netflix) y coordinar los pagos es un problema recurrente; no hay un sistema claro para saber quién debe qué a quién.
-
-**¿Qué dice y hace?**
-
-1. Le dice a su roommate: "Voy a cancelar el Dropbox este fin de semana." Lleva tres semanas diciendo lo mismo y no lo ha hecho porque cada vez que intenta acceder al portal, recuerda que no tiene la contraseña a mano y posterga la acción.
-2. Hace una lista mental de sus suscripciones cuando está en el transporte, pero la olvida antes de llegar a casa. No la escribe porque "la voy a buscar el fin de semana cuando tenga tiempo."
-3. Cuando un servicio le cobra en dólares, va a Google, busca "tipo de cambio dólar soles hoy" y hace el cálculo a mano. No guarda el resultado en ningún lado.
-
-**Pains (dolores)**
-
-1. No tiene una vista única de cuánto gasta en total entre suscripciones, membresía del gimnasio, clases del Británico y delivery; la información está fragmentada en tres aplicaciones bancarias distintas y en correos electrónicos.
-2. El tipo de cambio que aplica su banco para las suscripciones en dólares nunca coincide con el tipo de cambio del día que ella consulta en Google; siempre termina pagando más de lo que calculó.
-3. Cancelar un servicio le toma más tiempo y esfuerzo del que debería; como resultado, pospone la cancelación indefinidamente y sigue pagando por servicios que ya no usa (Dropbox Plus, en este caso).
-
-**Gains (ganancias esperadas)**
-
-1. Ver el total exacto de sus compromisos recurrentes del mes en una sola pantalla, expresado en soles al tipo de cambio del día, antes de que llegue el estado de cuenta.
-2. Recibir una alerta 24 horas antes de cada renovación para decidir conscientemente si renovar o cancelar, en lugar de enterarse del cargo después de que ya ocurrió.
-3. Poder estimar en segundos cuánto le va a costar Adobe Creative Cloud en soles este mes, sin tener que abrir el navegador y hacer el cálculo a mano.
-
+[[PENDIENTE]]
 
 ### 2.3.5. Big Picture EventStorming
 
 Antes de diseñar cualquier pantalla, el equipo reconstruirá en Miro, con la técnica del Big Picture EventStorming, la manera en que un usuario del segmento maneja hoy sus suscripciones, membresías y gastos de delivery sin ayuda de ninguna herramienta dedicada. La sesión ubicará en una línea de tiempo los eventos del proceso actual —desde que se contrata un servicio hasta que se descubre, o no, el cobro de su renovación— junto con los actores involucrados, los sistemas que hoy intervienen (la aplicación del banco, el correo de notificación, el calendario del celular) y los puntos donde ese proceso falla. El insumo de la sesión son los hallazgos de la sección 2.2.3; el resultado se limita a describir el problema tal como existe hoy, sin proponer todavía ninguna función de CraveWallet.
 
-
-Los siguientes Domain Events representan los cambios de estado más significativos del dominio de CraveWallet tal como existe hoy para el usuario, antes de cualquier intervención de la aplicación. Están escritos en pasado, en inglés, y ordenados cronológicamente siguiendo el ciclo de vida de una suscripción o membresía recurrente. En la sesión de Miro se representarán con tarjetas naranja; las políticas con tarjetas lila; los actores con tarjetas amarillo pálido.
-
-| # | Domain Event | Disparador / Contexto | Actor principal |
-| --- | --- | --- | --- |
-| DE01 | **Subscription Contracted** | El usuario suscribe un servicio nuevo (ej. Smart Fit Plan Black, Netzun, Adobe Creative Cloud) y acepta el cobro recurrente al momento del registro. | Usuario |
-| DE02 | **Recurring Charge Processed** | El servicio cobra automáticamente al usuario en la fecha de renovación pactada, sin notificación previa por parte de la plataforma. | Pasarela de pago / Banco |
-| DE03 | **Foreign Currency Charge Applied** | Una suscripción en dólares (Adobe, Figma, Dropbox, Binance) genera un débito en la tarjeta del usuario; el banco aplica su propio tipo de cambio sin transparencia. | Banco / Tarjeta de crédito |
-| DE04 | **Unexpected Charge Discovered** | El usuario detecta en el estado de cuenta un cargo que no recordaba o no anticipaba (ej. Netzun renovado, Smart Fit no cancelado). | Usuario |
-| DE05 | **Subscription Renewal Date Missed** | La fecha de renovación de un servicio pasa sin que el usuario la haya notado; el cobro se procesa antes de que el usuario tuviera oportunidad de decidir cancelar. | Sistema de facturación del proveedor |
-| DE06 | **Budget Exceeded** | El conjunto de cargos recurrentes del mes supera el presupuesto informal que el usuario tenía en mente, generando un saldo insuficiente o deuda en tarjeta. | Usuario (consecuencia indirecta) |
-| DE07 | **Cancellation Process Initiated** | El usuario decide cancelar una suscripción y comienza a buscar cómo hacerlo (portal web, app del servicio, llamada telefónica). | Usuario |
-| DE08 | **Cancellation Blocked by Provider** | El proveedor del servicio impone una barrera a la cancelación en línea (ej. Smart Fit exige llamada telefónica o visita presencial para cancelar el Plan Black). | Proveedor del servicio |
-| DE09 | **Subscription Finally Cancelled** | La cancelación se completa exitosamente, ya sea por llamada, visita o navegación en portal, después de un proceso que tomó más tiempo y pasos de lo esperado. | Usuario + Agente de atención |
-| DE10 | **Delivery Membership Renewed Silently** | PedidosYa Plus o una membresía equivalente se renueva de forma automática; el usuario no recuerda haberla contratado o no sabe cuándo vence. | Plataforma de delivery |
-| DE11 | **Unused Subscription Identified** | El usuario constata (usualmente al revisar el estado de cuenta) que lleva pagando por un servicio que no ha usado en semanas o meses (ej. Dropbox Plus, Cisco Networking). | Usuario |
-| DE12 | **Manual Currency Conversion Performed** | El usuario abre Google o una app externa para convertir manualmente el precio en dólares de una suscripción a soles, usando el tipo de cambio del día. | Usuario |
-| DE13 | **Crypto Platform Fee Charged** | Lemon Cash o Binance debita una comisión de custodia, retiro o trading que el usuario no había anticipado en su presupuesto mensual. | Plataforma de criptomonedas |
-| DE14 | **Physical Membership Charge Recorded** | Smart Fit o un instituto como el Británico cobra la cuota mensual; el cargo aparece en el estado de cuenta sin identificación clara del concepto. | Banco / Pasarela de pago |
-| DE15 | **Subscription Portfolio Reviewed** | El usuario intenta, de forma reactiva y esporádica, hacer una lista mental o en papel de todos sus servicios activos para calcular cuánto gasta al mes. | Usuario |
+[[PENDIENTE]]
 
 ### 2.3.6. Ubiquitous Language
 
-The following glossary defines the core terms of the CraveWallet domain. All terms are written in English and must be used consistently across User Stories, Bounded Context Canvases, code identifiers, and team communication. Using synonyms interchangeably (e.g., "subscription" and "recurring service" as if they were the same concept) is explicitly prohibited once this glossary is approved by the team.
-
-| Term | Definition |
-| --- | --- |
-| **Subscription** | A digital service contracted by the user that generates a fixed or variable automatic charge on a recurring cycle (monthly, annual, or custom). Examples: Netflix, Spotify, Adobe Creative Cloud, Netzun. A Subscription has a defined billing cycle, a currency, and a renewal date. It is distinct from a Membership. |
-| **Membership** | A recurring commitment to a physical or hybrid service that generates a monthly charge, typically tied to a physical location or scheduled attendance. Examples: Smart Fit Plan Black, Instituto Británico. A Membership may have cancellation restrictions that differ from a digital Subscription. |
-| **Recurring Expense** | The parent concept that encompasses both Subscriptions and Memberships, as well as any other periodic charge the user chooses to track in CraveWallet (e.g., delivery platform memberships like PedidosYa Plus, recurring crypto platform fees in Lemon Cash or Binance). |
-| **Renewal Date** | The specific calendar date on which a Subscription or Membership automatically charges the user and its cycle resets. The Renewal Date is the primary trigger for Billing Alerts in CraveWallet. |
-| **Billing Alert** | A notification dispatched to the user's native device calendar exactly 24 hours before a Renewal Date, allowing the user to consciously decide whether to keep or cancel the service before the charge is processed. |
-| **Expense Portfolio** | The complete set of active Recurring Expenses registered by a given user in CraveWallet at a point in time, expressed as a unified monthly total in Peruvian soles (PEN), regardless of the original billing currency. |
-| **Currency Conversion** | The real-time transformation of a Subscription or Recurring Expense amount denominated in a foreign currency (primarily USD) to Peruvian soles (PEN), using the exchange rate fetched daily from ExchangeRate-API. Currency Conversion is applied at display time and is not stored as a fixed value. |
-| **Unused Subscription** | A Subscription or Membership that the user has not actively used within the last 30 days, as self-reported during registration or flagged manually by the user. CraveWallet surfaces Unused Subscriptions in the Dashboard to prompt a cancellation decision. |
-| **Delivery Expense** | A category of non-subscription recurring spend that covers food delivery orders and fast-food platform purchases (e.g., PedidosYa, Rappi, Up Burger, Popeyes, Dunkin', Little Caesars, Papa John's). Delivery Expenses may or may not include a Membership (e.g., PedidosYa Plus). |
-| **Premium User** | A user who has activated the CraveWallet Premium tier by completing a payment flow through the Stripe SDK. A Premium User has access to unlimited Recurring Expense registration, advanced analytics, and budget goal tracking, features that are unavailable or limited in the free tier. |
-
+[[PENDIENTE]]
 
 ## 2.4. Requirements specification
 
@@ -653,224 +441,19 @@ A partir de las Feature Assumptions del Capítulo I y de las tácticas de la sec
 | EP09 | Servicios RESTful | Technical Stories del backend propio que expone los endpoints consumidos por la aplicación móvil. |
 | EP10 | Investigación técnica | Spike Stories orientadas a despejar la incertidumbre técnica de las integraciones con Stripe y ExchangeRate-API antes de comprometerlas en el backlog. |
 
-
-
----
-
-#### Historias de Usuario
-
----
-
-**US01 — Registrar una suscripción o membresía**
-
-| Campo | Contenido |
-| --- | --- |
-| **ID** | US01 |
-| **Título** | Registrar una suscripción o membresía recurrente |
-| **Epic** | EP02 — Alta de suscripciones |
-| **Descripción** | Como **usuario** de CraveWallet, quiero registrar una suscripción o membresía recurrente seleccionando el servicio de una lista preconfigurada o ingresando los datos manualmente, para que la aplicación lleve el control del ciclo de cobro sin que yo tenga que recordarlo. |
-| **Prioridad** | Alta |
-| **Story Points** | 5 |
-
-**Criterios de aceptación**
-
-```gherkin
-Escenario 1: Registro de una suscripción desde el catálogo preconfigurado
-  Dado que el usuario ha iniciado sesión en CraveWallet
-    Y se encuentra en la pantalla "Agregar gasto recurrente"
-  Cuando selecciona "Smart Fit Plan Black" del catálogo de servicios
-    Y confirma el monto mensual (S/ 79.90) y la fecha de próxima renovación
-  Entonces el servicio aparece en el Dashboard con su categoría, monto en soles y días restantes hasta la renovación
-    Y se programa automáticamente un Billing Alert en el calendario nativo del dispositivo para 24 horas antes de la Renewal Date
-
-Escenario 2: Registro manual de una suscripción en dólares no incluida en el catálogo
-  Dado que el usuario ha iniciado sesión en CraveWallet
-    Y se encuentra en la pantalla "Agregar gasto recurrente"
-  Cuando selecciona "Agregar manualmente", ingresa "Adobe Creative Cloud" como nombre, USD 54.99 como monto y selecciona ciclo mensual
-  Entonces el Dashboard muestra el servicio con el equivalente en soles calculado al tipo de cambio del día obtenido de ExchangeRate-API
-    Y el monto en soles se actualiza automáticamente cada 24 horas conforme cambie el tipo de cambio
-
-Escenario 3: Intento de registro sin fecha de renovación
-  Dado que el usuario está registrando una nueva suscripción
-  Cuando deja el campo "Fecha de próxima renovación" vacío e intenta confirmar
-  Entonces la aplicación muestra el mensaje "Ingresa la fecha de tu próximo cobro para activar el recordatorio"
-    Y no permite guardar el registro hasta que el campo sea completado
-```
-
----
-
-**US02 — Ver el dashboard consolidado de gastos recurrentes**
-
-| Campo | Contenido |
-| --- | --- |
-| **ID** | US02 |
-| **Título** | Consultar el dashboard consolidado de gastos recurrentes |
-| **Epic** | EP03 — Dashboard unificado |
-| **Descripción** | Como **usuario** de CraveWallet, quiero ver en una sola pantalla todas mis suscripciones, membresías y gastos de delivery activos, ordenados por fecha de renovación y expresados en soles, para poder estimar mi gasto mensual total sin abrir el estado de cuenta del banco. |
-| **Prioridad** | Alta |
-| **Story Points** | 5 |
-
-**Criterios de aceptación**
-
-```gherkin
-Escenario 1: Visualización del Expense Portfolio completo en soles
-  Dado que el usuario tiene al menos tres Recurring Expenses registrados en distintas monedas (PEN y USD)
-  Cuando abre la pantalla principal (Dashboard) de CraveWallet
-  Entonces ve la lista de todos sus gastos recurrentes activos ordenados por Renewal Date ascendente
-    Y cada elemento muestra el nombre del servicio, el monto en su moneda original y su equivalente en soles al tipo de cambio vigente
-    Y el resumen superior muestra el total mensual consolidado en soles de todo el Expense Portfolio
-
-Escenario 2: Indicador visual de vencimiento próximo
-  Dado que el usuario tiene una suscripción con Renewal Date a 24 horas o menos
-  Cuando consulta el Dashboard
-  Entonces esa suscripción aparece en la parte superior de la lista con una etiqueta visual de alerta ("Cobro hoy" o "Cobro mañana")
-    Y la etiqueta es distinta en color o ícono respecto al resto de los elementos de la lista
-
-Escenario 3: Dashboard vacío en primer uso
-  Dado que el usuario acaba de crear su cuenta y no ha registrado ningún Recurring Expense
-  Cuando abre el Dashboard por primera vez
-  Entonces ve un estado vacío con el mensaje "Aún no tienes gastos registrados" y un botón de llamada a la acción "Agrega tu primera suscripción"
-    Y el total mensual consolidado muestra S/ 0.00
-```
-
----
-
-**US03 — Recibir un recordatorio de renovación en el calendario del dispositivo**
-
-| Campo | Contenido |
-| --- | --- |
-| **ID** | US03 |
-| **Título** | Recibir Billing Alert en el calendario nativo del dispositivo |
-| **Epic** | EP04 — Recordatorios vía calendario nativo |
-| **Descripción** | Como **usuario** de CraveWallet, quiero que la aplicación cree automáticamente un evento en el calendario de mi teléfono 24 horas antes de cada Renewal Date, para recibir la alerta a través del canal que ya uso a diario y poder decidir si cancelo el servicio antes de que se efectúe el cobro. |
-| **Prioridad** | Alta |
-| **Story Points** | 3 |
-
-**Criterios de aceptación**
-
-```gherkin
-Escenario 1: Creación automática del evento de calendario al registrar una suscripción
-  Dado que el usuario ha registrado una suscripción con Renewal Date el 20 de octubre
-  Cuando confirma el registro en CraveWallet
-  Entonces la aplicación solicita permiso de acceso al calendario nativo del dispositivo (si aún no fue concedido)
-    Y crea un evento el 19 de octubre con el título "[CraveWallet] Mañana se cobra: Smart Fit Plan Black — S/ 79.90"
-    Y el evento incluye una nota con la opción de abrir CraveWallet directamente
-
-Escenario 2: El usuario deniega el permiso de acceso al calendario
-  Dado que el usuario está registrando una suscripción
-  Cuando la aplicación solicita permiso de calendario y el usuario lo deniega
-  Entonces CraveWallet registra igualmente la suscripción en el Dashboard
-    Y muestra el mensaje "Sin acceso al calendario no podremos enviarte recordatorios. Puedes activarlo desde Configuración > Permisos > CraveWallet."
-    Y no crea ningún evento en el calendario del dispositivo
-
-Escenario 3: Actualización del evento de calendario al editar la Renewal Date
-  Dado que el usuario modifica la fecha de renovación de Netzun de día 5 a día 12 del mes
-  Cuando confirma el cambio en CraveWallet
-  Entonces la aplicación elimina el evento de calendario anterior (día 4) y crea uno nuevo (día 11) con los datos actualizados
-```
-
----
-
-**TS01 — Endpoint RESTful: obtener el Expense Portfolio del usuario autenticado**
-
-| Campo | Contenido |
-| --- | --- |
-| **ID** | TS01 |
-| **Título** | Endpoint GET /api/v1/subscriptions |
-| **Epic** | EP09 — Servicios RESTful |
-| **Descripción** | Como **developer** del equipo de Gastify, quiero implementar el endpoint `GET /api/v1/subscriptions` en el backend de CraveWallet, para que la aplicación móvil pueda obtener la lista de Recurring Expenses activos del usuario autenticado, incluyendo el monto convertido a soles al tipo de cambio del día. |
-| **Prioridad** | Alta |
-| **Story Points** | 3 |
-
-**Criterios de aceptación**
-
-```gherkin
-Escenario 1: Solicitud exitosa con token JWT válido
-  Dado que el cliente envía una solicitud GET a /api/v1/subscriptions
-    Y el header Authorization contiene un JWT válido y no expirado
-  Cuando el backend procesa la solicitud
-  Entonces responde con HTTP 200 OK
-    Y el cuerpo es un JSON array donde cada elemento contiene: id, name, amount, currency, amountInPen (calculado al tipo de cambio del día), renewalDate, category, y isActive
-    Y los elementos están ordenados por renewalDate ascendente
-
-Escenario 2: Solicitud sin token de autenticación
-  Dado que el cliente envía una solicitud GET a /api/v1/subscriptions sin header Authorization
-  Cuando el backend procesa la solicitud
-  Entonces responde con HTTP 401 Unauthorized
-    Y el cuerpo contiene: { "error": "UNAUTHORIZED", "message": "Authentication token is missing or invalid" }
-
-Escenario 3: Usuario autenticado sin suscripciones registradas
-  Dado que el cliente envía una solicitud GET a /api/v1/subscriptions con JWT válido
-    Y el usuario no tiene ningún Recurring Expense registrado
-  Cuando el backend procesa la solicitud
-  Entonces responde con HTTP 200 OK
-    Y el cuerpo es un JSON array vacío: []
-```
-
----
-
-**SS01 — Spike: Investigación de la integración del SDK de Stripe para cobros Premium**
-
-| Campo | Contenido |
-| --- | --- |
-| **ID** | SS01 |
-| **Título** | Investigación y prueba de concepto: Stripe SDK para activación de CraveWallet Premium |
-| **Epic** | EP10 — Investigación técnica |
-| **Descripción** | Como **developer** del equipo de Gastify, quiero investigar de forma autónoma la integración del SDK de Stripe en una aplicación móvil Android/Flutter, para despejar la incertidumbre técnica de implementar el flujo de pago de CraveWallet Premium antes de comprometer historias de implementación en el backlog. |
-| **Contexto y motivación** | CraveWallet Premium requiere que un usuario pueda pagar una suscripción mensual o anual desde la aplicación móvil. Stripe es la pasarela elegida por su soporte para tarjetas peruanas, su SDK oficial para Android y su entorno de pruebas (test mode). El equipo no tiene experiencia previa con Stripe y necesita verificar la viabilidad técnica antes de estimar el esfuerzo real de implementación. Esta Spike Story constituye evidencia del Student Outcome 7 del curso: la capacidad de adquirir y aplicar conocimiento técnico nuevo de forma autónoma. |
-| **Prioridad** | Alta |
-| **Story Points** | 2 |
-| **Duración máxima** | 3 días de trabajo |
-
-**Criterios de aceptación**
-
-```gherkin
-Escenario 1: Documentación del proceso de aprendizaje
-  Dado que el developer inicia la investigación del SDK de Stripe
-  Cuando completa el spike
-  Entonces produce un documento técnico (mínimo 500 palabras) que describe: cómo funciona el flujo de pago de Stripe (PaymentIntent, PaymentSheet), qué dependencias se necesitan en el proyecto Android/Flutter, y cómo se configura el entorno de pruebas (clave pública y clave secreta de test mode)
-
-Escenario 2: Prueba de concepto funcional en entorno de test
-  Dado que el developer ha integrado el SDK de Stripe en una rama de prueba del repositorio
-  Cuando ejecuta el flujo completo de pago usando la tarjeta de prueba 4242 4242 4242 4242
-  Entonces la aplicación muestra el formulario de pago de Stripe (PaymentSheet) sin errores de compilación
-    Y el pago de prueba se registra como exitoso en el dashboard de Stripe test mode
-    Y el estado del usuario en la base de datos local cambia a isPremium = true
-
-Escenario 3: Identificación de riesgos y limitaciones
-  Dado que el developer ha completado la prueba de concepto
-  Cuando documenta los hallazgos del spike
-  Entonces el documento incluye al menos dos riesgos técnicos identificados (ej. compatibilidad con versiones de Android, manejo de webhooks para validar pagos en el backend) y propone cómo mitigarlos en la implementación real
-```
-
+[[PENDIENTE: historias de usuario individuales, con criterios de aceptación Gherkin, una vez completado el Needfinding]]
 
 ### 2.4.2. Impact Mapping
 
 El Impact Map vinculará los Business Outcome Assumptions declarados en la sección 1.2.2.2 del Capítulo I —NPS superior a 40, conversión Premium de al menos 12%, retención a 30 días superior a 45% y reducción de cargos no anticipados de al menos 60%— con los actores, los impactos de comportamiento esperados y las historias de usuario de la sección 2.4.1 que los sostienen.
 
-
-El siguiente Impact Map conecta los cuatro Business Outcome Assumptions del Capítulo I con los actores involucrados, los cambios de comportamiento que deben producirse para lograr cada outcome, y las historias de usuario que habilitan esos cambios.
-
-| Business Outcome (de §1.2.2.2) | Actor | Impacto de comportamiento esperado | Historias que lo sostienen |
-| --- | --- | --- | --- |
-| Reducir en al menos 60 % los cargos recurrentes no anticipados reportados por los usuarios en los primeros 30 días | Usuario (Segmento 1 y 2) | El usuario configura Billing Alerts para todas sus suscripciones activas antes de que se produzca la primera renovación | US01, US03 |
-| Alcanzar una retención a 30 días superior al 45 % | Usuario (Segmento 1 y 2) | El usuario regresa a la aplicación al menos una vez por semana para revisar el Dashboard y registrar nuevos gastos | US01, US02 |
-| Lograr una tasa de conversión a Premium de al menos 12 % en los primeros 60 días | Usuario (Segmento 2 — Profesional Joven Activo) | El usuario descubre el valor de las funciones Premium (analítica avanzada, registro ilimitado) durante el periodo de uso gratuito y decide pagar | SS01, US02 |
-| Obtener un NPS superior a 40 al final del primer ciclo de uso | Usuario (Segmento 1 y 2) | El usuario experimenta al menos una situación en que CraveWallet le impidió un cobro sorpresa y lo comparte con al menos una persona de su red | US03, US02, US01 |
-
+[[PENDIENTE: elaboración del Impact Map una vez redactadas las User Stories]]
 
 ### 2.4.3. Product Backlog
 
 El backlog consolidará las historias de la sección 2.4.1 con su estimación de esfuerzo y su prioridad, siguiendo el criterio de valor de negocio descrito en 2.4.1, y se administrará en la herramienta que indique el docente.
 
-| Orden | ID | Título | Epic | Story Points | Sprint |
-| --- | --- | --- | --- | --- | --- |
-| 1 | US01 | Registrar una suscripción o membresía recurrente | EP02 | 5 | Sprint 1 |
-| 2 | US02 | Consultar el dashboard consolidado de gastos recurrentes | EP03 | 5 | Sprint 1 |
-| 3 | US03 | Recibir Billing Alert en el calendario nativo del dispositivo | EP04 | 3 | Sprint 1 |
-| 4 | TS01 | Endpoint GET /api/v1/subscriptions | EP09 | 3 | Sprint 1 |
-| 5 | SS01 | Spike: Investigación del SDK de Stripe para cobros Premium | EP10 | 2 | Sprint 1 |
-
+[[PENDIENTE]]
 
 ## 2.5. Strategic-Level Domain-Driven Design
 
