@@ -45,40 +45,40 @@ La paleta aplica la regla 60-30-10: el 60 % del espacio visual lo ocupa el color
 
 **Color base — 60 % (fondos y superficies)**
 
-| Token | HEX | Uso |
-| --- | --- | --- |
-| `color-background` | `#F8FAFC` | Fondo general de pantallas |
-| `color-surface` | `#FFFFFF` | Tarjetas, modales, Bottom Sheet |
-| `color-surface-variant` | `#EEF2F7` | Fondos de secciones colapsadas, chips |
-| `color-on-surface` | `#0F172A` | Texto principal sobre fondos claros |
-| `color-on-surface-variant` | `#64748B` | Texto secundario, subtítulos, fechas |
+| Token | HEX | Visual | Uso |
+| --- | --- | --- | --- |
+| `color-background` | `#F8FAFC` | ![](https://img.shields.io/badge/-F8FAFC-F8FAFC) | Fondo general de pantallas |
+| `color-surface` | `#FFFFFF` | ![](https://img.shields.io/badge/-FFFFFF-FFFFFF?style=flat&border=1) | Tarjetas, modales, Bottom Sheet |
+| `color-surface-variant` | `#EEF2F7` | ![](https://img.shields.io/badge/-EEF2F7-EEF2F7) | Fondos de secciones colapsadas, chips |
+| `color-on-surface` | `#0F172A` | ![](https://img.shields.io/badge/-0F172A-0F172A) | Texto principal sobre fondos claros |
+| `color-on-surface-variant` | `#64748B` | ![](https://img.shields.io/badge/-64748B-64748B) | Texto secundario, subtítulos, fechas |
 
 **Color primario — 30 % (marca y estructura)**
 
-| Token | HEX | Uso |
-| --- | --- | --- |
-| `color-primary` | `#3B4FD8` | Botones primarios, barra de navegación activa, encabezados |
-| `color-primary-container` | `#E0E4FF` | Fondo de chips seleccionados, estado activo de tarjeta |
-| `color-on-primary` | `#FFFFFF` | Texto e íconos sobre fondo primario |
-| `color-on-primary-container` | `#0A1172` | Texto sobre contenedores primarios |
-| `color-primary-dark` | `#2537B0` | Estado pressed de botones primarios |
+| Token | HEX | Visual | Uso |
+| --- | --- | --- | --- |
+| `color-primary` | `#3B4FD8` | ![](https://img.shields.io/badge/-3B4FD8-3B4FD8) | Botones primarios, barra de navegación activa, encabezados |
+| `color-primary-container` | `#E0E4FF` | ![](https://img.shields.io/badge/-E0E4FF-E0E4FF) | Fondo de chips seleccionados, estado activo de tarjeta |
+| `color-on-primary` | `#FFFFFF` | ![](https://img.shields.io/badge/-FFFFFF-FFFFFF?style=flat&border=1) | Texto e íconos sobre fondo primario |
+| `color-on-primary-container` | `#0A1172` | ![](https://img.shields.io/badge/-0A1172-0A1172) | Texto sobre contenedores primarios |
+| `color-primary-dark` | `#2537B0` | ![](https://img.shields.io/badge/-2537B0-2537B0) | Estado pressed de botones primarios |
 
 **Color de acento — 10 % (alertas, CTAs y conversión)**
 
-| Token | HEX | Uso |
-| --- | --- | --- |
-| `color-accent` | `#F97316` | FAB, badges de alerta, etiqueta "Cobro mañana" |
-| `color-accent-container` | `#FFF0E0` | Fondo de tarjetas con Billing Alert activo |
-| `color-on-accent` | `#FFFFFF` | Íconos y texto sobre fondo acento |
+| Token | HEX | Visual | Uso |
+| --- | --- | --- | --- |
+| `color-accent` | `#F97316` | ![](https://img.shields.io/badge/-F97316-F97316) | FAB, badges de alerta, etiqueta "Cobro mañana" |
+| `color-accent-container` | `#FFF0E0` | ![](https://img.shields.io/badge/-FFF0E0-FFF0E0) | Fondo de tarjetas con Billing Alert activo |
+| `color-on-accent` | `#FFFFFF` | ![](https://img.shields.io/badge/-FFFFFF-FFFFFF?style=flat&border=1) | Íconos y texto sobre fondo acento |
 
 **Colores semánticos (estados del sistema)**
 
-| Token | HEX | Uso |
-| --- | --- | --- |
-| `color-success` | `#22C55E` | Suscripción activa, pago confirmado, conversión exitosa |
-| `color-warning` | `#FBBF24` | Renovación en 3-7 días |
-| `color-error` | `#EF4444` | Pago fallido, presupuesto excedido, suscripción vencida |
-| `color-info` | `#38BDF8` | Tipo de cambio actualizado, información neutral |
+| Token | HEX | Visual | Uso |
+| --- | --- | --- | --- |
+| `color-success` | `#22C55E` | ![](https://img.shields.io/badge/-22C55E-22C55E) | Suscripción activa, pago confirmado, conversión exitosa |
+| `color-warning` | `#FBBF24` | ![](https://img.shields.io/badge/-FBBF24-FBBF24) | Renovación en 3-7 días |
+| `color-error` | `#EF4444` | ![](https://img.shields.io/badge/-EF4444-EF4444) | Pago fallido, presupuesto excedido, suscripción vencida |
+| `color-info` | `#38BDF8` | ![](https://img.shields.io/badge/-38BDF8-38BDF8) | Tipo de cambio actualizado, información neutral |
 
 **Nota de accesibilidad:** todos los pares de color texto/fondo cumplen con el ratio de contraste mínimo de 4.5:1 exigido por WCAG 2.1 nivel AA. El par `#0F172A` sobre `#F8FAFC` alcanza un ratio de 16.8:1; el par `#FFFFFF` sobre `#3B4FD8` alcanza 5.2:1.
 
