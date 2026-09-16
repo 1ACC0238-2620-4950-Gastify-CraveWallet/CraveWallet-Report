@@ -6,25 +6,11 @@ El mercado de aplicaciones de gestión de finanzas personales es maduro a nivel 
 
 Para delimitar el entorno competitivo se aplicaron tres criterios de inclusión: (a) disponibilidad efectiva de la aplicación en tiendas móviles accesibles desde Perú, (b) presencia de al menos una funcionalidad orientada al seguimiento de gastos recurrentes o suscripciones, y (c) modelo de negocio basado en un producto digital, freemium o de monetización indirecta. Bajo estos criterios se identificaron tres competidores directos y un conjunto de competidores indirectos.
 
-***
+Se identificaron tres competidores directos:
 
-### Competidores directos
-
-**1. Spendee** (Spendee a.s., República Checa)
-
-Aplicación móvil de gestión de finanzas personales con fuerte énfasis en el diseño visual y en las *wallets* compartidas. Su propuesta central es la categorización de gastos con reportes gráficos y el soporte nativo de múltiples divisas, lo que la convierte en la alternativa más cercana a CraveWallet en el atributo de conversión monetaria. Opera bajo un modelo freemium con dos niveles de pago, cuyo diferencial principal es la sincronización bancaria automática y el número de carteras disponibles [@spendee2026premium]. No ofrece un módulo específico de suscripciones: el usuario debe modelar cada cobro recurrente como una transacción programada dentro de una categoría genérica.
-
-**2. Fintonic** (Fintonic Servicios Financieros, España)
-
-Agregador financiero que conecta cuentas bancarias y tarjetas para ofrecer una vista consolidada de movimientos, con un sistema de alertas que notifica cargos duplicados, comisiones bancarias y pagos próximos [@fintonic2026app]. Es la solución del conjunto analizado cuyo sistema de alertas se aproxima más a la lógica de anticipación de CraveWallet. Su modelo de negocio no cobra al usuario final: monetiza mediante un *marketplace* de productos financieros (préstamos y seguros) basado en el perfil que construye con los datos agregados. Resulta especialmente relevante para este análisis que Fintonic cerró sus operaciones en Chile en marzo de 2023, retirándose del único mercado hispanoamericano donde había desplegado su modelo de agregación bancaria [@dfmercados2023fintonic]. Esa retirada constituye evidencia directa de la dificultad de sostener la agregación bancaria como propuesta de valor en Latinoamérica, y respalda la decisión de CraveWallet de no depender de ella.
-
-**3. Wallet by BudgetBakers** (BudgetBakers s.r.o., República Checa)
-
-Gestor de finanzas personales y familiares orientado al control presupuestario por categorías. Su fortaleza técnica es la sincronización bancaria con una amplia red de entidades y el soporte multimoneda con tipos de cambio en tiempo real, además del seguimiento de carteras de inversión [@budgetbakers2026premium]. Opera bajo modelo freemium con un nivel Premium mensual y, de forma intermitente, una licencia vitalicia. Al igual que Spendee, trata las suscripciones como un caso particular de transacción recurrente y no como una entidad de dominio con ciclo de vida propio.
-
-***
-
-### Competidores indirectos
+1. **Spendee** (Spendee a.s., República Checa). Aplicación móvil de gestión de finanzas personales con fuerte énfasis en el diseño visual y en las *wallets* compartidas. Su propuesta central es la categorización de gastos con reportes gráficos y el soporte nativo de múltiples divisas, lo que la convierte en la alternativa más cercana a CraveWallet en el atributo de conversión monetaria. Opera bajo un modelo freemium con dos niveles de pago, cuyo diferencial principal es la sincronización bancaria automática y el número de carteras disponibles [@spendee2026premium]. No ofrece un módulo específico de suscripciones: el usuario debe modelar cada cobro recurrente como una transacción programada dentro de una categoría genérica.
+2. **Fintonic** (Fintonic Servicios Financieros, España). Agregador financiero que conecta cuentas bancarias y tarjetas para ofrecer una vista consolidada de movimientos, con un sistema de alertas que notifica cargos duplicados, comisiones bancarias y pagos próximos [@fintonic2026app]. Es la solución del conjunto analizado cuyo sistema de alertas se aproxima más a la lógica de anticipación de CraveWallet. Su modelo de negocio no cobra al usuario final: monetiza mediante un *marketplace* de productos financieros (préstamos y seguros) basado en el perfil que construye con los datos agregados. Resulta especialmente relevante para este análisis que Fintonic cerró sus operaciones en Chile en marzo de 2023, retirándose del único mercado hispanoamericano donde había desplegado su modelo de agregación bancaria [@dfmercados2023fintonic]. Esa retirada constituye evidencia directa de la dificultad de sostener la agregación bancaria como propuesta de valor en Latinoamérica, y respalda la decisión de CraveWallet de no depender de ella.
+3. **Wallet by BudgetBakers** (BudgetBakers s.r.o., República Checa). Gestor de finanzas personales y familiares orientado al control presupuestario por categorías. Su fortaleza técnica es la sincronización bancaria con una amplia red de entidades y el soporte multimoneda con tipos de cambio en tiempo real, además del seguimiento de carteras de inversión [@budgetbakers2026premium]. Opera bajo modelo freemium con un nivel Premium mensual y, de forma intermitente, una licencia vitalicia. Al igual que Spendee, trata las suscripciones como un caso particular de transacción recurrente y no como una entidad de dominio con ciclo de vida propio.
 
 Además de los competidores directos, existen alternativas que resuelven parcialmente el problema y que compiten por el mismo espacio mental del usuario:
 
@@ -62,12 +48,47 @@ El objetivo es contrastar la percepción inicial registrada en los *Business Ass
 
 #### Análisis FODA enfocado en la competencia
 
-| | **CraveWallet** (Gastify) | **Spendee** | **Fintonic** | **Wallet by BudgetBakers** |
-| --- | --- | --- | --- | --- |
-| **Fortalezas** | Especialización en el dominio de suscripciones recurrentes, que ningún competidor modela como entidad propia. Conocimiento directo del contexto limeño: comercios de delivery, institutos y gimnasios locales precargados. Precio en soles, sin fricción cambiaria. Arquitectura DDD que permite incorporar nuevos tipos de compromiso recurrente sin reescribir el núcleo. | Base instalada consolidada, marca reconocida y calidad de diseño superior. Soporte multimoneda maduro y probado. Carteras compartidas, funcionalidad con alta retención. | Gratuidad total para el usuario y ausencia de fricción de registro manual gracias a la agregación bancaria. Respaldo regulatorio del Banco de España, que genera confianza. | Mayor amplitud funcional del conjunto analizado y la red de sincronización bancaria más extensa. Ecosistema de productos complementarios que aumenta el valor de permanencia. |
-| **Debilidades** | Ausencia total de base instalada y de reconocimiento de marca. Equipo reducido y capacidad de desarrollo limitada. Dependencia del registro manual durante el onboarding, principal riesgo identificado en los *Business Assumptions*. Dependencia de APIs de terceros (Stripe, ExchangeRate-API). | No ofrece módulo de suscripciones ni alertas de renovación anticipadas. Precios en dólares, que exponen al usuario peruano a la variación cambiaria. Sincronización bancaria sin cobertura efectiva de entidades peruanas. | Retirada comprobada del mercado hispanoamericano tras el cierre de Chile en 2023, que evidencia la fragilidad de su modelo fuera de España. Modelo de negocio basado en la colocación de productos financieros, que genera desconfianza respecto del uso de los datos. Sin localización para Perú. | Interfaz densa y curva de aprendizaje elevada para un usuario joven que busca resolver una tarea puntual. Precio en euros. Cobertura bancaria peruana marginal, lo que reduce su funcionalidad diferencial a un registro manual equivalente al de cualquier competidor. |
-| **Oportunidades** | Segmento joven peruano desatendido, con alta densidad de suscripciones y sin herramienta localizada. Crecimiento sostenido del consumo por delivery en Lima. Vacío dejado por Fintonic en la región. Posibilidad de alianzas con universidades e institutos cuyas cuotas ya forman parte del portafolio del usuario. | Expansión hacia mercados emergentes e incorporación de un módulo de suscripciones apoyada en su base de usuarios existente. | Reactivación de su expansión regional aprovechando el avance de la banca abierta en Latinoamérica. | Aprovechar su red de sincronización para incorporar detección automática de suscripciones si amplía la cobertura bancaria en la región. |
-| **Amenazas** | Que un competidor con base instalada añada un módulo de suscripciones antes de que CraveWallet alcance masa crítica. Que los bancos peruanos incorporen alertas de recurrencia en sus propias aplicaciones. Cambios en las condiciones comerciales de Stripe o de la API de tipo de cambio. Fricción de onboarding que frene la adopción. | Entrada de soluciones especializadas de nicho que erosionen su base en segmentos concretos. Presión de precios de alternativas gratuitas. | Regulación creciente sobre el uso de datos financieros para la colocación de productos de terceros. Desconfianza del usuario latinoamericano hacia la cesión de credenciales bancarias. | Competencia de soluciones más simples y enfocadas, que resuelven una tarea específica con menor curva de aprendizaje. |
+Para cada competidor, y para CraveWallet, se identifican sus fortalezas, debilidades, oportunidades y amenazas, con foco específico en la competencia: cada fortaleza se contrasta con la de los demás actores del cuadro y cada debilidad se lee como el espacio que un competidor puede ocupar primero.
+
+##### CraveWallet (Gastify)
+
+| Fortalezas | Debilidades |
+| --- | --- |
+| • Especialización en el dominio de suscripciones recurrentes, que ningún competidor modela como entidad propia.<br>• Conocimiento directo del contexto limeño: comercios de delivery, institutos y gimnasios locales precargados.<br>• Precio en soles, sin fricción cambiaria.<br>• Arquitectura DDD que permite incorporar nuevos tipos de compromiso recurrente sin reescribir el núcleo. | • Ausencia total de base instalada y de reconocimiento de marca.<br>• Equipo reducido y capacidad de desarrollo limitada.<br>• Dependencia del registro manual durante el onboarding, principal riesgo identificado en los *Business Assumptions*.<br>• Dependencia de APIs de terceros (Stripe, ExchangeRate-API). |
+
+| Oportunidades | Amenazas |
+| --- | --- |
+| • Segmento joven peruano desatendido, con alta densidad de suscripciones y sin herramienta localizada.<br>• Crecimiento sostenido del consumo por delivery en Lima.<br>• Vacío dejado por Fintonic en la región.<br>• Posibilidad de alianzas con universidades e institutos cuyas cuotas ya forman parte del portafolio del usuario. | • Que un competidor con base instalada añada un módulo de suscripciones antes de que CraveWallet alcance masa crítica.<br>• Que los bancos peruanos incorporen alertas de recurrencia en sus propias aplicaciones.<br>• Cambios en las condiciones comerciales de Stripe o de la API de tipo de cambio.<br>• Fricción de onboarding que frene la adopción. |
+
+##### Spendee
+
+| Fortalezas | Debilidades |
+| --- | --- |
+| • Base instalada consolidada, marca reconocida y calidad de diseño superior.<br>• Soporte multimoneda maduro y probado.<br>• Carteras compartidas, funcionalidad con alta retención. | • No ofrece módulo de suscripciones ni alertas de renovación anticipadas.<br>• Precios en dólares, que exponen al usuario peruano a la variación cambiaria.<br>• Sincronización bancaria sin cobertura efectiva de entidades peruanas. |
+
+| Oportunidades | Amenazas |
+| --- | --- |
+| • Expansión hacia mercados emergentes.<br>• Incorporación de un módulo de suscripciones apoyada en su base de usuarios existente. | • Entrada de soluciones especializadas de nicho que erosionen su base en segmentos concretos.<br>• Presión de precios de alternativas gratuitas. |
+
+##### Fintonic
+
+| Fortalezas | Debilidades |
+| --- | --- |
+| • Gratuidad total para el usuario y ausencia de fricción de registro manual gracias a la agregación bancaria.<br>• Respaldo regulatorio del Banco de España, que genera confianza. | • Retirada comprobada del mercado hispanoamericano tras el cierre de Chile en 2023, que evidencia la fragilidad de su modelo fuera de España.<br>• Modelo de negocio basado en la colocación de productos financieros, que genera desconfianza respecto del uso de los datos.<br>• Sin localización para Perú. |
+
+| Oportunidades | Amenazas |
+| --- | --- |
+| • Reactivación de su expansión regional aprovechando el avance de la banca abierta en Latinoamérica. | • Regulación creciente sobre el uso de datos financieros para la colocación de productos de terceros.<br>• Desconfianza del usuario latinoamericano hacia la cesión de credenciales bancarias. |
+
+##### Wallet by BudgetBakers
+
+| Fortalezas | Debilidades |
+| --- | --- |
+| • Mayor amplitud funcional del conjunto analizado y la red de sincronización bancaria más extensa.<br>• Ecosistema de productos complementarios que aumenta el valor de permanencia. | • Interfaz densa y curva de aprendizaje elevada para un usuario joven que busca resolver una tarea puntual.<br>• Precio en euros.<br>• Cobertura bancaria peruana marginal, lo que reduce su funcionalidad diferencial a un registro manual equivalente al de cualquier competidor. |
+
+| Oportunidades | Amenazas |
+| --- | --- |
+| • Aprovechar su red de sincronización para incorporar detección automática de suscripciones si amplía la cobertura bancaria en la región. | • Competencia de soluciones más simples y enfocadas, que resuelven una tarea específica con menor curva de aprendizaje. |
 
 #### Interpretación del análisis
 
@@ -353,15 +374,23 @@ Cada entrevista se registra con la siguiente ficha, que se completa durante la s
 
 ### 2.2.2. Registro de entrevistas
 
-[[PENDIENTE]]
+Esta sección consolidará, para cada uno de los dos segmentos, entre tres y cinco entrevistas grabadas siguiendo el guion y la ficha de la sección 2.2.1. Todas las sesiones se editarán en un único video, subido al OneDrive indicado por el docente con la nomenclatura `upc-pre-<periodo>-1acc0238-<NRC>-<startup>-needfinding-<avn/tbn>`. Para cada entrevista se incluirá aquí la ficha completa (nombres, edad, distrito, entrevistador, duración, timing de inicio en el video consolidado y URL), una captura de pantalla del fragmento correspondiente, y un resumen redactado que describa de forma descriptiva las respuestas obtenidas en cada bloque del guion, cubriendo tanto los rasgos objetivos (demografía, portafolio de suscripciones, dispositivos) como los subjetivos (personalidad, marcas de referencia, frustraciones) exigidos por el enunciado.
+
+[[PENDIENTE: registro de las entrevistas una vez grabadas]]
 
 ### 2.2.3. Análisis de entrevistas
 
-[[PENDIENTE]]
+El análisis se realizará por segmento objetivo, a partir de los resúmenes de la sección 2.2.2, siguiendo el mismo procedimiento aplicado en la sección 2.2.1 para trazar los atributos: por cada hallazgo se reportará el porcentaje de entrevistados que lo manifestó, y cada porcentaje quedará vinculado de forma explícita a las entrevistas de las que proviene, de modo que ninguna característica de los User Personas de la sección 2.3.1 quede sin sustento verificable. El resultado esperado de esta sección son los patrones objetivos y subjetivos —comportamiento de pago, portafolio típico, fricciones y motivaciones— que alimentarán directamente el Needfinding.
+
+[[PENDIENTE: análisis estadístico una vez registradas las entrevistas]]
 
 ## 2.3. Needfinding
 
+En esta sección se presentarán los artefactos resultantes del análisis de la información recolectada en las entrevistas de la sección 2.2. A partir de los patrones identificados en los dos segmentos objetivo se construirán los arquetipos de usuario, se mapearán las tareas que realizan hoy con independencia de la existencia de CraveWallet, se representarán sus recorridos actuales y su marco emocional frente al descubrimiento de cobros no anticipados, y se consolidará el lenguaje del dominio que el equipo utilizará de forma uniforme durante el resto del proyecto. Cada característica que se incorpore a los arquetipos deberá provenir de los resúmenes y del análisis estadístico de la sección 2.2.3; no se incorporará ningún atributo que no tenga respaldo directo en las entrevistas registradas.
+
 ### 2.3.1. User Personas
+
+Se elaborará una ficha de User Persona por cada segmento objetivo en UXPressia, contrastando sus características con los resultados consolidados de la sección 2.2.3.
 
 [[PENDIENTE]]
 
@@ -379,6 +408,8 @@ Cada entrevista se registra con la siguiente ficha, que se completa durante la s
 
 ### 2.3.5. Big Picture EventStorming
 
+El Big Picture EventStorming se realizará en Miro para representar de manera colaborativa cómo un usuario administra hoy sus suscripciones y gastos recurrentes sin CraveWallet, identificando los eventos, actores, sistemas externos (bancos, billeteras digitales, calendario del celular) y puntos de fricción relevantes, a partir de los hallazgos de las entrevistas y sin incorporar todavía funcionalidades específicas del producto.
+
 [[PENDIENTE]]
 
 ### 2.3.6. Ubiquitous Language
@@ -387,21 +418,62 @@ Cada entrevista se registra con la siguiente ficha, que se completa durante la s
 
 ## 2.4. Requirements specification
 
+En esta sección se especificarán los requisitos de los productos digitales de CraveWallet a partir de la información obtenida en la investigación: las entrevistas a los dos segmentos objetivo, su análisis, los User Personas, el User Task Matrix, los User Journey Maps y el Big Picture EventStorming de la sección 2.3, leídos en conjunto con las Feature Assumptions y los Hypothesis Statements del Lean UX Process del Capítulo I. La especificación cubrirá los tres productos del alcance —la aplicación móvil, los servicios RESTful de desarrollo propio y el sitio web estático del landing page— y se organiza en tres partes: las User Stories, agrupadas en Epics e incluyendo Technical Stories y Spike Stories; el Impact Map, que vincula los Business Outcome Assumptions del Capítulo I con las historias; y el Product Backlog, con la estimación y priorización de cada historia.
+
 ### 2.4.1. User Stories
 
-[[PENDIENTE]]
+Las historias se redactarán desde la perspectiva de los dos actores del dominio (el segmento Estudiante Universitario Digital y el segmento Profesional Joven Activo, unificados bajo el rol **usuario** cuando una historia les aplica por igual), el **visitante** para el landing page y el rol **Developer** para las Technical Stories y Spike Stories. Los criterios de aceptación seguirán la estructura Gherkin (Dado, Cuando, Entonces) y la prioridad reflejará el valor de negocio según las Hypothesis Statements de la sección 1.2.2.3: Alta para lo que sostiene el Dashboard unificado, la anticipación de cobros y la reducción de la fricción de onboarding; Media para lo que completa el ciclo de uso; Baja para lo que amplía la propuesta.
+
+#### Epics
+
+A partir de las Feature Assumptions del Capítulo I y de las tácticas de la sección 2.1.2 se anticipa el siguiente conjunto de Epics. Esta lista es preliminar: se ajustará con lo que arroje el Needfinding de la sección 2.3 antes de redactar las historias individuales, para que cada una tenga sustento directo en las entrevistas y no solo en las hipótesis del Capítulo I.
+
+| Epic ID | Nombre | Descripción |
+| --- | --- | --- |
+| EP01 | Acceso y cuenta | Ingreso a CraveWallet y administración del perfil del usuario. |
+| EP02 | Alta de suscripciones | Registro de una suscripción, membresía o gasto recurrente, con plantillas preconfiguradas de los servicios más frecuentes del segmento para reducir la fricción de onboarding. |
+| EP03 | Dashboard unificado | Vista consolidada de las suscripciones activas, agrupadas por categoría y ordenadas por próxima fecha de renovación. |
+| EP04 | Recordatorios vía calendario nativo | Agendado automático de un recordatorio 24 horas antes de cada cobro, integrado con el calendario del dispositivo. |
+| EP05 | Conversión de divisas en tiempo real | Expresión del portafolio completo en soles, con conversión diaria de los montos facturados en dólares vía ExchangeRate-API. |
+| EP06 | Categorización de gastos de delivery | Registro y categorización de pedidos de delivery, con catálogo precargado de comercios limeños frecuentes. |
+| EP07 | CraveWallet Premium | Conversión al nivel Premium mediante el SDK de Stripe, con analítica avanzada y registro ilimitado de suscripciones. |
+| EP08 | Landing page | Sitio web estático que presenta el problema, la propuesta de valor y la vía de acceso a la aplicación. |
+| EP09 | Servicios RESTful | Technical Stories de los servicios web que sostienen la aplicación móvil. |
+| EP10 | Investigación técnica | Spike Stories para reducir la incertidumbre técnica antes de implementar, en particular sobre la integración con Stripe y ExchangeRate-API. |
+
+[[PENDIENTE: historias de usuario individuales, con criterios de aceptación Gherkin, una vez completado el Needfinding]]
 
 ### 2.4.2. Impact Mapping
 
-[[PENDIENTE]]
+El Impact Map vinculará los Business Outcome Assumptions declarados en la sección 1.2.2.2 del Capítulo I —NPS superior a 40, conversión Premium de al menos 12%, retención a 30 días superior a 45% y reducción de cargos no anticipados de al menos 60%— con los actores, los impactos de comportamiento esperados y las historias de usuario de la sección 2.4.1 que los sostienen.
+
+[[PENDIENTE: elaboración del Impact Map una vez redactadas las User Stories]]
 
 ### 2.4.3. Product Backlog
+
+El backlog consolidará las historias de la sección 2.4.1 con su estimación de esfuerzo y su prioridad, siguiendo el criterio de valor de negocio descrito en 2.4.1, y se administrará en la herramienta que indique el docente.
 
 [[PENDIENTE]]
 
 ## 2.5. Strategic-Level Domain-Driven Design
 
+En esta sección se explicará el proceso que seguirá el equipo para tomar las decisiones de nivel estratégico de Domain-Driven Design [@evans2003ddd]: descomponer el dominio de la gestión de suscripciones y gastos recurrentes en subconjuntos con límites naturales, los Bounded Contexts, y definir cómo se relacionan entre sí antes de diseñar una sola clase o tabla. El punto de partida será el Big Picture EventStorming del Needfinding (sección 2.3.5) y el Ubiquitous Language consolidado a partir de él (sección 2.3.6). Sobre esa base, y con las User Stories ya especificadas en la sección 2.4, el equipo repetirá el EventStorming con un objetivo distinto: ya no explorar cómo el usuario administra hoy sus suscripciones sin CraveWallet, sino modelar la solución con el mayor detalle posible, incorporando los comandos, políticas, agregados y vistas de lectura que la aplicación necesita para que un usuario registre una suscripción, la vea reflejada en el Dashboard, reciba el recordatorio 24 horas antes del cobro y, si corresponde, convierta a Premium.
+
+A partir de ese EventStorm de nivel de diseño se identificarán los Bounded Contexts candidatos en una sesión de Candidate Context Discovery, combinando start-with-value —para aislar primero la parte del dominio que sostiene la hipótesis principal de CraveWallet, la anticipación del cobro y la transparencia del portafolio en soles— y look-for-pivotal-events, para reconocer los eventos que marcan un cambio de estado relevante (suscripción registrada, cobro anticipado, pago convertido a Premium) y usarlos como fronteras entre contextos. El contexto core, el que concentra el ciclo de vida de la suscripción y su conversión monetaria, deberá quedar aislado de los subdominios de apoyo y genéricos, como el acceso a la cuenta o el envío de recordatorios, para que la lógica que diferencia a CraveWallet de sus competidores (sección 2.1.1) no dependa de decisiones tomadas en otros contextos. Las relaciones entre contextos se expresarán con los patrones de Context Mapping de Domain-Driven Design (Customer/Supplier, Conformist, Anti-corruption Layer, Shared Kernel), discutiendo alternativas antes de fijar el mapa definitivo; el Anti-corruption Layer será particularmente relevante para aislar las integraciones con Stripe y ExchangeRate-API, conforme a la Estrategia 4 de la sección 2.1.2.
+
+La sección cerrará con la arquitectura de software de la solución, representada con el C4 Model en sus niveles de contexto, contenedores y despliegue.
+
 ### 2.5.1. EventStorming
+
+#### 2.5.1.1. Candidate Context Discovery
+
+[[PENDIENTE]]
+
+#### 2.5.1.2. Domain Message Flows Modeling
+
+[[PENDIENTE]]
+
+#### 2.5.1.3. Bounded Context Canvases
 
 [[PENDIENTE]]
 
@@ -411,10 +483,50 @@ Cada entrevista se registra con la siguiente ficha, que se completa durante la s
 
 ### 2.5.3. Software Architecture
 
+#### 2.5.3.1. Software Architecture Context Level Diagrams
+
+[[PENDIENTE]]
+
+#### 2.5.3.2. Software Architecture Container Level Diagrams
+
+[[PENDIENTE]]
+
+#### 2.5.3.3. Software Architecture Deployment Diagrams
+
 [[PENDIENTE]]
 
 ## 2.6. Tactical-Level Domain-Driven Design
 
+Esta sección desarrollará el diseño táctico de cada Bounded Context identificado en la sección 2.5, siguiendo las capas ya adoptadas por el equipo conforme al perfil de Mario descrito en la sección 1.1.2: Domain Layer, Application Layer, Interface Layer e Infrastructure Layer.
+
 ### 2.6.1. Bounded Context: [[NombreDelBoundedContext]]
+
+#### 2.6.1.1. Domain Layer
+
+[[PENDIENTE]]
+
+#### 2.6.1.2. Interface Layer
+
+[[PENDIENTE]]
+
+#### 2.6.1.3. Application Layer
+
+[[PENDIENTE]]
+
+#### 2.6.1.4. Infrastructure Layer
+
+[[PENDIENTE]]
+
+#### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+[[PENDIENTE]]
+
+#### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+[[PENDIENTE]]
+
+##### 2.6.1.6.2. Bounded Context Database Design Diagram
 
 [[PENDIENTE]]
