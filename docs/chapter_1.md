@@ -27,14 +27,12 @@ El equipo de desarrollo de CraveWallet está conformado por el siguiente integra
 ---
 
 **Mario Gabriel Sejuro Medina**
-Código de estudiante: *[U202XXXXX]*
+Código de estudiante: U20241C198
 Carrera: Ingeniería de Software — Universidad Peruana de Ciencias Aplicadas (UPC)
 
 *[Foto del integrante — adjuntar imagen en la versión final del informe]*
 
 Mario es estudiante de Ingeniería de Software con interés especializado en el desarrollo de aplicaciones móviles nativas y multiplataforma, arquitectura de software orientada al dominio (Domain-Driven Design) y tecnologías de integración de pagos digitales. Cuenta con conocimientos técnicos en Kotlin para Android nativo, Flutter para desarrollo multiplataforma, Spring Boot para servicios web RESTful, y Angular para aplicaciones web. Ha explorado de forma autónoma la integración de SDKs de terceros, incluyendo el SDK de Stripe para procesamiento de pagos y APIs de tipo de cambio como ExchangeRate-API para la conversión dinámica de monedas en aplicaciones fintech.
-
-En el contexto de CraveWallet, Mario ha liderado las decisiones de arquitectura estratégica (definición de Bounded Contexts, Context Mapping) y tácticas (Domain Layer, Application Layer, Infrastructure Layer), así como la investigación y documentación del SDK de Stripe como componente de aprendizaje autónomo exigido por el Student Outcome 7 del curso.
 
 ---
 
@@ -75,15 +73,15 @@ Según datos del mercado latinoamericano de aplicaciones de suscripción (Statis
 
 ---
 
-The current state of **personal finance management for young digital consumers in Peru** has focused mainly on **traditional expense-tracking approaches that categorize transactions post-facto, without distinguishing between one-time purchases and recurring financial commitments, and without accounting for multi-currency subscription portfolios or the cumulative behavioral impact of high-frequency food delivery habits**.
+El estado actual de la **gestión de finanzas personales para jóvenes consumidores digitales en el Perú** se ha centrado principalmente en **enfoques tradicionales de seguimiento de gastos que categorizan las transacciones de forma retroactiva, sin distinguir entre compras puntuales y compromisos financieros recurrentes, y sin considerar portafolios de suscripciones en múltiples divisas ni el impacto conductual acumulado de los hábitos de pedidos de comida a domicilio de alta frecuencia**.
 
-What existing products and services fail to address is **the unified, proactive, and currency-aware management of the heterogeneous ecosystem of subscriptions, memberships, and recurring micro-expenses that characterize the financial life of Peruvian university students and young professionals**. Current solutions either operate at a generic budgeting level (without subscription-specific features), are localized for other markets (with no support for PEN/USD dual-currency portfolios), or fail to integrate with native device resources (such as the smartphone calendar) for proactive renewal alerting.
+Lo que los productos y servicios existentes no logran abordar es **la gestión unificada, proactiva y consciente de las divisas del ecosistema heterogéneo de suscripciones, membresías y micro-gastos recurrentes que caracterizan la vida financiera de universitarios y jóvenes profesionales peruanos**. Las soluciones actuales operan en un nivel genérico de presupuesto (sin funcionalidades específicas para suscripciones), están localizadas para otros mercados (sin soporte para portafolios de doble moneda PEN/USD), o no logran integrarse con los recursos nativos del dispositivo (como el calendario del smartphone) para alertas proactivas de renovación.
 
-Our product/service will address this gap by **providing CraveWallet, a native and cross-platform mobile application that serves as a centralized subscription wallet: it tracks all recurring financial commitments across physical memberships, digital platforms, and food delivery services; converts multi-currency charges in real time using an external exchange rate API; triggers calendar-based reminders 24 hours before each auto-renewal; and offers a Premium tier processed via Stripe SDK for users who demand advanced analytics and unlimited subscription tracking**.
+Nuestro producto/servicio abordará esta brecha **proporcionando CraveWallet, una aplicación móvil nativa y multiplataforma que actúa como una billetera centralizada de suscripciones: rastrea todos los compromisos financieros recurrentes entre membresías físicas, plataformas digitales y servicios de delivery; convierte cargos en múltiples divisas en tiempo real mediante una API externa de tipo de cambio; activa recordatorios basados en el calendario nativo 24 horas antes de cada renovación automática; y ofrece un nivel Premium procesado vía SDK de Stripe para usuarios que demandan análisis avanzados y seguimiento ilimitado de suscripciones**.
 
-Our initial focus will be on **university students enrolled in private Peruvian higher education institutions, between 18 and 25 years of age, who simultaneously manage academic platform subscriptions, digital entertainment services, and weekly food delivery orders**.
+Nuestro foco inicial será en **estudiantes universitarios matriculados en instituciones de educación superior privadas del Perú, de entre 18 y 25 años, que gestionan simultáneamente suscripciones a plataformas académicas, servicios de entretenimiento digital y pedidos de comida a domicilio semanales**.
 
-We'll know we are successful when we see **a self-reported reduction in unexpected auto-renewal charges of at least 60% among active users within 90 days of first use, and a 30-day retention rate exceeding 45% among users who have registered three or more active subscriptions**.
+Sabremos que somos exitosos cuando veamos **una reducción autorreportada de cargos inesperados por renovación automática de al menos el 60% entre los usuarios activos dentro de los 90 días desde el primer uso, y una tasa de retención a 30 días superior al 45% entre los usuarios que han registrado tres o más suscripciones activas**.
 
 ---
 
@@ -133,37 +131,37 @@ A continuación se enuncian los cinco tipos de supuestos (assumptions) conforme 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
 *Se elabora un Hypothesis Statement por cada Feature Assumption, conforme a la plantilla:*
-*"We believe we will achieve [business outcome] if [these personas] attain [this benefit/user outcome] with [this feature or solution]."*
+*"Creemos que lograremos [resultado de negocio] si [estas personas] alcanzan [este beneficio/resultado de usuario] con [esta funcionalidad o solución]."*
 
 ---
 
 **Hypothesis Statement 1 — Dashboard Unificado:**
 
-We believe we will achieve **a 30-day active user retention rate above 45%** if **university students (18-25 years old) with 3 or more active subscriptions** attain **a clear, real-time, single-screen overview of their total monthly recurring commitments grouped by category and sorted by renewal date** with **the CraveWallet Unified Subscription Dashboard**.
+Creemos que lograremos **una tasa de retención de usuarios activos a 30 días superior al 45%** si **estudiantes universitarios de 18 a 25 años con 3 o más suscripciones activas** alcanzan **una visión clara, en tiempo real y en una sola pantalla de todos sus compromisos mensuales recurrentes, agrupados por categoría y ordenados por fecha de renovación** con **el Dashboard Unificado de Suscripciones de CraveWallet**.
 
 ---
 
 **Hypothesis Statement 2 — Integración con Calendario Nativo:**
 
-We believe we will achieve **a self-reported reduction in unexpected auto-renewal charges of at least 60% within 90 days of first use** if **users who have configured at least 3 active subscriptions** attain **timely, actionable awareness of upcoming auto-renewals through calendar-native notifications** with **the Native Device Calendar Integration feature, which schedules a reminder event 24 hours before each subscription billing date**.
+Creemos que lograremos **una reducción autorreportada de cargos inesperados por renovación automática de al menos el 60% dentro de los 90 días desde el primer uso** si **usuarios que han configurado al menos 3 suscripciones activas** alcanzan **conciencia oportuna y accionable de las próximas renovaciones automáticas a través de notificaciones nativas del calendario** con **la funcionalidad de Integración con el Calendario Nativo del Dispositivo, que agenda un evento recordatorio 24 horas antes de cada fecha de cobro de suscripción**.
 
 ---
 
 **Hypothesis Statement 3 — Conversión de Divisas en Tiempo Real:**
 
-We believe we will achieve **an increase in average weekly active sessions per user from 1.2 to 3.5** if **young professionals (25-32 years old) managing a mixed USD/PEN subscription portfolio** attain **a unified monetary view of their total recurring commitments expressed in Peruvian soles, updated daily** with **the Real-Time Currency Conversion feature powered by ExchangeRate-API**.
+Creemos que lograremos **un incremento en el promedio de sesiones activas semanales por usuario de 1.2 a 3.5** si **jóvenes profesionales de 25 a 32 años que gestionan un portafolio mixto de suscripciones en USD y PEN** alcanzan **una visión monetaria unificada de todos sus compromisos recurrentes expresada en soles peruanos, actualizada diariamente** con **la funcionalidad de Conversión de Divisas en Tiempo Real impulsada por ExchangeRate-API**.
 
 ---
 
 **Hypothesis Statement 4 — Categorización de Gastos de Delivery:**
 
-We believe we will achieve **a 25% improvement in self-reported monthly budget adherence** if **both primary and secondary user segments** attain **pattern-based, category-level awareness of their cumulative food delivery spending habits, visualized as a monthly trend** with **the Delivery Expense Categorization module, pre-loaded with frequent limeño merchants (Up Burger, PedidosYa Plus, Dunkin', Popeyes, Little Caesars, Papa John's, Burgerboy, Pollivoro, Chifa Delicious, Chifa Monteoro)**.
+Creemos que lograremos **una mejora del 25% en el cumplimiento autorreportado del presupuesto mensual** si **ambos segmentos de usuarios, primario y secundario,** alcanzan **conciencia basada en patrones, a nivel de categoría, sobre sus hábitos acumulados de gasto en delivery de comida, visualizados como una tendencia mensual** con **el módulo de Categorización de Gastos de Delivery, precargado con establecimientos frecuentes del mercado limeño (Up Burger, PedidosYa Plus, Dunkin', Popeyes, Little Caesars, Papa John's, Burgerboy, Pollivoro, Chifa Delicious, Chifa Monteoro)**.
 
 ---
 
 **Hypothesis Statement 5 — CraveWallet Premium via Stripe SDK:**
 
-We believe we will achieve **a Premium conversion rate of at least 12% among users with 6 or more active subscriptions within 6 months of launch** if **committed users with a demonstrated pattern of frequent app use** attain **access to advanced spending analytics, unlimited subscription tracking slots, and priority renewal reminders** with **the CraveWallet Premium subscription tier, enabled through a secure in-app payment flow powered by the Stripe Android/iOS SDK**.
+Creemos que lograremos **una tasa de conversión Premium de al menos el 12% entre usuarios con 6 o más suscripciones activas dentro de los 6 meses posteriores al lanzamiento** si **usuarios comprometidos con un patrón demostrado de uso frecuente de la aplicación** alcanzan **acceso a análisis avanzados de gasto, espacios ilimitados de seguimiento de suscripciones y recordatorios de renovación prioritarios** con **el nivel de suscripción CraveWallet Premium, habilitado a través de un flujo de pago seguro dentro de la aplicación impulsado por el SDK de Stripe para Android e iOS**.
 
 ---
 
