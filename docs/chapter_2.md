@@ -606,25 +606,90 @@ Antes de diseñar cualquier pantalla, el equipo reconstruirá en Miro, con la t�
 
 ### 2.3.6. Ubiquitous Language
 
-El siguiente glosario recoge los términos del dominio del negocio identificados a partir de las entrevistas (2.2.2), el análisis de patrones (2.2.3) y el Needfinding, de modo que todo el equipo —y cualquier stakeholder que revise este informe— use el mismo vocabulario al describir el problema y la solución. Solo se incluyen términos del dominio del negocio, no términos técnicos de ingeniería de software.
+El siguiente glosario recoge los términos del dominio del negocio identificados a partir de las entrevistas (2.2.2), el análisis de patrones (2.2.3) y el Needfinding, de modo que todo el equipo —y cualquier stakeholder que revise este informe— use el mismo vocabulario al describir el problema y la solución. Los términos se registran en inglés, con su equivalente de uso corriente en español entre paréntesis; solo se incluyen términos del dominio del negocio, no términos técnicos de ingeniería de software.
 
-| Término | Definición |
-| --- | --- |
-| **Subscription** (Suscripción) | Servicio digital o membresía cuyo acceso se paga de forma periódica y automática, sin que el usuario deba autorizar cada cobro individualmente. |
-| **Recurring Charge** (Cobro recurrente) | Cargo que una Subscription genera de forma automática en cada Billing Cycle, sin intervención activa del usuario en el momento del cobro. |
-| **Billing Cycle** (Ciclo de facturación) | Intervalo de tiempo, típicamente mensual o anual, entre dos Recurring Charges consecutivos de una misma Subscription. |
-| **Renewal** (Renovación) | Evento en el que, al finalizar un Billing Cycle, la Subscription continúa vigente y genera un nuevo Recurring Charge sin que el usuario deba confirmarlo. |
-| **Subscription Portfolio** (Portafolio de suscripciones) | Conjunto de todas las Subscriptions activas que mantiene un usuario en un momento dado, sin importar en qué moneda se facturen. |
-| **Silent Charge** (Cobro silencioso) | Recurring Charge que se procesa sin ningún aviso previo al usuario, de modo que este solo se entera al revisar su cuenta bancaria después de ocurrido. |
-| **Exchange Rate** (Tipo de cambio) | Valor que el banco emisor de la tarjeta aplica para convertir un Recurring Charge facturado en una moneda distinta al sol al monto final debitado. |
-| **Currency Conversion** (Conversión de divisas) | Cálculo del monto equivalente en soles de un Recurring Charge facturado originalmente en otra moneda, aplicando el Exchange Rate vigente. |
-| **Advance Alert** (Alerta anticipada) | Aviso enviado al usuario antes de que se procese un Recurring Charge, con tiempo suficiente para verificar saldo o decidir si cancela la Subscription. |
-| **Ghost Expense** (Gasto fantasma) | Recurring Charge de una Subscription que el usuario ya no usa activamente pero que continúa pagando por no haberla cancelado a tiempo. |
-| **Cutoff Date** (Fecha de corte) | Día específico del Billing Cycle en el que se procesa el Renewal de una Subscription. |
-| **Cancellation** (Cancelación) | Acción del usuario de dar de baja una Subscription para que no genere un nuevo Recurring Charge en el siguiente Billing Cycle. |
-| **Budget Mismatch** (Descuadre) | Situación en la que un Recurring Charge no anticipado o un Exchange Rate desfavorable hace que el gasto real del mes supere lo que el usuario había previsto. |
-| **Bank Statement Review** (Revisión del estado de cuenta) | Práctica manual y reactiva mediante la cual el usuario identifica sus Recurring Charges revisando los movimientos de su cuenta o tarjeta, en ausencia de una Advance Alert. |
-| **Shared Subscription** (Suscripción compartida) | Subscription cuyo costo se divide informalmente entre varias personas que la usan, sin un mecanismo formal de cobro o registro de esa división. |
+<table>
+  <thead>
+    <tr>
+      <th>Término</th>
+      <th>Definición</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Subscription</b> (Suscripción)</td>
+      <td>Servicio digital o membresía cuyo acceso se paga de forma periódica y automática, sin que el usuario deba autorizar cada cobro individualmente.</td>
+    </tr>
+    <tr>
+      <td><b>Recurring Charge</b> (Cobro recurrente)</td>
+      <td>Cargo que una Subscription genera de forma automática en cada Billing Cycle, sin intervención activa del usuario en el momento del cobro.</td>
+    </tr>
+    <tr>
+      <td><b>Billing Cycle</b> (Ciclo de facturación)</td>
+      <td>Intervalo de tiempo, típicamente mensual o anual, entre dos Recurring Charges consecutivos de una misma Subscription.</td>
+    </tr>
+    <tr>
+      <td><b>Renewal</b> (Renovación)</td>
+      <td>Evento en el que, al finalizar un Billing Cycle, la Subscription continúa vigente y genera un nuevo Recurring Charge sin que el usuario deba confirmarlo.</td>
+    </tr>
+    <tr>
+      <td><b>Subscription Portfolio</b> (Portafolio de suscripciones)</td>
+      <td>Conjunto de todas las Subscriptions activas que mantiene un usuario en un momento dado, sin importar en qué moneda se facturen.</td>
+    </tr>
+    <tr>
+      <td><b>Silent Charge</b> (Cobro silencioso)</td>
+      <td>Recurring Charge que se procesa sin ningún aviso previo al usuario, de modo que este solo se entera al revisar su cuenta bancaria después de ocurrido.</td>
+    </tr>
+    <tr>
+      <td><b>Exchange Rate</b> (Tipo de cambio)</td>
+      <td>Valor que el banco emisor de la tarjeta aplica para convertir un Recurring Charge facturado en una moneda distinta al sol al monto final debitado.</td>
+    </tr>
+    <tr>
+      <td><b>Currency Conversion</b> (Conversión de divisas)</td>
+      <td>Cálculo del monto equivalente en soles de un Recurring Charge facturado originalmente en otra moneda, aplicando el Exchange Rate vigente.</td>
+    </tr>
+    <tr>
+      <td><b>Advance Alert</b> (Alerta anticipada)</td>
+      <td>Aviso enviado al usuario antes de que se procese un Recurring Charge, con tiempo suficiente para verificar saldo o decidir si cancela la Subscription.</td>
+    </tr>
+    <tr>
+      <td><b>Ghost Expense</b> (Gasto fantasma)</td>
+      <td>Recurring Charge de una Subscription que el usuario ya no usa activamente pero que continúa pagando por no haberla cancelado a tiempo.</td>
+    </tr>
+    <tr>
+      <td><b>Cutoff Date</b> (Fecha de corte)</td>
+      <td>Día específico del Billing Cycle en el que se procesa el Renewal de una Subscription.</td>
+    </tr>
+    <tr>
+      <td><b>Cancellation</b> (Cancelación)</td>
+      <td>Acción del usuario de dar de baja una Subscription para que no genere un nuevo Recurring Charge en el siguiente Billing Cycle.</td>
+    </tr>
+    <tr>
+      <td><b>Budget Mismatch</b> (Descuadre)</td>
+      <td>Situación en la que un Recurring Charge no anticipado o un Exchange Rate desfavorable hace que el gasto real del mes supere lo que el usuario había previsto.</td>
+    </tr>
+    <tr>
+      <td><b>Bank Statement Review</b> (Revisión del estado de cuenta)</td>
+      <td>Práctica manual y reactiva mediante la cual el usuario identifica sus Recurring Charges revisando los movimientos de su cuenta o tarjeta, en ausencia de una Advance Alert.</td>
+    </tr>
+    <tr>
+      <td><b>Shared Subscription</b> (Suscripción compartida)</td>
+      <td>Subscription cuyo costo se divide informalmente entre varias personas que la usan, sin un mecanismo formal de cobro o registro de esa división.</td>
+    </tr>
+    <tr>
+      <td><b>Spending Category</b> (Categoría de gasto)</td>
+      <td>Agrupación temática de una Subscription (streaming, educación, fitness, delivery, cloud) que permite consolidar el Subscription Portfolio por rubro.</td>
+    </tr>
+    <tr>
+      <td><b>Delivery Expense</b> (Gasto de delivery)</td>
+      <td>Gasto puntual, no recurrente por definición pero de alta frecuencia, generado por un pedido de comida a domicilio; se distingue de un Recurring Charge porque cada pedido requiere una decisión activa del usuario.</td>
+    </tr>
+    <tr>
+      <td><b>Bank Account Linking</b> (Vinculación de cuentas bancarias)</td>
+      <td>Mecanismo por el cual una aplicación de terceros accede a los movimientos de la cuenta bancaria de un usuario; el Segmento 2 lo rechaza de forma explícita en el 100 % de las entrevistas.</td>
+    </tr>
+  </tbody>
+</table>
 
 ## 2.4. Requirements specification
 
