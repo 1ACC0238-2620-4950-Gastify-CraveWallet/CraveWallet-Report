@@ -441,28 +441,28 @@ El análisis se realiza por segmento objetivo, a partir de los resúmenes de la 
 - **Perfil tecnológico.** El 67 % usa Android (Lui, Darío) y 33 % iPhone (Eduardo); el 100 % se entera de todo por notificaciones push y usa WhatsApp entre sus tres apps más frecuentes.
 - **Reacción al concepto.** El 100 % reacciona positivamente y menciona espontáneamente el aviso anticipado y la conversión a soles como los dos elementos de mayor valor percibido.
 
-#### Segmento 2: Profesional Joven Activo (Micaela, Leonardo, Andrea)
+#### Segmento 2: Profesional Joven Activo (Micaela, Leonardo, Eddy)
 
 | Característica | % | Entrevistas de sustento |
 | --- | --- | --- |
-| Ingreso mensual fijo en soles | 100 % | Micaela, Leonardo, Andrea |
-| Separa gastos personales de los profesionales | 33 % | Andrea |
-| Rechaza conectar sus cuentas bancarias a una app de terceros | 100 % | Micaela, Leonardo, Andrea |
-| Probó y abandonó una app de finanzas | 100 % | Micaela, Leonardo, Andrea |
-| Suscripción activa cobrada en dólares | 100 % | Micaela, Leonardo, Andrea |
-| Caso de renovación automática no anticipada (monto alto) | 100 % | Micaela, Leonardo, Andrea |
-| Depende del calendario digital para avisos importantes | 100 % | Micaela, Leonardo, Andrea |
-| Reacción positiva al concepto | 100 % | Micaela, Leonardo, Andrea |
+| Ingreso mensual fijo en soles | 100 % | Micaela, Leonardo, Eddy |
+| Separa gastos personales de los profesionales | 33 % | Eddy |
+| Rechaza conectar sus cuentas bancarias a una app de terceros | 100 % | Micaela, Leonardo, Eddy |
+| Probó y abandonó una app de finanzas | 100 % | Micaela, Leonardo, Eddy |
+| Suscripción activa cobrada en dólares | 100 % | Micaela, Leonardo, Eddy |
+| Caso de renovación automática no anticipada (monto alto) | 100 % | Micaela, Leonardo, Eddy |
+| Depende del calendario digital para avisos importantes | 100 % | Micaela, Leonardo, Eddy |
+| Reacción positiva al concepto | 100 % | Micaela, Leonardo, Eddy |
 
 - **Ingreso.** El 100 % tiene ingreso fijo mensual en soles, con algún tipo de ingreso variable adicional (bonos, utilidades) que no altera el sueldo base.
-- **Separación de gastos.** El 33 % (Andrea) separa formalmente sus gastos personales de los profesionales con tarjetas distintas; el 67 % (Micaela, Leonardo) no hace ninguna separación.
-- **Desconfianza a conectar cuentas bancarias.** El 100 % expresa incomodidad explícita ante la idea de conectar sus cuentas bancarias a una aplicación de terceros, por temor a seguridad (Micaela), por advertencia del banco (Leonardo) o por conocimiento profesional del riesgo (Andrea).
-- **Experiencia previa con apps de finanzas.** El 100 % probó una app de finanzas personales (Wallet, Spendee, Fintonic) y la abandonó, por fricción de registro manual (Micaela, Leonardo) o por fallas de sincronización con bancos peruanos (Andrea).
+- **Separación de gastos.** El 33 % (Eddy) separa formalmente sus gastos personales de los profesionales con tarjetas distintas; el 67 % (Micaela, Leonardo) no hace ninguna separación.
+- **Desconfianza a conectar cuentas bancarias.** El 100 % expresa incomodidad explícita ante la idea de conectar sus cuentas bancarias a una aplicación de terceros, por temor a seguridad (Micaela), por advertencia del banco (Leonardo) o por conocimiento profesional del riesgo (Eddy).
+- **Experiencia previa con apps de finanzas.** El 100 % probó una app de finanzas personales (Wallet, Spendee, Fintonic) y la abandonó, por fricción de registro manual (Micaela, Leonardo) o por fallas de sincronización con bancos peruanos (Eddy).
 - **Suscripciones en dólares.** El 100 % tiene suscripciones cobradas en dólares (Adobe/Drive, LinkedIn/Amazon, iCloud/ChatGPT/Canva) y los tres mencionan explícitamente la fricción del tipo de cambio bancario.
 - **Cobro no anticipado.** El 100 % relata una renovación automática que lo tomó por sorpresa (app de meditación, LinkedIn Premium, academia de finanzas), en los tres casos de monto relativamente alto (~$40-150) y detectada solo al revisar el estado de cuenta.
 - **Delivery.** El 100 % pide delivery con cierta regularidad; el gasto mensual estimado va de S/ 100 a S/ 600, con la mayor variabilidad del segmento.
 - **Dependencia del calendario digital.** El 100 % menciona el calendario (Apple o Google) como su canal preferido para avisos importantes, por encima de correo o notificaciones sueltas.
-- **Reacción al concepto.** El 100 % reacciona positivamente y valora en particular la conversión automática a soles; dos de tres (Micaela, Andrea) además destacan no tener que conectar sus cuentas bancarias como un punto a favor frente a lo que ya rechazaron de otras apps.
+- **Reacción al concepto.** El 100 % reacciona positivamente y valora en particular la conversión automática a soles; dos de tres (Micaela, Eddy) además destacan no tener que conectar sus cuentas bancarias como un punto a favor frente a lo que ya rechazaron de otras apps.
 
 Los dos segmentos coinciden en tres hallazgos transversales que sustentarán directamente el Needfinding: ninguna de las seis personas recibe hoy una alerta anticipada de cobro (se enteran siempre después, revisando el banco), el 100 % de la muestra tiene al menos una suscripción facturada en dólares sin saber su equivalente en soles hasta el cargo, y el 100 % relata un episodio concreto de cobro automático olvidado. La diferencia principal entre segmentos es la relación con la conexión de cuentas bancarias: el Segmento 1 no la menciona como objeción, mientras que el 100 % del Segmento 2 la rechaza explícitamente, lo que condiciona el diseño de la propuesta de valor por segmento.
 
