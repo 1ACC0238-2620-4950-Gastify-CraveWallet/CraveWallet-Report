@@ -523,7 +523,7 @@ A partir de las Feature Assumptions del Capítulo I y de las tácticas de la sec
 | EP09 | Servicios RESTful | Technical Stories del backend propio que expone los endpoints consumidos por la aplicación móvil. |
 | EP10 | Investigación técnica | Spike Stories orientadas a despejar la incertidumbre técnica de las integraciones con Stripe y ExchangeRate-API antes de comprometerlas en el backlog. |
 
-Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambios: los diez Epics anticipados ya cubren, sin excepción, los hallazgos de las personas Camila Torres y Renzo Salazar (conversión a soles, recordatorio anticipado, fricción de registro y cancelación). Las historias de los cinco Epics de prioridad Alta —los que sostienen directamente el Dashboard, la anticipación del cobro y la reducción de la fricción de onboarding, según el criterio de priorización de esta sección— se detallan a continuación; los cinco restantes (EP06-EP10) se redactan en una iteración posterior.
+Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambios: los diez Epics anticipados ya cubren, sin excepción, los hallazgos de las personas Camila Torres y Renzo Salazar (conversión a soles, recordatorio anticipado, fricción de registro y cancelación). A continuación se detallan las 32 User Stories de los ocho Epics orientados a usuario (EP01-EP08), las 6 Technical Stories del backend propio (EP09) y las 3 Spike Stories de investigación técnica (EP10), un total de 41 historias.
 
 #### Historias de usuario
 
@@ -748,6 +748,37 @@ Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambio
   </tbody>
 </table>
 
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US26</td>
+      <td>Usuario</td>
+      <td>Baja</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver el historial de suscripciones canceladas</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver la lista de suscripciones que cancelé en el pasado, para recordar qué servicios usé antes o reactivar una si vuelvo a necesitarla.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Consulta del historial</b><br>Dado que el usuario tiene al menos una suscripción cancelada,<br>Cuando abre la sección de suscripciones canceladas,<br>Entonces el sistema lista cada una con la fecha en que fue cancelada y su último monto registrado.</td>
+    </tr>
+  </tbody>
+</table>
+
 ##### EP03 Dashboard unificado
 
 <table>
@@ -874,6 +905,37 @@ Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambio
   </tbody>
 </table>
 
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US27</td>
+      <td>Usuario</td>
+      <td>Baja</td>
+      <td>EP03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Buscar una suscripción por nombre en el Dashboard</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario con muchas suscripciones registradas, deseo buscar una por su nombre en el Dashboard, para encontrarla rápido sin recorrer toda la lista.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Coincidencia encontrada</b><br>Dado que el usuario tiene varias suscripciones activas,<br>Cuando escribe parte del nombre en el buscador del Dashboard,<br>Entonces el sistema filtra la lista y muestra solo las suscripciones cuyo nombre coincide.<br><br><b>Escenario 2: Sin coincidencias</b><br>Dado que el texto ingresado no coincide con ninguna suscripción,<br>Cuando el usuario busca,<br>Entonces el sistema muestra un mensaje indicando que no se encontraron resultados.</td>
+    </tr>
+  </tbody>
+</table>
+
 ##### EP04 Recordatorios vía calendario nativo
 
 <table>
@@ -965,6 +1027,37 @@ Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambio
     <tr>
       <td><b>Acceptance Criteria</b></td>
       <td colspan="3"><b>Escenario 1: Permiso otorgado</b><br>Dado que el usuario registra su primera suscripción con fecha de cobro,<br>Cuando el sistema solicita permiso de acceso al calendario y el usuario lo acepta,<br>Entonces el sistema agenda el recordatorio correspondiente.<br><br><b>Escenario 2: Permiso denegado</b><br>Dado que el sistema solicita permiso de acceso al calendario,<br>Cuando el usuario lo deniega,<br>Entonces el sistema registra la suscripción igualmente, sin agendar el recordatorio, e informa que puede habilitar el permiso más tarde desde ajustes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US28</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver la lista de mis próximos recordatorios agendados</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver dentro de CraveWallet la lista de los recordatorios que se agendaron en mi calendario, para confirmar que todas mis suscripciones activas tienen uno programado.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Lista con recordatorios agendados</b><br>Dado que el usuario tiene suscripciones activas con recordatorio agendado,<br>Cuando abre la sección de recordatorios,<br>Entonces el sistema lista cada suscripción con la fecha y hora en que se enviará su recordatorio.<br><br><b>Escenario 2: Suscripción sin recordatorio</b><br>Dado que una suscripción activa no tiene recordatorio agendado por haber denegado el permiso de calendario,<br>Cuando el usuario abre la sección de recordatorios,<br>Entonces el sistema la marca como "sin recordatorio" y ofrece el acceso directo a los ajustes de permiso.</td>
     </tr>
   </tbody>
 </table>
@@ -1064,6 +1157,37 @@ Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambio
   </tbody>
 </table>
 
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US29</td>
+      <td>Usuario</td>
+      <td>Baja</td>
+      <td>EP05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver el historial del tipo de cambio aplicado a una suscripción</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver cómo varió mes a mes el tipo de cambio aplicado a una suscripción en dólares, para entender por qué el monto en soles no es siempre el mismo.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Historial con varios meses</b><br>Dado que una suscripción en dólares lleva más de un mes activa,<br>Cuando el usuario consulta su historial de conversión,<br>Entonces el sistema lista el tipo de cambio y el monto en soles aplicados en cada Billing Cycle anterior.</td>
+    </tr>
+  </tbody>
+</table>
+
 ##### EP06 Categorización de gastos de delivery
 
 <table>
@@ -1155,6 +1279,37 @@ Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambio
     <tr>
       <td><b>Acceptance Criteria</b></td>
       <td colspan="3"><b>Escenario 1: Comparación entre semanas</b><br>Dado que el usuario tiene gastos de delivery registrados en al menos dos semanas distintas,<br>Cuando abre la tendencia semanal,<br>Entonces el sistema muestra el total gastado en cada una de las últimas cuatro semanas.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US30</td>
+      <td>Usuario</td>
+      <td>Baja</td>
+      <td>EP06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Editar o eliminar un gasto de delivery registrado por error</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo editar o eliminar un gasto de delivery que registré con un monto equivocado o por duplicado, para que el total del mes sea correcto.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Edición del monto</b><br>Dado que el usuario tiene un gasto de delivery registrado,<br>Cuando corrige su monto y guarda el cambio,<br>Entonces el sistema actualiza el gasto y recalcula el total del mes.<br><br><b>Escenario 2: Eliminación</b><br>Dado que el usuario registró un gasto de delivery por duplicado,<br>Cuando lo elimina,<br>Entonces el sistema lo quita del total del mes.</td>
     </tr>
   </tbody>
 </table>
@@ -1254,6 +1409,37 @@ Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambio
   </tbody>
 </table>
 
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US31</td>
+      <td>Usuario</td>
+      <td>Baja</td>
+      <td>EP07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver mi historial de pagos Premium</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario Premium, deseo ver el historial de los pagos mensuales que hice por la suscripción, para tener un registro de cuánto he pagado en total.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Historial con pagos registrados</b><br>Dado que el usuario tiene al menos un pago Premium confirmado,<br>Cuando abre la sección de historial de pagos,<br>Entonces el sistema lista cada pago con su fecha y monto.</td>
+    </tr>
+  </tbody>
+</table>
+
 ##### EP08 Landing page
 
 <table>
@@ -1314,6 +1500,37 @@ Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambio
     <tr>
       <td><b>Acceptance Criteria</b></td>
       <td colspan="3"><b>Escenario 1: Tabla comparativa</b><br>Dado que el visitante llega a la sección de precios del landing page,<br>Cuando la revisa,<br>Entonces ve una tabla comparativa con las funciones del plan gratuito y del plan Premium, incluyendo el precio mensual de este último.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US32</td>
+      <td>Visitante</td>
+      <td>Baja</td>
+      <td>EP08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consultar preguntas frecuentes en el landing page</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como visitante, deseo consultar una sección de preguntas frecuentes en el landing page, para resolver dudas comunes (seguridad, moneda, costo de Premium) antes de descargar la aplicación.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Consulta de una pregunta</b><br>Dado que el visitante está en la sección de preguntas frecuentes,<br>Cuando toca una pregunta,<br>Entonces la página despliega la respuesta correspondiente sin recargar.</td>
     </tr>
   </tbody>
 </table>
@@ -1442,6 +1659,68 @@ Las Technical Stories describen los servicios RESTful de desarrollo propio que s
     <tr>
       <td><b>Acceptance Criteria</b></td>
       <td colspan="3"><b>Escenario 1: Generación del evento</b><br>Dado una suscripción ACTIVE con fecha de próximo cobro,<br>Cuando el cliente envía GET /api/v1/subscriptions/{id}/reminder,<br>Entonces el servicio responde 200 OK con el título, la fecha (24 horas antes del cobro) y la descripción del evento a agendar.<br><br><b>Escenario 2: Suscripción cancelada</b><br>Dado una suscripción CANCELLED,<br>Cuando el cliente solicita su recordatorio,<br>Entonces el servicio responde 404 Not Found.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS05</td>
+      <td>Developer</td>
+      <td>Media</td>
+      <td>EP09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Servicio de gastos de delivery</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como desarrollador, deseo contar con endpoints para registrar, listar y editar gastos de delivery, para que la aplicación móvil calcule el total y la tendencia mensual sin lógica de negocio propia.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Registro</b><br>Dado un usuario autenticado,<br>Cuando envía POST /api/v1/delivery-expenses con comercio, monto y fecha,<br>Entonces el servicio responde 201 Created con el gasto registrado.<br><br><b>Escenario 2: Total del mes</b><br>Dado un usuario autenticado con gastos registrados,<br>Cuando envía GET /api/v1/delivery-expenses/summary?month=actual,<br>Entonces el servicio responde 200 OK con el total del mes y el desglose por semana.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS06</td>
+      <td>Developer</td>
+      <td>Media</td>
+      <td>EP09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Servicio de suscripción Premium y webhooks de Stripe</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como desarrollador, deseo contar con un endpoint que inicie el flujo de pago recurrente de Stripe y un webhook que reciba sus eventos de confirmación y cancelación, para activar o desactivar el plan Premium del usuario de forma confiable.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Inicio del pago</b><br>Dado un usuario autenticado en el plan gratuito,<br>Cuando envía POST /api/v1/premium/checkout,<br>Entonces el servicio responde 200 OK con la sesión de pago de Stripe a la que debe redirigirse el cliente.<br><br><b>Escenario 2: Confirmación por webhook</b><br>Dado que Stripe confirma un pago exitoso,<br>Cuando el webhook POST /api/v1/premium/webhook recibe el evento `invoice.paid`,<br>Entonces el servicio activa el plan Premium del usuario correspondiente.<br><br><b>Escenario 3: Cancelación por webhook</b><br>Dado que Stripe notifica el fin del período pagado tras una cancelación,<br>Cuando el webhook recibe el evento `customer.subscription.deleted`,<br>Entonces el servicio devuelve al usuario al plan gratuito.</td>
     </tr>
   </tbody>
 </table>
