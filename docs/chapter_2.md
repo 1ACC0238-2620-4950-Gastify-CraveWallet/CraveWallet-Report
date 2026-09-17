@@ -688,6 +688,18 @@ El siguiente glosario recoge los términos del dominio del negocio identificados
       <td><b>Bank Account Linking</b> (Vinculación de cuentas bancarias)</td>
       <td>Mecanismo por el cual una aplicación de terceros accede a los movimientos de la cuenta bancaria de un usuario; el Segmento 2 lo rechaza de forma explícita en el 100 % de las entrevistas.</td>
     </tr>
+    <tr>
+      <td><b>Free Tier</b> (Plan gratuito)</td>
+      <td>Nivel de acceso a CraveWallet sin costo, con un límite en la cantidad de Subscriptions que un usuario puede registrar en su Subscription Portfolio.</td>
+    </tr>
+    <tr>
+      <td><b>Premium Tier</b> (Plan Premium)</td>
+      <td>Nivel de acceso de pago que elimina el límite de registro del Free Tier y añade beneficios como analítica avanzada del Subscription Portfolio.</td>
+    </tr>
+    <tr>
+      <td><b>Delivery Budget Limit</b> (Límite de gasto en delivery)</td>
+      <td>Monto máximo que un usuario se fija para su Delivery Expense acumulado del mes, usado para generar un aviso cuando el gasto real se acerca a ese límite.</td>
+    </tr>
   </tbody>
 </table>
 
