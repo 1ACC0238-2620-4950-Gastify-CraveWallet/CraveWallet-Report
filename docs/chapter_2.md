@@ -472,21 +472,123 @@ El Needfinding traduce los hallazgos de la sección 2.2 en los artefactos de dis
 
 ### 2.3.1. User Personas
 
-Se elaborará una ficha de User Persona por cada segmento objetivo en UXPressia. Cada atributo de la ficha —demográfico, tecnológico o de comportamiento— deberá poder rastrearse hasta el porcentaje o la cita correspondiente del análisis de la sección 2.2.3, sin añadir ningún rasgo que no tenga ese respaldo.
+Se elabora una ficha de User Persona por cada segmento objetivo en UXPressia. Cada atributo de la ficha —demográfico, tecnológico o de comportamiento— se traza al porcentaje correspondiente del análisis de la sección 2.2.3; ningún rasgo se añade sin ese respaldo. El contenido de ambas fichas se redacta aquí a partir de dicho análisis; la captura de la herramienta queda pendiente de incorporar una vez elaborada en UXPressia.
 
-[[PENDIENTE]]
+[[PENDIENTE: captura de la ficha en UXPressia]]
+
+#### User Persona 1: Camila Torres — Estudiante Universitario Digital
+
+| Campo | Contenido | Sustento (2.2.3) |
+| --- | --- | --- |
+| Edad | 19 años | Rango de la muestra: 19-20 años |
+| Ocupación | Estudiante universitaria, 6.º ciclo, con ingresos ocasionales por trabajos freelance o a tiempo parcial | 67 % ingreso fijo / 33 % variable |
+| Frase representativa | "Nunca sé cuánto me van a cobrar hasta que veo el movimiento en el banco." | 100 % desconoce el monto en soles antes del cargo |
+| Dispositivo principal | Smartphone Android de gama media, uso diario de laptop | 67 % Android |
+| Canal de descubrimiento | Notificaciones push; WhatsApp entre sus apps más usadas | 100 % se entera por push |
+
+**Objetivos:** mantener el control de un presupuesto ajustado y variable sin dedicarle tiempo activo (100 % no usa ninguna herramienta formal de control de gastos), y evitar sorpresas de cobro que descuadren un ingreso que ya es limitado.
+
+**Frustraciones:** se entera de sus suscripciones en dólares solo cuando revisa el estado de cuenta, nunca antes (100 %); ha vivido al menos un cobro automático olvidado que descubrió semanas o meses después (100 %); si alguna vez probó una app de finanzas, la abandonó por la fricción de registrar cada gasto a mano (67 %).
+
+**Comportamiento y motivaciones:** gestiona el dinero mentalmente o revisando la app del banco de forma reactiva, no proactiva; su gasto en delivery es frecuente y crece en temporadas de mayor carga académica o laboral. Reacciona de forma positiva a una propuesta que resuelva la conversión a soles y el aviso anticipado, que menciona espontáneamente como los dos elementos de mayor valor (100 %).
+
+***
+
+#### User Persona 2: Renzo Salazar — Profesional Joven Activo
+
+| Campo | Contenido | Sustento (2.2.3) |
+| --- | --- | --- |
+| Edad | 27-30 años | Rango de la muestra: 24-30 años |
+| Ocupación | Profesional en planilla, modalidad híbrida o presencial, ingreso fijo en soles con bonos ocasionales | 100 % ingreso fijo en soles |
+| Frase representativa | "No pienso conectar mi cuenta del banco a otra app, por más útil que sea." | 100 % rechaza conectar cuentas bancarias a apps de terceros |
+| Dispositivo principal | Smartphone de gama alta (Android o iOS) y laptop de trabajo | Muestra mixta Android/iOS |
+| Canal de aviso preferido | Calendario digital (Apple o Google) por encima de correo o notificaciones sueltas | 100 % depende del calendario digital |
+
+**Objetivos:** mantener el orden de gastos fijos y variables entre lo personal y lo laboral (solo el 33 % lo separa formalmente hoy), y anticipar cobros en dólares antes de que impacten su cuenta sueldo.
+
+**Frustraciones:** ya probó una app de finanzas personales y la abandonó, ya sea por fricción de registro manual o por fallas de sincronización con bancos peruanos (100 %); ha sufrido una renovación automática de monto alto (~$40-150) de la que solo se enteró al revisar su estado de cuenta (100 %); no confía en conectar sus cuentas bancarias a aplicaciones de terceros por razones de seguridad (100 %).
+
+**Comportamiento y motivaciones:** organiza su dinero con más disciplina que en su etapa de estudiante, pero sigue expuesto a cobros silenciosos en dólares; valora especialmente que una solución no le pida vincular sus cuentas bancarias, y reacciona de forma muy positiva a la conversión automática a soles y al aviso previo a cada cobro (100 %), viéndolo como la forma de evitar los descuadres que ya ha vivido.
 
 ### 2.3.2. User Task Matrix
 
-[[PENDIENTE]]
+El User Task Matrix concentra las tareas que Camila Torres (Segmento 1) y Renzo Salazar (Segmento 2) realizan hoy para gestionar sus suscripciones y gastos recurrentes, independientemente de la existencia de CraveWallet. Cada tarea proviene de un comportamiento descrito en las entrevistas y cuantificado en la sección 2.2.3; no se incluye ninguna opción o característica de software.
+
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Tarea</th>
+      <th colspan="2">Camila Torres (Segmento 1)</th>
+      <th colspan="2">Renzo Salazar (Segmento 2)</th>
+    </tr>
+    <tr>
+      <th>Frecuencia</th>
+      <th>Importancia</th>
+      <th>Frecuencia</th>
+      <th>Importancia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Revisar movimientos bancarios para detectar cargos automáticos</td><td>Media</td><td>Alta</td><td>Media</td><td>Alta</td></tr>
+    <tr><td>Convertir mentalmente el monto de una suscripción en dólares a soles</td><td>Alta</td><td>Alta</td><td>Alta</td><td>Alta</td></tr>
+    <tr><td>Recordar cuándo se renueva cada suscripción activa</td><td>Baja</td><td>Alta</td><td>Baja</td><td>Alta</td></tr>
+    <tr><td>Cancelar una suscripción que ya no se usa</td><td>Baja</td><td>Media</td><td>Baja</td><td>Alta</td></tr>
+    <tr><td>Llevar un registro propio de gastos mensuales</td><td>Media</td><td>Media</td><td>Media</td><td>Media</td></tr>
+    <tr><td>Pedir delivery de comida</td><td>Alta</td><td>Baja</td><td>Media</td><td>Baja</td></tr>
+    <tr><td>Compartir el costo de una suscripción con otra persona</td><td>Baja</td><td>Baja</td><td>No reportada</td><td>Baja</td></tr>
+    <tr><td>Separar los gastos personales de los profesionales</td><td>No aplica</td><td>Baja</td><td>Baja</td><td>Media</td></tr>
+  </tbody>
+</table>
+
+La tarea con mayor frecuencia e importancia combinadas para ambas personas es convertir mentalmente el monto de una suscripción en dólares a soles: ocurre en cada ciclo de facturación y concentra la principal fuente de fricción reportada en 2.2.3 (100 % de la muestra en ambos segmentos). La segunda coincidencia relevante es recordar la fecha de renovación de cada suscripción: es una tarea que ambas personas intentan realizar con poca frecuencia y ningún sistema de apoyo, pero cuyo fracaso concentra la mayor importancia percibida, porque es la causa directa de todos los cobros no anticipados relatados en las entrevistas. La principal diferencia entre segmentos aparece en cancelar una suscripción no usada: para Renzo tiene importancia alta porque los montos en juego son mayores (~$40-150 frente a compromisos más chicos en Segmento 1), mientras que separar gastos personales de profesionales es una tarea exclusiva de Renzo, ausente en la rutina de Camila porque su segmento no reporta gastos de tipo profesional.
 
 ### 2.3.3. User Journey Mapping
 
-[[PENDIENTE]]
+Se elabora un User Journey Map As-Is por cada User Persona en UXPressia, vinculado a su ficha correspondiente en la misma herramienta, ilustrando el recorrido end-to-end que hoy sigue cada persona con un servicio de suscripción, sin la ayuda de CraveWallet: desde que contrata el servicio hasta que descubre —o no— el cobro de su renovación. Ambos journeys comparten la misma estructura de etapas, derivada de los patrones de 2.2.3, aunque difieren en las emociones e intensidad de cada una.
+
+[[PENDIENTE: captura de los User Journey Maps en UXPressia]]
+
+#### Journey de Camila Torres (Segmento 1)
+
+1. **Contratación.** Activa una suscripción (streaming, música, herramienta de estudio) con su tarjeta de débito, generalmente por una promoción o recomendación; no revisa condiciones de renovación.
+2. **Uso regular.** Usa el servicio con normalidad durante el ciclo, sin pensar en el costo ni en la fecha de corte.
+3. **Cobro automático silencioso.** Llega la fecha de renovación sin ningún aviso previo; si la suscripción está en dólares, el monto en soles varía según el tipo de cambio del banco ese día (100 % de la muestra).
+4. **Descubrimiento tardío.** Se entera del cargo al revisar el estado de cuenta o el saldo de forma reactiva, entre unos días y hasta dos meses después del cobro (100 %); la emoción dominante es sorpresa o estrés, especialmente cuando el monto no cuadra con lo presupuestado.
+5. **Reacción.** En la mayoría de los casos no hace nada de inmediato por desconocer el proceso de cancelación o por priorizar otras cosas; cuando decide cancelar, describe el proceso como poco intuitivo dentro de cada app.
+6. **Repetición del ciclo.** Sin un sistema de recordatorio propio, el mismo patrón se repite en el siguiente ciclo de facturación.
+
+#### Journey de Renzo Salazar (Segmento 2)
+
+1. **Contratación.** Activa una suscripción de trabajo o personal, muchas veces en dólares (herramientas profesionales, membresías), con tarjeta de débito o crédito propia.
+2. **Uso regular.** Usa el servicio de forma constante; en varios casos deja de usarlo activamente (por ejemplo, tras conseguir empleo o dejar de ir al gimnasio) sin recordar que la suscripción sigue activa.
+3. **Cobro automático silencioso.** La renovación —mensual o anual— se procesa sin aviso; el 100 % de la muestra reporta desconocer el monto exacto en soles antes de ver el cargo.
+4. **Descubrimiento tardío.** Nota el cobro al revisar el estado de cuenta o la línea de su tarjeta, a veces varios meses después en el caso de renovaciones anuales de montos altos (~$40-150); la emoción dominante es frustración o enojo, agravada por sentir que "las empresas asumen que uno quiere seguir pagando".
+5. **Reacción.** Cancela la suscripción una vez que la detecta, pero ya asumió el cargo no planeado; ninguno de los tres reporta haber logrado anticiparse a un cobro.
+6. **Repetición del ciclo.** El rechazo a conectar sus cuentas bancarias a aplicaciones de terceros (100 %) lo mantiene dependiendo de la revisión manual, por lo que el patrón se repite con cada suscripción nueva que contrata.
 
 ### 2.3.4. Empathy Mapping
 
-[[PENDIENTE]]
+Se elabora un Empathy Map por cada User Persona en la herramienta indicada, colocando al arquetipo al centro y completando cada cuadrante a partir de las citas y comportamientos recogidos en las entrevistas y consolidados en 2.2.3.
+
+[[PENDIENTE: captura de los Empathy Maps en la herramienta indicada]]
+
+#### Empathy Map de Camila Torres (Segmento 1)
+
+- **Qué dice:** "Nunca sé cuánto me van a cobrar hasta que veo el movimiento en el banco"; "me da flojera registrar cada gasto a mano".
+- **Qué piensa:** que llevar un control de gastos requiere demasiado esfuerzo para un ingreso que ya es ajustado y variable; que las apps de finanzas que probó eran más trabajo que ayuda.
+- **Qué hace:** revisa el saldo del banco de forma reactiva, generalmente a fin de mes; paga suscripciones y delivery con tarjeta de débito sin llevar un registro paralelo.
+- **Qué escucha:** recomendaciones de apps y contenido de tecnología por redes y creadores que sigue (por ejemplo, canales de YouTube sobre programación y tecnología).
+- **Frustraciones (Pains):** cobros en dólares que no puede prever; suscripciones olvidadas que descubre tarde; herramientas de control de gastos que exigen registro manual constante.
+- **Motivaciones (Gains):** saber de antemano cuánto le costará cada suscripción en soles; recibir un aviso antes de cada cobro para asegurar que tenga saldo disponible.
+
+#### Empathy Map de Renzo Salazar (Segmento 2)
+
+- **Qué dice:** "No pienso conectar mi cuenta del banco a otra app"; "las empresas asumen que uno siempre quiere seguir pagando".
+- **Qué piensa:** que las apps de finanzas personales existentes son poco confiables (fallan al sincronizar o son complicadas de configurar) y que conectar sus cuentas bancarias es un riesgo innecesario.
+- **Qué hace:** revisa movimientos bancarios y líneas de tarjeta periódicamente; depende del calendario digital para recordatorios de trabajo, pero no lo usa para sus suscripciones personales.
+- **Qué escucha:** contenido de finanzas e inversión en redes profesionales (LinkedIn, Instagram) y medios económicos.
+- **Frustraciones (Pains):** renovaciones automáticas de montos altos que descubre tarde; falta de transparencia de las empresas sobre fechas de cobro; desconfianza hacia soluciones que requieren vincular cuentas bancarias.
+- **Motivaciones (Gains):** anticipar cobros en dólares y su conversión a soles sin tener que conectar sus cuentas bancarias; mantener el orden entre gastos personales y profesionales con el mínimo esfuerzo adicional.
 
 ### 2.3.5. Big Picture EventStorming
 
@@ -496,7 +598,25 @@ Antes de diseñar cualquier pantalla, el equipo reconstruirá en Miro, con la t�
 
 ### 2.3.6. Ubiquitous Language
 
-[[PENDIENTE]]
+El siguiente glosario recoge los términos del dominio del negocio identificados a partir de las entrevistas (2.2.2), el análisis de patrones (2.2.3) y el Needfinding, de modo que todo el equipo —y cualquier stakeholder que revise este informe— use el mismo vocabulario al describir el problema y la solución. Solo se incluyen términos del dominio del negocio, no términos técnicos de ingeniería de software.
+
+| Término | Definición |
+| --- | --- |
+| **Subscription** (Suscripción) | Servicio digital o membresía cuyo acceso se paga de forma periódica y automática, sin que el usuario deba autorizar cada cobro individualmente. |
+| **Recurring Charge** (Cobro recurrente) | Cargo que una Subscription genera de forma automática en cada Billing Cycle, sin intervención activa del usuario en el momento del cobro. |
+| **Billing Cycle** (Ciclo de facturación) | Intervalo de tiempo, típicamente mensual o anual, entre dos Recurring Charges consecutivos de una misma Subscription. |
+| **Renewal** (Renovación) | Evento en el que, al finalizar un Billing Cycle, la Subscription continúa vigente y genera un nuevo Recurring Charge sin que el usuario deba confirmarlo. |
+| **Subscription Portfolio** (Portafolio de suscripciones) | Conjunto de todas las Subscriptions activas que mantiene un usuario en un momento dado, sin importar en qué moneda se facturen. |
+| **Silent Charge** (Cobro silencioso) | Recurring Charge que se procesa sin ningún aviso previo al usuario, de modo que este solo se entera al revisar su cuenta bancaria después de ocurrido. |
+| **Exchange Rate** (Tipo de cambio) | Valor que el banco emisor de la tarjeta aplica para convertir un Recurring Charge facturado en una moneda distinta al sol al monto final debitado. |
+| **Currency Conversion** (Conversión de divisas) | Cálculo del monto equivalente en soles de un Recurring Charge facturado originalmente en otra moneda, aplicando el Exchange Rate vigente. |
+| **Advance Alert** (Alerta anticipada) | Aviso enviado al usuario antes de que se procese un Recurring Charge, con tiempo suficiente para verificar saldo o decidir si cancela la Subscription. |
+| **Ghost Expense** (Gasto fantasma) | Recurring Charge de una Subscription que el usuario ya no usa activamente pero que continúa pagando por no haberla cancelado a tiempo. |
+| **Cutoff Date** (Fecha de corte) | Día específico del Billing Cycle en el que se procesa el Renewal de una Subscription. |
+| **Cancellation** (Cancelación) | Acción del usuario de dar de baja una Subscription para que no genere un nuevo Recurring Charge en el siguiente Billing Cycle. |
+| **Budget Mismatch** (Descuadre) | Situación en la que un Recurring Charge no anticipado o un Exchange Rate desfavorable hace que el gasto real del mes supere lo que el usuario había previsto. |
+| **Bank Statement Review** (Revisión del estado de cuenta) | Práctica manual y reactiva mediante la cual el usuario identifica sus Recurring Charges revisando los movimientos de su cuenta o tarjeta, en ausencia de una Advance Alert. |
+| **Shared Subscription** (Suscripción compartida) | Subscription cuyo costo se divide informalmente entre varias personas que la usan, sin un mecanismo formal de cobro o registro de esa división. |
 
 ## 2.4. Requirements specification
 
