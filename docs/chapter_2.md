@@ -2614,7 +2614,9 @@ SM <-right-> DE : "<<Partnership>>\nShared Kernel: UserId"
 @enduml
 ```
 
-[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+![Context Mapping — CraveWallet](images/chapter_2/context_mapping.png)
+
+*Figura: Context Map de CraveWallet. Tres Bounded Contexts y sus relaciones con sistemas externos.*
 
 ### 2.5.3. Software Architecture
 
@@ -2650,7 +2652,9 @@ Rel(cravewallet, calendar, "Crea y elimina eventos de recordatorio de renovacion
 @enduml
 ```
 
-[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+![C4 System Context — CraveWallet](images/chapter_2/context_diagram.png)
+
+*Figura: Diagrama de Contexto C4 (Nivel 1). CraveWallet y sus cuatro sistemas externos.*
 
 #### 2.5.3.2. Software Architecture Container Level Diagrams
 
@@ -2692,7 +2696,9 @@ Rel(api, gplaces, "Busca locales de delivery", "HTTPS / REST")
 @enduml
 ```
 
-[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+![C4 Container Diagram — CraveWallet](images/chapter_2/container_diagram.png)
+
+*Figura: Diagrama de Contenedores C4 (Nivel 2). Mobile App, REST API Backend, Remote DB y Local DB.*
 
 #### 2.5.3.3. Software Architecture Deployment Diagrams
 
@@ -2748,7 +2754,9 @@ Rel(api_d, gplaces_d, "HTTPS :443", "Internet")
 @enduml
 ```
 
-[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+![C4 Deployment Diagram — CraveWallet](images/chapter_2/deployment_diagram.png)
+
+*Figura: Diagrama de Despliegue C4. AWS ECS Fargate + RDS PostgreSQL + dispositivo del usuario.*
 
 ## 2.6. Tactical-Level Domain-Driven Design
 
