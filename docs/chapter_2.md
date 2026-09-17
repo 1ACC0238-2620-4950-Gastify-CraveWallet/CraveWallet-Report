@@ -2074,37 +2074,65 @@ Las Spike Stories cubren la investigación técnica necesaria antes de compromet
 
 ### 2.4.2. Impact Mapping
 
-El Impact Map vincula los Business Outcome Assumptions declarados en la sección 1.2.2.2 del Capítulo I con los actores, los impactos de comportamiento esperados y las historias de usuario de la sección 2.4.1 que los sostienen. Se elabora en la herramienta indicada partiendo de los User Personas ya construidos (2.3.1); el contenido se detalla aquí y la captura queda pendiente de incorporar.
+El Impact Map vincula los objetivos de negocio de CraveWallet con las personas que pueden hacerlos posibles, el cambio de comportamiento que se espera de ellas, lo que el producto entrega para provocar ese cambio y las historias que lo implementan. El equipo lo elabora en la herramienta indicada a partir de las fichas de User Persona de Camila Torres y Renzo Salazar (2.3.1), respondiendo en cada nivel las preguntas del método: quiénes ayudan a lograr la meta, qué tendrían que hacer, qué puede hacer el negocio digital para provocarlo y con qué historias. Se elabora un mapa por cada Business Goal.
 
-[[PENDIENTE: captura del Impact Map en la herramienta indicada]]
+Los Business Goals se derivan, con los criterios SMART, de los Business Outcome Assumptions declarados en la sección 1.2.2.2 del Capítulo I.
 
-| Business Goal | Actor/Persona | Impact | Deliverable | User Stories |
-| --- | --- | --- | --- | --- |
-| Reducir los cargos no anticipados en al menos 60 % dentro de los 90 días desde el primer uso. | Camila Torres, Renzo Salazar | Que anticipen cada cobro automático con tiempo suficiente para verificar su saldo o decidir si cancelan la suscripción antes de que se procese. | Recordatorio 24 horas antes del cobro, agendado en el calendario nativo y reforzado con notificación push. | US12, US13, US14, US28, US36 |
-| Alcanzar una retención a 30 días superior al 45 % entre usuarios con 3 o más suscripciones activas. | Camila Torres, Renzo Salazar | Que vuelvan a abrir la aplicación con regularidad para revisar el estado de su portafolio de suscripciones. | Dashboard unificado con el total en soles, agrupación por categoría y orden por próxima fecha de cobro. | US08, US09, US10, US11, US27, US34, US35 |
-| Lograr una conversión al plan Premium de al menos el 12 % entre usuarios con 6 o más suscripciones, dentro de los primeros 6 meses. | Camila Torres, Renzo Salazar (usuarios de mayor compromiso) | Que perciban suficiente valor en el plan gratuito como para pagar por eliminar sus límites y acceder a analítica avanzada de gasto. | Plan Premium con pago recurrente vía Stripe, registro ilimitado de suscripciones y analítica avanzada. | US21, US22, US23, US31, US39 |
-| Alcanzar un NPS superior a 40 puntos al término del primer semestre posterior al lanzamiento. | Camila Torres, Renzo Salazar | Que perciban que CraveWallet resuelve su problema principal —pérdida de control del presupuesto por cobros en dólares y renovaciones no anticipadas— mejor que la competencia identificada en 2.1, y lo recomienden. | Combinación del Dashboard, la conversión de divisas en tiempo real, los recordatorios anticipados y un landing page que comunique la propuesta con claridad. | US08, US15, US17, US12, US24, US25 |
+| Business Goal | Enunciado |
+| --- | --- |
+| BG01 | Reducir los cargos no anticipados por renovación automática en al menos 60 % entre los usuarios activos, dentro de los 90 días desde su primer uso. |
+| BG02 | Alcanzar una retención a 30 días superior al 45 % entre los usuarios que han registrado 3 o más suscripciones activas. |
+| BG03 | Lograr que al menos el 12 % de los usuarios activos mensuales con 6 o más suscripciones registradas convierta al plan Premium, dentro de los primeros 6 meses de operación. |
+| BG04 | Alcanzar un Net Promoter Score superior a 40 puntos al término del primer semestre posterior al lanzamiento. |
+
+Los actores son los dos User Personas del proyecto: **Camila Torres**, del Segmento 1, y **Renzo Salazar**, del Segmento 2. Los deliverables corresponden a las Epics de la especificación, y cada historia aparece con su código. Las Technical Stories y las Spike Stories no aparecen en los mapas porque no modifican el comportamiento de un actor; entran al Product Backlog por la dependencia técnica de las historias que sí lo hacen.
+
+#### Business Goal 01: anticipación del cobro
+
+Este mapa responde a qué tiene que cambiar para que un usuario deje de enterarse de un cobro automático solo al revisar su banco, el hallazgo transversal de la sección 2.2.3. De Camila Torres y de Renzo Salazar se espera el mismo cambio de comportamiento: que revisen el recordatorio que reciben antes del cobro y decidan a tiempo si mantienen o cancelan la suscripción, en lugar de descubrirlo después (recordatorios vía calendario nativo, con las historias de agendar, reagendar y eliminar el recordatorio, y de recibir la notificación push complementaria).
+
+[[PENDIENTE: captura del Impact Map del Business Goal 01 en la herramienta indicada]]
+
+#### Business Goal 02: retención por uso del Dashboard
+
+El segundo mapa sostiene la hipótesis de que un usuario vuelve a la aplicación si el Dashboard le ahorra el trabajo mental de sumar su portafolio de suscripciones. De ambas personas se espera que consulten el Dashboard con regularidad en lugar de llevar la cuenta mentalmente o revisando el banco (Dashboard unificado, con las historias de ver el total en soles, agrupar por categoría, ordenar por próxima renovación, buscar y ver el ahorro de una cancelación a tiempo); y que registren cada suscripción nueva apenas la contratan, en lugar de dejarla fuera del control (alta de suscripciones, con el catálogo precargado, el registro personalizado y la previsualización del monto en soles).
+
+[[PENDIENTE: captura del Impact Map del Business Goal 02 en la herramienta indicada]]
+
+#### Business Goal 03: conversión a Premium
+
+El tercer mapa se concentra en los usuarios de mayor compromiso, con 6 o más suscripciones registradas. De ambas personas se espera que perciban el límite del plan gratuito y decidan pagar por eliminarlo, en vez de abandonar el registro de sus suscripciones adicionales (plan Premium, con las historias de conocer el precio, suscribirse vía Stripe, ver el historial de pagos y ver cuánto falta para el límite gratuito).
+
+[[PENDIENTE: captura del Impact Map del Business Goal 03 en la herramienta indicada]]
+
+#### Business Goal 04: recomendación del producto
+
+El cuarto mapa depende de que ambas personas perciban que CraveWallet resuelve mejor que la competencia (2.1) su problema principal. Se espera que un visitante entienda la propuesta de valor antes de descargar la aplicación (landing page, con las historias de ver la propuesta de valor, comparar planes y consultar preguntas frecuentes), y que un usuario activo experimente en conjunto el Dashboard, la conversión de divisas y los recordatorios como una solución coherente que lo lleve a recomendarla.
+
+[[PENDIENTE: captura del Impact Map del Business Goal 04 en la herramienta indicada]]
 
 ### 2.4.3. Product Backlog
 
-El backlog consolida las 49 historias de la sección 2.4.1 con su estimación en story points (escala 1, 2, 3, 5, 8) y su sprint tentativo, ordenadas por valor de negocio y no por tipo de historia: las tres Spike Stories abren el backlog porque reducen el riesgo técnico de las integraciones que sostienen los Epics de prioridad Alta antes de comprometerlas; el landing page se ubica en el primer sprint conforme lo exige el enunciado, en paralelo al registro y autenticación mínimos necesarios para usar la aplicación; y las historias de seguridad o autenticación no se priorizan por sí solas, sino como habilitadoras de las historias de valor que dependen de ellas. Se administrará además en la herramienta que indique el docente, cuyo enlace y captura quedan pendientes de incorporar.
+El backlog consolida las 40 User Stories, las 6 Technical Stories y las 3 Spike Stories de la especificación, estimadas en Story Points con la escala 1, 2, 3, 5 y 8 y ordenadas por el valor que aportan al negocio, no por tipo de historia. El orden sigue el Impact Map: primero lo que reduce el riesgo técnico de las integraciones de terceros y lo que un visitante necesita para decidir descargar la aplicación (Spikes y landing page, que el enunciado exige desde el primer sprint); luego la autenticación, junto con el alta de suscripciones y el Dashboard que dependen de ella, porque sin cuenta no hay portafolio que mostrar; después la conversión de divisas y los recordatorios, que sostienen la hipótesis principal de anticipar el cobro; y al final el delivery y el plan Premium, que extienden la propuesta sin ser indispensables para las primeras hipótesis. La autenticación no encabeza el backlog por sí sola: entra en el Sprint 2 como habilitadora del alta de suscripciones y el Dashboard, no como prioridad de seguridad aislada.
+
+Los sprints corresponden a las entregas del curso: el Sprint 1 a TB1, el Sprint 2 a AV2 y los Sprints 3 y 4 a TB2. Se administra además en la herramienta que indique el docente, cuyo enlace y captura quedan pendientes de incorporar.
 
 [[PENDIENTE: captura y URL del Product Backlog en la herramienta indicada]]
 
-| # Orden | User Story Id | Título | Story Points | Sprint |
+| # Orden | User Story Id | Título | Story Points (1 / 2 / 3 / 5 / 8) | Sprint |
 | --- | --- | --- | --- | --- |
 | 1 | SP01 | Investigar la integración con ExchangeRate-API | 8 | 1 |
 | 2 | SP02 | Investigar la integración con el calendario nativo del dispositivo | 8 | 1 |
 | 3 | SP03 | Investigar la integración del SDK de Stripe para el plan Premium | 8 | 1 |
-| 4 | TS01 | Servicio de autenticación y perfil | 5 | 1 |
-| 5 | US01 | Registrarme con correo y contraseña | 3 | 1 |
-| 6 | US02 | Iniciar sesión | 2 | 1 |
-| 7 | US03 | Configurar mi moneda de referencia | 1 | 1 |
-| 8 | US33 | Cerrar sesión | 1 | 1 |
-| 9 | US24 | Ver la propuesta de valor de CraveWallet | 2 | 1 |
-| 10 | US25 | Comparar el plan gratuito y el plan Premium | 2 | 1 |
-| 11 | US32 | Consultar preguntas frecuentes en el landing page | 2 | 1 |
-| 12 | US40 | Dejar mi correo para recibir novedades del lanzamiento | 1 | 1 |
+| 4 | US24 | Ver la propuesta de valor de CraveWallet | 2 | 1 |
+| 5 | US25 | Comparar el plan gratuito y el plan Premium | 2 | 1 |
+| 6 | US32 | Consultar preguntas frecuentes en el landing page | 2 | 1 |
+| 7 | US40 | Dejar mi correo para recibir novedades del lanzamiento | 1 | 1 |
+| 8 | TS01 | Servicio de autenticación y perfil | 5 | 2 |
+| 9 | US01 | Registrarme con correo y contraseña | 3 | 2 |
+| 10 | US02 | Iniciar sesión | 2 | 2 |
+| 11 | US03 | Configurar mi moneda de referencia | 1 | 2 |
+| 12 | US33 | Cerrar sesión | 1 | 2 |
 | 13 | TS02 | Servicio de suscripciones | 5 | 2 |
 | 14 | US04 | Registrar una suscripción desde el catálogo precargado | 3 | 2 |
 | 15 | US05 | Registrar una suscripción personalizada | 3 | 2 |
@@ -2143,7 +2171,9 @@ El backlog consolida las 49 historias de la sección 2.4.1 con su estimación en
 | 48 | US31 | Ver mi historial de pagos Premium | 1 | 4 |
 | 49 | US39 | Ver cuántas suscripciones puedo registrar en el plan gratuito | 2 | 4 |
 
-[[PENDIENTE]]
+El total es de 148 Story Points: 31 en el Sprint 1, 47 en el Sprint 2, 37 en el Sprint 3 y 33 en el Sprint 4. El Sprint 2 concentra la mayor carga porque en él se habilita la autenticación y se construye el núcleo de valor —alta de suscripciones y Dashboard— del que dependen los sprints siguientes; el Sprint 1 queda deliberadamente liviano en historias de usuario porque concentra el riesgo técnico de los tres spikes.
+
+El backlog se administra en la herramienta que indique el docente, donde cada historia se registra como tarjeta con su código, título, puntos y sprint, en el mismo orden de esta tabla.
 
 ## 2.5. Strategic-Level Domain-Driven Design
 
