@@ -2074,13 +2074,74 @@ Las Spike Stories cubren la investigación técnica necesaria antes de compromet
 
 ### 2.4.2. Impact Mapping
 
-El Impact Map vinculará los Business Outcome Assumptions declarados en la sección 1.2.2.2 del Capítulo I —NPS superior a 40, conversión Premium de al menos 12%, retención a 30 días superior a 45% y reducción de cargos no anticipados de al menos 60%— con los actores, los impactos de comportamiento esperados y las historias de usuario de la sección 2.4.1 que los sostienen.
+El Impact Map vincula los Business Outcome Assumptions declarados en la sección 1.2.2.2 del Capítulo I con los actores, los impactos de comportamiento esperados y las historias de usuario de la sección 2.4.1 que los sostienen. Se elabora en la herramienta indicada partiendo de los User Personas ya construidos (2.3.1); el contenido se detalla aquí y la captura queda pendiente de incorporar.
 
-[[PENDIENTE: elaboración del Impact Map una vez redactadas las User Stories]]
+[[PENDIENTE: captura del Impact Map en la herramienta indicada]]
+
+| Business Goal | Actor/Persona | Impact | Deliverable | User Stories |
+| --- | --- | --- | --- | --- |
+| Reducir los cargos no anticipados en al menos 60 % dentro de los 90 días desde el primer uso. | Camila Torres, Renzo Salazar | Que anticipen cada cobro automático con tiempo suficiente para verificar su saldo o decidir si cancelan la suscripción antes de que se procese. | Recordatorio 24 horas antes del cobro, agendado en el calendario nativo y reforzado con notificación push. | US12, US13, US14, US28, US36 |
+| Alcanzar una retención a 30 días superior al 45 % entre usuarios con 3 o más suscripciones activas. | Camila Torres, Renzo Salazar | Que vuelvan a abrir la aplicación con regularidad para revisar el estado de su portafolio de suscripciones. | Dashboard unificado con el total en soles, agrupación por categoría y orden por próxima fecha de cobro. | US08, US09, US10, US11, US27, US34, US35 |
+| Lograr una conversión al plan Premium de al menos el 12 % entre usuarios con 6 o más suscripciones, dentro de los primeros 6 meses. | Camila Torres, Renzo Salazar (usuarios de mayor compromiso) | Que perciban suficiente valor en el plan gratuito como para pagar por eliminar sus límites y acceder a analítica avanzada de gasto. | Plan Premium con pago recurrente vía Stripe, registro ilimitado de suscripciones y analítica avanzada. | US21, US22, US23, US31, US39 |
+| Alcanzar un NPS superior a 40 puntos al término del primer semestre posterior al lanzamiento. | Camila Torres, Renzo Salazar | Que perciban que CraveWallet resuelve su problema principal —pérdida de control del presupuesto por cobros en dólares y renovaciones no anticipadas— mejor que la competencia identificada en 2.1, y lo recomienden. | Combinación del Dashboard, la conversión de divisas en tiempo real, los recordatorios anticipados y un landing page que comunique la propuesta con claridad. | US08, US15, US17, US12, US24, US25 |
 
 ### 2.4.3. Product Backlog
 
-El backlog consolidará las historias de la sección 2.4.1 con su estimación de esfuerzo y su prioridad, siguiendo el criterio de valor de negocio descrito en 2.4.1, y se administrará en la herramienta que indique el docente.
+El backlog consolida las 49 historias de la sección 2.4.1 con su estimación en story points (escala 1, 2, 3, 5, 8) y su sprint tentativo, ordenadas por valor de negocio y no por tipo de historia: las tres Spike Stories abren el backlog porque reducen el riesgo técnico de las integraciones que sostienen los Epics de prioridad Alta antes de comprometerlas; el landing page se ubica en el primer sprint conforme lo exige el enunciado, en paralelo al registro y autenticación mínimos necesarios para usar la aplicación; y las historias de seguridad o autenticación no se priorizan por sí solas, sino como habilitadoras de las historias de valor que dependen de ellas. Se administrará además en la herramienta que indique el docente, cuyo enlace y captura quedan pendientes de incorporar.
+
+[[PENDIENTE: captura y URL del Product Backlog en la herramienta indicada]]
+
+| # Orden | User Story Id | Título | Story Points | Sprint |
+| --- | --- | --- | --- | --- |
+| 1 | SP01 | Investigar la integración con ExchangeRate-API | 8 | 1 |
+| 2 | SP02 | Investigar la integración con el calendario nativo del dispositivo | 8 | 1 |
+| 3 | SP03 | Investigar la integración del SDK de Stripe para el plan Premium | 8 | 1 |
+| 4 | TS01 | Servicio de autenticación y perfil | 5 | 1 |
+| 5 | US01 | Registrarme con correo y contraseña | 3 | 1 |
+| 6 | US02 | Iniciar sesión | 2 | 1 |
+| 7 | US03 | Configurar mi moneda de referencia | 1 | 1 |
+| 8 | US33 | Cerrar sesión | 1 | 1 |
+| 9 | US24 | Ver la propuesta de valor de CraveWallet | 2 | 1 |
+| 10 | US25 | Comparar el plan gratuito y el plan Premium | 2 | 1 |
+| 11 | US32 | Consultar preguntas frecuentes en el landing page | 2 | 1 |
+| 12 | US40 | Dejar mi correo para recibir novedades del lanzamiento | 1 | 1 |
+| 13 | TS02 | Servicio de suscripciones | 5 | 2 |
+| 14 | US04 | Registrar una suscripción desde el catálogo precargado | 3 | 2 |
+| 15 | US05 | Registrar una suscripción personalizada | 3 | 2 |
+| 16 | US06 | Editar una suscripción registrada | 2 | 2 |
+| 17 | US07 | Cancelar una suscripción registrada | 2 | 2 |
+| 18 | US26 | Ver el historial de suscripciones canceladas | 1 | 2 |
+| 19 | US34 | Previsualizar el monto en soles antes de guardar una suscripción en dólares | 2 | 2 |
+| 20 | US08 | Ver el total mensual de mis suscripciones activas en soles | 5 | 2 |
+| 21 | US09 | Ver mis suscripciones agrupadas por categoría | 3 | 2 |
+| 22 | US10 | Ver mis suscripciones ordenadas por próxima fecha de renovación | 2 | 2 |
+| 23 | US11 | Ver el detalle de una suscripción desde el Dashboard | 2 | 2 |
+| 24 | US27 | Buscar una suscripción por nombre en el Dashboard | 2 | 2 |
+| 25 | US35 | Ver el ahorro estimado por cancelar una suscripción antes de su renovación | 3 | 2 |
+| 26 | TS03 | Servicio de conversión de divisas | 5 | 3 |
+| 27 | US15 | Ver el monto en soles de una suscripción facturada en dólares | 5 | 3 |
+| 28 | US16 | Ver el tipo de cambio utilizado y su fecha de actualización | 2 | 3 |
+| 29 | US17 | Ver mi portafolio completo unificado en soles | 3 | 3 |
+| 30 | US29 | Ver el historial del tipo de cambio aplicado a una suscripción | 2 | 3 |
+| 31 | US37 | Ver la variación del tipo de cambio respecto al cobro anterior | 2 | 3 |
+| 32 | TS04 | Servicio de recordatorios | 3 | 3 |
+| 33 | US12 | Recibir un recordatorio 24 horas antes de un cobro automático | 5 | 3 |
+| 34 | US13 | Que se elimine el recordatorio de una suscripción cancelada | 2 | 3 |
+| 35 | US14 | Otorgar permiso de acceso al calendario | 3 | 3 |
+| 36 | US28 | Ver la lista de mis próximos recordatorios agendados | 2 | 3 |
+| 37 | US36 | Recibir una notificación push además del recordatorio de calendario | 3 | 3 |
+| 38 | TS05 | Servicio de gastos de delivery | 3 | 4 |
+| 39 | US18 | Registrar un pedido de delivery desde un catálogo de comercios frecuentes | 3 | 4 |
+| 40 | US19 | Ver el total gastado en delivery en el mes | 2 | 4 |
+| 41 | US20 | Ver la tendencia de mi gasto de delivery por semana | 3 | 4 |
+| 42 | US30 | Editar o eliminar un gasto de delivery registrado por error | 2 | 4 |
+| 43 | US38 | Definir un límite mensual de gasto en delivery y recibir aviso al acercarme | 3 | 4 |
+| 44 | TS06 | Servicio de suscripción Premium y webhooks de Stripe | 5 | 4 |
+| 45 | US21 | Ver la propuesta de valor y el precio de Premium | 2 | 4 |
+| 46 | US22 | Suscribirme al plan Premium | 5 | 4 |
+| 47 | US23 | Cancelar mi suscripción Premium | 2 | 4 |
+| 48 | US31 | Ver mi historial de pagos Premium | 1 | 4 |
+| 49 | US39 | Ver cuántas suscripciones puedo registrar en el plan gratuito | 2 | 4 |
 
 [[PENDIENTE]]
 
