@@ -523,7 +523,7 @@ A partir de las Feature Assumptions del Capítulo I y de las tácticas de la sec
 | EP09 | Servicios RESTful | Technical Stories del backend propio que expone los endpoints consumidos por la aplicación móvil. |
 | EP10 | Investigación técnica | Spike Stories orientadas a despejar la incertidumbre técnica de las integraciones con Stripe y ExchangeRate-API antes de comprometerlas en el backlog. |
 
-Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambios: los diez Epics anticipados ya cubren, sin excepción, los hallazgos de las personas Camila Torres y Renzo Salazar (conversión a soles, recordatorio anticipado, fricción de registro y cancelación). A continuación se detallan las 40 User Stories de los ocho Epics orientados a usuario (EP01-EP08), las 6 Technical Stories del backend propio (EP09) y las 3 Spike Stories de investigación técnica (EP10), un total de 49 historias.
+Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambios: los diez Epics anticipados ya cubren, sin excepción, los hallazgos de las personas Camila Torres y Renzo Salazar (conversión a soles, recordatorio anticipado, fricción de registro y cancelación). A continuación se detallan las 40 User Stories de los ocho Epics orientados a usuario (EP01-EP08), las 6 Technical Stories del backend propio (EP09) y las 6 Spike Stories de investigación técnica (EP10), un total de 52 historias.
 
 #### Historias de usuario
 
@@ -1975,9 +1975,9 @@ Las Technical Stories describen los servicios RESTful de desarrollo propio que s
 
 #### Spike Stories
 
-Las Spike Stories cubren la investigación técnica necesaria antes de comprometer en el backlog las dos integraciones de terceros que el equipo no ha usado en clase: el SDK de Stripe y ExchangeRate-API, declaradas como el feature de aprendizaje autónomo del proyecto en la sección 1.1.1 del Capítulo I.
+Las Spike Stories cubren la investigación técnica necesaria antes de comprometer en el backlog las dos integraciones de terceros que el equipo no ha usado en clase: el SDK de Stripe y ExchangeRate-API, declaradas como el feature de aprendizaje autónomo del proyecto en la sección 1.1.1 del Capítulo I. Cada integración se investiga en dos spikes en lugar de uno solo: un spike de documentación y decisión, y un spike de prototipo, de modo que ninguno supere los 5 puntos ni concentre más de una jornada de trabajo continua.
 
-**Definition of Done común a los tres spikes.** El prototipo queda registrado en una rama del repositorio; el informe de hallazgos se comparte con el equipo en la sesión de refinamiento del backlog; los hallazgos se usan para crear o refinar las historias de implementación correspondientes; y el spike está limitado a entre 8 y 16 horas y se completa dentro del sprint en que se planifica.
+**Definition of Done común a los seis spikes.** El prototipo o el informe de decisión queda registrado en una rama del repositorio; los hallazgos se comparten con el equipo en la sesión de refinamiento del backlog y se usan para crear o refinar las historias de implementación correspondientes; y cada spike se completa dentro del sprint en que se planifica.
 
 <table>
   <thead>
@@ -1997,15 +1997,15 @@ Las Spike Stories cubren la investigación técnica necesaria antes de compromet
     </tr>
     <tr>
       <td><b>Title</b></td>
-      <td colspan="3">Investigar la integración con ExchangeRate-API</td>
+      <td colspan="3">Investigar y documentar la integración con ExchangeRate-API</td>
     </tr>
     <tr>
       <td><b>Description</b></td>
-      <td colspan="3">Como equipo de desarrollo, deseo investigar y prototipar el consumo de ExchangeRate-API desde el backend, para decidir con evidencia cómo implementar el Servicio de conversión de divisas (TS03).</td>
+      <td colspan="3">Como equipo de desarrollo, deseo investigar y documentar cómo consumir ExchangeRate-API dentro de sus límites de uso, para decidir con evidencia el diseño de caché del Servicio de conversión de divisas (TS03) antes de construirlo.</td>
     </tr>
     <tr>
       <td><b>Acceptance Criteria</b></td>
-      <td colspan="3"><b>Escenario 1: Documentación revisada</b><br>Dado que el equipo necesita el tipo de cambio USD/PEN actualizado,<br>Cuando el desarrollador revisa el plan gratuito de ExchangeRate-API y sus límites de solicitudes,<br>Entonces documenta la frecuencia máxima de consulta viable y la estrategia de caché necesaria para no exceder el límite.<br><br><b>Escenario 2: Prototipo</b><br>Dado el plan elegido,<br>Cuando el desarrollador construye un prototipo del backend que consulta y cachea el tipo de cambio,<br>Entonces el prototipo responde correctamente ante al menos diez solicitudes consecutivas sin exceder el límite del proveedor, y queda registrado en una rama del repositorio.<br><br><b>Escenario 3: Hallazgos y estimación</b><br>Dado que el spike está completo,<br>Cuando el desarrollador compila los hallazgos,<br>Entonces el informe incluye el diseño de caché recomendado, el manejo de caídas del proveedor y una estimación en puntos de historia para TS03.</td>
+      <td colspan="3"><b>Escenario 1: Documentación revisada</b><br>Dado que el equipo necesita el tipo de cambio USD/PEN actualizado,<br>Cuando el desarrollador revisa el plan gratuito de ExchangeRate-API y sus límites de solicitudes,<br>Entonces documenta la frecuencia máxima de consulta viable y la estrategia de caché necesaria para no exceder el límite.<br><br><b>Escenario 2: Diseño de caché documentado</b><br>Dado que el equipo conoce los límites del proveedor,<br>Cuando el desarrollador define cómo se invalida y renueva el valor cacheado,<br>Entonces el informe queda listo para orientar el prototipo del spike SP02 y la implementación de TS03.</td>
     </tr>
   </tbody>
 </table>
@@ -2028,15 +2028,15 @@ Las Spike Stories cubren la investigación técnica necesaria antes de compromet
     </tr>
     <tr>
       <td><b>Title</b></td>
-      <td colspan="3">Investigar la integración con el calendario nativo del dispositivo</td>
+      <td colspan="3">Prototipar el consumo y caché de ExchangeRate-API</td>
     </tr>
     <tr>
       <td><b>Description</b></td>
-      <td colspan="3">Como equipo de desarrollo, deseo investigar cómo agendar eventos en el calendario nativo desde una aplicación multiplataforma, para decidir con evidencia cómo implementar el recordatorio de 24 horas antes de cada cobro (US12).</td>
+      <td colspan="3">Como equipo de desarrollo, deseo construir un prototipo del diseño de caché definido en SP01, para confirmar con evidencia que soporta el volumen de consultas antes de implementar TS03.</td>
     </tr>
     <tr>
       <td><b>Acceptance Criteria</b></td>
-      <td colspan="3"><b>Escenario 1: Alternativas evaluadas</b><br>Dado que la aplicación debe agendar eventos en Android e iOS,<br>Cuando el desarrollador evalúa las APIs de calendario nativo de cada plataforma y las bibliotecas multiplataforma disponibles,<br>Entonces documenta para cada alternativa los permisos requeridos, la compatibilidad con el framework elegido y sus limitaciones.<br><br><b>Escenario 2: Prototipo</b><br>Dado la alternativa elegida,<br>Cuando el desarrollador construye un prototipo que agenda un evento de prueba en un dispositivo físico,<br>Entonces el evento aparece correctamente en la aplicación de calendario nativa y el prototipo queda registrado en una rama del repositorio.<br><br><b>Escenario 3: Hallazgos</b><br>Dado que el spike está completo,<br>Cuando el desarrollador documenta los hallazgos,<br>Entonces el informe incluye la biblioteca o API recomendada, el manejo del caso en que el usuario deniega el permiso, y una estimación en puntos de historia para US12, US13 y US14.</td>
+      <td colspan="3"><b>Escenario 1: Prototipo bajo carga</b><br>Dado el diseño de caché documentado en SP01,<br>Cuando el desarrollador construye un prototipo del backend que consulta y cachea el tipo de cambio,<br>Entonces el prototipo responde correctamente ante al menos diez solicitudes consecutivas sin exceder el límite del proveedor, y queda registrado en una rama del repositorio.<br><br><b>Escenario 2: Hallazgos y estimación</b><br>Dado que el spike está completo,<br>Cuando el desarrollador compila los hallazgos,<br>Entonces el informe incluye el manejo de caídas del proveedor y una estimación en puntos de historia para TS03.</td>
     </tr>
   </tbody>
 </table>
@@ -2054,20 +2054,113 @@ Las Spike Stories cubren la investigación técnica necesaria antes de compromet
     <tr>
       <td>SP03</td>
       <td>Developer</td>
+      <td>Alta</td>
+      <td>EP10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Investigar las alternativas de integración con el calendario nativo</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como equipo de desarrollo, deseo comparar las APIs de calendario nativo de Android e iOS y las bibliotecas multiplataforma disponibles, para elegir con evidencia cuál usar antes de prototipar el recordatorio de 24 horas antes de cada cobro (US12).</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Alternativas evaluadas</b><br>Dado que la aplicación debe agendar eventos en Android e iOS,<br>Cuando el desarrollador evalúa las APIs de calendario nativo de cada plataforma y las bibliotecas multiplataforma disponibles,<br>Entonces documenta para cada alternativa los permisos requeridos, la compatibilidad con el framework elegido y sus limitaciones.<br><br><b>Escenario 2: Alternativa elegida</b><br>Dado el comparativo documentado,<br>Cuando el equipo selecciona la alternativa,<br>Entonces el informe queda listo para orientar el prototipo del spike SP04.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SP04</td>
+      <td>Developer</td>
+      <td>Alta</td>
+      <td>EP10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Prototipar el agendado de eventos en el calendario nativo</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como equipo de desarrollo, deseo construir un prototipo que agende un evento con la alternativa elegida en SP03, para confirmar con evidencia su funcionamiento en un dispositivo físico antes de implementar US12, US13 y US14.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Prototipo en dispositivo físico</b><br>Dado la alternativa elegida en SP03,<br>Cuando el desarrollador construye un prototipo que agenda un evento de prueba en un dispositivo físico,<br>Entonces el evento aparece correctamente en la aplicación de calendario nativa y el prototipo queda registrado en una rama del repositorio.<br><br><b>Escenario 2: Hallazgos</b><br>Dado que el spike está completo,<br>Cuando el desarrollador documenta los hallazgos,<br>Entonces el informe incluye el manejo del caso en que el usuario deniega el permiso y una estimación en puntos de historia para US12, US13 y US14.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SP05</td>
+      <td>Developer</td>
       <td>Media</td>
       <td>EP10</td>
     </tr>
     <tr>
       <td><b>Title</b></td>
-      <td colspan="3">Investigar la integración del SDK de Stripe para el plan Premium</td>
+      <td colspan="3">Investigar el flujo de suscripción recurrente del SDK de Stripe</td>
     </tr>
     <tr>
       <td><b>Description</b></td>
-      <td colspan="3">Como equipo de desarrollo, deseo investigar y prototipar el flujo de suscripción recurrente del SDK de Stripe para Android e iOS, para decidir con evidencia cómo implementar el pago del plan Premium (US22).</td>
+      <td colspan="3">Como equipo de desarrollo, deseo revisar la documentación de Stripe Billing y del SDK móvil, para decidir con evidencia el flujo de pago recurrente antes de prototiparlo para el plan Premium (US22).</td>
     </tr>
     <tr>
       <td><b>Acceptance Criteria</b></td>
-      <td colspan="3"><b>Escenario 1: Documentación revisada</b><br>Dado que el equipo necesita cobrar una suscripción mensual recurrente,<br>Cuando el desarrollador revisa la documentación de Stripe Billing y del SDK móvil correspondiente,<br>Entonces documenta el flujo de creación del cliente, el método de pago y la suscripción recurrente, junto con el manejo de webhooks para confirmar el cobro.<br><br><b>Escenario 2: Prototipo</b><br>Dado el flujo documentado,<br>Cuando el desarrollador construye un prototipo que completa un pago de prueba con una tarjeta de test de Stripe,<br>Entonces el prototipo recibe la confirmación del webhook y queda registrado en una rama del repositorio.<br><br><b>Escenario 3: Hallazgos y estimación</b><br>Dado que el spike está completo,<br>Cuando el desarrollador compila los hallazgos,<br>Entonces el informe incluye el flujo recomendado, el tratamiento de pagos rechazados y cancelaciones, y una estimación en puntos de historia para US21, US22 y US23.</td>
+      <td colspan="3"><b>Escenario 1: Documentación revisada</b><br>Dado que el equipo necesita cobrar una suscripción mensual recurrente,<br>Cuando el desarrollador revisa la documentación de Stripe Billing y del SDK móvil correspondiente,<br>Entonces documenta el flujo de creación del cliente, el método de pago y la suscripción recurrente, junto con el manejo de webhooks para confirmar el cobro.<br><br><b>Escenario 2: Flujo documentado</b><br>Dado el flujo revisado,<br>Cuando el equipo lo valida internamente,<br>Entonces el informe queda listo para orientar el prototipo del spike SP06.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SP06</td>
+      <td>Developer</td>
+      <td>Media</td>
+      <td>EP10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Prototipar el pago recurrente con el SDK de Stripe</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como equipo de desarrollo, deseo construir un prototipo del flujo documentado en SP05, para confirmar con evidencia que un pago de prueba se completa y confirma antes de implementar US21, US22 y US23.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Prototipo con tarjeta de prueba</b><br>Dado el flujo documentado en SP05,<br>Cuando el desarrollador construye un prototipo que completa un pago de prueba con una tarjeta de test de Stripe,<br>Entonces el prototipo recibe la confirmación del webhook y queda registrado en una rama del repositorio.<br><br><b>Escenario 2: Hallazgos y estimación</b><br>Dado que el spike está completo,<br>Cuando el desarrollador compila los hallazgos,<br>Entonces el informe incluye el tratamiento de pagos rechazados y cancelaciones, y una estimación en puntos de historia para US21, US22 y US23.</td>
     </tr>
   </tbody>
 </table>
@@ -2113,17 +2206,17 @@ El cuarto mapa depende de que ambas personas perciban que CraveWallet resuelve m
 
 ### 2.4.3. Product Backlog
 
-El backlog consolida las 40 User Stories, las 6 Technical Stories y las 3 Spike Stories de la especificación, estimadas en Story Points con la escala 1, 2, 3, 5 y 8 y ordenadas por el valor que aportan al negocio, no por tipo de historia. El orden sigue el Impact Map: primero lo que reduce el riesgo técnico de las integraciones de terceros y lo que un visitante necesita para decidir descargar la aplicación (Spikes y landing page, que el enunciado exige desde el primer sprint); luego la autenticación, junto con el alta de suscripciones y el Dashboard que dependen de ella, porque sin cuenta no hay portafolio que mostrar; después la conversión de divisas y los recordatorios, que sostienen la hipótesis principal de anticipar el cobro; y al final el delivery y el plan Premium, que extienden la propuesta sin ser indispensables para las primeras hipótesis. La autenticación no encabeza el backlog por sí sola: entra en el Sprint 2 como habilitadora del alta de suscripciones y el Dashboard, no como prioridad de seguridad aislada.
+El backlog consolida las 40 User Stories, las 6 Technical Stories y las 6 Spike Stories de la especificación, estimadas en Story Points con la escala 1, 2, 3 y 5 (ninguna historia supera los 5 puntos: los spikes que hubieran pesado 8 se dividieron en un spike de investigación y uno de prototipo) y ordenadas por el valor que aportan al negocio, no por tipo de historia. El orden sigue el Impact Map: primero lo que un visitante necesita para decidir descargar la aplicación (landing page, que el enunciado exige desde el primer sprint) junto con los tres spikes de investigación, que no dependen de ningún sprint de construcción y por eso se adelantan; luego la autenticación, junto con el alta de suscripciones y el Dashboard que dependen de ella, porque sin cuenta no hay portafolio que mostrar; después los spikes de prototipo y las historias de conversión de divisas y recordatorios, que sostienen la hipótesis principal de anticipar el cobro; y al final el spike de Stripe, el delivery y el plan Premium, que extienden la propuesta sin ser indispensables para las primeras hipótesis. La autenticación no encabeza el backlog por sí sola: entra en el Sprint 2 como habilitadora del alta de suscripciones y el Dashboard, no como prioridad de seguridad aislada.
 
 Los sprints corresponden a las entregas del curso: el Sprint 1 a TB1, el Sprint 2 a AV2 y los Sprints 3 y 4 a TB2. Se administra además en la herramienta que indique el docente, cuyo enlace y captura quedan pendientes de incorporar.
 
 [[PENDIENTE: captura y URL del Product Backlog en la herramienta indicada]]
 
-| # Orden | User Story Id | Título | Story Points (1 / 2 / 3 / 5 / 8) | Sprint |
+| # Orden | User Story Id | Título | Story Points (1 / 2 / 3 / 5) | Sprint |
 | --- | --- | --- | --- | --- |
-| 1 | SP01 | Investigar la integración con ExchangeRate-API | 8 | 1 |
-| 2 | SP02 | Investigar la integración con el calendario nativo del dispositivo | 8 | 1 |
-| 3 | SP03 | Investigar la integración del SDK de Stripe para el plan Premium | 8 | 1 |
+| 1 | SP01 | Investigar y documentar la integración con ExchangeRate-API | 3 | 1 |
+| 2 | SP03 | Investigar las alternativas de integración con el calendario nativo | 3 | 1 |
+| 3 | SP05 | Investigar el flujo de suscripción recurrente del SDK de Stripe | 3 | 1 |
 | 4 | US24 | Ver la propuesta de valor de CraveWallet | 2 | 1 |
 | 5 | US25 | Comparar el plan gratuito y el plan Premium | 2 | 1 |
 | 6 | US32 | Consultar preguntas frecuentes en el landing page | 2 | 1 |
@@ -2146,32 +2239,35 @@ Los sprints corresponden a las entregas del curso: el Sprint 1 a TB1, el Sprint 
 | 23 | US11 | Ver el detalle de una suscripción desde el Dashboard | 2 | 2 |
 | 24 | US27 | Buscar una suscripción por nombre en el Dashboard | 2 | 2 |
 | 25 | US35 | Ver el ahorro estimado por cancelar una suscripción antes de su renovación | 3 | 2 |
-| 26 | TS03 | Servicio de conversión de divisas | 5 | 3 |
-| 27 | US15 | Ver el monto en soles de una suscripción facturada en dólares | 5 | 3 |
-| 28 | US16 | Ver el tipo de cambio utilizado y su fecha de actualización | 2 | 3 |
-| 29 | US17 | Ver mi portafolio completo unificado en soles | 3 | 3 |
-| 30 | US29 | Ver el historial del tipo de cambio aplicado a una suscripción | 2 | 3 |
-| 31 | US37 | Ver la variación del tipo de cambio respecto al cobro anterior | 2 | 3 |
-| 32 | TS04 | Servicio de recordatorios | 3 | 3 |
-| 33 | US12 | Recibir un recordatorio 24 horas antes de un cobro automático | 5 | 3 |
-| 34 | US13 | Que se elimine el recordatorio de una suscripción cancelada | 2 | 3 |
-| 35 | US14 | Otorgar permiso de acceso al calendario | 3 | 3 |
-| 36 | US28 | Ver la lista de mis próximos recordatorios agendados | 2 | 3 |
-| 37 | US36 | Recibir una notificación push además del recordatorio de calendario | 3 | 3 |
-| 38 | TS05 | Servicio de gastos de delivery | 3 | 4 |
-| 39 | US18 | Registrar un pedido de delivery desde un catálogo de comercios frecuentes | 3 | 4 |
-| 40 | US19 | Ver el total gastado en delivery en el mes | 2 | 4 |
-| 41 | US20 | Ver la tendencia de mi gasto de delivery por semana | 3 | 4 |
-| 42 | US30 | Editar o eliminar un gasto de delivery registrado por error | 2 | 4 |
-| 43 | US38 | Definir un límite mensual de gasto en delivery y recibir aviso al acercarme | 3 | 4 |
-| 44 | TS06 | Servicio de suscripción Premium y webhooks de Stripe | 5 | 4 |
-| 45 | US21 | Ver la propuesta de valor y el precio de Premium | 2 | 4 |
-| 46 | US22 | Suscribirme al plan Premium | 5 | 4 |
-| 47 | US23 | Cancelar mi suscripción Premium | 2 | 4 |
-| 48 | US31 | Ver mi historial de pagos Premium | 1 | 4 |
-| 49 | US39 | Ver cuántas suscripciones puedo registrar en el plan gratuito | 2 | 4 |
+| 26 | SP02 | Prototipar el consumo y caché de ExchangeRate-API | 5 | 3 |
+| 27 | TS03 | Servicio de conversión de divisas | 5 | 3 |
+| 28 | US15 | Ver el monto en soles de una suscripción facturada en dólares | 5 | 3 |
+| 29 | US16 | Ver el tipo de cambio utilizado y su fecha de actualización | 2 | 3 |
+| 30 | US17 | Ver mi portafolio completo unificado en soles | 3 | 3 |
+| 31 | US29 | Ver el historial del tipo de cambio aplicado a una suscripción | 2 | 3 |
+| 32 | US37 | Ver la variación del tipo de cambio respecto al cobro anterior | 2 | 3 |
+| 33 | SP04 | Prototipar el agendado de eventos en el calendario nativo | 5 | 3 |
+| 34 | TS04 | Servicio de recordatorios | 3 | 3 |
+| 35 | US12 | Recibir un recordatorio 24 horas antes de un cobro automático | 5 | 3 |
+| 36 | US13 | Que se elimine el recordatorio de una suscripción cancelada | 2 | 3 |
+| 37 | US14 | Otorgar permiso de acceso al calendario | 3 | 3 |
+| 38 | US28 | Ver la lista de mis próximos recordatorios agendados | 2 | 3 |
+| 39 | US36 | Recibir una notificación push además del recordatorio de calendario | 3 | 3 |
+| 40 | SP06 | Prototipar el pago recurrente con el SDK de Stripe | 5 | 4 |
+| 41 | TS05 | Servicio de gastos de delivery | 3 | 4 |
+| 42 | US18 | Registrar un pedido de delivery desde un catálogo de comercios frecuentes | 3 | 4 |
+| 43 | US19 | Ver el total gastado en delivery en el mes | 2 | 4 |
+| 44 | US20 | Ver la tendencia de mi gasto de delivery por semana | 3 | 4 |
+| 45 | US30 | Editar o eliminar un gasto de delivery registrado por error | 2 | 4 |
+| 46 | US38 | Definir un límite mensual de gasto en delivery y recibir aviso al acercarme | 3 | 4 |
+| 47 | TS06 | Servicio de suscripción Premium y webhooks de Stripe | 5 | 4 |
+| 48 | US21 | Ver la propuesta de valor y el precio de Premium | 2 | 4 |
+| 49 | US22 | Suscribirme al plan Premium | 5 | 4 |
+| 50 | US23 | Cancelar mi suscripción Premium | 2 | 4 |
+| 51 | US31 | Ver mi historial de pagos Premium | 1 | 4 |
+| 52 | US39 | Ver cuántas suscripciones puedo registrar en el plan gratuito | 2 | 4 |
 
-El total es de 148 Story Points: 31 en el Sprint 1, 47 en el Sprint 2, 37 en el Sprint 3 y 33 en el Sprint 4. El Sprint 2 concentra la mayor carga porque en él se habilita la autenticación y se construye el núcleo de valor —alta de suscripciones y Dashboard— del que dependen los sprints siguientes; el Sprint 1 queda deliberadamente liviano en historias de usuario porque concentra el riesgo técnico de los tres spikes.
+El total es de 148 Story Points: 16 en el Sprint 1, 47 en el Sprint 2, 47 en el Sprint 3 y 38 en el Sprint 4. Los spikes de investigación (SP01, SP03, SP05) abren el Sprint 1 junto al landing page porque no dependen de ningún sprint de construcción; sus spikes de prototipo correspondientes (SP02, SP04, SP06) se ubican al inicio del sprint donde se implementa la funcionalidad que investigan, para que sus hallazgos lleguen frescos a esa construcción. El Sprint 2 y el Sprint 3 concentran la mayor carga porque en ellos se construye, respectivamente, el núcleo de valor (autenticación, alta de suscripciones y Dashboard) y la hipótesis principal del producto (conversión de divisas y recordatorios anticipados).
 
 El backlog se administra en la herramienta que indique el docente, donde cada historia se registra como tarjeta con su código, título, puntos y sprint, en el mismo orden de esta tabla.
 
