@@ -694,19 +694,1753 @@ A partir de las Feature Assumptions del Capítulo I y de las tácticas de la sec
 | EP09 | Servicios RESTful | Technical Stories del backend propio que expone los endpoints consumidos por la aplicación móvil. |
 | EP10 | Investigación técnica | Spike Stories orientadas a despejar la incertidumbre técnica de las integraciones con Stripe y ExchangeRate-API antes de comprometerlas en el backlog. |
 
-[[PENDIENTE: historias de usuario individuales, con criterios de aceptación Gherkin, una vez completado el Needfinding]]
+Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambios: los diez Epics anticipados ya cubren, sin excepción, los hallazgos de las personas Camila Torres y Renzo Salazar (conversión a soles, recordatorio anticipado, fricción de registro y cancelación). A continuación se detallan las 40 User Stories de los ocho Epics orientados a usuario (EP01-EP08), las 6 Technical Stories del backend propio (EP09) y las 6 Spike Stories de investigación técnica (EP10), un total de 52 historias.
+
+#### Historias de usuario
+
+##### EP01 Autenticación y perfil
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US01</td>
+      <td>Usuario</td>
+      <td>Alta</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registrarme con correo y contraseña</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario nuevo, deseo crear una cuenta con mi correo y una contraseña, para empezar a registrar mis suscripciones en CraveWallet.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Registro exitoso</b><br>Dado que el usuario no tiene una cuenta en CraveWallet,<br>Cuando ingresa un correo válido no registrado y una contraseña que cumple la política mínima de seguridad,<br>Entonces el sistema crea la cuenta y da inicio a la sesión.<br><br><b>Escenario 2: Correo ya registrado</b><br>Dado que el correo ingresado ya tiene una cuenta asociada,<br>Cuando el usuario intenta registrarse con ese correo,<br>Entonces el sistema rechaza el registro e indica que el correo ya está en uso.<br><br><b>Escenario 3: Contraseña insegura</b><br>Dado que el usuario está completando el registro,<br>Cuando ingresa una contraseña que no cumple la longitud o complejidad mínima,<br>Entonces el sistema no crea la cuenta e indica el motivo del rechazo.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US02</td>
+      <td>Usuario</td>
+      <td>Alta</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Iniciar sesión</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario registrado, deseo iniciar sesión con mi correo y contraseña, para acceder a mi portafolio de suscripciones.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Credenciales correctas</b><br>Dado que el usuario tiene una cuenta registrada,<br>Cuando ingresa su correo y contraseña correctos,<br>Entonces el sistema inicia sesión y muestra el Dashboard.<br><br><b>Escenario 2: Credenciales incorrectas</b><br>Dado que el usuario tiene una cuenta registrada,<br>Cuando ingresa una contraseña incorrecta,<br>Entonces el sistema rechaza el ingreso e indica que las credenciales no son válidas, sin especificar cuál de los dos campos falló.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US03</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Configurar mi moneda de referencia</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo confirmar que mi moneda de referencia es el sol peruano al configurar mi perfil, para que el Dashboard y la conversión de divisas usen esa moneda como base.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Confirmación por defecto</b><br>Dado que el usuario completa su perfil por primera vez,<br>Cuando llega a la sección de moneda de referencia,<br>Entonces el sistema muestra el sol peruano (PEN) preseleccionado y permite confirmarlo.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US33</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Cerrar sesión</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo cerrar sesión en CraveWallet, para proteger mi cuenta cuando uso un dispositivo compartido o prestado.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Cierre exitoso</b><br>Dado que el usuario tiene una sesión iniciada,<br>Cuando selecciona cerrar sesión desde su perfil,<br>Entonces el sistema invalida su sesión y lo regresa a la pantalla de inicio de sesión.</td>
+    </tr>
+  </tbody>
+</table>
+
+##### EP02 Alta de suscripciones
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US04</td>
+      <td>Usuario</td>
+      <td>Alta</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registrar una suscripción desde el catálogo precargado</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo elegir un servicio de un catálogo con los nombres, logos y monedas de facturación de las suscripciones más frecuentes de mi segmento, para no tener que llenar esos datos a mano.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Selección desde el catálogo</b><br>Dado que el usuario abre el catálogo precargado,<br>Cuando selecciona un servicio (por ejemplo, Spotify o Netflix) e ingresa el monto y la fecha de su próximo cobro,<br>Entonces el sistema registra la suscripción con el nombre, el logo y la moneda de facturación ya definidos por el catálogo.<br><br><b>Escenario 2: Búsqueda dentro del catálogo</b><br>Dado que el catálogo tiene más de veinte servicios,<br>Cuando el usuario escribe parte del nombre en el buscador,<br>Entonces el sistema filtra la lista para mostrar solo las coincidencias.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US05</td>
+      <td>Usuario</td>
+      <td>Alta</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registrar una suscripción personalizada</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo registrar manualmente una suscripción que no está en el catálogo precargado, para llevar el control de servicios menos comunes (como una membresía física o una herramienta cloud específica).</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Registro manual completo</b><br>Dado que el servicio que el usuario quiere registrar no aparece en el catálogo,<br>Cuando ingresa manualmente el nombre, el monto, la moneda de facturación y la fecha del próximo cobro,<br>Entonces el sistema registra la suscripción como personalizada.<br><br><b>Escenario 2: Campos obligatorios incompletos</b><br>Dado que el usuario está registrando una suscripción personalizada,<br>Cuando intenta guardarla sin completar el monto o la fecha del próximo cobro,<br>Entonces el sistema no la registra e indica qué campos faltan.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US06</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Editar una suscripción registrada</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo editar el monto, la fecha o la categoría de una suscripción ya registrada, para corregir datos o reflejar un cambio de plan.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Edición exitosa</b><br>Dado que el usuario tiene una suscripción registrada,<br>Cuando modifica su monto, fecha de cobro o categoría y guarda los cambios,<br>Entonces el sistema actualiza la suscripción con los nuevos valores.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US07</td>
+      <td>Usuario</td>
+      <td>Alta</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Cancelar una suscripción registrada</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo marcar una suscripción registrada como cancelada, para dejar de recibir recordatorios de un servicio que ya no uso, sin perder su historial.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Cancelación exitosa</b><br>Dado que el usuario tiene una suscripción activa,<br>Cuando la marca como cancelada desde su detalle,<br>Entonces el sistema deja de incluirla en el total del Dashboard y en los próximos recordatorios, pero conserva su historial de cobros pasados.<br><br><b>Escenario 2: Confirmación antes de cancelar</b><br>Dado que el usuario selecciona la opción de cancelar una suscripción,<br>Cuando confirma la acción en el diálogo de verificación,<br>Entonces el sistema aplica la cancelación; si el usuario descarta el diálogo, la suscripción permanece activa.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US26</td>
+      <td>Usuario</td>
+      <td>Baja</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver el historial de suscripciones canceladas</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver la lista de suscripciones que cancelé en el pasado, para recordar qué servicios usé antes o reactivar una si vuelvo a necesitarla.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Consulta del historial</b><br>Dado que el usuario tiene al menos una suscripción cancelada,<br>Cuando abre la sección de suscripciones canceladas,<br>Entonces el sistema lista cada una con la fecha en que fue cancelada y su último monto registrado.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US34</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Previsualizar el monto en soles antes de guardar una suscripción en dólares</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver una previsualización del monto en soles mientras registro una suscripción en dólares, para saber de antemano cuánto representará en mi presupuesto antes de guardarla.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Previsualización en tiempo real</b><br>Dado que el usuario está registrando una suscripción y elige dólares como moneda de facturación,<br>Cuando ingresa el monto original,<br>Entonces el sistema muestra junto al campo el equivalente estimado en soles con el tipo de cambio del día, antes de que confirme el registro.</td>
+    </tr>
+  </tbody>
+</table>
+
+##### EP03 Dashboard unificado
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US08</td>
+      <td>Usuario</td>
+      <td>Alta</td>
+      <td>EP03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver el total mensual de mis suscripciones activas en soles</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver en el Dashboard el monto total que gasto al mes en suscripciones activas, ya convertido a soles, para conocer mi compromiso financiero recurrente en una sola cifra.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Portafolio mixto de monedas</b><br>Dado que el usuario tiene suscripciones activas facturadas en soles y en dólares,<br>Cuando abre el Dashboard,<br>Entonces el sistema muestra el total mensual sumando todas las suscripciones convertidas a soles con el tipo de cambio del día.<br><br><b>Escenario 2: Sin suscripciones registradas</b><br>Dado que el usuario no tiene ninguna suscripción registrada,<br>Cuando abre el Dashboard,<br>Entonces el sistema muestra el total en S/ 0.00 e invita a registrar la primera suscripción.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US09</td>
+      <td>Usuario</td>
+      <td>Alta</td>
+      <td>EP03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver mis suscripciones agrupadas por categoría</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver mis suscripciones activas agrupadas por categoría (streaming, educación, fitness, delivery, cloud), para entender en qué rubros concentro mi gasto recurrente.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Agrupación con subtotales</b><br>Dado que el usuario tiene suscripciones activas en más de una categoría,<br>Cuando abre la vista de categorías del Dashboard,<br>Entonces el sistema agrupa las suscripciones por categoría y muestra el subtotal mensual en soles de cada grupo.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US10</td>
+      <td>Usuario</td>
+      <td>Alta</td>
+      <td>EP03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver mis suscripciones ordenadas por próxima fecha de renovación</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver mis suscripciones activas ordenadas de la más próxima a la más lejana a cobrarse, para anticipar qué cargo viene primero.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Orden ascendente por fecha</b><br>Dado que el usuario tiene varias suscripciones activas con distintas fechas de cobro,<br>Cuando abre el Dashboard en la vista de próximos cobros,<br>Entonces el sistema las lista en orden ascendente según la fecha del próximo cobro.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US11</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver el detalle de una suscripción desde el Dashboard</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo tocar una suscripción del Dashboard para ver su detalle completo, para revisar su historial de cobros y su fecha de renovación sin salir del flujo principal.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Apertura del detalle</b><br>Dado que el usuario está en el Dashboard,<br>Cuando toca una suscripción de la lista,<br>Entonces el sistema abre su vista de detalle con el monto original, la moneda, el monto convertido a soles, la categoría y el historial de cobros pasados.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US27</td>
+      <td>Usuario</td>
+      <td>Baja</td>
+      <td>EP03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Buscar una suscripción por nombre en el Dashboard</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario con muchas suscripciones registradas, deseo buscar una por su nombre en el Dashboard, para encontrarla rápido sin recorrer toda la lista.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Coincidencia encontrada</b><br>Dado que el usuario tiene varias suscripciones activas,<br>Cuando escribe parte del nombre en el buscador del Dashboard,<br>Entonces el sistema filtra la lista y muestra solo las suscripciones cuyo nombre coincide.<br><br><b>Escenario 2: Sin coincidencias</b><br>Dado que el texto ingresado no coincide con ninguna suscripción,<br>Cuando el usuario busca,<br>Entonces el sistema muestra un mensaje indicando que no se encontraron resultados.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US35</td>
+      <td>Usuario</td>
+      <td>Baja</td>
+      <td>EP03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver el ahorro estimado por cancelar una suscripción antes de su renovación</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver cuánto me ahorré al cancelar una suscripción antes de que se renovara, para reconocer el valor de usar CraveWallet a tiempo.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Cancelación antes del cobro</b><br>Dado que el usuario cancela una suscripción activa antes de su próxima fecha de cobro,<br>Cuando confirma la cancelación,<br>Entonces el sistema le muestra el monto en soles que evitó pagar en ese ciclo.</td>
+    </tr>
+  </tbody>
+</table>
+
+##### EP04 Recordatorios vía calendario nativo
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US12</td>
+      <td>Usuario</td>
+      <td>Alta</td>
+      <td>EP04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Recibir un recordatorio 24 horas antes de un cobro automático</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo que CraveWallet agende un recordatorio en mi calendario nativo 24 horas antes de cada cobro de una suscripción activa, para tener tiempo de verificar mi saldo o cancelarla antes de que se renueve.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Recordatorio agendado al registrar</b><br>Dado que el usuario registra una suscripción activa con una fecha de próximo cobro,<br>Cuando confirma el registro,<br>Entonces el sistema agenda un evento en el calendario nativo del dispositivo 24 horas antes de esa fecha, con el nombre del servicio y el monto estimado.<br><br><b>Escenario 2: Reagendado tras editar la fecha de cobro</b><br>Dado que una suscripción ya tiene un recordatorio agendado,<br>Cuando el usuario edita su fecha de próximo cobro,<br>Entonces el sistema elimina el evento anterior y agenda uno nuevo 24 horas antes de la fecha actualizada.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US13</td>
+      <td>Usuario</td>
+      <td>Alta</td>
+      <td>EP04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Que se elimine el recordatorio de una suscripción cancelada</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo que al cancelar una suscripción se elimine también su recordatorio en el calendario, para no recibir avisos de un cobro que ya no va a ocurrir.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Eliminación automática</b><br>Dado que una suscripción activa tiene un recordatorio agendado en el calendario,<br>Cuando el usuario la marca como cancelada (US07),<br>Entonces el sistema elimina el evento correspondiente del calendario nativo.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US14</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Otorgar permiso de acceso al calendario</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo que la aplicación me pida permiso para acceder a mi calendario la primera vez que lo necesite, para entender por qué lo solicita y decidir si lo autorizo.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Permiso otorgado</b><br>Dado que el usuario registra su primera suscripción con fecha de cobro,<br>Cuando el sistema solicita permiso de acceso al calendario y el usuario lo acepta,<br>Entonces el sistema agenda el recordatorio correspondiente.<br><br><b>Escenario 2: Permiso denegado</b><br>Dado que el sistema solicita permiso de acceso al calendario,<br>Cuando el usuario lo deniega,<br>Entonces el sistema registra la suscripción igualmente, sin agendar el recordatorio, e informa que puede habilitar el permiso más tarde desde ajustes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US28</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver la lista de mis próximos recordatorios agendados</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver dentro de CraveWallet la lista de los recordatorios que se agendaron en mi calendario, para confirmar que todas mis suscripciones activas tienen uno programado.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Lista con recordatorios agendados</b><br>Dado que el usuario tiene suscripciones activas con recordatorio agendado,<br>Cuando abre la sección de recordatorios,<br>Entonces el sistema lista cada suscripción con la fecha y hora en que se enviará su recordatorio.<br><br><b>Escenario 2: Suscripción sin recordatorio</b><br>Dado que una suscripción activa no tiene recordatorio agendado por haber denegado el permiso de calendario,<br>Cuando el usuario abre la sección de recordatorios,<br>Entonces el sistema la marca como "sin recordatorio" y ofrece el acceso directo a los ajustes de permiso.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US36</td>
+      <td>Usuario</td>
+      <td>Alta</td>
+      <td>EP04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Recibir una notificación push además del recordatorio de calendario</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo recibir una notificación push de CraveWallet 24 horas antes de un cobro, además del evento agendado en mi calendario, para enterarme del aviso aunque no revise mi calendario ese día.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Envío de la notificación</b><br>Dado que una suscripción activa tiene un recordatorio agendado,<br>Cuando faltan 24 horas para su próximo cobro,<br>Entonces el sistema envía una notificación push al dispositivo del usuario con el nombre del servicio y el monto estimado en soles.</td>
+    </tr>
+  </tbody>
+</table>
+
+##### EP05 Conversión de divisas en tiempo real
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US15</td>
+      <td>Usuario</td>
+      <td>Alta</td>
+      <td>EP05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver el monto en soles de una suscripción facturada en dólares</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver junto al monto original en dólares de una suscripción su equivalente en soles, calculado con el tipo de cambio del día, para saber cuánto me costará realmente antes de que se cobre.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Conversión disponible</b><br>Dado que el usuario tiene una suscripción registrada en dólares,<br>Cuando consulta su detalle,<br>Entonces el sistema muestra el monto original en dólares junto al monto equivalente en soles, calculado con el tipo de cambio consultado ese día a la API externa.<br><br><b>Escenario 2: API de tipo de cambio no disponible</b><br>Dado que el servicio externo de tipo de cambio no responde,<br>Cuando el usuario consulta una suscripción en dólares,<br>Entonces el sistema muestra el último tipo de cambio guardado junto con la fecha en que se obtuvo, indicando que no es el valor del día.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US16</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver el tipo de cambio utilizado y su fecha de actualización</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver qué tipo de cambio usó CraveWallet para convertir mis suscripciones en dólares y cuándo se actualizó, para confiar en que el monto mostrado es razonable.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Consulta del tipo de cambio</b><br>Dado que el usuario está viendo el detalle de una suscripción en dólares,<br>Cuando abre la información de conversión,<br>Entonces el sistema muestra el valor del tipo de cambio aplicado y la fecha y hora en que se obtuvo de la API externa.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US17</td>
+      <td>Usuario</td>
+      <td>Alta</td>
+      <td>EP05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver mi portafolio completo unificado en soles</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo que el total del Dashboard sume todas mis suscripciones en una sola moneda, sin importar en qué divisa se facture cada una, para no tener que hacer yo mismo la conversión mental.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Suma de monedas mixtas</b><br>Dado que el usuario tiene suscripciones registradas en soles y en dólares,<br>Cuando el sistema calcula el total mensual del Dashboard,<br>Entonces convierte cada suscripción en dólares a soles con el tipo de cambio vigente antes de sumarlas al total.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US29</td>
+      <td>Usuario</td>
+      <td>Baja</td>
+      <td>EP05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver el historial del tipo de cambio aplicado a una suscripción</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver cómo varió mes a mes el tipo de cambio aplicado a una suscripción en dólares, para entender por qué el monto en soles no es siempre el mismo.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Historial con varios meses</b><br>Dado que una suscripción en dólares lleva más de un mes activa,<br>Cuando el usuario consulta su historial de conversión,<br>Entonces el sistema lista el tipo de cambio y el monto en soles aplicados en cada Billing Cycle anterior.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US37</td>
+      <td>Usuario</td>
+      <td>Baja</td>
+      <td>EP05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver la variación del tipo de cambio respecto al cobro anterior</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver si el tipo de cambio subió o bajó respecto al cobro anterior de una suscripción en dólares, para entender por qué el monto en soles cambió de un mes a otro.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Variación mostrada</b><br>Dado que una suscripción en dólares lleva más de un Billing Cycle activa,<br>Cuando el usuario consulta su detalle,<br>Entonces el sistema muestra la variación porcentual del tipo de cambio respecto al cobro anterior.</td>
+    </tr>
+  </tbody>
+</table>
+
+##### EP06 Categorización de gastos de delivery
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US18</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registrar un pedido de delivery desde un catálogo de comercios frecuentes</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo registrar un pedido de delivery eligiendo el comercio de un catálogo precargado con negocios frecuentes de Lima, para no tener que escribir el nombre cada vez que pido.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Registro desde el catálogo</b><br>Dado que el usuario abre el registro de un nuevo gasto de delivery,<br>Cuando selecciona un comercio del catálogo precargado e ingresa el monto del pedido,<br>Entonces el sistema registra el gasto con la fecha del día, el comercio y el monto.<br><br><b>Escenario 2: Comercio no listado</b><br>Dado que el comercio no aparece en el catálogo,<br>Cuando el usuario escribe manualmente su nombre y confirma el registro,<br>Entonces el sistema lo guarda como un gasto de delivery personalizado.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US19</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver el total gastado en delivery en el mes</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver cuánto llevo gastado en delivery en el mes en curso, para tomar conciencia del impacto acumulado de mis pedidos.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Total del mes con pedidos registrados</b><br>Dado que el usuario tiene al menos un gasto de delivery registrado en el mes en curso,<br>Cuando abre la sección de delivery,<br>Entonces el sistema muestra la suma de todos los pedidos del mes en soles.<br><br><b>Escenario 2: Sin pedidos registrados</b><br>Dado que el usuario no registró ningún pedido en el mes en curso,<br>Cuando abre la sección de delivery,<br>Entonces el sistema muestra el total en S/ 0.00.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US20</td>
+      <td>Usuario</td>
+      <td>Baja</td>
+      <td>EP06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver la tendencia de mi gasto de delivery por semana</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo ver un resumen semanal de mi gasto en delivery de las últimas semanas, para notar si aumenta en ciertas épocas (por ejemplo, exámenes o semanas de más carga laboral).</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Comparación entre semanas</b><br>Dado que el usuario tiene gastos de delivery registrados en al menos dos semanas distintas,<br>Cuando abre la tendencia semanal,<br>Entonces el sistema muestra el total gastado en cada una de las últimas cuatro semanas.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US30</td>
+      <td>Usuario</td>
+      <td>Baja</td>
+      <td>EP06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Editar o eliminar un gasto de delivery registrado por error</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo editar o eliminar un gasto de delivery que registré con un monto equivocado o por duplicado, para que el total del mes sea correcto.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Edición del monto</b><br>Dado que el usuario tiene un gasto de delivery registrado,<br>Cuando corrige su monto y guarda el cambio,<br>Entonces el sistema actualiza el gasto y recalcula el total del mes.<br><br><b>Escenario 2: Eliminación</b><br>Dado que el usuario registró un gasto de delivery por duplicado,<br>Cuando lo elimina,<br>Entonces el sistema lo quita del total del mes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US38</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Definir un límite mensual de gasto en delivery y recibir aviso al acercarme</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario, deseo definir un límite mensual de gasto en delivery y recibir un aviso cuando esté por alcanzarlo, para controlar mejor ese gasto de alta frecuencia.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Definición del límite</b><br>Dado que el usuario abre la configuración de delivery,<br>Cuando ingresa un monto límite mensual y lo guarda,<br>Entonces el sistema lo usa como referencia para el mes en curso.<br><br><b>Escenario 2: Aviso cercano al límite</b><br>Dado que el usuario definió un límite mensual,<br>Cuando su gasto acumulado del mes alcanza el 80 % de ese límite,<br>Entonces el sistema le envía un aviso.</td>
+    </tr>
+  </tbody>
+</table>
+
+##### EP07 CraveWallet Premium
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US21</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver la propuesta de valor y el precio de Premium</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario del plan gratuito, deseo ver qué incluye el plan Premium y su precio mensual, para decidir si me conviene suscribirme.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Consulta del plan</b><br>Dado que el usuario tiene el plan gratuito,<br>Cuando abre la sección Premium,<br>Entonces el sistema muestra el precio mensual (S/ 9.90), los beneficios incluidos (registro ilimitado de suscripciones, analítica avanzada, recordatorios prioritarios) y las limitaciones actuales del plan gratuito.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US22</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Suscribirme al plan Premium</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario del plan gratuito, deseo pagar el plan Premium con mi tarjeta a través de un flujo seguro, para acceder de inmediato a sus beneficios.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Pago exitoso</b><br>Dado que el usuario ingresó los datos de una tarjeta válida en el flujo de pago de Stripe,<br>Cuando confirma la suscripción,<br>Entonces el sistema activa el plan Premium de inmediato y elimina las restricciones del plan gratuito.<br><br><b>Escenario 2: Pago rechazado</b><br>Dado que el usuario intenta pagar con una tarjeta que Stripe rechaza,<br>Cuando confirma la suscripción,<br>Entonces el sistema no activa el plan Premium e indica que el pago fue rechazado, permitiendo intentar con otra tarjeta.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US23</td>
+      <td>Usuario</td>
+      <td>Baja</td>
+      <td>EP07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Cancelar mi suscripción Premium</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario Premium, deseo cancelar mi suscripción, para volver al plan gratuito y dejar de pagar el monto mensual.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Cancelación efectiva al fin del período pagado</b><br>Dado que el usuario tiene el plan Premium activo,<br>Cuando cancela la suscripción desde su perfil,<br>Entonces el sistema mantiene los beneficios Premium hasta el final del período ya pagado y luego lo devuelve automáticamente al plan gratuito.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US31</td>
+      <td>Usuario</td>
+      <td>Baja</td>
+      <td>EP07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver mi historial de pagos Premium</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario Premium, deseo ver el historial de los pagos mensuales que hice por la suscripción, para tener un registro de cuánto he pagado en total.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Historial con pagos registrados</b><br>Dado que el usuario tiene al menos un pago Premium confirmado,<br>Cuando abre la sección de historial de pagos,<br>Entonces el sistema lista cada pago con su fecha y monto.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US39</td>
+      <td>Usuario</td>
+      <td>Media</td>
+      <td>EP07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver cuántas suscripciones puedo registrar en el plan gratuito</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como usuario del plan gratuito, deseo ver cuántas suscripciones llevo registradas frente al límite del plan gratuito, para saber cuándo me conviene pasar a Premium.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Cerca del límite</b><br>Dado que el usuario tiene el plan gratuito con un límite de suscripciones,<br>Cuando registra una nueva suscripción cercana al límite,<br>Entonces el sistema le muestra cuántas suscripciones lleva registradas del total permitido.<br><br><b>Escenario 2: Límite alcanzado</b><br>Dado que el usuario alcanzó el límite del plan gratuito,<br>Cuando intenta registrar una suscripción adicional,<br>Entonces el sistema le impide continuar y lo invita a pasar a Premium.</td>
+    </tr>
+  </tbody>
+</table>
+
+##### EP08 Landing page
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US24</td>
+      <td>Visitante</td>
+      <td>Media</td>
+      <td>EP08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Ver la propuesta de valor de CraveWallet</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como visitante que todavía no tiene cuenta, deseo entender en el landing page qué problema resuelve CraveWallet y cómo funciona, para decidir si quiero descargarla.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Primera visita</b><br>Dado que un visitante entra al landing page,<br>Cuando la página carga,<br>Entonces muestra el problema de los cobros automáticos no anticipados, la propuesta de valor de CraveWallet y los enlaces de descarga para Android e iOS.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US25</td>
+      <td>Visitante</td>
+      <td>Media</td>
+      <td>EP08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Comparar el plan gratuito y el plan Premium</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como visitante, deseo ver una comparación clara entre el plan gratuito y el plan Premium en el landing page, para saber qué esperar antes de descargar la aplicación.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Tabla comparativa</b><br>Dado que el visitante llega a la sección de precios del landing page,<br>Cuando la revisa,<br>Entonces ve una tabla comparativa con las funciones del plan gratuito y del plan Premium, incluyendo el precio mensual de este último.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US32</td>
+      <td>Visitante</td>
+      <td>Baja</td>
+      <td>EP08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consultar preguntas frecuentes en el landing page</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como visitante, deseo consultar una sección de preguntas frecuentes en el landing page, para resolver dudas comunes (seguridad, moneda, costo de Premium) antes de descargar la aplicación.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Consulta de una pregunta</b><br>Dado que el visitante está en la sección de preguntas frecuentes,<br>Cuando toca una pregunta,<br>Entonces la página despliega la respuesta correspondiente sin recargar.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US40</td>
+      <td>Visitante</td>
+      <td>Baja</td>
+      <td>EP08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Dejar mi correo para recibir novedades del lanzamiento</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como visitante, deseo dejar mi correo en el landing page para recibir novedades del lanzamiento de CraveWallet, para enterarme cuando esté disponible o de futuras promociones.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Registro exitoso</b><br>Dado que el visitante ingresa un correo con formato válido en el formulario de novedades,<br>Cuando lo envía,<br>Entonces el sistema lo registra y muestra un mensaje de confirmación.<br><br><b>Escenario 2: Correo con formato inválido</b><br>Dado que el visitante ingresa un texto que no tiene formato de correo,<br>Cuando intenta enviarlo,<br>Entonces el sistema no lo registra e indica que el formato no es válido.</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Technical Stories
+
+Las Technical Stories describen los servicios RESTful de desarrollo propio que sostienen la aplicación móvil. Se redactan desde el rol Developer y sus criterios de aceptación son escenarios de solicitud y respuesta.
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS01</td>
+      <td>Developer</td>
+      <td>Alta</td>
+      <td>EP09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Servicio de autenticación y perfil</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como desarrollador, deseo contar con endpoints para registrar, autenticar y actualizar el perfil de un usuario, para que la aplicación móvil gestione sesiones sin lógica de negocio propia.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Registro</b><br>Dado un correo no registrado,<br>Cuando el cliente envía POST /api/v1/auth/register con correo y contraseña,<br>Entonces el servicio responde 201 Created con un token de acceso y un token de renovación.<br><br><b>Escenario 2: Inicio de sesión</b><br>Dado credenciales válidas,<br>Cuando el cliente envía POST /api/v1/auth/login,<br>Entonces el servicio responde 200 OK con un nuevo par de tokens; y con credenciales inválidas responde 401 Unauthorized.<br><br><b>Escenario 3: Actualización de perfil</b><br>Dado un usuario autenticado,<br>Cuando envía PATCH /api/v1/users/me con su moneda de referencia,<br>Entonces el servicio responde 200 OK con el perfil actualizado.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS02</td>
+      <td>Developer</td>
+      <td>Alta</td>
+      <td>EP09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Servicio de suscripciones</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como desarrollador, deseo contar con endpoints para crear, listar, actualizar y cancelar suscripciones, para que la aplicación móvil administre el Subscription Portfolio del usuario.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Creación</b><br>Dado un usuario autenticado,<br>Cuando envía POST /api/v1/subscriptions con nombre, monto, moneda, categoría y fecha de próximo cobro,<br>Entonces el servicio responde 201 Created con la suscripción en estado ACTIVE.<br><br><b>Escenario 2: Listado con total convertido</b><br>Dado un usuario autenticado con suscripciones registradas,<br>Cuando envía GET /api/v1/subscriptions,<br>Entonces el servicio responde 200 OK con la lista de suscripciones y el total mensual ya convertido a soles.<br><br><b>Escenario 3: Cancelación</b><br>Dado una suscripción ACTIVE del usuario,<br>Cuando envía POST /api/v1/subscriptions/{id}/cancel,<br>Entonces el servicio responde 200 OK con la suscripción en estado CANCELLED, sin eliminar su historial de cobros.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS03</td>
+      <td>Developer</td>
+      <td>Alta</td>
+      <td>EP09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Servicio de conversión de divisas</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como desarrollador, deseo contar con un endpoint interno que resuelva el tipo de cambio vigente USD/PEN, consultando y cacheando ExchangeRate-API, para que el resto de servicios no dependan directamente de un proveedor externo.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Consulta con caché vigente</b><br>Dado que el servicio ya consultó el tipo de cambio en las últimas 24 horas,<br>Cuando el cliente envía GET /api/v1/exchange-rate?from=USD&to=PEN,<br>Entonces el servicio responde 200 OK con el valor cacheado y la fecha en que se obtuvo, sin llamar a la API externa.<br><br><b>Escenario 2: Caché vencida</b><br>Dado que el valor cacheado tiene más de 24 horas,<br>Cuando el cliente hace la misma solicitud,<br>Entonces el servicio consulta ExchangeRate-API, actualiza la caché y responde 200 OK con el nuevo valor.<br><br><b>Escenario 3: Proveedor externo caído</b><br>Dado que ExchangeRate-API no responde,<br>Cuando el servicio necesita actualizar la caché vencida,<br>Entonces responde 200 OK con el último valor cacheado y un indicador de que el dato no es del día.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS04</td>
+      <td>Developer</td>
+      <td>Alta</td>
+      <td>EP09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Servicio de recordatorios</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como desarrollador, deseo contar con un endpoint que genere el payload del evento de calendario para una suscripción, para que la aplicación móvil lo agende en el calendario nativo del dispositivo 24 horas antes del cobro.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Generación del evento</b><br>Dado una suscripción ACTIVE con fecha de próximo cobro,<br>Cuando el cliente envía GET /api/v1/subscriptions/{id}/reminder,<br>Entonces el servicio responde 200 OK con el título, la fecha (24 horas antes del cobro) y la descripción del evento a agendar.<br><br><b>Escenario 2: Suscripción cancelada</b><br>Dado una suscripción CANCELLED,<br>Cuando el cliente solicita su recordatorio,<br>Entonces el servicio responde 404 Not Found.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS05</td>
+      <td>Developer</td>
+      <td>Media</td>
+      <td>EP09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Servicio de gastos de delivery</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como desarrollador, deseo contar con endpoints para registrar, listar y editar gastos de delivery, para que la aplicación móvil calcule el total y la tendencia mensual sin lógica de negocio propia.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Registro</b><br>Dado un usuario autenticado,<br>Cuando envía POST /api/v1/delivery-expenses con comercio, monto y fecha,<br>Entonces el servicio responde 201 Created con el gasto registrado.<br><br><b>Escenario 2: Total del mes</b><br>Dado un usuario autenticado con gastos registrados,<br>Cuando envía GET /api/v1/delivery-expenses/summary?month=actual,<br>Entonces el servicio responde 200 OK con el total del mes y el desglose por semana.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS06</td>
+      <td>Developer</td>
+      <td>Media</td>
+      <td>EP09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Servicio de suscripción Premium y webhooks de Stripe</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como desarrollador, deseo contar con un endpoint que inicie el flujo de pago recurrente de Stripe y un webhook que reciba sus eventos de confirmación y cancelación, para activar o desactivar el plan Premium del usuario de forma confiable.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Inicio del pago</b><br>Dado un usuario autenticado en el plan gratuito,<br>Cuando envía POST /api/v1/premium/checkout,<br>Entonces el servicio responde 200 OK con la sesión de pago de Stripe a la que debe redirigirse el cliente.<br><br><b>Escenario 2: Confirmación por webhook</b><br>Dado que Stripe confirma un pago exitoso,<br>Cuando el webhook POST /api/v1/premium/webhook recibe el evento `invoice.paid`,<br>Entonces el servicio activa el plan Premium del usuario correspondiente.<br><br><b>Escenario 3: Cancelación por webhook</b><br>Dado que Stripe notifica el fin del período pagado tras una cancelación,<br>Cuando el webhook recibe el evento `customer.subscription.deleted`,<br>Entonces el servicio devuelve al usuario al plan gratuito.</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Spike Stories
+
+Las Spike Stories cubren la investigación técnica necesaria antes de comprometer en el backlog las dos integraciones de terceros que el equipo no ha usado en clase: el SDK de Stripe y ExchangeRate-API, declaradas como el feature de aprendizaje autónomo del proyecto en la sección 1.1.1 del Capítulo I. Cada integración se investiga en dos spikes en lugar de uno solo: un spike de documentación y decisión, y un spike de prototipo, de modo que ninguno supere los 5 puntos ni concentre más de una jornada de trabajo continua.
+
+**Definition of Done común a los seis spikes.** El prototipo o el informe de decisión queda registrado en una rama del repositorio; los hallazgos se comparten con el equipo en la sesión de refinamiento del backlog y se usan para crear o refinar las historias de implementación correspondientes; y cada spike se completa dentro del sprint en que se planifica.
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SP01</td>
+      <td>Developer</td>
+      <td>Alta</td>
+      <td>EP10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Investigar y documentar la integración con ExchangeRate-API</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como equipo de desarrollo, deseo investigar y documentar cómo consumir ExchangeRate-API dentro de sus límites de uso, para decidir con evidencia el diseño de caché del Servicio de conversión de divisas (TS03) antes de construirlo.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Documentación revisada</b><br>Dado que el equipo necesita el tipo de cambio USD/PEN actualizado,<br>Cuando el desarrollador revisa el plan gratuito de ExchangeRate-API y sus límites de solicitudes,<br>Entonces documenta la frecuencia máxima de consulta viable y la estrategia de caché necesaria para no exceder el límite.<br><br><b>Escenario 2: Diseño de caché documentado</b><br>Dado que el equipo conoce los límites del proveedor,<br>Cuando el desarrollador define cómo se invalida y renueva el valor cacheado,<br>Entonces el informe queda listo para orientar el prototipo del spike SP02 y la implementación de TS03.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SP02</td>
+      <td>Developer</td>
+      <td>Alta</td>
+      <td>EP10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Prototipar el consumo y caché de ExchangeRate-API</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como equipo de desarrollo, deseo construir un prototipo del diseño de caché definido en SP01, para confirmar con evidencia que soporta el volumen de consultas antes de implementar TS03.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Prototipo bajo carga</b><br>Dado el diseño de caché documentado en SP01,<br>Cuando el desarrollador construye un prototipo del backend que consulta y cachea el tipo de cambio,<br>Entonces el prototipo responde correctamente ante al menos diez solicitudes consecutivas sin exceder el límite del proveedor, y queda registrado en una rama del repositorio.<br><br><b>Escenario 2: Hallazgos y estimación</b><br>Dado que el spike está completo,<br>Cuando el desarrollador compila los hallazgos,<br>Entonces el informe incluye el manejo de caídas del proveedor y una estimación en puntos de historia para TS03.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SP03</td>
+      <td>Developer</td>
+      <td>Alta</td>
+      <td>EP10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Investigar las alternativas de integración con el calendario nativo</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como equipo de desarrollo, deseo comparar las APIs de calendario nativo de Android e iOS y las bibliotecas multiplataforma disponibles, para elegir con evidencia cuál usar antes de prototipar el recordatorio de 24 horas antes de cada cobro (US12).</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Alternativas evaluadas</b><br>Dado que la aplicación debe agendar eventos en Android e iOS,<br>Cuando el desarrollador evalúa las APIs de calendario nativo de cada plataforma y las bibliotecas multiplataforma disponibles,<br>Entonces documenta para cada alternativa los permisos requeridos, la compatibilidad con el framework elegido y sus limitaciones.<br><br><b>Escenario 2: Alternativa elegida</b><br>Dado el comparativo documentado,<br>Cuando el equipo selecciona la alternativa,<br>Entonces el informe queda listo para orientar el prototipo del spike SP04.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SP04</td>
+      <td>Developer</td>
+      <td>Alta</td>
+      <td>EP10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Prototipar el agendado de eventos en el calendario nativo</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como equipo de desarrollo, deseo construir un prototipo que agende un evento con la alternativa elegida en SP03, para confirmar con evidencia su funcionamiento en un dispositivo físico antes de implementar US12, US13 y US14.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Prototipo en dispositivo físico</b><br>Dado la alternativa elegida en SP03,<br>Cuando el desarrollador construye un prototipo que agenda un evento de prueba en un dispositivo físico,<br>Entonces el evento aparece correctamente en la aplicación de calendario nativa y el prototipo queda registrado en una rama del repositorio.<br><br><b>Escenario 2: Hallazgos</b><br>Dado que el spike está completo,<br>Cuando el desarrollador documenta los hallazgos,<br>Entonces el informe incluye el manejo del caso en que el usuario deniega el permiso y una estimación en puntos de historia para US12, US13 y US14.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SP05</td>
+      <td>Developer</td>
+      <td>Media</td>
+      <td>EP10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Investigar el flujo de suscripción recurrente del SDK de Stripe</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como equipo de desarrollo, deseo revisar la documentación de Stripe Billing y del SDK móvil, para decidir con evidencia el flujo de pago recurrente antes de prototiparlo para el plan Premium (US22).</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Documentación revisada</b><br>Dado que el equipo necesita cobrar una suscripción mensual recurrente,<br>Cuando el desarrollador revisa la documentación de Stripe Billing y del SDK móvil correspondiente,<br>Entonces documenta el flujo de creación del cliente, el método de pago y la suscripción recurrente, junto con el manejo de webhooks para confirmar el cobro.<br><br><b>Escenario 2: Flujo documentado</b><br>Dado el flujo revisado,<br>Cuando el equipo lo valida internamente,<br>Entonces el informe queda listo para orientar el prototipo del spike SP06.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SP06</td>
+      <td>Developer</td>
+      <td>Media</td>
+      <td>EP10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Prototipar el pago recurrente con el SDK de Stripe</td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td colspan="3">Como equipo de desarrollo, deseo construir un prototipo del flujo documentado en SP05, para confirmar con evidencia que un pago de prueba se completa y confirma antes de implementar US21, US22 y US23.</td>
+    </tr>
+    <tr>
+      <td><b>Acceptance Criteria</b></td>
+      <td colspan="3"><b>Escenario 1: Prototipo con tarjeta de prueba</b><br>Dado el flujo documentado en SP05,<br>Cuando el desarrollador construye un prototipo que completa un pago de prueba con una tarjeta de test de Stripe,<br>Entonces el prototipo recibe la confirmación del webhook y queda registrado en una rama del repositorio.<br><br><b>Escenario 2: Hallazgos y estimación</b><br>Dado que el spike está completo,<br>Cuando el desarrollador compila los hallazgos,<br>Entonces el informe incluye el tratamiento de pagos rechazados y cancelaciones, y una estimación en puntos de historia para US21, US22 y US23.</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 2.4.2. Impact Mapping
 
-El Impact Map vinculará los Business Outcome Assumptions declarados en la sección 1.2.2.2 del Capítulo I —NPS superior a 40, conversión Premium de al menos 12%, retención a 30 días superior a 45% y reducción de cargos no anticipados de al menos 60%— con los actores, los impactos de comportamiento esperados y las historias de usuario de la sección 2.4.1 que los sostienen.
+El Impact Map vincula los objetivos de negocio de CraveWallet con las personas que pueden hacerlos posibles, el cambio de comportamiento que se espera de ellas, lo que el producto entrega para provocar ese cambio y las historias que lo implementan. El equipo lo elabora en la herramienta indicada a partir de las fichas de User Persona de Camila Torres y Renzo Salazar (2.3.1), respondiendo en cada nivel las preguntas del método: quiénes ayudan a lograr la meta, qué tendrían que hacer, qué puede hacer el negocio digital para provocarlo y con qué historias. Se elabora un mapa por cada Business Goal.
 
-[[PENDIENTE: elaboración del Impact Map una vez redactadas las User Stories]]
+Los Business Goals se derivan, con los criterios SMART, de los Business Outcome Assumptions declarados en la sección 1.2.2.2 del Capítulo I.
+
+| Business Goal | Enunciado |
+| --- | --- |
+| BG01 | Reducir los cargos no anticipados por renovación automática en al menos 60 % entre los usuarios activos, dentro de los 90 días desde su primer uso. |
+| BG02 | Alcanzar una retención a 30 días superior al 45 % entre los usuarios que han registrado 3 o más suscripciones activas. |
+| BG03 | Lograr que al menos el 12 % de los usuarios activos mensuales con 6 o más suscripciones registradas convierta al plan Premium, dentro de los primeros 6 meses de operación. |
+| BG04 | Alcanzar un Net Promoter Score superior a 40 puntos al término del primer semestre posterior al lanzamiento. |
+
+Los actores son los dos User Personas del proyecto: **Camila Torres**, del Segmento 1, y **Renzo Salazar**, del Segmento 2. Los deliverables corresponden a las Epics de la especificación, y cada historia aparece con su código. Las Technical Stories y las Spike Stories no aparecen en los mapas porque no modifican el comportamiento de un actor; entran al Product Backlog por la dependencia técnica de las historias que sí lo hacen.
+
+#### Business Goal 01: anticipación del cobro
+
+Este mapa responde a qué tiene que cambiar para que un usuario deje de enterarse de un cobro automático solo al revisar su banco, el hallazgo transversal de la sección 2.2.3. De Camila Torres y de Renzo Salazar se espera el mismo cambio de comportamiento: que revisen el recordatorio que reciben antes del cobro y decidan a tiempo si mantienen o cancelan la suscripción, en lugar de descubrirlo después (recordatorios vía calendario nativo, con las historias de agendar, reagendar y eliminar el recordatorio, y de recibir la notificación push complementaria).
+
+[[PENDIENTE: captura del Impact Map del Business Goal 01 en la herramienta indicada]]
+
+#### Business Goal 02: retención por uso del Dashboard
+
+El segundo mapa sostiene la hipótesis de que un usuario vuelve a la aplicación si el Dashboard le ahorra el trabajo mental de sumar su portafolio de suscripciones. De ambas personas se espera que consulten el Dashboard con regularidad en lugar de llevar la cuenta mentalmente o revisando el banco (Dashboard unificado, con las historias de ver el total en soles, agrupar por categoría, ordenar por próxima renovación, buscar y ver el ahorro de una cancelación a tiempo); y que registren cada suscripción nueva apenas la contratan, en lugar de dejarla fuera del control (alta de suscripciones, con el catálogo precargado, el registro personalizado y la previsualización del monto en soles).
+
+[[PENDIENTE: captura del Impact Map del Business Goal 02 en la herramienta indicada]]
+
+#### Business Goal 03: conversión a Premium
+
+El tercer mapa se concentra en los usuarios de mayor compromiso, con 6 o más suscripciones registradas. De ambas personas se espera que perciban el límite del plan gratuito y decidan pagar por eliminarlo, en vez de abandonar el registro de sus suscripciones adicionales (plan Premium, con las historias de conocer el precio, suscribirse vía Stripe, ver el historial de pagos y ver cuánto falta para el límite gratuito).
+
+[[PENDIENTE: captura del Impact Map del Business Goal 03 en la herramienta indicada]]
+
+#### Business Goal 04: recomendación del producto
+
+El cuarto mapa depende de que ambas personas perciban que CraveWallet resuelve mejor que la competencia (2.1) su problema principal. Se espera que un visitante entienda la propuesta de valor antes de descargar la aplicación (landing page, con las historias de ver la propuesta de valor, comparar planes y consultar preguntas frecuentes), y que un usuario activo experimente en conjunto el Dashboard, la conversión de divisas y los recordatorios como una solución coherente que lo lleve a recomendarla.
+
+[[PENDIENTE: captura del Impact Map del Business Goal 04 en la herramienta indicada]]
 
 ### 2.4.3. Product Backlog
 
-El backlog consolidará las historias de la sección 2.4.1 con su estimación de esfuerzo y su prioridad, siguiendo el criterio de valor de negocio descrito en 2.4.1, y se administrará en la herramienta que indique el docente.
+El backlog consolida las 40 User Stories, las 6 Technical Stories y las 6 Spike Stories de la especificación, estimadas en Story Points con la escala 1, 2, 3 y 5 (ninguna historia supera los 5 puntos: los spikes que hubieran pesado 8 se dividieron en un spike de investigación y uno de prototipo) y ordenadas por el valor que aportan al negocio, no por tipo de historia. El orden sigue el Impact Map: primero lo que un visitante necesita para decidir descargar la aplicación (landing page, que el enunciado exige desde el primer sprint) junto con los tres spikes de investigación, que no dependen de ningún sprint de construcción y por eso se adelantan; luego la autenticación, junto con el alta de suscripciones y el Dashboard que dependen de ella, porque sin cuenta no hay portafolio que mostrar; después los spikes de prototipo y las historias de conversión de divisas y recordatorios, que sostienen la hipótesis principal de anticipar el cobro; y al final el spike de Stripe, el delivery y el plan Premium, que extienden la propuesta sin ser indispensables para las primeras hipótesis. La autenticación no encabeza el backlog por sí sola: entra en el Sprint 2 como habilitadora del alta de suscripciones y el Dashboard, no como prioridad de seguridad aislada.
 
-[[PENDIENTE]]
+Los sprints corresponden a las entregas del curso: el Sprint 1 a TB1, el Sprint 2 a AV2 y los Sprints 3 y 4 a TB2. Se administra además en la herramienta que indique el docente, cuyo enlace y captura quedan pendientes de incorporar.
+
+[[PENDIENTE: captura y URL del Product Backlog en la herramienta indicada]]
+
+| # Orden | User Story Id | Título | Story Points (1 / 2 / 3 / 5) | Sprint |
+| --- | --- | --- | --- | --- |
+| 1 | SP01 | Investigar y documentar la integración con ExchangeRate-API | 3 | 1 |
+| 2 | SP03 | Investigar las alternativas de integración con el calendario nativo | 3 | 1 |
+| 3 | SP05 | Investigar el flujo de suscripción recurrente del SDK de Stripe | 3 | 1 |
+| 4 | US24 | Ver la propuesta de valor de CraveWallet | 2 | 1 |
+| 5 | US25 | Comparar el plan gratuito y el plan Premium | 2 | 1 |
+| 6 | US32 | Consultar preguntas frecuentes en el landing page | 2 | 1 |
+| 7 | US40 | Dejar mi correo para recibir novedades del lanzamiento | 1 | 1 |
+| 8 | TS01 | Servicio de autenticación y perfil | 5 | 2 |
+| 9 | US01 | Registrarme con correo y contraseña | 3 | 2 |
+| 10 | US02 | Iniciar sesión | 2 | 2 |
+| 11 | US03 | Configurar mi moneda de referencia | 1 | 2 |
+| 12 | US33 | Cerrar sesión | 1 | 2 |
+| 13 | TS02 | Servicio de suscripciones | 5 | 2 |
+| 14 | US04 | Registrar una suscripción desde el catálogo precargado | 3 | 2 |
+| 15 | US05 | Registrar una suscripción personalizada | 3 | 2 |
+| 16 | US06 | Editar una suscripción registrada | 2 | 2 |
+| 17 | US07 | Cancelar una suscripción registrada | 2 | 2 |
+| 18 | US26 | Ver el historial de suscripciones canceladas | 1 | 2 |
+| 19 | US34 | Previsualizar el monto en soles antes de guardar una suscripción en dólares | 2 | 2 |
+| 20 | US08 | Ver el total mensual de mis suscripciones activas en soles | 5 | 2 |
+| 21 | US09 | Ver mis suscripciones agrupadas por categoría | 3 | 2 |
+| 22 | US10 | Ver mis suscripciones ordenadas por próxima fecha de renovación | 2 | 2 |
+| 23 | US11 | Ver el detalle de una suscripción desde el Dashboard | 2 | 2 |
+| 24 | US27 | Buscar una suscripción por nombre en el Dashboard | 2 | 2 |
+| 25 | US35 | Ver el ahorro estimado por cancelar una suscripción antes de su renovación | 3 | 2 |
+| 26 | SP02 | Prototipar el consumo y caché de ExchangeRate-API | 5 | 3 |
+| 27 | TS03 | Servicio de conversión de divisas | 5 | 3 |
+| 28 | US15 | Ver el monto en soles de una suscripción facturada en dólares | 5 | 3 |
+| 29 | US16 | Ver el tipo de cambio utilizado y su fecha de actualización | 2 | 3 |
+| 30 | US17 | Ver mi portafolio completo unificado en soles | 3 | 3 |
+| 31 | US29 | Ver el historial del tipo de cambio aplicado a una suscripción | 2 | 3 |
+| 32 | US37 | Ver la variación del tipo de cambio respecto al cobro anterior | 2 | 3 |
+| 33 | SP04 | Prototipar el agendado de eventos en el calendario nativo | 5 | 3 |
+| 34 | TS04 | Servicio de recordatorios | 3 | 3 |
+| 35 | US12 | Recibir un recordatorio 24 horas antes de un cobro automático | 5 | 3 |
+| 36 | US13 | Que se elimine el recordatorio de una suscripción cancelada | 2 | 3 |
+| 37 | US14 | Otorgar permiso de acceso al calendario | 3 | 3 |
+| 38 | US28 | Ver la lista de mis próximos recordatorios agendados | 2 | 3 |
+| 39 | US36 | Recibir una notificación push además del recordatorio de calendario | 3 | 3 |
+| 40 | SP06 | Prototipar el pago recurrente con el SDK de Stripe | 5 | 4 |
+| 41 | TS05 | Servicio de gastos de delivery | 3 | 4 |
+| 42 | US18 | Registrar un pedido de delivery desde un catálogo de comercios frecuentes | 3 | 4 |
+| 43 | US19 | Ver el total gastado en delivery en el mes | 2 | 4 |
+| 44 | US20 | Ver la tendencia de mi gasto de delivery por semana | 3 | 4 |
+| 45 | US30 | Editar o eliminar un gasto de delivery registrado por error | 2 | 4 |
+| 46 | US38 | Definir un límite mensual de gasto en delivery y recibir aviso al acercarme | 3 | 4 |
+| 47 | TS06 | Servicio de suscripción Premium y webhooks de Stripe | 5 | 4 |
+| 48 | US21 | Ver la propuesta de valor y el precio de Premium | 2 | 4 |
+| 49 | US22 | Suscribirme al plan Premium | 5 | 4 |
+| 50 | US23 | Cancelar mi suscripción Premium | 2 | 4 |
+| 51 | US31 | Ver mi historial de pagos Premium | 1 | 4 |
+| 52 | US39 | Ver cuántas suscripciones puedo registrar en el plan gratuito | 2 | 4 |
+
+El total es de 148 Story Points: 16 en el Sprint 1, 47 en el Sprint 2, 47 en el Sprint 3 y 38 en el Sprint 4. Los spikes de investigación (SP01, SP03, SP05) abren el Sprint 1 junto al landing page porque no dependen de ningún sprint de construcción; sus spikes de prototipo correspondientes (SP02, SP04, SP06) se ubican al inicio del sprint donde se implementa la funcionalidad que investigan, para que sus hallazgos lleguen frescos a esa construcción. El Sprint 2 y el Sprint 3 concentran la mayor carga porque en ellos se construye, respectivamente, el núcleo de valor (autenticación, alta de suscripciones y Dashboard) y la hipótesis principal del producto (conversión de divisas y recordatorios anticipados).
+
+El backlog se administra en la herramienta que indique el docente, donde cada historia se registra como tarjeta con su código, título, puntos y sprint, en el mismo orden de esta tabla.
 
 ## 2.5. Strategic-Level Domain-Driven Design
 
