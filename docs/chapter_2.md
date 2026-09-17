@@ -602,9 +602,48 @@ Se elabora un Empathy Map por cada User Persona en la herramienta indicada, colo
 
 ### 2.3.5. Big Picture EventStorming
 
-Antes de diseñar cualquier pantalla, el equipo reconstruirá en Miro, con la técnica del Big Picture EventStorming, la manera en que un usuario del segmento maneja hoy sus suscripciones, membresías y gastos de delivery sin ayuda de ninguna herramienta dedicada. La sesión ubicará en una línea de tiempo los eventos del proceso actual —desde que se contrata un servicio hasta que se descubre, o no, el cobro de su renovación— junto con los actores involucrados, los sistemas que hoy intervienen (la aplicación del banco, el correo de notificación, el calendario del celular) y los puntos donde ese proceso falla. El insumo de la sesión son los hallazgos de la sección 2.2.3; el resultado se limita a describir el problema tal como existe hoy, sin proponer todavía ninguna función de CraveWallet.
+Antes de diseñar cualquier pantalla, se reconstruyó en Miro, con la técnica del Big Picture EventStorming, la manera en que un usuario del segmento maneja sus suscripciones, membresías y gastos de delivery sin ayuda de una herramienta dedicada. El tablero sitúa en una línea de tiempo los eventos del proceso actual —desde la contratación de un servicio hasta el descubrimiento del cobro de su renovación—, los actores, los sistemas que intervienen y los puntos donde ese proceso falla. Los hallazgos de 2.2.3 sirvieron como insumo; esta sección describe el problema actual, sin incorporar todavía funciones de CraveWallet.
 
-[[PENDIENTE]]
+El tablero representa una **síntesis preliminar del proceso actual (As-Is)** basada en las entrevistas de 2.2.2 y los patrones de 2.2.3. Los pósits naranjas expresan hechos ya ocurridos, escritos en pasado; los amarillos identifican actores, los azules sistemas que intervienen hoy, los rojos fricciones y los verdes oportunidades. El orden y la frecuencia de cada evento deben contrastarse con usuarios antes de tratarlos como un proceso universal.
+
+#### Paso 1: recolectar eventos del dominio
+
+Primero se reunieron, sin imponer un orden, los hechos que aparecen en la contratación y renovación de membresías, el consumo de delivery y la revisión del dinero disponible. El tablero incluye *suscripción contratada*, *fecha de renovación fijada*, *pedido realizado*, *pedido cobrado*, *pedido entregado*, *membresía renovada*, *cargo recurrente procesado*, *saldo consultado*, *estado de cuenta consultado*, *cargo imprevisto detectado*, *gasto mensual estimado*, *pedidos del mes revisados*, *gastos de varias apps revisados*, *presupuesto excedido* y *cancelación solicitada*. Se distinguen los **hechos** de las acciones deseadas: «recibir un recordatorio» sería una solución propuesta, mientras que «cargo imprevisto detectado» describe el proceso presente.
+
+![Paso 1 del Big Picture EventStorming: eventos As-Is recolectados](images/chapter_2/big-picture-paso-1.png)
+
+*Figura: recolección inicial de eventos del proceso actual, todavía sin orden temporal. El tablero indica que son hipótesis por validar con usuarios.*
+
+#### Paso 2: ordenar los eventos
+
+La secuencia propuesta comienza con la contratación de una membresía de delivery y la fijación de su fecha de renovación. Después aparecen pedidos de comida realizados y cobrados, la renovación de la membresía y el cargo recurrente. La consulta del estado de cuenta permite detectar el cargo; al estimar el gasto mensual se reconoce el exceso presupuestario y puede solicitarse la cancelación. Los pedidos y la renovación no tienen una dependencia causal: comparten el período de consumo y pueden ocurrir en distinto orden. Las flechas son una hipótesis de lectura del recorrido general, no una regla de negocio según la cual deba existir un pedido para que la membresía se renueve.
+
+![Paso 2 del Big Picture EventStorming: eventos As-Is ordenados](images/chapter_2/big-picture-paso-2.png)
+
+*Figura: orden temporal tentativo; en rojo se señalan los cobros sin aviso, la dispersión del gasto y el descubrimiento tardío del exceso.*
+
+#### Paso 3: añadir actores y sistemas
+
+Se ubicaron sobre los eventos el **usuario** y la **plataforma de delivery**; debajo, la **aplicación de delivery**, el **banco o pasarela**, el **sistema de cobros** y el **estado bancario**. En la muestra de seis eventos clave, el usuario contrata la suscripción, realiza el pedido y consulta el cargo; la plataforma fija la renovación y la ejecuta. La aplicación de delivery y el banco conservan piezas distintas de la información. Esa separación explica por qué el usuario necesita reconstruir el gasto a partir de varias fuentes y por qué el estado de cuenta solo permite una detección posterior.
+
+![Paso 3 del Big Picture EventStorming: actores y sistemas](images/chapter_2/big-picture-paso-3.png)
+
+*Figura: actores en amarillo, eventos en naranja y sistemas que participan en azul.*
+
+#### Paso 4: identificar problemas y oportunidades
+
+| Momento del proceso | Problema observado o inferido de las entrevistas | Oportunidad de mejora |
+| --- | --- | --- |
+| Contratación | La renovación puede olvidarse después de contratar la membresía. | Avisar 24 horas antes de la renovación. |
+| Pedidos de delivery | Los cargos quedan dispersos entre distintas aplicaciones. | Unificar el historial de gastos. |
+| Renovación | El cargo recurrente se procesa sin aviso oportuno. | Alertar sobre el cargo próximo. |
+| Presupuesto | El exceso se detecta tarde al consultar el estado bancario. | Mostrar el límite mensual y el avance del gasto. |
+
+![Paso 4 del Big Picture EventStorming: problemas y oportunidades](images/chapter_2/big-picture-paso-4.png)
+
+*Figura: cuatro momentos del proceso As-Is con actor, evento, sistema, problema y oportunidad de mejora.*
+
+El resultado del Big Picture sitúa el mayor punto de dolor **entre la renovación y la revisión bancaria**: el usuario recibe la información útil cuando ya no puede evitar ese cargo. También revela que los pedidos de delivery afectan el mismo presupuesto, aunque cada pedido sea una decisión puntual y no un cobro recurrente. Estas oportunidades orientan el diseño posterior de 2.5.1; no se presentan como funciones que ya existan en el proceso As-Is.
 
 ### 2.3.6. Ubiquitous Language
 
@@ -748,25 +787,74 @@ El backlog consolidará las historias de la sección 2.4.1 con su estimación de
 
 El hallazgo central de la sección 2.1.1 —que ningún competidor trata la suscripción como una entidad de dominio con ciclo de vida propio— es la razón por la que el diseño estratégico de Domain-Driven Design [@evans2003ddd] pesa tanto como el resto del capítulo: antes de escribir una sola clase, el equipo debe fijar dónde termina un Bounded Context y empieza otro, para que esa diferenciación competitiva no se diluya al mezclar la lógica de suscripciones con la del acceso a la cuenta o el envío de recordatorios.
 
-El trabajo partirá del Big Picture EventStorming y del Ubiquitous Language que resulten del Needfinding (secciones 2.3.5 y 2.3.6), que describen cómo un usuario administra sus compromisos recurrentes hoy, sin CraveWallet. Con las User Stories de la sección 2.4 ya redactadas, el equipo repetirá el ejercicio de EventStorming con un propósito distinto: ya no reconstruir el proceso actual, sino diseñar el de la solución, incorporando los comandos, las políticas, los agregados y las vistas de lectura necesarios para que un usuario registre una suscripción, la vea en el Dashboard, reciba el recordatorio con 24 horas de anticipación y, si corresponde, pase a Premium.
+El trabajo parte del Big Picture EventStorming y del Ubiquitous Language del Needfinding (secciones 2.3.5 y 2.3.6), que describen cómo un usuario administra sus compromisos recurrentes hoy, sin CraveWallet. El segundo ejercicio de EventStorming cambia de propósito: diseña el proceso de la solución e incorpora los comandos, las políticas, los agregados y las vistas de lectura necesarios para registrar una suscripción, verla en el Dashboard, recibir un recordatorio con 24 horas de anticipación y, si corresponde, pasar a Premium. Las historias individuales de la sección 2.4 aún deben contrastarse con este modelo.
 
-De ese segundo EventStorming saldrán los Bounded Contexts candidatos, identificados en una sesión de Candidate Context Discovery con dos técnicas complementarias: start-with-value, que delimita primero el subconjunto del dominio del que depende directamente la ventaja competitiva de CraveWallet (anticipar el cobro y mantener el portafolio expresado en soles), y look-for-pivotal-events, que toma los cambios de estado más significativos del ciclo —una suscripción queda registrada, un cobro queda anticipado, una cuenta pasa a Premium— como frontera entre un contexto y el siguiente. El contexto core deberá quedar separado de los subdominios de apoyo y genéricos para proteger esa ventaja de decisiones tomadas en otra parte del sistema, y las relaciones entre contextos se documentarán con los patrones de Context Mapping (Customer/Supplier, Conformist, Anti-corruption Layer, Shared Kernel); el Anti-corruption Layer será obligatorio frente a Stripe y ExchangeRate-API, conforme a la Estrategia 4 de la sección 2.1.2.
+De ese segundo EventStorming surgen Bounded Contexts candidatos mediante dos técnicas complementarias: *start-with-value*, que delimita el subconjunto del dominio del que depende la ventaja competitiva de CraveWallet (anticipar el cobro y mantener el portafolio expresado en soles), y *look-for-pivotal-events*, que toma los cambios de estado significativos del ciclo —una suscripción queda registrada, se programa una alerta, una cuenta pasa a Premium— como señales de frontera. El contexto core se separa de los subdominios de apoyo y genéricos; las relaciones y patrones de Context Mapping se detallarán en 2.5.2. Las respuestas de Stripe y ExchangeRate-API deberán pasar por una capa de traducción, conforme a la Estrategia 4 de 2.1.2.
 
 La arquitectura de software que cierra la sección se representará con el C4 Model, en sus niveles de contexto, contenedores y despliegue.
 
 ### 2.5.1. EventStorming
 
+La leyenda empleada en los flujos To-Be distingue actor (amarillo), comando (celeste), evento confirmado (naranja), política (violeta), vista (verde), sistema externo o de infraestructura (rosado), problema (rojo) y contexto (blanco). En el Big Picture As-Is el azul se reservó para los sistemas actuales; al pasar al diseño de la solución se utiliza esta leyenda específica para no mezclar ambas lecturas.
+
+![Leyenda de pósits del EventStorming To-Be](images/chapter_2/eventstorming-leyenda.png)
+
+*Figura: convención de colores utilizada en los flujos y canvases de la solución.*
+
 #### 2.5.1.1. Candidate Context Discovery
 
-[[PENDIENTE]]
+El segundo EventStorming modela el proceso **To-Be**: las acciones que el usuario iniciaría en CraveWallet y los cambios de estado que la aplicación tendría que conservar. Se partió del valor que distingue al producto —anticipar una renovación y comprender su efecto en el presupuesto— y se localizaron eventos que cambian el significado de la información: *suscripción registrada*, *alarma local programada*, *gasto registrado*, *límite mensual superado* y *plan Premium activado*. Estos eventos ayudan a proponer fronteras sin confundir las pantallas con los límites del dominio. En el tablero, los dos recorridos principales aparecen bajo los rótulos «suscripciones y avisos» y «gastos y presupuesto».
+
+![EventStorming To-Be: flujos principales de suscripciones y gastos](images/chapter_2/eventstorming-flujos-principales.png)
+
+*Figura: dos recorridos de valor que permiten descubrir los contextos candidatos Suscripciones y Gastos.*
+
+| Contexto candidato | Responsabilidad y eventos propios | Tipo de subdominio |
+| --- | --- | --- |
+| **Suscripciones** | Mantener el ciclo de vida, la fecha de renovación, el importe y la moneda de cada suscripción; emitir *Suscripción registrada* y coordinar *Alarma local programada*. | Core: concentra la anticipación del cobro. |
+| **Gastos** | Registrar pedidos de delivery, clasificarlos y contrastar el acumulado del mes con un límite; emitir *Gasto registrado* y *Límite mensual superado*. | Apoyo: conecta el consumo cotidiano con el presupuesto. |
+| **Premium** | Conservar el nivel de acceso y aplicar los límites del plan gratuito tras el resultado de una operación de prueba; emitir *Plan Premium activado* solo cuando el pago de prueba haya sido aprobado. | Genérico o de apoyo: habilita funciones, pero no define el ciclo de una suscripción externa. |
+
+La autenticación por el backend RESTful, las notificaciones locales, el calendario del dispositivo y el almacenamiento local son capacidades que colaboran con estos contextos; no se representan como si fueran eventos de negocio. ExchangeRate-API, Google Places API y Stripe permanecen como dependencias externas. Su integración debe traducir las respuestas técnicas a conceptos propios del dominio antes de afectar una suscripción, un gasto o un nivel de acceso. Las fronteras propuestas son candidatas y se revisarán cuando el equipo detalle las historias de usuario y sus reglas.
 
 #### 2.5.1.2. Domain Message Flows Modeling
 
-[[PENDIENTE]]
+El flujo de mensajes enlaza **actor → comando → evento → política → vista o acción derivada**. Los comandos describen una intención y pueden ser rechazados; los eventos naranjas describen un hecho confirmado. Las políticas violetas reaccionan a esos hechos, mientras que las vistas verdes muestran al usuario el estado resultante. Este criterio impide llamar «evento» a una pantalla abierta o a un aviso que todavía no se ha programado.
+
+| Flujo | Comando y evento principal | Reacción y resultado observable |
+| --- | --- | --- |
+| Suscripción y renovación | *Registrar suscripción* → *Suscripción registrada*. | La política «al registrar, avisar 24 h antes» programa una alarma local; cuando llega el momento se muestra el recordatorio y se actualiza la vista de próximas renovaciones. |
+| Pedido y presupuesto | *Registrar gasto* → *Gasto registrado*. | La política recalcula el límite, actualiza el presupuesto y, si corresponde, registra *Límite mensual superado* en el resumen del mes. |
+| Cuenta e identidad | *Iniciar sesión* → *Sesión autenticada*. | La API REST interna valida la cuenta y deja disponible el perfil. |
+| Local y categorización | *Buscar local* → *Dirección validada*; después *Guardar gasto con local* → *Gasto categorizado*. | Google Places API ayuda a encontrar y validar el local. El historial de gastos muestra el registro persistido. |
+| Plan Premium | *Elegir plan Premium* → *Pago de prueba aprobado*. | Solo ante la aprobación se activa el plan y cambia la vista de estado Premium. El SDK de Stripe se utiliza en modo de prueba. |
+| Persistencia local | *Guardar gasto y límite* → *Datos persistidos*. | La base de datos local permite leer el historial y el límite cuando no hay red. |
+
+![EventStorming To-Be: identidad, Google Places y categorización](images/chapter_2/eventstorming-flujos-complementarios.png)
+
+*Figura: flujos complementarios de autenticación, validación de locales y registro del gasto.*
+
+![EventStorming To-Be: Premium de prueba y datos locales](images/chapter_2/eventstorming-premium-datos-locales.png)
+
+*Figura: activación del plan en el entorno de prueba de Stripe y lectura sin conexión de datos persistidos.*
+
+En el recorrido principal, la aplicación **no ejecuta ni cancela el cobro que realiza el proveedor de delivery**. Su responsabilidad es registrar la obligación, avisar antes de la renovación y reflejar el gasto que el usuario consigna. La conversión de divisas es una estimación para planificar; el importe final depende del tipo de cambio aplicado por la entidad que procese el cargo.
 
 #### 2.5.1.3. Bounded Context Canvases
 
-[[PENDIENTE]]
+Los canvases resumen una primera regla por contexto. Cada columna del tablero distingue el agregado que protege la consistencia, el comando recibido, el evento emitido, la política que reacciona, la vista de lectura y la dependencia que debe adaptarse. El objetivo es comprobar que cada evento tenga un responsable claro antes de pasar al Context Mapping de 2.5.2.
+
+| Contexto | Agregado y regla de consistencia | Vista y colaboración |
+| --- | --- | --- |
+| **Suscripciones** | **Suscripción**: una fecha de próxima renovación válida y un importe con moneda original acompañan a cada registro activo. *Registrar suscripción* produce *Suscripción registrada*; la política de anticipación programa el aviso. | Portafolio y próximas renovaciones. Consulta al tipo de cambio mediante un adaptador y delega la alarma al dispositivo. |
+| **Gastos** | **Presupuesto mensual**: el gasto de delivery se suma al período y se compara con el límite vigente. *Registrar gasto* produce *Gasto registrado*; la política de límite puede producir *Límite mensual superado*. | Resumen mensual e historial local. Google Places aporta sugerencias de locales, sin convertirse en la fuente de verdad del importe pagado. |
+| **Premium** | **Plan**: el nivel Premium solo cambia después de verificar el resultado de la operación de prueba. *Simular pago* produce *Pago test aprobado* y la política activa el plan si el pago es válido. | Estado Premium y funciones disponibles. Stripe queda detrás de un adaptador para que sus estados técnicos no entren directamente al modelo de dominio. |
+
+![EventStorming To-Be: bounded context canvases de Suscripciones, Gastos y Premium](images/chapter_2/eventstorming-bounded-context-canvases.png)
+
+*Figura: agregado, comando, evento, política, vista y dependencia de cada contexto candidato.*
+
+En conjunto, los tres canvases muestran dos recorridos de valor distintos que comparten la cuenta del usuario: **anticipar renovaciones** y **vigilar gastos de delivery**. Premium modifica el acceso a funcionalidades, pero no debe alterar los hechos históricos de suscripciones o gastos. Este diseño constituye una hipótesis de frontera que servirá para detallar las relaciones entre contextos en la sección siguiente.
 
 ### 2.5.2. Context Mapping
 
