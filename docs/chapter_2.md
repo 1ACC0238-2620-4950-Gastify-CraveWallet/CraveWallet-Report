@@ -1129,11 +1129,11 @@ Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambio
     </tr>
     <tr>
       <td><b>Description</b></td>
-      <td colspan="3">Como usuario, deseo tocar una suscripción del Dashboard para ver su detalle completo, para revisar su historial de cobros y su fecha de renovación sin salir del flujo principal.</td>
+      <td colspan="3">Como usuario, deseo ver el detalle completo de una suscripción desde el Dashboard, para revisar su historial de cobros y su fecha de renovación sin salir del flujo principal.</td>
     </tr>
     <tr>
       <td><b>Acceptance Criteria</b></td>
-      <td colspan="3"><b>Escenario 1: Apertura del detalle</b><br>Dado que el usuario está en el Dashboard,<br>Cuando toca una suscripción de la lista,<br>Entonces el sistema abre su vista de detalle con el monto original, la moneda, el monto convertido a soles, la categoría y el historial de cobros pasados.</td>
+      <td colspan="3"><b>Escenario 1: Apertura del detalle</b><br>Dado que el usuario está en el Dashboard,<br>Cuando selecciona una suscripción de la lista,<br>Entonces el sistema abre su vista de detalle con el monto original, la moneda, el monto convertido a soles, la categoría y el historial de cobros pasados.</td>
     </tr>
   </tbody>
 </table>
@@ -1856,7 +1856,7 @@ Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambio
     </tr>
     <tr>
       <td><b>Acceptance Criteria</b></td>
-      <td colspan="3"><b>Escenario 1: Primera visita</b><br>Dado que un visitante entra al landing page,<br>Cuando la página carga,<br>Entonces muestra el problema de los cobros automáticos no anticipados, la propuesta de valor de CraveWallet y los enlaces de descarga para Android e iOS.</td>
+      <td colspan="3"><b>Escenario 1: Primera visita</b><br>Dado que un visitante entra al landing page,<br>Cuando la página carga,<br>Entonces el sistema muestra el problema de los cobros automáticos no anticipados, la propuesta de valor de CraveWallet y los enlaces de descarga para Android e iOS.</td>
     </tr>
   </tbody>
 </table>
@@ -1918,7 +1918,7 @@ Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambio
     </tr>
     <tr>
       <td><b>Acceptance Criteria</b></td>
-      <td colspan="3"><b>Escenario 1: Consulta de una pregunta</b><br>Dado que el visitante está en la sección de preguntas frecuentes,<br>Cuando toca una pregunta,<br>Entonces la página despliega la respuesta correspondiente sin recargar.</td>
+      <td colspan="3"><b>Escenario 1: Consulta de una pregunta</b><br>Dado que el visitante está en la sección de preguntas frecuentes,<br>Cuando selecciona una pregunta,<br>Entonces la página despliega la respuesta correspondiente sin recargar.</td>
     </tr>
   </tbody>
 </table>
@@ -2172,7 +2172,7 @@ Las Spike Stories cubren la investigación técnica necesaria antes de compromet
     </tr>
     <tr>
       <td><b>Description</b></td>
-      <td colspan="3">Como equipo de desarrollo, deseo investigar y documentar cómo consumir ExchangeRate-API dentro de sus límites de uso, para decidir con evidencia el diseño de caché del Servicio de conversión de divisas (TS03) antes de construirlo.</td>
+      <td colspan="3">Como desarrollador, deseo investigar y documentar cómo consumir ExchangeRate-API dentro de sus límites de uso, para decidir con evidencia el diseño de caché del Servicio de conversión de divisas (TS03) antes de construirlo.</td>
     </tr>
     <tr>
       <td><b>Acceptance Criteria</b></td>
@@ -2203,7 +2203,7 @@ Las Spike Stories cubren la investigación técnica necesaria antes de compromet
     </tr>
     <tr>
       <td><b>Description</b></td>
-      <td colspan="3">Como equipo de desarrollo, deseo construir un prototipo del diseño de caché definido en SP01, para confirmar con evidencia que soporta el volumen de consultas antes de implementar TS03.</td>
+      <td colspan="3">Como desarrollador, deseo construir un prototipo del diseño de caché definido en SP01, para confirmar con evidencia que soporta el volumen de consultas antes de implementar TS03.</td>
     </tr>
     <tr>
       <td><b>Acceptance Criteria</b></td>
@@ -2234,7 +2234,7 @@ Las Spike Stories cubren la investigación técnica necesaria antes de compromet
     </tr>
     <tr>
       <td><b>Description</b></td>
-      <td colspan="3">Como equipo de desarrollo, deseo comparar las APIs de calendario nativo de Android e iOS y las bibliotecas multiplataforma disponibles, para elegir con evidencia cuál usar antes de prototipar el recordatorio de 24 horas antes de cada cobro (US12).</td>
+      <td colspan="3">Como desarrollador, deseo comparar las APIs de calendario nativo de Android e iOS y las bibliotecas multiplataforma disponibles, para elegir con evidencia cuál usar antes de prototipar el recordatorio de 24 horas antes de cada cobro (US12).</td>
     </tr>
     <tr>
       <td><b>Acceptance Criteria</b></td>
@@ -2265,11 +2265,11 @@ Las Spike Stories cubren la investigación técnica necesaria antes de compromet
     </tr>
     <tr>
       <td><b>Description</b></td>
-      <td colspan="3">Como equipo de desarrollo, deseo construir un prototipo que agende un evento con la alternativa elegida en SP03, para confirmar con evidencia su funcionamiento en un dispositivo físico antes de implementar US12, US13 y US14.</td>
+      <td colspan="3">Como desarrollador, deseo construir un prototipo que agende un evento con la alternativa elegida en SP03, para confirmar con evidencia su funcionamiento en un dispositivo físico antes de implementar US12, US13 y US14.</td>
     </tr>
     <tr>
       <td><b>Acceptance Criteria</b></td>
-      <td colspan="3"><b>Escenario 1: Prototipo en dispositivo físico</b><br>Dado la alternativa elegida en SP03,<br>Cuando el desarrollador construye un prototipo que agenda un evento de prueba en un dispositivo físico,<br>Entonces el evento aparece correctamente en la aplicación de calendario nativa y el prototipo queda registrado en una rama del repositorio.<br><br><b>Escenario 2: Hallazgos</b><br>Dado que el spike está completo,<br>Cuando el desarrollador documenta los hallazgos,<br>Entonces el informe incluye el manejo del caso en que el usuario deniega el permiso y una estimación en puntos de historia para US12, US13 y US14.</td>
+      <td colspan="3"><b>Escenario 1: Prototipo en dispositivo físico</b><br>Dada la alternativa elegida en SP03,<br>Cuando el desarrollador construye un prototipo que agenda un evento de prueba en un dispositivo físico,<br>Entonces el evento aparece correctamente en la aplicación de calendario nativa y el prototipo queda registrado en una rama del repositorio.<br><br><b>Escenario 2: Hallazgos</b><br>Dado que el spike está completo,<br>Cuando el desarrollador documenta los hallazgos,<br>Entonces el informe incluye el manejo del caso en que el usuario deniega el permiso y una estimación en puntos de historia para US12, US13 y US14.</td>
     </tr>
   </tbody>
 </table>
@@ -2296,7 +2296,7 @@ Las Spike Stories cubren la investigación técnica necesaria antes de compromet
     </tr>
     <tr>
       <td><b>Description</b></td>
-      <td colspan="3">Como equipo de desarrollo, deseo revisar la documentación de Stripe Billing y del SDK móvil, para decidir con evidencia el flujo de pago recurrente antes de prototiparlo para el plan Premium (US22).</td>
+      <td colspan="3">Como desarrollador, deseo revisar la documentación de Stripe Billing y del SDK móvil, para decidir con evidencia el flujo de pago recurrente antes de prototiparlo para el plan Premium (US22).</td>
     </tr>
     <tr>
       <td><b>Acceptance Criteria</b></td>
@@ -2327,7 +2327,7 @@ Las Spike Stories cubren la investigación técnica necesaria antes de compromet
     </tr>
     <tr>
       <td><b>Description</b></td>
-      <td colspan="3">Como equipo de desarrollo, deseo construir un prototipo del flujo documentado en SP05, para confirmar con evidencia que un pago de prueba se completa y confirma antes de implementar US21, US22 y US23.</td>
+      <td colspan="3">Como desarrollador, deseo construir un prototipo del flujo documentado en SP05, para confirmar con evidencia que un pago de prueba se completa y confirma antes de implementar US21, US22 y US23.</td>
     </tr>
     <tr>
       <td><b>Acceptance Criteria</b></td>
