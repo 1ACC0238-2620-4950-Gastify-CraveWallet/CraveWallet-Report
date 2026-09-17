@@ -478,23 +478,11 @@ Se elabora una ficha de User Persona por cada segmento objetivo en UXPressia. Ca
 
 ![Ficha de User Persona 1 de Camila Torres](images/chapter_2/User%20Persona%201-Camila%20Torres.jpg)
 
-**Objetivos:** mantener el control de un presupuesto ajustado y variable sin dedicarle tiempo activo (100 % no usa ninguna herramienta formal de control de gastos), y evitar sorpresas de cobro que descuadren un ingreso que ya es limitado.
-
-**Frustraciones:** se entera de sus suscripciones en dólares solo cuando revisa el estado de cuenta, nunca antes (100 %); ha vivido al menos un cobro automático olvidado que descubrió semanas o meses después (100 %); si alguna vez probó una app de finanzas, la abandonó por la fricción de registrar cada gasto a mano (67 %).
-
-**Comportamiento y motivaciones:** gestiona el dinero mentalmente o revisando la app del banco de forma reactiva, no proactiva; su gasto en delivery es frecuente y crece en temporadas de mayor carga académica o laboral. Reacciona de forma positiva a una propuesta que resuelva la conversión a soles y el aviso anticipado, que menciona espontáneamente como los dos elementos de mayor valor (100 %).
-
 ***
 
 #### User Persona 2: Renzo Salazar — Profesional Joven Activo
 
 ![Ficha de User Persona 2 de Renzo Salazar](images/chapter_2/User%20Persona%202-Renzo%20Salazar.jpg)
-
-**Objetivos:** mantener el orden de gastos fijos y variables entre lo personal y lo laboral (solo el 33 % lo separa formalmente hoy), y anticipar cobros en dólares antes de que impacten su cuenta sueldo.
-
-**Frustraciones:** ya probó una app de finanzas personales y la abandonó, ya sea por fricción de registro manual o por fallas de sincronización con bancos peruanos (100 %); ha sufrido una renovación automática de monto alto (~$40-150) de la que solo se enteró al revisar su estado de cuenta (100 %); no confía en conectar sus cuentas bancarias a aplicaciones de terceros por razones de seguridad (100 %).
-
-**Comportamiento y motivaciones:** organiza su dinero con más disciplina que en su etapa de estudiante, pero sigue expuesto a cobros silenciosos en dólares; valora especialmente que una solución no le pida vincular sus cuentas bancarias, y reacciona de forma muy positiva a la conversión automática a soles y al aviso previo a cada cobro (100 %), viéndolo como la forma de evitar los descuadres que ya ha vivido.
 
 ### 2.3.2. User Task Matrix
 
