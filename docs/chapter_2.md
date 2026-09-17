@@ -355,20 +355,20 @@ Eduardo vive con su madre y hermanos en Ate, es soltero y aporta a los gastos de
 
 #### Entrevista 4 — Segmento 2: Micaela Rodriguez
 
-| Campo | Contenido |
-| --- | --- |
-| Nombres y apellidos | Micaela Rodriguez |
-| Género | [[PENDIENTE: observación del entrevistador]] |
-| Edad | 24 años |
-| Distrito de residencia | [[PENDIENTE: confirmar distrito exacto]] |
+| Campo | Contenido                                             |
+| --- |-------------------------------------------------------|
+| Nombres y apellidos | Micaela Rodriguez                                     |
+| Género | Femenino                                              |
+| Edad | 24 años                                               |
+| Distrito de residencia | Miraflores                                            |
 | Ocupación | Arquitecta en un estudio de diseño, modalidad híbrida |
-| Segmento objetivo | Segmento 2 |
-| Fecha y hora de la entrevista | [[PENDIENTE]] |
-| Modalidad | Remota |
-| Duración | [[PENDIENTE]] |
-| Entrevistador | Josué Carpio |
-| Timing de inicio en el video consolidado | [[PENDIENTE: video sin subir]] |
-| URL del video | [[PENDIENTE: video sin subir]] |
+| Segmento objetivo | Segmento 2                                            |
+| Fecha y hora de la entrevista | 8pm 16/09/2026                                        |
+| Modalidad | Remota                                                |
+| Duración | 5:52                                                  |
+| Entrevistador | Josué Carpio                                          |
+| Timing de inicio en el video consolidado | [[PENDIENTE: video sin subir]]                        |
+| URL del video | https://acortar.link/XgWIAJ                           |
 
 Micaela comparte departamento con dos roommates desde hace año y medio, sin dependientes y soltera; divide alquiler, luz e internet en partes iguales mediante una hoja de Excel compartida. Es arquitecta con tres años en un estudio de diseño, en planilla y modalidad híbrida (dos veces por semana en oficina). Su sueldo es fijo en soles, con bonos ocasionales cada tres o cuatro meses cuando cierran proyectos grandes. Su forma de organizar el dinero cambió por completo al empezar a trabajar y asumir el pago de alquiler, volviéndose más estricta que en su etapa de estudiante. Se considera ordenada con sus gastos fijos, aunque el mes pasado usó más tarjeta de crédito de lo previsto por varios cumpleaños seguidos. Usa la app de su banco para ver saldos, sin separar gastos personales de los profesionales (incluidos los programas de arquitectura que ella misma paga). No se siente cómoda conectando sus cuentas bancarias a una app de terceros por temor a que la hackeen; probó Wallet, pero la abandonó porque clasificar todo manualmente le daba pereza. Usa un iPhone 13 con iOS y una laptop con Windows armada para renderizado. Sus apps de trabajo son Slack (pagada por la empresa), AutoCAD y Adobe Creative Cloud (que paga ella); para avisos importantes prefiere el calendario, que es lo único que revisa siempre. Considera Notion un producto bien hecho por lo limpio y funcional, y se informa sobre finanzas en cuentas de Instagram y artículos de LinkedIn. Paga Spotify, Netflix, Adobe y almacenamiento de Google Drive; Adobe y Drive se cobran en dólares, lo que le molesta porque el banco aplica un tipo de cambio alto e impredecible. No tiene suscripciones de monto variable, pero fue cobrada por la renovación anual de una app de meditación en dólares (~$60) que la descuadró al enterarse recién tras el débito de su cuenta sueldo. Cocina los días remotos y pide delivery por Rappi cuando va a oficina, sin membresía de delivery; estima S/ 400 mensuales solo en almuerzos. Su meta financiera es ahorrar para una maestría, y su frustración son los "gastos fantasma" y el tipo de cambio en su contra; reaccionó de forma muy positiva al concepto, señalando que la conversión a soles en tiempo real sincronizada con su calendario la convencería de inmediato y que lo recomendaría en su trabajo.
 
@@ -376,43 +376,43 @@ Micaela comparte departamento con dos roommates desde hace año y medio, sin dep
 
 #### Entrevista 5 — Segmento 2: Leonardo Caycho
 
-| Campo | Contenido |
-| --- | --- |
-| Nombres y apellidos | Leonardo Caycho |
-| Género | [[PENDIENTE: observación del entrevistador]] |
-| Edad | 30 años |
-| Distrito de residencia | [[PENDIENTE: confirmar distrito exacto]] |
+| Campo | Contenido                                  |
+| --- |--------------------------------------------|
+| Nombres y apellidos | Leonardo Caycho                            |
+| Género | Másculino                                  |
+| Edad | 30 años                                    |
+| Distrito de residencia | Lince                                      |
 | Ocupación | Ingeniero Industrial, supervisor de planta |
-| Segmento objetivo | Segmento 2 |
-| Fecha y hora de la entrevista | [[PENDIENTE]] |
-| Modalidad | Remota |
-| Duración | [[PENDIENTE]] |
-| Entrevistador | Josué Carpio |
-| Timing de inicio en el video consolidado | [[PENDIENTE: video sin subir]] |
-| URL del video | [[PENDIENTE: video sin subir]] |
+| Segmento objetivo | Segmento 2                                 |
+| Fecha y hora de la entrevista | 5pm 16/09/2026]                            |
+| Modalidad | Remota                                     |
+| Duración | 6:31                                        |
+| Entrevistador | Josué Carpio                               |
+| Timing de inicio en el video consolidado | [[PENDIENTE: video sin subir]]             |
+| URL del video | https://acortar.link/8ffakc             |
 
 Leonardo vive con su enamorada desde hace dos años, sin hijos, y mantienen una cuenta mancomunada con un aporte fijo mensual de cada uno para cubrir alquiler, luz y compras del hogar. Es ingeniero industrial, supervisor de planta hace cuatro años, en planilla y de forma 100 % presencial. Su ingreso es fijo en soles, con utilidades anuales que no alteran el sueldo mensual. Cubre sus gastos fijos a inicio de mes y usa el resto de su tarjeta para vivir; asumir un hogar en pareja cambió su forma de organizarse frente a su etapa de soltero. Se describe como muy improvisado: pasa todo por la tarjeta de crédito para ganar puntos pero pierde el rastro de los gastos, como ocurrió en una salida donde cubrió la cuenta y los taxis sin registrar nada. Solo revisa movimientos en la app del banco y no separa gastos personales de los profesionales. No conectaría sus cuentas bancarias a una app de terceros porque el banco advierte contra ello; probó Spendee, pero la abandonó al mes por lo complicado de configurar los gastos como suscripciones mensuales. Usa un Samsung Galaxy S22 con Android y una laptop de la empresa. Sus apps de trabajo son WhatsApp, Outlook y Teams (pagadas por la empresa); prefiere que los avisos importantes lleguen por el calendario de Google o notificación del celular. Considera la app de Uber perfecta por su rapidez y lee noticias de economía en Gestión ocasionalmente. Paga Amazon Prime, HBO Max, YouTube Premium, el gimnasio Smart Fit y LinkedIn Premium; LinkedIn y Amazon se cobran en dólares, y no sabe cuánto le cuestan en soles, solo nota que baja la línea de su tarjeta. Sacó LinkedIn Premium para buscar trabajo, lo consiguió y olvidó cancelarlo, siendo cobrado unos tres meses seguidos de casi $40 hasta notarlo en su estado de cuenta, lo que le generó mucha rabia. Lleva almuerzo a la oficina entre semana pero pide comida chatarra todos los fines de semana, con membresía PedidosYa Plus; estima un gasto de S/ 600 mensuales en delivery, su "punto débil". Su meta financiera es comprar un auto, y su frustración es que las empresas no avisan antes de seguir cobrando; reaccionó positivamente al concepto, indicando que un aviso 24 horas antes le habría evitado el problema con LinkedIn y que plantillas fáciles para agregar sus gastos lo convencerían de pagar la suscripción.
 
 ***
 
-#### Entrevista 6 — Segmento 2: Andrea Vargas
+#### Entrevista 6 — Segmento 2: Eddy LLmas
 
-| Campo | Contenido |
-| --- | --- |
-| Nombres y apellidos | Andrea Vargas |
-| Género | [[PENDIENTE: observación del entrevistador]] |
-| Edad | 29 años |
-| Distrito de residencia | [[PENDIENTE: confirmar distrito exacto]] |
+| Campo | Contenido                                           |
+| --- |-----------------------------------------------------|
+| Nombres y apellidos | Eddy Llamas                                         |
+| Género | Másculino                                           |
+| Edad | 23 años                                             |
+| Distrito de residencia | Jesus Maria                                         |
 | Ocupación | Analista de Finanzas en un banco, modalidad híbrida |
-| Segmento objetivo | Segmento 2 |
-| Fecha y hora de la entrevista | [[PENDIENTE]] |
-| Modalidad | Remota |
-| Duración | [[PENDIENTE]] |
-| Entrevistador | Josué Carpio |
-| Timing de inicio en el video consolidado | [[PENDIENTE: video sin subir]] |
-| URL del video | [[PENDIENTE: video sin subir]] |
+| Segmento objetivo | Segmento 2                                          |
+| Fecha y hora de la entrevista | 11pm 16/09/2026                                     |
+| Modalidad | Remota                                              |
+| Duración | 5:26                                                |
+| Entrevistador | Josué Carpio                                        |
+| Timing de inicio en el video consolidado | [[PENDIENTE: video sin subir]]                      |
+| URL del video | https://acortar.link/uxB36r                         |
 
-Andrea vive sola hace tres años, sin dependientes, soltera, y cubre el 100 % de sus propios gastos. Es analista de finanzas en un banco, en planilla y modalidad híbrida (mitad de semana en casa, mitad en oficina). Su ingreso es fijo en soles, con un bono anual por metas. Haber estudiado finanzas la volvió metódica: apenas le pagan, separa un 20 % para ahorros y divide el resto entre vivienda, servicios y gustos. Se considera muy ordenada, aunque a veces cae en gastos de tecnología innecesarios, como una licencia de software de productividad que compró el mes pasado sin necesitarla realmente. Lleva un Excel muy detallado y separa por completo sus gastos personales de los profesionales usando tarjetas distintas. Por su trabajo, sabe que no debe conectar sus cuentas bancarias a aplicaciones de terceros y no se siente cómoda haciéndolo; probó Fintonic, pero la eliminó porque la sincronización fallaba mucho con los bancos peruanos. Usa un iPhone 14 y monitores adicionales conectados a la laptop de la empresa. Sus apps de trabajo son Excel, PowerBI y Outlook (pagadas por la empresa); depende totalmente de su calendario de Apple para avisos personales importantes. Le gusta mucho la app de su banco por lo limpia que es, se informa en el Diario Financiero y escucha podcasts de economía. Paga iCloud, ChatGPT Plus, Canva Pro, Netflix y Disney+; las tres primeras se cobran en dólares, lo que le obliga a actualizar manualmente la celda del tipo de cambio en su Excel cada fin de mes para que cuadren sus números. Tiene una membresía anual de una academia de cursos de finanzas que le renovó automáticamente en febrero (~$150) aunque ya no usaba la plataforma, porque olvidó que ese mes era la fecha de corte. Va a restaurantes cercanos los días de oficina y cocina los días remotos, con un gasto mínimo en delivery (máximo S/ 100 mensuales). Su meta financiera es invertir en un fondo mutuo extranjero, y su frustración es la falta de transparencia de las empresas sobre las fechas de cobro; reaccionó positivamente al concepto, señalando que resolver la conversión de divisas automáticamente sin necesidad de conectar cuentas bancarias sería una gran herramienta.
+Eddy vive solo hace tres años, sin dependientes, soltero, y cubre el 100 % de sus propios gastos. Es analista de finanzas en un banco, en planilla y modalidad híbrida (mitad de semana en casa, mitad en oficina). Su ingreso es fijo en soles, con un bono anual por metas. Haber estudiado finanzas la volvió metódica: apenas le pagan, separa un 20 % para ahorros y divide el resto entre vivienda, servicios y gustos. Se considera muy ordenado, aunque a veces cae en gastos de tecnología innecesarios, como una licencia de software de productividad que compró el mes pasado sin necesitarla realmente. Lleva un Excel muy detallado y separa por completo sus gastos personales de los profesionales usando tarjetas distintas. Por su trabajo, sabe que no debe conectar sus cuentas bancarias a aplicaciones de terceros y no se siente cómoda haciéndolo; probó Fintonic, pero la eliminó porque la sincronización fallaba mucho con los bancos peruanos. Usa un iPhone 14 y monitores adicionales conectados a la laptop de la empresa. Sus apps de trabajo son Excel, PowerBI y Outlook (pagadas por la empresa); depende totalmente de su calendario de Apple para avisos personales importantes. Le gusta mucho la app de su banco por lo limpia que es, se informa en el Diario Financiero y escucha podcasts de economía. Paga iCloud, ChatGPT Plus, Canva Pro, Netflix y Disney+; las tres primeras se cobran en dólares, lo que le obliga a actualizar manualmente la celda del tipo de cambio en su Excel cada fin de mes para que cuadren sus números. Tiene una membresía anual de una academia de cursos de finanzas que le renovó automáticamente en febrero (~$150) aunque ya no usaba la plataforma, porque olvidó que ese mes era la fecha de corte. Va a restaurantes cercanos los días de oficina y cocina los días remotos, con un gasto mínimo en delivery (máximo S/ 100 mensuales). Su meta financiera es invertir en un fondo mutuo extranjero, y su frustración es la falta de transparencia de las empresas sobre las fechas de cobro; reaccionó positivamente al concepto, señalando que resolver la conversión de divisas automáticamente sin necesidad de conectar cuentas bancarias sería una gran herramienta.
 
 ### 2.2.3. Análisis de entrevistas
 
@@ -441,28 +441,28 @@ El análisis se realiza por segmento objetivo, a partir de los resúmenes de la 
 - **Perfil tecnológico.** El 67 % usa Android (Lui, Darío) y 33 % iPhone (Eduardo); el 100 % se entera de todo por notificaciones push y usa WhatsApp entre sus tres apps más frecuentes.
 - **Reacción al concepto.** El 100 % reacciona positivamente y menciona espontáneamente el aviso anticipado y la conversión a soles como los dos elementos de mayor valor percibido.
 
-#### Segmento 2: Profesional Joven Activo (Micaela, Leonardo, Andrea)
+#### Segmento 2: Profesional Joven Activo (Micaela, Leonardo, Eddy)
 
 | Característica | % | Entrevistas de sustento |
 | --- | --- | --- |
-| Ingreso mensual fijo en soles | 100 % | Micaela, Leonardo, Andrea |
-| Separa gastos personales de los profesionales | 33 % | Andrea |
-| Rechaza conectar sus cuentas bancarias a una app de terceros | 100 % | Micaela, Leonardo, Andrea |
-| Probó y abandonó una app de finanzas | 100 % | Micaela, Leonardo, Andrea |
-| Suscripción activa cobrada en dólares | 100 % | Micaela, Leonardo, Andrea |
-| Caso de renovación automática no anticipada (monto alto) | 100 % | Micaela, Leonardo, Andrea |
-| Depende del calendario digital para avisos importantes | 100 % | Micaela, Leonardo, Andrea |
-| Reacción positiva al concepto | 100 % | Micaela, Leonardo, Andrea |
+| Ingreso mensual fijo en soles | 100 % | Micaela, Leonardo, Eddy |
+| Separa gastos personales de los profesionales | 33 % | Eddy |
+| Rechaza conectar sus cuentas bancarias a una app de terceros | 100 % | Micaela, Leonardo, Eddy |
+| Probó y abandonó una app de finanzas | 100 % | Micaela, Leonardo, Eddy |
+| Suscripción activa cobrada en dólares | 100 % | Micaela, Leonardo, Eddy |
+| Caso de renovación automática no anticipada (monto alto) | 100 % | Micaela, Leonardo, Eddy |
+| Depende del calendario digital para avisos importantes | 100 % | Micaela, Leonardo, Eddy |
+| Reacción positiva al concepto | 100 % | Micaela, Leonardo, Eddy |
 
 - **Ingreso.** El 100 % tiene ingreso fijo mensual en soles, con algún tipo de ingreso variable adicional (bonos, utilidades) que no altera el sueldo base.
-- **Separación de gastos.** El 33 % (Andrea) separa formalmente sus gastos personales de los profesionales con tarjetas distintas; el 67 % (Micaela, Leonardo) no hace ninguna separación.
-- **Desconfianza a conectar cuentas bancarias.** El 100 % expresa incomodidad explícita ante la idea de conectar sus cuentas bancarias a una aplicación de terceros, por temor a seguridad (Micaela), por advertencia del banco (Leonardo) o por conocimiento profesional del riesgo (Andrea).
-- **Experiencia previa con apps de finanzas.** El 100 % probó una app de finanzas personales (Wallet, Spendee, Fintonic) y la abandonó, por fricción de registro manual (Micaela, Leonardo) o por fallas de sincronización con bancos peruanos (Andrea).
+- **Separación de gastos.** El 33 % (Eddy) separa formalmente sus gastos personales de los profesionales con tarjetas distintas; el 67 % (Micaela, Leonardo) no hace ninguna separación.
+- **Desconfianza a conectar cuentas bancarias.** El 100 % expresa incomodidad explícita ante la idea de conectar sus cuentas bancarias a una aplicación de terceros, por temor a seguridad (Micaela), por advertencia del banco (Leonardo) o por conocimiento profesional del riesgo (Eddy).
+- **Experiencia previa con apps de finanzas.** El 100 % probó una app de finanzas personales (Wallet, Spendee, Fintonic) y la abandonó, por fricción de registro manual (Micaela, Leonardo) o por fallas de sincronización con bancos peruanos (Eddy).
 - **Suscripciones en dólares.** El 100 % tiene suscripciones cobradas en dólares (Adobe/Drive, LinkedIn/Amazon, iCloud/ChatGPT/Canva) y los tres mencionan explícitamente la fricción del tipo de cambio bancario.
 - **Cobro no anticipado.** El 100 % relata una renovación automática que lo tomó por sorpresa (app de meditación, LinkedIn Premium, academia de finanzas), en los tres casos de monto relativamente alto (~$40-150) y detectada solo al revisar el estado de cuenta.
 - **Delivery.** El 100 % pide delivery con cierta regularidad; el gasto mensual estimado va de S/ 100 a S/ 600, con la mayor variabilidad del segmento.
 - **Dependencia del calendario digital.** El 100 % menciona el calendario (Apple o Google) como su canal preferido para avisos importantes, por encima de correo o notificaciones sueltas.
-- **Reacción al concepto.** El 100 % reacciona positivamente y valora en particular la conversión automática a soles; dos de tres (Micaela, Andrea) además destacan no tener que conectar sus cuentas bancarias como un punto a favor frente a lo que ya rechazaron de otras apps.
+- **Reacción al concepto.** El 100 % reacciona positivamente y valora en particular la conversión automática a soles; dos de tres (Micaela, Eddy) además destacan no tener que conectar sus cuentas bancarias como un punto a favor frente a lo que ya rechazaron de otras apps.
 
 Los dos segmentos coinciden en tres hallazgos transversales que sustentarán directamente el Needfinding: ninguna de las seis personas recibe hoy una alerta anticipada de cobro (se enteran siempre después, revisando el banco), el 100 % de la muestra tiene al menos una suscripción facturada en dólares sin saber su equivalente en soles hasta el cargo, y el 100 % relata un episodio concreto de cobro automático olvidado. La diferencia principal entre segmentos es la relación con la conexión de cuentas bancarias: el Segmento 1 no la menciona como objeción, mientras que el 100 % del Segmento 2 la rechaza explícitamente, lo que condiciona el diseño de la propuesta de valor por segmento.
 
