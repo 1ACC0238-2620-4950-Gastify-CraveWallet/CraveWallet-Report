@@ -358,9 +358,9 @@ Eduardo vive con su madre y hermanos en Ate, es soltero y aporta a los gastos de
 | Campo | Contenido                                             |
 | --- |-------------------------------------------------------|
 | Nombres y apellidos | Micaela Rodriguez                                     |
-| Género | [[PENDIENTE: observación del entrevistador]]          |
+| Género | Femenino                                              |
 | Edad | 24 años                                               |
-| Distrito de residencia | [[PENDIENTE: confirmar distrito exacto]]              |
+| Distrito de residencia | Miraflores                                            |
 | Ocupación | Arquitecta en un estudio de diseño, modalidad híbrida |
 | Segmento objetivo | Segmento 2                                            |
 | Fecha y hora de la entrevista | 8pm 16/09/2026                                        |
