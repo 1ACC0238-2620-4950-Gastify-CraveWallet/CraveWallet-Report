@@ -472,19 +472,11 @@ El Needfinding traduce los hallazgos de la sección 2.2 en los artefactos de dis
 
 ### 2.3.1. User Personas
 
-Se elabora una ficha de User Persona por cada segmento objetivo en UXPressia. Cada atributo de la ficha —demográfico, tecnológico o de comportamiento— se traza al porcentaje correspondiente del análisis de la sección 2.2.3; ningún rasgo se añade sin ese respaldo. El contenido de ambas fichas se redacta aquí a partir de dicho análisis; la captura de la herramienta queda pendiente de incorporar una vez elaborada en UXPressia.
-
-[[PENDIENTE: captura de la ficha en UXPressia]]
+Se elabora una ficha de User Persona por cada segmento objetivo en UXPressia. Cada atributo de la ficha —demográfico, tecnológico o de comportamiento— se traza al porcentaje correspondiente del análisis de la sección 2.2.3; ningún rasgo se añade sin ese respaldo. Las capturas de las fichas se incorporan a continuación como evidencia visual de los arquetipos.
 
 #### User Persona 1: Camila Torres — Estudiante Universitario Digital
 
-| Campo | Contenido | Sustento (2.2.3) |
-| --- | --- | --- |
-| Edad | 19 años | Rango de la muestra: 19-20 años |
-| Ocupación | Estudiante universitaria, 6.º ciclo, con ingresos ocasionales por trabajos freelance o a tiempo parcial | 67 % ingreso fijo / 33 % variable |
-| Frase representativa | "Nunca sé cuánto me van a cobrar hasta que veo el movimiento en el banco." | 100 % desconoce el monto en soles antes del cargo |
-| Dispositivo principal | Smartphone Android de gama media, uso diario de laptop | 67 % Android |
-| Canal de descubrimiento | Notificaciones push; WhatsApp entre sus apps más usadas | 100 % se entera por push |
+![Ficha de User Persona 1 de Camila Torres](images/chapter_2/User%20Persona%201-Camila%20Torres.jpg)
 
 **Objetivos:** mantener el control de un presupuesto ajustado y variable sin dedicarle tiempo activo (100 % no usa ninguna herramienta formal de control de gastos), y evitar sorpresas de cobro que descuadren un ingreso que ya es limitado.
 
@@ -496,13 +488,7 @@ Se elabora una ficha de User Persona por cada segmento objetivo en UXPressia. Ca
 
 #### User Persona 2: Renzo Salazar — Profesional Joven Activo
 
-| Campo | Contenido | Sustento (2.2.3) |
-| --- | --- | --- |
-| Edad | 27-30 años | Rango de la muestra: 24-30 años |
-| Ocupación | Profesional en planilla, modalidad híbrida o presencial, ingreso fijo en soles con bonos ocasionales | 100 % ingreso fijo en soles |
-| Frase representativa | "No pienso conectar mi cuenta del banco a otra app, por más útil que sea." | 100 % rechaza conectar cuentas bancarias a apps de terceros |
-| Dispositivo principal | Smartphone de gama alta (Android o iOS) y laptop de trabajo | Muestra mixta Android/iOS |
-| Canal de aviso preferido | Calendario digital (Apple o Google) por encima de correo o notificaciones sueltas | 100 % depende del calendario digital |
+![Ficha de User Persona 2 de Renzo Salazar](images/chapter_2/User%20Persona%202-Renzo%20Salazar.jpg)
 
 **Objetivos:** mantener el orden de gastos fijos y variables entre lo personal y lo laboral (solo el 33 % lo separa formalmente hoy), y anticipar cobros en dólares antes de que impacten su cuenta sueldo.
 
