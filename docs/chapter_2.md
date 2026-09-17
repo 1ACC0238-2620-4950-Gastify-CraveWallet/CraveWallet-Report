@@ -529,18 +529,26 @@ El User Task Matrix concentra las tareas que Camila Torres (Segmento 1) y Renzo 
     </tr>
   </thead>
   <tbody>
-    <tr><td>Revisar movimientos bancarios para detectar cargos automáticos</td><td>Media</td><td>Alta</td><td>Media</td><td>Alta</td></tr>
+    <tr><td>Elegir el medio de pago al activar una nueva suscripción</td><td>Baja</td><td>Media</td><td>Baja</td><td>Media</td></tr>
+    <tr><td>Revisar el saldo o los movimientos bancarios al cierre del mes</td><td>Media</td><td>Alta</td><td>Media</td><td>Alta</td></tr>
     <tr><td>Convertir mentalmente el monto de una suscripción en dólares a soles</td><td>Alta</td><td>Alta</td><td>Alta</td><td>Alta</td></tr>
     <tr><td>Recordar cuándo se renueva cada suscripción activa</td><td>Baja</td><td>Alta</td><td>Baja</td><td>Alta</td></tr>
-    <tr><td>Cancelar una suscripción que ya no se usa</td><td>Baja</td><td>Media</td><td>Baja</td><td>Alta</td></tr>
+    <tr><td>Detectar que una suscripción activa ya no se está usando</td><td>Baja</td><td>Media</td><td>Baja</td><td>Alta</td></tr>
+    <tr><td>Cancelar una suscripción localizando la opción dentro de cada app</td><td>Baja</td><td>Media</td><td>Baja</td><td>Alta</td></tr>
     <tr><td>Llevar un registro propio de gastos mensuales</td><td>Media</td><td>Media</td><td>Media</td><td>Media</td></tr>
     <tr><td>Pedir delivery de comida</td><td>Alta</td><td>Baja</td><td>Media</td><td>Baja</td></tr>
+    <tr><td>Ajustar el gasto de delivery según la rutina (oficina/remoto o época de exámenes)</td><td>Media</td><td>Baja</td><td>Media</td><td>Baja</td></tr>
     <tr><td>Compartir el costo de una suscripción con otra persona</td><td>Baja</td><td>Baja</td><td>No reportada</td><td>Baja</td></tr>
     <tr><td>Separar los gastos personales de los profesionales</td><td>No aplica</td><td>Baja</td><td>Baja</td><td>Media</td></tr>
+    <tr><td>Actualizar manualmente el tipo de cambio en un registro propio (Excel u hoja de cálculo)</td><td>No reportada</td><td>Baja</td><td>Baja</td><td>Media</td></tr>
   </tbody>
 </table>
 
-La tarea con mayor frecuencia e importancia combinadas para ambas personas es convertir mentalmente el monto de una suscripción en dólares a soles: ocurre en cada ciclo de facturación y concentra la principal fuente de fricción reportada en 2.2.3 (100 % de la muestra en ambos segmentos). La segunda coincidencia relevante es recordar la fecha de renovación de cada suscripción: es una tarea que ambas personas intentan realizar con poca frecuencia y ningún sistema de apoyo, pero cuyo fracaso concentra la mayor importancia percibida, porque es la causa directa de todos los cobros no anticipados relatados en las entrevistas. La principal diferencia entre segmentos aparece en cancelar una suscripción no usada: para Renzo tiene importancia alta porque los montos en juego son mayores (~$40-150 frente a compromisos más chicos en Segmento 1), mientras que separar gastos personales de profesionales es una tarea exclusiva de Renzo, ausente en la rutina de Camila porque su segmento no reporta gastos de tipo profesional.
+**Leyenda:** Frecuencia e Importancia se expresan en tres niveles: Baja, Media y Alta.
+
+Del cuadro se desprenden tres lecturas. La primera es que la tarea con mayor frecuencia e importancia combinadas para ambas personas es convertir mentalmente el monto de una suscripción en dólares a soles: ocurre en cada ciclo de facturación y concentra la principal fuente de fricción reportada en 2.2.3 (100 % de la muestra en ambos segmentos). La segunda es que recordar la fecha de renovación de cada suscripción es una tarea que ambas personas intentan realizar con poca frecuencia y ningún sistema de apoyo, pero cuyo fracaso concentra la mayor importancia percibida, porque es la causa directa de todos los cobros no anticipados relatados en las entrevistas; detectar que una suscripción ya no se usa y cancelarla a tiempo son tareas derivadas de ese mismo problema, con mayor importancia para Renzo porque los montos en juego son más altos (~$40-150 frente a compromisos más chicos en Segmento 1). La tercera es que dos tareas son exclusivas de un segmento: separar gastos personales de profesionales y actualizar manualmente el tipo de cambio en un registro propio solo aparecen en la rutina de Renzo, porque ningún entrevistado de Segmento 1 reporta gastos de tipo profesional ni lleva un registro formal en hoja de cálculo.
+
+Entre las tareas compartidas por ambos segmentos, destaca especialmente revisar el saldo o los movimientos bancarios al cierre del mes, porque es hoy el único mecanismo —tardío y reactivo— con el que ambas personas se enteran de un cargo, en ausencia de cualquier alerta anticipada.
 
 ### 2.3.3. User Journey Mapping
 
