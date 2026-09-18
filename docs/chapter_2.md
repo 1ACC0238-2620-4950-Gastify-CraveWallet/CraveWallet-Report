@@ -363,7 +363,7 @@ Eduardo vive con su madre y hermanos en Ate, es soltero y aporta a los gastos de
 | Distrito de residencia | Miraflores                                            |
 | Ocupación | Arquitecta en un estudio de diseño, modalidad híbrida |
 | Segmento objetivo | Segmento 2                                            |
-| Fecha y hora de la entrevista | 8pm 16/09/2026                                        |
+| Fecha y hora de la entrevista | 16/09/2026, 8:00 p. m.                                |
 | Modalidad | Remota                                                |
 | Duración | 5:52                                                  |
 | Entrevistador | Josué Carpio                                          |
@@ -379,12 +379,12 @@ Micaela comparte departamento con dos roommates desde hace año y medio, sin dep
 | Campo | Contenido                                  |
 | --- |--------------------------------------------|
 | Nombres y apellidos | Leonardo Caycho                            |
-| Género | Másculino                                  |
+| Género | Masculino                                  |
 | Edad | 30 años                                    |
 | Distrito de residencia | Lince                                      |
 | Ocupación | Ingeniero Industrial, supervisor de planta |
 | Segmento objetivo | Segmento 2                                 |
-| Fecha y hora de la entrevista | 5pm 16/09/2026]                            |
+| Fecha y hora de la entrevista | 16/09/2026, 5:00 p. m.                     |
 | Modalidad | Remota                                     |
 | Duración | 6:31                                        |
 | Entrevistador | Josué Carpio                               |
@@ -395,24 +395,24 @@ Leonardo vive con su enamorada desde hace dos años, sin hijos, y mantienen una 
 
 ***
 
-#### Entrevista 6 — Segmento 2: Eddy LLmas
+#### Entrevista 6 — Segmento 2: Eddy Llamas
 
 | Campo | Contenido                                           |
 | --- |-----------------------------------------------------|
 | Nombres y apellidos | Eddy Llamas                                         |
-| Género | Másculino                                           |
+| Género | Masculino                                           |
 | Edad | 23 años                                             |
 | Distrito de residencia | Jesus Maria                                         |
 | Ocupación | Analista de Finanzas en un banco, modalidad híbrida |
 | Segmento objetivo | Segmento 2                                          |
-| Fecha y hora de la entrevista | 11pm 16/09/2026                                     |
+| Fecha y hora de la entrevista | 16/09/2026, 11:00 p. m.                             |
 | Modalidad | Remota                                              |
 | Duración | 5:26                                                |
 | Entrevistador | Josué Carpio                                        |
 | Timing de inicio en el video consolidado | [[PENDIENTE: video sin subir]]                      |
 | URL del video | https://acortar.link/uxB36r                         |
 
-Eddy vive solo hace tres años, sin dependientes, soltero, y cubre el 100 % de sus propios gastos. Es analista de finanzas en un banco, en planilla y modalidad híbrida (mitad de semana en casa, mitad en oficina). Su ingreso es fijo en soles, con un bono anual por metas. Haber estudiado finanzas la volvió metódica: apenas le pagan, separa un 20 % para ahorros y divide el resto entre vivienda, servicios y gustos. Se considera muy ordenado, aunque a veces cae en gastos de tecnología innecesarios, como una licencia de software de productividad que compró el mes pasado sin necesitarla realmente. Lleva un Excel muy detallado y separa por completo sus gastos personales de los profesionales usando tarjetas distintas. Por su trabajo, sabe que no debe conectar sus cuentas bancarias a aplicaciones de terceros y no se siente cómoda haciéndolo; probó Fintonic, pero la eliminó porque la sincronización fallaba mucho con los bancos peruanos. Usa un iPhone 14 y monitores adicionales conectados a la laptop de la empresa. Sus apps de trabajo son Excel, PowerBI y Outlook (pagadas por la empresa); depende totalmente de su calendario de Apple para avisos personales importantes. Le gusta mucho la app de su banco por lo limpia que es, se informa en el Diario Financiero y escucha podcasts de economía. Paga iCloud, ChatGPT Plus, Canva Pro, Netflix y Disney+; las tres primeras se cobran en dólares, lo que le obliga a actualizar manualmente la celda del tipo de cambio en su Excel cada fin de mes para que cuadren sus números. Tiene una membresía anual de una academia de cursos de finanzas que le renovó automáticamente en febrero (~$150) aunque ya no usaba la plataforma, porque olvidó que ese mes era la fecha de corte. Va a restaurantes cercanos los días de oficina y cocina los días remotos, con un gasto mínimo en delivery (máximo S/ 100 mensuales). Su meta financiera es invertir en un fondo mutuo extranjero, y su frustración es la falta de transparencia de las empresas sobre las fechas de cobro; reaccionó positivamente al concepto, señalando que resolver la conversión de divisas automáticamente sin necesidad de conectar cuentas bancarias sería una gran herramienta.
+Eddy vive solo hace tres años, sin dependientes, soltero, y cubre el 100 % de sus propios gastos. Es analista de finanzas en un banco, en planilla y modalidad híbrida (mitad de semana en casa, mitad en oficina). Su ingreso es fijo en soles, con un bono anual por metas. Haber estudiado finanzas lo volvió metódico: apenas le pagan, separa un 20 % para ahorros y divide el resto entre vivienda, servicios y gustos. Se considera muy ordenado, aunque a veces cae en gastos de tecnología innecesarios, como una licencia de software de productividad que compró el mes pasado sin necesitarla realmente. Lleva un Excel muy detallado y separa por completo sus gastos personales de los profesionales usando tarjetas distintas. Por su trabajo, sabe que no debe conectar sus cuentas bancarias a aplicaciones de terceros y no se siente cómodo haciéndolo; probó Fintonic, pero la eliminó porque la sincronización fallaba mucho con los bancos peruanos. Usa un iPhone 14 y monitores adicionales conectados a la laptop de la empresa. Sus apps de trabajo son Excel, PowerBI y Outlook (pagadas por la empresa); depende totalmente de su calendario de Apple para avisos personales importantes. Le gusta mucho la app de su banco por lo limpia que es, se informa en el Diario Financiero y escucha podcasts de economía. Paga iCloud, ChatGPT Plus, Canva Pro, Netflix y Disney+; las tres primeras se cobran en dólares, lo que le obliga a actualizar manualmente la celda del tipo de cambio en su Excel cada fin de mes para que cuadren sus números. Tiene una membresía anual de una academia de cursos de finanzas que le renovó automáticamente en febrero (~$150) aunque ya no usaba la plataforma, porque olvidó que ese mes era la fecha de corte. Va a restaurantes cercanos los días de oficina y cocina los días remotos, con un gasto mínimo en delivery (máximo S/ 100 mensuales). Su meta financiera es invertir en un fondo mutuo extranjero, y su frustración es la falta de transparencia de las empresas sobre las fechas de cobro; reaccionó positivamente al concepto, señalando que resolver la conversión de divisas automáticamente sin necesidad de conectar cuentas bancarias sería una gran herramienta.
 
 ### 2.2.3. Análisis de entrevistas
 
@@ -1093,7 +1093,7 @@ Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambio
     </tr>
     <tr>
       <td><b>Acceptance Criteria</b></td>
-      <td colspan="3"><b>Escenario 1: Portafolio mixto de monedas</b><br>Dado que el usuario tiene suscripciones activas facturadas en soles y en dólares,<br>Cuando abre el Dashboard,<br>Entonces el sistema muestra el total mensual sumando todas las suscripciones convertidas a soles con el tipo de cambio del día.<br><br><b>Escenario 2: Sin suscripciones registradas</b><br>Dado que el usuario no tiene ninguna suscripción registrada,<br>Cuando abre el Dashboard,<br>Entonces el sistema muestra el total en S/ 0.00 e invita a registrar la primera suscripción.</td>
+      <td colspan="3"><b>Escenario 1: Portafolio mixto de monedas</b><br>Dado que el usuario tiene suscripciones activas facturadas en soles y en dólares,<br>Cuando abre el Dashboard,<br>Entonces el sistema muestra el total mensual sumando todas las suscripciones convertidas a soles con el tipo de cambio del día.<br><br><b>Escenario 2: Sin suscripciones registradas</b><br>Dado que el usuario no tiene ninguna suscripción registrada,<br>Cuando abre el Dashboard,<br>Entonces el sistema muestra el total en S/ 0.00 e indica que no hay suscripciones registradas.</td>
     </tr>
   </tbody>
 </table>
@@ -1971,7 +1971,7 @@ Tras el Needfinding de la sección 2.3, la lista de Epics se mantiene sin cambio
     </tr>
     <tr>
       <td><b>Acceptance Criteria</b></td>
-      <td colspan="3"><b>Escenario 1: Consulta de una pregunta</b><br>Dado que el visitante está en la sección de preguntas frecuentes,<br>Cuando selecciona una pregunta,<br>Entonces la página despliega la respuesta correspondiente sin recargar.</td>
+      <td colspan="3"><b>Escenario 1: Consulta de una pregunta</b><br>Dado que el visitante está en la sección de preguntas frecuentes,<br>Cuando selecciona una pregunta,<br>Entonces la página despliega la respuesta correspondiente.</td>
     </tr>
   </tbody>
 </table>
@@ -3084,3 +3084,800 @@ S ||--o{ B : "subscription_id"
 
 [[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
 
+### 2.6.2. Bounded Context: Delivery Expense Management
+
+Este Bounded Context modela el registro, seguimiento y control de los gastos de delivery del usuario. Su dominio central abarca la creación de un gasto de delivery asociado a un comercio y fecha específicos, y la gestión del presupuesto mensual que el usuario establece como límite de gasto. De acuerdo con el Context Mapping definido en la sección 2.5.2, este BC mantiene una relación de Partnership con Subscription Management a través del Shared Kernel `UserId`, y consume la API de Google Places bajo el patrón Conformist para sugerir nombres de comercios sin interponer una Anti-Corruption Layer, dado que el vocabulario de Places es suficientemente cercano al ubiquitous language propio. Los User Stories que fundamentan este BC son US18, US19, US20, US30 y US38; la Technical Story TS05 define el spike de integración con Google Places.
+
+#### 2.6.2.1. Domain Layer
+
+El Domain Layer de Delivery Expense Management concentra dos Aggregate Roots independientes con ciclos de vida distintos: `DeliveryExpense`, que representa un gasto puntual de delivery, y `MonthlyBudget`, que encapsula el límite y el acumulado de gasto para un usuario en un período calendario.
+
+**Aggregate Root — `DeliveryExpense`**
+
+`DeliveryExpense` es la raíz del agregado que encapsula un único gasto de delivery realizado por el usuario. Contiene el identificador del usuario (`UserId` del Shared Kernel), el monto gastado (`DeliveryAmount`), el nombre del comercio (`MerchantName`), la categoría de gasto (`SpendingCategory` enum) y la fecha del gasto. Toda creación de un gasto pasa por el método de fábrica estático `register(UserId, DeliveryAmount, MerchantName, SpendingCategory, LocalDate)`, que valida invariantes y publica el Domain Event `DeliveryExpenseRegistered`.
+
+```java
+public class DeliveryExpense {
+    private DeliveryExpenseId id;
+    private UserId userId;
+    private DeliveryAmount amount;
+    private MerchantName merchant;
+    private SpendingCategory category;
+    private LocalDate expenseDate;
+    private List<DomainEvent> domainEvents = new ArrayList<>();
+
+    public static DeliveryExpense register(UserId userId,
+                                           DeliveryAmount amount,
+                                           MerchantName merchant,
+                                           SpendingCategory category,
+                                           LocalDate expenseDate) {
+        DeliveryExpense expense = new DeliveryExpense();
+        expense.id = DeliveryExpenseId.generate();
+        expense.userId = userId;
+        expense.amount = amount;
+        expense.merchant = merchant;
+        expense.category = category;
+        expense.expenseDate = expenseDate;
+        expense.domainEvents.add(new DeliveryExpenseRegistered(expense.id, userId, amount, expenseDate));
+        return expense;
+    }
+}
+```
+
+**Aggregate Root — `MonthlyBudget`**
+
+`MonthlyBudget` encapsula el presupuesto mensual de delivery de un usuario para un `SpendingPeriod` dado. Expone el método `addExpense(DeliveryAmount)`, que acumula el gasto y, si el acumulado supera el `MonthlyLimit` configurado, publica el Domain Event `MonthlyLimitExceeded`. El método `updateLimit(MonthlyLimit)` permite al usuario ajustar su tope en cualquier momento.
+
+```java
+public class MonthlyBudget {
+    private MonthlyBudgetId id;
+    private UserId userId;
+    private SpendingPeriod period;
+    private MonthlyLimit limit;
+    private BigDecimal accumulated;
+    private List<DomainEvent> domainEvents = new ArrayList<>();
+
+    public void addExpense(DeliveryAmount amount) {
+        this.accumulated = this.accumulated.add(amount.value());
+        if (this.accumulated.compareTo(this.limit.value()) > 0) {
+            domainEvents.add(new MonthlyLimitExceeded(this.id, this.userId,
+                    this.period, this.limit, this.accumulated));
+        }
+    }
+
+    public void updateLimit(MonthlyLimit newLimit) {
+        this.limit = newLimit;
+    }
+}
+```
+
+**Value Objects**
+
+| Value Object | Campos | Invariante |
+|---|---|---|
+| `DeliveryAmount` | `amount: BigDecimal` | Mayor que cero |
+| `MerchantName` | `value: String` | No vacío, máx. 120 caracteres |
+| `SpendingPeriod` | `year: int, month: int` | Mes entre 1 y 12, año >= 2020 |
+| `MonthlyLimit` | `value: BigDecimal` | Mayor o igual a cero |
+
+**Enums de dominio**
+
+`SpendingCategory` clasifica el gasto de delivery según el tipo de comercio: `FOOD`, `GROCERY`, `PHARMACY`, `OTHER`. Sus valores provienen del ubiquitous language definido en la sección 2.3.6 bajo el término "Spending Category".
+
+**Domain Events**
+
+| Evento | Datos publicados | Disparador |
+|---|---|---|
+| `DeliveryExpenseRegistered` | `expenseId`, `userId`, `amount`, `expenseDate` | `DeliveryExpense.register(...)` |
+| `MonthlyLimitExceeded` | `budgetId`, `userId`, `period`, `limit`, `accumulated` | `MonthlyBudget.addExpense(...)` cuando acumulado > límite |
+
+**Ports (interfaces de dominio)**
+
+```java
+public interface DeliveryExpenseRepository {
+    void save(DeliveryExpense expense);
+    List<DeliveryExpense> findByUserAndPeriod(UserId userId, SpendingPeriod period);
+    Optional<DeliveryExpense> findById(DeliveryExpenseId id);
+}
+
+public interface MonthlyBudgetRepository {
+    void save(MonthlyBudget budget);
+    Optional<MonthlyBudget> findByUserAndPeriod(UserId userId, SpendingPeriod period);
+}
+```
+
+#### 2.6.2.2. Interface Layer
+
+**`DeliveryExpenseController` — `@RestController`, base path `/api/v1/delivery-expenses`**
+
+Expone los endpoints REST que permiten al usuario de la aplicación móvil CraveWallet registrar gastos de delivery, consultar el resumen mensual y configurar el límite mensual. Todos los endpoints requieren autenticación JWT gestionada por Spring Security.
+
+| Método HTTP | Ruta | Descripción | Request Body / Params | Response |
+|---|---|---|---|---|
+| `POST` | `/` | Registra un nuevo gasto de delivery | `RegisterExpenseRequest` | `201 Created` + `ExpenseResponse` |
+| `GET` | `/summary` | Devuelve resumen mensual (total, límite, categorías) | `?year=&month=` | `200 OK` + `MonthSummaryResponse` |
+| `PUT` | `/budget` | Establece o actualiza el límite mensual | `UpdateBudgetRequest` | `200 OK` + `BudgetResponse` |
+| `GET` | `/merchants/suggestions` | Devuelve sugerencias de comercios vía Google Places | `?query=` | `200 OK` + `List<MerchantSuggestion>` |
+
+**DTOs**
+
+- `RegisterExpenseRequest`: `amount (BigDecimal)`, `merchantName (String)`, `category (String)`, `expenseDate (LocalDate)`
+- `UpdateBudgetRequest`: `limit (BigDecimal)`, `year (int)`, `month (int)`
+- `MonthSummaryResponse`: `totalSpent (BigDecimal)`, `limit (BigDecimal)`, `remaining (BigDecimal)`, `byCategory (Map<String,BigDecimal>)`
+- `MerchantSuggestion`: `placeId (String)`, `name (String)`, `address (String)` — estructura conformista con Google Places API
+
+#### 2.6.2.3. Application Layer
+
+**`DeliveryExpenseApplicationService` — `@Service`**
+
+Orquesta los casos de uso del BC coordinando los Aggregate Roots, sus repositorios y el publisher de Domain Events. No contiene lógica de negocio; toda validación de invariantes ocurre dentro de los propios agregados.
+
+```java
+@Service
+@Transactional
+public class DeliveryExpenseApplicationService {
+
+    private final DeliveryExpenseRepository expenseRepo;
+    private final MonthlyBudgetRepository budgetRepo;
+    private final ApplicationEventPublisher eventPublisher;
+
+    public ExpenseResponse registerExpense(RegisterExpenseCommand cmd) {
+        DeliveryExpense expense = DeliveryExpense.register(
+                cmd.userId(), new DeliveryAmount(cmd.amount()),
+                new MerchantName(cmd.merchantName()),
+                SpendingCategory.valueOf(cmd.category()),
+                cmd.expenseDate());
+        expenseRepo.save(expense);
+
+        SpendingPeriod period = new SpendingPeriod(
+                cmd.expenseDate().getYear(), cmd.expenseDate().getMonthValue());
+        MonthlyBudget budget = budgetRepo
+                .findByUserAndPeriod(cmd.userId(), period)
+                .orElseGet(() -> MonthlyBudget.createDefault(cmd.userId(), period));
+        budget.addExpense(new DeliveryAmount(cmd.amount()));
+        budgetRepo.save(budget);
+
+        expense.domainEvents().forEach(eventPublisher::publishEvent);
+        budget.domainEvents().forEach(eventPublisher::publishEvent);
+        return ExpenseResponse.from(expense);
+    }
+
+    public MonthSummaryResponse getMonthSummary(UserId userId, SpendingPeriod period) {
+        List<DeliveryExpense> expenses = expenseRepo.findByUserAndPeriod(userId, period);
+        MonthlyBudget budget = budgetRepo.findByUserAndPeriod(userId, period)
+                .orElseGet(() -> MonthlyBudget.createDefault(userId, period));
+        return MonthSummaryResponse.from(expenses, budget);
+    }
+
+    public BudgetResponse setMonthlyLimit(SetBudgetLimitCommand cmd) {
+        SpendingPeriod period = new SpendingPeriod(cmd.year(), cmd.month());
+        MonthlyBudget budget = budgetRepo.findByUserAndPeriod(cmd.userId(), period)
+                .orElseGet(() -> MonthlyBudget.createDefault(cmd.userId(), period));
+        budget.updateLimit(new MonthlyLimit(cmd.limit()));
+        budgetRepo.save(budget);
+        return BudgetResponse.from(budget);
+    }
+}
+```
+
+#### 2.6.2.4. Infrastructure Layer
+
+**`JpaDeliveryExpenseRepository`**
+
+Implementa `DeliveryExpenseRepository` usando Spring Data JPA. La entidad JPA `DeliveryExpenseEntity` mapea la tabla `delivery_expenses` de PostgreSQL 16. El método `findByUserAndPeriod` traduce el `SpendingPeriod` a una consulta `BETWEEN` sobre la columna `expense_date`.
+
+```java
+@Repository
+public class JpaDeliveryExpenseRepository implements DeliveryExpenseRepository {
+
+    private final SpringDataDeliveryExpenseJpa jpa;
+    private final DeliveryExpenseMapper mapper;
+
+    @Override
+    public void save(DeliveryExpense expense) {
+        jpa.save(mapper.toEntity(expense));
+    }
+
+    @Override
+    public List<DeliveryExpense> findByUserAndPeriod(UserId userId, SpendingPeriod period) {
+        LocalDate start = LocalDate.of(period.year(), period.month(), 1);
+        LocalDate end = start.withDayOfMonth(start.lengthOfMonth());
+        return jpa.findByUserIdAndExpenseDateBetween(userId.value(), start, end)
+                  .stream().map(mapper::toDomain).toList();
+    }
+}
+```
+
+**`JpaMonthlyBudgetRepository`**
+
+Implementa `MonthlyBudgetRepository`. Usa una clave compuesta `(user_id, year, month)` en la tabla `monthly_budgets` para garantizar unicidad del presupuesto por usuario y período.
+
+**`GooglePlacesAdapter`**
+
+Implementa la consulta de sugerencias de comercios siguiendo el patrón Conformist: el adaptador llama directamente a la API de Google Places Text Search y devuelve la respuesta sin traducción al modelo de dominio, dado que el modelo de Places es suficientemente estable y cercano al vocabulario de CraveWallet. La clave de API se inyecta vía `@Value("${google.places.api-key}")`.
+
+```java
+@Component
+public class GooglePlacesAdapter {
+
+    private final RestClient restClient;
+
+    public List<MerchantSuggestion> suggest(String query) {
+        return restClient.get()
+                .uri("/maps/api/place/textsearch/json?query={q}&type=food&key={k}", query, apiKey)
+                .retrieve()
+                .body(PlacesResponse.class)
+                .results().stream()
+                .map(r -> new MerchantSuggestion(r.placeId(), r.name(), r.formattedAddress()))
+                .toList();
+    }
+}
+```
+
+**`DomainEventPublisher`**
+
+Reutiliza el mismo `ApplicationEventPublisher` de Spring Framework ya descrito en la sección 2.6.1.4. Los listeners de `DeliveryExpenseRegistered` y `MonthlyLimitExceeded` despachan notificaciones push al dispositivo del usuario vía Firebase Cloud Messaging.
+
+#### 2.6.2.5. Component Level Diagrams
+
+El diagrama a nivel de componentes (C4 Component) muestra la organización interna del Bounded Context Delivery Expense Management dentro del backend de CraveWallet. Se pueden apreciar los dos Aggregate Roots (`DeliveryExpense`, `MonthlyBudget`), el Application Service que los orquesta, el adaptador conformista hacia Google Places y los repositorios JPA que persisten en PostgreSQL.
+
+```plantuml
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component Diagram — Bounded Context: Delivery Expense Management
+
+Container(mobileApp, "CraveWallet Mobile", "Flutter", "Aplicación móvil del usuario")
+ContainerDb(db, "PostgreSQL 16", "Base de datos relacional", "Tablas: delivery_expenses, monthly_budgets")
+System_Ext(places, "Google Places API", "Sugerencias de comercios")
+
+Container_Boundary(bc, "Delivery Expense Management (Spring Boot)") {
+    Component(ctrl, "DeliveryExpenseController", "@RestController", "Expone /api/v1/delivery-expenses")
+    Component(appSvc, "DeliveryExpenseApplicationService", "@Service", "Orquesta registerExpense, getMonthSummary, setMonthlyLimit")
+    Component(expDomain, "DeliveryExpense Aggregate", "Domain", "Registra gasto, publica DeliveryExpenseRegistered")
+    Component(budDomain, "MonthlyBudget Aggregate", "Domain", "Controla límite mensual, publica MonthlyLimitExceeded")
+    Component(expRepo, "JpaDeliveryExpenseRepository", "@Repository", "Implementa DeliveryExpenseRepository")
+    Component(budRepo, "JpaMonthlyBudgetRepository", "@Repository", "Implementa MonthlyBudgetRepository")
+    Component(placesAdapter, "GooglePlacesAdapter", "@Component", "Conformist — consulta Places Text Search")
+    Component(eventPub, "DomainEventPublisher", "@Component", "Publica eventos de dominio via Spring ApplicationEventPublisher")
+}
+
+Rel(mobileApp, ctrl, "HTTPS / JSON")
+Rel(ctrl, appSvc, "llama")
+Rel(appSvc, expDomain, "crea / modifica")
+Rel(appSvc, budDomain, "crea / modifica")
+Rel(appSvc, expRepo, "persiste DeliveryExpense")
+Rel(appSvc, budRepo, "persiste MonthlyBudget")
+Rel(appSvc, eventPub, "publica eventos")
+Rel(ctrl, placesAdapter, "delega sugerencias")
+Rel(placesAdapter, places, "HTTP GET")
+Rel(expRepo, db, "JPA / JDBC")
+Rel(budRepo, db, "JPA / JDBC")
+@enduml
+```
+
+[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+
+#### 2.6.2.6. Code Level Diagrams
+
+##### 2.6.2.6.1. Domain Layer Class Diagrams
+
+El diagrama de clases del Domain Layer muestra los dos Aggregate Roots con sus Value Objects, enums, Domain Events y las interfaces de Port que definen los contratos de persistencia.
+
+```plantuml
+@startuml
+skinparam classAttributeIconSize 0
+
+package "delivery.domain.model" {
+    class DeliveryExpense <<AggregateRoot>> {
+        - id: DeliveryExpenseId
+        - userId: UserId
+        - amount: DeliveryAmount
+        - merchant: MerchantName
+        - category: SpendingCategory
+        - expenseDate: LocalDate
+        - domainEvents: List<DomainEvent>
+        + {static} register(userId, amount, merchant, category, date): DeliveryExpense
+        + domainEvents(): List<DomainEvent>
+    }
+
+    class MonthlyBudget <<AggregateRoot>> {
+        - id: MonthlyBudgetId
+        - userId: UserId
+        - period: SpendingPeriod
+        - limit: MonthlyLimit
+        - accumulated: BigDecimal
+        - domainEvents: List<DomainEvent>
+        + addExpense(amount: DeliveryAmount): void
+        + updateLimit(newLimit: MonthlyLimit): void
+        + {static} createDefault(userId, period): MonthlyBudget
+        + domainEvents(): List<DomainEvent>
+    }
+
+    class DeliveryAmount <<ValueObject>> {
+        - amount: BigDecimal
+        + value(): BigDecimal
+    }
+
+    class MerchantName <<ValueObject>> {
+        - value: String
+        + value(): String
+    }
+
+    class SpendingPeriod <<ValueObject>> {
+        - year: int
+        - month: int
+    }
+
+    class MonthlyLimit <<ValueObject>> {
+        - value: BigDecimal
+        + value(): BigDecimal
+    }
+
+    enum SpendingCategory {
+        FOOD
+        GROCERY
+        PHARMACY
+        OTHER
+    }
+
+    class DeliveryExpenseRegistered <<DomainEvent>> {
+        + expenseId: DeliveryExpenseId
+        + userId: UserId
+        + amount: DeliveryAmount
+        + expenseDate: LocalDate
+    }
+
+    class MonthlyLimitExceeded <<DomainEvent>> {
+        + budgetId: MonthlyBudgetId
+        + userId: UserId
+        + period: SpendingPeriod
+        + limit: MonthlyLimit
+        + accumulated: BigDecimal
+    }
+
+    interface DeliveryExpenseRepository <<Port>> {
+        + save(expense: DeliveryExpense): void
+        + findByUserAndPeriod(userId, period): List<DeliveryExpense>
+        + findById(id: DeliveryExpenseId): Optional<DeliveryExpense>
+    }
+
+    interface MonthlyBudgetRepository <<Port>> {
+        + save(budget: MonthlyBudget): void
+        + findByUserAndPeriod(userId, period): Optional<MonthlyBudget>
+    }
+
+    DeliveryExpense *-- DeliveryAmount
+    DeliveryExpense *-- MerchantName
+    DeliveryExpense *-- SpendingCategory
+    DeliveryExpense ..> DeliveryExpenseRegistered : publica
+    MonthlyBudget *-- SpendingPeriod
+    MonthlyBudget *-- MonthlyLimit
+    MonthlyBudget ..> MonthlyLimitExceeded : publica
+}
+@enduml
+```
+
+[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+
+##### 2.6.2.6.2. Database Design Diagram
+
+Las tablas `delivery_expenses` y `monthly_budgets` de PostgreSQL 16 mapean directamente a los dos Aggregate Roots. La columna `user_id` en ambas tablas referencia al usuario canónico gestionado por el BC de autenticación (fuera del alcance de este BC); no se define una FK explícita entre BCs para preservar el desacoplamiento.
+
+```plantuml
+@startuml
+entity "delivery_expenses" as DE {
+  * id : UUID <<PK>>
+  --
+  * user_id : UUID
+  * amount : NUMERIC(12,2)
+  * merchant_name : VARCHAR(120)
+  * category : VARCHAR(20)
+  * expense_date : DATE
+  created_at : TIMESTAMPTZ
+}
+
+entity "monthly_budgets" as MB {
+  * id : UUID <<PK>>
+  --
+  * user_id : UUID
+  * year : SMALLINT
+  * month : SMALLINT
+  * monthly_limit : NUMERIC(12,2)
+  * accumulated : NUMERIC(12,2)
+  updated_at : TIMESTAMPTZ
+  <<UNIQUE (user_id, year, month)>>
+}
+
+DE }o--|| MB : "user_id + period"
+@enduml
+```
+
+[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+
+### 2.6.3. Bounded Context: Premium & Billing
+
+Este Bounded Context modela el ciclo de vida del plan de suscripción del usuario dentro de CraveWallet: la distinción entre el nivel gratuito (Free Tier) y el nivel de pago (Premium Tier), el flujo de pago a través de Stripe y el manejo de los eventos de facturación que llegan vía webhook. De acuerdo con el Context Mapping de la sección 2.5.2, este BC actúa como Upstream en una relación Customer/Supplier con Subscription Management: define el `PlanType` del usuario y Subscription Management lo consume para aplicar restricciones de la cuenta gratuita (límite de suscripciones registradas). La integración con Stripe se modela como Anti-Corruption Layer (ACL), dado que los conceptos de Stripe (`invoice.paid`, `customer.subscription.deleted`) no pertenecen al ubiquitous language de CraveWallet y deben traducirse al lenguaje del dominio. Los User Stories que fundamentan este BC son US21, US22, US23, US31 y US39; los Spikes SP05 y SP06 definen la exploración técnica de la integración con Stripe, y la Technical Story TS06 cubre la implementación del webhook.
+
+#### 2.6.3.1. Domain Layer
+
+El Domain Layer de Premium & Billing concentra un único Aggregate Root `SubscriptionPlan`, que encapsula el estado del plan del usuario y su vínculo con Stripe.
+
+**Aggregate Root — `SubscriptionPlan`**
+
+`SubscriptionPlan` es la raíz del agregado que representa el plan activo de un usuario en CraveWallet. Contiene el `UserId` (Shared Kernel con Subscription Management), el `PlanType` actual, el `BillingPeriod` vigente cuando el plan es Premium, y los identificadores de Stripe (`StripeCustomerId`, `StripeSubscriptionId`) que permiten correlacionar eventos de webhook con el plan del usuario.
+
+El método `upgradeToPremium(StripeCustomerId, StripeSubscriptionId, BillingPeriod)` transiciona el plan de `FREE` a `PREMIUM` y publica el Domain Event `PlanUpgradedToPremium`. El método `downgradeToFree()` revierte el plan a `FREE`, borra los identificadores de Stripe y publica `PlanDowngradedToFree`. La lógica de negocio garantiza que una transición solo ocurre si el plan está en el estado correcto (idempotencia: upgradear un plan ya Premium no hace nada).
+
+```java
+public class SubscriptionPlan {
+    private SubscriptionPlanId id;
+    private UserId userId;
+    private PlanType planType;
+    private BillingPeriod billingPeriod;
+    private StripeCustomerId stripeCustomerId;
+    private StripeSubscriptionId stripeSubscriptionId;
+    private List<DomainEvent> domainEvents = new ArrayList<>();
+
+    public void upgradeToPremium(StripeCustomerId customerId,
+                                  StripeSubscriptionId subscriptionId,
+                                  BillingPeriod period) {
+        if (this.planType == PlanType.PREMIUM) return;
+        this.planType = PlanType.PREMIUM;
+        this.stripeCustomerId = customerId;
+        this.stripeSubscriptionId = subscriptionId;
+        this.billingPeriod = period;
+        domainEvents.add(new PlanUpgradedToPremium(this.id, this.userId, period));
+    }
+
+    public void downgradeToFree() {
+        if (this.planType == PlanType.FREE) return;
+        this.planType = PlanType.FREE;
+        this.stripeCustomerId = null;
+        this.stripeSubscriptionId = null;
+        this.billingPeriod = null;
+        domainEvents.add(new PlanDowngradedToFree(this.id, this.userId));
+    }
+
+    public boolean isPremium() {
+        return this.planType == PlanType.PREMIUM;
+    }
+}
+```
+
+**Value Objects**
+
+| Value Object | Campos | Invariante |
+|---|---|---|
+| `PlanType` | Enum: `FREE`, `PREMIUM` | — |
+| `BillingPeriod` | `startDate: LocalDate`, `endDate: LocalDate` | `endDate` posterior a `startDate` |
+| `StripeCustomerId` | `value: String` | No vacío, prefijo `cus_` |
+| `StripeSubscriptionId` | `value: String` | No vacío, prefijo `sub_` |
+
+**Domain Events**
+
+| Evento | Datos publicados | Disparador |
+|---|---|---|
+| `PlanUpgradedToPremium` | `planId`, `userId`, `billingPeriod` | `SubscriptionPlan.upgradeToPremium(...)` |
+| `PlanDowngradedToFree` | `planId`, `userId` | `SubscriptionPlan.downgradeToFree()` |
+
+**Ports (interfaces de dominio)**
+
+```java
+public interface PlanRepository {
+    void save(SubscriptionPlan plan);
+    Optional<SubscriptionPlan> findByUserId(UserId userId);
+    Optional<SubscriptionPlan> findByStripeSubscriptionId(StripeSubscriptionId id);
+}
+
+public interface PaymentGatewayPort {
+    String createCheckoutSession(UserId userId, String successUrl, String cancelUrl);
+}
+```
+
+#### 2.6.3.2. Interface Layer
+
+**`PremiumController` — `@RestController`, base path `/api/v1/premium`**
+
+Expone los endpoints que el cliente Flutter consume para consultar el estado del plan y para iniciar el flujo de pago con Stripe Checkout. Todos los endpoints requieren autenticación JWT.
+
+| Método HTTP | Ruta | Descripción | Request Body / Params | Response |
+|---|---|---|---|---|
+| `GET` | `/status` | Devuelve el plan actual del usuario autenticado | — | `200 OK` + `PlanStatusResponse` |
+| `POST` | `/checkout` | Inicia sesión de Stripe Checkout | `CheckoutRequest` | `200 OK` + `CheckoutResponse` |
+
+**`StripeWebhookController` — `@RestController`, base path `/api/v1/premium/webhook`**
+
+Endpoint público (sin autenticación JWT) que recibe los webhooks de Stripe. La verificación de firma usa el header `Stripe-Signature` y el webhook secret configurado en `application.properties`. Este endpoint es el punto de entrada al ACL hacia Stripe.
+
+| Método HTTP | Ruta | Descripción | Request Body | Response |
+|---|---|---|---|---|
+| `POST` | `/stripe` | Recibe evento de Stripe y delega al Application Service | Raw JSON + `Stripe-Signature` header | `200 OK` o `400 Bad Request` |
+
+**DTOs**
+
+- `PlanStatusResponse`: `planType (String)`, `isPremium (boolean)`, `billingPeriodStart (LocalDate)`, `billingPeriodEnd (LocalDate)`
+- `CheckoutRequest`: `successUrl (String)`, `cancelUrl (String)`
+- `CheckoutResponse`: `checkoutUrl (String)` — URL de Stripe Checkout a abrir en el WebView de Flutter
+
+#### 2.6.3.3. Application Layer
+
+**`PremiumApplicationService` — `@Service`**
+
+Orquesta los cuatro casos de uso del BC: iniciar el checkout, confirmar el pago, procesar la cancelación y consultar el estado del plan. Los métodos `handlePaymentConfirmed` y `handleSubscriptionCancelled` son llamados exclusivamente desde el `StripeWebhookController`, previo paso por el ACL `StripeWebhookAdapter` que ya habrá validado la firma y traducido los tipos de Stripe al ubiquitous language del dominio.
+
+```java
+@Service
+@Transactional
+public class PremiumApplicationService {
+
+    private final PlanRepository planRepo;
+    private final PaymentGatewayPort paymentGateway;
+    private final ApplicationEventPublisher eventPublisher;
+
+    public CheckoutResponse initiatePremiumCheckout(UserId userId,
+                                                     String successUrl,
+                                                     String cancelUrl) {
+        String checkoutUrl = paymentGateway.createCheckoutSession(userId, successUrl, cancelUrl);
+        return new CheckoutResponse(checkoutUrl);
+    }
+
+    public void handlePaymentConfirmed(StripeSubscriptionId subscriptionId,
+                                        StripeCustomerId customerId,
+                                        BillingPeriod period) {
+        SubscriptionPlan plan = planRepo.findByStripeSubscriptionId(subscriptionId)
+                .orElseGet(() -> planRepo.findByStripeCustomerId(customerId)
+                        .orElseThrow(() -> new PlanNotFoundException(customerId)));
+        plan.upgradeToPremium(customerId, subscriptionId, period);
+        planRepo.save(plan);
+        plan.domainEvents().forEach(eventPublisher::publishEvent);
+    }
+
+    public void handleSubscriptionCancelled(StripeSubscriptionId subscriptionId) {
+        SubscriptionPlan plan = planRepo.findByStripeSubscriptionId(subscriptionId)
+                .orElseThrow(() -> new PlanNotFoundException(subscriptionId));
+        plan.downgradeToFree();
+        planRepo.save(plan);
+        plan.domainEvents().forEach(eventPublisher::publishEvent);
+    }
+
+    public PlanStatusResponse getPlanStatus(UserId userId) {
+        SubscriptionPlan plan = planRepo.findByUserId(userId)
+                .orElseGet(() -> SubscriptionPlan.createFree(userId));
+        return PlanStatusResponse.from(plan);
+    }
+}
+```
+
+#### 2.6.3.4. Infrastructure Layer
+
+**`StripeWebhookAdapter` — Anti-Corruption Layer**
+
+`StripeWebhookAdapter` es el componente más crítico de la infraestructura de este BC. Implementa `PaymentGatewayPort` y actúa como ACL entre el lenguaje de Stripe y el ubiquitous language de CraveWallet. Recibe el payload raw del webhook, verifica la firma HMAC-SHA256 usando el Stripe SDK (`Webhook.constructEvent`), inspecciona el campo `type` del evento y delega al `PremiumApplicationService` con los tipos del dominio traducidos:
+
+- `invoice.paid` con `billing_reason = subscription_create` o `subscription_cycle` — llama a `handlePaymentConfirmed` con `StripeSubscriptionId`, `StripeCustomerId` y `BillingPeriod` extraídos del objeto `subscription`
+- `customer.subscription.deleted` — llama a `handleSubscriptionCancelled` con el `StripeSubscriptionId`
+- Cualquier otro tipo de evento — ignorado con respuesta `200 OK` (Stripe requiere que todos los eventos recibidos respondan 200, incluso si no se procesan)
+
+```java
+@Component
+public class StripeWebhookAdapter implements PaymentGatewayPort {
+
+    @Value("${stripe.webhook.secret}")
+    private String webhookSecret;
+
+    @Value("${stripe.secret-key}")
+    private String stripeSecretKey;
+
+    private final PremiumApplicationService premiumService;
+
+    public void handleWebhook(String payload, String sigHeader) {
+        Event event;
+        try {
+            event = Webhook.constructEvent(payload, sigHeader, webhookSecret);
+        } catch (SignatureVerificationException e) {
+            throw new InvalidStripeSignatureException();
+        }
+
+        switch (event.getType()) {
+            case "invoice.paid" -> {
+                Invoice invoice = (Invoice) event.getDataObjectDeserializer()
+                        .getObject().orElseThrow();
+                if ("subscription_create".equals(invoice.getBillingReason())
+                        || "subscription_cycle".equals(invoice.getBillingReason())) {
+                    BillingPeriod period = new BillingPeriod(
+                            Instant.ofEpochSecond(invoice.getPeriodStart())
+                                   .atZone(ZoneOffset.UTC).toLocalDate(),
+                            Instant.ofEpochSecond(invoice.getPeriodEnd())
+                                   .atZone(ZoneOffset.UTC).toLocalDate());
+                    premiumService.handlePaymentConfirmed(
+                            new StripeSubscriptionId(invoice.getSubscription()),
+                            new StripeCustomerId(invoice.getCustomer()),
+                            period);
+                }
+            }
+            case "customer.subscription.deleted" -> {
+                Subscription sub = (Subscription) event.getDataObjectDeserializer()
+                        .getObject().orElseThrow();
+                premiumService.handleSubscriptionCancelled(
+                        new StripeSubscriptionId(sub.getId()));
+            }
+            default -> { /* evento ignorado intencionalmente */ }
+        }
+    }
+
+    @Override
+    public String createCheckoutSession(UserId userId, String successUrl, String cancelUrl) {
+        Stripe.apiKey = stripeSecretKey;
+        SessionCreateParams params = SessionCreateParams.builder()
+                .setMode(SessionCreateParams.Mode.SUBSCRIPTION)
+                .setSuccessUrl(successUrl)
+                .setCancelUrl(cancelUrl)
+                .addLineItem(SessionCreateParams.LineItem.builder()
+                        .setPrice(premiumPriceId)
+                        .setQuantity(1L)
+                        .build())
+                .putMetadata("userId", userId.value())
+                .build();
+        return Session.create(params).getUrl();
+    }
+}
+```
+
+**`JpaPlanRepository`**
+
+Implementa `PlanRepository` usando Spring Data JPA. La entidad JPA `SubscriptionPlanEntity` mapea la tabla `user_plans` con una restricción `UNIQUE (user_id)`. El método `findByStripeSubscriptionId` usa la columna indexada `stripe_subscription_id` para correlacionar el evento del webhook con el registro del plan en tiempo constante.
+
+#### 2.6.3.5. Component Level Diagrams
+
+El diagrama a nivel de componentes muestra los dos controllers de entrada (autenticado y público/webhook), el Application Service, el Aggregate Root `SubscriptionPlan`, el ACL `StripeWebhookAdapter`, el repositorio JPA y la relación con Stripe como sistema externo.
+
+```plantuml
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component Diagram — Bounded Context: Premium & Billing
+
+Container(mobileApp, "CraveWallet Mobile", "Flutter", "Aplicación móvil del usuario")
+ContainerDb(db, "PostgreSQL 16", "Base de datos relacional", "Tablas: user_plans, billing_events")
+System_Ext(stripe, "Stripe", "Procesador de pagos — Checkout + Webhooks")
+
+Container_Boundary(bc, "Premium & Billing (Spring Boot)") {
+    Component(premCtrl, "PremiumController", "@RestController", "GET /status, POST /checkout — requiere JWT")
+    Component(webhookCtrl, "StripeWebhookController", "@RestController", "POST /webhook/stripe — público, verifica Stripe-Signature")
+    Component(appSvc, "PremiumApplicationService", "@Service", "initiatePremiumCheckout, handlePaymentConfirmed, handleSubscriptionCancelled, getPlanStatus")
+    Component(domain, "SubscriptionPlan Aggregate", "Domain", "upgradeToPremium, downgradeToFree — publica PlanUpgradedToPremium / PlanDowngradedToFree")
+    Component(planRepo, "JpaPlanRepository", "@Repository", "Implementa PlanRepository")
+    Component(stripeAdapter, "StripeWebhookAdapter", "@Component (ACL)", "Verifica firma, traduce invoice.paid / subscription.deleted al ubiquitous language")
+    Component(eventPub, "DomainEventPublisher", "@Component", "Publica eventos de dominio via Spring ApplicationEventPublisher")
+}
+
+Rel(mobileApp, premCtrl, "HTTPS / JSON — JWT")
+Rel(stripe, webhookCtrl, "HTTPS POST — webhook")
+Rel(premCtrl, appSvc, "llama")
+Rel(webhookCtrl, stripeAdapter, "delega payload + firma")
+Rel(stripeAdapter, appSvc, "handlePaymentConfirmed / handleSubscriptionCancelled")
+Rel(appSvc, stripeAdapter, "createCheckoutSession")
+Rel(stripeAdapter, stripe, "Stripe SDK — createSession")
+Rel(appSvc, domain, "crea / modifica")
+Rel(appSvc, planRepo, "persiste SubscriptionPlan")
+Rel(appSvc, eventPub, "publica eventos")
+Rel(planRepo, db, "JPA / JDBC")
+@enduml
+```
+
+[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+
+#### 2.6.3.6. Code Level Diagrams
+
+##### 2.6.3.6.1. Domain Layer Class Diagrams
+
+El diagrama de clases del Domain Layer muestra el Aggregate Root `SubscriptionPlan` con sus Value Objects, los Domain Events que publica y las interfaces de Port que definen los contratos de persistencia y de pasarela de pago.
+
+```plantuml
+@startuml
+skinparam classAttributeIconSize 0
+
+package "premium.domain.model" {
+    class SubscriptionPlan <<AggregateRoot>> {
+        - id: SubscriptionPlanId
+        - userId: UserId
+        - planType: PlanType
+        - billingPeriod: BillingPeriod
+        - stripeCustomerId: StripeCustomerId
+        - stripeSubscriptionId: StripeSubscriptionId
+        - domainEvents: List<DomainEvent>
+        + upgradeToPremium(customerId, subscriptionId, period): void
+        + downgradeToFree(): void
+        + isPremium(): boolean
+        + domainEvents(): List<DomainEvent>
+        + {static} createFree(userId): SubscriptionPlan
+    }
+
+    enum PlanType {
+        FREE
+        PREMIUM
+    }
+
+    class BillingPeriod <<ValueObject>> {
+        - startDate: LocalDate
+        - endDate: LocalDate
+    }
+
+    class StripeCustomerId <<ValueObject>> {
+        - value: String
+        + value(): String
+    }
+
+    class StripeSubscriptionId <<ValueObject>> {
+        - value: String
+        + value(): String
+    }
+
+    class PlanUpgradedToPremium <<DomainEvent>> {
+        + planId: SubscriptionPlanId
+        + userId: UserId
+        + billingPeriod: BillingPeriod
+    }
+
+    class PlanDowngradedToFree <<DomainEvent>> {
+        + planId: SubscriptionPlanId
+        + userId: UserId
+    }
+
+    interface PlanRepository <<Port>> {
+        + save(plan: SubscriptionPlan): void
+        + findByUserId(userId: UserId): Optional<SubscriptionPlan>
+        + findByStripeSubscriptionId(id: StripeSubscriptionId): Optional<SubscriptionPlan>
+    }
+
+    interface PaymentGatewayPort <<Port>> {
+        + createCheckoutSession(userId, successUrl, cancelUrl): String
+    }
+
+    SubscriptionPlan *-- PlanType
+    SubscriptionPlan *-- BillingPeriod
+    SubscriptionPlan *-- StripeCustomerId
+    SubscriptionPlan *-- StripeSubscriptionId
+    SubscriptionPlan ..> PlanUpgradedToPremium : publica
+    SubscriptionPlan ..> PlanDowngradedToFree : publica
+}
+@enduml
+```
+
+[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+
+##### 2.6.3.6.2. Database Design Diagram
+
+Las tablas `user_plans` y `billing_events` de PostgreSQL 16 mapean al Aggregate Root `SubscriptionPlan` y a su log de eventos de facturación. La columna `user_id` en `user_plans` tiene una restricción `UNIQUE` dado que cada usuario tiene exactamente un plan activo en todo momento. La tabla `billing_events` guarda un log inmutable de cada evento de facturación recibido desde Stripe, útil para auditoría y para depurar discrepancias entre el estado en CraveWallet y el estado en el dashboard de Stripe.
+
+```plantuml
+@startuml
+entity "user_plans" as UP {
+  * id : UUID <<PK>>
+  --
+  * user_id : UUID <<UNIQUE>>
+  * plan_type : VARCHAR(10)
+  billing_period_start : DATE
+  billing_period_end : DATE
+  stripe_customer_id : VARCHAR(50)
+  stripe_subscription_id : VARCHAR(50)
+  * updated_at : TIMESTAMPTZ
+}
+
+entity "billing_events" as BE {
+  * id : UUID <<PK>>
+  --
+  * user_plan_id : UUID <<FK user_plans.id>>
+  * stripe_event_id : VARCHAR(60) <<UNIQUE>>
+  * event_type : VARCHAR(60)
+  * payload : JSONB
+  * received_at : TIMESTAMPTZ
+}
+
+UP ||--o{ BE : "user_plan_id"
+@enduml
+```
+
+[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
