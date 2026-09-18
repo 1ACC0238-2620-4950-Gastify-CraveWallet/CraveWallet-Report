@@ -300,9 +300,9 @@ Esta sección consolida, para cada uno de los dos segmentos, tres entrevistas re
 | Distrito de residencia | San Juan de Lurigancho |
 | Ocupación | Estudiante de Ingeniería de Software (6.º ciclo), freelance de desarrollo web |
 | Segmento objetivo | Segmento 1 |
-| Fecha y hora de la entrevista | [[PENDIENTE]] |
+| Fecha y hora de la entrevista | 17/09/2026, 8:00 p. m. |
 | Modalidad | Remota |
-| Duración | [[PENDIENTE]] |
+| Duración | 7:56 min |
 | Entrevistador | Anghelo Faustino |
 | Timing de inicio en el video consolidado | [[PENDIENTE: video sin subir]] |
 | URL del video | [Ver entrevista de Leonardo Sánchez](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202519273_upc_edu_pe/IQC0OqeOm9caSoG-a5SADUHcAb_vBgklx8f3g0pF_onCUp0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=y98bkD) |
@@ -321,9 +321,9 @@ Leonardo vive con sus padres en San Juan de Lurigancho, está soltero y comparte
 | Distrito de residencia | Surquillo |
 | Ocupación | Estudiante de Ingeniería de Software (6.º ciclo) |
 | Segmento objetivo | Segmento 1 |
-| Fecha y hora de la entrevista | [[PENDIENTE]] |
+| Fecha y hora de la entrevista | 17/09/2026, 6:00 p. m. |
 | Modalidad | Remota |
-| Duración | [[PENDIENTE]] |
+| Duración | 7:10 min |
 | Entrevistador | Anghelo Faustino |
 | Timing de inicio en el video consolidado | [[PENDIENTE: video sin subir]] |
 | URL del video | [Ver entrevista de Darío Romero](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202519273_upc_edu_pe/IQBn1ije7djbRb0lWbvf0vIBAdbTUXwVSWDfN1eoI94KVnc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=indd4c) |
