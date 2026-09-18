@@ -558,25 +558,15 @@ El mapa muestra que Renzo contrata servicios profesionales o personales de mayor
 
 Se elabora un Empathy Map por cada User Persona en la herramienta indicada, colocando al arquetipo al centro y completando cada cuadrante a partir de las citas y comportamientos recogidos en las entrevistas y consolidados en 2.2.3.
 
-[[PENDIENTE: captura de los Empathy Maps en la herramienta indicada]]
-
 #### Empathy Map de Camila Torres (Segmento 1)
 
-- **Qué dice:** "Nunca sé cuánto me van a cobrar hasta que veo el movimiento en el banco"; "me da flojera registrar cada gasto a mano".
-- **Qué piensa:** que llevar un control de gastos requiere demasiado esfuerzo para un ingreso que ya es ajustado y variable; que las apps de finanzas que probó eran más trabajo que ayuda.
-- **Qué hace:** revisa el saldo del banco de forma reactiva, generalmente a fin de mes; paga suscripciones y delivery con tarjeta de débito sin llevar un registro paralelo.
-- **Qué escucha:** recomendaciones de apps y contenido de tecnología por redes y creadores que sigue (por ejemplo, canales de YouTube sobre programación y tecnología).
-- **Frustraciones (Pains):** cobros en dólares que no puede prever; suscripciones olvidadas que descubre tarde; herramientas de control de gastos que exigen registro manual constante.
-- **Motivaciones (Gains):** saber de antemano cuánto le costará cada suscripción en soles; recibir un aviso antes de cada cobro para asegurar que tenga saldo disponible.
+![Empathy Map de Camila Torres](images/chapter_2/Empathy_map_1_Camila_Torres.png)
+
+***
 
 #### Empathy Map de Renzo Salazar (Segmento 2)
 
-- **Qué dice:** "No pienso conectar mi cuenta del banco a otra app"; "las empresas asumen que uno siempre quiere seguir pagando".
-- **Qué piensa:** que las apps de finanzas personales existentes son poco confiables (fallan al sincronizar o son complicadas de configurar) y que conectar sus cuentas bancarias es un riesgo innecesario.
-- **Qué hace:** revisa movimientos bancarios y líneas de tarjeta periódicamente; depende del calendario digital para recordatorios de trabajo, pero no lo usa para sus suscripciones personales.
-- **Qué escucha:** contenido de finanzas e inversión en redes profesionales (LinkedIn, Instagram) y medios económicos.
-- **Frustraciones (Pains):** renovaciones automáticas de montos altos que descubre tarde; falta de transparencia de las empresas sobre fechas de cobro; desconfianza hacia soluciones que requieren vincular cuentas bancarias.
-- **Motivaciones (Gains):** anticipar cobros en dólares y su conversión a soles sin tener que conectar sus cuentas bancarias; mantener el orden entre gastos personales y profesionales con el mínimo esfuerzo adicional.
+![Empathy Map de Renzo Salazar](images/chapter_2/Empathy_map_2_Renzo_Salazar.png)
 
 ### 2.3.5. Big Picture EventStorming
 
