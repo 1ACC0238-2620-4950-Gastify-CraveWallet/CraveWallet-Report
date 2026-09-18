@@ -2,7 +2,7 @@
 
 | Versión |    Fecha   |      Autor     | Descripción de modificación |
 |:-------:|:----------:|:--------------:|:---------------------------:|
-|   AV1   | [[FECHA]]  | Todo el equipo |       Primera versión       |
+|   AV1   | 15/09/2026  | Todo el equipo |       Primera versión       |
 
 # Project Report Collaboration Insights
 
