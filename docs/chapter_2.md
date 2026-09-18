@@ -2586,34 +2586,6 @@ El Context Map formaliza las relaciones entre los tres Bounded Contexts identifi
 
 **Conformist — Delivery Expense Management → Google Places API.** Para sugerir locales de delivery (US18), el contexto Delivery Expense Management adopta directamente los campos de respuesta de Google Places API (`name`, `place_id`, `formatted_address`) sin capa de traducción. El esfuerzo de mantener un ACL propio no se justifica para esta función auxiliar, por lo que el contexto se declara Conformista y asume el riesgo de deprecación de esa API.
 
-```plantuml
-@startuml ContextMap_CraveWallet
-skinparam rectangle {
-    BackgroundColor<<Core>> #FFD580
-    BackgroundColor<<Supporting>> #AED6F1
-    BackgroundColor<<Generic>> #A9DFBF
-    BackgroundColor<<External>> #D5D8DC
-    BorderColor #333333
-    FontSize 11
-}
-skinparam defaultFontSize 11
-skinparam arrowColor #444444
-
-rectangle "Subscription Management\n[Core Subdomain]" <<Core>> as SM
-rectangle "Delivery Expense Management\n[Supporting Subdomain]" <<Supporting>> as DE
-rectangle "Premium & Billing\n[Generic Subdomain]" <<Generic>> as PB
-rectangle "ExchangeRate-API\n[External System]" <<External>> as ERA
-rectangle "Stripe\n[External System]" <<External>> as STR
-rectangle "Google Places API\n[External System]" <<External>> as GPA
-
-SM <.. ERA : "<<Anti-Corruption Layer>>\nERA [U] / SM [D]"
-PB <.. STR : "<<Anti-Corruption Layer>>\nStripe [U] / PB [D]"
-DE .right.> GPA : "<<Conformist>>\nGPA [U] / DE [D]"
-PB -down-> SM : "<<Customer/Supplier>>\nPB [U] / SM [D]"
-SM <-right-> DE : "<<Partnership>>\nShared Kernel: UserId"
-@enduml
-```
-
 ![Context Mapping — CraveWallet](images/chapter_2/context_mapping.png)
 
 *Figura: Context Map de CraveWallet. Tres Bounded Contexts y sus relaciones con sistemas externos.*
@@ -2628,30 +2600,6 @@ El diagrama de contexto (Nivel 1 del C4 Model) posiciona a **CraveWallet** en su
 
 El usuario inicia todas las acciones desde su dispositivo. CraveWallet consume ExchangeRate-API para convertir importes a soles peruanos, delega los pagos recurrentes del plan Premium a Stripe, utiliza Google Places para enriquecer el registro de gastos de delivery y escribe eventos de recordatorio en el calendario nativo del dispositivo. Stripe es el único sistema externo que también inicia acciones sobre CraveWallet, mediante webhooks de confirmación de pago.
 
-```plantuml
-@startuml C4_Context_CraveWallet
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-
-LAYOUT_WITH_LEGEND()
-title System Context — CraveWallet (Nivel 1)
-
-Person(user, "Usuario", "Millennial peruano que gestiona suscripciones digitales y gastos de delivery.")
-
-System(cravewallet, "CraveWallet", "Aplicacion movil que centraliza suscripciones, convierte importes a soles, programa recordatorios anticipados y registra gastos de delivery.")
-
-System_Ext(exchangerate, "ExchangeRate-API", "Provee el tipo de cambio diario USD/PEN. Plan gratuito con limite de solicitudes por mes.")
-System_Ext(stripe, "Stripe", "Gestiona el cobro recurrente del plan Premium y notifica el resultado via webhooks.")
-System_Ext(gplaces, "Google Places API", "Sugiere y valida locales de delivery a partir de texto libre.")
-System_Ext(calendar, "Calendario nativo del dispositivo", "Almacena los eventos de recordatorio creados por CraveWallet, 24 horas antes de cada renovacion.")
-
-Rel(user, cravewallet, "Registra suscripciones, consulta el Dashboard, registra gastos de delivery", "Interfaz movil")
-Rel(cravewallet, exchangerate, "Solicita tipo de cambio USD/PEN", "HTTPS / REST")
-Rel(cravewallet, stripe, "Inicia sesion de pago; recibe confirmacion via webhook", "HTTPS / REST")
-Rel(cravewallet, gplaces, "Busca locales de delivery por nombre", "HTTPS / REST")
-Rel(cravewallet, calendar, "Crea y elimina eventos de recordatorio de renovacion", "Device Calendar API")
-@enduml
-```
-
 ![C4 System Context — CraveWallet](images/chapter_2/context_diagram.png)
 
 *Figura: Diagrama de Contexto C4 (Nivel 1). CraveWallet y sus cuatro sistemas externos.*
@@ -2664,38 +2612,6 @@ La **Mobile App** (Flutter / Dart) contiene la interfaz de usuario, la lógica d
 
 El **REST API Backend** (Spring Boot / Java 21) implementa los tres Bounded Contexts: Subscription Management, Delivery Expense Management y Premium & Billing. Persiste el estado canónico en la **Remote DB** (PostgreSQL 16) y consume los sistemas externos a través de sus adaptadores: el ACL de ExchangeRate-API, el ACL de Stripe y el adaptador conformista de Google Places.
 
-```plantuml
-@startuml C4_Container_CraveWallet
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-
-LAYOUT_WITH_LEGEND()
-title Container Diagram — CraveWallet (Nivel 2)
-
-Person(user, "Usuario", "Millennial peruano")
-
-System_Boundary(cw, "CraveWallet") {
-    Container(mobile, "Mobile App", "Flutter / Dart", "Interfaz de usuario, logica de presentacion, acceso al calendario nativo y notificaciones push.")
-    Container(api, "REST API Backend", "Spring Boot / Java 21", "Expone los endpoints RESTful de los tres Bounded Contexts. Contiene los adaptadores ACL para sistemas externos.")
-    ContainerDb(remotedb, "Remote Database", "PostgreSQL 16", "Estado canonico: suscripciones, historial de cobros, gastos de delivery, estado Premium y cache de tipo de cambio.")
-    ContainerDb(localdb, "Local Database", "SQLite (on-device)", "Cache de lectura offline: portafolio activo y ultimo tipo de cambio disponible.")
-}
-
-System_Ext(era, "ExchangeRate-API", "Tipo de cambio USD/PEN")
-System_Ext(stripe, "Stripe", "Pagos recurrentes")
-System_Ext(gplaces, "Google Places API", "Locales de delivery")
-System_Ext(calendar, "Calendario nativo", "Eventos locales de recordatorio")
-
-Rel(user, mobile, "Usa", "Interfaz tactil")
-Rel(mobile, api, "Llama a los endpoints", "HTTPS / REST + JSON")
-Rel(mobile, localdb, "Lee y sincroniza cache", "SQLite")
-Rel(mobile, calendar, "Crea y elimina eventos de recordatorio", "Device API")
-Rel(api, remotedb, "Lee y escribe estado canonico", "JDBC / JPA")
-Rel(api, era, "Solicita tipo de cambio (max 1 vez / 24 h)", "HTTPS / REST")
-Rel(api, stripe, "Inicia checkout; recibe webhooks de pago", "HTTPS / REST")
-Rel(api, gplaces, "Busca locales de delivery", "HTTPS / REST")
-@enduml
-```
-
 ![C4 Container Diagram — CraveWallet](images/chapter_2/container_diagram.png)
 
 *Figura: Diagrama de Contenedores C4 (Nivel 2). Mobile App, REST API Backend, Remote DB y Local DB.*
@@ -2707,52 +2623,6 @@ El diagrama de despliegue mapea los contenedores a nodos de infraestructura fís
 El **REST API Backend** se empaqueta como imagen Docker y se ejecuta en **Amazon ECS con Fargate**: sin gestión de servidores, con escalado automático y despliegue continuo desde el pipeline de GitHub Actions. La **Remote Database** corre en **Amazon RDS for PostgreSQL 16** (`db.t3.micro` durante la fase académica) con backups automáticos diarios. Un **Application Load Balancer** (ALB) termina TLS 1.3 en el puerto 443 y reenvía las peticiones al contenedor en Fargate. Las credenciales de API (Stripe, ExchangeRate-API, Google Places) se almacenan en **AWS Secrets Manager** y nunca se escriben en el código fuente ni en variables de entorno en texto plano.
 
 La **Mobile App** se distribuye como APK (Android) a través del canal acordado con el docente durante las entregas del curso; en producción se publicaría en Google Play Store y Apple App Store. Reside íntegramente en el dispositivo del usuario: la Local DB (SQLite) y el acceso al calendario nativo son capacidades del sistema operativo, sin infraestructura adicional.
-
-```plantuml
-@startuml C4_Deployment_CraveWallet
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Deployment.puml
-
-LAYOUT_WITH_LEGEND()
-title Deployment Diagram — CraveWallet
-
-Deployment_Node(device, "Dispositivo del usuario", "Android / iOS") {
-    Container(mobile_d, "CraveWallet Mobile App", "Flutter / Dart — APK / IPA")
-    Container(sqlite_d, "Local DB", "SQLite")
-    Container(cal_d, "Calendario nativo", "OS Calendar API")
-}
-
-Deployment_Node(aws, "Amazon Web Services — us-east-1", "Cloud") {
-    Deployment_Node(alb_node, "Application Load Balancer", "AWS ALB — TLS 1.3") {
-        Container(alb, "ALB Listener :443", "HTTPS termination")
-    }
-    Deployment_Node(ecs_node, "Amazon ECS — Fargate", "Serverless container runtime") {
-        Container(api_d, "REST API Backend", "Spring Boot 3 / Java 21 — imagen Docker")
-    }
-    Deployment_Node(rds_node, "Amazon RDS — PostgreSQL 16", "db.t3.micro") {
-        ContainerDb(pg_d, "cravewallet_db", "PostgreSQL")
-    }
-    Deployment_Node(secrets_node, "AWS Secrets Manager", "Gestion de credenciales") {
-        Container(secrets, "API Keys y credenciales", "Stripe / ExchangeRate-API / Google Places")
-    }
-}
-
-Deployment_Node(ext_node, "Proveedores externos", "Internet") {
-    System_Ext(era_d, "ExchangeRate-API")
-    System_Ext(stripe_d, "Stripe")
-    System_Ext(gplaces_d, "Google Places API")
-}
-
-Rel(mobile_d, alb, "HTTPS :443", "TLS 1.3")
-Rel(alb, api_d, "HTTP :8080", "red interna AWS")
-Rel(mobile_d, sqlite_d, "SQLite", "local")
-Rel(mobile_d, cal_d, "Device API", "local")
-Rel(api_d, pg_d, "JDBC :5432", "red privada VPC")
-Rel(api_d, secrets, "AWS SDK", "red privada VPC")
-Rel(api_d, era_d, "HTTPS :443", "Internet")
-Rel(api_d, stripe_d, "HTTPS :443", "Internet")
-Rel(api_d, gplaces_d, "HTTPS :443", "Internet")
-@enduml
-```
 
 ![C4 Deployment Diagram — CraveWallet](images/chapter_2/deployment_diagram.png)
 
@@ -2844,39 +2714,7 @@ Mario Sejuro configuró los paquetes base de la Infrastructure Layer (`infrastru
 
 El diagrama de componentes (Nivel 3 del C4 Model) desglosa el interior del REST API Backend en el contexto Subscription Management. Expone cinco componentes: el controlador REST (`SubscriptionController`), el servicio de aplicación (`SubscriptionApplicationService`), el Aggregate raíz del dominio (`Subscription Aggregate`), el repositorio JPA (`JpaSubscriptionRepository`) y el adaptador ACL (`ExchangeRateApiAdapter`). El flujo de dependencias hace visible la separación en capas: el controlador solo conoce el Application Service; el Application Service conoce los ports del dominio (interfaces); los adapters de Infrastructure implementan esos ports sin que el dominio los importe directamente.
 
-```plantuml
-@startuml C4_Component_SubscriptionManagement
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
-
-LAYOUT_WITH_LEGEND()
-title Component Diagram — Subscription Management Context (Nivel 3)
-
-Container_Boundary(api, "REST API Backend") {
-    Component(ctrl, "SubscriptionController", "Spring MVC @RestController", "Valida DTOs de entrada. Delega al Application Service. Protege rutas con JWT via @PreAuthorize.")
-    Component(appSvc, "SubscriptionApplicationService", "Spring @Service", "Orquesta los casos de uso: RegisterSubscription, CancelSubscription, GetPortfolio, GetSubscriptionDetail.")
-    Component(domain, "Subscription Aggregate", "POJO — sin dependencias de framework", "Entity Subscription, Value Objects Money / BillingCycle / ExchangeRate, Domain Events y ports SubscriptionRepository / ExchangeRatePort.")
-    Component(repo, "JpaSubscriptionRepository", "Spring Data JPA @Repository", "Implementa SubscriptionRepository. Mapea Subscription <-> SubscriptionJpaEntity. Escribe en la tabla subscriptions.")
-    Component(acl, "ExchangeRateApiAdapter", "Spring @Component — ACL", "Implementa ExchangeRatePort. Cache de 24 h en exchange_rate_cache. Traduce JSON del proveedor al Value Object ExchangeRate.")
-    Component(evtpub, "DomainEventPublisher", "Spring @Component", "Escucha SubscriptionRegistered y SubscriptionCancelled. Coordina la programacion y eliminacion de recordatorios via TS04.")
-}
-
-ContainerDb(db, "Remote DB (PostgreSQL)", "", "Tablas: subscriptions, billing_history, exchange_rate_cache")
-System_Ext(era, "ExchangeRate-API", "Tipo de cambio USD/PEN")
-Container(mobile, "Mobile App", "Flutter / Dart", "Interfaz de usuario")
-
-Rel(mobile, ctrl, "HTTP POST / GET / PATCH", "HTTPS / REST + JSON")
-Rel(ctrl, appSvc, "Delega caso de uso", "Java method call")
-Rel(appSvc, domain, "Invoca register / cancel / getPortfolio", "Java method call")
-Rel(appSvc, repo, "findAllByUserId, save", "SubscriptionRepository port")
-Rel(appSvc, acl, "getLatestRate(USD, PEN)", "ExchangeRatePort port")
-Rel(appSvc, evtpub, "publica Domain Events tras persistir", "Spring ApplicationEventPublisher")
-Rel(repo, db, "JDBC / JPA :5432", "red privada VPC")
-Rel(acl, db, "lee / escribe cache :5432", "red privada VPC")
-Rel(acl, era, "GET /pair/USD/PEN", "HTTPS :443")
-@enduml
-```
-
-[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+![Diagrama de componentes — Bounded Context: Subscription Management](images/chapter_2/subscription_component_diagram.png)
 
 #### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -2884,144 +2722,7 @@ Rel(acl, era, "GET /pair/USD/PEN", "HTTPS :443")
 
 El diagrama de clases muestra únicamente los elementos del paquete `domain.model`: el Aggregate Root `Subscription`, sus Value Objects, las enumeraciones de soporte, los Domain Events que emite y los dos ports (interfaces de salida) que declara. Ninguna clase importa un tipo de Spring, JPA o HTTP: son POJOs cuya única dependencia es el lenguaje. El diagrama sirve como contrato para los desarrolladores de las demás capas y como evidencia de que las reglas de negocio están correctamente encapsuladas antes de escribir persistencia o endpoints.
 
-```plantuml
-@startuml DomainLayer_SubscriptionManagement
-skinparam classAttributeIconSize 0
-skinparam classFontSize 11
-skinparam packageFontSize 12
-
-package "domain.model" #FEFEFE {
-
-  class Subscription <<Aggregate Root>> {
-    - id: SubscriptionId
-    - userId: UserId
-    - name: SubscriptionName
-    - originalAmount: Money
-    - category: SubscriptionCategory
-    - status: SubscriptionStatus
-    - billingCycle: BillingCycle
-    - events: List<DomainEvent>
-    + {static} register(userId, name, amount, cycle, cat): Subscription
-    + cancel(): void
-    + edit(name, amount, cycle, category): void
-    + isActive(): boolean
-    + daysUntilNextBilling(): long
-    + pullEvents(): List<DomainEvent>
-  }
-
-  class SubscriptionId <<Value Object>> {
-    - value: UUID
-    + {static} of(UUID): SubscriptionId
-    + value(): UUID
-  }
-
-  class UserId <<Value Object>> {
-    - value: UUID
-    + {static} of(UUID): UserId
-    + value(): UUID
-  }
-
-  class SubscriptionName <<Value Object>> {
-    - value: String
-    + {static} of(String): SubscriptionName
-    + value(): String
-  }
-
-  class Money <<Value Object>> {
-    - amount: BigDecimal
-    - currency: CurrencyCode
-    + {static} of(BigDecimal, CurrencyCode): Money
-    + convertTo(rate: ExchangeRate): Money
-    + plus(other: Money): Money
-    + amount(): BigDecimal
-    + currency(): CurrencyCode
-  }
-
-  class ExchangeRate <<Value Object>> {
-    - rate: BigDecimal
-    - from: CurrencyCode
-    - to: CurrencyCode
-    - fetchedAt: LocalDateTime
-    + {static} of(BigDecimal, CurrencyCode, CurrencyCode, LocalDateTime): ExchangeRate
-    + isStale(): boolean
-    + rate(): BigDecimal
-  }
-
-  class BillingCycle <<Value Object>> {
-    - nextBillingDate: LocalDate
-    - periodicity: Periodicity
-    + {static} of(LocalDate, Periodicity): BillingCycle
-    + getReminderDateTime(): LocalDateTime
-    + advanceToNext(): BillingCycle
-    + nextBillingDate(): LocalDate
-  }
-
-  enum CurrencyCode {
-    PEN
-    USD
-  }
-
-  enum Periodicity {
-    MONTHLY
-    ANNUAL
-  }
-
-  enum SubscriptionCategory {
-    STREAMING
-    EDUCATION
-    FITNESS
-    DELIVERY
-    CLOUD
-    OTHER
-  }
-
-  enum SubscriptionStatus {
-    ACTIVE
-    CANCELLED
-  }
-
-  class SubscriptionRegistered <<Domain Event>> {
-    + subscriptionId: SubscriptionId
-    + userId: UserId
-    + nextBillingDate: LocalDate
-    + occurredOn: Instant
-  }
-
-  class SubscriptionCancelled <<Domain Event>> {
-    + subscriptionId: SubscriptionId
-    + userId: UserId
-    + cancelledAt: Instant
-  }
-
-  interface SubscriptionRepository <<Port>> {
-    + findById(SubscriptionId): Optional<Subscription>
-    + findAllByUserId(UserId, SubscriptionStatus): List<Subscription>
-    + save(Subscription): Subscription
-  }
-
-  interface ExchangeRatePort <<Port>> {
-    + getLatestRate(CurrencyCode, CurrencyCode): ExchangeRate
-  }
-}
-
-Subscription *-- "1" SubscriptionId
-Subscription *-- "1" UserId
-Subscription *-- "1" SubscriptionName
-Subscription *-- "1" Money
-Subscription *-- "1" BillingCycle
-Subscription --> SubscriptionCategory
-Subscription --> SubscriptionStatus
-Money --> CurrencyCode
-ExchangeRate --> CurrencyCode
-BillingCycle --> Periodicity
-Subscription ..> SubscriptionRegistered : <<emits>>
-Subscription ..> SubscriptionCancelled : <<emits>>
-SubscriptionRepository ..> Subscription : <<manages>>
-ExchangeRatePort ..> ExchangeRate : <<returns>>
-@enduml
-```
-
-[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+![Diagrama de clases del Domain Layer — Bounded Context: Subscription Management](images/chapter_2/subscription_class_diagram.png)
 
 ##### 2.6.1.6.2. Bounded Context Database Design Diagram
 
@@ -3029,60 +2730,7 @@ El modelo relacional persiste el estado canónico del Bounded Context Subscripti
 
 La tabla `users` es gestionada por el módulo de autenticación (TS01) y pertenece al contexto de Identity; se incluye en el diagrama únicamente para mostrar la integridad referencial. En producción, `subscriptions.user_id` referencia el UUID del usuario sin cruzar esquemas de base de datos: la coherencia entre contextos se mantiene por clave foránea lógica y no por un JOIN directo entre esquemas distintos.
 
-```plantuml
-@startuml DB_SubscriptionManagement
-
-entity "users\n(Identity Context — referencia)" as U {
-  * id : UUID <<PK>>
-  --
-  email : VARCHAR(255)
-  reference_currency : CHAR(3)
-  plan : VARCHAR(10)
-  created_at : TIMESTAMPTZ
-}
-
-entity "subscriptions" as S {
-  * id : UUID <<PK>>
-  --
-  * user_id : UUID <<FK users.id>>
-  * name : VARCHAR(100)
-  * original_amount : NUMERIC(12,2)
-  * currency : CHAR(3)
-  * category : VARCHAR(20)
-  * status : VARCHAR(10)
-  * next_billing_date : DATE
-  * periodicity : VARCHAR(10)
-  created_at : TIMESTAMPTZ
-  cancelled_at : TIMESTAMPTZ
-}
-
-entity "billing_history" as B {
-  * id : UUID <<PK>>
-  --
-  * subscription_id : UUID <<FK subscriptions.id>>
-  * billing_date : DATE
-  * amount_original : NUMERIC(12,2)
-  * currency : CHAR(3)
-  * amount_pen : NUMERIC(12,2)
-  * exchange_rate_applied : NUMERIC(10,6)
-  recorded_at : TIMESTAMPTZ
-}
-
-entity "exchange_rate_cache" as E {
-  * id : UUID <<PK>>
-  --
-  * from_currency : CHAR(3)
-  * to_currency : CHAR(3)
-  * rate : NUMERIC(10,6)
-  * fetched_at : TIMESTAMPTZ
-}
-
-U ||--o{ S : "user_id"
-S ||--o{ B : "subscription_id"
-@enduml
-```
-
-[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+![Diagrama de base de datos — Bounded Context: Subscription Management](images/chapter_2/subscription_database_diagram.png)
 
 ### 2.6.2. Bounded Context: Delivery Expense Management
 
@@ -3322,42 +2970,7 @@ Reutiliza el mismo `ApplicationEventPublisher` de Spring Framework ya descrito e
 
 El diagrama a nivel de componentes (C4 Component) muestra la organización interna del Bounded Context Delivery Expense Management dentro del backend de CraveWallet. Se pueden apreciar los dos Aggregate Roots (`DeliveryExpense`, `MonthlyBudget`), el Application Service que los orquesta, el adaptador conformista hacia Google Places y los repositorios JPA que persisten en PostgreSQL.
 
-```plantuml
-@startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
-
-title Component Diagram — Bounded Context: Delivery Expense Management
-
-Container(mobileApp, "CraveWallet Mobile", "Flutter", "Aplicación móvil del usuario")
-ContainerDb(db, "PostgreSQL 16", "Base de datos relacional", "Tablas: delivery_expenses, monthly_budgets")
-System_Ext(places, "Google Places API", "Sugerencias de comercios")
-
-Container_Boundary(bc, "Delivery Expense Management (Spring Boot)") {
-    Component(ctrl, "DeliveryExpenseController", "@RestController", "Expone /api/v1/delivery-expenses")
-    Component(appSvc, "DeliveryExpenseApplicationService", "@Service", "Orquesta registerExpense, getMonthSummary, setMonthlyLimit")
-    Component(expDomain, "DeliveryExpense Aggregate", "Domain", "Registra gasto, publica DeliveryExpenseRegistered")
-    Component(budDomain, "MonthlyBudget Aggregate", "Domain", "Controla límite mensual, publica MonthlyLimitExceeded")
-    Component(expRepo, "JpaDeliveryExpenseRepository", "@Repository", "Implementa DeliveryExpenseRepository")
-    Component(budRepo, "JpaMonthlyBudgetRepository", "@Repository", "Implementa MonthlyBudgetRepository")
-    Component(placesAdapter, "GooglePlacesAdapter", "@Component", "Conformist — consulta Places Text Search")
-    Component(eventPub, "DomainEventPublisher", "@Component", "Publica eventos de dominio via Spring ApplicationEventPublisher")
-}
-
-Rel(mobileApp, ctrl, "HTTPS / JSON")
-Rel(ctrl, appSvc, "llama")
-Rel(appSvc, expDomain, "crea / modifica")
-Rel(appSvc, budDomain, "crea / modifica")
-Rel(appSvc, expRepo, "persiste DeliveryExpense")
-Rel(appSvc, budRepo, "persiste MonthlyBudget")
-Rel(appSvc, eventPub, "publica eventos")
-Rel(ctrl, placesAdapter, "delega sugerencias")
-Rel(placesAdapter, places, "HTTP GET")
-Rel(expRepo, db, "JPA / JDBC")
-Rel(budRepo, db, "JPA / JDBC")
-@enduml
-```
-
-[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+![Diagrama de componentes — Bounded Context: Delivery Expense Management](images/chapter_2/delivery_component_diagram.png)
 
 #### 2.6.2.6. Code Level Diagrams
 
@@ -3365,136 +2978,13 @@ Rel(budRepo, db, "JPA / JDBC")
 
 El diagrama de clases del Domain Layer muestra los dos Aggregate Roots con sus Value Objects, enums, Domain Events y las interfaces de Port que definen los contratos de persistencia.
 
-```plantuml
-@startuml
-skinparam classAttributeIconSize 0
-
-package "delivery.domain.model" {
-    class DeliveryExpense <<AggregateRoot>> {
-        - id: DeliveryExpenseId
-        - userId: UserId
-        - amount: DeliveryAmount
-        - merchant: MerchantName
-        - category: SpendingCategory
-        - expenseDate: LocalDate
-        - domainEvents: List<DomainEvent>
-        + {static} register(userId, amount, merchant, category, date): DeliveryExpense
-        + domainEvents(): List<DomainEvent>
-    }
-
-    class MonthlyBudget <<AggregateRoot>> {
-        - id: MonthlyBudgetId
-        - userId: UserId
-        - period: SpendingPeriod
-        - limit: MonthlyLimit
-        - accumulated: BigDecimal
-        - domainEvents: List<DomainEvent>
-        + addExpense(amount: DeliveryAmount): void
-        + updateLimit(newLimit: MonthlyLimit): void
-        + {static} createDefault(userId, period): MonthlyBudget
-        + domainEvents(): List<DomainEvent>
-    }
-
-    class DeliveryAmount <<ValueObject>> {
-        - amount: BigDecimal
-        + value(): BigDecimal
-    }
-
-    class MerchantName <<ValueObject>> {
-        - value: String
-        + value(): String
-    }
-
-    class SpendingPeriod <<ValueObject>> {
-        - year: int
-        - month: int
-    }
-
-    class MonthlyLimit <<ValueObject>> {
-        - value: BigDecimal
-        + value(): BigDecimal
-    }
-
-    enum SpendingCategory {
-        FOOD
-        GROCERY
-        PHARMACY
-        OTHER
-    }
-
-    class DeliveryExpenseRegistered <<DomainEvent>> {
-        + expenseId: DeliveryExpenseId
-        + userId: UserId
-        + amount: DeliveryAmount
-        + expenseDate: LocalDate
-    }
-
-    class MonthlyLimitExceeded <<DomainEvent>> {
-        + budgetId: MonthlyBudgetId
-        + userId: UserId
-        + period: SpendingPeriod
-        + limit: MonthlyLimit
-        + accumulated: BigDecimal
-    }
-
-    interface DeliveryExpenseRepository <<Port>> {
-        + save(expense: DeliveryExpense): void
-        + findByUserAndPeriod(userId, period): List<DeliveryExpense>
-        + findById(id: DeliveryExpenseId): Optional<DeliveryExpense>
-    }
-
-    interface MonthlyBudgetRepository <<Port>> {
-        + save(budget: MonthlyBudget): void
-        + findByUserAndPeriod(userId, period): Optional<MonthlyBudget>
-    }
-
-    DeliveryExpense *-- DeliveryAmount
-    DeliveryExpense *-- MerchantName
-    DeliveryExpense *-- SpendingCategory
-    DeliveryExpense ..> DeliveryExpenseRegistered : publica
-    MonthlyBudget *-- SpendingPeriod
-    MonthlyBudget *-- MonthlyLimit
-    MonthlyBudget ..> MonthlyLimitExceeded : publica
-}
-@enduml
-```
-
-[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+![Diagrama de clases del Domain Layer — Bounded Context: Delivery Expense Management](images/chapter_2/delivery_class_diagram.png)
 
 ##### 2.6.2.6.2. Database Design Diagram
 
 Las tablas `delivery_expenses` y `monthly_budgets` de PostgreSQL 16 mapean directamente a los dos Aggregate Roots. La columna `user_id` en ambas tablas referencia al usuario canónico gestionado por el BC de autenticación (fuera del alcance de este BC); no se define una FK explícita entre BCs para preservar el desacoplamiento.
 
-```plantuml
-@startuml
-entity "delivery_expenses" as DE {
-  * id : UUID <<PK>>
-  --
-  * user_id : UUID
-  * amount : NUMERIC(12,2)
-  * merchant_name : VARCHAR(120)
-  * category : VARCHAR(20)
-  * expense_date : DATE
-  created_at : TIMESTAMPTZ
-}
-
-entity "monthly_budgets" as MB {
-  * id : UUID <<PK>>
-  --
-  * user_id : UUID
-  * year : SMALLINT
-  * month : SMALLINT
-  * monthly_limit : NUMERIC(12,2)
-  * accumulated : NUMERIC(12,2)
-  updated_at : TIMESTAMPTZ
-  <<UNIQUE (user_id, year, month)>>
-}
-
-DE }o--|| MB : "user_id + period"
-@enduml
-```
-
-[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+![Diagrama de base de datos — Bounded Context: Delivery Expense Management](images/chapter_2/delivery_database_diagram.png)
 
 ### 2.6.3. Bounded Context: Premium & Billing
 
@@ -3733,41 +3223,7 @@ Implementa `PlanRepository` usando Spring Data JPA. La entidad JPA `Subscription
 
 El diagrama a nivel de componentes muestra los dos controllers de entrada (autenticado y público/webhook), el Application Service, el Aggregate Root `SubscriptionPlan`, el ACL `StripeWebhookAdapter`, el repositorio JPA y la relación con Stripe como sistema externo.
 
-```plantuml
-@startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
-
-title Component Diagram — Bounded Context: Premium & Billing
-
-Container(mobileApp, "CraveWallet Mobile", "Flutter", "Aplicación móvil del usuario")
-ContainerDb(db, "PostgreSQL 16", "Base de datos relacional", "Tablas: user_plans, billing_events")
-System_Ext(stripe, "Stripe", "Procesador de pagos — Checkout + Webhooks")
-
-Container_Boundary(bc, "Premium & Billing (Spring Boot)") {
-    Component(premCtrl, "PremiumController", "@RestController", "GET /status, POST /checkout — requiere JWT")
-    Component(webhookCtrl, "StripeWebhookController", "@RestController", "POST /webhook/stripe — público, verifica Stripe-Signature")
-    Component(appSvc, "PremiumApplicationService", "@Service", "initiatePremiumCheckout, handlePaymentConfirmed, handleSubscriptionCancelled, getPlanStatus")
-    Component(domain, "SubscriptionPlan Aggregate", "Domain", "upgradeToPremium, downgradeToFree — publica PlanUpgradedToPremium / PlanDowngradedToFree")
-    Component(planRepo, "JpaPlanRepository", "@Repository", "Implementa PlanRepository")
-    Component(stripeAdapter, "StripeWebhookAdapter", "@Component (ACL)", "Verifica firma, traduce invoice.paid / subscription.deleted al ubiquitous language")
-    Component(eventPub, "DomainEventPublisher", "@Component", "Publica eventos de dominio via Spring ApplicationEventPublisher")
-}
-
-Rel(mobileApp, premCtrl, "HTTPS / JSON — JWT")
-Rel(stripe, webhookCtrl, "HTTPS POST — webhook")
-Rel(premCtrl, appSvc, "llama")
-Rel(webhookCtrl, stripeAdapter, "delega payload + firma")
-Rel(stripeAdapter, appSvc, "handlePaymentConfirmed / handleSubscriptionCancelled")
-Rel(appSvc, stripeAdapter, "createCheckoutSession")
-Rel(stripeAdapter, stripe, "Stripe SDK — createSession")
-Rel(appSvc, domain, "crea / modifica")
-Rel(appSvc, planRepo, "persiste SubscriptionPlan")
-Rel(appSvc, eventPub, "publica eventos")
-Rel(planRepo, db, "JPA / JDBC")
-@enduml
-```
-
-[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+![Diagrama de componentes — Bounded Context: Premium & Billing](images/chapter_2/premium_component_diagram.png)
 
 #### 2.6.3.6. Code Level Diagrams
 
@@ -3775,109 +3231,10 @@ Rel(planRepo, db, "JPA / JDBC")
 
 El diagrama de clases del Domain Layer muestra el Aggregate Root `SubscriptionPlan` con sus Value Objects, los Domain Events que publica y las interfaces de Port que definen los contratos de persistencia y de pasarela de pago.
 
-```plantuml
-@startuml
-skinparam classAttributeIconSize 0
-
-package "premium.domain.model" {
-    class SubscriptionPlan <<AggregateRoot>> {
-        - id: SubscriptionPlanId
-        - userId: UserId
-        - planType: PlanType
-        - billingPeriod: BillingPeriod
-        - stripeCustomerId: StripeCustomerId
-        - stripeSubscriptionId: StripeSubscriptionId
-        - domainEvents: List<DomainEvent>
-        + upgradeToPremium(customerId, subscriptionId, period): void
-        + downgradeToFree(): void
-        + isPremium(): boolean
-        + domainEvents(): List<DomainEvent>
-        + {static} createFree(userId): SubscriptionPlan
-    }
-
-    enum PlanType {
-        FREE
-        PREMIUM
-    }
-
-    class BillingPeriod <<ValueObject>> {
-        - startDate: LocalDate
-        - endDate: LocalDate
-    }
-
-    class StripeCustomerId <<ValueObject>> {
-        - value: String
-        + value(): String
-    }
-
-    class StripeSubscriptionId <<ValueObject>> {
-        - value: String
-        + value(): String
-    }
-
-    class PlanUpgradedToPremium <<DomainEvent>> {
-        + planId: SubscriptionPlanId
-        + userId: UserId
-        + billingPeriod: BillingPeriod
-    }
-
-    class PlanDowngradedToFree <<DomainEvent>> {
-        + planId: SubscriptionPlanId
-        + userId: UserId
-    }
-
-    interface PlanRepository <<Port>> {
-        + save(plan: SubscriptionPlan): void
-        + findByUserId(userId: UserId): Optional<SubscriptionPlan>
-        + findByStripeSubscriptionId(id: StripeSubscriptionId): Optional<SubscriptionPlan>
-    }
-
-    interface PaymentGatewayPort <<Port>> {
-        + createCheckoutSession(userId, successUrl, cancelUrl): String
-    }
-
-    SubscriptionPlan *-- PlanType
-    SubscriptionPlan *-- BillingPeriod
-    SubscriptionPlan *-- StripeCustomerId
-    SubscriptionPlan *-- StripeSubscriptionId
-    SubscriptionPlan ..> PlanUpgradedToPremium : publica
-    SubscriptionPlan ..> PlanDowngradedToFree : publica
-}
-@enduml
-```
-
-[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+![Diagrama de clases del Domain Layer — Bounded Context: Premium & Billing](images/chapter_2/premium_class_diagram.png)
 
 ##### 2.6.3.6.2. Database Design Diagram
 
 Las tablas `user_plans` y `billing_events` de PostgreSQL 16 mapean al Aggregate Root `SubscriptionPlan` y a su log de eventos de facturación. La columna `user_id` en `user_plans` tiene una restricción `UNIQUE` dado que cada usuario tiene exactamente un plan activo en todo momento. La tabla `billing_events` guarda un log inmutable de cada evento de facturación recibido desde Stripe, útil para auditoría y para depurar discrepancias entre el estado en CraveWallet y el estado en el dashboard de Stripe.
 
-```plantuml
-@startuml
-entity "user_plans" as UP {
-  * id : UUID <<PK>>
-  --
-  * user_id : UUID <<UNIQUE>>
-  * plan_type : VARCHAR(10)
-  billing_period_start : DATE
-  billing_period_end : DATE
-  stripe_customer_id : VARCHAR(50)
-  stripe_subscription_id : VARCHAR(50)
-  * updated_at : TIMESTAMPTZ
-}
-
-entity "billing_events" as BE {
-  * id : UUID <<PK>>
-  --
-  * user_plan_id : UUID <<FK user_plans.id>>
-  * stripe_event_id : VARCHAR(60) <<UNIQUE>>
-  * event_type : VARCHAR(60)
-  * payload : JSONB
-  * received_at : TIMESTAMPTZ
-}
-
-UP ||--o{ BE : "user_plan_id"
-@enduml
-```
-
-[[INSERTAR IMAGEN DEL DIAGRAMA AQUÍ]]
+![Diagrama de base de datos — Bounded Context: Premium & Billing](images/chapter_2/premium_database_diagram.png)
