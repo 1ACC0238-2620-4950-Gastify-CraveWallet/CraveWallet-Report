@@ -342,7 +342,7 @@ Darío vive con sus padres en Surquillo y tiene pareja, con quien no comparte su
 | Distrito de residencia | Ate |
 | Ocupación | Estudiante de Ingeniería de Software (6.º ciclo), trabajador de club nocturno los fines de semana |
 | Segmento objetivo | Segmento 1 |
-| Fecha y hora de la entrevista | 17/08/2026, 11:00 p. m. |
+| Fecha y hora de la entrevista | 17/09/2026, 11:00 p. m. |
 | Modalidad | Remota |
 | Duración | 6:42 min |
 | Entrevistador | Anghelo Faustino |

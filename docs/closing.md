@@ -13,6 +13,18 @@
 :::
 -->
 
+## Papers académicos de dominio (Q2, Scopus-indexed)
+
+Imawan, R., Putra, W. P., Alqahtani, R., Milakis, E. D., & Dumchykov, M. (2025). Enhancing financial literacy in young adults: An Android-based personal finance management tool. *Journal of Hypermedia & Technology-Enhanced Learning*, *3*(1), 64–89. https://doi.org/10.58536/j-hytel.166
+
+Tetteh, F. K., & Owusu Kwateng, K. (2025). The pathways from digital financial literacy to sustained engagement with mobile financial services: A technology continuance theory perspective. *Journal of Financial Services Marketing*, *31*(1). https://doi.org/10.1057/s41264-025-00335-6
+
+## Papers académicos de técnicas de desarrollo móvil (Scopus-indexed)
+
+Mushtaq, F., Azam, F., & Anwar, M. W. (2024). Performance comparison of single code base development tools: Flutter, React Native, and Xamarin. En *2024 14th International Conference on Software Technology and Engineering (ICSTE 2024)* (pp. 17–23). IEEE. https://doi.org/10.1109/ICSTE68572.2024.00011
+
+Zou, D., & Darus, M. Y. (2024). A comparative analysis of cross-platform mobile development frameworks. En *2024 IEEE 6th Symposium on Computers & Informatics (ISCI)* (pp. 1–6). IEEE. https://doi.org/10.1109/ISCI62787.2024.10667693
+
 ## Dominio de negocio
 
 Deloitte. (2024). *Digital Media Trends: 18th edition*. Deloitte Insights. https://www2.deloitte.com/us/en/insights/industry/technology/digital-media-trends-consumption-habits-survey.html
