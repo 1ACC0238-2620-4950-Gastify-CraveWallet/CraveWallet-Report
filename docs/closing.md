@@ -1,10 +1,42 @@
 # Conclusiones
 
-[[PENDIENTE: conclusiones del equipo]]
+El proceso de needfinding —seis entrevistas a profundidad distribuidas entre dos segmentos objetivo— validó empíricamente la hipótesis central del proyecto: los cobros silenciosos, la opacidad del tipo de cambio y la ausencia de alertas anticipadas generan un patrón real y recurrente de Budget Mismatch en el perfil de estudiante universitario digital y en el de profesional joven activo. Esta confirmación convirtió los supuestos del Lean UX Canvas en requisitos concretos y trazables, eliminando ambigüedades antes de iniciar el diseño de la solución.
+
+La aplicación del proceso Lean UX permitió al equipo formular hipótesis verificables desde la primera entrega, evitando construir funcionalidades sin sustento en comportamiento observado. La síntesis de hallazgos en User Personas, User Journey Maps, Empathy Maps y User Task Matrix proporcionó una base compartida de conocimiento que orientó cada decisión de diseño posterior, desde la priorización del Product Backlog hasta la elección de los Bounded Contexts.
+
+El modelado estratégico mediante Domain-Driven Design —Big Picture EventStorming, Context Mapping y arquitectura C4— produjo una descomposición del dominio en tres Bounded Contexts cohesivos (Subscription Management, Delivery Expense Management y Premium & Billing) con fronteras explícitas y patrones de integración documentados (ACL, Partnership, Customer/Supplier, Conformist). Esta estructura anticipa los puntos de cambio más probables del sistema y reduce el acoplamiento entre equipos en entregas futuras.
+
+Los seis Spikes de investigación técnica (SP01-SP06) demostraron la viabilidad de las cuatro integraciones críticas —ExchangeRate-API, calendario nativo, Stripe SDK y Google Places API— antes de comprometer esfuerzo de implementación. En particular, la estrategia de caché de 24 horas para el tipo de cambio y el uso de webhooks de Stripe para la activación del plan Premium resolvieron los riesgos técnicos de mayor impacto sobre la propuesta de valor diferencial del producto.
+
+El equipo consolidó prácticas de trabajo colaborativo basadas en GitFlow con ramas de feature y fix, commits convencionales y revisión cruzada de pull requests, lo que permitió integrar contribuciones paralelas de cinco integrantes sin pérdida de trazabilidad entre los artefactos del informe y el historial de cambios del repositorio.
 
 # Glosario
 
-[[PENDIENTE: glosario de términos]]
+**Anti-Corruption Layer (ACL).** Patrón de Context Mapping que interpone un adaptador entre dos Bounded Contexts —o entre un contexto y un sistema externo— para traducir modelos sin contaminar el dominio propio. En CraveWallet se aplica en la integración con ExchangeRate-API y con Stripe.
+
+**Bounded Context.** Límite explícito dentro del cual un modelo de dominio es coherente y un mismo término tiene un único significado. CraveWallet define tres: Subscription Management, Delivery Expense Management y Premium & Billing.
+
+**Context Mapping.** Técnica de Domain-Driven Design que documenta las relaciones de integración entre Bounded Contexts y los sistemas externos, especificando el lado que dicta el modelo (upstream) y el que se adapta (downstream).
+
+**Domain-Driven Design (DDD).** Enfoque de diseño de software que centra el modelo en el dominio del negocio y su lógica, promoviendo una colaboración estrecha entre expertos del dominio y desarrolladores a través de un lenguaje ubicuo compartido.
+
+**EventStorming.** Taller colaborativo de modelado que descubre el flujo de Domain Events de un sistema mediante notas adhesivas, distinguiendo eventos, comandos, actores, políticas y sistemas externos. El equipo lo aplicó en dos modalidades: Big Picture (As-Is y To-Be) y detalle por Bounded Context.
+
+**Flutter.** Framework de desarrollo móvil multiplataforma de Google, basado en el lenguaje Dart, que genera aplicaciones nativas para Android e iOS desde una única base de código. Es el stack de la capa móvil de CraveWallet.
+
+**GitFlow.** Estrategia de ramificación para Git que organiza el trabajo en ramas de largo plazo (`main`, `develop`) y ramas de corto plazo (`feature/`, `fix/`, `release/`), facilitando el desarrollo paralelo y los releases controlados.
+
+**Lean UX.** Marco de trabajo que combina pensamiento de diseño, metodologías ágiles y modelo de negocio Lean para validar hipótesis sobre el usuario antes de invertir en construcción. El equipo aplicó sus artefactos principales: Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas.
+
+**Product Backlog.** Lista priorizada y estimada de todos los requisitos del producto (User Stories, Technical Stories y Spike Stories). El Product Backlog de CraveWallet contiene 40 US, 6 TS y 6 SS, gestionados en Trello.
+
+**Shared Kernel.** Subconjunto del modelo de dominio que dos Bounded Contexts comparten y mantienen conjuntamente. En CraveWallet, el identificador de usuario `UserId` es el Shared Kernel entre Subscription Management y Delivery Expense Management.
+
+**Spike Story.** Historia técnica de investigación, sin entregable de código productivo, cuyo objetivo es reducir incertidumbre sobre la viabilidad o el comportamiento de una tecnología o integración antes de implementarla en una historia de usuario.
+
+**Spring Boot.** Framework de Java que simplifica la configuración y el arranque de aplicaciones backend basadas en Spring. El REST API Backend de CraveWallet usa Spring Boot con Java 21.
+
+**Ubiquitous Language.** Vocabulario compartido y acordado entre el equipo de desarrollo y los expertos del dominio, usado de forma consistente en el código, los diagramas y la documentación. El glosario de dominio de CraveWallet está definido en la sección 2.3.6.
 
 # Bibliografía
 
