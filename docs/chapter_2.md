@@ -2397,7 +2397,7 @@ Los actores son los dos User Personas del proyecto: **Camila Torres**, del Segme
 
 Este mapa responde a qué tiene que cambiar para que un usuario deje de enterarse de un cobro automático solo al revisar su banco, el hallazgo transversal de la sección 2.2.3. De Camila Torres y de Renzo Salazar se espera el mismo cambio de comportamiento: que revisen el recordatorio que reciben antes del cobro y decidan a tiempo si mantienen o cancelan la suscripción, en lugar de descubrirlo después (recordatorios vía calendario nativo, con las historias de agendar, reagendar y eliminar el recordatorio, y de recibir la notificación push complementaria).
 
-[[PENDIENTE: captura del Impact Map del Business Goal 01 en UXPressia]]
+![Impact Map del Business Goal 01](images/chapter_2/Impact_Map_BG01.png)
 
 | User Story | Enunciado |
 |:----------:|:----------|
@@ -2411,7 +2411,7 @@ Este mapa responde a qué tiene que cambiar para que un usuario deje de enterars
 
 El segundo mapa sostiene la hipótesis de que un usuario vuelve a la aplicación si el Dashboard le ahorra el trabajo mental de sumar su portafolio de suscripciones. De ambas personas se espera que consulten el Dashboard con regularidad en lugar de llevar la cuenta mentalmente o revisando el banco (Dashboard unificado, con las historias de ver el total en soles, agrupar por categoría, ordenar por próxima renovación, buscar y ver el ahorro de una cancelación a tiempo); y que registren cada suscripción nueva apenas la contratan, en lugar de dejarla fuera del control (alta de suscripciones, con el catálogo precargado, el registro personalizado y la previsualización del monto en soles).
 
-[[PENDIENTE: captura del Impact Map del Business Goal 02 en UXPressia]]
+![Impact Map del Business Goal 02](images/chapter_2/Impact_Map_BG02.png)
 
 | User Story | Enunciado |
 |:----------:|:----------|
@@ -2428,7 +2428,7 @@ El segundo mapa sostiene la hipótesis de que un usuario vuelve a la aplicación
 
 El tercer mapa se concentra en los usuarios de mayor compromiso, con 6 o más suscripciones registradas. De ambas personas se espera que perciban el límite del plan gratuito y decidan pagar por eliminarlo, en vez de abandonar el registro de sus suscripciones adicionales (plan Premium, con las historias de conocer el precio, suscribirse vía Stripe, ver el historial de pagos y ver cuánto falta para el límite gratuito).
 
-[[PENDIENTE: captura del Impact Map del Business Goal 03 en UXPressia]]
+![Impact Map del Business Goal 03](images/chapter_2/Impact_Map_BG03.png)
 
 | User Story | Enunciado |
 |:----------:|:----------|
@@ -2441,7 +2441,7 @@ El tercer mapa se concentra en los usuarios de mayor compromiso, con 6 o más su
 
 El cuarto mapa depende de que ambas personas perciban que CraveWallet resuelve mejor que la competencia (2.1) su problema principal. Se espera que un visitante entienda la propuesta de valor antes de descargar la aplicación (landing page, con las historias de ver la propuesta de valor, comparar planes y consultar preguntas frecuentes), y que un usuario activo experimente en conjunto el Dashboard, la conversión de divisas y los recordatorios como una solución coherente que lo lleve a recomendarla.
 
-[[PENDIENTE: captura del Impact Map del Business Goal 04 en UXPressia]]
+![Impact Map del Business Goal 04](images/chapter_2/Impact_Map_BG04.png)
 
 | User Story | Enunciado |
 |:----------:|:----------|
