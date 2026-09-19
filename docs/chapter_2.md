@@ -293,7 +293,7 @@ Esta sección consolida, para cada uno de los dos segmentos, tres entrevistas re
 #### Entrevista 1 — Segmento 1: Leonardo Sánchez
 
 | Campo | Contenido |
-| --- |  |
+| --- | --- |
 | Nombres y apellidos | Leonardo Sánchez |
 | Género | Masculino |
 | Edad | 20 años |
@@ -313,20 +313,20 @@ Leonardo vive con sus padres en San Juan de Lurigancho, está soltero y comparte
 
 #### Entrevista 2 — Segmento 1: Darío Romero
 
-| Campo | Contenido                                        |
-| --- |--------------------------------------------------|
-| Nombres y apellidos | Darío Romero                                     |
-| Género | Masculino                                        |
-| Edad | 20 años                                          |
-| Distrito de residencia | Surquillo                                        |
+| Campo | Contenido |
+| --- | --- |
+| Nombres y apellidos | Darío Romero |
+| Género | Masculino |
+| Edad | 20 años |
+| Distrito de residencia | Surquillo |
 | Ocupación | Estudiante de Ingeniería de Software (6.º ciclo) |
-| Segmento objetivo | Segmento 1                                       |
-| Fecha y hora de la entrevista | 17/09/2026, 6:00 p. m.                           |
-| Modalidad | Remota                                           |
-| Duración | 7:10 min                                         |
-| Entrevistador | Anghelo Faustino                                 |
-| Timing de inicio en el video consolidado | 8:00 min     |
-| URL del video | https://acortar.link/svpXy4                      |
+| Segmento objetivo | Segmento 1 |
+| Fecha y hora de la entrevista | 17/09/2026, 6:00 p. m. |
+| Modalidad | Remota |
+| Duración | 7:10 min |
+| Entrevistador | Anghelo Faustino |
+| Timing de inicio en el video consolidado | 8:00 min |
+| URL del video | https://acortar.link/svpXy4 |
 
 Darío vive con sus padres en Surquillo y tiene pareja, con quien no comparte suscripciones formales aunque ella usa su cuenta de HBO. No trabaja ni hace prácticas; se dedica por completo a sus estudios y recibe una propina semanal de sus padres que suma cerca de S/ 500 fijos al mes. En casa le enseñaron a no gastar más de lo que tiene, y su primera suscripción propia fue una membresía de videojuego en PlayStation. Intenta planificar sus gastos para no quedarse sin dinero a fin de mes, pero reconoce ceder al impulso (pidió delivery por pereza de cocinar); su único control de gastos es abrir la app del banco constantemente para revisar el saldo, y siente alivio si llega a fin de mes sin quedar en cero. Le encanta probar aplicaciones nuevas por su cuenta; probó Monefy pero la abandonó porque se olvidaba de registrar compras pequeñas. Usa un Samsung Galaxy de un año y su laptop con frecuencia; sus tres aplicaciones más usadas son Instagram, Discord y WhatsApp, se guía completamente por notificaciones push y navega con Brave. Considera Discord una aplicación muy robusta y aprende sobre tecnología en foros y TikTok. Paga HBO Max, iCloud y Xbox Game Pass con su tarjeta de débito; cree que iCloud se cobra en dólares pero nunca sabe cuánto pagará en soles hasta ver el movimiento bancario. Mantuvo una suscripción de PedidosYa contratada por una promoción, la olvidó, fue cobrado durante dos meses seguidos y recién la canceló al notar el descuento por casualidad; actualmente no sabe cuándo se renuevan sus otras suscripciones. No paga plataformas de estudio porque usa software libre; pidió delivery unas tres veces la semana anterior a la entrevista y estima un gasto mensual de S/ 200. Su principal frustración es olvidarse de lo que paga y lo compleja que resulta la cancelación dentro de las configuraciones de cada app; reaccionó de forma positiva al concepto de CraveWallet, señalando que un aviso al calendario del celular antes de cada cobro le daría tranquilidad.
 
@@ -334,20 +334,21 @@ Darío vive con sus padres en Surquillo y tiene pareja, con quien no comparte su
 
 #### Entrevista 3 — Segmento 1: Eduardo Aguirre
 
-| Campo | Contenido                                                                                         |
-| --- |---------------------------------------------------------------------------------------------------|
-| Nombres y apellidos | Eduardo Aguirre                                                                                   |
-| Género | Masculino                                                                                         |
-| Edad | 19 años                                                                                           |
-| Distrito de residencia | Ate                                                                                               |
+| Campo | Contenido |
+| --- | --- |
+| Nombres y apellidos | Eduardo Aguirre |
+| Género | Masculino |
+| Edad | 19 años |
+| Distrito de residencia | Ate |
 | Ocupación | Estudiante de Ingeniería de Software (6.º ciclo), trabajador de club nocturno los fines de semana |
-| Segmento objetivo | Segmento 1                                                                                        |
-| Fecha y hora de la entrevista | 17/08/2026, 11:00 p. m.                                                                           |
-| Modalidad | Remota                                                                                            |
-| Duración | 6:42 min                                                                                          |
-| Entrevistador | Anghelo Faustino                                                                                  |
-| Timing de inicio en el video consolidado | 15:20min                                                                                          |
-| URL del video | https://acortar.link/svpXy4                                                                       |
+| Segmento objetivo | Segmento 1 |
+| Fecha y hora de la entrevista | 17/08/2026, 11:00 p. m. |
+| Modalidad | Remota |
+| Duración | 6:42 min |
+| Entrevistador | Anghelo Faustino |
+| Timing de inicio en el video consolidado | 15:20 min |
+| URL del video | https://acortar.link/svpXy4 |
+
 Eduardo vive con su madre y hermanos en Ate, es soltero y aporta a los gastos de internet del hogar. Trabaja en un club nocturno los fines de semana (~24 horas semanales), lo que le genera un ingreso fijo cercano a S/ 1 500 al mes, además de propinas ocasionales. Aprendió a manejar dinero por su cuenta al empezar a trabajar de madrugada, y su primera suscripción fue Apple Music. Se describe como muy impulsivo por sus horarios: sale cansado del trabajo a las 4 a. m. y pide comida por delivery sin fijarse en el precio. No lleva ningún control formal, solo mental, y se sorprende a fin de mes por la cantidad que gasta en comida y pagos pequeños. Se siente cómodo explorando aplicaciones nuevas solo, pero nunca ha usado una app de finanzas porque le parecen aburridas y demandantes de tiempo. Usa un iPhone 12 y una laptop para la universidad; sus tres aplicaciones más usadas son WhatsApp, Rappi y TikTok, se entera de todo por notificaciones push y navega en Chrome. Le gusta la interfaz de Rappi por su rapidez y escucha podcasts en Spotify mientras trabaja para aprender sobre tecnología. Paga Apple Music, ChatGPT Plus, Amazon Prime y el gimnasio Smart Fit con su tarjeta de débito; ChatGPT y Amazon se cobran en dólares y nunca sabe el monto exacto en soles porque el tipo de cambio del banco varía. Dejó de ir al gimnasio un par de meses por la carga académica y laboral, pero Smart Fit le siguió cobrando automáticamente; recién se dio cuenta a los dos meses revisando el detalle bancario, y hoy solo nota el descuento sin conocer las fechas de cobro. Paga ChatGPT para apoyarse en sus estudios y programación; es el que más gasta en delivery del segmento, con cinco pedidos la última semana y un estimado de S/ 400 mensuales. Su principal frustración es no ser consciente de sus "gastos hormiga" digitales y de comida, y que las suscripciones no avisen antes de cobrar; reaccionó de forma muy positiva al concepto, destacando que el conversor a soles en tiempo real y el aviso previo le habrían ayudado a cancelar el gimnasio a tiempo, y afirmó que definitivamente usaría la aplicación.
 
 ***
