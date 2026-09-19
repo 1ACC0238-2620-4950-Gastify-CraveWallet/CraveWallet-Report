@@ -6,6 +6,8 @@
 
 # Project Report Collaboration Insights
 
+![Collaboration Insights — CraveWallet](docs/images/collaboration_insights.png)
+
 <!-- pdf:omit-start -->
 
 # Contenido
