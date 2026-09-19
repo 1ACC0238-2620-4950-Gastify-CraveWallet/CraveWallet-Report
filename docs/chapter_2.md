@@ -365,7 +365,7 @@ Eduardo vive con su madre y hermanos en Ate, es soltero y aporta a los gastos de
 | Segmento objetivo | Segmento 2                                            |
 | Fecha y hora de la entrevista | 16/09/2026, 8:00 p. m.                                |
 | Modalidad | Remota                                                |
-| Duración | 5:52                                                  |
+| Duración | 5:52 min                                              |
 | Entrevistador | Josué Carpio                                          |
 | Timing de inicio en el video consolidado | 21:55min                                              |
 | URL del video | https://acortar.link/svpXy4                           |
