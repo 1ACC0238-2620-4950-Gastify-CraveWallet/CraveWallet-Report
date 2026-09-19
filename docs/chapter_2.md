@@ -2391,7 +2391,7 @@ Los Business Goals se derivan, con los criterios SMART, de los Business Outcomes
 | BG03 | Lograr que al menos el 12 % de los usuarios activos mensuales con 6 o más suscripciones registradas convierta al plan Premium, dentro de los primeros 6 meses de operación. |
 | BG04 | Alcanzar un Net Promoter Score superior a 40 puntos al término del primer semestre posterior al lanzamiento. |
 
-Los actores son los dos User Personas del proyecto: **Camila Torres**, del Segmento 1, y **Renzo Salazar**, del Segmento 2. Los deliverables corresponden a las Epics de la especificación, y cada historia aparece con su código. Las Technical Stories y las Spike Stories no aparecen en los mapas porque no modifican el comportamiento de un actor; entran al Product Backlog por la dependencia técnica de las historias que sí lo hacen.
+Los actores son los dos User Personas del proyecto: **Camila Torres**, del Segmento 1, y **Renzo Salazar**, del Segmento 2. En los mapas, la Persona 1 corresponde a Camila Torres y la Persona 2 a Renzo Salazar. Los deliverables corresponden a las Epics de la especificación, y cada historia aparece con su código. Las Technical Stories y las Spike Stories no aparecen en los mapas porque no modifican el comportamiento de un actor; entran al Product Backlog por la dependencia técnica de las historias que sí lo hacen.
 
 #### Business Goal 01: anticipación del cobro
 
