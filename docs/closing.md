@@ -58,4 +58,6 @@ El Product Backlog de CraveWallet se gestiona en Trello. El tablero organiza las
 
 **Enlace público del tablero:** [CraveWallet – Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog)
 
-[[PENDIENTE: incorporar captura del Product Backlog en Trello]]
+![Product Backlog de CraveWallet en Trello](images/chapter_2/Product_Backlog_Trello.png)
+
+*Figura A1. Product Backlog de CraveWallet en Trello.*

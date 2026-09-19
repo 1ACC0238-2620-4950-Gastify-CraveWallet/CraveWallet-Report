@@ -2463,7 +2463,7 @@ Los sprints corresponden a las entregas del curso: el Sprint 1 a TB1, el Sprint 
 
 **Enlace al Product Backlog:** [CraveWallet – Product Backlog en Trello](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog)
 
-[[PENDIENTE: incorporar captura del Product Backlog en Trello]]
+La captura del tablero y la distribución de las historias por sprint se presentan en el Anexo A.
 
 | # Orden | User Story Id | Título | Story Points (1 / 2 / 3 / 5) | Sprint |
 | --- | --- | --- | --- | --- |
