@@ -52,4 +52,10 @@ Spendee. (2026). *What is Spendee Premium?* Spendee Help Center. https://help.sp
 
 # Anexos
 
-[[PENDIENTE: anexos]]
+## Anexo A. Product Backlog en Trello
+
+El Product Backlog de CraveWallet se gestiona en Trello. El tablero organiza las 40 User Stories, 6 Technical Stories y 6 Spike Stories de la especificación en cuatro listas, una por sprint, respetando la priorización y estimación descritas en la sección 2.4.3.
+
+**Enlace público del tablero:** [CraveWallet – Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog)
+
+[[PENDIENTE: incorporar captura del Product Backlog en Trello]]

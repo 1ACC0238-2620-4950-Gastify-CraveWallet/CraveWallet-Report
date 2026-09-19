@@ -2459,9 +2459,11 @@ El cuarto mapa depende de que ambas personas perciban que CraveWallet resuelve m
 
 El backlog consolida las 40 User Stories, las 6 Technical Stories y las 6 Spike Stories de la especificación, estimadas en Story Points con la escala 1, 2, 3 y 5 (ninguna historia supera los 5 puntos: los spikes que hubieran pesado 8 se dividieron en un spike de investigación y uno de prototipo) y ordenadas por el valor que aportan al negocio, no por tipo de historia. El orden sigue el Impact Map: primero lo que un visitante necesita para decidir descargar la aplicación (landing page, que el enunciado exige desde el primer sprint) junto con los tres spikes de investigación, que no dependen de ningún sprint de construcción y por eso se adelantan; luego la autenticación, junto con el alta de suscripciones y el Dashboard que dependen de ella, porque sin cuenta no hay portafolio que mostrar; después los spikes de prototipo y las historias de conversión de divisas y recordatorios, que sostienen la hipótesis principal de anticipar el cobro; y al final el spike de Stripe, el delivery y el plan Premium, que extienden la propuesta sin ser indispensables para las primeras hipótesis. La autenticación no encabeza el backlog por sí sola: entra en el Sprint 2 como habilitadora del alta de suscripciones y el Dashboard, no como prioridad de seguridad aislada.
 
-Los sprints corresponden a las entregas del curso: el Sprint 1 a TB1, el Sprint 2 a AV2 y los Sprints 3 y 4 a TB2. Se administra además en la herramienta que indique el docente, cuyo enlace y captura quedan pendientes de incorporar.
+Los sprints corresponden a las entregas del curso: el Sprint 1 a TB1, el Sprint 2 a AV2 y los Sprints 3 y 4 a TB2. El Product Backlog se administra en Trello y mantiene una lista por sprint, con las historias ordenadas según la prioridad de esta tabla.
 
-[[PENDIENTE: captura y URL del Product Backlog en la herramienta indicada]]
+**Enlace al Product Backlog:** [CraveWallet – Product Backlog en Trello](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog)
+
+[[PENDIENTE: incorporar captura del Product Backlog en Trello]]
 
 | # Orden | User Story Id | Título | Story Points (1 / 2 / 3 / 5) | Sprint |
 | --- | --- | --- | --- | --- |
