@@ -2382,7 +2382,7 @@ Las Spike Stories cubren la investigación técnica necesaria antes de compromet
 
 El Impact Map vincula los objetivos de negocio de CraveWallet con las personas que pueden hacerlos posibles, el cambio de comportamiento que se espera de ellas, lo que el producto entrega para provocar ese cambio y las historias que lo implementan. El equipo lo elabora en UXPressia a partir de las fichas de User Persona de Camila Torres y Renzo Salazar (2.3.1), respondiendo en cada nivel las preguntas del método: quiénes ayudan a lograr la meta, qué tendrían que hacer, qué puede hacer el negocio digital para provocarlo y con qué historias. Se elabora un mapa por cada Business Goal.
 
-Los Business Goals se derivan, con los criterios SMART, de los Business Outcome Assumptions declarados en la sección 1.2.2.2 del Capítulo I.
+Los Business Goals se derivan, con los criterios SMART, de los Business Outcomes del Lean UX Canvas (sección 1.2.2.4 del Capítulo I), que recogen el criterio de éxito del Problem Statement (1.2.2.1) y los Business Outcome Assumptions (1.2.2.2).
 
 | Business Goal | Enunciado |
 | --- | --- |
@@ -2395,7 +2395,7 @@ Los actores son los dos User Personas del proyecto: **Camila Torres**, del Segme
 
 #### Business Goal 01: anticipación del cobro
 
-Este mapa responde a qué tiene que cambiar para que un usuario deje de enterarse de un cobro automático solo al revisar su banco, el hallazgo transversal de la sección 2.2.3. De Camila Torres y de Renzo Salazar se espera el mismo cambio de comportamiento: que revisen el recordatorio que reciben antes del cobro y decidan a tiempo si mantienen o cancelan la suscripción, en lugar de descubrirlo después (recordatorios vía calendario nativo, con las historias de agendar, reagendar y eliminar el recordatorio, y de recibir la notificación push complementaria).
+Este mapa responde a qué tiene que cambiar para que un usuario deje de enterarse de un cobro automático solo al revisar su banco, el hallazgo transversal de la sección 2.2.3. De Camila Torres y de Renzo Salazar se espera el mismo cambio de comportamiento: que revisen el recordatorio que reciben antes del cobro y decidan a tiempo si mantienen o cancelan la suscripción, en lugar de descubrirlo después (recordatorios vía calendario nativo, con las historias de agendar y eliminar el recordatorio, otorgar el permiso de acceso al calendario, ver la lista de recordatorios agendados y recibir la notificación push complementaria).
 
 ![Impact Map del Business Goal 01](images/chapter_2/Impact_Map_BG01.png)
 
