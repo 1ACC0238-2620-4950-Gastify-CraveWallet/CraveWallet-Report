@@ -4,9 +4,9 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-$Period     = '[[PERIODO]]'
-$CourseCode = '[[codigo-curso]]'
-$Nrc        = '[[NRC]]'
+$Period     = '202620'
+$CourseCode = '1ACC0238'
+$Nrc        = '4950'
 $Startup    = 'CraveWallet'
 
 $Deliveries = @('av1', 'tb1', 'av2', 'tb2')
