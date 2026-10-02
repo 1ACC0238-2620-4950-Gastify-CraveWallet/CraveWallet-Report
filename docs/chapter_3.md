@@ -554,11 +554,485 @@ La aplicación web (Angular Material) implementa el patrón de **navegación lat
 
 #### 3.1.3.1. Landing Page Wireframe
 
-[[PENDIENTE]]
+Los wireframes del landing page de CraveWallet representan la estructura de contenido y jerarquía de información de cada sección antes de la aplicación del sistema visual. En esta etapa se definen la disposición espacial de los bloques de contenido, la prioridad relativa de los elementos, los puntos de interacción y el flujo de lectura, sin considerar color, tipografía específica ni elementos gráficos finales. Los wireframes presentados corresponden a la versión Desktop Web Browser (viewport ≥ 960px, contenedor de 1280px máximo) y se elaboraron en herramienta de diseño vectorial siguiendo el grid de 12 columnas con gutters de 24px establecido en la sección 3.1.1.2.
+
+##### Desktop Web Browser
+
+---
+
+**Barra de navegación**
+
+![Wireframe Landing Page — Navbar Desktop](images/chapter_3/navbar-desktop-wf.png)
+
+*Figura 20. Wireframe de la barra de navegación del landing page de CraveWallet (Desktop).*
+
+La barra de navegación muestra tres zonas diferenciadas en una sola fila: zona de marca (logo + wordmark) anclada a la izquierda, zona de enlaces de sección centrada con cinco ítems de igual peso visual, y zona de acción (CTA primario) anclada a la derecha. La posición sticky de la barra se indica mediante la ausencia de separación entre el borde superior del frame y el componente, señalando que permanece fija durante el scroll.
+
+---
+
+**Sección Hero**
+
+![Wireframe Landing Page — Hero Desktop](images/chapter_3/hero-desktop-wf.png)
+
+*Figura 21. Wireframe de la sección Hero del landing page de CraveWallet (Desktop).*
+
+El Hero ocupa el viewport completo y se divide en dos columnas de igual peso. La columna izquierda jerarquiza el contenido en cuatro niveles verticales: (1) eyebrow pill de disponibilidad, (2) bloque de titular de tres líneas con énfasis en la segunda, (3) párrafo de descripción, y (4) par de CTAs en fila horizontal. Al pie de la columna izquierda, una línea divisoria separa una fila de tres métricas estadísticas, cada una con valor prominente y etiqueta. La columna derecha contiene el placeholder del mockup de teléfono, representado como un rectángulo proporcional al dispositivo Android objetivo. La jerarquía de lectura sigue el patrón en F establecido por la investigación de eye-tracking para layouts de dos columnas.
+
+---
+
+**Sección El Problema**
+
+![Wireframe Landing Page — El Problema Desktop](images/chapter_3/problem-desktop-wf.png)
+
+*Figura 22. Wireframe de la sección "El Problema" del landing page de CraveWallet (Desktop).*
+
+La sección se estructura en tres bloques verticales. El primero contiene el eyebrow label, el titular de dos líneas y el párrafo de contexto, ocupando el ancho completo. El segundo bloque dispone tres columnas de igual ancho con una cifra estadística de gran escala y su descripción de fuente cada una. El tercer bloque muestra tres tarjetas de testimonio en fila, cada una con un bloque de cita, identificador de usuario y segmento. Al pie, una fila de logos de servicios representa el reconocimiento de marcas conocidas por el segmento objetivo. Las tres tarjetas de testimonio tienen la misma altura fija, garantizando alineación de la fila sin importar la extensión del texto.
+
+---
+
+**Sección Solución**
+
+![Wireframe Landing Page — Solución Desktop](images/chapter_3/features-desktop-wf.png)
+
+*Figura 23. Wireframe de la sección "Solución" del landing page de CraveWallet (Desktop).*
+
+El bloque de encabezado ocupa el ancho completo con eyebrow label y titular de dos líneas. Debajo, un grid de 2×2 organiza cuatro tarjetas de feature, cada una con: placeholder de ícono en la esquina superior izquierda, título de feature y descripción corta. Las tarjetas tienen altura uniforme. El grid de dos columnas establece la relación matricial del contenido: las cuatro funcionalidades son comparables en relevancia y ninguna tiene prioridad visual sobre las demás.
+
+---
+
+**Sección App Preview**
+
+![Wireframe Landing Page — App Preview Desktop](images/chapter_3/preview-desktop-wf.png)
+
+*Figura 24. Wireframe de la sección "App Preview" del landing page de CraveWallet (Desktop).*
+
+La sección se divide verticalmente en dos bloques. El bloque superior muestra el encabezado a la izquierda y tres placeholders de mockup de teléfono en fila, cada uno con su número de secuencia y etiqueta de nombre de pantalla debajo. El bloque inferior presenta una fila de tres tarjetas de microcopy, cada una con un indicador de tipo (representado como barra de color codificado por estado: alerta, éxito, neutro) y el texto de ejemplo. Las tarjetas de microcopy vinculan visualmente el tono de comunicación del producto con las pantallas de la app mostradas arriba.
+
+---
+
+**Sección Prueba Social**
+
+![Wireframe Landing Page — Prueba Social Desktop](images/chapter_3/social-proof-desktop-wf.png)
+
+*Figura 25. Wireframe de la sección "Prueba Social" del landing page de CraveWallet (Desktop).*
+
+El encabezado ocupa el ancho completo con eyebrow de metodología, titular y bajada de contexto. Debajo, tres tarjetas de testimonio en fila, cada una con: cuerpo de cita, avatar circular de inicial, nombre, edad y etiqueta de segmento. El bloque de hallazgos transversales bajo las tarjetas muestra tres cifras de impacto en fila con sus descripciones, usando el mismo patrón de columnas de estadística que la sección de problema para crear consistencia de patrón entre secciones.
+
+---
+
+**Sección Planes**
+
+![Wireframe Landing Page — Planes Desktop](images/chapter_3/premium-desktop-wf.png)
+
+*Figura 26. Wireframe de la sección "Planes" del landing page de CraveWallet (Desktop).*
+
+Encabezado de ancho completo con titular de dos líneas. Dos tarjetas de plan en columnas paralelas de igual ancho: la tarjeta izquierda (Básico) con nombre, precio en escala grande, lista de cinco features con marcadores de verificación y CTA; la tarjeta derecha (Premium) con el mismo esquema más un badge de estado y siete features. Ambas tarjetas tienen la misma altura, estableciendo la comparación directa. El borde reforzado en la tarjeta Premium es el único diferenciador estructural entre ambas, señalando el plan destacado sin romper la simetría del layout.
+
+---
+
+**Sección Descarga**
+
+![Wireframe Landing Page — Descarga Desktop](images/chapter_3/download-desktop-wf.png)
+
+*Figura 27. Wireframe de la sección "Descarga" del landing page de CraveWallet (Desktop).*
+
+Sección de columna única centrada con tres elementos verticales: titular de tres líneas en escala máxima, CTA primario y nota de requisito técnico. Al pie, una fila de tres trust badges con separadores. La ausencia de elementos secundarios o secundarios de navegación en esta sección es una decisión estructural deliberada: el único punto de interacción disponible es el CTA de descarga, concentrando la decisión del usuario.
+
+---
+
+**Footer**
+
+![Wireframe Landing Page — Footer Desktop](images/chapter_3/footer-desktop-wf.png)
+
+*Figura 28. Wireframe del footer del landing page de CraveWallet (Desktop).*
+
+El footer se divide en dos zonas en una sola fila: zona de marca a la izquierda (logo, tagline, atribución) y zona de navegación secundaria a la derecha (cinco enlaces de sección). Una línea divisoria horizontal separa esta fila del bloque de copyright centrado al pie. La estructura replica en espejo la distribución de la barra de navegación superior, cerrando el sitio con coherencia estructural.
+
+---
+
+##### Mobile Web Browser
+
+Los wireframes mobile corresponden al breakpoint inferior a 600px (grid de 4 columnas, gutters 16px). Todos los layouts multi-columna del desktop colapsan a columna única. Las descripciones a continuación documentan únicamente los cambios estructurales respecto al wireframe desktop; los principios de jerarquía y arquitectura de información son los mismos.
+
+![Wireframe Landing Page — Chrome Mobile](images/chapter_3/browser-chrome-mobile-wf.png)
+
+*Figura 29. Wireframe del Chrome del navegador móvil — contexto de visualización (Mobile).*
+
+---
+
+**Barra de navegación — Mobile**
+
+![Wireframe Landing Page — Navbar Mobile](images/chapter_3/navbar-mobile-wf.png)
+
+*Figura 30. Wireframe de la barra de navegación del landing page de CraveWallet (Mobile).*
+
+Logo a la izquierda, CTA primario al centro-derecha, ícono de hamburger en el extremo derecho. Los cinco enlaces de sección quedan colapsados detrás del hamburger.
+
+---
+
+**Sección Hero — Mobile**
+
+![Wireframe Landing Page — Hero Mobile](images/chapter_3/hero-mobile-wf.png)
+
+*Figura 31. Wireframe de la sección Hero del landing page de CraveWallet (Mobile).*
+
+Columna única. Secuencia vertical: eyebrow pill → titular de tres líneas → párrafo de descripción → dos CTAs apilados a ancho completo → fila de tres métricas → placeholder de mockup de teléfono al pie. El mockup baja de la columna derecha al final del stack para no interrumpir el flujo de lectura del copy.
+
+---
+
+**Sección El Problema — Mobile**
+
+![Wireframe Landing Page — El Problema Mobile](images/chapter_3/problem-mobile-wf.png)
+
+*Figura 32. Wireframe de la sección "El Problema" del landing page de CraveWallet (Mobile).*
+
+Las tres estadísticas pasan de tres columnas paralelas a stack vertical, cada cifra con su descripción inmediatamente debajo. Los tres testimonios se apilan como tarjetas de ancho completo. La fila de logos adapta su número de columnas mediante wrap.
+
+---
+
+**Sección Solución — Mobile**
+
+![Wireframe Landing Page — Solución Mobile](images/chapter_3/features-mobile-wf.png)
+
+*Figura 33. Wireframe de la sección "Solución" del landing page de CraveWallet (Mobile).*
+
+Grid 2×2 → stack 1×4. Cada tarjeta ocupa el ancho completo con placeholder de ícono, título y descripción. El orden vertical replica la secuencia de uso: centralizar → alertar → detectar → convertir.
+
+---
+
+**Sección App Preview — Mobile**
+
+![Wireframe Landing Page — App Preview Mobile](images/chapter_3/preview-mobile-wf.png)
+
+*Figura 34. Wireframe de la sección "App Preview" del landing page de CraveWallet (Mobile).*
+
+Los tres placeholders de mockup de teléfono pasan de fila horizontal a stack vertical, cada uno con su número de secuencia y etiqueta debajo. Las tres tarjetas de microcopy se apilan bajo los mockups.
+
+---
+
+**Sección Prueba Social — Mobile**
+
+![Wireframe Landing Page — Prueba Social Mobile](images/chapter_3/social-proof-mobile-wf.png)
+
+*Figura 35. Wireframe de la sección "Prueba Social" del landing page de CraveWallet (Mobile).*
+
+Tres tarjetas de testimonio en stack vertical a ancho completo. Bloque de hallazgos transversales con tres cifras en fila mediante wrap. Microcopy al pie en columna única.
+
+---
+
+**Sección Planes — Mobile**
+
+![Wireframe Landing Page — Planes Mobile](images/chapter_3/premium-mobile-wf.png)
+
+*Figura 36. Wireframe de la sección "Planes" del landing page de CraveWallet (Mobile).*
+
+Las dos tarjetas de plan se apilan verticalmente, plan Básico primero. Cada tarjeta ocupa el ancho completo con su lista de features y CTA a ancho completo.
+
+---
+
+**Sección Descarga — Mobile**
+
+![Wireframe Landing Page — Descarga Mobile](images/chapter_3/download-mobile-wf.png)
+
+*Figura 37. Wireframe de la sección "Descarga" del landing page de CraveWallet (Mobile).*
+
+Columna única centrada: titular → CTA a ancho completo → nota de requisito. Trust badges en fila de dos o stack según ancho disponible.
+
+---
+
+**Footer — Mobile**
+
+![Wireframe Landing Page — Footer Mobile](images/chapter_3/footer-mobile-wf.png)
+
+*Figura 38. Wireframe del footer del landing page de CraveWallet (Mobile).*
+
+Logo y tagline en la parte superior, enlaces de sección apilados o en dos columnas, copyright al pie. El espacio vertical entre elementos garantiza touch targets de 44×44px mínimo.
 
 #### 3.1.3.2. Landing Page Mock-up
 
-[[PENDIENTE]]
+Los mock-ups del landing page de CraveWallet materializan las decisiones de diseño establecidas en el Design System (sección 3.1.1) y la Arquitectura de Información (sección 3.1.2) en una representación visual de alta fidelidad, lista para ser implementada. El landing page está diseñado como una experiencia de una sola página (SPA estático) cuya estructura narrativa sigue un flujo secuencial de persuasión: problema → solución → evidencia → planes → descarga. Esta secuencia responde al modelo AIDA (Atención, Interés, Deseo, Acción) y garantiza que el usuario construya comprensión progresiva del producto antes de encontrar el llamado a la acción final.
+
+En todos los mock-ups se aplican los siguientes principios transversales:
+
+- **Jerarquía visual:** la escala tipográfica de Poppins Bold (display) a Inter Regular (body) guía la mirada del usuario de mayor a menor importancia sin necesidad de elementos decorativos adicionales.
+- **Ritmo de secciones:** se alternan fondos oscuros (`#0F172A`, token `color-on-surface`) y fondos claros (`#F8FAFC`/`#FFFFFF`, tokens `color-background`/`color-surface`) para delimitar visualmente cada bloque de contenido y mantener la atención durante el scroll.
+- **Sistema de espaciado de 8px:** todos los márgenes internos, separaciones entre elementos y paddings de sección siguen los tokens de espaciado definidos (`space-4` a `space-10`), garantizando alineación y consistencia en todo el layout.
+- **Grid de 12 columnas:** el contenido se contiene en un ancho máximo de 1280px centrado en pantalla, con gutters de 24px, aplicando el grid web definido en la sección 3.1.1.2.
+- **Diseño inclusivo (WCAG 2.1 AA):** todos los pares texto/fondo mantienen una relación de contraste mínima de 4.5:1. Los botones CTA tienen un padding vertical mínimo de 14px para garantizar un área de toque suficiente. La estructura semántica HTML (encabezados jerarquizados, roles ARIA, etiquetas `alt`) facilita la navegación con lectores de pantalla.
+
+##### Desktop Web Browser — Vista completa
+
+La versión desktop opera sobre el breakpoint de 960px o superior, desplegando el layout completo de 12 columnas con la barra de navegación superior visible y todos los elementos en su disposición horizontal óptima.
+
+---
+
+**Barra de navegación superior**
+
+![Mock-up Landing Page — Navbar Desktop](images/chapter_3/navbar-desktop.png)
+
+*Figura 1. Barra de navegación superior del landing page de CraveWallet (Desktop).*
+
+La barra de navegación es el primer elemento que el usuario percibe y el componente de arquitectura de información más crítico del sitio. Se implementa con posición `sticky`, de modo que permanece visible en todo momento durante el scroll, tal como se especificó en el sistema de navegación del landing page (sección 3.1.2.5).
+
+El isologotipo "CraveWallet" se ubica en el extremo izquierdo sobre fondo blanco (`color-surface`), respetando la regla de uso de marca definida en el Design System. Los enlaces de sección —"Inicio", "El problema", "Solución", "Descarga" y "Premium"— se disponen centrados con tipografía Inter Medium 14px en `color-on-surface-variant` (`#64748B`), adoptando el sistema de etiquetas de navegación definido en la sección 3.1.2.2. El CTA "Descargar gratis" ocupa el extremo derecho como botón primario con relleno `color-primary` (`#3B4FD8`) y texto blanco (`color-on-primary`), garantizando máxima visibilidad y acceso constante a la acción principal independientemente de la posición en el scroll. El contraste del par `#FFFFFF`/`#3B4FD8` es de 5.2:1, cumpliendo WCAG 2.1 AA.
+
+---
+
+**Sección Hero — Propuesta de valor**
+
+![Mock-up Landing Page — Hero Desktop](images/chapter_3/hero-desktop.png)
+
+*Figura 2. Sección Hero del landing page de CraveWallet (Desktop).*
+
+La sección Hero ocupa el viewport completo (`min-h-screen`) con fondo oscuro `color-on-surface` (`#0F172A`), estableciendo el contraste visual necesario para capturar la atención inmediata del usuario. Se aplica un layout de dos columnas: la columna izquierda contiene el copy y los CTAs; la columna derecha contiene el mockup de teléfono que muestra la interfaz real de la aplicación, reduciendo la abstracción y generando credibilidad inmediata.
+
+El titular "Los cobros automáticos no avisan. CraveWallet sí." utiliza Poppins Bold en tamaño fluido (`clamp(44px, 6.5vw, 76px)`), con el fragmento "no avisan." en `color-primary` (`#3B4FD8`) para resaltar el problema y el nombre de la solución en texto blanco con opacidad reducida, creando una jerarquía de lectura de tres niveles. El principio de contraste de Gestalt se aplica deliberadamente: el texto más importante (la afirmación del problema) lleva el color más saturado.
+
+El cuerpo de texto utiliza Inter Regular 16px en `rgba(255,255,255,0.55)` para mantener legibilidad sin competir con el titular. Los dos CTAs —"Descargar gratis" (botón primario `#3B4FD8`) y "Ver el problema" (botón fantasma con borde `rgba(255,255,255,0.15)`)— siguen la jerarquía de acciones definida en el sistema de etiquetas (sección 3.1.2.2), donde la acción primaria siempre tiene mayor peso visual. Un indicador de estado `Disponible para Android` con punto verde pulsante (`color-success` `#22C55E`) añade contexto de disponibilidad sin ocupar espacio prominente.
+
+La fila de estadísticas en la base ("4–8 suscripciones activas", "S/ → $", "−24h") aplica el principio de prueba social cuantificada, separada del cuerpo por una línea divisoria `rgba(255,255,255,0.08)` que respeta el sistema de elevación sin añadir peso visual. Desde la perspectiva de arquitectura de información, esta sección cumple el esquema de organización jerárquico: propuesta de valor → descripción → acción → evidencia, de mayor a menor generalidad.
+
+---
+
+**Sección El Problema**
+
+![Mock-up Landing Page — El Problema Desktop](images/chapter_3/problem-desktop.png)
+
+*Figura 3. Sección "El Problema" del landing page de CraveWallet (Desktop).*
+
+La sección de problema mantiene el fondo oscuro `color-on-surface` para crear continuidad narrativa con el Hero, reforzando la tensión emocional antes de presentar la solución. El eyebrow "EL PROBLEMA" en `color-accent` (`#F97316`) y mayúsculas actúa como etiqueta de sección, siguiendo el sistema de etiquetado jerárquico definido en la arquitectura de información (sección 3.1.2.1).
+
+El titular "¿Sabes cuánto gastaste en suscripciones este mes?" utiliza Poppins SemiBold 32px en blanco, formulado como pregunta retórica para activar la identificación del usuario con el problema. Le sigue una bajada en Inter Regular 16px que nombra marcas específicas (Spotify, Adobe, Smart Fit) para anclar el problema en la experiencia cotidiana del segmento objetivo.
+
+Las tres estadísticas cuantitativas (S/ 350, 77%, 100%) emplean Poppins Bold 48px —el tamaño de monto principal del sistema tipográfico— para maximizar el impacto de los datos. Bajo cada cifra, una fuente de dato en Inter Regular 12px (`color-on-surface-variant`) mantiene la trazabilidad académica sin interrumpir el flujo visual. Los tres testimonios de usuario se presentan en tarjetas con borde izquierdo de acento (`color-primary`) y tipografía en cursiva, aplicando el principio de proximidad de Gestalt para agrupar la evidencia cualitativa. La fila de logos de servicios en la parte inferior (Spotify, Netflix, Disney+, Adobe, entre otros) refuerza el reconocimiento de marca y la relevancia del problema mediante el principio de similitud: todos los logos tienen el mismo tamaño y tratamiento visual monocromático.
+
+Desde el ángulo del diseño inclusivo, los testimonios incluyen identificación de segmento (edad, ciudad, ocupación) que incrementa la representatividad y facilita la empatía en usuarios de diferentes perfiles dentro del segmento objetivo.
+
+---
+
+**Sección Solución — Features**
+
+![Mock-up Landing Page — Solución Desktop](images/chapter_3/features-desktop.png)
+
+*Figura 4. Sección "Solución" del landing page de CraveWallet (Desktop).*
+
+La sección de solución introduce el primer fondo claro (`color-surface`, `#FFFFFF`), creando una ruptura visual deliberada que señala el cambio de tono: del problema a la respuesta. Este alternado oscuro/claro es un recurso de ritmo visual que facilita la segmentación cognitiva del contenido durante el scroll.
+
+El eyebrow "SOLUCIÓN" en `color-primary` y el titular "Todo lo que necesitas. / Nada de lo que no." en Poppins SemiBold combinan la promesa de completitud con la de simplicidad, valores centrales del tono de comunicación definido (casual 75%, sereno 40%). Las cuatro feature cards se organizan en un grid de 2×2 columnas, cada una con un ícono Material Symbols de 24px en `color-primary`, un título Inter SemiBold 16px y un cuerpo Inter Regular 14px en `color-on-surface-variant`. Las tarjetas tienen bordes `color-surface-variant` (`#EEF2F7`) y esquinas redondeadas con `border-radius: 16px` (token `radius-lg`), coherentes con el sistema de elevación nivel 1.
+
+Las cuatro funcionalidades presentadas —centralización, alertas 24h, detección de inactividad y conversión PEN/USD— responden directamente a los hallazgos de investigación de usuario del Capítulo I, estableciendo un puente explícito entre necesidad detectada y feature implementada. Desde la perspectiva de arquitectura de información, este bloque aplica el esquema matricial (sección 3.1.2.1): cuatro funcionalidades comparables en el mismo nivel de jerarquía, organizadas espacialmente para facilitar la comparación visual.
+
+El diseño inclusivo se manifiesta en el uso de íconos siempre acompañados de etiqueta de texto (no icono solo), garantizando comprensión independiente del nivel de alfabetización visual del usuario.
+
+---
+
+**Sección App Preview**
+
+![Mock-up Landing Page — Preview Desktop](images/chapter_3/preview-desktop.png)
+
+*Figura 5. Sección "App Preview" del landing page de CraveWallet (Desktop).*
+
+La sección de preview vuelve al fondo claro `color-background` (`#F8FAFC`) y presenta tres capturas reales de la interfaz de la aplicación móvil —Dashboard, Alertas y Tipo de cambio— dentro de marcos de teléfono, reduciendo la brecha entre la promesa del landing y la realidad del producto. Este elemento de "prueba de producto" responde al principio de transparencia del diseño de confianza: mostrar la interfaz real en lugar de ilustraciones genéricas aumenta la credibilidad percibida.
+
+El titular "Diseñado para entenderse a primera vista." con el segmento complementario en `color-primary` refuerza el posicionamiento de usabilidad. Cada mockup de teléfono tiene su propia etiqueta (nombre de pantalla + descripción de una línea) con tipografía Inter Regular 12px en `color-on-surface-variant`, siguiendo el sistema de etiquetado de la sección 3.1.2.2.
+
+La parte inferior presenta tres ejemplos de microcopy de la aplicación en tarjetas de color codificadas (naranja para alerta, verde para celebración, azul para estado neutral), aplicando el sistema de colores semánticos del Design System (`color-accent`, `color-success`, `color-info`). Esta elección permite al usuario anticipar cómo le hablará la aplicación antes de descargarla, reduciendo la incertidumbre de adopción.
+
+---
+
+**Sección Prueba Social**
+
+![Mock-up Landing Page — Prueba Social Desktop](images/chapter_3/social-proof-desktop.png)
+
+*Figura 6. Sección "Prueba Social" del landing page de CraveWallet (Desktop).*
+
+La sección de prueba social refuerza la credibilidad mediante evidencia de investigación de usuarios primaria. El eyebrow "INVESTIGACIÓN DE USUARIOS" establece el origen metodológico de los datos, diferenciando los testimonios de opiniones espontáneas. El titular "Historias reales. / El mismo problema." aplica el principio de universalidad: el problema no es individual, es estructural.
+
+Las tres tarjetas de testimonio presentan citas verbatim de usuarios reales entrevistados durante la fase de needfinding, identificados por segmento (Segmento 1, Segmento 2, Segmento 3) con avatar inicial, nombre, edad e identificador de segmento. Las citas están en cursiva Inter Regular 14px para distinguirlas visualmente del texto explicativo, siguiendo la convención tipográfica de cita directa.
+
+La fila de hallazgos transversales ("100% no recibe hoy ninguna alerta anticipada de cobro", "100% tiene al menos una suscripción en dólares sin saber su equivalente en soles", "100% relató un episodio concreto de cobro automático olvidado") utiliza el mismo tratamiento tipográfico de estadística que la sección de problema, creando consistencia de patrón y facilitando el reconocimiento del tipo de dato. Los porcentajes en `color-accent` (`#F97316`) anclan visualmente los hallazgos más críticos. El microcopy de cierre vuelve a presentar los tres ejemplos de tono de comunicación, cerrando la sección con la voz del producto en lugar de la voz del investigador.
+
+Desde el diseño inclusivo, los testimonios incluyen diversidad de perfil socioeconómico y ocupacional (estudiante/trabajador, Lima/provincias), reflejando la amplitud real del segmento objetivo y evitando la representación homogénea.
+
+---
+
+**Sección Planes**
+
+![Mock-up Landing Page — Planes Desktop](images/chapter_3/premium-desktop.png)
+
+*Figura 7. Sección "Planes" del landing page de CraveWallet (Desktop).*
+
+La sección de planes vuelve al fondo claro `color-surface-variant` (`#EEF2F7`) para diferenciarse visualmente de las secciones adyacentes. El titular "Gratis para siempre. / Premium cuando lo necesites." gestiona la expectativa del usuario desde la primera lectura: la gratuidad es permanente, no temporal. Esta elección de copy responde a la estrategia freemium del modelo de negocio documentado en el Capítulo I.
+
+Las dos tarjetas de plan —Básico y Premium— se disponen en un layout de dos columnas con jerarquía visual clara: la tarjeta Básico tiene fondo blanco `color-surface` con borde `color-surface-variant`; la tarjeta Premium tiene fondo oscuro `color-on-surface` con borde `color-primary` de 2px de grosor, siguiendo el principio de contraste de Gestalt para señalar el plan recomendado sin necesidad de una etiqueta explícita de "popular". La badge "Próximamente" en `color-primary` sobre la tarjeta Premium cumple función informativa y de expectativa.
+
+Los listados de features utilizan íconos de verificación `✓` en `color-success` para el plan Básico y el mismo ícono en azul para Premium, creando consistencia semántica. La diferencia de densidad de features (5 vs 7) es visualmente evidente sin requerir comparación línea a línea. El precio "S/ 9.99 por mes" en Poppins Bold 48px aplica el token de tamaño de monto principal, coherente con la tipografía de datos numéricos del sistema. El botón "Descargar gratis" del plan Básico es el CTA principal de la sección; el botón "Disponible pronto" del plan Premium tiene opacidad reducida, señalando el estado deshabilitado sin necesidad de texto adicional.
+
+El diseño inclusivo se manifiesta en la presentación clara de las diferencias entre planes sin oscurecer el plan gratuito: el orden visual no penaliza al usuario que no puede o no quiere pagar el plan Premium.
+
+---
+
+**Sección Descarga — CTA Final**
+
+![Mock-up Landing Page — Descarga Desktop](images/chapter_3/download-desktop.png)
+
+*Figura 8. Sección "Descarga" del landing page de CraveWallet (Desktop).*
+
+La sección de descarga retorna al fondo oscuro `color-on-surface` para el cierre narrativo, creando simetría visual con la sección Hero y señalando el remate del flujo de persuasión. El titular "Empieza hoy. / Tu bolsillo / te lo agradece." en Poppins Bold a máximo tamaño rompe con el formato de dos columnas de las secciones anteriores, centrando toda la atención en el mensaje y el CTA único.
+
+El botón "Descargar en Android" es el único elemento interactivo de la sección, lo que elimina la competencia de atención y maximiza la tasa de conversión. Lleva el ícono de Play (Google Play Store) en blanco sobre `color-primary`, reproduciendo el patrón visual establecido desde el CTA del Hero. La nota "Requiere Android 9.0 o superior" en Inter Regular 12px `rgba(255,255,255,0.4)` gestiona expectativas técnicas sin ocupar espacio prominente.
+
+La fila de garantías al pie —"Datos locales, sin servidores externos", "Plan gratis siempre disponible", "Hecho para el mercado peruano"— aplica el patrón de "trust badges" que reduce la fricción de la última milla antes de la descarga. El uso del separador "→" entre badges crea un ritmo de lectura izquierda-derecha coherente con el patrón de lectura occidental en pantallas amplias. Desde la arquitectura de información, esta sección cierra el esquema secuencial establecido en la sección 3.1.2.1: el usuario que llega aquí ha completado el flujo problema → solución → evidencia → planes → acción.
+
+---
+
+**Footer**
+
+![Mock-up Landing Page — Footer Desktop](images/chapter_3/footer-desktop.png)
+
+*Figura 9. Footer del landing page de CraveWallet (Desktop).*
+
+El footer retorna al fondo blanco `color-surface` y cumple una doble función: reafirmar la identidad de marca y ofrecer acceso secundario a las secciones del sitio para usuarios que llegan al final sin haber convertido. El isologotipo CraveWallet en el extremo izquierdo va acompañado del tagline "Empoderamiento financiero para nativos digitales peruanos." en Inter Regular 14px y la atribución "by Gastify", manteniendo la trazabilidad corporativa establecida en el branding del Design System.
+
+Los cinco enlaces de sección —"El problema", "Solución", "Preview", "Descarga", "Premium"— se ubican en el extremo derecho con tipografía Inter Regular 14px `color-on-surface-variant`, siguiendo el mismo sistema de etiquetas de la barra de navegación y reforzando la consistencia del sistema de etiquetado (sección 3.1.2.2). La línea divisoria superior y el copyright "© 2026 CraveWallet" en Inter Regular 12px cierran el footer con los elementos mínimos de cumplimiento legal y temporal.
+
+La simplicidad del footer es deliberada: en el contexto de un landing page de producto en etapa de lanzamiento, añadir columnas de links, formularios de newsletter o redes sociales generaría ruido visual sin aportar valor a los objetivos de conversión del sitio.
+
+---
+
+##### Síntesis de principios de diseño aplicados — Desktop
+
+La siguiente tabla resume la correspondencia entre las secciones del mock-up desktop y los principios, elementos de diseño, diseño inclusivo y arquitectura de información documentados en el Design System:
+
+| Sección | Principio de diseño | Elemento del Design System | Diseño inclusivo | Arquitectura de Información |
+| --- | --- | --- | --- | --- |
+| Navbar | Visibilidad constante (sticky) | Tokens `color-primary`, `color-surface`, Inter Medium 14px | Contraste 5.2:1 en CTA, acceso siempre disponible | Navegación top con anclas de sección (sección 3.1.2.5) |
+| Hero | Jerarquía visual, contraste Gestalt | `color-on-surface`, Poppins Bold `clamp(44–76px)`, `color-primary` acento | Contraste `#FFFFFF`/`#0F172A` > 16:1, ícono + texto en CTAs | Esquema jerárquico: propuesta → descripción → acción |
+| El Problema | Proximidad Gestalt, ritmo oscuro/claro | `color-accent` eyebrow, Poppins Bold 48px para datos, `color-primary` borde tarjetas | Identificación de segmento en testimonios, diversidad de perfiles | Datos cuantitativos + cualitativos, logos de reconocimiento |
+| Solución | Esquema matricial, consistencia ícono+texto | `radius-lg` tarjetas, `color-surface-variant` bordes, `color-primary` íconos | Ícono siempre con etiqueta de texto | Grid 2×2 columnas, etiquetas descriptivas (sección 3.1.2.2) |
+| Preview | Transparencia, prueba de producto | Mockups reales, `color-success`/`color-accent`/`color-info` microcopy | Pantallas reales reducen incertidumbre de adopción | Etiquetas por pantalla, microcopy clasificado por tipo |
+| Prueba Social | Credibilidad, universalidad | `color-accent` para datos clave, Inter cursiva para citas | Diversidad de perfil (edad, ciudad, ocupación) en testimonios | Evidencia primaria de investigación de usuarios |
+| Planes | Contraste Gestalt, jerarquía freemium | `color-on-surface` tarjeta premium, borde `color-primary` 2px, `color-success` checks | Plan gratuito no penalizado visualmente | Comparación de features, gestión de expectativa Premium |
+| Descarga | Foco único, trust badges | `color-primary` CTA único, Poppins Bold máximo tamaño | CTA único elimina ambigüedad de acción | Cierre del esquema secuencial (sección 3.1.2.1) |
+| Footer | Consistencia, mínimos legales | `color-surface`, Inter Regular 14px, mismo sistema de etiquetas que navbar | Acceso alternativo a secciones para usuarios no convertidos | Reafirmación del sistema de etiquetado de sección 3.1.2.2 |
+
+---
+
+##### Mobile Web Browser — Vista completa
+
+En breakpoints inferiores a 600px, el landing page adapta su layout al grid de 4 columnas con gutters de 16px definido en la sección 3.1.1.2. Todos los elementos en disposición horizontal o multi-columna colapsan a una única columna de lectura vertical. Los principios de diseño, tokens y arquitectura de información son los mismos que en la versión desktop; lo que varía es exclusivamente la disposición espacial de los componentes para adecuarse al viewport reducido. El Chrome del navegador móvil (barra de dirección con dominio `cravewallet.gastify.pe`) forma parte del contexto de uso antes del primer pixel del sitio.
+
+![Mock-up Landing Page — Chrome Mobile](images/chapter_3/browser-chrome-mobile.png)
+
+*Figura 10. Chrome del navegador móvil — contexto de visualización del landing page de CraveWallet.*
+
+---
+
+**Barra de navegación superior — Mobile**
+
+![Mock-up Landing Page — Navbar Mobile](images/chapter_3/navbar-mobile.png)
+
+*Figura 11. Barra de navegación superior del landing page de CraveWallet (Mobile).*
+
+Los cinco enlaces colapsan a un hamburger (`≡`). El CTA "Descargar gratis" permanece visible en la barra para mantener acceso directo a la acción principal sin requerir apertura del menú.
+
+---
+
+**Sección Hero — Mobile**
+
+![Mock-up Landing Page — Hero Mobile](images/chapter_3/hero-mobile.png)
+
+*Figura 12. Sección Hero del landing page de CraveWallet (Mobile).*
+
+El layout de dos columnas colapsa a una sola. Los CTAs pasan a disposición vertical de ancho completo, ampliando el área de toque. El mockup de teléfono se reposiciona debajo del copy para evitar competencia visual entre texto e imagen en el viewport estrecho.
+
+---
+
+**Sección El Problema — Mobile**
+
+![Mock-up Landing Page — El Problema Mobile](images/chapter_3/problem-mobile.png)
+
+*Figura 13. Sección "El Problema" del landing page de CraveWallet (Mobile).*
+
+Las tres estadísticas pasan de tres columnas a stack vertical. Los testimonios y la cuadrícula de logos adaptan su número de columnas mediante `flex-wrap` según el ancho disponible.
+
+---
+
+**Sección Solución — Mobile**
+
+![Mock-up Landing Page — Solución Mobile](images/chapter_3/features-mobile.png)
+
+*Figura 14. Sección "Solución" del landing page de CraveWallet (Mobile).*
+
+El grid 2×2 colapsa a un stack 1×4. La secuencia vertical —Centraliza → Alertas → Detecta → Convierte— refleja el orden lógico de uso de la aplicación, haciendo la arquitectura secuencial más explícita que en el grid desktop.
+
+---
+
+**Sección App Preview — Mobile**
+
+![Mock-up Landing Page — Preview Mobile](images/chapter_3/preview-mobile.png)
+
+*Figura 15. Sección "App Preview" del landing page de CraveWallet (Mobile).*
+
+Los tres mockups de teléfono pasan de fila horizontal a stack vertical. El contexto es especialmente efectivo: el usuario ve las pantallas de la app en el mismo tipo de dispositivo desde el que eventualmente la descargará.
+
+---
+
+**Sección Prueba Social — Mobile**
+
+![Mock-up Landing Page — Prueba Social Mobile](images/chapter_3/social-proof-mobile.png)
+
+*Figura 16. Sección "Prueba Social" del landing page de CraveWallet (Mobile).*
+
+Las tres tarjetas de testimonio y los hallazgos transversales se apilan en columna única a ancho completo, permitiendo lectura íntegra de las citas sin truncamiento.
+
+---
+
+**Sección Planes — Mobile**
+
+![Mock-up Landing Page — Planes Mobile](images/chapter_3/premium-mobile.png)
+
+*Figura 17. Sección "Planes" del landing page de CraveWallet (Mobile).*
+
+Las dos tarjetas de plan pasan de columnas paralelas a stack vertical, con el plan Básico primero. Ambos botones de acción quedan a ancho completo, maximizando el área de toque.
+
+---
+
+**Sección Descarga — Mobile**
+
+![Mock-up Landing Page — Descarga Mobile](images/chapter_3/download-mobile.png)
+
+*Figura 18. Sección "Descarga" del landing page de CraveWallet (Mobile).*
+
+El CTA "Descargar en Android" pasa a ancho completo. Los trust badges se distribuyen en dos columnas o stack según el ancho disponible.
+
+---
+
+**Footer — Mobile**
+
+![Mock-up Landing Page — Footer Mobile](images/chapter_3/footer-mobile.png)
+
+*Figura 19. Footer del landing page de CraveWallet (Mobile).*
+
+El isologotipo, tagline y enlaces de sección se apilan verticalmente. El espaciado entre elementos garantiza touch targets mínimos de 44×44px según las guías de accesibilidad de Android.
+
+---
+
+##### Síntesis de adaptaciones Mobile
+
+La siguiente tabla documenta las adaptaciones específicas de cada sección al breakpoint mobile (< 600px) y su justificación desde los principios de diseño y diseño inclusivo:
+
+| Sección | Cambio desktop → mobile | Principio aplicado | Impacto en accesibilidad |
+| --- | --- | --- | --- |
+| Navbar | Links → hamburger; CTA visible en barra | Convención mobile nativa | CTA siempre accesible sin abrir menú |
+| Hero | 2 columnas → 1 columna; CTAs apilados a ancho completo | Legibilidad en viewport estrecho | Touch target 100% ancho, sin precisión de puntero |
+| El Problema | Stats 3 columnas → stack vertical; testimonios apilados | Jerarquía de lectura vertical | Tipografía grande legible sin zoom |
+| Solución | Grid 2×2 → stack 1×4 | Secuencia lógica de uso explícita | Sin scrolling horizontal, sin truncamiento |
+| Preview | Mockups en fila → apilados | Correspondencia dispositivo-contenido | Etiquetas a ancho completo, sin truncamiento |
+| Prueba Social | Tarjetas 3 columnas → stack | Densidad de información controlada | Citas completas sin truncamiento |
+| Planes | Tarjetas paralelas → apiladas; plan gratuito primero | Accesibilidad del plan gratuito como primer elemento | Botones a ancho completo, sin precisión de puntero |
+| Descarga | Botón centrado → botón a ancho completo | Maximizar conversión en último paso | Área de toque máxima en acción crítica |
+| Footer | Links en fila → apilados/2 columnas | Touch targets mínimos 44×44px | Navegación secundaria accesible |
 
 ### 3.1.4. Mobile Applications UX/UI Design
 
