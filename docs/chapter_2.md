@@ -1727,29 +1727,73 @@ En el recorrido principal, la aplicación **no ejecuta ni cancela el cobro que r
 
 #### 2.5.1.3. Bounded Context Canvases
 
-Los canvases resumen una primera regla por contexto. Cada columna del tablero distingue el agregado que protege la consistencia, el comando recibido, el evento emitido, la política que reacciona, la vista de lectura y la dependencia que debe adaptarse. El objetivo es comprobar que cada evento tenga un responsable claro antes de pasar al Context Mapping de 2.5.2.
+Cada canvas documenta el propósito y los límites de un contexto, sus colaboradores, mensajes, lenguaje y decisiones de negocio. Se adapta la estructura de DDD Crew [@dddcrewBoundedCanvas] a los tres contextos propuestos para CraveWallet. La figura 20 presenta una síntesis visual; las tablas siguientes desarrollan cada canvas. Son propuestas de diseño basadas en las historias de la sección 2.4 y en el diseño táctico de la sección 2.6, no resultados de una implementación validada.
 
-| Contexto | Agregado y regla de consistencia | Vista y colaboración |
-| --- | --- | --- |
-| **Suscripciones** | **Suscripción**: una fecha de próxima renovación válida y un importe con moneda original acompañan a cada registro activo. *Registrar suscripción* produce *Suscripción registrada*; la política de anticipación programa el aviso. | Portafolio y próximas renovaciones. Consulta al tipo de cambio mediante un adaptador y delega la alarma al dispositivo. |
-| **Gastos** | **Presupuesto mensual**: el gasto de delivery se suma al período y se compara con el límite vigente. *Registrar gasto* produce *Gasto registrado*; la política de límite puede producir *Límite mensual superado*. | Resumen mensual e historial local. Google Places aporta sugerencias de locales, sin convertirse en la fuente de verdad del importe pagado. |
-| **Premium** | **Plan**: el nivel Premium solo cambia después de verificar el resultado de la operación de prueba. *Simular pago* produce *Pago test aprobado* y la política activa el plan si el pago es válido. | Estado Premium y funciones disponibles. Stripe queda detrás de un adaptador para que sus estados técnicos no entren directamente al modelo de dominio. |
-
-La figura 20 resume las reglas iniciales de Suscripciones, Gastos y Premium mediante una secuencia por contexto.
-
-![EventStorming To-Be: bounded context canvases de Suscripciones, Gastos y Premium](images/chapter_2/eventstorming-bounded-context-canvases.png)
+![Síntesis de los Bounded Context Canvases de CraveWallet](images/chapter_2/bounded-context-canvases.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 20. EventStorming To-Be: bounded context canvases de Suscripciones, Gastos y Premium.*
+*Figura 20. Síntesis de los Bounded Context Canvases de CraveWallet.*
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify.*
+*Fuente: elaboración del equipo Gastify, adaptada de The Bounded Context Canvas de DDD Crew (s. f.), licencia CC BY-SA 4.0. Diagrama adaptado distribuido bajo la misma licencia.*
 
-*Nota: agregado, comando, evento, política, vista y dependencia de cada contexto candidato.*
+##### Canvas 1. Subscription Management
 
-En conjunto, los tres canvases muestran dos recorridos de valor distintos que comparten la cuenta del usuario: **anticipar renovaciones** y **vigilar gastos de delivery**. Premium modifica el acceso a funcionalidades, pero no debe alterar los hechos históricos de suscripciones o gastos. Este diseño constituye una hipótesis de frontera que servirá para detallar las relaciones entre contextos en la sección siguiente.
+| Campo | Contenido |
+| --- | --- |
+| Nombre | **Subscription Management — Gestión de suscripciones.** |
+| Propósito | Ayudar al usuario a conocer sus compromisos recurrentes, estimar su importe en soles y anticipar la próxima renovación. Administra los registros que el usuario crea en CraveWallet; marcar uno como cancelado no cancela el contrato con el proveedor. |
+| Clasificación estratégica | **Core**, porque concentra la anticipación de renovaciones y el portafolio de suscripciones. Su papel propuesto es promover el uso recurrente del producto. Evolución: solución propia en etapa de diseño; no se afirma que el mercado carezca de alternativas. |
+| Roles del dominio | Gestionar el ciclo de vida del registro y proporcionar información para la planificación del gasto. La ejecución del cobro externo queda fuera de su responsabilidad. |
+| Comunicación entrante | **Aplicación móvil:** comandos de registrar, editar y marcar una suscripción como cancelada; consultas del portafolio y detalle. **Premium & Billing:** respuesta a la consulta de nivel y límite del plan. **ExchangeRate-API:** respuesta de cotización traducida por un adaptador. Las respuestas externas no son eventos de negocio por sí mismas. |
+| Comunicación saliente | **Premium & Billing:** consulta de acceso antes de admitir un registro adicional. **ExchangeRate-API:** consulta de cotización USD/PEN. **Aplicación móvil:** portafolio, próxima fecha de renovación y datos para crear o retirar el recordatorio del calendario. Eventos internos propuestos: `SubscriptionRegistered` y `SubscriptionCancelled`. No se presupone un bus de mensajes. |
+| Colaboradores y relaciones | Premium & Billing suministra las reglas de acceso; ExchangeRate-API suministra cotizaciones mediante una capa anticorrupción; el cliente móvil utiliza el contrato de la aplicación para gestionar el calendario del dispositivo. Los patrones entre contextos deben contrastarse en 2.5.2. |
+| Lenguaje ubicuo | **Suscripción:** registro de un compromiso recurrente con un tercero. **Importe original:** monto y moneda introducidos por el usuario. **Estimación en PEN:** conversión de referencia. **Próxima renovación:** fecha declarada del siguiente cargo. **Cancelada:** estado del registro dentro de CraveWallet. |
+| Decisiones y reglas | El agregado `Subscription` conserva importe, moneda, periodicidad y fecha de renovación de un registro activo. El registro pertenece a un usuario. Una suscripción cancelada se excluye del portafolio activo y deja de generar recordatorios, conservando el historial. La anticipación propuesta es de 24 horas (US12); la programación efectiva depende del permiso del dispositivo. El límite gratuito se aplica según US39, sin asignar todavía un valor numérico. |
+| Supuestos | El usuario registra y actualiza los datos de sus servicios. La conversión ayuda a planificar, pero no determina el cargo del banco. El dispositivo permite programar el recordatorio cuando el usuario autoriza el acceso. Estos supuestos requieren pruebas de uso y de integración. |
+| Métricas de verificación propuestas | Medir registros rechazados por datos inválidos, diferencias entre la fecha de renovación y el recordatorio programado, y recordatorios que quedan activos después de marcar una suscripción como cancelada. Revisar cuántos cambios en este contexto obligan a modificar Premium & Billing. No hay mediciones disponibles aún. |
+| Preguntas abiertas | ¿Cuál es el límite numérico del plan gratuito? ¿Qué pasa con registros que exceden ese límite al volver de Premium a Free? ¿Qué hora y zona horaria se usarán si el usuario solo introduce una fecha? ¿Cómo se reprograma un recordatorio cuando cambia la fecha de renovación? |
+| Trazabilidad | Historias US04–US07, US08–US13 y US39; diseño táctico 2.6.1. |
+
+##### Canvas 2. Delivery Expense Management
+
+| Campo | Contenido |
+| --- | --- |
+| Nombre | **Delivery Expense Management — Gestión de gastos de delivery.** |
+| Propósito | Permitir al usuario registrar lo que gasta en pedidos de comida, consultar el total de un período y compararlo con su límite mensual. No toma pedidos, procesa pagos ni confirma entregas de los comercios. |
+| Clasificación estratégica | **Supporting**, porque complementa la planificación de gastos sin definir el ciclo de vida de las suscripciones. Su papel propuesto es promover el seguimiento del consumo. Evolución: solución propia en etapa de diseño. |
+| Roles del dominio | Registrar gastos, mantener un presupuesto mensual y producir resúmenes de consumo. |
+| Comunicación entrante | **Aplicación móvil:** comando de registrar un gasto y actualizar el límite; consultas del historial y resumen mensual. **Google Places:** respuesta a una búsqueda de comercio, cuando se utilice esa integración. La respuesta ayuda a identificar el comercio; el importe y la fecha proceden del registro del usuario. |
+| Comunicación saliente | **Aplicación móvil:** historial, resumen mensual y advertencia de exceso. **Google Places:** solicitud de sugerencias de comercios. Eventos internos propuestos: `DeliveryExpenseRegistered` y `MonthlyLimitExceeded`. El primer evento permite actualizar el presupuesto del período correspondiente. |
+| Colaboradores y relaciones | El cliente móvil introduce y consulta gastos. Google Places proporciona información auxiliar sobre comercios. El Dashboard combina los resúmenes de gastos y suscripciones, pero esto no exige compartir sus agregados. La selección del patrón con Google Places y la relación entre contextos se revisará en 2.5.2. |
+| Lenguaje ubicuo | **Gasto de delivery:** importe que el usuario registra por un pedido. **Comercio:** negocio asociado al gasto. **Período mensual:** mes al que se atribuye el gasto. **Límite mensual:** tope elegido por el usuario. **Acumulado:** suma de los gastos del período. **Exceso:** acumulado superior al límite. |
+| Decisiones y reglas | `DeliveryExpense` conserva un gasto individual y `MonthlyBudget` mantiene el límite y acumulado de un usuario y período. El gasto se atribuye al mes de su fecha. Superar el límite produce una advertencia; no bloquea pedidos en servicios externos. US18 permite elegir un comercio del catálogo o escribirlo manualmente, de modo que Google Places no debe ser obligatorio para registrar el gasto. |
+| Supuestos | El usuario consigna los gastos; no se cuenta con una importación automática de sus pedidos. El resumen corresponde a lo registrado, no necesariamente a todo el consumo real. La lectura local sin conexión es una propuesta técnica que requiere comprobar la sincronización. |
+| Métricas de verificación propuestas | Comparar el acumulado mensual con la suma de gastos del mismo usuario y período; contar registros duplicados después de sincronizar y gastos que no se pueden registrar cuando falla la búsqueda de comercios. No hay mediciones disponibles aún. |
+| Preguntas abiertas | ¿Cómo se corrige o elimina un gasto y se recalcula el acumulado? ¿Cómo se evita duplicar un registro al recuperar la conexión? ¿Se advierte una sola vez al superar el límite o después de cada nuevo gasto? ¿Qué ocurre si se reduce el límite por debajo del acumulado? |
+| Trazabilidad | Epic EP06, US18 y TS05; diseño táctico 2.6.2. |
+
+##### Canvas 3. Premium & Billing
+
+| Campo | Contenido |
+| --- | --- |
+| Nombre | **Premium & Billing — Plan Premium y facturación de CraveWallet.** |
+| Propósito | Mantener el nivel de acceso a CraveWallet y su vigencia a partir del resultado confirmado de la facturación del propio producto. El plan de CraveWallet es distinto de las suscripciones a servicios externos que registra Subscription Management. |
+| Clasificación estratégica | **Generic**, porque la facturación y los niveles de acceso son capacidades comunes. Su papel propuesto es generar ingresos para CraveWallet. Evolución: integración de un proveedor existente con reglas de acceso propias; aún en etapa de diseño. |
+| Roles del dominio | Gestionar la vigencia del plan, interpretar el resultado de facturación y suministrar el nivel de acceso a los otros componentes. |
+| Comunicación entrante | **Aplicación móvil:** solicitud de iniciar checkout, consultar plan e historial, o solicitar la cancelación. **Stripe:** notificaciones de pago confirmado y finalización del período pagado, verificadas y traducidas por el adaptador. **Subscription Management:** consulta de nivel y límite de acceso. |
+| Comunicación saliente | **Stripe:** solicitud de checkout y operaciones de facturación previstas. **Aplicación móvil:** enlace o sesión de pago, estado del plan e historial. **Subscription Management:** respuesta de nivel y límite. Eventos internos propuestos: `PlanUpgradedToPremium` y `PlanDowngradedToFree`, conforme al diseño de 2.6.3. |
+| Colaboradores y relaciones | Stripe suministra el resultado de facturación; una capa anticorrupción lo convierte al lenguaje del plan de CraveWallet. Subscription Management consume la información de acceso. El cliente móvil presenta el flujo de pago, pero su retorno a una pantalla no prueba que el pago esté confirmado. |
+| Lenguaje ubicuo | **Plan Free:** nivel gratuito sujeto a un límite. **Plan Premium:** nivel con beneficios definidos. **Período de vigencia:** intervalo de acceso pagado. **Pago confirmado:** resultado verificado del proveedor. **Cancelación del plan:** fin de la renovación de CraveWallet; no cancela los servicios externos del usuario. |
+| Decisiones y reglas | El agregado `SubscriptionPlan` mantiene el nivel Free/Premium y la vigencia. La confirmación verificada activa Premium; abrir checkout no lo activa. Procesar dos veces una misma confirmación no debe duplicar la transición. TS06 propone conservar el acceso hasta el fin del período pagado y volver a Free tras la notificación correspondiente. Las pruebas con Stripe deben identificarse como operaciones de prueba y no como ingresos reales. |
+| Supuestos | El modelo propuesto utiliza facturación recurrente. El precio S/ 9.90 y los beneficios son propuestas comerciales pendientes de validación. SP05 investiga el flujo y SP06 debe comprobarlo mediante un prototipo; no se dispone aquí de resultados que acrediten su ejecución. |
+| Métricas de verificación propuestas | Contar activaciones sin pago confirmado, discrepancias entre vigencia y acceso, y transiciones duplicadas al repetir una notificación de prueba. Registrar el tiempo entre confirmación y actualización del plan. No hay mediciones disponibles aún. |
+| Preguntas abiertas | ¿Qué acceso se mantiene ante un pago fallido? ¿Cómo se recuperan notificaciones que no llegaron? ¿Cómo se administran reembolsos? ¿Qué ocurre con los registros existentes al volver a Free? ¿Cuál es la política comercial definitiva de precio y beneficios? |
+| Trazabilidad | Epic EP07, US39, TS06 y SP05–SP06; diseño táctico 2.6.3. |
+
+Los límites permiten distinguir tres conceptos: un compromiso recurrente con un tercero, un gasto puntual de delivery y el acceso pagado a CraveWallet. Compartir el identificador del usuario o mostrar datos en el mismo Dashboard no basta para concluir que los contextos deban compartir el modelo. Las preguntas abiertas deben resolverse con el equipo y reflejarse después en las historias, los flujos y el Context Map.
 
 ### 2.5.2. Context Mapping
 

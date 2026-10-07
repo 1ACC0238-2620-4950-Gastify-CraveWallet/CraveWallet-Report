@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1610" viewBox="0 0 1800 1610">
+<rect width="100%" height="100%" fill="white"/>
+<metadata>Gastify. Adapted from DDD Crew Bounded Context Canvas. CC BY-SA 4.0.</metadata>
+<text x="42" y="28" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="#172b40">CraveWallet | Bounded Context Canvases</text>
+<text x="42" y="82" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="#172b40">Síntesis de la propuesta de diseño. Detalle y trazabilidad: sección 2.5.1.3.</text>
+<rect x="42" y="140" width="556" height="100" fill="#eaf0f6" stroke="#c7d0da" stroke-width="2"/>
+<text x="60" y="156" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#172b40">Subscription Management</text>
+<text x="60" y="197" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Gestión de suscripciones</text>
+<rect x="42" y="240" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="60" y="254" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Propósito</text>
+<text x="60" y="293" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Anticipar renovaciones y conocer el importe</text>
+<text x="60" y="321" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">estimado en soles de los compromisos</text>
+<text x="60" y="349" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">recurrentes.</text>
+<rect x="42" y="418" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="60" y="432" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Clasificación y roles</text>
+<text x="60" y="471" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Core. Gestiona el ciclo de vida del</text>
+<text x="60" y="499" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">registro y proporciona información para</text>
+<text x="60" y="527" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">planificar gastos.</text>
+<rect x="42" y="596" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="60" y="610" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Entradas / colaboradores</text>
+<text x="60" y="649" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Móvil: registrar, editar, marcar cancelada</text>
+<text x="60" y="677" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">y consultar. Premium: nivel y límite. API:</text>
+<text x="60" y="705" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">cotización traducida.</text>
+<rect x="42" y="774" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="60" y="788" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Salidas / colaboradores</text>
+<text x="60" y="827" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Premium: consultar acceso. API: solicitar</text>
+<text x="60" y="855" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">cotización. Móvil: portafolio y datos del</text>
+<text x="60" y="883" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">recordatorio.</text>
+<rect x="42" y="952" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="60" y="966" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Lenguaje y reglas</text>
+<text x="60" y="1005" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Suscripción, importe original, renovación.</text>
+<text x="60" y="1033" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Cancelar el registro conserva su historial;</text>
+<text x="60" y="1061" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">no cancela el servicio externo.</text>
+<rect x="42" y="1130" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="60" y="1144" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Supuestos y verificación</text>
+<text x="60" y="1183" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Datos introducidos por el usuario.</text>
+<text x="60" y="1211" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Comprobar fechas del recordatorio y su</text>
+<text x="60" y="1239" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">retiro al cancelar; aún sin mediciones.</text>
+<rect x="42" y="1308" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="60" y="1322" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Preguntas abiertas</text>
+<text x="60" y="1361" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Número máximo en Free; exceso al dejar</text>
+<text x="60" y="1389" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Premium; hora de renovación y</text>
+<text x="60" y="1417" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">reprogramación del aviso.</text>
+<rect x="622" y="140" width="556" height="100" fill="#eaf0f6" stroke="#c7d0da" stroke-width="2"/>
+<text x="640" y="156" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#172b40">Delivery Expense Management</text>
+<text x="640" y="197" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Gestión de gastos de delivery</text>
+<rect x="622" y="240" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="640" y="254" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Propósito</text>
+<text x="640" y="293" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Registrar gastos de pedidos y comparar el</text>
+<text x="640" y="321" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">acumulado del período con el límite mensual</text>
+<text x="640" y="349" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">del usuario.</text>
+<rect x="622" y="418" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="640" y="432" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Clasificación y roles</text>
+<text x="640" y="471" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Supporting. Registra gastos, mantiene el</text>
+<text x="640" y="499" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">presupuesto y produce resúmenes del</text>
+<text x="640" y="527" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">consumo.</text>
+<rect x="622" y="596" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="640" y="610" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Entradas / colaboradores</text>
+<text x="640" y="649" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Móvil: registrar gasto, cambiar límite y</text>
+<text x="640" y="677" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">consultar. Google Places: sugerencias de</text>
+<text x="640" y="705" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">comercios cuando se utilice.</text>
+<rect x="622" y="774" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="640" y="788" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Salidas / colaboradores</text>
+<text x="640" y="827" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Móvil: historial, resumen y advertencia.</text>
+<text x="640" y="855" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Google Places: búsqueda. Internos: gasto</text>
+<text x="640" y="883" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">registrado y límite superado.</text>
+<rect x="622" y="952" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="640" y="966" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Lenguaje y reglas</text>
+<text x="640" y="1005" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Gasto, comercio, período y límite. El</text>
+<text x="640" y="1033" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">exceso genera una advertencia; el comercio</text>
+<text x="640" y="1061" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">también puede ingresarse manualmente.</text>
+<rect x="622" y="1130" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="640" y="1144" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Supuestos y verificación</text>
+<text x="640" y="1183" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Consumo registrado manualmente. Comparar</text>
+<text x="640" y="1211" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">sumas del mes y detectar duplicados tras</text>
+<text x="640" y="1239" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">sincronizar; aún sin mediciones.</text>
+<rect x="622" y="1308" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="640" y="1322" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Preguntas abiertas</text>
+<text x="640" y="1361" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Corrección de gastos; sincronización;</text>
+<text x="640" y="1389" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">repetición del aviso de exceso; reducción</text>
+<text x="640" y="1417" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">del límite mensual.</text>
+<rect x="1202" y="140" width="556" height="100" fill="#eaf0f6" stroke="#c7d0da" stroke-width="2"/>
+<text x="1220" y="156" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#172b40">Premium &amp; Billing</text>
+<text x="1220" y="197" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Plan y facturación de CraveWallet</text>
+<rect x="1202" y="240" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="1220" y="254" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Propósito</text>
+<text x="1220" y="293" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Mantener el nivel de acceso y la vigencia</text>
+<text x="1220" y="321" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">del plan del propio producto a partir de</text>
+<text x="1220" y="349" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">pagos confirmados.</text>
+<rect x="1202" y="418" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="1220" y="432" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Clasificación y roles</text>
+<text x="1220" y="471" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Generic. Generación de ingresos propuesta.</text>
+<text x="1220" y="499" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Gestiona la vigencia y suministra las</text>
+<text x="1220" y="527" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">reglas de acceso.</text>
+<rect x="1202" y="596" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="1220" y="610" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Entradas / colaboradores</text>
+<text x="1220" y="649" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Móvil: checkout, consulta y cancelación.</text>
+<text x="1220" y="677" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Stripe: notificaciones verificadas.</text>
+<text x="1220" y="705" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Suscripciones: consulta de acceso.</text>
+<rect x="1202" y="774" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="1220" y="788" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Salidas / colaboradores</text>
+<text x="1220" y="827" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Stripe: solicitudes de facturación. Móvil:</text>
+<text x="1220" y="855" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">sesión de pago y estado. Suscripciones:</text>
+<text x="1220" y="883" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">nivel y límite del plan.</text>
+<rect x="1202" y="952" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="1220" y="966" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Lenguaje y reglas</text>
+<text x="1220" y="1005" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Free, Premium, vigencia, pago confirmado.</text>
+<text x="1220" y="1033" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">El checkout no activa Premium. Una</text>
+<text x="1220" y="1061" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">confirmación repetida no duplica la</text>
+<text x="1220" y="1089" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">transición.</text>
+<rect x="1202" y="1130" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="1220" y="1144" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Supuestos y verificación</text>
+<text x="1220" y="1183" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Precio y beneficios por validar; SP05–SP06</text>
+<text x="1220" y="1211" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">sin resultados disponibles. Medir</text>
+<text x="1220" y="1239" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">discrepancias y transiciones duplicadas.</text>
+<rect x="1202" y="1308" width="556" height="178" fill="#ffffff" stroke="#c7d0da" stroke-width="2"/>
+<text x="1220" y="1322" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#172b40">Preguntas abiertas</text>
+<text x="1220" y="1361" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Pago fallido; recuperación de</text>
+<text x="1220" y="1389" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">notificaciones; reembolsos; regreso a Free;</text>
+<text x="1220" y="1417" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">política comercial definitiva.</text>
+<text x="42" y="1510" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Fuente: Gastify; adaptación de DDD Crew, The Bounded Context Canvas (s. f.).</text>
+<text x="42" y="1551" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#172b40">Licencia del diagrama adaptado: CC BY-SA 4.0. Métricas propuestas; sin resultados medidos.</text>
+</svg>

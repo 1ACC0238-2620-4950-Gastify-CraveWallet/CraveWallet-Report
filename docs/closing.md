@@ -57,6 +57,8 @@ Tetteh, F. K., & Owusu Kwateng, K. (2025). The pathways from digital financial l
 
 ## Métodos y técnicas de ingeniería de software
 
+DDD Crew. (s. f.). *The Bounded Context Canvas*. https://github.com/ddd-crew/bounded-context-canvas
+
 Gothelf, J. (2021). *How to use the Lean UX Canvas*. https://jeffgothelf.com/blog/how-to-use-the-lean-ux-canvas/
 
 Gothelf, J., & Seiden, J. (2021). *Lean UX: Creating great products with agile teams* (3.a ed.). O'Reilly Media.
