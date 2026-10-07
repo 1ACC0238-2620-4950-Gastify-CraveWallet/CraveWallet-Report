@@ -1036,22 +1036,298 @@ La siguiente tabla documenta las adaptaciones específicas de cada sección al b
 
 ### 3.1.4. Mobile Applications UX/UI Design
 
+La aplicación móvil es el lugar donde CraveWallet cumple su promesa: que el usuario vea en una sola cifra, en soles, cuánto le cuestan sus suscripciones y que se entere de cada cobro antes de que ocurra. Su interfaz se diseñó en cinco artefactos que se leen en orden: los wireframes fijan la estructura de cada pantalla (3.1.4.1), los wireflows las unen en recorridos (3.1.4.2), los mock-ups aplican el Design System de la sección 3.1.1 (3.1.4.3), los user flows muestran las decisiones, alternativas y errores detrás de cada recorrido (3.1.4.4) y el prototipo permite recorrer los tres objetivos de usuario con el dedo (3.1.4.5).
+
+Son 31 pantallas de 360 x 800 dp, la clase compacta de las Mobile Style Guidelines (sección 3.1.1.3), para Android con Material Design 3. Cada pantalla lleva un código formado por la letra de su área y un número; el código se conserva en todos los artefactos, de modo que una pantalla se sigue del wireframe al mock-up, al wireflow, al user flow y al prototipo sin perderla. Las áreas corresponden a los cuatro destinos de la barra de navegación inferior definidos en la sección 3.1.2.5, más el flujo de alta, que se abre como hoja modal desde el botón Agregar:
+
+| Letra | Área | Destino en la navegación | Pantallas |
+| --- | --- | --- | --- |
+| **I** | Inicio | Inicio (`home`) | I1 a I4 |
+| **G** | Gastos | Gastos (`receipt_long`) | G1 a G3 |
+| **A** | Agregar suscripción | Bottom sheet desde el FAB Agregar | A1 a A9 |
+| **N** | Análisis | Análisis (`bar_chart`, Premium) | N1 a N6 |
+| **P** | Perfil y recordatorios | Perfil (`person`) | P1 a P9 |
+
+Los tres objetivos de usuario (User Goals) que ordenan el diseño salen de los hallazgos del Needfinding: el registro sin fricción, la conversión a soles y el aviso anticipado son las tres motivaciones que comparten Camila Torres y Renzo Salazar (sección 2.3.1).
+
+| User Goal | Objetivo | Persona | User Stories principales |
+| --- | --- | --- | --- |
+| **UG1** | Añadir una nueva suscripción recurrente de forma manual | Renzo Salazar | US05, US12, US14, US15, US34, US39 |
+| **UG2** | Revisar el gráfico detallado de gastos mensuales | Renzo Salazar | US08, US09, US16, US17, US21, US37 |
+| **UG3** | Configurar una alerta o notificación de pago próximo | Renzo Salazar | US12, US28, US36 |
+
+Todas las pantallas comparten los mismos datos de ejemplo, tomados de lo que Renzo contó en su entrevista (sección 2.2.2): Spotify, Max, YouTube Premium, Smart Fit y PedidosYa Plus se cobran en soles; LinkedIn Premium (USD 39.99) y Amazon Prime (USD 14.99) se cobran en dólares y se muestran convertidos con el tipo de cambio del día (S/ 3.76). LinkedIn Premium es la suscripción que Renzo olvidó cancelar después de conseguir trabajo, y por eso es el ejemplo del detalle (G3) y del hallazgo del análisis (N1). Camila Torres aparece en los estados de usuario nuevo (I2) y del plan gratuito (A9, N5), que son los que vive una estudiante con un presupuesto ajustado.
+
+El archivo de Figma se organiza en nueve páginas: **00 Portada**, **01 Design System** (variables de color, estilos de texto, componentes e íconos), **02 Wireframes**, **03 Wireflows**, **04 Mock-ups**, **05 User Flows**, **06 Prototype**, **07 Modo oscuro** y **08 Prototype · Modo oscuro**. Las pantallas de los wireframes y de los mock-ups son componentes de Figma, y los wireflows y user flows usan instancias de esos componentes al 50 %, de modo que un cambio en una pantalla se propaga a todos los diagramas. Los colores de los mock-ups están enlazados a las variables `color/*` del Design System y los textos a los estilos `Mobile/*`, por lo que la paleta y la escala tipográfica se aplican sin valores sueltos.
+
+**Enlace al archivo de Figma:** [CraveWallet – Mobile Applications UX/UI Design](https://www.figma.com/design/lIN0zLBZ4E0PmQudY5JOip/Mobile-UX-UI?node-id=1-32&t=o4MJV6YoUPiTIhVj-1)
+
 #### 3.1.4.1. Mobile Applications Wireframes
 
-[[PENDIENTE]]
+Los wireframes fijan qué hay en cada pantalla y en qué orden, sin color de marca ni imágenes, para discutir la estructura antes que la apariencia. Están en escala de grises con un solo tono oscuro para la acción principal y para la cifra que más pesa (el total mensual), y con el contenido real de cada pantalla, de modo que se lee qué dice cada título, botón y etiqueta y cuánto espacio ocupa. Los íconos se conservan porque indican qué es cada fila o cada botón. Cada lámina lleva su título y cada pantalla un pie con su código, su nombre y las User Stories que cubre.
+
+La estructura responde a la Arquitectura de la Información de la sección 3.1.2:
+
+- **Sistema de navegación.** Las pantallas de primer nivel (I1, G1, N1, P1) tienen la `NavigationBar` de cuatro destinos con las etiquetas de la sección 3.1.2.2 (Inicio, Gastos, Análisis, Perfil); el destino activo se marca con el indicador relleno, el ícono relleno y la etiqueta en negrita. Las pantallas de segundo nivel (G3, N3, P2) usan el patrón push-and-pop con la flecha de retroceso en la AppBar y conservan la barra inferior. El alta se abre como bottom sheet desde el FAB Agregar, con un botón Cerrar (X) y un indicador de tres pasos (Servicio, Detalles, Recordatorio), que es el esquema secuencial definido para ese flujo.
+- **Sistema de organización.** El Inicio sigue la jerarquía top-down: primero el total mensual en soles, después el cobro más próximo, los próximos cobros en un carrusel horizontal y el gasto por categoría. La lista de Gastos se ordena por próximo cobro ascendente, con búsqueda y chips de filtro deslizables (sección 3.1.2.4). El Análisis usa el esquema matricial: gráfico por mes, dona por categoría y mapa de calor categoría x mes.
+- **Sistema de etiquetado.** Los estados de suscripción (Activa, Cobro hoy, Pronto, Sin usar, Cancelada, Pendiente), las acciones (Agregar, Guardar, Descartar, Activar recordatorio, Ver Premium) y los mensajes de estado vacío son los de la sección 3.1.2.2.
+
+El diseño aplica los principios de diseño inclusivo desde esta etapa:
+
+| Principio | Cómo se resuelve en los wireframes |
+| --- | --- |
+| Objetivos táctiles suficientes | Todo elemento interactivo mide al menos 48 x 48 dp (sobre el mínimo de 44 x 44 pt): botones de ícono de 48 dp, filas de lista de 64 a 72 dp, campos de 56 dp y botones principales de 56 dp de alto a todo el ancho. Los chips de 32 dp se ubican en una franja de 48 dp de alto. |
+| Jerarquía que no depende del color | Cada estado combina ícono y texto (por ejemplo, Pronto lleva un reloj y Sin usar un ojo tachado); los campos con error llevan borde grueso, ícono de alerta y mensaje escrito; el paso actual del indicador va en negrita; los enlaces van subrayados. En escala de grises toda la información se sigue leyendo. |
+| Texto legible y escalable | Cuerpo de 14 a 16 sp, nunca menor a 11 sp, en `sp` para respetar el tamaño de fuente del sistema. |
+| Lenguaje claro | Mensajes con tuteo y sin jerga financiera, según el tono de comunicación de la sección 3.1.1.1 ("Mañana te cobran Spotify. ¿Lo dejamos pasar?"). |
+| Salidas en todas las pantallas | Toda pantalla tiene un camino de vuelta: flecha Atrás, Cerrar (X), Cancelar, Ahora no o un destino de la barra inferior. |
+
+Las 31 pantallas se agrupan en diez láminas:
+
+| Lámina | Pantallas | User Stories |
+| --- | --- | --- |
+| 1. Inicio y Gastos | I1 Inicio, I2 Inicio sin gastos, G1 Gastos, G2 Deslizar una tarjeta | US04, US05, US08, US09, US10, US15, US17, US27, US35 |
+| 2. Detalle y alta (paso 1) | G3 Detalle de la suscripción, A1 Elegir el servicio, A2 Ingresar los datos | US04, US05, US11, US15, US16, US29, US37 |
+| 3. Alta: validación, moneda y vista previa | A3 Campos obligatorios vacíos, A4 Elegir la moneda, A5 Vista previa en soles | US05, US15, US16, US34 |
+| 4. Alta: recordatorio y resultado | A6 Activar el recordatorio, A7 Permiso de calendario, I3 Inicio con la nueva suscripción, I4 Guardado sin calendario | US05, US12, US14, US17, US36 |
+| 5. Alta: salidas alternas | A8 Descartar el alta, A9 Límite del plan gratuito | US05, US21, US39 |
+| 6. Análisis (1 de 2) | N1 Análisis mensual, N2 Mes seleccionado, N3 Detalle de una categoría | US08, US09, US15, US17, US37 |
+| 7. Análisis (2 de 2) | N4 Análisis sin datos, N5 Análisis solo para Premium, N6 Análisis sin conexión | US16, US21, US39 |
+| 8. Perfil y recordatorios (1 de 3) | P1 Perfil, P2 Recordatorios, P3 Permiso de notificaciones, P4 Notificaciones activadas | US03, US12, US28, US33, US36 |
+| 9. Perfil y recordatorios (2 de 3) | P5 Elegir la anticipación, P6 Anticipación elegida, P7 Cambios por guardar | US12, US28 |
+| 10. Perfil y recordatorios (3 de 3) | P8 Recordatorios guardados, P9 Notificaciones bloqueadas | US28, US36 |
+
+![Wireframes 1, Inicio y Gastos](images/chapter_3/mobile_wireframe_01_inicio_gastos.png)
+
+*Figura 39. Wireframes de la aplicación móvil: Inicio y Gastos (I1, I2, G1, G2).*
+
+![Wireframes 2, detalle y alta](images/chapter_3/mobile_wireframe_02_detalle_alta.png)
+
+*Figura 40. Wireframes de la aplicación móvil: detalle y alta, paso 1 (G3, A1, A2).*
+
+![Wireframes 3, validación y moneda](images/chapter_3/mobile_wireframe_03_alta_validacion.png)
+
+*Figura 41. Wireframes de la aplicación móvil: validación, moneda y vista previa en soles (A3, A4, A5).*
+
+![Wireframes 4, recordatorio y resultado](images/chapter_3/mobile_wireframe_04_alta_recordatorio.png)
+
+*Figura 42. Wireframes de la aplicación móvil: recordatorio, permiso y resultado del alta (A6, A7, I3, I4).*
+
+![Wireframes 5, salidas alternas](images/chapter_3/mobile_wireframe_05_alta_alternas.png)
+
+*Figura 43. Wireframes de la aplicación móvil: salidas alternas del alta (A8, A9).*
+
+![Wireframes 6, análisis 1](images/chapter_3/mobile_wireframe_06_analisis_1.png)
+
+*Figura 44. Wireframes de la aplicación móvil: Análisis, 1 de 2 (N1, N2, N3).*
+
+![Wireframes 7, análisis 2](images/chapter_3/mobile_wireframe_07_analisis_2.png)
+
+*Figura 45. Wireframes de la aplicación móvil: estados alternos del Análisis (N4, N5, N6).*
+
+![Wireframes 8, perfil 1](images/chapter_3/mobile_wireframe_08_perfil_1.png)
+
+*Figura 46. Wireframes de la aplicación móvil: Perfil y recordatorios, 1 de 3 (P1, P2, P3, P4).*
+
+![Wireframes 9, perfil 2](images/chapter_3/mobile_wireframe_09_perfil_2.png)
+
+*Figura 47. Wireframes de la aplicación móvil: Perfil y recordatorios, 2 de 3 (P5, P6, P7).*
+
+![Wireframes 10, perfil 3](images/chapter_3/mobile_wireframe_10_perfil_3.png)
+
+*Figura 48. Wireframes de la aplicación móvil: Perfil y recordatorios, 3 de 3 (P8, P9).*
+
+Cada área se resolvió con una decisión de estructura que se puede defender con lo que se ve en pantalla:
+
+| Área | Decisión de estructura |
+| --- | --- |
+| **I. Inicio** | Arriba va la cifra que el usuario necesita primero (el total mensual en soles, con el tipo de cambio y su hora de actualización) y, debajo, lo que requiere acción: el cobro de las próximas 24 horas. El carrusel horizontal de próximos cobros permite ver cuatro cargos sin bajar en la pantalla, y la última tarjeta lleva a la lista completa. Al final, un hallazgo de ahorro ("Smart Fit: sin uso hace 34 días") cubre US35. Sin gastos (I2), la pantalla ofrece una sola salida: agregar la primera suscripción. |
+| **G. Gastos** | La búsqueda y los chips de filtro están fijos sobre la lista; la lista se desplaza sola. Cada tarjeta muestra el monto en soles y, si se factura en otra moneda, el monto original debajo (US15). El gesto de deslizar a la izquierda revela "Sin usar" (G2), como define la sección 3.1.1.3. El detalle (G3) explica el tipo de cambio usado, la variación frente al cobro anterior y el historial de cobros con su tipo de cambio (US16, US29, US37). |
+| **A. Alta** | Un asistente de tres pasos en una hoja modal, con una decisión principal por pantalla y el botón de avance fijo al pie. El catálogo (A1) resuelve los servicios frecuentes y "Ingresar manualmente" lleva al formulario (A2). Los campos obligatorios se marcan con asterisco desde el inicio, y la vista previa en soles aparece en cuanto se elige una moneda extranjera (A5, US34). El paso 3 confirma lo que se va a guardar antes de pedir el permiso del calendario (A6, A7). |
+| **N. Análisis** | El selector de periodo, la cifra del periodo con su variación y el gráfico de barras ocupan la primera vista; tocar una barra cambia el mes resumido (N2). Debajo, el hallazgo del mes explica el salto de agosto (LinkedIn Premium), la dona y la lista de categorías llevan al detalle de cada una (N3) y el mapa de calor cruza categoría y mes. |
+| **P. Perfil y recordatorios** | Los recordatorios se separan en canales (calendario y push), anticipación y la lista de próximos avisos (US28), para que el usuario vea el efecto de cada cambio antes de guardarlo. El botón Guardar cambios solo se habilita cuando hay algo que guardar (P7). |
 
 #### 3.1.4.2. Mobile Applications Wireflow Diagrams
 
-[[PENDIENTE]]
+Un wireflow combina wireframes con un diagrama de flujo: miniaturas de baja fidelidad unidas por flechas que indican qué hace la persona para pasar de una pantalla a la siguiente. Sirve para comprobar que un recorrido funciona como secuencia y no solo que cada pantalla se vea bien.
+
+Los tres wireflows corresponden a los User Goals UG1, UG2 y UG3. Usan instancias de los wireframes al 50 %. Cada uno lleva en su encabezado la persona, el objetivo y las historias que cubre, y debajo de cada miniatura el código, el nombre y las historias de la pantalla. Cada flecha lleva una etiqueta con el componente que dispara el cambio (por ejemplo, "Toca Ingresar manualmente" o "Elige USD" en el menú desplegable de Moneda). La línea continua es el camino principal y la línea punteada es una alternativa, un error o un retorno; las píldoras punteadas indican a qué pantalla se vuelve y las píldoras sólidas marcan el objetivo cumplido.
+
+| Wireflow | Persona | Recorrido principal | Alternativas y retornos |
+| --- | --- | --- | --- |
+| **1. Agregar una suscripción manualmente** | Renzo Salazar | I1, A1, A2, A4, A5, A6, A7, I3 | Plan gratuito con 5 de 5 (A9); Continuar con campos vacíos (A3); calendario no permitido (I4); Cerrar o Descartar (A8). |
+| **2. Revisar el gráfico de gastos mensuales** | Renzo Salazar | I1, N1, N2, N3 | Plan gratuito (N5); sin un mes de datos (N4); sin conexión (N6). |
+| **3. Configurar una alerta de pago próximo** | Renzo Salazar | I1, P1, P2, P3, P4, P5, P6, P7, P8 | No permitir notificaciones (P9) y volver con Abrir ajustes; Cancelar la hoja de anticipación. |
+
+![Wireflow 1, agregar una suscripción manualmente](images/chapter_3/mobile_wireflow_ug1.png)
+
+*Figura 49. Wireflow del User Goal 1: añadir una nueva suscripción recurrente de forma manual.*
+
+![Wireflow 2, revisar el gráfico de gastos](images/chapter_3/mobile_wireflow_ug2.png)
+
+*Figura 50. Wireflow del User Goal 2: revisar el gráfico detallado de gastos mensuales.*
+
+![Wireflow 3, configurar una alerta](images/chapter_3/mobile_wireflow_ug3.png)
+
+*Figura 51. Wireflow del User Goal 3: configurar una alerta o notificación de pago próximo.*
 
 #### 3.1.4.3. Mobile Applications Mock-ups
 
-[[PENDIENTE]]
+Los mock-ups son los wireframes con el Design System de la sección 3.1.1 aplicado: la paleta 60-30-10 (fondos neutros, azul primario `#3B4FD8` para la estructura y naranja `#F97316` reservado para el FAB y las alertas de cobro), Poppins para títulos y montos, Inter para cuerpo y datos, la retícula de 8 dp, los radios de 4 dp (chips y etiquetas), 8 dp (campos y botones compactos), 16 dp (tarjetas) y 24 dp (hojas modales y diálogos), los íconos Material Symbols Rounded y las elevaciones 1 y 3. Los componentes siguen Material Design 3: `NavigationBar`, top app bar, FAB extendido, bottom sheet, diálogo, campos outlined, chips de filtro, segmented button, switch y snackbar.
+
+![Design System aplicado a la app móvil](images/chapter_3/mobile_design_system.png)
+
+*Figura 52. Tokens de color, escala tipográfica y componentes del Design System aplicados a la aplicación móvil.*
+
+El contraste se verificó con la fórmula de WCAG 2.1 para cada par de color que aparece en las pantallas. Dos decisiones se tomaron para cumplir el nivel AA sin salir de la paleta:
+
+| Par de colores | Contraste | Uso | Decisión |
+| --- | --- | --- | --- |
+| `#0F172A` sobre `#F8FAFC` | 17.1:1 (AAA) | Texto principal | Se usa en todo texto sobre fondos claros y contenedores tenues. |
+| `#FFFFFF` sobre `#3B4FD8` | 6.4:1 (AA) | Botones primarios, tarjeta del total | Se mantiene. |
+| `#64748B` sobre `#FFFFFF` | 4.8:1 (AA) | Texto secundario, placeholders | Solo sobre blanco o `#F8FAFC`; sobre `#EEF2F7` baja a 4.2:1, por eso ahí se usa `#0F172A`. |
+| `#FFFFFF` sobre `#F97316` | 2.8:1 (no cumple) | FAB Agregar | El ícono y la etiqueta del FAB van en `#0F172A` (6.4:1, AA). |
+| `#EF4444` sobre `#FFFFFF` | 3.8:1 (solo no textual) | Errores de formulario | El rojo se usa en bordes e íconos (contraste no textual ≥ 3:1) y el mensaje de error se escribe en `#0F172A`. Lo mismo se aplica a `success`, `warning` e `info` en las etiquetas de estado. |
+
+Las mismas diez láminas de los wireframes se presentan en alta fidelidad:
+
+![Mock-ups 1, Inicio y Gastos](images/chapter_3/mobile_mockup_01_inicio_gastos.png)
+
+*Figura 53. Mock-ups de la aplicación móvil: Inicio y Gastos (I1, I2, G1, G2).*
+
+![Mock-ups 2, detalle y alta](images/chapter_3/mobile_mockup_02_detalle_alta.png)
+
+*Figura 54. Mock-ups de la aplicación móvil: detalle y alta, paso 1 (G3, A1, A2).*
+
+![Mock-ups 3, validación y moneda](images/chapter_3/mobile_mockup_03_alta_validacion.png)
+
+*Figura 55. Mock-ups de la aplicación móvil: validación, moneda y vista previa en soles (A3, A4, A5).*
+
+![Mock-ups 4, recordatorio y resultado](images/chapter_3/mobile_mockup_04_alta_recordatorio.png)
+
+*Figura 56. Mock-ups de la aplicación móvil: recordatorio, permiso y resultado del alta (A6, A7, I3, I4).*
+
+![Mock-ups 5, salidas alternas](images/chapter_3/mobile_mockup_05_alta_alternas.png)
+
+*Figura 57. Mock-ups de la aplicación móvil: salidas alternas del alta (A8, A9).*
+
+![Mock-ups 6, análisis 1](images/chapter_3/mobile_mockup_06_analisis_1.png)
+
+*Figura 58. Mock-ups de la aplicación móvil: Análisis, 1 de 2 (N1, N2, N3).*
+
+![Mock-ups 7, análisis 2](images/chapter_3/mobile_mockup_07_analisis_2.png)
+
+*Figura 59. Mock-ups de la aplicación móvil: estados alternos del Análisis (N4, N5, N6).*
+
+![Mock-ups 8, perfil 1](images/chapter_3/mobile_mockup_08_perfil_1.png)
+
+*Figura 60. Mock-ups de la aplicación móvil: Perfil y recordatorios, 1 de 3 (P1, P2, P3, P4).*
+
+![Mock-ups 9, perfil 2](images/chapter_3/mobile_mockup_09_perfil_2.png)
+
+*Figura 61. Mock-ups de la aplicación móvil: Perfil y recordatorios, 2 de 3 (P5, P6, P7).*
+
+![Mock-ups 10, perfil 3](images/chapter_3/mobile_mockup_10_perfil_3.png)
+
+*Figura 62. Mock-ups de la aplicación móvil: Perfil y recordatorios, 3 de 3 (P8, P9).*
+
+##### Modo oscuro
+
+La aplicación también se diseñó en modo oscuro, porque Android aplica el tema del sistema y buena parte del segmento revisa sus gastos de noche. La Style Guide de la sección 3.1.1 solo define el modo claro, así que el modo oscuro se construyó sobre los mismos tokens, con estas reglas:
+
+- **Mismo nombre, otro valor.** Cada token `color/*` tiene un valor para el modo *Light* y otro para el modo *Dark* de la colección de variables de Figma. Las pantallas oscuras son las mismas pantallas con el modo *Dark* aplicado, sin colores escritos a mano. Si el plan de Figma no admite más de un modo, el plugin crea una segunda colección con los valores oscuros.
+- **Se conserva el matiz y se ajusta la luminosidad.** Los fondos pasan a la gama azul pizarra del texto principal (`#0B1120`, `#151E31`, `#1E293B`). Los colores que funcionan como texto o como acción se aclaran: el primario pasa a `#AAB4FF` con texto `#0A1172` encima, y el naranja de acento a `#FB923C`. Así los botones primarios y el FAB siguen siendo los elementos más visibles de la pantalla, como en Material Design 3.
+- **Elevación por tono.** Las tarjetas se separan del fondo por un tono más claro de superficie y no solo por la sombra, que casi no se ve sobre fondos oscuros. El scrim de diálogos y hojas modales sube al 60 % de opacidad.
+- **Contraste verificado.** Todos los pares de texto y fondo cumplen WCAG AA, con un mínimo de 5.7:1. A diferencia del modo claro, los colores semánticos (`success`, `warning`, `error`, `info`) también alcanzan 6:1 o más como texto sobre `#151E31`.
+
+| Token | Claro | Oscuro | Par verificado en oscuro |
+| --- | --- | --- | --- |
+| `color/background` | `#F8FAFC` | `#0B1120` | `#F1F5F9` sobre `#0B1120`: 17.2:1 |
+| `color/surface` | `#FFFFFF` | `#151E31` | `#F1F5F9` sobre `#151E31`: 15.2:1 |
+| `color/on-surface-variant` | `#64748B` | `#94A3B8` | Sobre `#151E31`: 6.5:1 |
+| `color/primary` | `#3B4FD8` | `#AAB4FF` | Sobre `#151E31`: 8.5:1; `#0A1172` sobre `#AAB4FF`: 8.0:1 |
+| `color/primary-container` | `#E0E4FF` | `#2A3AA8` | `#E0E4FF` sobre `#2A3AA8`: 7.4:1 |
+| `color/accent` | `#F97316` | `#FB923C` | `#0F172A` sobre `#FB923C`: 7.9:1 |
+| `color/error` | `#EF4444` | `#F87171` | Sobre `#151E31`: 6.0:1 |
+
+![Design System en modo oscuro](images/chapter_3/mobile_design_system_dark.png)
+
+*Figura 63. Tokens de color en modo oscuro con su contraste WCAG, escala tipográfica y componentes.*
+
+![Mock-ups en modo oscuro, pantallas clave](images/chapter_3/mobile_mockup_dark_clave.png)
+
+*Figura 64. Mock-ups en modo oscuro de una pantalla por área: Inicio, Gastos, alta con vista previa en soles, Análisis y Recordatorios (I1, G1, A5, N1, P4).*
+
+Las 31 pantallas, en las mismas diez láminas, están en modo oscuro en la página **07 Modo oscuro** del archivo de Figma.
 
 #### 3.1.4.4. Mobile Applications User Flow Diagrams
 
-[[PENDIENTE]]
+Los user flows recrean los recorridos de los wireflows con las pantallas de alta fidelidad y hacen explícitas las decisiones que los desvían. Cada decisión se dibuja como un rombo con su pregunta; de él salen dos flechas etiquetadas (Sí y No). La notación es la misma en los tres diagramas: el camino feliz va con flecha continua verde, los caminos alternos con flecha punteada ámbar y los errores con flecha punteada roja; las píldoras punteadas indican a qué pantalla se vuelve y las píldoras verdes marcan el objetivo cumplido. El camino feliz se distingue también por el trazo continuo, de modo que el diagrama no depende solo del color.
+
+| User flow | Decisiones | Caminos alternos (unhappy paths) |
+| --- | --- | --- |
+| **1. Agregar una suscripción manualmente** | ¿Plan gratuito con 5 de 5? · ¿Campos obligatorios completos? · ¿Permite el calendario? | **Error de validación:** si el usuario toca Continuar con campos vacíos, A3 marca los cuatro campos obligatorios con borde rojo, ícono y mensaje ("Ingresa un monto mayor a 0") y un aviso resume cuántos faltan. **Límite del plan gratuito:** A9 explica el límite de 5 suscripciones y ofrece Premium o volver. **Permiso denegado:** la suscripción se guarda igual y se avisa que llegará solo por notificación (I4). **Descartar:** A8 pide confirmación antes de perder los datos. |
+| **2. Revisar el gráfico de gastos mensuales** | ¿Es Premium? · ¿Tiene un mes de datos? · ¿Hay conexión? | **Empty state:** sin datos suficientes, N4 muestra un gráfico fantasma con el mensaje "Registra al menos un mes de gastos para ver tu análisis" y el botón Ir a Gastos. **Plan gratuito:** N5 deja ver el gráfico desenfocado y explica qué incluye Premium por S/ 9.90 al mes. **Sin conexión:** N6 muestra los datos guardados con un aviso y el botón Reintentar. |
+| **3. Configurar una alerta de pago próximo** | ¿Permite las notificaciones? · ¿Aplica el cambio? | **Permiso bloqueado:** si el usuario no permite las notificaciones, P9 lo explica, mantiene activo el evento de calendario y ofrece Abrir ajustes. **Cancelar:** la hoja de anticipación se cierra con Cancelar o deslizando hacia abajo sin cambiar nada. |
+
+![User flow 1, agregar una suscripción manualmente](images/chapter_3/mobile_userflow_ug1.png)
+
+*Figura 65. User flow del User Goal 1 con su camino feliz, caminos alternos y error de validación.*
+
+![User flow 2, revisar el gráfico de gastos](images/chapter_3/mobile_userflow_ug2.png)
+
+*Figura 66. User flow del User Goal 2 con sus estados alternos: plan gratuito, sin datos (empty state) y sin conexión.*
+
+![User flow 3, configurar una alerta](images/chapter_3/mobile_userflow_ug3.png)
+
+*Figura 67. User flow del User Goal 3 con el permiso de notificaciones denegado y la cancelación del cambio.*
 
 #### 3.1.4.5. Mobile Applications Prototyping
 
-[[PENDIENTE]]
+El prototipo se armó en la página **06 Prototype** del archivo de Figma con los 31 mock-ups como frames de 360 x 800 dp y 186 interacciones configuradas en la pestaña Prototype. Es completamente navegable: una persona de prueba puede completar los tres User Goals desde el Inicio sin quedar en un callejón sin salida, porque cada pantalla tiene al menos una salida (Atrás, Cerrar, Cancelar, Ahora no o la barra inferior) y cada pantalla es alcanzable desde un punto de inicio. Ambas condiciones se verificaron automáticamente sobre la especificación del prototipo antes de generarlo.
+
+Las transiciones siguen la arquitectura de navegación espacial de la sección 3.1.2.5 y el sistema de motion de Material 3 (300 ms para pantallas, curvas ease):
+
+| Interacción | Disparador | Transición | Dónde se usa |
+| --- | --- | --- | --- |
+| Entrar a un segundo nivel | On tap | Push desde la derecha | Tarjeta de LinkedIn Premium → G3; Streaming → N3; Recordatorios → P2 |
+| Volver a un nivel superior | On tap | Back o Push hacia la derecha | Flecha Atrás de G3, N3 y P2 a P9 |
+| Cambiar de destino en la barra inferior | On tap | Dissolve (200 ms) | Inicio, Gastos, Análisis y Perfil |
+| Abrir una hoja modal | On tap | Move in desde abajo | FAB Agregar → A1; ¿Cuándo avisarte? → P5 |
+| Cerrar una hoja modal | On tap / On drag | Move out hacia abajo | Permitir → I3; Cancelar y arrastrar el tirador de P5 y P6 → P4; arrastrar el tirador de A1 → I1 |
+| Cambiar el estado de un componente | On tap | Smart animate | Continuar con campos vacíos → A3 (aparecen los errores); menú de Moneda (A4 → A5); barra de septiembre (N1 → N2); switch de notificaciones (P4 ↔ P2); opción de anticipación (P5 → P6) |
+| Deslizar una tarjeta | On drag | Smart animate | Tarjeta de Max en Gastos (G1 ↔ G2) |
+| Mostrar un diálogo | On tap | Dissolve | Activar recordatorio → A7; Descartar → A8; Notificación push → P3 |
+
+El desplazamiento se configuró por contenedor: el contenido de Inicio, Gastos, Análisis, Perfil y Recordatorios hace scroll vertical mientras la barra superior, la barra inferior y el FAB quedan fijos, y el carrusel de próximos cobros (I1) y los chips de filtro (G1) hacen scroll horizontal.
+
+El prototipo tiene ocho puntos de inicio. El primero recorre los tres User Goals desde el Inicio; los demás permiten saltar directamente a un objetivo o a un estado alterno que no ocurre con la cuenta de Renzo (usuario nuevo, plan gratuito, análisis sin datos o sin conexión):
+
+| Punto de inicio | Pantalla | Recorrido para la prueba |
+| --- | --- | --- |
+| CraveWallet · Prototipo completo (UG1, UG2 y UG3) | I1 | **UG1:** Agregar → Ingresar manualmente → Continuar (errores) → tocar un campo → USD → Continuar → Activar recordatorio → Permitir. **UG2:** Análisis → barra Sep → Streaming. **UG3:** Perfil → Recordatorios → Notificación push → Permitir → ¿Cuándo avisarte? → 3 días antes → Aplicar → Guardar cambios. |
+| UG2 · Revisar el gráfico de gastos | N1 | Recorrido del UG2. |
+| UG3 · Configurar una alerta de pago | P1 | Recorrido del UG3. |
+| Alterno · Inicio sin gastos (usuaria nueva) | I2 | Agregar mi primera suscripción. |
+| Alterno · Límite del plan gratuito | A9 | Ver Premium o Ahora no. |
+| Alterno · Análisis sin datos | N4 | Ir a Gastos. |
+| Alterno · Análisis solo para Premium | N5 | Ver Premium o Ahora no. |
+| Alterno · Análisis sin conexión | N6 | Reintentar. |
+
+El mapa resume el prototipo: las zonas con interacción tienen borde rojo punteado y las pantallas que son punto de inicio tienen borde verde.
+
+![Mapa del prototipo](images/chapter_3/mobile_prototype_map.png)
+
+*Figura 68. Mapa del prototipo de la aplicación móvil con las zonas interactivas y los puntos de inicio.*
+
+La página **08 Prototype · Modo oscuro** repite el prototipo completo con el modo *Dark* aplicado: las mismas pantallas, las mismas interacciones y los mismos ocho puntos de inicio, con el prefijo "Modo oscuro". Así, una persona de prueba puede recorrer los tres User Goals en cualquiera de los dos temas.
+
+##### Alcance y límites del prototipo
+
+Los campos de texto no aceptan escritura: al tocar un campo del formulario de alta, el prototipo completa los datos de ejemplo (Notion Plus, USD 12.00) para continuar el recorrido. Las filas que no forman parte de un User Goal (por ejemplo, Moneda de referencia o Datos de la cuenta) existen como mock-up, pero no están enlazadas. Para revisar el prototipo en el tamaño real conviene elegir el dispositivo *Android Large* (360 x 800) en la configuración de Prototype de Figma.
+
+El archivo de Figma se genera desde la especificación de pantallas versionada en el repositorio (`design/figma/`), con un plugin que crea las páginas, los componentes, las variables, los estilos y las interacciones; las láminas de este informe se exportan desde la misma especificación, de modo que el informe y el archivo de Figma no se desalinean.
+
+**Enlace al prototipo:** [CraveWallet – Prototipo móvil](https://www.figma.com/design/lIN0zLBZ4E0PmQudY5JOip/Mobile-UX-UI?node-id=1-32&t=o4MJV6YoUPiTIhVj-1)
+
+**Video del prototipo:** *(agregar el enlace al video del recorrido de los tres User Goals)*
