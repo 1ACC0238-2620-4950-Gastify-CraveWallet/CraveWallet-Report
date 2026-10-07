@@ -126,7 +126,7 @@ El tono define cómo CraveWallet "habla" al usuario en notificaciones, mensajes 
 
 #### 3.1.1.2. Web Style Guidelines
 
-Las Web Style Guidelines aplican al landing page de CraveWallet (sitio estático informativo) y a la futura aplicación web (Angular con Angular Material). Ambos productos comparten el sistema de tokens de la sección 3.1.1.1 y añaden especificaciones propias para el contexto de escritorio y navegador.
+Las Web Style Guidelines aplican al landing page de CraveWallet (sitio informativo construido con Next.js 16, React 19 y Tailwind CSS 4) y a la futura aplicación web (Angular con Angular Material). Ambos productos comparten el sistema de tokens de la sección 3.1.1.1 y añaden especificaciones propias para el contexto de escritorio y navegador.
 
 ---
 
@@ -479,7 +479,7 @@ El usuario puede cambiar el criterio de orden mediante un menú contextual (íco
 
 ##### Búsqueda en el landing page
 
-El landing page es un sitio estático de una sola página (SPA con Angular o HTML/CSS estático); no implementa búsqueda interna. La función de búsqueda en contexto web se reserva para la futura versión web de la aplicación, que replicará el sistema de filtros descrito para la app móvil.
+El landing page es un sitio de una sola página construido con Next.js y generado de forma estática; no implementa búsqueda interna. La función de búsqueda en contexto web se reserva para la futura versión web de la aplicación, que replicará el sistema de filtros descrito para la app móvil.
 
 
 #### 3.1.2.5. Navigation Systems

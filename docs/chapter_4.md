@@ -46,13 +46,13 @@ Las siguientes herramientas permiten modelar la experiencia del usuario, estable
 
 **Software Development**
 
-Las herramientas listadas a continuación conforman el entorno técnico de desarrollo del landing page y las aplicaciones de CraveWallet.
+Las herramientas listadas a continuación conforman el entorno técnico de desarrollo del landing page y del backend de CraveWallet. El landing page se construye con Next.js, React y TypeScript; el backend, con Java 21 y Spring Boot.
 
 * **GitHub:** Plataforma de alojamiento de repositorios de código fuente basada en Git. Centraliza el control de versiones, la revisión de pull requests y la integración continua del proyecto.
   | Link de referencia: | https://github.com/ |
   | --- | --- |
 
-* **Visual Studio Code:** Editor de código fuente ligero y extensible desarrollado por Microsoft. Es el IDE principal del equipo para el desarrollo del landing page y las aplicaciones web, con soporte nativo para TypeScript, React y extensiones de Tailwind CSS.
+* **Visual Studio Code:** Editor de código fuente ligero y extensible desarrollado por Microsoft. Es el IDE principal del equipo para el desarrollo del landing page, con soporte nativo para TypeScript, React y extensiones de Tailwind CSS.
   | Link de referencia: | https://code.visualstudio.com/ |
   | --- | --- |
 
@@ -60,19 +60,23 @@ Las herramientas listadas a continuación conforman el entorno técnico de desar
   | Link de referencia: | https://www.jetbrains.com/webstorm/ |
   | --- | --- |
 
+* **IntelliJ IDEA:** IDE de JetBrains para el desarrollo en Java. Es el IDE del backend: integra Maven, el soporte de Spring Boot, la ejecución de pruebas y la depuración del REST API.
+  | Link de referencia: | https://www.jetbrains.com/idea/ |
+  | --- | --- |
+
 * **HTML5:** Lenguaje de marcado estándar para la estructuración semántica del contenido web. Se emplea como base de las plantillas JSX/TSX que componen los componentes de React en el landing page.
   | Link de referencia: | https://developer.mozilla.org/es/docs/Web/HTML |
   | --- | --- |
 
-* **CSS3:** Lenguaje de estilos para la presentación visual de las interfaces. Se utiliza en combinación con Tailwind CSS para el diseño del landing page y la aplicación web.
+* **CSS3:** Lenguaje de estilos para la presentación visual de las interfaces. Se utiliza en combinación con Tailwind CSS para el diseño del landing page.
   | Link de referencia: | https://developer.mozilla.org/es/docs/Web/CSS |
   | --- | --- |
 
-* **TypeScript:** Superconjunto tipado de JavaScript que añade verificación estática de tipos. Es el lenguaje principal del proyecto, utilizado tanto en el landing page como en las aplicaciones para reducir errores en tiempo de desarrollo.
+* **TypeScript:** Superconjunto tipado de JavaScript que añade verificación estática de tipos. Es el lenguaje del landing page y permite detectar errores de tipos en tiempo de desarrollo.
   | Link de referencia: | https://www.typescriptlang.org/ |
   | --- | --- |
 
-* **React 19:** Biblioteca de JavaScript para la construcción de interfaces de usuario basadas en componentes reutilizables. Constituye la base del frontend del landing page y de la aplicación web de CraveWallet.
+* **React 19:** Biblioteca de JavaScript para la construcción de interfaces de usuario basadas en componentes reutilizables. Constituye la base de los componentes del landing page de CraveWallet.
   | Link de referencia: | https://react.dev/ |
   | --- | --- |
 
@@ -82,6 +86,30 @@ Las herramientas listadas a continuación conforman el entorno técnico de desar
 
 * **Tailwind CSS 4:** Framework de utilidades CSS que permite construir interfaces personalizadas directamente en el marcado, sin escribir hojas de estilo separadas. Se emplea para el estilizado del landing page, garantizando consistencia visual con el sistema de diseño definido en el capítulo III.
   | Link de referencia: | https://tailwindcss.com/ |
+  | --- | --- |
+
+* **Java 21:** Lenguaje del backend de CraveWallet, en su versión LTS. Se utiliza para implementar el REST API y los Bounded Contexts Subscription Management, Delivery Expense Management y Premium & Billing.
+  | Link de referencia: | https://openjdk.org/projects/jdk/21/ |
+  | --- | --- |
+
+* **Spring Boot 3:** Framework de Java sobre el que se construye el REST API. Provee la configuración automática, el servidor web embebido, Spring Web para los controladores REST y el `ApplicationEventPublisher` para los Domain Events.
+  | Link de referencia: | https://spring.io/projects/spring-boot |
+  | --- | --- |
+
+* **Spring Data JPA:** Módulo de Spring para la persistencia con JPA/Hibernate. Implementa los repositorios de la Infrastructure Layer de cada Bounded Context.
+  | Link de referencia: | https://spring.io/projects/spring-data-jpa |
+  | --- | --- |
+
+* **Maven:** Herramienta de construcción y gestión de dependencias del backend. Define las dependencias de Spring Boot y ejecuta la compilación, las pruebas y el empaquetado del REST API.
+  | Link de referencia: | https://maven.apache.org/ |
+  | --- | --- |
+
+* **PostgreSQL 16:** Base de datos relacional del backend, donde se persiste el estado de las suscripciones, los gastos de delivery y los planes de los usuarios.
+  | Link de referencia: | https://www.postgresql.org/ |
+  | --- | --- |
+
+* **Docker:** Plataforma de contenedores con la que se empaqueta el REST API como imagen para su despliegue, de acuerdo con el diagrama de despliegue de la sección 2.5.3.3.
+  | Link de referencia: | https://www.docker.com/ |
   | --- | --- |
 
 * **Vercel:** Plataforma de despliegue en la nube optimizada para proyectos Next.js. Permite publicar el landing page de forma automática al hacer merge en la rama principal, con previsualización de ramas por pull request.
@@ -105,8 +133,8 @@ Los repositorios del proyecto son:
 | Repositorio | Descripción | URL |
 | :--- | :--- | :--- |
 | `CraveWallet-Report` | Informe del proyecto en formato Markdown | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Report |
-| `cravewallet-landing` | Landing page estática (Next.js + Tailwind CSS) | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing |
-| `CraveWallet-Backend` | API RESTful del producto | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend |
+| `cravewallet-landing` | Landing page (Next.js 16, React 19, TypeScript y Tailwind CSS 4) | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing |
+| `CraveWallet-Backend` | REST API del producto (Java 21 y Spring Boot 3) | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend |
 
 ---
 
@@ -167,10 +195,12 @@ El equipo ha definido un conjunto de convenciones de estilo y nomenclatura con e
 
 Se adoptan las siguientes convenciones de capitalización según la naturaleza del elemento:
 
-* **PascalCase:** Nombres de componentes React, interfaces TypeScript y tipos (`UserProfile`, `SubscriptionCard`).
-* **camelCase:** Variables locales, parámetros de función, hooks y props (`userId`, `isLoading`, `handleSubmit`).
+* **PascalCase:** Nombres de componentes React, interfaces TypeScript, tipos y clases Java (`UserProfile`, `SubscriptionCard`, `SubscriptionController`).
+* **camelCase:** Variables locales, parámetros, métodos Java, hooks y props (`userId`, `isLoading`, `handleSubmit`, `registerSubscription`).
+* **lowercase con puntos:** Paquetes Java (`pe.gastify.cravewallet.subscriptions.domain.model`).
 * **kebab-case:** Nombres de archivos, rutas de URL, selectores CSS/Tailwind personalizados y nombres de ramas Git (`user-profile.tsx`, `feature/subscription-list`).
-* **SCREAMING_SNAKE_CASE:** Constantes globales e identificadores de entorno (`API_BASE_URL`, `MAX_SUBSCRIPTIONS`).
+* **SCREAMING_SNAKE_CASE:** Constantes globales, constantes `static final` de Java e identificadores de entorno (`API_BASE_URL`, `MAX_SUBSCRIPTIONS`).
+* **snake_case:** Tablas y columnas de PostgreSQL (`subscriptions`, `renewal_date`).
 
 ---
 
@@ -193,6 +223,17 @@ Siguiendo la *Google JavaScript Style Guide*, las directrices de MDN y la guía 
 
 ---
 
+#### Java & Spring Boot Style Guide
+
+Basado en la *Google Java Style Guide* y las guías de referencia de Spring:
+
+* **Formato:** Indentación de 4 espacios, una clase pública por archivo y llaves en la misma línea de la declaración. Los `import` se declaran de forma explícita, sin comodines (`*`).
+* **Capas:** Cada Bounded Context se organiza en los paquetes `domain`, `application`, `interfaces` e `infrastructure`, como se describe en la sección 2.6. La capa `domain` no depende de Spring ni de JPA.
+* **Spring:** Inyección de dependencias por constructor (sin `@Autowired` en atributos). Los controladores REST solo traducen peticiones a comandos o consultas y delegan en los servicios de aplicación. Los endpoints usan sustantivos en plural y kebab-case (`/api/v1/subscriptions`, `/api/v1/delivery-expenses`).
+* **Modelado:** Los Value Objects y los DTO se declaran como `record` inmutables. Las entidades JPA se mantienen separadas de las entidades de dominio y se convierten mediante mappers.
+
+---
+
 #### Gherkin Conventions
 
 Para la redacción de criterios de aceptación de las User Stories:
@@ -212,6 +253,8 @@ Para la redacción de criterios de aceptación de las User Stories:
 | JavaScript | Google JS Style Guide / MDN Web Docs |
 | React | React Docs — Thinking in React |
 | Tailwind CSS | Tailwind CSS Docs — Utility-First Fundamentals |
+| Java | Google Java Style Guide |
+| Spring Boot | Spring Boot Reference Documentation |
 | Gherkin | Gherkin Conventions for Readable Specifications |
 
 ---
