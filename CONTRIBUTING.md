@@ -202,7 +202,7 @@ necesitas marcar estados en una tabla, escríbelos con palabras.
 
 ### Tablas
 
-Solo tablas de tuberías.
+Para las tablas ordinarias se usan tuberías. El Lean UX Canvas de `docs/chapter_1.md` utiliza una tabla HTML con `id="lean-ux-canvas"` y celdas combinadas (`colspan`), para conservar la distribución de sus ocho bloques en GitHub. `config/lean-canvas.lua` adapta únicamente ese canvas al PDF.
 
 ```markdown
 | Versión | Fecha      | Autor |
@@ -216,7 +216,7 @@ cuadrícula tipo hoja de cálculo, importa desde CSV, y te devuelve el Markdown 
 formateado para pegar.
 
 > [!CAUTION]
-> Nunca uses `<table>` de HTML. Al exportar, Pandoc descarta el marcado y conserva
+> No uses `<table>` de HTML para tablas ordinarias. La excepción es el Lean UX Canvas, convertido por su filtro específico. Al exportar, Pandoc descarta el marcado y conserva
 > solo el texto, así que la tabla se convierte en párrafos sueltos, sin estructura y
 > sin ningún mensaje de error. A `<div align="center">` le pasa lo mismo con el
 > centrado.
@@ -241,8 +241,26 @@ Sin esto, una celda como las del Student Outcome sale en el PDF como un párrafo
 corrido donde el nombre de una persona aparece en mitad de la frase de otra, y no se
 distingue quién hizo qué.
 
-`<br>` es la única etiqueta HTML que sobrevive al PDF, y solo porque
+En las tablas ordinarias, `<br>` se conserva en el PDF porque
 `config/pdf-only.lua` la traduce a un salto de línea de verdad antes de exportar.
+
+#### Presentación en el PDF
+
+`config/pdf-layout.lua` asigna anchos según el contenido: foto y perfil,
+integrante y acciones, campo y contenido, SMART, matriz de tareas y backlog.
+El comparativo de competidores usa páginas horizontales. El texto de las tablas
+se imprime a 10 puntos con interlineado compacto, conservando el formato del cuerpo.
+
+Las historias usan tablas de dos columnas (`Campo` y `Contenido`): una fila para
+cada dato y una fila para cada escenario de aceptación. No combines los escenarios
+en una única celda gigante. El Student Outcome separa los criterios y dedica una
+fila a cada integrante; SMART utiliza un cuadro por persona. Esto permite paginar
+sin recortar las contribuciones.
+
+La compilación rechaza tablas HTML ordinarias para evitar que se pierda su estructura; permite el Lean UX Canvas identificado y convertido por su filtro específico.
+Las imágenes conservan su proporción y los identificadores de código admiten saltos
+de línea dentro de las celdas. El PDF se genera en `dist/`; revisa visualmente sus
+tablas, fotografías y diagramas antes de enviarlo.
 
 ### Imágenes
 

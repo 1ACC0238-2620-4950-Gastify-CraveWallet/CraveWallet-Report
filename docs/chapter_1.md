@@ -12,7 +12,7 @@ La **visión** de Gastify es posicionarse, al término de 2027, como la platafor
 
 CraveWallet centraliza en una única experiencia móvil tres categorías de gasto históricamente invisibles para el usuario:
 
-1. **Membresías físicas y académicas:** Cuotas mensuales o anuales de instituciones como el Instituto Cultural Peruano Norteamericano (Británico) o el plan Smart Fit Black, con gestión de fechas de vencimiento y montos en moneda local.
+1. **Membresías físicas y académicas:** Cuotas mensuales o anuales de instituciones como el Británico o el plan Smart Fit Black, con gestión de fechas de vencimiento y montos en moneda local.
 2. **Suscripciones digitales y herramientas:** Plataformas de entretenimiento, educación en línea (Netzun, Cisco Networking Academy), herramientas de productividad (PedidosYa Plus), servicios de infraestructura cloud (MongoDB Atlas) y tiendas de videojuegos (Steam), incluyendo gestión automática de tipos de cambio para suscripciones facturadas en dólares estadounidenses.
 3. **Gastos recurrentes de delivery:** Categorización y registro de consumos habituales en establecimientos frecuentes como Up Burger, Dunkin', Popeyes, Little Caesars, Papa John's, Burgerboy, Pollivoro, Chifa Delicious y Chifa Monteoro, permitiendo al usuario visualizar el impacto acumulado de sus hábitos de entrega a domicilio.
 
@@ -57,7 +57,7 @@ La causa raíz es estructural: el ecosistema de servicios digitales está diseñ
 El problema se manifiesta a través de múltiples mecanismos: débitos automáticos en tarjetas de crédito o débito sin notificación previa en el canal preferido del usuario, renovaciones anuales que el usuario no recuerda haber contratado, falta de conversión automática entre dólares y soles para suscripciones internacionales, y ausencia de una categorización coherente de los gastos de delivery que permita identificar patrones de consumo.
 
 **How Much (¿Cuánto?):**
-Según datos del mercado latinoamericano de aplicaciones de suscripción (Statista, 2024), el usuario promedio en la región tiene entre 4 y 8 suscripciones activas de servicios digitales. En el segmento universitario peruano, estimamos un gasto mensual en suscripciones y delivery de entre S/. 200 y S/. 500, de los cuales entre el 15% y el 25% corresponde a servicios olvidados o subutilizados. A nivel macroeconómico, la industria global del Software-as-a-Service (SaaS) proyecta alcanzar los USD 374 mil millones en ingresos para 2026 (Gartner, 2024), impulsada en parte por la expansión en mercados emergentes como Perú.
+El informe no dispone de una estimación representativa del número de suscripciones, del gasto mensual en delivery ni de la proporción de servicios olvidados en los segmentos objetivo. Las seis entrevistas de la sección 2.2 permiten explorar el problema, pero no calcular su magnitud poblacional. Como contexto nacional, la Encuesta de Medición de Capacidades Financieras: Perú 2022 encontró que el 41% de la población adulta se ubicó por debajo del nivel mínimo de educación financiera [@sbs2022capacidades, p. 10]. Este indicador se refiere a conocimientos, comportamientos y actitudes financieras; no mide suscripciones ni demuestra la demanda de CraveWallet.
 
 ---
 
@@ -126,6 +126,8 @@ A continuación se enuncian los cinco tipos de supuestos (assumptions) conforme 
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
+Las metas siguientes son umbrales propuestos por el equipo para futuras pruebas. No son resultados ya medidos ni valores extraídos de las seis entrevistas.
+
 *Se elabora un Hypothesis Statement por cada Feature Assumption, conforme a la plantilla:*
 *"Creemos que lograremos [resultado de negocio] si [estas personas] alcanzan [este beneficio/resultado de usuario] con [esta funcionalidad o solución]."*
 
@@ -145,7 +147,7 @@ Creemos que lograremos **una reducción autorreportada de cargos inesperados por
 
 **Hypothesis Statement 3 — Conversión de Divisas en Tiempo Real:**
 
-Creemos que lograremos **un incremento en el promedio de sesiones activas semanales por usuario de 1.2 a 3.5** si **jóvenes profesionales de 25 a 32 años que gestionan un portafolio mixto de suscripciones en USD y PEN** alcanzan **una visión monetaria unificada de todos sus compromisos recurrentes expresada en soles peruanos, actualizada diariamente** con **la funcionalidad de Conversión de Divisas en Tiempo Real impulsada por ExchangeRate-API**.
+Creemos que lograremos **que al menos el 50% de los usuarios con suscripciones en USD consulte la conversión a soles una vez por semana durante el primer mes de uso** si **jóvenes profesionales de 25 a 32 años que gestionan un portafolio mixto de suscripciones en USD y PEN** alcanzan **una visión monetaria unificada de todos sus compromisos recurrentes expresada en soles peruanos, actualizada diariamente** con **la funcionalidad de Conversión de Divisas en Tiempo Real impulsada por ExchangeRate-API**.
 
 ---
 
@@ -163,25 +165,74 @@ Creemos que lograremos **una tasa de conversión Premium de al menos el 12% entr
 
 #### 1.2.2.4. Lean UX Canvas
 
-El Lean UX Canvas de CraveWallet se estructura en torno a los ocho bloques del marco de trabajo de Gothelf & Seiden (2021):
+La tabla 1 reúne los ocho bloques del Lean UX Canvas de CraveWallet. Se adapta el marco de Gothelf y Seiden [@gothelf2021leanux] y la guía de Gothelf [@gothelf2021canvas]. Las hipótesis completas y sus metas se desarrollan en la sección 1.2.2.3.
 
-| Bloque | Contenido |
-|--------|-----------|
-| **1. Business Problem** | Los jóvenes peruanos pierden el control de su presupuesto mensual debido a la fragmentación de suscripciones en múltiples plataformas, monedas y ciclos de facturación, sin una herramienta mobile-first que unifique esta visión en el mercado local. |
-| **2. Business Outcomes** | NPS > 40 en el primer semestre; tasa de conversión Premium ≥ 12%; retención a 30 días > 45%; reducción de cargos no anticipados ≥ 60%. |
-| **3. Users & Customers** | Segmento 1: Estudiante Universitario Digital (18-25 años). Segmento 2: Profesional Joven Activo (25-32 años). |
-| **4. User Outcomes & Benefits** | Control del presupuesto sin fricción; alertas proactivas de renovación; visión unificada en PEN; comprensión de patrones de delivery. |
-| **5. Solutions** | Dashboard unificado; integración con calendario nativo; conversión de divisas vía ExchangeRate-API; módulo de delivery; plan Premium vía Stripe SDK. |
-| **6. Hypotheses** | Ver sección 1.2.2.3 (cinco Hypothesis Statements). |
-| **7. What's the Most Important Thing to Learn First?** | Validar si los usuarios están dispuestos a cargar manualmente sus suscripciones al momento del onboarding, o si la fricción de entrada es tan alta que desincentiva la adopción. |
-| **8. What's the Least Amount of Work to Learn What We Need to Learn?** | Construir un prototipo de onboarding en Figma con un flujo de carga de 3 suscripciones y someterlo a prueba con 5 usuarios del segmento primario, midiendo el tiempo de completitud y el NPS post-tarea. |
+<!-- pdf:omit-start -->
+
+*Tabla 1. Lean UX Canvas de CraveWallet.*
+
+<!-- pdf:omit-end -->
+
+<table id="lean-ux-canvas">
+  <colgroup>
+    <col width="16.66%">
+    <col width="16.66%">
+    <col width="16.66%">
+    <col width="16.66%">
+    <col width="16.66%">
+    <col width="16.66%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th colspan="2"><b>1. Problema de negocio</b></th>
+      <th colspan="2"><b>5. Ideas de soluciones</b></th>
+      <th colspan="2"><b>2. Resultados comerciales</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2">Las seis entrevistas registradas describen dificultades para recordar renovaciones, interpretar cargos en dólares y seguir el gasto de delivery. La información se encuentra repartida entre servicios, fechas y monedas. CraveWallet busca reunirla para que el usuario conozca sus compromisos antes del cobro. El riesgo inicial es que registrar manualmente sus suscripciones exija tanto esfuerzo que abandone antes de descubrir ese valor.</td>
+      <td colspan="2">Ingreso progresivo: registrar una suscripción y mostrar de inmediato su resumen.<br>Dashboard de importes y próximas renovaciones.<br>Recordatorios en el calendario nativo, 24 horas antes del cobro.<br>Conversión estimada USD/PEN con fecha de actualización.<br>Registro de delivery y presupuesto mensual.<br>Plan Premium con analítica y registros ilimitados.</td>
+      <td colspan="2">Retención a 30 días superior al 45% entre usuarios con tres o más suscripciones registradas.<br>Conversión Premium de al menos el 12% entre usuarios activos con seis o más suscripciones, durante los primeros seis meses.<br>NPS superior a 40 al cierre del primer semestre de uso del producto.<br>Estos umbrales son metas propuestas; todavía no se han medido.</td>
+    </tr>
+    <tr>
+      <td colspan="3"><b>3. Usuarios y clientes</b></td>
+      <td colspan="3"><b>4. Beneficios del usuario</b></td>
+    </tr>
+    <tr>
+      <td colspan="3">El segmento primario son estudiantes de universidades privadas de Lima, de 18 a 25 años, con al menos tres suscripciones activas. El secundario son profesionales de Lima, de 25 a 32 años, con suscripciones en soles y dólares. Ambos necesitan seguir sus renovaciones y gastos; quienes contraten Premium serían los clientes de pago.</td>
+      <td colspan="3">Conocer cuánto dinero comprometen sus suscripciones y cuándo se renuevan.<br>Recibir avisos antes del cobro para decidir con tiempo.<br>Comparar los importes en soles, conservando la moneda original.<br>Reconocer el gasto acumulado de delivery y contrastarlo con su presupuesto.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><b>6. Hipótesis</b></td>
+      <td colspan="2"><b>7. ¿Qué es lo más importante que necesitamos aprender primero?</b></td>
+      <td colspan="2"><b>8. ¿Cuál es la menor cantidad de trabajo que necesitamos hacer para aprenderlo?</b></td>
+    </tr>
+    <tr>
+      <td colspan="2">Un Dashboard claro ayudará a los estudiantes a comprender sus compromisos y volver a consultar la aplicación (H1).<br>Los recordatorios previos ayudarán a reducir los cargos que los usuarios no anticipan (H2).<br>La conversión comprensible a soles motivará a los profesionales a consultar sus importes con regularidad (H3).<br>El resumen de delivery ayudará a ambos segmentos a seguir su presupuesto mensual (H4).<br>Los beneficios de Premium motivarán a usuarios comprometidos a contratar el plan (H5).</td>
+      <td colspan="2">Primero debemos comprobar si un estudiante puede registrar su primera suscripción sin ayuda y comprender su importe y próxima renovación. Es un supuesto previo a H1: el Dashboard solo ofrece valor si el usuario incorpora sus datos. Esta prueba inicial evalúa comprensión y esfuerzo; la retención y la disposición a pagar requieren pruebas posteriores.</td>
+      <td colspan="2">Probar un prototipo navegable de Figma con cinco estudiantes del segmento primario que tengan tres o más suscripciones. Cada uno registrará una y explicará el importe original, la estimación en soles y la próxima renovación. Mediremos tiempo, ayuda, errores y abandono. Como criterio exploratorio, al menos cuatro de cinco deberán completar la tarea en cinco minutos o menos sin ayuda y explicar los tres datos. Si no se cumple, ajustaremos el flujo y repetiremos. No se requieren backend ni pagos reales.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- pdf:omit-start -->
+
+*Fuente: elaboración del equipo Gastify, adaptada del Lean UX Canvas de Jeff Gothelf [@gothelf2021canvas].*
+
+<!-- pdf:omit-end -->
+
+El experimento del bloque 8 es una propuesta pendiente de ejecutar. El criterio de cuatro de cinco participantes sirve para orientar la siguiente iteración; no estima una tasa de éxito poblacional ni demuestra retención o conversión Premium. Se registrará el tiempo desde el inicio del formulario hasta el resumen y se conservarán las observaciones de cada sesión. El importe en soles será una estimación con fecha de actualización; los participantes podrán usar datos ficticios equivalentes a sus suscripciones.
+
 ---
 
 ## 1.3. Segmentos objetivo
 
-Esta sección describe los dos segmentos de usuarios asociados al dominio del problema de CraveWallet, con sus características demográficas, conductuales y psicográficas, sustentadas en información estadística relevante.
+Esta sección delimita dos segmentos iniciales para investigar el problema de CraveWallet. Sus características orientan el reclutamiento y deben contrastarse con las entrevistas y con fuentes específicas del segmento.
 
 ---
+
+*Nota: los perfiles siguientes delimitan a quiénes busca estudiar el equipo. Los rangos de ingresos, distritos y servicios son supuestos iniciales para el reclutamiento, y no estadísticas representativas de la población.*
 
 ### Segmento 1: Estudiante Universitario Digital
 
@@ -195,8 +246,8 @@ Jóvenes de 18 a 25 años matriculados en universidades privadas de Lima Metropo
 - Estado civil: Soltero/a, sin dependientes.
 - Dispositivo primario: Smartphone Android de gama media (Samsung Galaxy A-series, Redmi Note) con conectividad 4G/5G permanente.
 
-**Suscripciones típicas del segmento:**
-Spotify Premium (S/. 17.90/mes), Netflix (S/. 35.90/mes), Disney+ (S/. 27.90/mes), Xbox Game Pass Ultimate (USD 14.99/mes), Steam (compras eventuales), PedidosYa Plus (S/. 12.90/mes), Cisco Networking Academy (USD 0 - acceso académico), Netzun (USD 9.99/mes o acceso institucional).
+**Ejemplos de servicios por explorar:**
+Spotify, Netflix, Disney+, Xbox Game Pass, PedidosYa Plus, Cisco Networking Academy y Netzun, como ejemplos de servicios para explorar en las entrevistas. Steam se considera por separado como un ejemplo de compras eventuales.
 
 **Pain points principales:**
 1. Descubrimiento tardío de cobros automáticos en estados de cuenta bancarios.
@@ -204,8 +255,8 @@ Spotify Premium (S/. 17.90/mes), Netflix (S/. 35.90/mes), Disney+ (S/. 27.90/mes
 3. Falta de un recordatorio accionable en el canal correcto (notificación push, no email) antes de cada renovación.
 4. Desconocimiento del gasto acumulado en delivery semanal y mensual.
 
-**Sustento estadístico:**
-Según Deloitte Digital Media Trends (2024), el 68% de los consumidores de 18-25 años en Latinoamérica tiene 3 o más suscripciones de streaming activas simultáneamente. La Encuesta Nacional de Demanda de Servicios de Telecomunicaciones del MTC del Perú (2023) reporta que el 78% de los jóvenes urbanos de 18-24 años usa servicios de entrega a domicilio al menos una vez por semana. La SBS del Perú (2023) indica que solo el 23% de jóvenes de 18-25 años lleva un registro activo de sus gastos mensuales.
+**Alcance de la evidencia:**
+La selección de estudiantes de 18 a 25 años es una decisión inicial del equipo para delimitar la investigación. La sección 2.2 registra tres entrevistas de este segmento, que sirven para explorar sus experiencias. Esa muestra no permite atribuir una frecuencia de consumo de streaming o delivery a todos los estudiantes de Lima.
 
 ---
 
@@ -221,8 +272,8 @@ Adultos de 25 a 32 años con empleo formal en sectores tecnológicos, creativos 
 - Estado civil: Soltero/a o en pareja, ocasionalmente con gastos compartidos de hogar.
 - Dispositivo primario: Smartphone Android o iOS de gama media-alta, con uso frecuente de laptop para trabajo remoto.
 
-**Suscripciones típicas del segmento:**
-Smart Fit Plan Black (S/. 129/mes), Británico cuota mensual (S/. 250-350/mes), MongoDB Atlas (USD 9-57/mes según consumo), GitHub Copilot (USD 10/mes), Notion Plus (USD 8/mes), Adobe Creative Cloud (USD 54.99/mes), PedidosYa Plus (S/. 12.90/mes), LinkedIn Learning (USD 19.99/mes).
+**Ejemplos de servicios por explorar:**
+Smart Fit, Británico, MongoDB Atlas, GitHub Copilot, Notion, Adobe Creative Cloud, PedidosYa Plus y LinkedIn Learning, como ejemplos de servicios para explorar en las entrevistas.
 
 **Pain points principales:**
 1. Mezcla de gastos profesionales y personales sin categorización diferenciada.
@@ -230,5 +281,5 @@ Smart Fit Plan Black (S/. 129/mes), Británico cuota mensual (S/. 250-350/mes), 
 3. Falta de visibilidad del retorno sobre la inversión (ROI) de cada suscripción educativa o de productividad.
 4. Renovaciones anuales de membresías físicas que representan un impacto significativo en la liquidez mensual cuando ocurren.
 
-**Sustento estadístico:**
-La SBS del Perú (2023) reporta que el 42% de adultos jóvenes entre 25-35 años no lleva un registro formal de sus gastos recurrentes. Según PwC Perú (2024), el 61% de los profesionales millennials en Lima declara que sus gastos en herramientas digitales de trabajo aumentaron más del 30% entre 2022 y 2024. La consultora Kantar (2024) reporta que el gasto promedio mensual en aplicaciones de delivery entre adultos de 25-35 años en Lima supera los S/. 180 mensuales.
+**Alcance de la evidencia:**
+La selección de profesionales de 25 a 32 años es una decisión inicial del equipo. La sección 2.2 registra tres entrevistas de este segmento, que permiten explorar la gestión de gastos personales y profesionales. Esa muestra no estima el gasto promedio en delivery ni el crecimiento del gasto digital de los profesionales de Lima.

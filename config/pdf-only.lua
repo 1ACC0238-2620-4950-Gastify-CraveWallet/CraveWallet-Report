@@ -58,8 +58,12 @@ function Blocks(bloques)
   local salida = pandoc.List()
   for i, b in ipairs(bloques) do
     if b.t == 'Header' and bloques[i + 1] and bloques[i + 1].t == 'Table' then
+      local reserva = RESERVA_ANTES_DE_TABLA
+      if pandoc.utils.stringify(bloques[i + 1].head):match('Alcanzable') then
+        reserva = 24
+      end
       salida:insert(pandoc.RawBlock(
-        'latex', '\\needspace{' .. RESERVA_ANTES_DE_TABLA .. '\\baselineskip}'))
+        'latex', '\\needspace{' .. reserva .. '\\baselineskip}'))
     end
     salida:insert(b)
   end

@@ -40,6 +40,14 @@
 % Tamanos de letra arbitrarios y columnas con formato propio.
 \usepackage{anyfontsize}
 \usepackage{array}
+\usepackage{pdflscape}
+\usepackage{xurl}
+\setlength{\emergencystretch}{3em}
+\newenvironment{reporttable}{%
+  \par\begingroup\fontsize{10}{12}\selectfont\setstretch{1.08}%
+  \setlength{\parindent}{0pt}\setlength{\tabcolsep}{5pt}%
+  \setlength{\LTpre}{6pt}\setlength{\LTpost}{8pt}%
+}{\par\endgroup}
 
 % Los cinco niveles de encabezado de APA 7.
 % Los numeros (1.1, 2.3.4) se escriben a mano en los .md, por eso no hay etiqueta.
@@ -47,13 +55,13 @@
 \titleformat{\section}{\normalfont\bfseries\centering}{}{0pt}{}
 \titleformat{\subsection}{\normalfont\bfseries\RaggedRight}{}{0pt}{}
 \titleformat{\subsubsection}{\normalfont\bfseries\itshape\RaggedRight}{}{0pt}{}
-\titleformat{\paragraph}[runin]{\normalfont\bfseries}{}{0pt}{}[.]
-\titleformat{\subparagraph}[runin]{\normalfont\bfseries\itshape}{}{0pt}{}[.]
+\titleformat{\paragraph}[block]{\normalfont\bfseries}{}{0pt}{}
+\titleformat{\subparagraph}[block]{\normalfont\bfseries\itshape}{}{0pt}{}
 \titlespacing*{\section}{0pt}{2ex plus .5ex}{1ex}
 \titlespacing*{\subsection}{0pt}{1.6ex plus .4ex}{0.8ex}
 \titlespacing*{\subsubsection}{0pt}{1.4ex plus .4ex}{0.7ex}
-\titlespacing*{\paragraph}{0.5in}{1.2ex plus .3ex}{1em}
-\titlespacing*{\subparagraph}{0.5in}{1.2ex plus .3ex}{1em}
+\titlespacing*{\paragraph}{0pt}{1.2ex plus .3ex}{0.7ex}
+\titlespacing*{\subparagraph}{0pt}{1.2ex plus .3ex}{0.7ex}
 
 % Cada seccion de primer nivel (#) empieza en pagina nueva,
 % como exige el enunciado para Registro de Versiones, Contenido, capitulos, etc.

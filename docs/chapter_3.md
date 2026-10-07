@@ -168,7 +168,7 @@ Las Mobile Style Guidelines aplican a la aplicación nativa Android de CraveWall
 | Media | 390 × 844dp | xxhdpi (440dpi) | Xiaomi Redmi Note 12 |
 | Expandida | 600 × 960dp | xhdpi | Tablet Lenovo M10 |
 
-El diseño se valida primero en 360dp de ancho (categoría compacta), que representa el 68 % del mercado Android en el segmento objetivo peruano según los datos del MTC 2023 citados en el Capítulo I.
+El equipo propone iniciar la validación del diseño con un ancho de 360dp (categoría compacta). Es una medida de prueba del prototipo; no representa una cuota verificada del mercado Android peruano.
 
 ---
 

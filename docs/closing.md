@@ -1,14 +1,16 @@
 # Conclusiones
 
-El proceso de needfinding —seis entrevistas a profundidad distribuidas entre dos segmentos objetivo— validó empíricamente la hipótesis central del proyecto: los cobros silenciosos, la opacidad del tipo de cambio y la ausencia de alertas anticipadas generan un patrón real y recurrente de Budget Mismatch en el perfil de estudiante universitario digital y en el de profesional joven activo. Esta confirmación convirtió los supuestos del Lean UX Canvas en requisitos concretos y trazables, eliminando ambigüedades antes de iniciar el diseño de la solución.
+El informe registra seis entrevistas, tres por cada segmento objetivo. Los relatos recogidos describen dificultades para recordar renovaciones, interpretar cargos en dólares y controlar el gasto de delivery. Estos hallazgos orientan la propuesta de CraveWallet, pero corresponden a la muestra entrevistada y no permiten estimar la frecuencia del problema en toda la población de jóvenes peruanos.
 
-La aplicación del proceso Lean UX permitió al equipo formular hipótesis verificables desde la primera entrega, evitando construir funcionalidades sin sustento en comportamiento observado. La síntesis de hallazgos en User Personas, User Journey Maps, Empathy Maps y User Task Matrix proporcionó una base compartida de conocimiento que orientó cada decisión de diseño posterior, desde la priorización del Product Backlog hasta la elección de los Bounded Contexts.
+El proceso Lean UX permitió formular supuestos e hipótesis sobre los beneficios de centralizar suscripciones, mostrar importes en soles y anticipar las renovaciones. Las metas de reducción de cargos inesperados, retención y conversión a Premium son objetivos de evaluación de la propuesta. Las entrevistas no demuestran que esas metas se hayan alcanzado; para evaluarlas se requieren pruebas del producto y mediciones durante su uso.
 
-El modelado estratégico mediante Domain-Driven Design —Big Picture EventStorming, Context Mapping y arquitectura C4— produjo una descomposición del dominio en tres Bounded Contexts cohesivos (Subscription Management, Delivery Expense Management y Premium & Billing) con fronteras explícitas y patrones de integración documentados (ACL, Partnership, Customer/Supplier, Conformist). Esta estructura anticipa los puntos de cambio más probables del sistema y reduce el acoplamiento entre equipos en entregas futuras.
+Los artefactos de Needfinding y la especificación reúnen las necesidades identificadas, los arquetipos, los recorridos y las historias propuestas. Su función es orientar la priorización del Product Backlog y permitir que el equipo contraste los requisitos con las evidencias de las entrevistas.
 
-Los seis Spikes de investigación técnica (SP01-SP06) demostraron la viabilidad de las cuatro integraciones críticas —ExchangeRate-API, calendario nativo, Stripe SDK y Google Places API— antes de comprometer esfuerzo de implementación. En particular, la estrategia de caché de 24 horas para el tipo de cambio y el uso de webhooks de Stripe para la activación del plan Premium resolvieron los riesgos técnicos de mayor impacto sobre la propuesta de valor diferencial del producto.
+El diseño propone tres contextos: Subscription Management, Delivery Expense Management y Premium & Billing. La separación distingue las suscripciones que el usuario paga a terceros, los gastos puntuales de delivery y la facturación del plan de CraveWallet. Los diagramas documentan una propuesta de solución; sus fronteras, contratos y reglas requieren revisión durante la implementación.
 
-El equipo consolidó prácticas de trabajo colaborativo basadas en GitFlow con ramas de feature y fix, commits convencionales y revisión cruzada de pull requests, lo que permitió integrar contribuciones paralelas de cinco integrantes sin pérdida de trazabilidad entre los artefactos del informe y el historial de cambios del repositorio.
+El Product Backlog incluye seis spikes (SP01–SP06) para investigar y prototipar la integración con ExchangeRate-API, el calendario nativo y Stripe. Este informe no presenta resultados experimentales de los seis spikes que permitan concluir que las integraciones ya fueron validadas. Cada spike deberá cerrar con su prototipo o documento de investigación, el resultado obtenido y las limitaciones encontradas.
+
+El repositorio del informe conserva las contribuciones del equipo mediante ramas y commits. Para las siguientes entregas, el equipo deberá comprobar la coherencia entre los documentos, actualizar los artefactos según los hallazgos y conservar las evidencias que permitan sustentar cada resultado declarado.
 
 # Glosario
 
@@ -28,7 +30,7 @@ El equipo consolidó prácticas de trabajo colaborativo basadas en GitFlow con r
 
 **Lean UX.** Marco de trabajo que combina pensamiento de diseño, metodologías ágiles y modelo de negocio Lean para validar hipótesis sobre el usuario antes de invertir en construcción. El equipo aplicó sus artefactos principales: Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas.
 
-**Product Backlog.** Lista priorizada y estimada de todos los requisitos del producto (User Stories, Technical Stories y Spike Stories). El Product Backlog de CraveWallet contiene 40 US, 6 TS y 6 SS, gestionados en Trello.
+**Product Backlog.** Lista priorizada y estimada de todos los requisitos del producto (User Stories, Technical Stories y Spike Stories). El Product Backlog de CraveWallet contiene 40 US, 6 TS y 6 SP, gestionados en Trello.
 
 **Shared Kernel.** Subconjunto del modelo de dominio que dos Bounded Contexts comparten y mantienen conjuntamente. En CraveWallet, el identificador de usuario `UserId` es el Shared Kernel entre Subscription Management y Delivery Expense Management.
 
@@ -47,25 +49,15 @@ El equipo consolidó prácticas de trabajo colaborativo basadas en GitFlow con r
 
 ## Dominio de negocio
 
-Deloitte. (2024). *Digital Media Trends: 18th edition*. Deloitte Insights. https://www2.deloitte.com/us/en/insights/industry/technology/digital-media-trends-consumption-habits-survey.html
+Superintendencia de Banca, Seguros y AFP, & CAF. (s. f.). *Encuesta de Medición de Capacidades Financieras: Perú 2022*. https://www.sbs.gob.pe/Portals/4/jer/CIFRAS-ENCUESTA/2022/Brochure_ENCUESTA_CAPACIDADES%20FINANACIERAS%202022_vr.pdf
 
 Imawan, R., Putra, W. P., Alqahtani, R., Milakis, E. D., & Dumchykov, M. (2025). Enhancing financial literacy in young adults: An Android-based personal finance management tool. *Journal of Hypermedia & Technology-Enhanced Learning*, *3*(1), 64–89. https://doi.org/10.58536/j-hytel.166
 
 Tetteh, F. K., & Owusu Kwateng, K. (2025). The pathways from digital financial literacy to sustained engagement with mobile financial services: A technology continuance theory perspective. *Journal of Financial Services Marketing*, *31*(1). https://doi.org/10.1057/s41264-025-00335-6
 
-Gartner. (2024). *Gartner forecasts worldwide public cloud end-user spending to reach $723 billion in 2025*. Gartner. https://www.gartner.com/en/newsroom/press-releases/2024-11-19-gartner-forecasts-worldwide-public-cloud-end-user-spending-to-reach-723-billion-dollars-in-2025
-
-Kantar. (2024). *Estudio de comportamiento del consumidor digital: Delivery y servicios online en Lima*. Kantar Perú. https://www.kantar.com/peru
-
-Ministerio de Transportes y Comunicaciones. (2023). *Encuesta Nacional de Demanda de Servicios de Telecomunicaciones*. MTC del Perú. https://www.mtc.gob.pe
-
-PricewaterhouseCoopers Perú. (2024). *Digitalización y gasto profesional en Lima: Perspectivas para millennials*. PwC Perú. https://www.pwc.pe
-
-Statista Research Department. (2024). *Number of subscription-based digital services used per person in Latin America*. Statista. https://www.statista.com
-
-Superintendencia de Banca, Seguros y AFP. (2023). *Encuesta Nacional de Capacidades Financieras en el Perú*. SBS. https://www.sbs.gob.pe
-
 ## Métodos y técnicas de ingeniería de software
+
+Gothelf, J. (2021). *How to use the Lean UX Canvas*. https://jeffgothelf.com/blog/how-to-use-the-lean-ux-canvas/
 
 Gothelf, J., & Seiden, J. (2021). *Lean UX: Creating great products with agile teams* (3.a ed.). O'Reilly Media.
 
@@ -89,7 +81,6 @@ Rocket Money. (2026). *The 7 best subscription management apps in 2026*. Rocket 
 
 Spendee. (2026). *What is Spendee Premium?* Spendee Help Center. https://help.spendee.com/article/202-what-is-spendee-premium
 
-
 # Anexos
 
 ## Anexo A. Product Backlog en Trello
@@ -98,6 +89,14 @@ El Product Backlog de CraveWallet se gestiona en Trello. El tablero organiza las
 
 **Enlace público del tablero:** [CraveWallet – Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog)
 
+La figura 34 muestra la distribución de las historias en el tablero descrito en la sección 2.4.3.
+
 ![Product Backlog de CraveWallet en Trello](images/chapter_2/Product_Backlog_Trello.png)
 
-*Figura A1. Product Backlog de CraveWallet en Trello.*
+<!-- pdf:omit-start -->
+
+*Figura 34. Product Backlog de CraveWallet en Trello.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: tablero de Trello del equipo Gastify.*
