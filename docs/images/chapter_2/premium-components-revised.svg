@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1600" viewBox="0 0 1800 1600">
+<rect width="100%" height="100%" fill="white"/>
+<text x="40" y="25" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#18324a">C4 | Componentes de Premium &amp; Billing</text>
+<text x="40" y="77" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Componentes propuestos dentro del contenedor REST API Backend (Java / Spring Boot).</text>
+<rect x="20" y="370" width="1750" height="865" fill="#ffffff" stroke="#9aaabb" stroke-width="2"/>
+<text x="40" y="380" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">REST API Backend — módulo Premium &amp; Billing</text>
+<rect x="40" y="150" width="510" height="150" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="55" y="163" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Contenedor</text>
+<text x="55" y="191" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Mobile App</text>
+<text x="55" y="230" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Formularios y consultas; Flutter/Dart</text>
+<rect x="1220" y="150" width="510" height="150" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="1235" y="163" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Sistema externo</text>
+<text x="1235" y="191" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Stripe</text>
+<text x="1235" y="230" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Proveedor externo</text>
+<rect x="40" y="430" width="510" height="180" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="55" y="443" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Componente</text>
+<text x="55" y="471" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">PremiumController</text>
+<text x="55" y="510" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Entrada autenticada. Traduce request /</text>
+<text x="55" y="538" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">response.</text>
+<rect x="620" y="720" width="510" height="190" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="635" y="733" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Componente</text>
+<text x="635" y="761" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">PremiumApplicationService</text>
+<text x="635" y="800" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Coordina reglas, repositorios y transacciones;</text>
+<text x="635" y="828" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">publica después de confirmar.</text>
+<rect x="40" y="1030" width="510" height="180" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="55" y="1043" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Componente</text>
+<text x="55" y="1071" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Modelo de dominio</text>
+<text x="55" y="1110" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">SubscriptionPlan + BillingPeriod. Invariantes y</text>
+<text x="55" y="1138" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">eventos locales.</text>
+<rect x="620" y="1030" width="510" height="180" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="635" y="1043" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Componente</text>
+<text x="635" y="1071" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">JpaPlanRepository</text>
+<text x="635" y="1110" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Implementa puertos de persistencia y traduce</text>
+<text x="635" y="1138" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">entidades.</text>
+<rect x="620" y="1330" width="510" height="170" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="635" y="1343" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Contenedor</text>
+<text x="635" y="1371" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Remote Database</text>
+<text x="635" y="1410" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">PostgreSQL; tablas propias del módulo.</text>
+<rect x="1220" y="430" width="510" height="180" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="1235" y="443" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Componente</text>
+<text x="1235" y="471" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">StripeWebhookAdapter</text>
+<text x="1235" y="510" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Entrada verificada desde</text>
+<text x="1235" y="538" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">StripeWebhookController. Deduplicación y</text>
+<text x="1235" y="566" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">correlación.</text>
+<rect x="1220" y="1030" width="510" height="180" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="1235" y="1043" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Componente</text>
+<text x="1235" y="1071" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">StripeGatewayAdapter</text>
+<text x="1235" y="1110" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Salida: checkout y cancelación; implementa</text>
+<text x="1235" y="1138" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">PaymentGatewayPort.</text>
+<polyline points="295,300 295,430" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="295,430 288.47551698833155,416.49329346470984 301.52448301166845,416.49329346470984" fill="#486075"/>
+<rect x="64" y="317" width="472" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="70" y="320" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">HTTPS / JSON; usuario autenticado</text>
+<polyline points="295,610 295,675 875,675 875,720" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="875,720 868.4755169883315,706.4932934647098 881.5244830116685,706.4932934647098" fill="#486075"/>
+<rect x="384" y="632" width="412" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="390" y="635" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Comandos y consultas</text>
+<polyline points="1475,300 1475,430" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="1475,430 1468.4755169883315,416.49329346470984 1481.5244830116685,416.49329346470984" fill="#486075"/>
+<rect x="1264" y="325" width="412" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="1270" y="328" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Webhook verificado</text>
+<polyline points="1475,610 1475,675 875,675 875,720" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="875,720 868.4755169883315,706.4932934647098 881.5244830116685,706.4932934647098" fill="#486075"/>
+<rect x="1129" y="632" width="552" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="1135" y="635" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Evento traducido</text>
+<polyline points="620,815 295,815 295,1030" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="295,1030 288.47551698833155,1016.4932934647098 301.52448301166845,1016.4932934647098" fill="#486075"/>
+<rect x="104" y="867" width="412" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="110" y="870" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Invoca invariantes</text>
+<polyline points="875,910 875,1030" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="875,1030 868.4755169883315,1016.4932934647098 881.5244830116685,1016.4932934647098" fill="#486075"/>
+<rect x="679" y="941" width="412" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="685" y="944" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Puerto de repositorio</text>
+<polyline points="1130,815 1475,815 1475,1030" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="1475,1030 1468.4755169883315,1016.4932934647098 1481.5244830116685,1016.4932934647098" fill="#486075"/>
+<rect x="1224" y="872" width="497" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="1230" y="875" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Puerto de salida</text>
+<polyline points="875,1210 875,1330" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="875,1330 868.4755169883315,1316.49329346471 881.5244830116685,1316.49329346471" fill="#486075"/>
+<rect x="719" y="1257" width="412" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="725" y="1260" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">JPA / JDBC</text>
+<polyline points="1730,1115 1775,1115 1775,225 1730,225" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="1730,225 1743.50670653529,218.47551698833155 1743.50670653529,231.52448301166845" fill="#486075"/>
+<text x="1240" y="1247" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">La salida y el webhook usan adaptadores distintos.</text>
+<text x="40" y="1531" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Fuente: Gastify. Propuesta de diseño; implementación y pruebas pendientes.</text>
+</svg>

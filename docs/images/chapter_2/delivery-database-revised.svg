@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000">
+<rect width="100%" height="100%" fill="white"/>
+<text x="40" y="25" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#18324a">Persistencia | Delivery Expense Management</text>
+<text x="40" y="77" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Agrupación por propietario y período. Los dos agregados conservan claves propias.</text>
+<rect x="60" y="180" width="770" height="438" fill="#ffffff" stroke="#7990a5" stroke-width="2"/>
+<rect x="60" y="180" width="770" height="70" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="75" y="200" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="#18324a">delivery_expenses</text>
+<text x="76" y="270" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">PK id: UUID</text>
+<text x="76" y="308" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">user_id: UUID</text>
+<text x="76" y="346" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">request_id: UUID</text>
+<text x="76" y="384" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">amount: NUMERIC(12,2)</text>
+<text x="76" y="422" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">merchant_name: VARCHAR(120)</text>
+<text x="76" y="460" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">category: VARCHAR(30)</text>
+<text x="76" y="498" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">expense_date: DATE</text>
+<text x="76" y="536" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">created_at: TIMESTAMPTZ</text>
+<text x="76" y="574" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">UNIQUE (user_id, request_id)</text>
+<rect x="970" y="180" width="770" height="400" fill="#ffffff" stroke="#7990a5" stroke-width="2"/>
+<rect x="970" y="180" width="770" height="70" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="985" y="200" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="#18324a">monthly_budgets</text>
+<text x="986" y="270" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">PK id: UUID</text>
+<text x="986" y="308" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">user_id: UUID</text>
+<text x="986" y="346" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">year: SMALLINT; month: SMALLINT</text>
+<text x="986" y="384" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">monthly_limit: NUMERIC(12,2)</text>
+<text x="986" y="422" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">accumulated: NUMERIC(12,2)</text>
+<text x="986" y="460" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">version: BIGINT</text>
+<text x="986" y="498" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">updated_at: TIMESTAMPTZ</text>
+<text x="986" y="536" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">UNIQUE (user_id, year, month)</text>
+<polyline points="830,470 970,470" fill="none" stroke="#486075" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="60" y="819" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#18324a">Agrupación lógica: user_id + año/mes de expense_date. Gastos y presupuesto son agregados distintos.</text>
+<text x="40" y="931" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Fuente: Gastify. Propuesta de diseño; implementación y pruebas pendientes.</text>
+</svg>

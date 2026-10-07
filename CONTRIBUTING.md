@@ -304,7 +304,7 @@ De eso se encarga `config/pdf-only.lua`, que el build pasa con `--lua-filter`.
 
 ### Citas y bibliografía
 
-La lista de referencias se genera sola. No se escribe a mano.
+La lista de referencias del PDF se genera con citeproc a partir de las fuentes citadas. Para actualizar la versión visible en GitHub después de cambiar las citas o `references.bib`, ejecuta `python scripts/sync-bibliography.py`. Este comando actualiza únicamente la bibliografía de `docs/closing.md` y no genera un PDF.
 
 **Uno.** Agrega la fuente a `references.bib`. En Google Scholar la sacas del botón
 de comillas, opción BibTeX. La primera palabra de la entrada es la clave con la que
@@ -335,6 +335,8 @@ etiqueta `[Computer software]` y el número de versión.
 con sangría francesa.
 
 Una fuente que no cites no aparece, y así debe ser: APA solo lista lo que se cita.
+
+Antes de hacer commit, ejecuta `python scripts/check-report.py`. Comprueba las historias del alcance AV1, la numeración y referencias de figuras y tablas, las claves bibliográficas y las rutas de imágenes. Requiere Pandoc; no certifica resultados de experimentos ni sustituye la revisión del equipo.
 
 > [!CAUTION]
 > En `docs/closing.md` hay un bloque que parece vacío y que no se debe borrar:

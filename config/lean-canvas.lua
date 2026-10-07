@@ -7,11 +7,12 @@ local function cell_latex(html)
 end
 
 local function render_canvas(html)
+  local number = html:match('data%-table%-number="(%d+)"') or '1'
   local out = {
     '\\begin{landscape}\\begingroup',
     '\\setstretch{1}\\fontsize{10}{11.5}\\selectfont',
     '\\setlength{\\parindent}{0pt}\\setlength{\\tabcolsep}{6pt}',
-    '\\textbf{Tabla 1.} \\textit{Lean UX Canvas de CraveWallet.}\\par\\medskip',
+    '\\textbf{Tabla ' .. number .. '.} \\textit{Lean UX Canvas de CraveWallet.}\\par\\medskip',
     '\\begin{tabular}{*{6}{p{\\dimexpr\\linewidth/6-2\\tabcolsep-2\\arrayrulewidth\\relax}}}\\hline'
   }
   for row in html:gmatch('<tr>(.-)</tr>') do

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000">
+<rect width="100%" height="100%" fill="white"/>
+<text x="40" y="25" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#18324a">Persistencia | Premium &amp; Billing</text>
+<text x="40" y="77" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Correlación de facturación y registro único del evento externo antes de aplicar cambios de acceso.</text>
+<rect x="60" y="180" width="770" height="362" fill="#ffffff" stroke="#7990a5" stroke-width="2"/>
+<rect x="60" y="180" width="770" height="70" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="75" y="200" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="#18324a">user_plans</text>
+<text x="76" y="270" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">PK id: UUID</text>
+<text x="76" y="308" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">user_id: UUID UNIQUE</text>
+<text x="76" y="346" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">plan_type: VARCHAR(20)</text>
+<text x="76" y="384" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">period_start: DATE; period_end: DATE</text>
+<text x="76" y="422" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">stripe_customer_id: VARCHAR(255)</text>
+<text x="76" y="460" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">stripe_subscription_id: VARCHAR(255)</text>
+<text x="76" y="498" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">updated_at: TIMESTAMPTZ</text>
+<rect x="970" y="180" width="770" height="400" fill="#ffffff" stroke="#7990a5" stroke-width="2"/>
+<rect x="970" y="180" width="770" height="70" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="985" y="200" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="#18324a">billing_events</text>
+<text x="986" y="270" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">PK id: UUID</text>
+<text x="986" y="308" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">FK plan_id: UUID (tras correlación)</text>
+<text x="986" y="346" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">stripe_event_id: VARCHAR(255) UNIQUE</text>
+<text x="986" y="384" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">invoice_id: VARCHAR(255)</text>
+<text x="986" y="422" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">event_type: VARCHAR(100)</text>
+<text x="986" y="460" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">occurred_at: TIMESTAMPTZ</text>
+<text x="986" y="498" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">processed_at: TIMESTAMPTZ</text>
+<text x="986" y="536" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="22" font-weight="normal" fill="#18324a">processing_status: VARCHAR(30)</text>
+<polyline points="830,470 970,470" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="970,470 956.4932934647098,476.52448301166845 956.4932934647098,463.47551698833155" fill="#486075"/>
+<text x="60" y="819" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#18324a">user_plans 1 → 0..* billing_events. Una renovación actualiza el período; no duplica la transición.</text>
+<text x="40" y="931" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Fuente: Gastify. Propuesta de diseño; implementación y pruebas pendientes.</text>
+</svg>

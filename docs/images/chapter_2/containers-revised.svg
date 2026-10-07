@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1540" viewBox="0 0 1800 1540">
+<rect width="100%" height="100%" fill="white"/>
+<text x="40" y="25" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#18324a">C4 | Contenedores de CraveWallet</text>
+<text x="40" y="77" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Propuesta: aplicación móvil y backend modular; las bases local y remota tienen responsabilidades distintas.</text>
+<rect x="40" y="150" width="510" height="140" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="55" y="163" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Persona</text>
+<text x="55" y="191" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Usuario</text>
+<text x="55" y="230" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Interactúa con la aplicación</text>
+<rect x="20" y="370" width="1110" height="970" fill="#ffffff" stroke="#9aaabb" stroke-width="2"/>
+<text x="40" y="383" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="#18324a">Sistema CraveWallet</text>
+<rect x="40" y="460" width="510" height="220" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="55" y="473" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Contenedor</text>
+<text x="55" y="501" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Mobile App</text>
+<text x="55" y="540" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Flutter/Dart. Presentación, composición del</text>
+<text x="55" y="568" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Dashboard y permisos del calendario.</text>
+<rect x="620" y="460" width="480" height="220" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="635" y="473" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Contenedor</text>
+<text x="635" y="501" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">REST API Backend</text>
+<text x="635" y="540" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Java 21 / Spring Boot. Tres módulos de</text>
+<text x="635" y="568" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">dominio y adaptadores.</text>
+<rect x="40" y="1010" width="510" height="200" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="55" y="1023" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Contenedor</text>
+<text x="55" y="1051" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Local Database</text>
+<text x="55" y="1090" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">SQLite. Caché de lectura con fecha de</text>
+<text x="55" y="1118" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">actualización. Escritura offline pendiente de</text>
+<text x="55" y="1146" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">pruebas.</text>
+<rect x="620" y="1010" width="480" height="200" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="635" y="1023" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Contenedor</text>
+<text x="635" y="1051" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Remote Database</text>
+<text x="635" y="1090" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">PostgreSQL. Estado canónico; tablas</text>
+<text x="635" y="1118" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">propias de cada módulo.</text>
+<rect x="1220" y="150" width="510" height="155" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="1235" y="163" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Sistema externo</text>
+<text x="1235" y="191" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">ExchangeRate-API</text>
+<text x="1235" y="230" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Cotizaciones</text>
+<rect x="1220" y="465" width="510" height="155" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="1235" y="478" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Sistema externo</text>
+<text x="1235" y="506" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Stripe</text>
+<text x="1235" y="545" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Checkout y notificaciones</text>
+<rect x="1220" y="780" width="510" height="155" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="1235" y="793" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Sistema externo</text>
+<text x="1235" y="821" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Google Places</text>
+<text x="1235" y="860" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Sugerencias</text>
+<rect x="1220" y="1095" width="510" height="155" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="1235" y="1108" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Sistema externo</text>
+<text x="1235" y="1136" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Calendario del dispositivo</text>
+<text x="1235" y="1175" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Recordatorios con permiso</text>
+<polyline points="295,290 295,460" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="295,460 288.47551698833155,446.49329346470984 301.52448301166845,446.49329346470984" fill="#486075"/>
+<rect x="64" y="337" width="412" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="70" y="340" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Usa interfaz móvil</text>
+<polyline points="550,570 620,570" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="620,570 606.4932934647098,576.5244830116685 606.4932934647098,563.4755169883315" fill="#486075"/>
+<rect x="494" y="702" width="272" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="500" y="705" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">HTTPS / JSON</text>
+<polyline points="295,680 295,1010" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="295,1010 288.47551698833155,996.4932934647098 301.52448301166845,996.4932934647098" fill="#486075"/>
+<rect x="64" y="807" width="412" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="70" y="810" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Lee / actualiza caché</text>
+<polyline points="860,680 860,1010" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="860,1010 853.4755169883315,996.4932934647098 866.5244830116685,996.4932934647098" fill="#486075"/>
+<rect x="684" y="807" width="412" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="690" y="810" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">JPA / JDBC</text>
+<polyline points="1100,505 1160,505 1160,225 1220,225" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="1220,225 1206.49329346471,231.52448301166845 1206.49329346471,218.47551698833155" fill="#486075"/>
+<polyline points="1100,570 1220,570" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="1220,570 1206.49329346471,576.5244830116685 1206.49329346471,563.4755169883315" fill="#486075"/>
+<polyline points="1220,600 1100,600" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="1100,600 1113.50670653529,593.4755169883315 1113.50670653529,606.5244830116685" fill="#486075"/>
+<polyline points="1100,630 1160,630 1160,855 1220,855" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="1220,855 1206.49329346471,861.5244830116685 1206.49329346471,848.4755169883315" fill="#486075"/>
+<text x="1170" y="355" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">HTTPS</text>
+<polyline points="550,650 580,650 580,1280 1475,1280 1475,1250" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="1475,1250 1481.5244830116685,1263.50670653529 1468.4755169883315,1263.50670653529" fill="#486075"/>
+<rect x="134" y="1237" width="432" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="140" y="1240" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">API del dispositivo desde el móvil</text>
+<text x="40" y="1380" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#18324a">El retorno del checkout no confirma acceso. Stripe envía webhooks al backend; no al cliente móvil.</text>
+<text x="40" y="1471" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Fuente: Gastify. Propuesta de diseño; implementación y pruebas pendientes.</text>
+</svg>

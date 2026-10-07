@@ -1,8 +1,16 @@
 # Registro de Versiones del Informe
 
+La tabla 1 presenta registro de versiones del informe.
+
+*Tabla 1. Registro de Versiones del Informe.*
+
 | Versión |    Fecha   |      Autor     | Descripción de modificación |
 |:-------:|:----------:|:--------------:|:---------------------------:|
 |   AV1   | 15/09/2026  | Todo el equipo |       Primera versión       |
+| AV1 — revisión | 07/10/2026 | Anghelo Faustino | Corrección de fuentes, Lean UX, flujos de mensajes, Context Map y coherencia del diseño. |
+
+*Fuente: elaboración del equipo Gastify.*
+
 
 # Project Report Collaboration Insights
 
@@ -107,6 +115,10 @@ Los siguientes cuadros describen las acciones realizadas por cada integrante y l
 
 Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software.
 
+La tabla 2 presenta criterio 1.
+
+*Tabla 2. Criterio 1.*
+
 | Integrante | Acciones realizadas en AV1 |
 | --- | --- |
 | **Aliaga, Alexander** | **AV1:** Documentó el Big Picture EventStorming del proceso actual y el EventStorming de diseño de CraveWallet. Organizó los eventos, actores, sistemas, problemas y oportunidades del escenario As-Is; desarrolló el Candidate Context Discovery, los Domain Message Flows y los Bounded Context Canvases que sustentan los contextos de Suscripciones, Gastos y Premium. |
@@ -114,6 +126,9 @@ Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y 
 | **Faustino Hurtado, Anghelo Edwin** | **AV1:** Registró las entrevistas de Leonardo Sánchez, Darío Romero y Eduardo Aguirre, incorporando sus enlaces, fechas, horarios, duraciones y perfiles. Integró las evidencias de User Personas y As-Is Journey Maps, preparó la carátula y los metadatos de la entrega, y documentó el Product Backlog de 52 elementos con su enlace y evidencia visual en Trello. |
 | **Roman Zeballos, Sebastian Jared** | **AV1:** Desarrolló el análisis de competidores y el diseño de entrevistas; consolidó el análisis cuantitativo de los dos segmentos y elaboró los artefactos de Needfinding. Especificó las 40 User Stories, 6 Technical Stories y 6 Spike Stories, estructuró el Ubiquitous Language, elaboró los cuatro Impact Maps en UXPressia y organizó la priorización y estimación del Product Backlog. |
 | **Sejuro Medina, Mario Gabriel** | **AV1:** Redactó la descripción de la startup, el Lean UX Process y los segmentos objetivo; revisó las User Stories para alinearlas con la rúbrica. Desarrolló el Context Mapping, los diagramas C4 de contexto, contenedores y despliegue, y el diseño táctico de los Bounded Contexts Subscription Management, Delivery Expense Management y Premium & Billing con sus diagramas de componentes, clases y base de datos. |
+
+*Fuente: elaboración del equipo Gastify.*
+
 
 **Conclusiones**
 
@@ -123,6 +138,10 @@ Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y 
 
 Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de software.
 
+La tabla 3 presenta criterio 2.
+
+*Tabla 3. Criterio 2.*
+
 | Integrante | Acciones realizadas en AV1 |
 | --- | --- |
 | **Aliaga, Alexander** | **AV1:** Estudió la diferencia entre EventStorming As-Is y To-Be, así como el uso correcto de eventos, comandos, políticas, vistas y sistemas externos. Aplicó Candidate Context Discovery y Bounded Context Canvas para convertir los hallazgos del dominio en fronteras de responsabilidad que podrán revisarse durante la implementación. |
@@ -130,6 +149,9 @@ Reconoce la necesidad del aprendizaje permanente para el desempeño profesional 
 | **Faustino Hurtado, Anghelo Edwin** | **AV1:** Aprendió a transformar entrevistas en evidencias documentales consistentes y a relacionarlas con User Personas y Journey Maps. Fortaleció el uso de Markdown, Git, GitHub y Trello para integrar perfiles, enlaces, material visual y un Product Backlog versionado dentro del informe académico. |
 | **Roman Zeballos, Sebastian Jared** | **AV1:** Investigó técnicas de análisis competitivo, Needfinding, redacción de criterios de aceptación y estimación con Story Points. Aprendió a construir Impact Maps en UXPressia y a conectar objetivos de negocio, actores, impactos, entregables e historias de usuario antes de priorizarlas en el backlog. |
 | **Sejuro Medina, Mario Gabriel** | **AV1:** Estudió Lean UX, Context Mapping, C4 Model y diseño táctico de Domain-Driven Design para definir agregados, value objects, servicios, repositorios y adaptadores. Profundizó en la representación de arquitectura y en la separación de responsabilidades entre los contextos del dominio y servicios externos como Stripe y ExchangeRate-API. |
+
+*Fuente: elaboración del equipo Gastify.*
+
 
 **Conclusiones**
 
@@ -141,35 +163,69 @@ Cada integrante plantea dos objetivos para su desarrollo profesional luego de te
 
 ## Alexander Aliaga
 
+La tabla 4 presenta alexander aliaga.
+
+*Tabla 4. Alexander Aliaga.*
+
 | Objetivo | Medible | Alcanzable y relevante | Plazo |
 | --- | --- | --- | --- |
 | **Objetivo 1**<br>Completar una formación especializada en Domain-Driven Design y arquitectura de software. | Finalizar el programa elegido y publicar un caso de estudio con tres Bounded Contexts, Context Map y diagramas de arquitectura en un repositorio público. | Cuatro horas semanales de estudio y práctica sobre EventStorming y Bounded Context Canvases ya aplicados en CraveWallet; fortalece su capacidad para modelar dominios complejos. | Dentro de los 12 meses posteriores a la graduación. |
 | **Objetivo 2**<br>Facilitar sesiones de EventStorming para proyectos de software. | Facilitar tres sesiones documentadas, cada una con eventos, decisiones de diseño y acciones de seguimiento aprobadas por los participantes. | Una sesión cada seis meses en proyectos académicos, personales o profesionales; consolida la habilidad de traducir necesidades del negocio en modelos de dominio. | Dentro de los 18 meses posteriores a la graduación. |
 
+*Fuente: elaboración del equipo Gastify.*
+
+
 ## Josué Francisco Carpio Peña
+
+La tabla 5 presenta josué francisco carpio peña.
+
+*Tabla 5. Josué Francisco Carpio Peña.*
 
 | Objetivo | Medible | Alcanzable y relevante | Plazo |
 | --- | --- | --- | --- |
 | **Objetivo 1**<br>Obtener la certificación CompTIA Security+. | Aprobar el examen oficial; previamente, lograr al menos 85 % en tres simulacros consecutivos. | Seis horas semanales de estudio sobre seguridad de redes, gestión de riesgos y respuesta a incidentes; formaliza el interés en ciberseguridad reflejado en su perfil profesional. | Dentro de los 12 meses posteriores a la graduación. |
 | **Objetivo 2**<br>Construir un portafolio técnico de ciberseguridad aplicada. | Resolver seis retos Capture The Flag y publicar un informe técnico por cada reto en un repositorio o blog profesional. | Un reto cada tres meses, combinando laboratorios guiados y práctica autónoma; convierte conocimientos de seguridad en evidencia verificable para puestos de desarrollo seguro. | Dentro de los 18 meses posteriores a la graduación. |
 
+*Fuente: elaboración del equipo Gastify.*
+
+
 ## Anghelo Edwin Faustino Hurtado
+
+La tabla 6 presenta anghelo edwin faustino hurtado.
+
+*Tabla 6. Anghelo Edwin Faustino Hurtado.*
 
 | Objetivo | Medible | Alcanzable y relevante | Plazo |
 | --- | --- | --- | --- |
 | **Objetivo 1**<br>Obtener la certificación AWS Certified Developer - Associate. | Aprobar el examen oficial; antes, desplegar una API REST con Spring Boot, base de datos, autenticación y CI/CD como proyecto de práctica. | Cinco horas semanales de estudio y práctica; complementa su formación full-stack con despliegue en la nube y fortalece el perfil de desarrollo de productos digitales. | Dentro de los 12 meses posteriores a la graduación. |
 | **Objetivo 2**<br>Desplegar una aplicación full-stack propia orientada a resolver un problema cotidiano. | Publicar una aplicación con frontend Angular, backend Spring Boot, base de datos y al menos 50 usuarios de prueba que registren retroalimentación. | Reutiliza conocimientos de APIs REST, Git, experiencia de usuario y validación con entrevistas aplicados en CraveWallet. | Dentro de los 18 meses posteriores a la graduación. |
 
+*Fuente: elaboración del equipo Gastify.*
+
+
 ## Sebastian Jared Roman Zeballos
+
+La tabla 7 presenta sebastian jared roman zeballos.
+
+*Tabla 7. Sebastian Jared Roman Zeballos.*
 
 | Objetivo | Medible | Alcanzable y relevante | Plazo |
 | --- | --- | --- | --- |
 | **Objetivo 1**<br>Completar el Google UX Design Professional Certificate. | Aprobar los siete cursos y publicar el proyecto final junto con dos casos de estudio en un portafolio en línea. | Seis horas semanales de dedicación; amplía el trabajo de interfaces y experiencia de usuario desarrollado en CraveWallet. | Dentro de los 9 meses posteriores a la graduación. |
 | **Objetivo 2**<br>Construir un portafolio de interfaces web accesibles. | Publicar cinco proyectos frontend con diseño responsive, integración de APIs y cumplimiento de los criterios WCAG 2.1 nivel AA. | Un proyecto cada dos meses con Angular, TypeScript, HTML y CSS; fortalece el perfil de desarrollo de interfaces web escalables. | Dentro de los 12 meses posteriores a la graduación. |
 
+*Fuente: elaboración del equipo Gastify.*
+
+
 ## Mario Gabriel Sejuro Medina
+
+La tabla 8 presenta mario gabriel sejuro medina.
+
+*Tabla 8. Mario Gabriel Sejuro Medina.*
 
 | Objetivo | Medible | Alcanzable y relevante | Plazo |
 | --- | --- | --- | --- |
 | **Objetivo 1**<br>Completar una especialización en desarrollo móvil nativo con Kotlin y Jetpack Compose. | Finalizar la especialización y publicar tres aplicaciones Android funcionales en un repositorio público, incluyendo pruebas unitarias en al menos una de ellas. | Cinco horas semanales de estudio y práctica; profundiza su interés en desarrollo móvil y permite aplicar las decisiones de arquitectura planteadas en CraveWallet. | Dentro de los 12 meses posteriores a la graduación. |
 | **Objetivo 2**<br>Diseñar y desplegar una aplicación móvil fintech con arquitectura mantenible. | Publicar una aplicación móvil conectada a un backend Spring Boot, con autenticación, persistencia y una integración externa en entorno de prueba. | Extiende la experiencia con Flutter, Kotlin, Spring Boot, Stripe y ExchangeRate-API documentada en el proyecto; construye un caso de estudio para puestos de desarrollo móvil. | Dentro de los 18 meses posteriores a la graduación. |
+
+*Fuente: elaboración del equipo Gastify.*

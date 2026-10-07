@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1320" viewBox="0 0 1800 1320">
+<rect width="100%" height="100%" fill="white"/>
+<text x="40" y="25" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#18324a">C4 | Contexto del sistema CraveWallet</text>
+<text x="40" y="77" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">El sistema incluye cliente móvil y backend. Se muestran usuarios y sistemas externos.</text>
+<rect x="620" y="145" width="550" height="160" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="635" y="158" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Persona</text>
+<text x="635" y="186" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Usuario</text>
+<text x="635" y="225" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Estudiante o profesional joven que administra</text>
+<text x="635" y="253" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">compromisos y gastos.</text>
+<rect x="620" y="470" width="550" height="230" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="635" y="483" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Sistema de software</text>
+<text x="635" y="511" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">CraveWallet</text>
+<text x="635" y="550" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Registra suscripciones y gastos; muestra</text>
+<text x="635" y="578" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">estimaciones en soles; prepara avisos; administra</text>
+<text x="635" y="606" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">su plan propio.</text>
+<polyline points="895,305 895,470" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="895,470 888.4755169883315,456.49329346470984 901.5244830116685,456.49329346470984" fill="#486075"/>
+<rect x="654" y="350" width="512" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="660" y="353" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Registra y consulta mediante interfaz móvil</text>
+<rect x="40" y="970" width="400" height="190" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="55" y="983" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Sistema externo</text>
+<text x="55" y="1011" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">ExchangeRate-API</text>
+<text x="55" y="1050" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Cotizaciones USD/PEN</text>
+<polyline points="895,700 895,840 240,840 240,970" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="240,970 233.47551698833155,956.4932934647098 246.52448301166845,956.4932934647098" fill="#486075"/>
+<rect x="46" y="886" width="387" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="52" y="889" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Consulta cotización</text>
+<rect x="480" y="970" width="400" height="190" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="495" y="983" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Sistema externo</text>
+<text x="495" y="1011" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Stripe</text>
+<text x="495" y="1050" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Facturación de CraveWallet</text>
+<polyline points="895,700 895,840 680,840 680,970" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="680,970 673.4755169883315,956.4932934647098 686.5244830116685,956.4932934647098" fill="#486075"/>
+<rect x="486" y="886" width="387" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="492" y="889" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Checkout / webhooks</text>
+<rect x="920" y="970" width="400" height="190" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="935" y="983" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Sistema externo</text>
+<text x="935" y="1011" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Google Places</text>
+<text x="935" y="1050" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Sugerencias de comercios</text>
+<polyline points="895,700 895,840 1120,840 1120,970" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="1120,970 1113.4755169883315,956.4932934647098 1126.5244830116685,956.4932934647098" fill="#486075"/>
+<rect x="926" y="886" width="387" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="932" y="889" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Consulta sugerencias</text>
+<rect x="1360" y="970" width="400" height="190" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="1375" y="983" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Sistema externo</text>
+<text x="1375" y="1011" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Calendario del dispositivo</text>
+<text x="1375" y="1050" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Recordatorios con permisos</text>
+<polyline points="895,700 895,840 1560,840 1560,970" fill="none" stroke="#486075" stroke-width="3"/>
+<polygon points="1560,970 1553.4755169883315,956.4932934647098 1566.5244830116685,956.4932934647098" fill="#486075"/>
+<rect x="1366" y="886" width="387" height="32" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="1372" y="889" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Crear / retirar aviso</text>
+<text x="40" y="1197" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Stripe notifica al backend. Los contratos y cobros de los servicios registrados quedan fuera del sistema.</text>
+<text x="40" y="1251" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Fuente: Gastify. Propuesta de diseño; implementación y pruebas pendientes.</text>
+</svg>

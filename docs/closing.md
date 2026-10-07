@@ -4,7 +4,7 @@ El informe registra seis entrevistas, tres por cada segmento objetivo. Los relat
 
 El proceso Lean UX permitió formular supuestos e hipótesis sobre los beneficios de centralizar suscripciones, mostrar importes en soles y anticipar las renovaciones. Las metas de reducción de cargos inesperados, retención y conversión a Premium son objetivos de evaluación de la propuesta. Las entrevistas no demuestran que esas metas se hayan alcanzado; para evaluarlas se requieren pruebas del producto y mediciones durante su uso.
 
-Los artefactos de Needfinding y la especificación reúnen las necesidades identificadas, los arquetipos, los recorridos y las historias propuestas. Su función es orientar la priorización del Product Backlog y permitir que el equipo contraste los requisitos con las evidencias de las entrevistas.
+Los artefactos de Needfinding y la especificación reúnen las necesidades identificadas, los arquetipos, los recorridos y las historias propuestas. Su función es orientar la priorización del Product Backlog y permitir que el equipo contraste los requisitos con las evidencias de las entrevistas. El Anexo A enlaza el tablero del equipo y conserva su captura; debe comprobarse y actualizarse antes de la entrega.
 
 El diseño propone tres contextos: Subscription Management, Delivery Expense Management y Premium & Billing. La separación distingue las suscripciones que el usuario paga a terceros, los gastos puntuales de delivery y la facturación del plan de CraveWallet. Los diagramas documentan una propuesta de solución; sus fronteras, contratos y reglas requieren revisión durante la implementación.
 
@@ -14,9 +14,9 @@ El repositorio del informe conserva las contribuciones del equipo mediante ramas
 
 # Glosario
 
-**Anti-Corruption Layer (ACL).** Patrón de Context Mapping que interpone un adaptador entre dos Bounded Contexts —o entre un contexto y un sistema externo— para traducir modelos sin contaminar el dominio propio. En CraveWallet se aplica en la integración con ExchangeRate-API y con Stripe.
+**Anti-Corruption Layer (ACL).** Patrón de Context Mapping que interpone un adaptador entre dos Bounded Contexts —o entre un contexto y un sistema externo— para traducir modelos sin contaminar el dominio propio. En CraveWallet se propone en las integraciones con ExchangeRate-API, Stripe y Google Places.
 
-**Bounded Context.** Límite explícito dentro del cual un modelo de dominio es coherente y un mismo término tiene un único significado. CraveWallet define tres: Subscription Management, Delivery Expense Management y Premium & Billing.
+**Bounded Context.** Límite explícito dentro del cual un modelo de dominio es coherente y un mismo término tiene un único significado. CraveWallet propone tres: Subscription Management, Delivery Expense Management y Premium & Billing.
 
 **Context Mapping.** Técnica de Domain-Driven Design que documenta las relaciones de integración entre Bounded Contexts y los sistemas externos, especificando el lado que dicta el modelo (upstream) y el que se adapta (downstream).
 
@@ -32,7 +32,7 @@ El repositorio del informe conserva las contribuciones del equipo mediante ramas
 
 **Product Backlog.** Lista priorizada y estimada de todos los requisitos del producto (User Stories, Technical Stories y Spike Stories). El Product Backlog de CraveWallet contiene 40 US, 6 TS y 6 SP, gestionados en Trello.
 
-**Shared Kernel.** Subconjunto del modelo de dominio que dos Bounded Contexts comparten y mantienen conjuntamente. En CraveWallet, el identificador de usuario `UserId` es el Shared Kernel entre Subscription Management y Delivery Expense Management.
+**Shared Kernel.** Subconjunto del modelo y código que dos Bounded Contexts comparten y mantienen conjuntamente. CraveWallet no propone este patrón: usar `UserId` para correlacionar registros no establece un modelo compartido. Subscription Management y Delivery Expense Management mantienen modelos independientes (Separate Ways).
 
 **Spike Story.** Historia técnica de investigación, sin entregable de código productivo, cuyo objetivo es reducir incertidumbre sobre la viabilidad o el comportamiento de una tecnología o integración antes de implementarla en una historia de usuario.
 
@@ -47,41 +47,41 @@ El repositorio del informe conserva las contribuciones del equipo mediante ramas
 :::
 -->
 
-## Dominio de negocio
+<!-- pdf:omit-start -->
 
-Superintendencia de Banca, Seguros y AFP, & CAF. (s. f.). *Encuesta de Medición de Capacidades Financieras: Perú 2022*. https://www.sbs.gob.pe/Portals/4/jer/CIFRAS-ENCUESTA/2022/Brochure_ENCUESTA_CAPACIDADES%20FINANACIERAS%202022_vr.pdf
+Brown, S. (s. f.). The C4 model for visualising software architecture. Recuperado 7 de octubre de 2026, de https://c4model.com/
 
-Imawan, R., Putra, W. P., Alqahtani, R., Milakis, E. D., & Dumchykov, M. (2025). Enhancing financial literacy in young adults: An Android-based personal finance management tool. *Journal of Hypermedia & Technology-Enhanced Learning*, *3*(1), 64–89. https://doi.org/10.58536/j-hytel.166
+BudgetBakers. (2026). Everything about Premium. Wallet Help Center. https://support.budgetbakers.com/hc/en-us/articles/7151349344018-Everything-about-Premium
 
-Tetteh, F. K., & Owusu Kwateng, K. (2025). The pathways from digital financial literacy to sustained engagement with mobile financial services: A technology continuance theory perspective. *Journal of Financial Services Marketing*, *31*(1). https://doi.org/10.1057/s41264-025-00335-6
+DDD Crew. (s. f.-a). Context Mapping. Recuperado 7 de octubre de 2026, de https://github.com/ddd-crew/context-mapping
 
-## Métodos y técnicas de ingeniería de software
+DDD Crew. (s. f.-b). Domain Message Flow Modelling. Recuperado 7 de octubre de 2026, de https://github.com/ddd-crew/domain-message-flow-modelling
 
-DDD Crew. (s. f.). *The Bounded Context Canvas*. https://github.com/ddd-crew/bounded-context-canvas
+DDD Crew. (s. f.-c). The Bounded Context Canvas. Recuperado 6 de octubre de 2026, de https://github.com/ddd-crew/bounded-context-canvas
 
-Gothelf, J. (2021). *How to use the Lean UX Canvas*. https://jeffgothelf.com/blog/how-to-use-the-lean-ux-canvas/
+Evans, E. (2003). Domain-Driven Design: Tackling Complexity in the Heart of Software. Addison-Wesley.
 
-Gothelf, J., & Seiden, J. (2021). *Lean UX: Creating great products with agile teams* (3.a ed.). O'Reilly Media.
+ExchangeRate-API. (s. f.). Pair conversion requests. Recuperado 7 de octubre de 2026, de https://www.exchangerate-api.com/docs/pair-conversion-requests
 
-Portigal, S. (2013). *Interviewing users: How to uncover compelling insights*. Rosenfeld Media.
+Fintonic. (s. f.). Organiza tu dinero y ahorra con la app de Fintonic. Fintonic. Recuperado 7 de octubre de 2026, de https://www.fintonic.com/es-ES/inicio/
 
-## Lenguajes, frameworks y herramientas
+Google. (s. f.). Text Search (New). Recuperado 7 de octubre de 2026, de https://developers.google.com/maps/documentation/places/web-service/text-search
 
-Mushtaq, F., Azam, F., & Anwar, M. W. (2024). Performance comparison of single code base development tools: Flutter, React Native, and Xamarin. En *2024 14th International Conference on Software Technology and Engineering (ICSTE 2024)* (pp. 17–23). IEEE. https://doi.org/10.1109/ICSTE68572.2024.00011
+Gothelf, J. (2021). How to use the Lean UX Canvas. https://jeffgothelf.com/blog/how-to-use-the-lean-ux-canvas/
 
-Zou, D., & Darus, M. Y. (2024). A comparative analysis of cross-platform mobile development frameworks. En *2024 IEEE 6th Symposium on Computers & Informatics (ISCI)* (pp. 1–6). IEEE. https://doi.org/10.1109/ISCI62787.2024.10667693
+Gothelf, J., & Seiden, J. (2021). Lean UX: Creating Great Products with Agile Teams (3.ª ed.). O’Reilly Media.
 
-BudgetBakers. (2026). *Everything about Premium*. Wallet Help Center. https://support.budgetbakers.com/hc/en-us/articles/7151349344018-Everything-about-Premium
+Portigal, S. (2013). Interviewing Users: How to Uncover Compelling Insights. Rosenfeld Media.
 
-CNBC Select. (2026). *Best subscription trackers of 2026*. CNBC. https://www.cnbc.com/select/best-subscription-trackers/
+Spendee. (2025). What is Spendee Premium? Spendee Help Center. https://help.spendee.com/article/202-what-is-spendee-premium
 
-Diario Financiero. (2023). *Nuestro viaje ha terminado: fintech española Fintonic cierra sus operaciones en Chile*. Diario Financiero. https://www.df.cl/mercados/banca-fintech/nuestro-viaje-ha-terminado-fintech-espanola-fintonic-cierra-sus
+Stripe. (s. f.-a). Receive Stripe events in your webhook endpoint. Recuperado 7 de octubre de 2026, de https://docs.stripe.com/webhooks
 
-Fintonic. (2026). *Organiza tu dinero y ahorra con la app de Fintonic*. https://www.fintonic.com/es-ES/inicio/
+Stripe. (s. f.-b). Using webhooks with subscriptions. Recuperado 7 de octubre de 2026, de https://docs.stripe.com/billing/subscriptions/webhooks
 
-Rocket Money. (2026). *The 7 best subscription management apps in 2026*. Rocket Money. https://www.rocketmoney.com/learn/personal-finance/best-subscription-management-apps
+Superintendencia de Banca, Seguros y AFP, & CAF. (s. f.). Encuesta de Medición de Capacidades Financieras: Perú 2022. SBS y CAF. Recuperado 6 de octubre de 2026, de https://www.sbs.gob.pe/Portals/4/jer/CIFRAS-ENCUESTA/2022/Brochure_ENCUESTA_CAPACIDADES%20FINANACIERAS%202022_vr.pdf
 
-Spendee. (2026). *What is Spendee Premium?* Spendee Help Center. https://help.spendee.com/article/202-what-is-spendee-premium
+<!-- pdf:omit-end -->
 
 # Anexos
 
