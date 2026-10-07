@@ -259,42 +259,7 @@ def architecture():
     c.text(40,1380,'El retorno del checkout no confirma acceso. Stripe envía webhooks al backend; no al cliente móvil.',24)
     c.footer(); c.save('containers-revised')
 
-def impact_maps():
-    maps = [
-        ('01', 'Reducir cargos no anticipados ≥ 60 % en 90 días', [
-            ('Revisar el aviso antes del cobro y decidir si mantiene el servicio.', 'Recordatorios: US12, US13, US14, US28, US36'),
-        ]),
-        ('02', 'Retención a 30 días > 45 % entre usuarios con ≥ 3 suscripciones', [
-            ('Consultar el compromiso mensual y las próximas renovaciones.', 'Dashboard: US08, US09, US10, US27, US35'),
-            ('Registrar las nuevas suscripciones para mantener el portafolio completo.', 'Registro: US04, US05, US34'),
-        ]),
-        ('03', 'Conversión a Premium ≥ 12 % del grupo que alcanza el límite Free en 6 meses', [
-            ('Evaluar precio y beneficios al alcanzar el límite gratuito.', 'Plan Premium: US21, US22, US31, US39'),
-        ]),
-        ('04', 'NPS > 40 al terminar el primer semestre posterior al lanzamiento', [
-            ('Comprender la propuesta y los planes antes de descargar la aplicación.', 'Landing page: US24, US25, US32'),
-            ('Consultar importes en soles y anticipar renovaciones; evaluar su utilidad.', 'Experiencia principal: US15, US16, US17, US08, US12'),
-        ]),
-    ]
-    for code, goal, branches in maps:
-        c = Canvas(1800, 1000, 'CraveWallet | Impact Map BG'+code,
-                   'Meta → actores → cambios de comportamiento → entregables. Las metas son hipótesis de evaluación.')
-        for x, label in [(40,'¿Por qué?'),(470,'¿Quién?'),(900,'¿Cómo?'),(1330,'¿Qué?')]:
-            c.text(x,150,label,27,True)
-        c.box(40,370,380,220,'Objetivo de negocio',goal)
-        c.box(470,370,380,220,'Actores propuestos','Camila Torres: estudiante. Renzo Salazar: profesional joven. Personas de diseño, no entrevistados reales.')
-        c.line([(420,480),(470,480)])
-        for i,(impact,deliverables) in enumerate(branches):
-            y = 230 if len(branches)==2 and i==0 else 600 if len(branches)==2 else 370
-            c.box(900,y,380,220,'Cambio esperado',impact)
-            c.box(1330,y,420,220,'Historias propuestas',deliverables)
-            c.line([(850,480),(875,480),(875,y+110),(900,y+110)])
-            c.line([(1280,y+110),(1330,y+110)])
-        c.footer('Fuente: elaboración de Gastify a partir de los objetivos y las historias de la sección 2.4.2. Resultados por validar.')
-        c.save('impact-bg'+code+'-revised')
-
 if __name__ == '__main__':
     flows(); context_map(); architecture(); databases()
     for kind in ['subscription','delivery','premium']: components(kind)
-    impact_maps()
-    print('Rendered message flows, context map, architecture, components, persistence and impact maps')
+    print('Rendered message flows, context map, architecture, components, persistence')

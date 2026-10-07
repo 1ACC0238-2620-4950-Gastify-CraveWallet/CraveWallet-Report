@@ -1829,11 +1829,11 @@ Los requisitos y criterios de SP06 se detallan en la tabla 78.
 
 ### 2.4.2. Impact Mapping
 
-El Impact Map vincula los objetivos de negocio de CraveWallet con las personas que pueden hacerlos posibles, el cambio de comportamiento que se espera de ellas, lo que el producto entrega para provocar ese cambio y las historias que lo implementan. Los gráficos se construyen a partir de las fichas de User Persona de Camila Torres y Renzo Salazar (2.3.1), respondiendo en cada nivel las preguntas del método: quiénes ayudan a lograr la meta, qué tendrían que hacer, qué puede hacer el negocio digital para provocarlo y con qué historias. Se elabora un mapa por cada Business Goal.
+El Impact Map vincula los objetivos de negocio de CraveWallet con las personas que pueden hacerlos posibles, el cambio de comportamiento que se espera de ellas, lo que el producto entrega para provocar ese cambio y las historias que lo implementan. El equipo lo elabora en UXPressia a partir de las fichas de User Persona de Camila Torres y Renzo Salazar (2.3.1), respondiendo en cada nivel las preguntas del método: quiénes ayudan a lograr la meta, qué tendrían que hacer, qué puede hacer el negocio digital para provocarlo y con qué historias. Se elabora un mapa por cada Business Goal.
 
 Los Business Goals se derivan, con los criterios SMART, de los Business Outcomes del Lean UX Canvas (sección 1.2.2.4 del Capítulo I), que recogen el criterio de éxito del Problem Statement (1.2.2.1) y los Business Outcome Assumptions (1.2.2.2).
 
-La tabla 79 presenta impact mapping.
+La tabla 79 presenta Impact Mapping.
 
 *Tabla 79. Impact Mapping.*
 
@@ -1841,13 +1841,12 @@ La tabla 79 presenta impact mapping.
 | --- | --- |
 | BG01 | Reducir los cargos no anticipados por renovación automática en al menos 60 % entre los usuarios activos, dentro de los 90 días desde su primer uso. |
 | BG02 | Alcanzar una retención a 30 días superior al 45 % entre los usuarios que han registrado 3 o más suscripciones activas. |
-| BG03 | Lograr que al menos el 12 % de los usuarios activos mensuales que alcancen el límite gratuito contrate el plan Premium, dentro de los primeros 6 meses de operación. |
+| BG03 | Lograr que al menos el 12 % de los usuarios activos mensuales con 6 o más suscripciones registradas convierta al plan Premium, dentro de los primeros 6 meses de operación. |
 | BG04 | Alcanzar un Net Promoter Score superior a 40 puntos al término del primer semestre posterior al lanzamiento. |
 
 *Fuente: elaboración del equipo Gastify.*
 
-
-Los actores son los dos User Personas del proyecto: **Camila Torres**, del Segmento 1, y **Renzo Salazar**, del Segmento 2. Los deliverables corresponden a las Epics de la especificación, y cada historia aparece con su código. Las Technical Stories y las Spike Stories no aparecen en los mapas porque no modifican el comportamiento de un actor; entran al Product Backlog por la dependencia técnica de las historias que sí lo hacen.
+Los actores son los dos User Personas del proyecto: **Camila Torres**, del Segmento 1, y **Renzo Salazar**, del Segmento 2. En los mapas, la Persona 1 corresponde a Camila Torres y la Persona 2 a Renzo Salazar. Los deliverables corresponden a las Epics de la especificación, y cada historia aparece con su código. Las Technical Stories y las Spike Stories no aparecen en los mapas porque no modifican el comportamiento de un actor; entran al Product Backlog por la dependencia técnica de las historias que sí lo hacen.
 
 #### Business Goal 01: anticipación del cobro
 
@@ -1855,7 +1854,7 @@ Este mapa responde a qué tiene que cambiar para que un usuario deje de enterars
 
 La figura 12 relaciona el objetivo de anticipar los cobros con los actores, los cambios de comportamiento y las historias propuestas.
 
-![Impact Map del Business Goal 01](images/chapter_2/impact-bg01-revised.png)
+![Impact Map del Business Goal 01](images/chapter_2/Impact_Map_BG01.png)
 
 <!-- pdf:omit-start -->
 
@@ -1865,20 +1864,19 @@ La figura 12 relaciona el objetivo de anticipar los cobros con los actores, los 
 
 *Fuente: elaboración del equipo Gastify.*
 
-La tabla 80 presenta business goal 01: anticipación del cobro.
+La tabla 80 presenta Business Goal 01: anticipación del cobro.
 
 *Tabla 80. Business Goal 01: anticipación del cobro.*
 
 | User Story | Enunciado |
 |:----------:|:----------|
 | US12 | Como usuario, deseo que CraveWallet agende un recordatorio en mi calendario nativo 24 horas antes de cada cobro de una suscripción activa, para tener tiempo de verificar mi saldo o cancelarla antes de que se renueve. |
-| US13 | Como usuario, deseo que al cancelar una suscripción se elimine también su recordatorio en el calendario, para no recibir avisos de un registro que marqué como cancelado en CraveWallet. |
+| US13 | Como usuario, deseo que al cancelar una suscripción se elimine también su recordatorio en el calendario, para no recibir avisos de un cobro que ya no va a ocurrir. |
 | US14 | Como usuario, deseo que la aplicación me pida permiso para acceder a mi calendario la primera vez que lo necesite, para entender por qué lo solicita y decidir si lo autorizo. |
 | US28 | Como usuario, deseo ver dentro de CraveWallet la lista de los recordatorios que se agendaron en mi calendario, para confirmar que todas mis suscripciones activas tienen uno programado. |
 | US36 | Como usuario, deseo recibir una notificación push de CraveWallet 24 horas antes de un cobro, además del evento agendado en mi calendario, para enterarme del aviso aunque no revise mi calendario ese día. |
 
 *Fuente: elaboración del equipo Gastify.*
-
 
 #### Business Goal 02: retención por uso del Dashboard
 
@@ -1886,7 +1884,7 @@ El segundo mapa sostiene la hipótesis de que un usuario vuelve a la aplicación
 
 La figura 13 relaciona el objetivo de retención con los actores, los cambios de comportamiento y las historias propuestas.
 
-![Impact Map del Business Goal 02](images/chapter_2/impact-bg02-revised.png)
+![Impact Map del Business Goal 02](images/chapter_2/Impact_Map_BG02.png)
 
 <!-- pdf:omit-start -->
 
@@ -1896,7 +1894,7 @@ La figura 13 relaciona el objetivo de retención con los actores, los cambios de
 
 *Fuente: elaboración del equipo Gastify.*
 
-La tabla 81 presenta business goal 02: retención por uso del dashboard.
+La tabla 81 presenta Business Goal 02: retención por uso del Dashboard.
 
 *Tabla 81. Business Goal 02: retención por uso del Dashboard.*
 
@@ -1906,21 +1904,20 @@ La tabla 81 presenta business goal 02: retención por uso del dashboard.
 | US09 | Como usuario, deseo ver mis suscripciones activas agrupadas por categoría (streaming, educación, fitness, delivery, cloud), para entender en qué rubros concentro mi gasto recurrente. |
 | US10 | Como usuario, deseo ver mis suscripciones activas ordenadas de la más próxima a la más lejana a cobrarse, para anticipar qué cargo viene primero. |
 | US27 | Como usuario con muchas suscripciones registradas, deseo buscar una por su nombre en el Dashboard, para encontrarla rápido sin recorrer toda la lista. |
-| US35 | Como usuario, deseo ver una estimación del gasto que podría evitar al cancelar el servicio antes de que se renueve, para evaluar el posible efecto de cancelar el servicio a tiempo con su proveedor. |
+| US35 | Como usuario, deseo ver cuánto me ahorré al cancelar una suscripción antes de que se renovara, para reconocer el valor de usar CraveWallet a tiempo. |
 | US04 | Como usuario, deseo elegir un servicio de un catálogo con los nombres, logos y monedas de facturación de las suscripciones más frecuentes de mi segmento, para no tener que llenar esos datos a mano. |
 | US05 | Como usuario, deseo registrar manualmente una suscripción que no está en el catálogo precargado, para llevar el control de servicios menos comunes (como una membresía física o una herramienta cloud específica). |
 | US34 | Como usuario, deseo ver una previsualización del monto en soles mientras registro una suscripción en dólares, para saber de antemano cuánto representará en mi presupuesto antes de guardarla. |
 
 *Fuente: elaboración del equipo Gastify.*
 
-
 #### Business Goal 03: conversión a Premium
 
-El tercer mapa se concentra en los usuarios de mayor compromiso, que alcanzan el límite gratuito de suscripciones activas. De ambas personas se espera que perciban el límite del plan gratuito y decidan pagar por eliminarlo, en vez de abandonar el registro de sus suscripciones adicionales (plan Premium, con las historias de conocer el precio, suscribirse vía Stripe, ver el historial de pagos y ver cuánto falta para el límite gratuito).
+El tercer mapa se concentra en los usuarios de mayor compromiso, con 6 o más suscripciones registradas. De ambas personas se espera que perciban el límite del plan gratuito y decidan pagar por eliminarlo, en vez de abandonar el registro de sus suscripciones adicionales (plan Premium, con las historias de conocer el precio, suscribirse vía Stripe, ver el historial de pagos y ver cuánto falta para el límite gratuito).
 
 La figura 14 relaciona el objetivo de conversión a Premium con los actores, los cambios de comportamiento y las historias propuestas.
 
-![Impact Map del Business Goal 03](images/chapter_2/impact-bg03-revised.png)
+![Impact Map del Business Goal 03](images/chapter_2/Impact_Map_BG03.png)
 
 <!-- pdf:omit-start -->
 
@@ -1930,7 +1927,7 @@ La figura 14 relaciona el objetivo de conversión a Premium con los actores, los
 
 *Fuente: elaboración del equipo Gastify.*
 
-La tabla 82 presenta business goal 03: conversión a premium.
+La tabla 82 presenta Business Goal 03: conversión a Premium.
 
 *Tabla 82. Business Goal 03: conversión a Premium.*
 
@@ -1943,14 +1940,13 @@ La tabla 82 presenta business goal 03: conversión a premium.
 
 *Fuente: elaboración del equipo Gastify.*
 
-
 #### Business Goal 04: recomendación del producto
 
 El cuarto mapa depende de que ambas personas perciban que CraveWallet resuelve mejor que la competencia (2.1) su problema principal. Se espera que un visitante entienda la propuesta de valor antes de descargar la aplicación (landing page, con las historias de ver la propuesta de valor, comparar planes y consultar preguntas frecuentes), y que un usuario activo experimente en conjunto el Dashboard, la conversión de divisas y los recordatorios como una solución coherente que lo lleve a recomendarla.
 
 La figura 15 relaciona el objetivo de recomendación del producto con los actores, los cambios de comportamiento y las historias propuestas.
 
-![Impact Map del Business Goal 04](images/chapter_2/impact-bg04-revised.png)
+![Impact Map del Business Goal 04](images/chapter_2/Impact_Map_BG04.png)
 
 <!-- pdf:omit-start -->
 
@@ -1960,7 +1956,7 @@ La figura 15 relaciona el objetivo de recomendación del producto con los actore
 
 *Fuente: elaboración del equipo Gastify.*
 
-La tabla 83 presenta business goal 04: recomendación del producto.
+La tabla 83 presenta Business Goal 04: recomendación del producto.
 
 *Tabla 83. Business Goal 04: recomendación del producto.*
 
@@ -1969,14 +1965,13 @@ La tabla 83 presenta business goal 04: recomendación del producto.
 | US24 | Como visitante que todavía no tiene cuenta, deseo entender en el landing page qué problema resuelve CraveWallet y cómo funciona, para decidir si quiero descargarla. |
 | US25 | Como visitante, deseo ver una comparación clara entre el plan gratuito y el plan Premium en el landing page, para saber qué esperar antes de descargar la aplicación. |
 | US32 | Como visitante, deseo consultar una sección de preguntas frecuentes en el landing page, para resolver dudas comunes (seguridad, moneda, costo de Premium) antes de descargar la aplicación. |
-| US15 | Como usuario, deseo ver junto al monto original en dólares de una suscripción su equivalente en soles, calculado con el tipo de cambio del día, para estimar su costo antes del cobro, considerando que el cargo final puede usar otra cotización o incluir comisiones. |
+| US15 | Como usuario, deseo ver junto al monto original en dólares de una suscripción su equivalente en soles, calculado con el tipo de cambio del día, para saber cuánto me costará realmente antes de que se cobre. |
 | US16 | Como usuario, deseo ver qué tipo de cambio usó CraveWallet para convertir mis suscripciones en dólares y cuándo se actualizó, para confiar en que el monto mostrado es razonable. |
 | US17 | Como usuario, deseo que el total del Dashboard sume todas mis suscripciones en una sola moneda, sin importar en qué divisa se facture cada una, para no tener que hacer yo mismo la conversión mental. |
 | US08 | Como usuario, deseo ver en el Dashboard el monto total que gasto al mes en suscripciones activas, ya convertido a soles, para conocer mi compromiso financiero recurrente en una sola cifra. |
 | US12 | Como usuario, deseo que CraveWallet agende un recordatorio en mi calendario nativo 24 horas antes de cada cobro de una suscripción activa, para tener tiempo de verificar mi saldo o cancelarla antes de que se renueve. |
 
 *Fuente: elaboración del equipo Gastify.*
-
 
 ### 2.4.3. Product Backlog
 
