@@ -1678,52 +1678,89 @@ La figura 17 representa los recorridos propuestos para registrar suscripciones y
 | --- | --- | --- |
 | **Suscripciones** | Mantener el ciclo de vida, la fecha de renovación, el importe y la moneda de cada suscripción; emitir *Suscripción registrada* y coordinar *Alarma local programada*. | Core: concentra la anticipación del cobro. |
 | **Gastos** | Registrar pedidos de delivery, clasificarlos y contrastar el acumulado del mes con un límite; emitir *Gasto registrado* y *Límite mensual superado*. | Apoyo: conecta el consumo cotidiano con el presupuesto. |
-| **Premium** | Conservar el nivel de acceso y aplicar los límites del plan gratuito tras el resultado de una operación de prueba; emitir *Plan Premium activado* solo cuando el pago de prueba haya sido aprobado. | Genérico o de apoyo: habilita funciones, pero no define el ciclo de una suscripción externa. |
+| **Premium** | Conservar el nivel de acceso y aplicar los límites del plan gratuito tras el resultado de una operación de prueba; emitir *Plan Premium activado* solo cuando el pago de prueba haya sido aprobado. | Genérico: habilita funciones, pero no define el ciclo de una suscripción externa. |
 
 La autenticación por el backend RESTful, las notificaciones locales, el calendario del dispositivo y el almacenamiento local son capacidades que colaboran con estos contextos; no se representan como si fueran eventos de negocio. ExchangeRate-API, Google Places API y Stripe permanecen como dependencias externas. Su integración debe traducir las respuestas técnicas a conceptos propios del dominio antes de afectar una suscripción, un gasto o un nivel de acceso. Las fronteras propuestas son candidatas y se revisarán cuando el equipo detalle las historias de usuario y sus reglas.
 
 #### 2.5.1.2. Domain Message Flows Modeling
 
-El flujo de mensajes enlaza **actor → comando → evento → política → vista o acción derivada**. Los comandos describen una intención y pueden ser rechazados; los eventos naranjas describen un hecho confirmado. Las políticas violetas reaccionan a esos hechos, mientras que las vistas verdes muestran al usuario el estado resultante. Este criterio impide llamar «evento» a una pantalla abierta o a un aviso que todavía no se ha programado.
+Se modelan escenarios de CraveWallet indicando quién envía cada mensaje, quién lo recibe, su orden y sus datos relevantes. La notación adapta Domain Message Flow Modelling de DDD Crew [@dddcrewMessageFlows]. **C** identifica una orden que puede rechazarse; **Q**, una consulta; **R**, su respuesta; **E**, un hecho confirmado. Un evento interno no implica que exista un bus de mensajes: los contextos pueden implementarse como módulos del mismo backend.
 
-| Flujo | Comando y evento principal | Reacción y resultado observable |
+##### Escenario A. Registrar una suscripción y preparar el recordatorio
+
+| Orden y tipo | Emisor → receptor | Mensaje y datos relevantes |
 | --- | --- | --- |
-| Suscripción y renovación | *Registrar suscripción* → *Suscripción registrada*. | La política «al registrar, avisar 24 h antes» programa una alarma local; cuando llega el momento se muestra el recordatorio y se actualiza la vista de próximas renovaciones. |
-| Pedido y presupuesto | *Registrar gasto* → *Gasto registrado*. | La política recalcula el límite, actualiza el presupuesto y, si corresponde, registra *Límite mensual superado* en el resumen del mes. |
-| Cuenta e identidad | *Iniciar sesión* → *Sesión autenticada*. | La API REST interna valida la cuenta y deja disponible el perfil. |
-| Local y categorización | *Buscar local* → *Dirección validada*; después *Guardar gasto con local* → *Gasto categorizado*. | Google Places API ayuda a encontrar y validar el local. El historial de gastos muestra el registro persistido. |
-| Plan Premium | *Elegir plan Premium* → *Pago de prueba aprobado*. | Solo ante la aprobación se activa el plan y cambia la vista de estado Premium. El SDK de Stripe se utiliza en modo de prueba. |
-| Persistencia local | *Guardar gasto y límite* → *Datos persistidos*. | La base de datos local permite leer el historial y el límite cuando no hay red. |
+| 1 — C | Aplicación móvil → Subscription Management | `RegisterSubscription`: usuario autenticado, nombre, importe, moneda, periodicidad y próxima fecha de renovación. |
+| 2 — Q | Subscription Management → Premium & Billing | `GetPlanAccess(userId)`: consultar nivel de acceso y límite vigente. |
+| 3 — R | Premium & Billing → Subscription Management | `PlanAccess`: nivel Free/Premium y límite. El caso de uso compara ese límite con el número de registros activos; si lo alcanza, rechaza el alta según US39. |
+| 4 — E | Subscription → manejadores del mismo contexto | `SubscriptionRegistered(subscriptionId, userId, nextBillingDate)`, después de persistir el registro válido. |
+| 5 — R | Subscription Management → aplicación móvil | Registro confirmado y datos para preparar el aviso. Esto no significa que el calendario haya aceptado el recordatorio. |
+| 6 — C | Aplicación móvil → calendario del dispositivo | Crear recordatorio con identificador del registro, título y fecha/hora calculada 24 horas antes, previa autorización del usuario. |
+| 7 — R | Calendario del dispositivo → aplicación móvil | Identificador del evento creado o error/permiso denegado. La interfaz muestra el resultado real. |
 
-La figura 18 representa los recorridos complementarios de identidad, búsqueda de locales y categorización.
+La conversión se solicita al consultar el portafolio: Subscription Management pide USD/PEN al adaptador, recibe la cotización y su fecha, y devuelve una estimación en soles. El registro conserva la moneda original; el tipo de cambio del banco no se conoce por esta consulta. La hora, zona horaria y reprogramación se deben concretar en SP03–SP04.
 
-![EventStorming To-Be: identidad, Google Places y categorización](images/chapter_2/eventstorming-flujos-complementarios.png)
+##### Escenario B. Registrar un gasto y comparar el presupuesto
+
+| Orden y tipo | Emisor → receptor | Mensaje y datos relevantes |
+| --- | --- | --- |
+| 1 — C | Aplicación móvil → Delivery Expense Management | `RegisterExpense`: usuario, identificador de solicitud, comercio, importe, categoría y fecha. El identificador permite reconocer un reintento del mismo registro. |
+| 2 — E | DeliveryExpense → manejadores del mismo contexto | `DeliveryExpenseRegistered(expenseId, userId, amount, expenseDate)`, tras confirmar el gasto. |
+| 3 — C interno | Caso de uso → MonthlyBudget | Aplicar el gasto al período de su fecha, una sola vez. La implementación debe elegir una actualización transaccional o un consumidor idempotente; no ejecutar ambas para sumar el mismo gasto. |
+| 4 — E condicional | MonthlyBudget → manejadores del mismo contexto | `MonthlyLimitExceeded(budgetId, userId, period, limit, accumulated)` únicamente cuando el acumulado supera el límite definido. |
+| 5 — Q | Aplicación móvil → Delivery Expense Management | Consultar resumen del usuario y período. |
+| 6 — R | Delivery Expense Management → aplicación móvil | Total, límite, saldo disponible y condición de exceso. Sin límite configurado, mostrar total sin afirmar que se excedió un presupuesto. |
+
+La búsqueda de comercios es una consulta auxiliar: el adaptador de Google Places devuelve sugerencias, y el usuario elige una o escribe un nombre (US18). No se emite «dirección validada» como prueba de que el pedido ocurrió. La figura 18 resume los escenarios A y B.
+
+![Domain Message Flows: registro de suscripción y gasto de delivery](images/chapter_2/domain-message-flows-registration.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 18. EventStorming To-Be: identidad, Google Places y categorización.*
+*Figura 18. Domain Message Flows: registro de suscripción y gasto de delivery.*
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify.*
+*Fuente: elaboración de Gastify, adaptada de DDD Crew, Domain Message Flow Modelling (s. f.). Diagrama adaptado bajo CC BY-SA 4.0.*
 
-*Nota: flujos complementarios de autenticación, validación de locales y registro del gasto.*
+##### Escenario C. Activar o renovar Premium a partir de un pago confirmado
 
-La figura 19 representa el recorrido de pago de prueba y el uso de datos locales.
+| Orden y tipo | Emisor → receptor | Mensaje y datos relevantes |
+| --- | --- | --- |
+| 1 — C | Aplicación móvil → Premium & Billing | Iniciar checkout del usuario para el precio configurado. |
+| 2 — C | Premium & Billing → Stripe | Crear sesión de suscripción y conservar la correlación entre usuario, cliente y operación. |
+| 3 — R | Stripe → Premium & Billing → aplicación móvil | Sesión/enlace de checkout. El usuario completa el pago en el flujo del proveedor; esta respuesta no activa Premium. |
+| 4 — E externo | Stripe → adaptador de Premium & Billing | `invoice.paid`: identificadores de evento, factura, cliente y suscripción. Verificar firma, correlación, entorno de prueba y estado vigente de la suscripción antes de actualizar acceso. |
+| 5 — E interno | SubscriptionPlan → manejadores del mismo contexto | `PlanUpgradedToPremium(planId, userId, billingPeriod)` cuando Free pasa a Premium. Una renovación actualiza la vigencia sin repetir esa transición. |
+| 6 — Q/R | Aplicación móvil → Premium & Billing → aplicación móvil | Consultar y recibir nivel y vigencia confirmados. Mostrar pendiente mientras no exista confirmación válida. |
 
-![EventStorming To-Be: Premium de prueba y datos locales](images/chapter_2/eventstorming-premium-datos-locales.png)
+Stripe documenta la confirmación por webhook y el control del estado de la suscripción [@stripeSubscriptionWebhooks]. La recepción debe admitir reintentos y notificaciones fuera de orden [@stripeWebhooks]. El registro único del identificador externo impide aplicar dos veces el mismo evento. SP05–SP06 deben validar el flujo; el informe no acredita pagos ni integración ejecutados.
+
+##### Escenario D. Cancelar la renovación del plan de CraveWallet
+
+| Orden y tipo | Emisor → receptor | Mensaje y datos relevantes |
+| --- | --- | --- |
+| 1 — C | Aplicación móvil → Premium & Billing | Solicitar cancelación de la renovación del plan propio. |
+| 2 — C/R | Premium & Billing ↔ Stripe | Solicitar y confirmar cancelación al fin del período. Conservar la fecha de vigencia pagada. |
+| 3 — E externo | Stripe → adaptador de Premium & Billing | `customer.subscription.deleted` al finalizar la suscripción. Verificar firma y correlación, y reconciliar la vigencia. |
+| 4 — E interno | SubscriptionPlan → manejadores del mismo contexto | `PlanDowngradedToFree(planId, userId)` tras finalizar el acceso Premium. |
+| 5 — Q/R | Aplicación móvil ↔ Premium & Billing | Consultar y recibir el nivel Free. El tratamiento de registros que excedan el límite gratuito debe acordarse con el equipo. |
+
+La figura 19 muestra los escenarios C y D. La cancelación del plan propio no altera las suscripciones que el usuario paga a terceros.
+
+![Domain Message Flows: activación y cancelación de Premium](images/chapter_2/domain-message-flows-premium.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 19. EventStorming To-Be: Premium de prueba y datos locales.*
+*Figura 19. Domain Message Flows: activación y cancelación de Premium.*
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify.*
+*Fuente: elaboración de Gastify, adaptada de DDD Crew, Domain Message Flow Modelling (s. f.). Diagrama adaptado bajo CC BY-SA 4.0.*
 
-*Nota: activación del plan en el entorno de prueba de Stripe y lectura sin conexión de datos persistidos.*
+**Marcar una suscripción externa como cancelada:** la aplicación envía el comando a Subscription Management; `Subscription` confirma `SubscriptionCancelled`; el backend conserva el historial y devuelve el estado; el cliente solicita retirar el evento del calendario y verifica el resultado (US07, US13). Esto no comunica una cancelación a Netflix, un gimnasio u otro proveedor.
 
-En el recorrido principal, la aplicación **no ejecuta ni cancela el cobro que realiza el proveedor de delivery**. Su responsabilidad es registrar la obligación, avisar antes de la renovación y reflejar el gasto que el usuario consigna. La conversión de divisas es una estimación para planificar; el importe final depende del tipo de cambio aplicado por la entidad que procese el cargo.
+La autenticación es una capacidad técnica previa a los comandos del usuario. La lectura de caché local y la persistencia son operaciones de infraestructura, no contextos adicionales ni eventos de negocio. Los escenarios anteriores se trazan a US04–US07, US12–US13, US18–US20, US21–US23, US39 y TS05–TS06.
 
 #### 2.5.1.3. Bounded Context Canvases
 
@@ -1749,12 +1786,12 @@ Cada canvas documenta el propósito y los límites de un contexto, sus colaborad
 | Roles del dominio | Gestionar el ciclo de vida del registro y proporcionar información para la planificación del gasto. La ejecución del cobro externo queda fuera de su responsabilidad. |
 | Comunicación entrante | **Aplicación móvil:** comandos de registrar, editar y marcar una suscripción como cancelada; consultas del portafolio y detalle. **Premium & Billing:** respuesta a la consulta de nivel y límite del plan. **ExchangeRate-API:** respuesta de cotización traducida por un adaptador. Las respuestas externas no son eventos de negocio por sí mismas. |
 | Comunicación saliente | **Premium & Billing:** consulta de acceso antes de admitir un registro adicional. **ExchangeRate-API:** consulta de cotización USD/PEN. **Aplicación móvil:** portafolio, próxima fecha de renovación y datos para crear o retirar el recordatorio del calendario. Eventos internos propuestos: `SubscriptionRegistered` y `SubscriptionCancelled`. No se presupone un bus de mensajes. |
-| Colaboradores y relaciones | Premium & Billing suministra las reglas de acceso; ExchangeRate-API suministra cotizaciones mediante una capa anticorrupción; el cliente móvil utiliza el contrato de la aplicación para gestionar el calendario del dispositivo. Los patrones entre contextos deben contrastarse en 2.5.2. |
+| Colaboradores y relaciones | Premium & Billing suministra las reglas de acceso; ExchangeRate-API suministra cotizaciones mediante una capa anticorrupción; el cliente móvil utiliza el contrato de la aplicación para gestionar el calendario del dispositivo. La relación Customer/Supplier propuesta y sus contratos se detallan en 2.5.2. |
 | Lenguaje ubicuo | **Suscripción:** registro de un compromiso recurrente con un tercero. **Importe original:** monto y moneda introducidos por el usuario. **Estimación en PEN:** conversión de referencia. **Próxima renovación:** fecha declarada del siguiente cargo. **Cancelada:** estado del registro dentro de CraveWallet. |
-| Decisiones y reglas | El agregado `Subscription` conserva importe, moneda, periodicidad y fecha de renovación de un registro activo. El registro pertenece a un usuario. Una suscripción cancelada se excluye del portafolio activo y deja de generar recordatorios, conservando el historial. La anticipación propuesta es de 24 horas (US12); la programación efectiva depende del permiso del dispositivo. El límite gratuito se aplica según US39, sin asignar todavía un valor numérico. |
+| Decisiones y reglas | El agregado `Subscription` conserva importe, moneda, periodicidad y fecha de renovación de un registro activo. El registro pertenece a un usuario. Una suscripción cancelada se excluye del portafolio activo y deja de generar recordatorios, conservando el historial. La anticipación propuesta es de 24 horas (US12); la programación efectiva depende del permiso del dispositivo. El límite gratuito se aplica según US39, con cinco registros activos como propuesta inicial de 2.1.1, pendiente de confirmación del equipo. |
 | Supuestos | El usuario registra y actualiza los datos de sus servicios. La conversión ayuda a planificar, pero no determina el cargo del banco. El dispositivo permite programar el recordatorio cuando el usuario autoriza el acceso. Estos supuestos requieren pruebas de uso y de integración. |
 | Métricas de verificación propuestas | Medir registros rechazados por datos inválidos, diferencias entre la fecha de renovación y el recordatorio programado, y recordatorios que quedan activos después de marcar una suscripción como cancelada. Revisar cuántos cambios en este contexto obligan a modificar Premium & Billing. No hay mediciones disponibles aún. |
-| Preguntas abiertas | ¿Cuál es el límite numérico del plan gratuito? ¿Qué pasa con registros que exceden ese límite al volver de Premium a Free? ¿Qué hora y zona horaria se usarán si el usuario solo introduce una fecha? ¿Cómo se reprograma un recordatorio cuando cambia la fecha de renovación? |
+| Preguntas abiertas | ¿Se confirma la propuesta inicial de cinco registros activos en Free? ¿Qué pasa con registros que exceden ese límite al volver de Premium a Free? ¿Qué hora y zona horaria se usarán si el usuario solo introduce una fecha? ¿Cómo se reprograma un recordatorio cuando cambia la fecha de renovación? |
 | Trazabilidad | Historias US04–US07, US08–US13 y US39; diseño táctico 2.6.1. |
 
 ##### Canvas 2. Delivery Expense Management
@@ -1767,7 +1804,7 @@ Cada canvas documenta el propósito y los límites de un contexto, sus colaborad
 | Roles del dominio | Registrar gastos, mantener un presupuesto mensual y producir resúmenes de consumo. |
 | Comunicación entrante | **Aplicación móvil:** comando de registrar un gasto y actualizar el límite; consultas del historial y resumen mensual. **Google Places:** respuesta a una búsqueda de comercio, cuando se utilice esa integración. La respuesta ayuda a identificar el comercio; el importe y la fecha proceden del registro del usuario. |
 | Comunicación saliente | **Aplicación móvil:** historial, resumen mensual y advertencia de exceso. **Google Places:** solicitud de sugerencias de comercios. Eventos internos propuestos: `DeliveryExpenseRegistered` y `MonthlyLimitExceeded`. El primer evento permite actualizar el presupuesto del período correspondiente. |
-| Colaboradores y relaciones | El cliente móvil introduce y consulta gastos. Google Places proporciona información auxiliar sobre comercios. El Dashboard combina los resúmenes de gastos y suscripciones, pero esto no exige compartir sus agregados. La selección del patrón con Google Places y la relación entre contextos se revisará en 2.5.2. |
+| Colaboradores y relaciones | El cliente móvil introduce y consulta gastos. Google Places proporciona información auxiliar sobre comercios. El Dashboard combina los resúmenes de gastos y suscripciones, pero esto no exige compartir sus agregados. La ACL de Google Places y la separación de modelos entre Gastos y Suscripciones se detallan en 2.5.2. |
 | Lenguaje ubicuo | **Gasto de delivery:** importe que el usuario registra por un pedido. **Comercio:** negocio asociado al gasto. **Período mensual:** mes al que se atribuye el gasto. **Límite mensual:** tope elegido por el usuario. **Acumulado:** suma de los gastos del período. **Exceso:** acumulado superior al límite. |
 | Decisiones y reglas | `DeliveryExpense` conserva un gasto individual y `MonthlyBudget` mantiene el límite y acumulado de un usuario y período. El gasto se atribuye al mes de su fecha. Superar el límite produce una advertencia; no bloquea pedidos en servicios externos. US18 permite elegir un comercio del catálogo o escribirlo manualmente, de modo que Google Places no debe ser obligatorio para registrar el gasto. |
 | Supuestos | El usuario consigna los gastos; no se cuenta con una importación automática de sus pedidos. El resumen corresponde a lo registrado, no necesariamente a todo el consumo real. La lectura local sin conexión es una propuesta técnica que requiere comprobar la sincronización. |
@@ -1797,35 +1834,29 @@ Los límites permiten distinguir tres conceptos: un compromiso recurrente con un
 
 ### 2.5.2. Context Mapping
 
-El Context Map formaliza las relaciones entre los tres Bounded Contexts identificados en 2.5.1.1 —**Subscription Management** (core), **Delivery Expense Management** (soporte) y **Premium & Billing** (genérico)— y los sistemas externos con los que cada uno colabora. Para cada frontera se establece qué lado dicta el modelo (upstream, U) y qué lado se adapta (downstream, D), conforme a los patrones de Context Mapping de Evans [-@evans2003ddd].
+El Context Map propuesto identifica quién proporciona un modelo o contrato (**upstream, U**) y quién depende de él (**downstream, D**). Sus flechas representan influencia del modelo, no el sentido de cada petición HTTP. La selección se basa en las responsabilidades y mensajes de 2.5.1, siguiendo el material de DDD Crew [@dddcrewContextMapping]. Los tres contextos se proponen como módulos de un backend; no se presupone que existan tres equipos independientes.
 
-#### Relaciones entre Bounded Contexts
+| Relación propuesta | Patrón y justificación | Contrato o frontera |
+| --- | --- | --- |
+| Premium & Billing [U] → Subscription Management [D] | **Customer/Supplier** como acuerdo de diseño: las necesidades de registro y límites de Suscripciones deben formar parte de la planificación de Premium. Consumir un modelo sin posibilidad de negociación no basta para justificar este patrón. | `GetPlanAccess(userId)` devuelve nivel y límite vigente. Suscripciones cuenta sus registros activos y decide si admite el nuevo registro. |
+| Subscription Management / Delivery Expense Management | **Separate Ways** para sus modelos de dominio: no se propone un flujo directo entre sus agregados. El cliente compone sus resúmenes en el Dashboard. | Cada módulo conserva su lenguaje y almacenamiento. El identificador del usuario sirve para correlacionar datos; no implica código o esquema compartido como Shared Kernel. |
+| ExchangeRate-API [U] → Subscription Management [D] | **Anti-Corruption Layer (ACL):** `ExchangeRateApiAdapter` traduce la respuesta del proveedor a cotización, monedas y fecha de consulta del modelo local. | `ExchangeRatePort`; el precio en moneda original permanece intacto. La frecuencia y caché de TS03 son propuestas a comprobar en SP01–SP02. |
+| Stripe [U] → Premium & Billing [D] | **ACL:** el adaptador verifica y traduce las notificaciones a cambios del plan local. Los eventos técnicos de Stripe se conservan en la frontera de integración. | `PaymentGatewayPort`, correlación de facturación y deduplicación del identificador externo. Eventos internos: `PlanUpgradedToPremium` y `PlanDowngradedToFree`. |
+| Google Places [U] → Delivery Expense Management [D] | **ACL:** `GooglePlacesAdapter` convierte la respuesta en `MerchantSuggestion`. Se protege el vocabulario de gastos y se mantiene la opción manual. | Consulta auxiliar de comercio. El importe pagado procede del usuario, no de Places. La API elegida y su versión deben probarse antes de fijar el adaptador [@googlePlacesTextSearch]. |
 
-**Customer/Supplier — Premium & Billing [U] → Subscription Management [D].** El contexto Premium & Billing actúa como proveedor (Supplier): publica el nivel de plan activo del usuario y los límites asociados. Subscription Management los consume sin negociar el modelo, lo que lo convierte en Customer. La regla del límite de suscripciones gratuitas (US39) solo puede modificarse desde el lado Premium; cualquier cambio en ese contrato requiere coordinación explícita upstream.
+La figura 21 representa estas relaciones. Se eliminó la relación simultánea Partnership/Shared Kernel entre Suscripciones y Gastos porque compartir una pantalla o identificador no demuestra un modelo compartido ni entregas mutuamente dependientes. Si la implementación introduce esa dependencia, el equipo deberá justificar y actualizar el mapa.
 
-**Partnership — Subscription Management ↔ Delivery Expense Management.** Ambos contextos comparten el identificador de usuario (`UserId`) como Shared Kernel mínimo y cooperan para construir la vista unificada del Dashboard. Dado que ninguno puede imponerle su modelo al otro sin afectar la cohesión del producto, la relación es Partnership: los equipos coordinan activamente cualquier cambio en `UserId` antes de incorporarlo a cualquiera de los dos contextos.
-
-#### Relaciones con sistemas externos
-
-**Anti-Corruption Layer — ExchangeRate-API → Subscription Management.** ExchangeRate-API devuelve un JSON técnico con su propia nomenclatura (`"result":"success"`, `"conversion_rate":3.82`). El adaptador `ExchangeRateApiAdapter` traduce esa respuesta al Value Object de dominio `ExchangeRate(rate, from, to, fetchedAt)` antes de que toque el Aggregate `Subscription`. El ACL aísla el modelo de cualquier cambio en el esquema del proveedor y aplica la estrategia de caché de 24 horas documentada en el Spike SP01.
-
-**Anti-Corruption Layer — Stripe → Premium & Billing.** Stripe comunica sus propios estados técnicos a través de webhooks (`invoice.paid`, `customer.subscription.deleted`). El adaptador `StripeWebhookAdapter` verifica la firma del evento y lo traduce a Domain Events propios: `PlanPremiumActivated` o `PlanDowngradedToFree`. El ACL impide que los errores o cambios de esquema de Stripe contaminen el modelo de dominio de Premium, cumpliendo la Estrategia 4 definida en 2.1.2.
-
-**Conformist — Delivery Expense Management → Google Places API.** Para sugerir locales de delivery (US18), el contexto Delivery Expense Management adopta directamente los campos de respuesta de Google Places API (`name`, `place_id`, `formatted_address`) sin capa de traducción. El esfuerzo de mantener un ACL propio no se justifica para esta función auxiliar, por lo que el contexto se declara Conformista y asume el riesgo de deprecación de esa API.
-
-La figura 21 representa las relaciones propuestas entre los contextos y sus dependencias externas.
-
-![Context Mapping — CraveWallet](images/chapter_2/context_mapping.png)
+![Context Map propuesto de CraveWallet](images/chapter_2/context-map-revised.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 21. Context Mapping — CraveWallet.*
+*Figura 21. Context Map propuesto de CraveWallet.*
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify.*
+*Fuente: elaboración de Gastify, adaptada de DDD Crew, Context Mapping (s. f.). Diagrama adaptado bajo CC BY-SA 4.0.*
 
-*Nota: Context Map de CraveWallet. Tres Bounded Contexts y sus relaciones con sistemas externos.*
+El calendario del dispositivo y la autenticación colaboran con los casos de uso, pero no se clasifican como nuevos Bounded Contexts de negocio en este avance. Las relaciones se comprobarán mediante cambios en los contratos y las pruebas de integración. La política de retorno a Free sigue pendiente de decisión del equipo.
 
 ### 2.5.3. Software Architecture
 

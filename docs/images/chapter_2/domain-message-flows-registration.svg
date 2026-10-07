@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1750" viewBox="0 0 1800 1750">
+<rect width="100%" height="100%" fill="white"/>
+<text x="40" y="25" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#18324a">Domain Message Flows | Registro</text>
+<text x="40" y="77" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">C: comando   Q: consulta   R: respuesta   E: evento confirmado. Cada escenario tiene su propio orden.</text>
+<text x="40" y="130" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#18324a">A. Registrar suscripción y preparar aviso</text>
+<rect x="40" y="180" width="340" height="92" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="55" y="193" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Aplicación móvil</text>
+<polyline points="210,272 210,860" fill="none" stroke="#a6b4c1" stroke-width="3" stroke-dasharray="8 6"/>
+<rect x="480" y="180" width="340" height="92" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="495" y="193" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Subscription</text>
+<text x="495" y="224" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Management</text>
+<polyline points="650,272 650,860" fill="none" stroke="#a6b4c1" stroke-width="3" stroke-dasharray="8 6"/>
+<rect x="920" y="180" width="340" height="92" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="935" y="193" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Premium &amp; Billing</text>
+<polyline points="1090,272 1090,860" fill="none" stroke="#a6b4c1" stroke-width="3" stroke-dasharray="8 6"/>
+<rect x="1360" y="180" width="340" height="92" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="1375" y="193" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Calendario</text>
+<polyline points="1530,272 1530,860" fill="none" stroke="#a6b4c1" stroke-width="3" stroke-dasharray="8 6"/>
+<polyline points="210,363 650,363" fill="none" stroke="#1467a1" stroke-width="3"/>
+<polygon points="650,363 636.4932934647098,369.52448301166845 636.4932934647098,356.47551698833155" fill="#1467a1"/>
+<rect x="218" y="307" width="1250" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="222" y="310" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1467a1">1 [C] RegisterSubscription</text>
+<text x="222" y="337" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#1467a1">userId, nombre, importe, moneda, ciclo, próxima fecha</text>
+<polyline points="650,443 1090,443" fill="none" stroke="#5365a0" stroke-width="3"/>
+<polygon points="1090,443 1076.49329346471,449.52448301166845 1076.49329346471,436.47551698833155" fill="#5365a0"/>
+<rect x="658" y="387" width="1114" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="662" y="390" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#5365a0">2 [Q] GetPlanAccess</text>
+<text x="662" y="417" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#5365a0">userId</text>
+<polyline points="1090,523 650,523" fill="none" stroke="#476f50" stroke-width="3"/>
+<polygon points="650,523 663.5067065352902,516.4755169883315 663.5067065352902,529.5244830116685" fill="#476f50"/>
+<rect x="658" y="467" width="1114" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="662" y="470" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#476f50">3 [R] PlanAccess</text>
+<text x="662" y="497" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#476f50">nivel y límite; rechazar alta si ya se alcanzó</text>
+<polyline points="650,590 735,590 735,612 650,612" fill="none" stroke="#a34f17" stroke-width="3"/>
+<polygon points="650,612 663.5067065352902,605.4755169883315 663.5067065352902,618.5244830116685" fill="#a34f17"/>
+<rect x="751" y="547" width="1021" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="755" y="550" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#a34f17">4 [E] SubscriptionRegistered</text>
+<text x="755" y="577" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#a34f17">subscriptionId, userId, nextBillingDate</text>
+<polyline points="650,683 210,683" fill="none" stroke="#476f50" stroke-width="3"/>
+<polygon points="210,683 223.50670653529016,676.4755169883315 223.50670653529016,689.5244830116685" fill="#476f50"/>
+<rect x="218" y="627" width="1250" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="222" y="630" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#476f50">5 [R] Registro confirmado</text>
+<text x="222" y="657" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#476f50">registro y datos del recordatorio</text>
+<polyline points="210,763 1530,763" fill="none" stroke="#1467a1" stroke-width="3"/>
+<polygon points="1530,763 1516.49329346471,769.5244830116685 1516.49329346471,756.4755169883315" fill="#1467a1"/>
+<rect x="218" y="707" width="1250" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="222" y="710" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1467a1">6 [C] Crear recordatorio</text>
+<text x="222" y="737" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#1467a1">subscriptionId, título y fecha/hora; requiere permiso</text>
+<polyline points="1530,843 210,843" fill="none" stroke="#476f50" stroke-width="3"/>
+<polygon points="210,843 223.50670653529016,836.4755169883315 223.50670653529016,849.5244830116685" fill="#476f50"/>
+<rect x="218" y="787" width="1250" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="222" y="790" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#476f50">7 [R] Resultado de calendario</text>
+<text x="222" y="817" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#476f50">eventId o error; no afirmar éxito si se denegó permiso</text>
+<text x="40" y="950" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#18324a">B. Registrar gasto y comparar presupuesto</text>
+<rect x="40" y="1000" width="340" height="92" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="55" y="1013" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Aplicación móvil</text>
+<polyline points="210,1092 210,1600" fill="none" stroke="#a6b4c1" stroke-width="3" stroke-dasharray="8 6"/>
+<rect x="480" y="1000" width="340" height="92" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="495" y="1013" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Delivery Expense Mgmt.</text>
+<polyline points="650,1092 650,1600" fill="none" stroke="#a6b4c1" stroke-width="3" stroke-dasharray="8 6"/>
+<rect x="920" y="1000" width="340" height="92" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="935" y="1013" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">MonthlyBudget</text>
+<polyline points="1090,1092 1090,1600" fill="none" stroke="#a6b4c1" stroke-width="3" stroke-dasharray="8 6"/>
+<polyline points="210,1183 650,1183" fill="none" stroke="#1467a1" stroke-width="3"/>
+<polygon points="650,1183 636.4932934647098,1189.5244830116685 636.4932934647098,1176.4755169883315" fill="#1467a1"/>
+<rect x="218" y="1127" width="1250" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="222" y="1130" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1467a1">1 [C] RegisterExpense</text>
+<text x="222" y="1157" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#1467a1">userId, requestId, comercio, monto y fecha</text>
+<polyline points="650,1250 735,1250 735,1272 650,1272" fill="none" stroke="#a34f17" stroke-width="3"/>
+<polygon points="650,1272 663.5067065352902,1265.4755169883315 663.5067065352902,1278.5244830116685" fill="#a34f17"/>
+<rect x="751" y="1207" width="1021" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="755" y="1210" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#a34f17">2 [E] DeliveryExpenseRegistered</text>
+<text x="755" y="1237" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#a34f17">expenseId, userId, amount, expenseDate</text>
+<polyline points="650,1343 1090,1343" fill="none" stroke="#1467a1" stroke-width="3"/>
+<polygon points="1090,1343 1076.49329346471,1349.5244830116685 1076.49329346471,1336.4755169883315" fill="#1467a1"/>
+<rect x="658" y="1287" width="1114" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="662" y="1290" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1467a1">3 [C] Aplicar gasto al período</text>
+<text x="662" y="1317" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#1467a1">una sola actualización; evitar duplicar un reintento</text>
+<polyline points="1090,1423 650,1423" fill="none" stroke="#a34f17" stroke-width="3"/>
+<polygon points="650,1423 663.5067065352902,1416.4755169883315 663.5067065352902,1429.5244830116685" fill="#a34f17"/>
+<rect x="658" y="1367" width="1114" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="662" y="1370" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#a34f17">4 [E] MonthlyLimitExceeded (condicional)</text>
+<text x="662" y="1397" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#a34f17">solo si hay límite y el acumulado lo supera</text>
+<polyline points="210,1503 650,1503" fill="none" stroke="#5365a0" stroke-width="3"/>
+<polygon points="650,1503 636.4932934647098,1509.5244830116685 636.4932934647098,1496.4755169883315" fill="#5365a0"/>
+<rect x="218" y="1447" width="1250" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="222" y="1450" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#5365a0">5 [Q] Consultar resumen mensual</text>
+<text x="222" y="1477" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#5365a0">userId, año y mes</text>
+<polyline points="650,1583 210,1583" fill="none" stroke="#476f50" stroke-width="3"/>
+<polygon points="210,1583 223.50670653529016,1576.4755169883315 223.50670653529016,1589.5244830116685" fill="#476f50"/>
+<rect x="218" y="1527" width="1250" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="222" y="1530" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#476f50">6 [R] Resumen mensual</text>
+<text x="222" y="1557" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#476f50">total, límite, saldo y exceso</text>
+<text x="40" y="1681" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Fuente: Gastify; notación adaptada de DDD Crew, Domain Message Flow Modelling. CC BY-SA 4.0.</text>
+</svg>
