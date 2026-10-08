@@ -16,10 +16,12 @@
 \setlength{\parindent}{0.5in}
 \setlength{\parskip}{0pt}
 
-% Texto alineado a la izquierda conservando la sangria.
+% Texto justificado conservando la sangria. microtype reduce los espacios
+% irregulares y los cortes de palabra que produce la justificacion.
 \usepackage{ragged2e}
-\setlength{\RaggedRightParindent}{\parindent}
-\RaggedRight
+\usepackage{microtype}
+\setlength{\JustifyingParindent}{\parindent}
+\justifying
 
 % Sin viudas ni huerfanas.
 \widowpenalty=10000

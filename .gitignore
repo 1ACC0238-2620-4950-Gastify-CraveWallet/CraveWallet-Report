@@ -21,3 +21,6 @@ config/preview/*.pdf
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Configuracion local del IDE (WebStorm/IntelliJ)
+.idea/
