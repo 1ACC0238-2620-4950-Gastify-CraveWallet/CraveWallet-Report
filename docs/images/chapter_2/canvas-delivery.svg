@@ -1,67 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1450" viewBox="0 0 1800 1450">
-<rect width="100%" height="100%" fill="white"/>
-<text x="40" y="60" font-family="Arial,sans-serif" font-size="34" font-weight="bold" fill="#18324a">Bounded Context Canvas | Delivery Expense Management</text>
-<text x="40" y="101" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">Gestión de gastos de delivery | Propuesta de diseño | C: comando; Q: consulta; R: respuesta; E: evento</text>
-<rect x="40" y="135" width="760" height="235" fill="#f5f8fb" stroke="#8196a8" stroke-width="2" />
-<text x="56" y="177" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Purpose / Propósito</text>
-<text x="56" y="220" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Registrar pedidos pagados y comparar el gasto acumulado con el</text>
-<text x="56" y="251" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">límite mensual del usuario.</text>
-<rect x="800" y="135" width="555" height="235" fill="#f5f8fb" stroke="#8196a8" stroke-width="2" />
-<text x="816" y="177" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Strategic Classification</text>
-<text x="816" y="220" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Supporting</text>
-<text x="816" y="251" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Modelo de negocio: engagement</text>
-<text x="816" y="282" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Evolución: custom built (propuesta)</text>
-<rect x="1355" y="135" width="405" height="235" fill="#f5f8fb" stroke="#8196a8" stroke-width="2" />
-<text x="1371" y="177" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Domain Roles</text>
-<text x="1371" y="220" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Execution: gastos y presupuesto</text>
-<text x="1371" y="251" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Analysis: consumo por período</text>
-<rect x="40" y="370" width="565" height="715" fill="#edf6fd" stroke="#8196a8" stroke-width="2" />
-<text x="56" y="412" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Inbound Communication</text>
-<text x="56" y="455" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Móvil (cliente)</text>
-<text x="56" y="486" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">C: RegisterExpense, editar, eliminar, cambiar</text>
-<text x="56" y="517" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">límite</text>
-<text x="56" y="548" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Q: historial y resumen</text>
-<text x="56" y="579" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">R: total, límite, saldo y exceso</text>
-<rect x="605" y="370" width="550" height="350" fill="#fffdf3" stroke="#8196a8" stroke-width="2" />
-<text x="621" y="412" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Ubiquitous Language</text>
-<text x="621" y="455" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Gasto: importe registrado por pedido.</text>
-<text x="621" y="486" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Comercio: negocio asociado.</text>
-<text x="621" y="517" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Período: mes del gasto.</text>
-<text x="621" y="548" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Límite: tope elegido.</text>
-<text x="621" y="579" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Exceso: acumulado superior al tope.</text>
-<rect x="605" y="720" width="550" height="365" fill="#f5f0fc" stroke="#8196a8" stroke-width="2" />
-<text x="621" y="762" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Business Decisions</text>
-<text x="621" y="805" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">DeliveryExpense y MonthlyBudget son</text>
-<text x="621" y="836" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">agregados del mismo contexto.</text>
-<text x="621" y="867" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Contar cada gasto una sola vez.</text>
-<text x="621" y="898" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">E: DeliveryExpenseRegistered /</text>
-<text x="621" y="929" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">MonthlyLimitExceeded.</text>
-<text x="621" y="960" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Permitir comercio manual.</text>
-<rect x="1155" y="370" width="605" height="715" fill="#f0f8f2" stroke="#8196a8" stroke-width="2" />
-<text x="1171" y="412" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Outbound Communication</text>
-<text x="1171" y="455" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Google Places (U; externo)</text>
-<text x="1171" y="486" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Q: buscar comercios</text>
-<text x="1171" y="517" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">R: MerchantSuggestion</text>
-<text x="1171" y="548" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">ACL: GooglePlacesAdapter</text>
-<text x="1171" y="579" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a"></text>
-<text x="1171" y="610" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Suscripciones: Separate Ways</text>
-<text x="1171" y="641" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">El Dashboard compone lecturas, sin intercambio entre</text>
-<text x="1171" y="672" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">agregados.</text>
-<rect x="40" y="1085" width="565" height="270" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="56" y="1127" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Assumptions</text>
-<text x="56" y="1170" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">El usuario consigna sus pedidos.</text>
-<text x="56" y="1201" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">El total refleja los gastos registrados.</text>
-<text x="56" y="1232" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Google Places es opcional.</text>
-<rect x="605" y="1085" width="550" height="270" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="621" y="1127" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Verification Metrics</text>
-<text x="621" y="1170" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Acumulado frente a suma del mes.</text>
-<text x="621" y="1201" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Duplicados tras reintentar.</text>
-<text x="621" y="1232" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Altas con Places no disponible.</text>
-<text x="621" y="1263" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Sin resultados medidos aún.</text>
-<rect x="1155" y="1085" width="605" height="270" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="1171" y="1127" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Open Questions</text>
-<text x="1171" y="1170" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">¿Cuándo repetir aviso de exceso?</text>
-<text x="1171" y="1201" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">¿Recalcular tras editar/eliminar?</text>
-<text x="1171" y="1232" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">¿Reducir límite bajo el acumulado?</text>
-<text x="40" y="1414" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#18324a">Fuente: Gastify; adaptación del Bounded Context Canvas v5 de DDD Crew. CC BY 4.0. Sin métricas ejecutadas.</text>
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1560" viewBox="0 0 2400 1560">
+  <rect width="2400" height="1560" fill="#ffffff" />
+  <rect x="40.0" y="165.0" width="1000.0" height="205.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232354" />
+  <rect x="1040.0" y="165.0" width="870.0" height="205.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232357" />
+  <rect x="1910.0" y="165.0" width="450.0" height="205.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232360" />
+  <rect x="40.0" y="370.0" width="720.0" height="810.0" fill="#f4f8fc" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232363" />
+  <rect x="760.0" y="370.0" width="810.0" height="395.0" fill="#fffdf3" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232366" />
+  <rect x="760.0" y="765.0" width="810.0" height="415.0" fill="#f6f2fb" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232370" />
+  <rect x="1570.0" y="370.0" width="790.0" height="810.0" fill="#f4f8fc" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232373" />
+  <rect x="40.0" y="1180.0" width="780.0" height="280.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232376" />
+  <rect x="820.0" y="1180.0" width="800.0" height="280.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232379" />
+  <rect x="1620.0" y="1180.0" width="740.0" height="280.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232382" />
+  <text x="40.0" y="66.7" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="40.0" font-weight="bold" data-miro-id="3458764686427232351">Bounded Context Canvas | Delivery Expense Management</text>
+  <text x="40.0" y="122.38" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232352">Gestión de gastos de delivery | Diseño propuesto: C comando; Q consulta; R respuesta; E evento</text>
+  <text x="40.0" y="1494.86" fill="#595959" font-family="Arial,sans-serif" font-size="22.0" font-weight="normal" data-miro-id="3458764686427232353">Gastify. Adaptación en Miro del canvas v5: https://github.com/ddd-crew/bounded-context-canvas | CC BY 4.0</text>
+  <text x="64.0" y="210.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232355">Purpose</text>
+  <text x="64.0" y="276.4" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232356">Registrar pedidos pagados y comparar el gasto acumulado con el</text>
+  <text x="64.0" y="310.9" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232356">límite mensual del usuario.</text>
+  <text x="1064.0" y="210.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232358">Strategic Classification</text>
+  <text x="1064.0" y="273.76" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232359">Supporting</text>
+  <text x="1064.0" y="304.81" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232359">Modelo de negocio: engagement</text>
+  <text x="1064.0" y="335.86" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232359">Evolución: custom built (propuesta)</text>
+  <text x="1934.0" y="210.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232361">Domain Roles</text>
+  <text x="1934.0" y="275.26" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232362">Execution: gastos</text>
+  <text x="1934.0" y="306.31" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232362">Analysis: consumo</text>
+  <text x="64.0" y="415.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232364">Inbound Communication</text>
+  <text x="64.0" y="480.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232365">Móvil (cliente)</text>
+  <text x="64.0" y="512.84" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232365">C: RegisterExpense, editar, eliminar, cambiar límite</text>
+  <text x="64.0" y="545.04" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232365">Q: historial y resumen</text>
+  <text x="64.0" y="577.24" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232365">R: total, límite, saldo y exceso</text>
+  <text x="784.0" y="415.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232367">Ubiquitous Language</text>
+  <text x="784.0" y="480.26" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232368">Gasto: importe registrado por pedido.</text>
+  <text x="784.0" y="511.31" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232368">Comercio: negocio asociado.</text>
+  <text x="784.0" y="542.36" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232368">Período: mes del gasto.</text>
+  <text x="784.0" y="573.41" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232368">Límite: tope elegido.</text>
+  <text x="784.0" y="604.46" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232368">Exceso: acumulado superior al tope.</text>
+  <text x="784.0" y="810.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232371">Business Decisions</text>
+  <text x="784.0" y="874.76" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232372">DeliveryExpense y MonthlyBudget son agregados del mismo</text>
+  <text x="784.0" y="905.81" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232372">contexto.</text>
+  <text x="784.0" y="936.86" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232372">Contar cada gasto una sola vez.</text>
+  <text x="784.0" y="967.91" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232372">E: DeliveryExpenseRegistered / MonthlyLimitExceeded.</text>
+  <text x="784.0" y="998.96" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232372">Permitir comercio manual.</text>
+  <text x="1594.0" y="415.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232374">Outbound Communication</text>
+  <text x="1594.0" y="480.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232375">Google Places (U; externo)</text>
+  <text x="1594.0" y="512.84" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232375">Q: buscar comercios</text>
+  <text x="1594.0" y="545.04" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232375">R: MerchantSuggestion</text>
+  <text x="1594.0" y="577.24" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232375">ACL: GooglePlacesAdapter</text>
+  <text x="1594.0" y="609.4399999999999" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232375" />
+  <text x="1594.0" y="641.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232375">Suscripciones: Separate Ways</text>
+  <text x="1594.0" y="673.84" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232375">El Dashboard compone lecturas, sin intercambio entre</text>
+  <text x="1594.0" y="706.04" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232375">agregados.</text>
+  <text x="64.0" y="1225.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232377">Assumptions</text>
+  <text x="64.0" y="1290.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232378">El usuario consigna sus pedidos.</text>
+  <text x="64.0" y="1322.8400000000001" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232378">El total refleja los gastos registrados.</text>
+  <text x="64.0" y="1355.0400000000002" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232378">Google Places es opcional.</text>
+  <text x="844.0" y="1225.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232380">Verification Metrics</text>
+  <text x="844.0" y="1290.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232381">Acumulado frente a suma del mes.</text>
+  <text x="844.0" y="1322.8400000000001" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232381">Duplicados tras reintentar.</text>
+  <text x="844.0" y="1355.0400000000002" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232381">Altas con Places no disponible.</text>
+  <text x="844.0" y="1387.24" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232381">Sin resultados medidos aún.</text>
+  <text x="1644.0" y="1225.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232383">Open Questions</text>
+  <text x="1644.0" y="1290.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232384">¿Cuándo repetir aviso de exceso?</text>
+  <text x="1644.0" y="1322.8400000000001" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232384">¿Recalcular tras editar/eliminar?</text>
+  <text x="1644.0" y="1355.0400000000002" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232384">¿Reducir límite bajo el acumulado?</text>
 </svg>

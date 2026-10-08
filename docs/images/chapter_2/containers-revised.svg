@@ -1,101 +1,101 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1300" viewBox="0 0 2200 1300">
-<rect width="100%" height="100%" fill="white"/>
-<text x="40" y="60" font-family="Arial,sans-serif" font-size="34" font-weight="bold" fill="#18324a">C4 | Contenedores de CraveWallet</text>
-<text x="40" y="101" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">Nivel 2: aplicaciones y almacenes. Los tres Bounded Contexts son módulos internos del backend.</text>
-<rect x="40" y="330" width="1400" height="860" fill="#ffffff" stroke="#8196a8" stroke-width="2" stroke-dasharray="10 6"/>
-<text x="650" y="380" font-family="Arial,sans-serif" font-size="28" font-weight="bold" fill="#18324a">Sistema CraveWallet</text>
-<rect x="55" y="140" width="480" height="155" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="71" y="176" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Persona</text>
-<text x="71" y="214" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Usuario</text>
-<text x="71" y="257" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Interactúa con la aplicación.</text>
-<rect x="55" y="430" width="480" height="245" fill="#daeafd" stroke="#8196a8" stroke-width="2" />
-<text x="71" y="466" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Contenedor: aplicación móvil</text>
-<text x="71" y="504" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Mobile App</text>
-<text x="71" y="547" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Flutter / Dart</text>
-<text x="71" y="578" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Formularios, Dashboard, permisos y</text>
-<text x="71" y="609" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">recordatorios.</text>
-<rect x="945" y="430" width="475" height="245" fill="#daeafd" stroke="#8196a8" stroke-width="2" />
-<text x="961" y="466" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Contenedor: aplicación servidor</text>
-<text x="961" y="504" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">REST API Backend</text>
-<text x="961" y="547" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Java 21 / Spring Boot</text>
-<text x="961" y="578" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Suscripciones, Gastos y Premium;</text>
-<text x="961" y="609" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">autenticación y adaptadores.</text>
-<rect x="55" y="885" width="480" height="220" fill="#daeafd" stroke="#8196a8" stroke-width="2" />
-<text x="71" y="921" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Contenedor: almacén de datos</text>
-<text x="71" y="959" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Local Database</text>
-<text x="71" y="1002" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">SQLite</text>
-<text x="71" y="1033" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Caché de lectura con fecha de</text>
-<text x="71" y="1064" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">actualización.</text>
-<rect x="945" y="885" width="475" height="220" fill="#daeafd" stroke="#8196a8" stroke-width="2" />
-<text x="961" y="921" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Contenedor: almacén de datos</text>
-<text x="961" y="959" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Remote Database</text>
-<text x="961" y="1002" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">PostgreSQL</text>
-<text x="961" y="1033" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Estado canónico y tablas propiedad de</text>
-<text x="961" y="1064" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">cada módulo.</text>
-<rect x="1690" y="140" width="440" height="185" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="1706" y="176" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Sistema externo</text>
-<text x="1706" y="214" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">ExchangeRate-API</text>
-<text x="1706" y="257" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Cotización USD/PEN</text>
-<rect x="1690" y="450" width="440" height="185" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="1706" y="486" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Sistema externo</text>
-<text x="1706" y="524" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Stripe</text>
-<text x="1706" y="567" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Checkout y webhooks</text>
-<rect x="1690" y="760" width="440" height="185" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="1706" y="796" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Sistema externo</text>
-<text x="1706" y="834" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Google Places</text>
-<text x="1706" y="877" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Sugerencias de comercios</text>
-<rect x="1690" y="1050" width="440" height="185" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="1706" y="1086" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Sistema externo</text>
-<text x="1706" y="1124" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Calendario del dispositivo</text>
-<text x="1706" y="1167" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Avisos con permiso del usuario</text>
-<polyline points="295,295 295,430" fill="none" stroke="#18324a" stroke-width="3" />
-<polygon points="295,430 288.47551698833155,416.49329346470984 301.52448301166845,416.49329346470984" fill="#18324a"/>
-<rect x="89" y="345" width="452" height="38" fill="white" stroke="white" stroke-width="2" />
-<text x="95" y="373" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">Usa formularios y resúmenes</text>
-<polyline points="535,560 945,560" fill="none" stroke="#18324a" stroke-width="3" />
-<polygon points="945,560 931.4932934647098,566.5244830116685 931.4932934647098,553.4755169883315" fill="#18324a"/>
-<rect x="549" y="487" width="387" height="68" fill="white" stroke="white" stroke-width="2" />
-<text x="555" y="515" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">Ejecuta casos de uso</text>
-<text x="555" y="545" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">HTTPS / JSON</text>
-<polyline points="535,450 575,450 575,310 1640,310 1640,520 1690,520" fill="none" stroke="#18324a" stroke-width="3" />
-<polygon points="1690,520 1676.49329346471,526.5244830116685 1676.49329346471,513.4755169883315" fill="#18324a"/>
-<rect x="619" y="277" width="822" height="36" fill="white" stroke="white" stroke-width="2" />
-<text x="625" y="303" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Abre checkout del proveedor; HTTPS / Stripe checkout</text>
-<polyline points="295,675 295,885" fill="none" stroke="#18324a" stroke-width="3" />
-<polygon points="295,885 288.47551698833155,871.4932934647098 301.52448301166845,871.4932934647098" fill="#18324a"/>
-<rect x="89" y="755" width="432" height="68" fill="white" stroke="white" stroke-width="2" />
-<text x="95" y="783" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">Lee / actualiza caché</text>
-<text x="95" y="813" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">SQLite API local</text>
-<polyline points="1182,675 1182,885" fill="none" stroke="#18324a" stroke-width="3" />
-<polygon points="1182,885 1175.4755169883315,871.4932934647098 1188.5244830116685,871.4932934647098" fill="#18324a"/>
-<rect x="999" y="755" width="432" height="68" fill="white" stroke="white" stroke-width="2" />
-<text x="1005" y="783" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">Lee / persiste estado</text>
-<text x="1005" y="813" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">JPA / JDBC</text>
-<polyline points="1420,450 1530,450 1530,230 1690,230" fill="none" stroke="#18324a" stroke-width="3" />
-<polygon points="1690,230 1676.49329346471,236.52448301166845 1676.49329346471,223.47551698833155" fill="#18324a"/>
-<rect x="1484" y="330" width="212" height="64" fill="white" stroke="white" stroke-width="2" />
-<text x="1490" y="356" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Consulta cotización</text>
-<text x="1490" y="384" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">HTTPS / JSON</text>
-<polyline points="1420,590 1690,590" fill="none" stroke="#18324a" stroke-width="3" />
-<polygon points="1690,590 1676.49329346471,596.5244830116685 1676.49329346471,583.4755169883315" fill="#18324a"/>
-<rect x="1454" y="470" width="227" height="92" fill="white" stroke="white" stroke-width="2" />
-<text x="1460" y="496" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Crea checkout /</text>
-<text x="1460" y="524" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">cancela</text>
-<text x="1460" y="552" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">HTTPS / Stripe API</text>
-<polyline points="1690,630 1420,630" fill="none" stroke="#18324a" stroke-width="3" />
-<polygon points="1420,630 1433.50670653529,623.4755169883315 1433.50670653529,636.5244830116685" fill="#18324a"/>
-<rect x="1454" y="645" width="227" height="92" fill="white" stroke="white" stroke-width="2" />
-<text x="1460" y="671" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Eventos al backend</text>
-<text x="1460" y="699" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">HTTPS / webhook</text>
-<text x="1460" y="727" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">firmado</text>
-<polyline points="1420,670 1590,670 1590,850 1690,850" fill="none" stroke="#18324a" stroke-width="3" />
-<polygon points="1690,850 1676.49329346471,856.5244830116685 1676.49329346471,843.4755169883315" fill="#18324a"/>
-<rect x="1454" y="785" width="227" height="64" fill="white" stroke="white" stroke-width="2" />
-<text x="1460" y="811" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Consulta comercios</text>
-<text x="1460" y="839" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">HTTPS / JSON</text>
-<polyline points="535,650 585,650 585,1140 1690,1140" fill="none" stroke="#18324a" stroke-width="3" />
-<polygon points="1690,1140 1676.49329346471,1146.5244830116685 1676.49329346471,1133.4755169883315" fill="#18324a"/>
-<rect x="674" y="1105" width="762" height="38" fill="white" stroke="white" stroke-width="2" />
-<text x="680" y="1133" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">Crea / reprograma / retira avisos; API nativa del dispositivo</text>
-<text x="40" y="1264" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#18324a">Fuente: Gastify. Diseño propuesto; implementación y validación pendientes.</text>
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1560" viewBox="0 0 2400 1560">
+  <rect width="2400" height="1560" fill="#ffffff" />
+  <rect x="40.0" y="364.0" width="1720.0" height="835.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232570" stroke-dasharray="5,5" />
+  <polyline points="350.0,325.0 350.0,490.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232637" />
+  <polygon points="350.0,490.0 343.91048252244275,477.39374056706254 356.08951747755725,477.39374056706254" fill="#313131" />
+  <rect x="334.0" y="392.15" width="32" height="30.7" fill="#ffffff" />
+  <text x="345.0" y="412.98999999999995" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="18" font-weight="normal">1</text>
+  <polyline points="635.0,610.0 1130.0,610.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232638" />
+  <polygon points="1130.0,610.0 1117.3937405670624,616.0895174775573 1117.3937405670624,603.9104825224427" fill="#313131" />
+  <rect x="866.5" y="594.65" width="32" height="30.7" fill="#ffffff" />
+  <text x="877.5" y="615.49" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="18" font-weight="normal">2</text>
+  <polyline points="635.0,610.0 677.5,610.0 677.5,1065.0 720.0,1065.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232639" />
+  <polygon points="720.0,1065.0 707.3937405670625,1071.0895174775571 707.3937405670625,1058.9104825224429" fill="#313131" />
+  <rect x="661.5" y="822.15" width="32" height="30.7" fill="#ffffff" />
+  <text x="672.5" y="842.99" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="18" font-weight="normal">3</text>
+  <polyline points="1430.0,730.0 1505.0,950.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232640" />
+  <polygon points="1505.0,950.0 1495.1684984204585,940.0329755347208 1506.696079087657,936.103118489085" fill="#313131" />
+  <rect x="1451.5" y="824.65" width="32" height="30.7" fill="#ffffff" />
+  <text x="1462.5" y="845.49" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="18" font-weight="normal">4</text>
+  <polyline points="1730.0,610.0 1815.0,610.0 1815.0,280.0 1900.0,280.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232641" />
+  <polygon points="1900.0,280.0 1887.3937405670624,286.08951747755725 1887.3937405670624,273.91048252244275" fill="#313131" />
+  <rect x="1799.0" y="429.65" width="32" height="30.7" fill="#ffffff" />
+  <text x="1810.0" y="450.48999999999995" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="18" font-weight="normal">5</text>
+  <polyline points="1730.0,610.0 1815.0,610.0 1815.0,670.0 1900.0,670.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232642" />
+  <polygon points="1900.0,670.0 1887.3937405670624,676.0895174775573 1887.3937405670624,663.9104825224427" fill="#313131" />
+  <rect x="1756.5" y="594.65" width="32" height="30.7" fill="#ffffff" />
+  <text x="1767.5" y="615.49" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="18" font-weight="normal">6</text>
+  <polyline points="2120.0,760.0 2120.0,830.0 1430.0,830.0 1430.0,730.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232643" />
+  <polygon points="1430.0,730.0 1436.0895174775571,742.6062594329375 1423.9104825224429,742.6062594329375" fill="#313131" />
+  <rect x="1759.0" y="814.65" width="32" height="30.7" fill="#ffffff" />
+  <text x="1770.0" y="835.49" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="18" font-weight="normal">7</text>
+  <polyline points="1730.0,610.0 1815.0,610.0 1815.0,1000.0 1900.0,1000.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232644" />
+  <polygon points="1900.0,1000.0 1887.3937405670624,1006.0895174775573 1887.3937405670624,993.9104825224427" fill="#313131" />
+  <rect x="1799.0" y="789.65" width="32" height="30.7" fill="#ffffff" />
+  <text x="1810.0" y="810.49" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="18" font-weight="normal">8</text>
+  <polyline points="350.0,490.0 350.0,420.0 2120.0,420.0 2120.0,580.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232645" />
+  <polygon points="2120.0,580.0 2113.9104825224426,567.3937405670625 2126.0895174775574,567.3937405670625" fill="#313131" />
+  <rect x="1219.0" y="404.65" width="32" height="30.7" fill="#ffffff" />
+  <text x="1230.0" y="425.48999999999995" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="18" font-weight="normal">9</text>
+  <polyline points="350.0,730.0 350.0,1260.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232646" />
+  <polygon points="350.0,1260.0 343.91048252244275,1247.3937405670624 356.08951747755725,1247.3937405670624" fill="#313131" />
+  <rect x="330.0" y="979.65" width="40.0" height="30.7" fill="#ffffff" />
+  <text x="340.0" y="1000.49" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="18" font-weight="normal">10</text>
+  <text x="40.0" y="66.7" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="40.0" font-weight="bold" data-miro-id="3458764686427232567">C4 | Contenedores de CraveWallet</text>
+  <text x="40.0" y="122.38" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232568">Nivel 2: aplicaciones y almacenes. Suscripciones, Gastos y Premium son módulos internos de la REST API.</text>
+  <text x="40.0" y="1494.86" fill="#595959" font-family="Arial,sans-serif" font-size="22.0" font-weight="normal" data-miro-id="3458764686427232569">Gastify. Modelo C4: https://c4model.com/diagrams/container | Relaciones y tecnologías coherentes con workspace.dsl</text>
+  <text x="65.0" y="410.62" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="bold" data-miro-id="3458764686427232572">Sistema CraveWallet</text>
+  <rect x="65.0" y="175.0" width="570.0" height="150.0" fill="#f1f1f1" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232573" rx="12" />
+  <text x="300.0" y="225.49500000000003" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="29.0" font-weight="normal" data-miro-id="3458764686427232573">Usuario</text>
+  <text x="288.0" y="258.845" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="29.0" font-weight="normal" data-miro-id="3458764686427232573">[Persona]</text>
+  <text x="171.0" y="292.195" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="29.0" font-weight="normal" data-miro-id="3458764686427232573">Interactúa con la aplicación.</text>
+  <rect x="65.0" y="490.0" width="570.0" height="240.0" fill="#d9eaf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232574" />
+  <text x="279.015625" y="570.24" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232574">Mobile App</text>
+  <text x="181.0" y="602.44" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232574">[Contenedor: Flutter / Dart]</text>
+  <text x="122.5" y="634.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232574">Formularios, Dashboard, permisos y</text>
+  <text x="306.0" y="666.84" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232574">avisos.</text>
+  <rect x="1130.0" y="490.0" width="600.0" height="240.0" fill="#d9eaf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232575" />
+  <text x="1306.015625" y="570.24" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232575">REST API Backend</text>
+  <text x="1203.0" y="602.44" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232575">[Contenedor: Java 21 / Spring Boot]</text>
+  <text x="1221.0" y="634.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232575">Suscripciones, Gastos, Premium;</text>
+  <text x="1247.5" y="666.84" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232575">autenticación y adaptadores.</text>
+  <rect x="720.0" y="950.0" width="410.0" height="230.0" fill="#d9eaf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232576" />
+  <ellipse cx="925.0" cy="970.0" rx="205.0" ry="20" fill="#d9eaf7" stroke="#757575" stroke-width="2" />
+  <text x="826.0" y="1025.24" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232576">Local Database</text>
+  <text x="791.0" y="1057.44" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232576">[Contenedor: SQLite]</text>
+  <text x="751.5" y="1089.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232576">Caché de lectura con fecha</text>
+  <text x="819.0" y="1121.8400000000001" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232576">de actualización.</text>
+  <rect x="1280.0" y="950.0" width="450.0" height="230.0" fill="#d9eaf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232577" />
+  <ellipse cx="1505.0" cy="970.0" rx="225.0" ry="20" fill="#d9eaf7" stroke="#757575" stroke-width="2" />
+  <text x="1390.5" y="1025.24" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232577">Remote Database</text>
+  <text x="1337.0" y="1057.44" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232577">[Contenedor: PostgreSQL]</text>
+  <text x="1353.5" y="1089.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232577">Estado canónico; tablas</text>
+  <text x="1332.0" y="1121.8400000000001" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232577">propiedad de cada módulo.</text>
+  <rect x="1900.0" y="190.0" width="440.0" height="180.0" fill="#f1f1f1" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232578" />
+  <text x="1999.0" y="256.34" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232578">ExchangeRate-API</text>
+  <text x="2009.5" y="288.53999999999996" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232578">[Sistema externo]</text>
+  <text x="1987.5" y="320.73999999999995" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232578">Cotización USD/PEN</text>
+  <rect x="1900.0" y="580.0" width="440.0" height="180.0" fill="#f1f1f1" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232579" />
+  <text x="2083.0" y="646.34" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232579">Stripe</text>
+  <text x="2009.5" y="678.5400000000001" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232579">[Sistema externo]</text>
+  <text x="1981.0" y="710.74" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232579">Checkout y webhooks</text>
+  <rect x="1900.0" y="910.0" width="440.0" height="180.0" fill="#f1f1f1" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232580" />
+  <text x="2027.5" y="976.34" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232580">Google Places</text>
+  <text x="2009.5" y="1008.5400000000001" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232580">[Sistema externo]</text>
+  <text x="1953.0" y="1040.74" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232580">Sugerencias de comercios</text>
+  <rect x="65.0" y="1260.0" width="570.0" height="180.0" fill="#f1f1f1" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232583" />
+  <text x="188.5" y="1326.3400000000001" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232583">Calendario del dispositivo</text>
+  <text x="239.5" y="1358.5400000000002" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232583">[Sistema externo]</text>
+  <text x="154.0" y="1390.7400000000002" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232583">Avisos con permiso del usuario</text>
+  <text x="720.0" y="1257.12" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427696101">1. Usa formularios y resúmenes</text>
+  <text x="720.0" y="1284.7199999999998" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427696101">2. Casos de uso: HTTPS / JSON</text>
+  <text x="720.0" y="1312.32" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427696101">3. Caché: SQLite API local</text>
+  <text x="720.0" y="1339.9199999999998" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427696101">4. Persistencia: JPA / JDBC</text>
+  <text x="720.0" y="1367.52" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427696101">5. Cotización: HTTPS / JSON</text>
+  <text x="1510.0" y="1257.12" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427696102">6. Checkout y cancelación: HTTPS / Stripe API</text>
+  <text x="1510.0" y="1284.7199999999998" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427696102">7. Eventos: HTTPS / webhook firmado</text>
+  <text x="1510.0" y="1312.32" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427696102">8. Comercios: HTTPS / JSON</text>
+  <text x="1510.0" y="1339.9199999999998" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427696102">9. Abre checkout: HTTPS / Stripe checkout</text>
+  <text x="1510.0" y="1367.52" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427696102">10. Avisos: API nativa del dispositivo</text>
 </svg>

@@ -1,0 +1,119 @@
+{
+  "board_url": "https://miro.com/app/board/uXjVEcjtdBM=/",
+  "captured_on": "2026-10-07",
+  "source_format": "native Miro canvas-composer SVG read",
+  "static_output": "offline derivative, not a Miro UI image export",
+  "item_count": 304,
+  "frames": [
+    {
+      "name": "message-flow-subscription",
+      "figure": 18,
+      "title": "A. Registrar una suscripción y preparar el aviso",
+      "width": 2400,
+      "height": 1560,
+      "source": "Gastify. Formato combined message & contents: https://github.com/ddd-crew/domain-message-flow-modelling | CC BY 4.0",
+      "file": "message-flow-subscription.svg",
+      "miro_id": "3458764686427232310",
+      "miro_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232310"
+    },
+    {
+      "name": "message-flow-delivery",
+      "figure": 19,
+      "title": "B. Registrar un gasto y comparar el presupuesto",
+      "width": 2400,
+      "height": 1560,
+      "source": "Gastify. Formato combined message & contents: https://github.com/ddd-crew/domain-message-flow-modelling | CC BY 4.0",
+      "file": "message-flow-delivery.svg",
+      "miro_id": "3458764686427232311",
+      "miro_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232311"
+    },
+    {
+      "name": "message-flow-premium-activation",
+      "figure": 20,
+      "title": "C. Activar o renovar Premium tras un pago confirmado",
+      "width": 2400,
+      "height": 1560,
+      "source": "Gastify. Formato combined message & contents: https://github.com/ddd-crew/domain-message-flow-modelling | CC BY 4.0",
+      "file": "message-flow-premium-activation.svg",
+      "miro_id": "3458764686427232312",
+      "miro_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232312"
+    },
+    {
+      "name": "message-flow-premium-cancellation",
+      "figure": 21,
+      "title": "D. Cancelar la renovación y volver a Free",
+      "width": 2400,
+      "height": 1560,
+      "source": "Gastify. Formato combined message & contents: https://github.com/ddd-crew/domain-message-flow-modelling | CC BY 4.0",
+      "file": "message-flow-premium-cancellation.svg",
+      "miro_id": "3458764686427232313",
+      "miro_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232313"
+    },
+    {
+      "name": "canvas-subscription",
+      "figure": 22,
+      "title": "Bounded Context Canvas | Subscription Management",
+      "width": 2400,
+      "height": 1560,
+      "source": "Gastify. Adaptación en Miro del canvas v5: https://github.com/ddd-crew/bounded-context-canvas | CC BY 4.0",
+      "file": "canvas-subscription.svg",
+      "miro_id": "3458764686427232307",
+      "miro_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232307"
+    },
+    {
+      "name": "canvas-delivery",
+      "figure": 23,
+      "title": "Bounded Context Canvas | Delivery Expense Management",
+      "width": 2400,
+      "height": 1560,
+      "source": "Gastify. Adaptación en Miro del canvas v5: https://github.com/ddd-crew/bounded-context-canvas | CC BY 4.0",
+      "file": "canvas-delivery.svg",
+      "miro_id": "3458764686427232308",
+      "miro_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232308"
+    },
+    {
+      "name": "canvas-premium",
+      "figure": 24,
+      "title": "Bounded Context Canvas | Premium & Billing",
+      "width": 2400,
+      "height": 1560,
+      "source": "Gastify. Adaptación en Miro del canvas v5: https://github.com/ddd-crew/bounded-context-canvas | CC BY 4.0",
+      "file": "canvas-premium.svg",
+      "miro_id": "3458764686427232309",
+      "miro_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232309"
+    },
+    {
+      "name": "context-map-revised",
+      "figure": 25,
+      "title": "CraveWallet | Context Map",
+      "width": 2400,
+      "height": 1560,
+      "source": "Gastify. Adaptación: https://github.com/ddd-crew/context-mapping | CC BY 4.0 | Relaciones de diseño propuestas",
+      "file": "context-map-revised.svg",
+      "miro_id": "3458764686427232314",
+      "miro_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232314"
+    },
+    {
+      "name": "system-context-revised",
+      "figure": 26,
+      "title": "C4 | Contexto del sistema CraveWallet",
+      "width": 2400,
+      "height": 1560,
+      "source": "Gastify. Modelo C4: https://c4model.com/diagrams/system-context | Modelo editable adicional: workspace.dsl",
+      "file": "system-context-revised.svg",
+      "miro_id": "3458764686427232315",
+      "miro_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232315"
+    },
+    {
+      "name": "containers-revised",
+      "figure": 27,
+      "title": "C4 | Contenedores de CraveWallet",
+      "width": 2400,
+      "height": 1560,
+      "source": "Gastify. Modelo C4: https://c4model.com/diagrams/container | Relaciones y tecnologías coherentes con workspace.dsl",
+      "file": "containers-revised.svg",
+      "miro_id": "3458764686427232316",
+      "miro_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232316"
+    }
+  ]
+}

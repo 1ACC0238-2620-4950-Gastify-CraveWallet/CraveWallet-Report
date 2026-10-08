@@ -1,57 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200">
-<rect width="100%" height="100%" fill="white"/>
-<text x="40" y="60" font-family="Arial,sans-serif" font-size="34" font-weight="bold" fill="#18324a">CraveWallet | Context Map</text>
-<text x="40" y="101" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">U: proveedor del modelo; D: consumidor. La flecha representa influencia del modelo.</text>
-<rect x="40" y="145" width="540" height="170" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="56" y="181" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Sistema externo</text>
-<text x="56" y="219" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">ExchangeRate-API [U]</text>
-<text x="56" y="262" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Cotización y fecha</text>
-<rect x="630" y="145" width="540" height="170" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="646" y="181" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Sistema externo</text>
-<text x="646" y="219" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Stripe [U]</text>
-<text x="646" y="262" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Facturación y notificaciones</text>
-<rect x="1220" y="145" width="540" height="170" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="1236" y="181" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Sistema externo</text>
-<text x="1236" y="219" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Google Places [U]</text>
-<text x="1236" y="262" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Sugerencias de comercios</text>
-<rect x="40" y="480" width="540" height="230" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="56" y="516" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Bounded Context</text>
-<text x="56" y="554" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Suscripciones [D]</text>
-<text x="56" y="597" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Subscription Management</text>
-<text x="56" y="628" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Core: portafolio y renovaciones</text>
-<rect x="630" y="480" width="540" height="230" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="646" y="516" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Bounded Context</text>
-<text x="646" y="554" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Premium &amp; Billing [D / U]</text>
-<text x="646" y="597" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Generic: acceso y vigencia</text>
-<text x="646" y="628" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">D de Stripe; U de Suscripciones</text>
-<rect x="1220" y="480" width="540" height="230" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="1236" y="516" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Bounded Context</text>
-<text x="1236" y="554" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Gastos [D]</text>
-<text x="1236" y="597" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Delivery Expense Management</text>
-<text x="1236" y="628" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">Supporting: gastos y presupuesto</text>
-<polyline points="310,315 310,480" fill="none" stroke="#18324a" stroke-width="3" />
-<polygon points="310,480 303.47551698833155,466.49329346470984 316.52448301166845,466.49329346470984" fill="#18324a"/>
-<rect x="119" y="347" width="382" height="68" fill="white" stroke="white" stroke-width="2" />
-<text x="125" y="375" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">ACL en el contexto D</text>
-<text x="125" y="405" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">Traduce al modelo local</text>
-<polyline points="900,315 900,480" fill="none" stroke="#18324a" stroke-width="3" />
-<polygon points="900,480 893.4755169883315,466.49329346470984 906.5244830116685,466.49329346470984" fill="#18324a"/>
-<rect x="709" y="347" width="382" height="68" fill="white" stroke="white" stroke-width="2" />
-<text x="715" y="375" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">ACL en el contexto D</text>
-<text x="715" y="405" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">Traduce al modelo local</text>
-<polyline points="1490,315 1490,480" fill="none" stroke="#18324a" stroke-width="3" />
-<polygon points="1490,480 1483.4755169883315,466.49329346470984 1496.5244830116685,466.49329346470984" fill="#18324a"/>
-<rect x="1299" y="347" width="382" height="68" fill="white" stroke="white" stroke-width="2" />
-<text x="1305" y="375" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">ACL en el contexto D</text>
-<text x="1305" y="405" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">Traduce al modelo local</text>
-<polyline points="900,710 900,890 310,890 310,710" fill="none" stroke="#18324a" stroke-width="3" />
-<polygon points="310,710 316.52448301166845,723.5067065352902 303.47551698833155,723.5067065352902" fill="#18324a"/>
-<rect x="344" y="771" width="522" height="98" fill="white" stroke="white" stroke-width="2" />
-<text x="350" y="799" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">Customer/Supplier propuesto</text>
-<text x="350" y="829" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">Premium [U/S] → Suscripciones [D/C]</text>
-<text x="350" y="859" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">GetPlanAccess: nivel, límite y vigencia</text>
-<rect x="40" y="956" width="1720" height="135" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="56" y="998" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Suscripciones / Gastos: Separate Ways</text>
-<text x="56" y="1041" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#18324a">No hay integración entre sus agregados. El cliente compone los resúmenes del Dashboard.</text>
-<text x="40" y="1164" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#18324a">Fuente: Gastify; notación adaptada de DDD Crew, Context Mapping. CC BY 4.0. Contratos propuestos.</text>
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1560" viewBox="0 0 2400 1560">
+  <rect width="2400" height="1560" fill="#ffffff" />
+  <rect x="70.0" y="1230.0" width="2260.0" height="210.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232553" />
+  <polyline points="405.0,425.0 405.0,715.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232625" />
+  <polygon points="405.0,715.0 398.91048252244275,702.3937405670625 411.08951747755725,702.3937405670625" fill="#313131" />
+  <polyline points="1200.0,425.0 1200.0,715.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232626" />
+  <polygon points="1200.0,715.0 1193.9104825224429,702.3937405670625 1206.0895174775571,702.3937405670625" fill="#313131" />
+  <polyline points="1995.0,425.0 1995.0,715.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232627" />
+  <polygon points="1995.0,715.0 1988.9104825224429,702.3937405670625 2001.0895174775571,702.3937405670625" fill="#313131" />
+  <polyline points="865.0,845.0 740.0,845.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232628" />
+  <polygon points="740.0,845.0 752.6062594329375,838.9104825224427 752.6062594329375,851.0895174775573" fill="#313131" />
+  <rect x="748.0" y="829.65" width="109.0" height="30.7" fill="#ffffff" />
+  <text x="758.0" y="850.49" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="18" font-weight="normal">U/S → D/C</text>
+  <text x="40.0" y="66.7" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="40.0" font-weight="bold" data-miro-id="3458764686427232538">CraveWallet | Context Map</text>
+  <text x="40.0" y="122.38" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232540">U upstream: proveedor del modelo; D downstream: consumidor. Las flechas muestran influencia del modelo.</text>
+  <text x="40.0" y="1494.86" fill="#595959" font-family="Arial,sans-serif" font-size="22.0" font-weight="normal" data-miro-id="3458764686427232541">Gastify. Adaptación: https://github.com/ddd-crew/context-mapping | CC BY 4.0 | Relaciones de diseño propuestas</text>
+  <rect x="70.0" y="205.0" width="670.0" height="220.0" fill="#f1f1f1" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232542" />
+  <text x="248.5" y="288.80499999999995" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="31.0" font-weight="normal" data-miro-id="3458764686427232542">ExchangeRate-API [U]</text>
+  <text x="292.5" y="324.4549999999999" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="31.0" font-weight="normal" data-miro-id="3458764686427232542">Sistema externo</text>
+  <text x="204.0" y="360.105" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="31.0" font-weight="normal" data-miro-id="3458764686427232542">Cotización USD/PEN y fecha</text>
+  <rect x="865.0" y="205.0" width="670.0" height="220.0" fill="#f1f1f1" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232543" />
+  <text x="1135.0" y="288.80499999999995" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="31.0" font-weight="normal" data-miro-id="3458764686427232543">Stripe [U]</text>
+  <text x="1087.5" y="324.4549999999999" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="31.0" font-weight="normal" data-miro-id="3458764686427232543">Sistema externo</text>
+  <text x="1007.5" y="360.105" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="31.0" font-weight="normal" data-miro-id="3458764686427232543">Facturación y notificaciones</text>
+  <rect x="1660.0" y="205.0" width="670.0" height="220.0" fill="#f1f1f1" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232544" />
+  <text x="1869.5" y="288.80499999999995" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="31.0" font-weight="normal" data-miro-id="3458764686427232544">Google Places [U]</text>
+  <text x="1882.5" y="324.4549999999999" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="31.0" font-weight="normal" data-miro-id="3458764686427232544">Sistema externo</text>
+  <text x="1812.0" y="360.105" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="31.0" font-weight="normal" data-miro-id="3458764686427232544">Sugerencias de comercios</text>
+  <rect x="70.0" y="715.0" width="670.0" height="260.0" fill="#d9eaf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232545" />
+  <text x="272.5" y="802.4" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232545">Suscripciones [D/C]</text>
+  <text x="288.0" y="836.9" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232545">Bounded Context</text>
+  <text x="229.0" y="871.4" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232545">Subscription Management</text>
+  <text x="195.5" y="905.9" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232545">Core: portafolio y renovaciones</text>
+  <rect x="865.0" y="715.0" width="670.0" height="260.0" fill="#d9eaf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232546" />
+  <text x="1020.5" y="802.4" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232546">Premium &amp; Billing [D / U/S]</text>
+  <text x="1083.0" y="836.9" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232546">Bounded Context</text>
+  <text x="1019.5" y="871.4" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232546">Generic: acceso y vigencia</text>
+  <text x="972.0" y="905.9" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232546">D de Stripe; U/S de Suscripciones</text>
+  <rect x="1660.0" y="715.0" width="670.0" height="260.0" fill="#d9eaf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232547" />
+  <text x="1924.5" y="802.4" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232547">Gastos [D]</text>
+  <text x="1878.0" y="836.9" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232547">Bounded Context</text>
+  <text x="1784.5" y="871.4" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232547">Delivery Expense Management</text>
+  <text x="1770.0" y="905.9" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232547">Supporting: gastos y presupuesto</text>
+  <text x="425.0" y="531.62" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427232549">ACL en D</text>
+  <text x="425.0" y="559.22" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427232549">ExchangeRateApiAdapter</text>
+  <text x="425.0" y="586.82" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427232549">Traduce cotización y fecha</text>
+  <text x="1220.0" y="531.62" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427232550">ACL en D</text>
+  <text x="1220.0" y="559.22" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427232550">StripeGatewayAdapter</text>
+  <text x="1220.0" y="586.82" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427232550">Verifica firma y traduce</text>
+  <text x="1220.0" y="614.42" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427232550">facturación</text>
+  <text x="2015.0" y="531.12" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427232551">ACL en D</text>
+  <text x="2015.0" y="558.72" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427232551">GooglePlacesAdapter</text>
+  <text x="2015.0" y="586.32" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427232551">Traduce</text>
+  <text x="2015.0" y="613.92" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="24.0" font-weight="normal" data-miro-id="3458764686427232551">MerchantSuggestion</text>
+  <text x="70.0" y="1065.9" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232552">Customer/Supplier propuesto</text>
+  <text x="70.0" y="1100.4" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232552">Premium [U/S] → Suscripciones [D/C]</text>
+  <text x="70.0" y="1134.9" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232552">Contrato GetPlanAccess / PlanAccess: nivel, límite y vigencia.</text>
+  <text x="94.0" y="1275.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232554">Suscripciones / Gastos: Separate Ways</text>
+  <text x="94.0" y="1342.4" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232555">No hay integración entre sus agregados. El cliente compone ambos resúmenes para el Dashboard.</text>
 </svg>

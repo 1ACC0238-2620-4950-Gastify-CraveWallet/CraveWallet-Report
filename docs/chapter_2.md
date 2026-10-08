@@ -2061,7 +2061,7 @@ La arquitectura de software que cierra la sección se representará con el C4 Mo
 
 <!-- pdf:omit-start -->
 
-Los [diagramas editables y las instrucciones de edición](diagrams/chapter_2/README.md) acompañan a las imágenes del informe. Las vistas C4 cuentan además con un [modelo de Structurizr DSL](diagrams/chapter_2/workspace.dsl).
+Las figuras 18–27 son vistas estáticas derivadas de los diagramas editables del [tablero de Miro](https://miro.com/app/board/uXjVEcjtdBM=/). Los [objetos guardados y las instrucciones de edición](diagrams/chapter_2/README.md) permiten revisar y mantener sus fuentes. Las vistas C4 cuentan además con un [modelo de Structurizr DSL](diagrams/chapter_2/workspace.dsl).
 
 <!-- pdf:omit-end -->
 
@@ -2118,7 +2118,7 @@ La autenticación por el backend RESTful, las notificaciones locales, el calenda
 
 #### 2.5.1.2. Domain Message Flows Modeling
 
-Se modelan escenarios de CraveWallet indicando quién envía cada mensaje, quién lo recibe, su orden y sus datos relevantes. La notación adapta Domain Message Flow Modelling de DDD Crew [@dddcrewMessageFlows] mediante secuencias por escenario. Cada flecha indica orden, tipo, nombre y datos del mensaje. Las respuestas se dibujan de manera explícita; los subpasos a/b/c separan los intercambios de una misma operación. **C** identifica una orden que puede rechazarse; **Q**, una consulta; **R**, su respuesta; **E**, un hecho confirmado. Un evento interno no implica que exista un bus de mensajes: los contextos pueden implementarse como módulos del mismo backend.
+Se modelan escenarios de CraveWallet indicando quién envía cada mensaje, quién lo recibe, su orden y sus datos relevantes. La notación adapta Domain Message Flow Modelling de DDD Crew [@dddcrewMessageFlows] con el formato de mensaje y contenido combinados. Cada tarjeta indica orden, tipo, nombre y datos, y se sitúa junto a una flecha entre emisor y receptor. Las cajas repetidas identifican al mismo participante del escenario. Las respuestas se dibujan de manera explícita; los subpasos a/b/c separan los intercambios de una misma operación. **C** identifica una orden que puede rechazarse; **Q**, una consulta; **R**, su respuesta; **E**, un hecho confirmado. Un evento interno no implica que exista un bus de mensajes: los contextos pueden implementarse como módulos del mismo backend.
 
 ##### Escenario A. Registrar una suscripción y preparar el recordatorio
 
@@ -2149,7 +2149,7 @@ La conversión se solicita al consultar el portafolio o previsualizar un importe
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración de Gastify; notación adaptada de DDD Crew, Domain Message Flow Modelling (s. f.), CC BY 4.0.*
+*Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232310).*
 
 
 ##### Escenario B. Registrar un gasto y comparar el presupuesto
@@ -2170,7 +2170,7 @@ La tabla 87 describe cómo se registra un gasto, se actualiza el presupuesto de 
 *Fuente: modelado propuesto de Gastify, adaptado de DDD Crew [@dddcrewMessageFlows].*
 
 
-La búsqueda de comercios es una consulta auxiliar: el adaptador de Google Places devuelve sugerencias, y el usuario elige una o escribe un nombre (US18). No se emite «dirección validada» como prueba de que el pedido ocurrió. La figura 19 representa el registro del gasto y la consulta del resumen. `MonthlyBudget` es un agregado de Delivery Expense Management; su presencia en la secuencia no lo convierte en otro Bounded Context.
+La búsqueda de comercios es una consulta auxiliar: el adaptador de Google Places devuelve sugerencias, y el usuario elige una o escribe un nombre (US18). No se emite «dirección validada» como prueba de que el pedido ocurrió. La figura 19 representa el registro del gasto y la consulta del resumen. `MonthlyBudget` es un agregado de Delivery Expense Management; su presencia en el flujo no lo convierte en otro Bounded Context.
 
 ![Registro de gasto de delivery y comparación del presupuesto](images/chapter_2/message-flow-delivery.png)
 
@@ -2180,7 +2180,7 @@ La búsqueda de comercios es una consulta auxiliar: el adaptador de Google Place
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración de Gastify; notación adaptada de DDD Crew, Domain Message Flow Modelling (s. f.), CC BY 4.0.*
+*Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232311).*
 
 ##### Escenario C. Activar o renovar Premium a partir de un pago confirmado
 
@@ -2212,7 +2212,7 @@ Stripe documenta la confirmación por webhook y el control del estado de la susc
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración de Gastify; notación adaptada de DDD Crew, Domain Message Flow Modelling (s. f.), CC BY 4.0.*
+*Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232312).*
 
 
 ##### Escenario D. Cancelar la renovación del plan de CraveWallet
@@ -2245,7 +2245,7 @@ La figura 21 representa la cancelación. Entre la confirmación de la solicitud 
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración de Gastify; notación adaptada de DDD Crew, Domain Message Flow Modelling (s. f.), CC BY 4.0.*
+*Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232313).*
 
 **Marcar una suscripción externa como cancelada:** la aplicación envía el comando a Subscription Management; `Subscription` confirma `SubscriptionCancelled`; el backend conserva el historial y devuelve el estado; el cliente solicita retirar el evento del calendario y verifica el resultado (US07, US13). Esto no comunica una cancelación a Netflix, un gimnasio u otro proveedor.
 
@@ -2268,7 +2268,7 @@ La figura 22 reúne el propósito, los contratos y las decisiones del contexto q
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración de Gastify; adaptación del Bounded Context Canvas v5 de DDD Crew (s. f.), CC BY 4.0.*
+*Fuente: Gastify; adaptación del canvas v5 de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232307).*
 
 La tabla 90 desarrolla el canvas de Subscription Management y su trazabilidad a las historias de suscripciones y recordatorios.
 
@@ -2305,7 +2305,7 @@ La figura 23 delimita el registro de gastos y el presupuesto mensual; distingue 
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración de Gastify; adaptación del Bounded Context Canvas v5 de DDD Crew (s. f.), CC BY 4.0.*
+*Fuente: Gastify; adaptación del canvas v5 de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232308).*
 
 La tabla 91 desarrolla el canvas de Delivery Expense Management, incluidos el presupuesto mensual y la búsqueda opcional de comercios.
 
@@ -2342,7 +2342,7 @@ La figura 24 concentra las reglas del plan propio de CraveWallet, las colaboraci
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración de Gastify; adaptación del Bounded Context Canvas v5 de DDD Crew (s. f.), CC BY 4.0.*
+*Fuente: Gastify; adaptación del canvas v5 de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232309).*
 
 La tabla 92 desarrolla el canvas de Premium & Billing y las reglas de vigencia del plan propio de CraveWallet.
 
@@ -2388,8 +2388,6 @@ La tabla 93 justifica cada relación del Context Map e identifica el contrato o 
 *Fuente: elaboración del equipo Gastify.*
 
 
-La figura 25 representa estas relaciones. Se eliminó la relación simultánea Partnership/Shared Kernel entre Suscripciones y Gastos porque compartir una pantalla o identificador no demuestra un modelo compartido ni entregas mutuamente dependientes. Si la implementación introduce esa dependencia, el equipo deberá justificar y actualizar el mapa.
-
 ![Context Map propuesto de CraveWallet](images/chapter_2/context-map-revised.png)
 
 <!-- pdf:omit-start -->
@@ -2398,7 +2396,9 @@ La figura 25 representa estas relaciones. Se eliminó la relación simultánea P
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración de Gastify; notación adaptada de DDD Crew, Context Mapping (s. f.), CC BY 4.0.*
+*Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232314).*
+
+La figura 25 representa estas relaciones. Compartir una pantalla o identificador no demuestra un modelo compartido ni entregas mutuamente dependientes entre Suscripciones y Gastos; por ello se propone Separate Ways. Si la implementación introduce una dependencia entre esos modelos, el equipo deberá justificar y actualizar el mapa.
 
 El calendario del dispositivo y la autenticación colaboran con los casos de uso, pero no se clasifican como nuevos Bounded Contexts de negocio en este avance. Las relaciones se comprobarán mediante cambios en los contratos y las pruebas de integración. La política de retorno a Free sigue pendiente de decisión del equipo.
 
@@ -2410,7 +2410,7 @@ Se usa C4 para distinguir el sistema completo, sus contenedores y los componente
 
 CraveWallet se representa como un sistema completo: incluye la experiencia móvil y el backend. Los usuarios pertenecen a los segmentos de estudiantes y profesionales jóvenes definidos en 1.3. El sistema consulta cotizaciones, prepara recordatorios en el calendario del dispositivo, recibe sugerencias de comercios y gestiona su plan propio con Stripe. Los pagos y cancelaciones de los servicios externos registrados por el usuario quedan fuera del alcance.
 
-La figura 26 muestra una persona, CraveWallet como un único sistema y sus cuatro colaboradores externos. La solicitud a Stripe y las notificaciones de Stripe tienen flechas separadas. La vista omite tecnologías, almacenes y módulos internos para conservar el nivel de contexto.
+La figura 26 muestra una persona, CraveWallet como un único sistema y sus cuatro colaboradores externos. La solicitud a Stripe y las notificaciones de Stripe tienen flechas separadas. La vista omite tecnologías, almacenes y módulos internos para conservar el nivel de contexto. En las vistas C4, los números identifican las relaciones de la leyenda; no expresan un orden de ejecución.
 
 ![Diagrama de contexto del sistema CraveWallet](images/chapter_2/system-context-revised.png)
 
@@ -2420,7 +2420,7 @@ La figura 26 muestra una persona, CraveWallet como un único sistema y sus cuatr
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify. Propuesta de diseño.*
+*Fuente: elaboración del equipo Gastify. Propuesta de diseño; [vista editable en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232315).*
 
 #### 2.5.3.2. Software Architecture Container Level Diagrams
 
@@ -2450,7 +2450,7 @@ La figura 27 indica el propósito y la tecnología de cada relación: HTTPS/JSON
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify. Propuesta de diseño.*
+*Fuente: elaboración del equipo Gastify. Propuesta de diseño; [vista editable en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232316).*
 
 #### 2.5.3.3. Software Architecture Deployment Diagrams
 

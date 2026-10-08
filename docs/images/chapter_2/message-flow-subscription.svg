@@ -1,58 +1,88 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1117" viewBox="0 0 1800 1117">
-<rect width="100%" height="100%" fill="white"/>
-<text x="40" y="60" font-family="Arial,sans-serif" font-size="34" font-weight="bold" fill="#18324a">A. Registrar una suscripción y preparar el aviso</text>
-<text x="40" y="101" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">C: comando | Q: consulta | R: respuesta | E: hecho confirmado. Orden propio del escenario.</text>
-<rect x="45" y="140" width="330" height="100" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="61" y="176" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Cliente</text>
-<text x="61" y="214" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Aplicación móvil</text>
-<polyline points="210,240 210,962" fill="none" stroke="#8196a8" stroke-width="3" stroke-dasharray="8 7"/>
-<rect x="485" y="140" width="330" height="100" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="501" y="176" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Bounded Context</text>
-<text x="501" y="214" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Suscripciones</text>
-<polyline points="650,240 650,962" fill="none" stroke="#8196a8" stroke-width="3" stroke-dasharray="8 7"/>
-<rect x="925" y="140" width="330" height="100" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="941" y="176" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Bounded Context</text>
-<text x="941" y="214" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Premium &amp; Billing</text>
-<polyline points="1090,240 1090,962" fill="none" stroke="#8196a8" stroke-width="3" stroke-dasharray="8 7"/>
-<rect x="1365" y="140" width="330" height="100" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
-<text x="1381" y="176" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Sistema externo</text>
-<text x="1381" y="214" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Calendario</text>
-<polyline points="1530,240 1530,962" fill="none" stroke="#8196a8" stroke-width="3" stroke-dasharray="8 7"/>
-<polyline points="210,373 650,373" fill="none" stroke="#176aa5" stroke-width="3" />
-<polygon points="650,373 636.4932934647098,379.52448301166845 636.4932934647098,366.47551698833155" fill="#176aa5"/>
-<rect x="218" y="287" width="1551" height="78" fill="white" stroke="white" stroke-width="2" />
-<text x="222" y="314" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#176aa5">1 [C] RegisterSubscription</text>
-<text x="222" y="345" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#176aa5">Identidad autenticada; nombre, importe, moneda, categoría, ciclo y próxima fecha.</text>
-<polyline points="650,474 1090,474" fill="none" stroke="#6557a5" stroke-width="3" />
-<polygon points="1090,474 1076.49329346471,480.52448301166845 1076.49329346471,467.47551698833155" fill="#6557a5"/>
-<rect x="658" y="388" width="1111" height="78" fill="white" stroke="white" stroke-width="2" />
-<text x="662" y="415" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#6557a5">2 [Q] GetPlanAccess</text>
-<text x="662" y="446" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#6557a5">userId</text>
-<polyline points="1090,575 650,575" fill="none" stroke="#39714e" stroke-width="3" />
-<polygon points="650,575 663.5067065352902,568.4755169883315 663.5067065352902,581.5244830116685" fill="#39714e"/>
-<rect x="658" y="489" width="1111" height="78" fill="white" stroke="white" stroke-width="2" />
-<text x="662" y="516" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#39714e">3 [R] PlanAccess</text>
-<text x="662" y="547" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#39714e">Nivel, límite y vigencia. Suscripciones comprueba su cantidad de registros activos.</text>
-<polyline points="650,656 722,656 722,678 650,678" fill="none" stroke="#a65018" stroke-width="3" />
-<polygon points="650,678 663.5067065352902,671.4755169883315 663.5067065352902,684.5244830116685" fill="#a65018"/>
-<rect x="736" y="590" width="1033" height="78" fill="white" stroke="white" stroke-width="2" />
-<text x="740" y="617" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#a65018">4 [E] SubscriptionRegistered</text>
-<text x="740" y="648" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#a65018">subscriptionId, userId, nextBillingDate; después de confirmar la persistencia.</text>
-<polyline points="650,777 210,777" fill="none" stroke="#39714e" stroke-width="3" />
-<polygon points="210,777 223.50670653529016,770.4755169883315 223.50670653529016,783.5244830116685" fill="#39714e"/>
-<rect x="218" y="691" width="1551" height="78" fill="white" stroke="white" stroke-width="2" />
-<text x="222" y="718" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#39714e">5 [R] Registro confirmado</text>
-<text x="222" y="749" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#39714e">Suscripción y datos del aviso; calendario todavía no confirmado.</text>
-<polyline points="210,878 1530,878" fill="none" stroke="#176aa5" stroke-width="3" />
-<polygon points="1530,878 1516.49329346471,884.5244830116685 1516.49329346471,871.4755169883315" fill="#176aa5"/>
-<rect x="218" y="792" width="1551" height="78" fill="white" stroke="white" stroke-width="2" />
-<text x="222" y="819" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#176aa5">6 [C] Crear recordatorio</text>
-<text x="222" y="850" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#176aa5">subscriptionId, título e instante 24 horas antes; requiere permiso del usuario.</text>
-<polyline points="1530,979 210,979" fill="none" stroke="#39714e" stroke-width="3" />
-<polygon points="210,979 223.50670653529016,972.4755169883315 223.50670653529016,985.5244830116685" fill="#39714e"/>
-<rect x="218" y="893" width="1551" height="78" fill="white" stroke="white" stroke-width="2" />
-<text x="222" y="920" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#39714e">7 [R] Resultado del calendario</text>
-<text x="222" y="951" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#39714e">eventId creado, error o permiso denegado.</text>
-<text x="40" y="1027" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#18324a">Rechazo por límite: detener el alta antes del paso 4. El importe original se conserva.</text>
-<text x="40" y="1081" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#18324a">Fuente: Gastify; notación adaptada de DDD Crew, Domain Message Flow Modelling. CC BY 4.0.</text>
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1560" viewBox="0 0 2400 1560">
+  <rect width="2400" height="1560" fill="#ffffff" />
+  <polyline points="380.0,279.0 2020.0,279.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232585" />
+  <polygon points="2020.0,279.0 2007.3937405670624,285.08951747755725 2007.3937405670624,272.91048252244275" fill="#313131" />
+  <polyline points="380.0,420.0 2020.0,420.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232586" />
+  <polygon points="2020.0,420.0 2007.3937405670624,426.08951747755725 2007.3937405670624,413.91048252244275" fill="#313131" />
+  <polyline points="380.0,561.0 2020.0,561.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232587" />
+  <polygon points="2020.0,561.0 2007.3937405670624,567.0895174775573 2007.3937405670624,554.9104825224427" fill="#313131" />
+  <polyline points="380.0,702.0 2020.0,702.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232588" />
+  <polygon points="2020.0,702.0 2007.3937405670624,708.0895174775573 2007.3937405670624,695.9104825224427" fill="#313131" />
+  <polyline points="380.0,843.0 2020.0,843.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232589" />
+  <polygon points="2020.0,843.0 2007.3937405670624,849.0895174775573 2007.3937405670624,836.9104825224427" fill="#313131" />
+  <polyline points="380.0,984.0 2020.0,984.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232590" />
+  <polygon points="2020.0,984.0 2007.3937405670624,990.0895174775573 2007.3937405670624,977.9104825224427" fill="#313131" />
+  <polyline points="380.0,1125.0 2020.0,1125.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232591" />
+  <polygon points="2020.0,1125.0 2007.3937405670624,1131.0895174775571 2007.3937405670624,1118.9104825224429" fill="#313131" />
+  <text x="40.0" y="66.7" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="40.0" font-weight="bold" data-miro-id="3458764686427232419">A. Registrar una suscripción y preparar el aviso</text>
+  <text x="40.0" y="122.38" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232420">Domain Message Flow | C comando; Q consulta; R respuesta; E evento | Lectura por número de mensaje</text>
+  <text x="40.0" y="1494.86" fill="#595959" font-family="Arial,sans-serif" font-size="22.0" font-weight="normal" data-miro-id="3458764686427232421">Gastify. Formato combined message &amp; contents: https://github.com/ddd-crew/domain-message-flow-modelling | CC BY 4.0</text>
+  <rect x="40.0" y="229.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232422" />
+  <text x="118.0" y="272.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232422">Aplicación móvil</text>
+  <text x="170.5" y="301.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232422">Cliente</text>
+  <rect x="2020.0" y="229.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232423" />
+  <text x="2110.5" y="272.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232423">Suscripciones</text>
+  <text x="2092.5" y="301.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232423">Bounded Context</text>
+  <rect x="420.0" y="175.0" width="1560.0" height="88.0" fill="#d9eaf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232424" />
+  <text x="1051.0" y="211.98" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232424">1 [C] RegisterSubscription</text>
+  <text x="735.0" y="241.88" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232424">Identidad autenticada; nombre, importe, moneda, categoría, ciclo y próxima fecha.</text>
+  <rect x="40.0" y="370.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232425" />
+  <text x="130.5" y="413.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232425">Suscripciones</text>
+  <text x="112.5" y="442.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232425">Bounded Context</text>
+  <rect x="2020.0" y="370.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232426" />
+  <text x="2089.5" y="413.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232426">Premium &amp; Billing</text>
+  <text x="2092.5" y="442.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232426">Bounded Context</text>
+  <rect x="420.0" y="316.0" width="1560.0" height="88.0" fill="#e4dcf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232427" />
+  <text x="1081.5" y="352.98" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232427">2 [Q] GetPlanAccess</text>
+  <text x="1164.5" y="382.88" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232427">userId</text>
+  <rect x="40.0" y="511.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232428" />
+  <text x="109.5" y="554.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232428">Premium &amp; Billing</text>
+  <text x="112.5" y="583.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232428">Bounded Context</text>
+  <rect x="2020.0" y="511.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232429" />
+  <text x="2110.5" y="554.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232429">Suscripciones</text>
+  <text x="2092.5" y="583.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232429">Bounded Context</text>
+  <rect x="420.0" y="457.0" width="1560.0" height="88.0" fill="#e4dcf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232430" />
+  <text x="1102.5" y="493.98" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232430">3 [R] PlanAccess</text>
+  <text x="732.0" y="523.88" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232430">Nivel, límite y vigencia. Suscripciones comprueba su cantidad de registros activos.</text>
+  <rect x="40.0" y="652.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232431" />
+  <text x="130.5" y="680.875" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232431">Suscripciones</text>
+  <text x="122.5" y="709.625" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232431">Emisión interna</text>
+  <text x="112.5" y="738.375" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232431">Bounded Context</text>
+  <rect x="2020.0" y="652.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232432" />
+  <text x="2110.5" y="680.875" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232432">Suscripciones</text>
+  <text x="2068.5" y="709.625" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232432">Manejadores internos</text>
+  <text x="2092.5" y="738.375" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232432">Bounded Context</text>
+  <rect x="420.0" y="598.0" width="1560.0" height="88.0" fill="#fff0b3" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232433" />
+  <text x="1038.0" y="634.98" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232433">4 [E] SubscriptionRegistered</text>
+  <text x="767.0" y="664.88" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232433">subscriptionId, userId, nextBillingDate; después de confirmar la persistencia.</text>
+  <rect x="40.0" y="793.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232434" />
+  <text x="130.5" y="836.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232434">Suscripciones</text>
+  <text x="112.5" y="865.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232434">Bounded Context</text>
+  <rect x="2020.0" y="793.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232435" />
+  <text x="2098.0" y="836.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232435">Aplicación móvil</text>
+  <text x="2150.5" y="865.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232435">Cliente</text>
+  <rect x="420.0" y="739.0" width="1560.0" height="88.0" fill="#e4dcf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232436" />
+  <text x="1054.5" y="775.98" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232436">5 [R] Registro confirmado</text>
+  <text x="836.0" y="805.88" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232436">Suscripción y datos del aviso; calendario todavía no confirmado.</text>
+  <rect x="40.0" y="934.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232437" />
+  <text x="118.0" y="977.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232437">Aplicación móvil</text>
+  <text x="170.5" y="1006.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232437">Cliente</text>
+  <rect x="2020.0" y="934.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232438" />
+  <text x="2129.0" y="977.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232438">Calendario</text>
+  <text x="2098.5" y="1006.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232438">Sistema externo</text>
+  <rect x="420.0" y="880.0" width="1560.0" height="88.0" fill="#d9eaf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232440" />
+  <text x="1065.0" y="916.98" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232440">6 [C] Crear recordatorio</text>
+  <text x="767.5" y="946.88" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232440">subscriptionId, título e instante 24 horas antes; requiere permiso del usuario.</text>
+  <rect x="40.0" y="1075.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232445" />
+  <text x="149.0" y="1118.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232445">Calendario</text>
+  <text x="118.5" y="1147.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232445">Sistema externo</text>
+  <rect x="2020.0" y="1075.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232446" />
+  <text x="2098.0" y="1118.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232446">Aplicación móvil</text>
+  <text x="2150.5" y="1147.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232446">Cliente</text>
+  <rect x="420.0" y="1021.0" width="1560.0" height="88.0" fill="#e4dcf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232447" />
+  <text x="1029.0" y="1057.98" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232447">7 [R] Resultado del calendario</text>
+  <text x="958.5" y="1087.88" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232447">eventId creado, error o permiso denegado.</text>
+  <text x="40.0" y="1389.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232448">Rechazo por límite: detener el alta antes del paso 4. El importe original se conserva.</text>
+  <text x="40.0" y="1417.75" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232448">Las cajas repetidas identifican al mismo participante; cada fila muestra una colaboración del escenario.</text>
 </svg>
