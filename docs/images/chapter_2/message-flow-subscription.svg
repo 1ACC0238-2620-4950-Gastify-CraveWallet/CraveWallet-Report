@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1560" viewBox="0 0 2400 1560">
+  <rect width="2400" height="1560" fill="#ffffff" />
+  <polyline points="380.0,279.0 2020.0,279.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232585" />
+  <polygon points="2020.0,279.0 2007.3937405670624,285.08951747755725 2007.3937405670624,272.91048252244275" fill="#313131" />
+  <polyline points="380.0,420.0 2020.0,420.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232586" />
+  <polygon points="2020.0,420.0 2007.3937405670624,426.08951747755725 2007.3937405670624,413.91048252244275" fill="#313131" />
+  <polyline points="380.0,561.0 2020.0,561.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232587" />
+  <polygon points="2020.0,561.0 2007.3937405670624,567.0895174775573 2007.3937405670624,554.9104825224427" fill="#313131" />
+  <polyline points="380.0,702.0 2020.0,702.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232588" />
+  <polygon points="2020.0,702.0 2007.3937405670624,708.0895174775573 2007.3937405670624,695.9104825224427" fill="#313131" />
+  <polyline points="380.0,843.0 2020.0,843.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232589" />
+  <polygon points="2020.0,843.0 2007.3937405670624,849.0895174775573 2007.3937405670624,836.9104825224427" fill="#313131" />
+  <polyline points="380.0,984.0 2020.0,984.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232590" />
+  <polygon points="2020.0,984.0 2007.3937405670624,990.0895174775573 2007.3937405670624,977.9104825224427" fill="#313131" />
+  <polyline points="380.0,1125.0 2020.0,1125.0" fill="none" stroke="#313131" stroke-width="2" data-miro-id="3458764686427232591" />
+  <polygon points="2020.0,1125.0 2007.3937405670624,1131.0895174775571 2007.3937405670624,1118.9104825224429" fill="#313131" />
+  <text x="40.0" y="66.7" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="40.0" font-weight="bold" data-miro-id="3458764686427232419">A. Registrar una suscripción y preparar el aviso</text>
+  <text x="40.0" y="122.38" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232420">Domain Message Flow | C comando; Q consulta; R respuesta; E evento | Lectura por número de mensaje</text>
+  <text x="40.0" y="1494.86" fill="#595959" font-family="Arial,sans-serif" font-size="22.0" font-weight="normal" data-miro-id="3458764686427232421">Gastify. Formato combined message &amp; contents: https://github.com/ddd-crew/domain-message-flow-modelling | CC BY 4.0</text>
+  <rect x="40.0" y="229.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232422" />
+  <text x="118.0" y="272.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232422">Aplicación móvil</text>
+  <text x="170.5" y="301.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232422">Cliente</text>
+  <rect x="2020.0" y="229.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232423" />
+  <text x="2110.5" y="272.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232423">Suscripciones</text>
+  <text x="2092.5" y="301.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232423">Bounded Context</text>
+  <rect x="420.0" y="175.0" width="1560.0" height="88.0" fill="#d9eaf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232424" />
+  <text x="1051.0" y="211.98" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232424">1 [C] RegisterSubscription</text>
+  <text x="735.0" y="241.88" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232424">Identidad autenticada; nombre, importe, moneda, categoría, ciclo y próxima fecha.</text>
+  <rect x="40.0" y="370.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232425" />
+  <text x="130.5" y="413.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232425">Suscripciones</text>
+  <text x="112.5" y="442.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232425">Bounded Context</text>
+  <rect x="2020.0" y="370.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232426" />
+  <text x="2089.5" y="413.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232426">Premium &amp; Billing</text>
+  <text x="2092.5" y="442.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232426">Bounded Context</text>
+  <rect x="420.0" y="316.0" width="1560.0" height="88.0" fill="#e4dcf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232427" />
+  <text x="1081.5" y="352.98" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232427">2 [Q] GetPlanAccess</text>
+  <text x="1164.5" y="382.88" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232427">userId</text>
+  <rect x="40.0" y="511.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232428" />
+  <text x="109.5" y="554.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232428">Premium &amp; Billing</text>
+  <text x="112.5" y="583.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232428">Bounded Context</text>
+  <rect x="2020.0" y="511.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232429" />
+  <text x="2110.5" y="554.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232429">Suscripciones</text>
+  <text x="2092.5" y="583.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232429">Bounded Context</text>
+  <rect x="420.0" y="457.0" width="1560.0" height="88.0" fill="#e4dcf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232430" />
+  <text x="1102.5" y="493.98" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232430">3 [R] PlanAccess</text>
+  <text x="732.0" y="523.88" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232430">Nivel, límite y vigencia. Suscripciones comprueba su cantidad de registros activos.</text>
+  <rect x="40.0" y="652.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232431" />
+  <text x="130.5" y="680.875" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232431">Suscripciones</text>
+  <text x="122.5" y="709.625" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232431">Emisión interna</text>
+  <text x="112.5" y="738.375" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232431">Bounded Context</text>
+  <rect x="2020.0" y="652.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232432" />
+  <text x="2110.5" y="680.875" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232432">Suscripciones</text>
+  <text x="2068.5" y="709.625" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232432">Manejadores internos</text>
+  <text x="2092.5" y="738.375" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232432">Bounded Context</text>
+  <rect x="420.0" y="598.0" width="1560.0" height="88.0" fill="#fff0b3" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232433" />
+  <text x="1038.0" y="634.98" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232433">4 [E] SubscriptionRegistered</text>
+  <text x="767.0" y="664.88" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232433">subscriptionId, userId, nextBillingDate; después de confirmar la persistencia.</text>
+  <rect x="40.0" y="793.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232434" />
+  <text x="130.5" y="836.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232434">Suscripciones</text>
+  <text x="112.5" y="865.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232434">Bounded Context</text>
+  <rect x="2020.0" y="793.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232435" />
+  <text x="2098.0" y="836.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232435">Aplicación móvil</text>
+  <text x="2150.5" y="865.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232435">Cliente</text>
+  <rect x="420.0" y="739.0" width="1560.0" height="88.0" fill="#e4dcf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232436" />
+  <text x="1054.5" y="775.98" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232436">5 [R] Registro confirmado</text>
+  <text x="836.0" y="805.88" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232436">Suscripción y datos del aviso; calendario todavía no confirmado.</text>
+  <rect x="40.0" y="934.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232437" />
+  <text x="118.0" y="977.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232437">Aplicación móvil</text>
+  <text x="170.5" y="1006.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232437">Cliente</text>
+  <rect x="2020.0" y="934.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232438" />
+  <text x="2129.0" y="977.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232438">Calendario</text>
+  <text x="2098.5" y="1006.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232438">Sistema externo</text>
+  <rect x="420.0" y="880.0" width="1560.0" height="88.0" fill="#d9eaf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232440" />
+  <text x="1065.0" y="916.98" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232440">6 [C] Crear recordatorio</text>
+  <text x="767.5" y="946.88" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232440">subscriptionId, título e instante 24 horas antes; requiere permiso del usuario.</text>
+  <rect x="40.0" y="1075.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232445" />
+  <text x="149.0" y="1118.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232445">Calendario</text>
+  <text x="118.5" y="1147.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232445">Sistema externo</text>
+  <rect x="2020.0" y="1075.0" width="340.0" height="100.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232446" />
+  <text x="2098.0" y="1118.25" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232446">Aplicación móvil</text>
+  <text x="2150.5" y="1147.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232446">Cliente</text>
+  <rect x="420.0" y="1021.0" width="1560.0" height="88.0" fill="#e4dcf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232447" />
+  <text x="1029.0" y="1057.98" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232447">7 [R] Resultado del calendario</text>
+  <text x="958.5" y="1087.88" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232447">eventId creado, error o permiso denegado.</text>
+  <text x="40.0" y="1389.0" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232448">Rechazo por límite: detener el alta antes del paso 4. El importe original se conserva.</text>
+  <text x="40.0" y="1417.75" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="25.0" font-weight="normal" data-miro-id="3458764686427232448">Las cajas repetidas identifican al mismo participante; cada fila muestra una colaboración del escenario.</text>
+</svg>

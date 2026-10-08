@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1560" viewBox="0 0 2400 1560">
+  <rect width="2400" height="1560" fill="#ffffff" />
+  <rect x="40.0" y="165.0" width="1000.0" height="205.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232388" />
+  <rect x="1040.0" y="165.0" width="870.0" height="205.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232391" />
+  <rect x="1910.0" y="165.0" width="450.0" height="205.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232394" />
+  <rect x="40.0" y="370.0" width="720.0" height="810.0" fill="#f4f8fc" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232397" />
+  <rect x="760.0" y="370.0" width="810.0" height="395.0" fill="#fffdf3" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232401" />
+  <rect x="760.0" y="765.0" width="810.0" height="415.0" fill="#f6f2fb" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232404" />
+  <rect x="1570.0" y="370.0" width="790.0" height="810.0" fill="#f4f8fc" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232407" />
+  <rect x="40.0" y="1180.0" width="780.0" height="280.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232410" />
+  <rect x="820.0" y="1180.0" width="800.0" height="280.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232413" />
+  <rect x="1620.0" y="1180.0" width="740.0" height="280.0" fill="#ffffff" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232416" />
+  <text x="40.0" y="66.7" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="40.0" font-weight="bold" data-miro-id="3458764686427232385">Bounded Context Canvas | Premium &amp; Billing</text>
+  <text x="40.0" y="122.38" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="26.0" font-weight="normal" data-miro-id="3458764686427232386">Plan y facturación de CraveWallet | Diseño propuesto: C comando; Q consulta; R respuesta; E evento</text>
+  <text x="40.0" y="1494.86" fill="#595959" font-family="Arial,sans-serif" font-size="22.0" font-weight="normal" data-miro-id="3458764686427232387">Gastify. Adaptación en Miro del canvas v5: https://github.com/ddd-crew/bounded-context-canvas | CC BY 4.0</text>
+  <text x="64.0" y="210.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232389">Purpose</text>
+  <text x="64.0" y="276.4" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232390">Mantener el nivel de acceso y su vigencia según la facturación</text>
+  <text x="64.0" y="310.9" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="30.0" font-weight="normal" data-miro-id="3458764686427232390">confirmada del propio producto.</text>
+  <text x="1064.0" y="210.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232392">Strategic Classification</text>
+  <text x="1064.0" y="273.76" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232393">Generic</text>
+  <text x="1064.0" y="304.81" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232393">Modelo de negocio: revenue</text>
+  <text x="1064.0" y="335.86" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232393">Evolución: product (Stripe) + reglas propias</text>
+  <text x="1934.0" y="210.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232395">Domain Roles</text>
+  <text x="1934.0" y="275.26" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232396">Execution: acceso</text>
+  <text x="1934.0" y="306.31" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232396">Gateway: facturación</text>
+  <text x="64.0" y="415.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232398">Inbound Communication</text>
+  <text x="64.0" y="480.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232400">Móvil (cliente)</text>
+  <text x="64.0" y="512.84" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232400">C: iniciar checkout, cancelar renovación</text>
+  <text x="64.0" y="545.04" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232400">Q/R: acceso e historial</text>
+  <text x="64.0" y="577.24" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232400" />
+  <text x="64.0" y="609.4399999999999" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232400">Suscripciones (D; cliente)</text>
+  <text x="64.0" y="641.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232400">Q/R: GetPlanAccess / PlanAccess</text>
+  <text x="64.0" y="673.84" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232400">Customer/Supplier propuesto</text>
+  <text x="64.0" y="706.04" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232400" />
+  <text x="64.0" y="738.2399999999999" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232400">Stripe (U; externo)</text>
+  <text x="64.0" y="770.4399999999999" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232400">E: invoice.paid / customer.subscription.deleted</text>
+  <text x="64.0" y="802.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232400">ACL verifica y traduce.</text>
+  <text x="784.0" y="415.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232402">Ubiquitous Language</text>
+  <text x="784.0" y="480.26" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232403">Free: nivel gratuito con límite.</text>
+  <text x="784.0" y="511.31" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232403">Premium: acceso pagado.</text>
+  <text x="784.0" y="542.36" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232403">Vigencia: intervalo cubierto.</text>
+  <text x="784.0" y="573.41" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232403">Pago confirmado: resultado verificado.</text>
+  <text x="784.0" y="604.46" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232403">Cancelación: fin de la renovación propia.</text>
+  <text x="784.0" y="810.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232405">Business Decisions</text>
+  <text x="784.0" y="874.76" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232406">Activar tras pago verificado.</text>
+  <text x="784.0" y="905.81" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232406">No repetir evento externo.</text>
+  <text x="784.0" y="936.86" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232406">Renovar actualiza la vigencia.</text>
+  <text x="784.0" y="967.91" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232406">Cancelar conserva período pagado.</text>
+  <text x="784.0" y="998.96" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="27.0" font-weight="normal" data-miro-id="3458764686427232406">E: PlanUpgradedToPremium / PlanDowngradedToFree.</text>
+  <text x="1594.0" y="415.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232408">Outbound Communication</text>
+  <text x="1594.0" y="480.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232409">Stripe (U; externo)</text>
+  <text x="1594.0" y="512.84" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232409">C/R: crear checkout / sesión</text>
+  <text x="1594.0" y="545.04" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232409">C/R: cancelar renovación / vigencia</text>
+  <text x="1594.0" y="577.24" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232409">Q/R: reconciliar estado</text>
+  <text x="1594.0" y="609.4399999999999" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232409">ACL: StripeGatewayAdapter</text>
+  <text x="1594.0" y="641.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232409" />
+  <text x="1594.0" y="673.84" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232409">Las respuestas a consultas entrantes pertenecen a la</text>
+  <text x="1594.0" y="706.04" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232409">misma colaboración.</text>
+  <text x="64.0" y="1225.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232411">Assumptions</text>
+  <text x="64.0" y="1290.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232412">Facturación recurrente de prueba.</text>
+  <text x="64.0" y="1322.8400000000001" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232412">Precio y beneficios son propuestas.</text>
+  <text x="64.0" y="1355.0400000000002" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232412">Stripe provee estado de facturación.</text>
+  <text x="844.0" y="1225.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232414">Verification Metrics</text>
+  <text x="844.0" y="1290.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232415">Activaciones sin confirmación.</text>
+  <text x="844.0" y="1322.8400000000001" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232415">Acceso frente a vigencia.</text>
+  <text x="844.0" y="1355.0400000000002" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232415">Transiciones duplicadas.</text>
+  <text x="844.0" y="1387.24" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232415">Sin resultados medidos aún.</text>
+  <text x="1644.0" y="1225.66" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="32.0" font-weight="bold" data-miro-id="3458764686427232417">Open Questions</text>
+  <text x="1644.0" y="1290.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232418">¿Pago fallido y reembolso?</text>
+  <text x="1644.0" y="1322.8400000000001" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232418">¿Recuperación de webhooks?</text>
+  <text x="1644.0" y="1355.0400000000002" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232418">¿Exceso al volver a Free?</text>
+</svg>
