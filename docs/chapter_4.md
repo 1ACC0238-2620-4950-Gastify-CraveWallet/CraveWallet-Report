@@ -6,7 +6,7 @@
 
 En esta sección se detallan las herramientas y plataformas utilizadas por el equipo de CraveWallet para la gestión, diseño, desarrollo y pruebas del producto, con el objetivo de garantizar un entorno de trabajo homogéneo y reproducible para todos los integrantes.
 
----
+***
 
 **Project Management**
 
@@ -20,7 +20,7 @@ La gestión del proyecto tiene como objetivo organizar el trabajo del equipo y d
   | Link de referencia: | https://trello.com/ |
   | --- | --- |
 
----
+***
 
 **Product UX/UI Design**
 
@@ -42,7 +42,7 @@ Las siguientes herramientas permiten modelar la experiencia del usuario, estable
   | Link de referencia: | https://structurizr.com/ |
   | --- | --- |
 
----
+***
 
 **Software Development**
 
@@ -84,7 +84,7 @@ Las herramientas listadas a continuación conforman el entorno técnico de desar
   | Link de referencia: | https://nextjs.org/ |
   | --- | --- |
 
-* **Tailwind CSS 4:** Framework de utilidades CSS que permite construir interfaces personalizadas directamente en el marcado, sin escribir hojas de estilo separadas. Se emplea para el estilizado del landing page, garantizando consistencia visual con el sistema de diseño definido en el capítulo III.
+* **Tailwind CSS 4:** Framework de utilidades CSS que permite construir interfaces personalizadas directamente en el marcado, sin escribir hojas de estilo separadas. Se emplea para el estilizado del landing page para mantener la consistencia visual con el sistema de diseño definido en el capítulo III.
   | Link de referencia: | https://tailwindcss.com/ |
   | --- | --- |
 
@@ -116,19 +116,21 @@ Las herramientas listadas a continuación conforman el entorno técnico de desar
   | Link de referencia: | https://vercel.com/ |
   | --- | --- |
 
----
+***
 
 **Software Testing**
 
 * **Lenguaje Gherkin:** DSL (Domain-Specific Language) utilizado para redactar criterios de aceptación en formato legible por negocio. Los escenarios de prueba se estructuran con las palabras clave `Feature`, `Scenario`, `Given`, `When`, `Then` y `And`, y se utilizan como base para los acceptance tests de las User Stories del producto.
 
----
+***
 
 ### 4.1.2. Source Code Management
 
 En esta sección se describe la estrategia de gestión de código fuente (SCM, *Source Code Management*) adoptada por el equipo para garantizar la trazabilidad, organización y colaboración en el desarrollo del producto. Se emplea **GitHub** como sistema de control de versiones distribuido, bajo la organización [`1ACC0238-2620-4950-Gastify-CraveWallet`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet).
 
-Los repositorios del proyecto son:
+Los repositorios del proyecto se listan en la tabla 139.
+
+*Tabla 139. Repositorios del proyecto.*
 
 | Repositorio | Descripción | URL |
 | :--- | :--- | :--- |
@@ -136,7 +138,9 @@ Los repositorios del proyecto son:
 | `cravewallet-landing` | Landing page (Next.js 16, React 19, TypeScript y Tailwind CSS 4) | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing |
 | `CraveWallet-Backend` | REST API del producto (Java 21 y Spring Boot 3) | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend |
 
----
+*Fuente: elaboración del equipo Gastify.*
+
+***
 
 **GitFlow**
 
@@ -154,7 +158,7 @@ El equipo adopta el modelo **GitFlow** como estrategia de ramificación. Este fl
 * **`docs/<nombre>`:** Creada a partir de `develop`. Se utiliza para agregar o actualizar documentación del informe sin impacto en el código de producción.
 * **`hotfix/<nombre>`:** Creada directamente a partir de `main`. Se utiliza para corregir errores críticos en producción de forma urgente; se fusiona tanto en `main` como en `develop`.
 
----
+***
 
 **Conventional Commits**
 
@@ -164,7 +168,9 @@ Para garantizar un historial de commits legible y semánticamente significativo,
 <tipo>(<alcance>): <descripción breve>
 ```
 
-Los tipos de commit utilizados en el proyecto son:
+La tabla 140 describe los tipos de commit utilizados en el proyecto.
+
+*Tabla 140. Tipos de commit.*
 
 | Tipo | Descripción |
 | :--- | :--- |
@@ -175,21 +181,33 @@ Los tipos de commit utilizados en el proyecto son:
 | `refactor` | Mejoras internas del código que no añaden funcionalidad ni corrigen errores. |
 | `chore` | Tareas de mantenimiento sin impacto en el código de producción (dependencias, configuración). |
 
+*Fuente: elaboración del equipo Gastify.*
+
 Ejemplo de commit real del proyecto:
 
 ```
 feat(landing): build CraveWallet landing page
 ```
 
+La figura 107 muestra el network graph de ramas del repositorio CraveWallet-Report en GitHub.
+
 ![Network graph de ramas del repositorio CraveWallet-Report en GitHub](images/chapter_4/network.png)
 
----
+<!-- pdf:omit-start -->
+
+*Figura 107. Network graph de ramas del repositorio CraveWallet-Report en GitHub.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura del repositorio en GitHub.*
+
+***
 
 ### 4.1.3. Source Code Style Guide & Conventions
 
 El equipo ha definido un conjunto de convenciones de estilo y nomenclatura con el objetivo de garantizar la legibilidad, mantenibilidad y coherencia del código en todos los repositorios del proyecto. Como regla transversal y obligatoria, toda la nomenclatura del sistema se redacta en **inglés**.
 
----
+***
 
 #### Convenciones generales de nomenclatura
 
@@ -202,7 +220,7 @@ Se adoptan las siguientes convenciones de capitalización según la naturaleza d
 * **SCREAMING_SNAKE_CASE:** Constantes globales, constantes `static final` de Java e identificadores de entorno (`API_BASE_URL`, `MAX_SUBSCRIPTIONS`).
 * **snake_case:** Tablas y columnas de PostgreSQL (`subscriptions`, `renewal_date`).
 
----
+***
 
 #### HTML & CSS Style Guide
 
@@ -211,7 +229,7 @@ Basado en la *Google HTML/CSS Style Guide* y las directrices de la W3C:
 * **HTML:** Uso obligatorio de etiquetas semánticas (`<header>`, `<main>`, `<section>`, `<footer>`) para mejorar el SEO y la accesibilidad. Indentación de 2 espacios. Uso de comillas dobles para todos los atributos. Los atributos `alt` en imágenes son obligatorios.
 * **CSS / Tailwind CSS:** Se prioriza el uso de clases de utilidad de Tailwind CSS sobre hojas de estilo personalizadas. Cuando se requieran estilos globales adicionales, se definen en `globals.css` utilizando variables CSS (`--color-primary`). Se prohíbe el uso de estilos en línea (`style=""`).
 
----
+***
 
 #### TypeScript & React Style Guide
 
@@ -221,7 +239,7 @@ Siguiendo la *Google JavaScript Style Guide*, las directrices de MDN y la guía 
 * **Sintaxis:** Uso exclusivo de ES6+ (`arrow functions`, `destructuring`, `template literals`, `optional chaining`). Se prefiere `const` para todas las declaraciones; `let` se usa solo cuando la reasignación es estrictamente necesaria. Se prohíbe `var`.
 * **React:** Los componentes se escriben exclusivamente como funciones (componentes funcionales). Los nombres de componentes siguen **PascalCase** y multi-word para evitar conflictos con elementos HTML estándar (correcto: `FeatureCard`; incorrecto: `Card`). Los efectos secundarios se gestionan con `useEffect`; el estado local con `useState` o `useReducer`.
 
----
+***
 
 #### Java & Spring Boot Style Guide
 
@@ -232,7 +250,7 @@ Basado en la *Google Java Style Guide* y las guías de referencia de Spring:
 * **Spring:** Inyección de dependencias por constructor (sin `@Autowired` en atributos). Los controladores REST solo traducen peticiones a comandos o consultas y delegan en los servicios de aplicación. Los endpoints usan sustantivos en plural y kebab-case (`/api/v1/subscriptions`, `/api/v1/delivery-expenses`).
 * **Modelado:** Los Value Objects y los DTO se declaran como `record` inmutables. Las entidades JPA se mantienen separadas de las entidades de dominio y se convierten mediante mappers.
 
----
+***
 
 #### Gherkin Conventions
 
@@ -242,9 +260,13 @@ Para la redacción de criterios de aceptación de las User Stories:
 * **Lenguaje:** Las especificaciones se redactan desde la perspectiva del negocio y del usuario, evitando detalles técnicos de implementación en los pasos de Gherkin.
 * **Idioma:** El contenido de los escenarios se redacta en español para facilitar la validación con stakeholders no técnicos.
 
----
+***
 
 #### Referencias de estándares adoptados
+
+La tabla 141 relaciona cada tecnología con la guía de estilo de referencia adoptada.
+
+*Tabla 141. Referencias de estándares adoptados.*
 
 | Tecnología | Referencia |
 | :--- | :--- |
@@ -257,13 +279,15 @@ Para la redacción de criterios de aceptación de las User Stories:
 | Spring Boot | Spring Boot Reference Documentation |
 | Gherkin | Gherkin Conventions for Readable Specifications |
 
----
+*Fuente: elaboración del equipo Gastify.*
+
+***
 
 ### 4.1.4. Software Deployment Configuration
 
 La gestión del código fuente se realiza a través de **GitHub** bajo la organización del proyecto. Para el despliegue del landing page se utiliza **Vercel**, plataforma de nube optimizada para proyectos Next.js que permite publicar cambios de forma automática al integrar código en la rama `main`.
 
----
+***
 
 **Herramientas y tecnologías desplegadas en el landing page:**
 
@@ -271,7 +295,7 @@ La gestión del código fuente se realiza a través de **GitHub** bajo la organi
 * **TypeScript:** Lenguaje compilado a JavaScript en tiempo de build; Vercel ejecuta `tsc` y `next build` como parte del pipeline de despliegue.
 * **Tailwind CSS 4:** Procesado mediante PostCSS durante el build; los estilos no utilizados son eliminados automáticamente (purge) para reducir el tamaño del bundle.
 
----
+***
 
 **Pasos para el despliegue del Landing Page en Vercel:**
 
