@@ -6,7 +6,7 @@
 
 #### 3.1.1.1. General Style Guidelines
 
-CraveWallet se posiciona como una herramienta de empoderamiento financiero para nativos digitales peruanos. Las decisiones de diseño de esta sección establecen el sistema visual que debe aplicarse de forma coherente en la aplicación móvil, la aplicación web y el landing page, de modo que cualquier pantalla nueva producida por el equipo sea reconocible como parte del mismo producto sin necesidad de revisión caso por caso.
+CraveWallet se posiciona como una herramienta de empoderamiento financiero para nativos digitales peruanos. Las decisiones de diseño de esta sección establecen el sistema visual que debe aplicarse de forma coherente en la aplicación móvil y en el landing page, de modo que cualquier pantalla nueva producida por el equipo sea reconocible como parte del mismo producto sin necesidad de revisión caso por caso.
 
 ***
 
@@ -171,7 +171,7 @@ La tabla 108 presenta ejemplos de textos corregidos según el tono de CraveWalle
 
 #### 3.1.1.2. Web Style Guidelines
 
-Las Web Style Guidelines aplican al landing page de CraveWallet (sitio informativo construido con Next.js 16, React 19 y Tailwind CSS 4) y a la futura aplicación web (Angular con Angular Material). Ambos productos comparten el sistema de tokens de la sección 3.1.1.1 y añaden especificaciones propias para el contexto de escritorio y navegador.
+Las Web Style Guidelines aplican al landing page de CraveWallet, un sitio informativo construido con Next.js 16, React 19 y Tailwind CSS 4. El landing comparte el sistema de tokens de la sección 3.1.1.1 y añade especificaciones propias para el contexto de escritorio y navegador.
 
 ***
 
@@ -187,7 +187,7 @@ La tabla 109 presenta los breakpoints del grid web y su comportamiento.
 | --- | --- | --- | --- | --- |
 | Mobile | < 600px | 4 | 16px | Single-column, navegación colapsada en hamburger |
 | Tablet | 600px – 959px | 8 | 16px | Dos columnas para tarjetas, nav visible |
-| Desktop | 960px – 1279px | 12 | 24px | Layout completo con sidebar o top nav |
+| Desktop | 960px – 1279px | 12 | 24px | Layout completo con barra de navegación superior |
 | Wide | ≥ 1280px | 12 | 24px | Contenedor fijo a 1280px, márgenes laterales automáticos |
 
 *Fuente: elaboración del equipo Gastify.*
@@ -315,7 +315,7 @@ Los flujos de tarea multi-paso utilizan un esquema **secuencial lineal** que gu�
 
 | Flujo | Pasos | Pantalla guía |
 | --- | --- | --- |
-| Alta de suscripción | 3 pasos: (1) Seleccionar servicio o ingresar manual → (2) Configurar monto, ciclo y fecha → (3) Confirmar y activar recordatorio | `mat-stepper` horizontal |
+| Alta de suscripción | 3 pasos: (1) Seleccionar servicio o ingresar manual → (2) Configurar monto, ciclo y fecha → (3) Confirmar y activar recordatorio | Indicador de 3 pasos en un bottom sheet |
 | Activación Premium | 4 pasos: (1) Ver plan → (2) Elegir ciclo (mensual/anual) → (3) Ingresar datos de pago Stripe → (4) Confirmación | Pantalla a pantalla con barra de progreso |
 | Onboarding inicial | 3 pasos: (1) Segmento de usuario → (2) Agregar primera suscripción sugerida → (3) Activar recordatorios de calendario | Carrusel con ilustraciones |
 
@@ -593,11 +593,11 @@ El usuario puede cambiar el criterio de orden mediante un menú contextual (íco
 
 ##### Búsqueda en el landing page
 
-El landing page es un sitio de una sola página construido con Next.js y generado de forma estática; no implementa búsqueda interna. La función de búsqueda en contexto web se reserva para la futura versión web de la aplicación, que replicará el sistema de filtros descrito para la app móvil.
+El landing page es un sitio de una sola página construido con Next.js y generado de forma estática; no implementa búsqueda interna.
 
 #### 3.1.2.5. Navigation Systems
 
-El sistema de navegación de CraveWallet sigue patrones distintos según el producto: la aplicación móvil usa los patrones nativos de Android con Material Design 3, el landing page usa una navegación web estándar y la futura aplicación web usa los componentes de Angular Material.
+El sistema de navegación de CraveWallet sigue patrones distintos según el producto: la aplicación móvil usa los patrones nativos de Android con Material Design 3 y el landing page usa una navegación web estándar.
 
 ***
 
@@ -661,22 +661,6 @@ La tabla 124 presenta los enlaces de la Top Navigation Bar del landing page.
 El CTA principal de la navbar es un botón de color primario (`#3B4FD8`) con etiqueta **"Descargar gratis"** que lleva directamente al enlace de Google Play Store. Este botón es visible en todas las posiciones de scroll para maximizar la conversión.
 
 ***
-
-##### Futura aplicación web — Sidenav + Top AppBar
-
-La aplicación web (Angular Material) implementa el patrón de **navegación lateral persistente** (`mat-sidenav`) en resoluciones ≥ 960px y un drawer colapsable en resoluciones inferiores. La estructura replica los 4 destinos de la app móvil con la adición de una sección de administración de cuenta.
-
-La tabla 125 presenta los componentes de navegación de la futura aplicación web.
-
-*Tabla 125. Navegación de la futura aplicación web.*
-
-| Componente | Comportamiento en desktop | Comportamiento en mobile |
-| --- | --- | --- |
-| `mat-sidenav` | Fijo, siempre visible, ancho 240px | Colapsable, se abre con ícono hamburger |
-| `mat-toolbar` | AppBar superior con breadcrumb y acciones contextuales | AppBar con hamburger y acciones |
-| `mat-fab` | FAB en esquina inferior derecha de la vista principal | Igual que móvil |
-
-*Fuente: elaboración del equipo Gastify.*
 
 ### 3.1.3. Landing Page UI Design
 
@@ -1254,9 +1238,9 @@ La simplicidad del footer es deliberada: en el contexto de un landing page de pr
 
 ##### Síntesis de principios de diseño aplicados — Desktop
 
-La tabla 126 resume la correspondencia entre las secciones del mock-up desktop y los principios, elementos de diseño, diseño inclusivo y arquitectura de información documentados en el Design System:
+La tabla 125 resume la correspondencia entre las secciones del mock-up desktop y los principios, elementos de diseño, diseño inclusivo y arquitectura de información documentados en el Design System:
 
-*Tabla 126. Síntesis de principios de diseño del mock-up desktop.*
+*Tabla 125. Síntesis de principios de diseño del mock-up desktop.*
 
 | Sección | Principio de diseño | Elemento del Design System | Diseño inclusivo | Arquitectura de Información |
 | --- | --- | --- | --- | --- |
@@ -1456,9 +1440,9 @@ El isologotipo, tagline y enlaces de sección se apilan verticalmente. El espaci
 
 ##### Síntesis de adaptaciones Mobile
 
-La tabla 127 documenta las adaptaciones específicas de cada sección al breakpoint mobile (< 600px) y su justificación desde los principios de diseño y diseño inclusivo:
+La tabla 126 documenta las adaptaciones específicas de cada sección al breakpoint mobile (< 600px) y su justificación desde los principios de diseño y diseño inclusivo:
 
-*Tabla 127. Síntesis de adaptaciones del mock-up mobile.*
+*Tabla 126. Síntesis de adaptaciones del mock-up mobile.*
 
 | Sección | Cambio desktop → mobile | Principio aplicado | Impacto en accesibilidad |
 | --- | --- | --- | --- |
@@ -1478,9 +1462,9 @@ La tabla 127 documenta las adaptaciones específicas de cada sección al breakpo
 
 La aplicación móvil es el lugar donde CraveWallet cumple su promesa: que el usuario vea en una sola cifra, en soles, cuánto le cuestan sus suscripciones y que se entere de cada cobro antes de que ocurra. Su interfaz se diseñó en cinco artefactos que se leen en orden: los wireframes fijan la estructura de cada pantalla (3.1.4.1), los wireflows las unen en recorridos (3.1.4.2), los mock-ups aplican el Design System de la sección 3.1.1 (3.1.4.3), los user flows muestran las decisiones, alternativas y errores detrás de cada recorrido (3.1.4.4) y el prototipo permite recorrer los tres objetivos de usuario con el dedo (3.1.4.5).
 
-Son 31 pantallas de 360 x 800 dp, la clase compacta de las Mobile Style Guidelines (sección 3.1.1.3), para Android con Material Design 3. Cada pantalla lleva un código formado por la letra de su área y un número; el código se conserva en todos los artefactos, de modo que una pantalla se sigue del wireframe al mock-up, al wireflow, al user flow y al prototipo sin perderla. Las áreas corresponden a los cuatro destinos de la barra de navegación inferior definidos en la sección 3.1.2.5, más el flujo de alta, que se abre como hoja modal desde el botón Agregar (tabla 128).
+Son 31 pantallas de 360 x 800 dp, la clase compacta de las Mobile Style Guidelines (sección 3.1.1.3), para Android con Material Design 3. Cada pantalla lleva un código formado por la letra de su área y un número; el código se conserva en todos los artefactos, de modo que una pantalla se sigue del wireframe al mock-up, al wireflow, al user flow y al prototipo sin perderla. Las áreas corresponden a los cuatro destinos de la barra de navegación inferior definidos en la sección 3.1.2.5, más el flujo de alta, que se abre como hoja modal desde el botón Agregar (tabla 127).
 
-*Tabla 128. Áreas de la aplicación móvil.*
+*Tabla 127. Áreas de la aplicación móvil.*
 
 | Letra | Área | Destino en la navegación | Pantallas |
 | --- | --- | --- | --- |
@@ -1494,9 +1478,9 @@ Son 31 pantallas de 360 x 800 dp, la clase compacta de las Mobile Style Guidelin
 
 Los tres objetivos de usuario (User Goals) que ordenan el diseño salen de los hallazgos del Needfinding: el registro sin fricción, la conversión a soles y el aviso anticipado son las tres motivaciones que comparten Camila Torres y Renzo Salazar (sección 2.3.1).
 
-La tabla 129 presenta los User Goals, su persona y sus User Stories principales.
+La tabla 128 presenta los User Goals, su persona y sus User Stories principales.
 
-*Tabla 129. User Goals de la aplicación móvil.*
+*Tabla 128. User Goals de la aplicación móvil.*
 
 | User Goal | Objetivo | Persona | User Stories principales |
 | --- | --- | --- | --- |
@@ -1522,9 +1506,9 @@ La estructura responde a la Arquitectura de la Información de la sección 3.1.2
 - **Sistema de organización.** El Inicio sigue la jerarquía top-down: primero el total mensual en soles, después el cobro más próximo, los próximos cobros en un carrusel horizontal y el gasto por categoría. La lista de Gastos se ordena por próximo cobro ascendente, con búsqueda y chips de filtro deslizables (sección 3.1.2.4). El Análisis usa el esquema matricial: gráfico por mes, dona por categoría y mapa de calor categoría x mes.
 - **Sistema de etiquetado.** Los estados de suscripción (Activa, Cobro hoy, Pronto, Sin usar, Cancelada, Pendiente), las acciones (Agregar, Guardar, Descartar, Activar recordatorio, Ver Premium) y los mensajes de estado vacío son los de la sección 3.1.2.2.
 
-El diseño aplica los principios de diseño inclusivo desde esta etapa (tabla 130).
+El diseño aplica los principios de diseño inclusivo desde esta etapa (tabla 129).
 
-*Tabla 130. Principios de diseño inclusivo en los wireframes.*
+*Tabla 129. Principios de diseño inclusivo en los wireframes.*
 
 | Principio | Cómo se resuelve en los wireframes |
 | --- | --- |
@@ -1536,9 +1520,9 @@ El diseño aplica los principios de diseño inclusivo desde esta etapa (tabla 13
 
 *Fuente: elaboración del equipo Gastify.*
 
-Las 31 pantallas se agrupan en diez láminas (tabla 131).
+Las 31 pantallas se agrupan en diez láminas (tabla 130).
 
-*Tabla 131. Láminas de wireframes de la aplicación móvil.*
+*Tabla 130. Láminas de wireframes de la aplicación móvil.*
 
 | Lámina | Pantallas | User Stories |
 | --- | --- | --- |
@@ -1675,9 +1659,9 @@ La figura 86 muestra los wireframes de la aplicación móvil: Perfil y recordato
 
 *Fuente: elaboración del equipo Gastify.*
 
-Cada área se resolvió con una decisión de estructura que se puede defender con lo que se ve en pantalla (tabla 132).
+Cada área se resolvió con una decisión de estructura que se puede defender con lo que se ve en pantalla (tabla 131).
 
-*Tabla 132. Decisiones de estructura por área.*
+*Tabla 131. Decisiones de estructura por área.*
 
 | Área | Decisión de estructura |
 | --- | --- |
@@ -1695,9 +1679,9 @@ Un wireflow combina wireframes con un diagrama de flujo: miniaturas de baja fide
 
 Los tres wireflows corresponden a los User Goals UG1, UG2 y UG3. Usan instancias de los wireframes al 50 %. Cada uno lleva en su encabezado la persona, el objetivo y las historias que cubre, y debajo de cada miniatura el código, el nombre y las historias de la pantalla. Cada flecha lleva una etiqueta con el componente que dispara el cambio (por ejemplo, "Toca Ingresar manualmente" o "Elige USD" en el menú desplegable de Moneda). La línea continua es el camino principal y la línea punteada es una alternativa, un error o un retorno; las píldoras punteadas indican a qué pantalla se vuelve y las píldoras sólidas marcan el objetivo cumplido.
 
-La tabla 133 presenta los wireflows con su recorrido principal y alternativas.
+La tabla 132 presenta los wireflows con su recorrido principal y alternativas.
 
-*Tabla 133. Wireflows de la aplicación móvil.*
+*Tabla 132. Wireflows de la aplicación móvil.*
 
 | Wireflow | Persona | Recorrido principal | Alternativas y retornos |
 | --- | --- | --- | --- |
@@ -1759,9 +1743,9 @@ La figura 90 muestra los tokens de color, escala tipográfica y componentes del 
 
 *Fuente: elaboración del equipo Gastify.*
 
-El contraste se verificó con la fórmula de WCAG 2.1 para cada par de color que aparece en las pantallas. Dos decisiones se tomaron para cumplir el nivel AA sin salir de la paleta (tabla 134).
+El contraste se verificó con la fórmula de WCAG 2.1 para cada par de color que aparece en las pantallas. Dos decisiones se tomaron para cumplir el nivel AA sin salir de la paleta (tabla 133).
 
-*Tabla 134. Contraste de los pares de color de los mock-ups.*
+*Tabla 133. Contraste de los pares de color de los mock-ups.*
 
 | Par de colores | Contraste | Uso | Decisión |
 | --- | --- | --- | --- |
@@ -1904,9 +1888,9 @@ La aplicación también se diseñó en modo oscuro, porque Android aplica el tem
 - **Elevación por tono.** Las tarjetas se separan del fondo por un tono más claro de superficie y no solo por la sombra, que casi no se ve sobre fondos oscuros. El scrim de diálogos y hojas modales sube al 60 % de opacidad.
 - **Contraste verificado.** Todos los pares de texto y fondo cumplen WCAG AA, con un mínimo de 5.7:1. A diferencia del modo claro, los colores semánticos (`success`, `warning`, `error`, `info`) también alcanzan 6:1 o más como texto sobre `#151E31`.
 
-La tabla 135 presenta los tokens de color en modo claro y oscuro.
+La tabla 134 presenta los tokens de color en modo claro y oscuro.
 
-*Tabla 135. Tokens de color en modo oscuro.*
+*Tabla 134. Tokens de color en modo oscuro.*
 
 | Token | Claro | Oscuro | Par verificado en oscuro |
 | --- | --- | --- | --- |
@@ -1950,9 +1934,9 @@ Las 31 pantallas, en las mismas diez láminas, están en modo oscuro en la pági
 
 Los user flows recrean los recorridos de los wireflows con las pantallas de alta fidelidad y hacen explícitas las decisiones que los desvían. Cada decisión se dibuja como un rombo con su pregunta; de él salen dos flechas etiquetadas (Sí y No). La notación es la misma en los tres diagramas: el camino feliz va con flecha continua verde, los caminos alternos con flecha punteada ámbar y los errores con flecha punteada roja; las píldoras punteadas indican a qué pantalla se vuelve y las píldoras verdes marcan el objetivo cumplido. El camino feliz se distingue también por el trazo continuo, de modo que el diagrama no depende solo del color.
 
-La tabla 136 presenta las decisiones y caminos alternos de cada user flow.
+La tabla 135 presenta las decisiones y caminos alternos de cada user flow.
 
-*Tabla 136. Decisiones y caminos alternos de los user flows.*
+*Tabla 135. Decisiones y caminos alternos de los user flows.*
 
 | User flow | Decisiones | Caminos alternos (unhappy paths) |
 | --- | --- | --- |
@@ -2002,9 +1986,9 @@ La figura 105 muestra el user flow del User Goal 3 con el permiso de notificacio
 
 El prototipo se armó en la página **06 Prototype** del archivo de Figma con los 31 mock-ups como frames de 360 x 800 dp y 186 interacciones configuradas en la pestaña Prototype. Es completamente navegable: una persona de prueba puede completar los tres User Goals desde el Inicio sin quedar en un callejón sin salida, porque cada pantalla tiene al menos una salida (Atrás, Cerrar, Cancelar, Ahora no o la barra inferior) y cada pantalla es alcanzable desde un punto de inicio. Ambas condiciones se verificaron automáticamente sobre la especificación del prototipo antes de generarlo.
 
-Las transiciones siguen la arquitectura de navegación espacial de la sección 3.1.2.5 y el sistema de motion de Material 3 (300 ms para pantallas, curvas ease). La tabla 137 detalla las interacciones configuradas.
+Las transiciones siguen la arquitectura de navegación espacial de la sección 3.1.2.5 y el sistema de motion de Material 3 (300 ms para pantallas, curvas ease). La tabla 136 detalla las interacciones configuradas.
 
-*Tabla 137. Interacciones del prototipo.*
+*Tabla 136. Interacciones del prototipo.*
 
 | Interacción | Disparador | Transición | Dónde se usa |
 | --- | --- | --- | --- |
@@ -2021,9 +2005,9 @@ Las transiciones siguen la arquitectura de navegación espacial de la sección 3
 
 El desplazamiento se configuró por contenedor: el contenido de Inicio, Gastos, Análisis, Perfil y Recordatorios hace scroll vertical mientras la barra superior, la barra inferior y el FAB quedan fijos, y el carrusel de próximos cobros (I1) y los chips de filtro (G1) hacen scroll horizontal.
 
-El prototipo tiene ocho puntos de inicio. El primero recorre los tres User Goals desde el Inicio; los demás permiten saltar directamente a un objetivo o a un estado alterno que no ocurre con la cuenta de Renzo (usuario nuevo, plan gratuito, análisis sin datos o sin conexión). La tabla 138 detalla cada punto de inicio.
+El prototipo tiene ocho puntos de inicio. El primero recorre los tres User Goals desde el Inicio; los demás permiten saltar directamente a un objetivo o a un estado alterno que no ocurre con la cuenta de Renzo (usuario nuevo, plan gratuito, análisis sin datos o sin conexión). La tabla 137 detalla cada punto de inicio.
 
-*Tabla 138. Puntos de inicio del prototipo.*
+*Tabla 137. Puntos de inicio del prototipo.*
 
 | Punto de inicio | Pantalla | Recorrido para la prueba |
 | --- | --- | --- |

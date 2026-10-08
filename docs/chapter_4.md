@@ -8,9 +8,9 @@ Esta sección presenta las herramientas que el equipo de CraveWallet usa para ge
 
 #### Project Management
 
-La gestión del proyecto organiza el trabajo del equipo y da seguimiento a las tareas de cada sprint. La tabla 139 describe las herramientas usadas.
+La gestión del proyecto organiza el trabajo del equipo y da seguimiento a las tareas de cada sprint. La tabla 138 describe las herramientas usadas.
 
-*Tabla 139. Herramientas de gestión del proyecto.*
+*Tabla 138. Herramientas de gestión del proyecto.*
 
 | Herramienta | Uso en CraveWallet | Sitio |
 | --- | --- | --- |
@@ -21,9 +21,9 @@ La gestión del proyecto organiza el trabajo del equipo y da seguimiento a las t
 
 #### Product UX/UI Design
 
-Estas herramientas permiten investigar a los usuarios, modelar el dominio y construir los prototipos antes de implementar. La tabla 140 detalla su uso.
+Estas herramientas permiten investigar a los usuarios, modelar el dominio y construir los prototipos antes de implementar. La tabla 139 detalla su uso.
 
-*Tabla 140. Herramientas de investigación, diseño y modelado.*
+*Tabla 139. Herramientas de investigación, diseño y modelado.*
 
 | Herramienta | Uso en CraveWallet | Sitio |
 | --- | --- | --- |
@@ -36,9 +36,9 @@ Estas herramientas permiten investigar a los usuarios, modelar el dominio y cons
 
 #### Software Development
 
-El landing page se construye con Next.js, React y TypeScript; el backend, con Java 21 y Spring Boot; y la aplicación móvil, con Flutter, según el diagrama de contenedores de la sección 2.5.3.2. La tabla 141 agrupa las herramientas por producto.
+El landing page se construye con Next.js, React y TypeScript; el backend, con Java 21 y Spring Boot; y la aplicación móvil, con Flutter, según el diagrama de contenedores de la sección 2.5.3.2. La tabla 140 agrupa las herramientas por producto.
 
-*Tabla 141. Herramientas y tecnologías de desarrollo.*
+*Tabla 140. Herramientas y tecnologías de desarrollo.*
 
 | Producto | Herramienta | Uso en CraveWallet | Sitio |
 | --- | --- | --- | --- |
@@ -64,9 +64,9 @@ El landing page se construye con Next.js, React y TypeScript; el backend, con Ja
 
 #### Software Testing
 
-Los criterios de aceptación de las User Stories se escriben en Gherkin, como indica la tabla 142.
+Los criterios de aceptación de las User Stories se escriben en Gherkin, como indica la tabla 141.
 
-*Tabla 142. Herramientas de prueba.*
+*Tabla 141. Herramientas de prueba.*
 
 | Herramienta | Uso en CraveWallet | Sitio |
 | --- | --- | --- |
@@ -78,9 +78,9 @@ Los criterios de aceptación de las User Stories se escriben en Gherkin, como in
 
 En esta sección se describe la estrategia de gestión de código fuente (SCM, *Source Code Management*) adoptada por el equipo para garantizar la trazabilidad, organización y colaboración en el desarrollo del producto. Se emplea **GitHub** como sistema de control de versiones distribuido, bajo la organización [`1ACC0238-2620-4950-Gastify-CraveWallet`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet).
 
-Los repositorios del proyecto se listan en la tabla 143.
+Los repositorios del proyecto se listan en la tabla 142.
 
-*Tabla 143. Repositorios del proyecto.*
+*Tabla 142. Repositorios del proyecto.*
 
 | Repositorio | Descripción | URL |
 | :--- | :--- | :--- |
@@ -118,9 +118,9 @@ Para garantizar un historial de commits legible y semánticamente significativo,
 <tipo>(<alcance>): <descripción breve>
 ```
 
-La tabla 144 describe los tipos de commit utilizados en el proyecto.
+La tabla 143 describe los tipos de commit utilizados en el proyecto.
 
-*Tabla 144. Tipos de commit.*
+*Tabla 143. Tipos de commit.*
 
 | Tipo | Descripción |
 | :--- | :--- |
@@ -214,9 +214,9 @@ Para la redacción de criterios de aceptación de las User Stories:
 
 #### Referencias de estándares adoptados
 
-La tabla 145 relaciona cada tecnología con la guía de estilo de referencia adoptada.
+La tabla 144 relaciona cada tecnología con la guía de estilo de referencia adoptada.
 
-*Tabla 145. Referencias de estándares adoptados.*
+*Tabla 144. Referencias de estándares adoptados.*
 
 | Tecnología | Referencia |
 | :--- | :--- |
