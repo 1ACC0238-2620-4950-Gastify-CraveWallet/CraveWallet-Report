@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1016" viewBox="0 0 1800 1016">
+<rect width="100%" height="100%" fill="white"/>
+<text x="40" y="60" font-family="Arial,sans-serif" font-size="34" font-weight="bold" fill="#18324a">B. Registrar un gasto y comparar el presupuesto</text>
+<text x="40" y="101" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">C: comando | Q: consulta | R: respuesta | E: hecho confirmado. Orden propio del escenario.</text>
+<rect x="45" y="140" width="330" height="100" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
+<text x="61" y="176" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Cliente</text>
+<text x="61" y="214" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Aplicación móvil</text>
+<polyline points="210,240 210,861" fill="none" stroke="#8196a8" stroke-width="3" stroke-dasharray="8 7"/>
+<rect x="485" y="140" width="330" height="100" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
+<text x="501" y="176" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Bounded Context</text>
+<text x="501" y="214" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Gastos</text>
+<polyline points="650,240 650,861" fill="none" stroke="#8196a8" stroke-width="3" stroke-dasharray="8 7"/>
+<rect x="925" y="140" width="330" height="100" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
+<text x="941" y="176" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Agregado de Gastos</text>
+<text x="941" y="214" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">MonthlyBudget</text>
+<polyline points="1090,240 1090,861" fill="none" stroke="#8196a8" stroke-width="3" stroke-dasharray="8 7"/>
+<polyline points="210,373 650,373" fill="none" stroke="#176aa5" stroke-width="3" />
+<polygon points="650,373 636.4932934647098,379.52448301166845 636.4932934647098,366.47551698833155" fill="#176aa5"/>
+<rect x="218" y="287" width="1551" height="78" fill="white" stroke="white" stroke-width="2" />
+<text x="222" y="314" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#176aa5">1 [C] RegisterExpense</text>
+<text x="222" y="345" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#176aa5">Identidad autenticada; requestId, comercio, importe PEN, categoría y fecha.</text>
+<polyline points="650,454 722,454 722,476 650,476" fill="none" stroke="#a65018" stroke-width="3" />
+<polygon points="650,476 663.5067065352902,469.47551698833155 663.5067065352902,482.52448301166845" fill="#a65018"/>
+<rect x="736" y="388" width="1033" height="78" fill="white" stroke="white" stroke-width="2" />
+<text x="740" y="415" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#a65018">2 [E] DeliveryExpenseRegistered</text>
+<text x="740" y="446" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#a65018">expenseId, userId, amount, expenseDate; después de persistir.</text>
+<polyline points="650,575 1090,575" fill="none" stroke="#176aa5" stroke-width="3" />
+<polygon points="1090,575 1076.49329346471,581.5244830116685 1076.49329346471,568.4755169883315" fill="#176aa5"/>
+<rect x="658" y="489" width="1111" height="78" fill="white" stroke="white" stroke-width="2" />
+<text x="662" y="516" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#176aa5">3 [C] Aplicar gasto al período</text>
+<text x="662" y="547" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#176aa5">expenseId, userId, importe y período. Aplicar una sola vez.</text>
+<polyline points="1090,676 650,676" fill="none" stroke="#a65018" stroke-width="3" />
+<polygon points="650,676 663.5067065352902,669.4755169883315 663.5067065352902,682.5244830116685" fill="#a65018"/>
+<rect x="658" y="590" width="1111" height="78" fill="white" stroke="white" stroke-width="2" />
+<text x="662" y="617" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#a65018">4 [E] MonthlyLimitExceeded (condicional)</text>
+<text x="662" y="648" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#a65018">budgetId, userId, período, límite y acumulado; solo si el acumulado supera el límite.</text>
+<polyline points="210,777 650,777" fill="none" stroke="#6557a5" stroke-width="3" />
+<polygon points="650,777 636.4932934647098,783.5244830116685 636.4932934647098,770.4755169883315" fill="#6557a5"/>
+<rect x="218" y="691" width="1551" height="78" fill="white" stroke="white" stroke-width="2" />
+<text x="222" y="718" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#6557a5">5 [Q] Consultar resumen mensual</text>
+<text x="222" y="749" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#6557a5">userId y período</text>
+<polyline points="650,878 210,878" fill="none" stroke="#39714e" stroke-width="3" />
+<polygon points="210,878 223.50670653529016,871.4755169883315 223.50670653529016,884.5244830116685" fill="#39714e"/>
+<rect x="218" y="792" width="1551" height="78" fill="white" stroke="white" stroke-width="2" />
+<text x="222" y="819" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#39714e">6 [R] Resumen mensual</text>
+<text x="222" y="850" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#39714e">Total, límite configurado, saldo y condición de exceso.</text>
+<text x="40" y="926" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#18324a">MonthlyBudget pertenece a Gastos; no es otro contexto. Google Places es una ayuda opcional.</text>
+<text x="40" y="980" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#18324a">Fuente: Gastify; notación adaptada de DDD Crew, Domain Message Flow Modelling. CC BY 4.0.</text>
+</svg>

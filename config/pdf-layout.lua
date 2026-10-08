@@ -2,6 +2,15 @@
 local stringify = pandoc.utils.stringify
 local function latex(s) return pandoc.RawBlock('latex', s) end
 
+function Para(para)
+  -- Keep a strategic-design table caption with the first rows of its table.
+  local number = tonumber(stringify(para):match('^Tabla (%d+)%.'))
+  if number and number >= 86 and number <= 94 then
+    local space = number <= 89 and 520 or 100
+    return {latex('\\needspace{' .. space .. 'pt}'), para}
+  end
+end
+
 function Table(tbl)
   local n = #tbl.colspecs
   local head = stringify(tbl.head)
@@ -10,11 +19,14 @@ function Table(tbl)
   local landscape = head:match('CraveWallet') and head:match('Spendee')
   local smart = head:match('Alcanzable')
   local story = head:match('Campo') and stringify(tbl):match('Story ID')
-  local short = smart or (n == 2 and head:match('Campo')) or head:match('Value Object')
+  local canvas = n == 2 and head:match('Campo') and stringify(tbl):match('Comunicación entrante')
+  local flow = n == 3 and head:match('Orden y tipo')
+  local short = flow or smart or (n == 2 and head:match('Campo') and not canvas) or head:match('Value Object')
   if head:match('Integrante') and head:match('Información') then
     widths = {0.30, 0.70}
   elseif head:match('Integrante') then widths = {0.25, 0.75}
   elseif n == 2 and (head:match('Campo') or head:match('Término')) then widths = {0.25, 0.75}
+  elseif n == 3 and head:match('Orden y tipo') then widths = {0.12, 0.28, 0.60}
   elseif head:match('Alcanzable') then widths = {0.24, 0.27, 0.31, 0.18}
   elseif head:match('Story Points') then widths = {0.07, 0.12, 0.57, 0.13, 0.11}
   elseif head:match('Tarea') and n == 5 then widths = {0.44, 0.14, 0.14, 0.14, 0.14}
@@ -64,6 +76,9 @@ function Figure(fig)
     or path:match('big%-picture') or path:match('eventstorming%-flujos')
     or path:match('eventstorming%-premium') or path:match('eventstorming%-leyenda')
     or path:match('As%-Is') or path:match('lean_ux_canvas')
+    or path:match('/canvas%-') or path:match('/message%-flow%-')
+    or path:match('context%-map%-revised') or path:match('system%-context%-revised')
+    or path:match('containers%-revised')
   if wide then
     fig = fig:walk({RawInline = function(el)
       el.text = el.text:gsub('width=6.25in,height=6.8in', 'width=8.7in,height=5.65in')
@@ -76,6 +91,37 @@ function Figure(fig)
     end
     return {latex('\\begin{landscape}'), fig, latex('\\end{landscape}')}
   end
+end
+
+function Pandoc(doc)
+  -- A landscape figure forces a page break. Keep its source on that same page
+  -- rather than placing it alone at the top of the next portrait page.
+  local out = pandoc.List()
+  local i = 1
+  while i <= #doc.blocks do
+    local block = doc.blocks[i]
+    local previous = doc.blocks[i - 1]
+    local following = doc.blocks[i + 1]
+    local strategic = false
+    if previous and previous.t == 'Figure' then
+      previous:walk({RawInline = function(el)
+        strategic = strategic or el.text:match('/canvas%-') or el.text:match('/message%-flow%-')
+          or el.text:match('context%-map%-revised') or el.text:match('system%-context%-revised')
+          or el.text:match('containers%-revised')
+      end})
+    end
+    if strategic and block.t == 'RawBlock' and block.text == '\\end{landscape}'
+      and following and following.t == 'Para' and stringify(following):match('^Fuente:') then
+      out:insert(following)
+      out:insert(block)
+      i = i + 2
+    else
+      out:insert(block)
+      i = i + 1
+    end
+  end
+  doc.blocks = out
+  return doc
 end
 
 -- Constrain large screenshots to the printable area without changing the assets.

@@ -1429,7 +1429,7 @@ Los requisitos y criterios de US22 se detallan en la tabla 59.
 | Epic | EP07 |
 | **Title** | Suscribirme al plan Premium |
 | **Description** | Como usuario del plan gratuito, deseo pagar el plan Premium con mi tarjeta a través de un flujo seguro, para acceder de inmediato a sus beneficios. |
-| Acceptance Criteria | **Escenario 1: Pago exitoso**<br>Dado que el usuario ingresó los datos de una tarjeta válida en el flujo de pago de Stripe,<br>Cuando confirma la suscripción,<br>Entonces el sistema activa el plan Premium de inmediato y elimina las restricciones del plan gratuito. |
+| Acceptance Criteria | **Escenario 1: Pago exitoso**<br>Dado que el usuario ingresó los datos de una tarjeta válida en el flujo de pago de Stripe,<br>Cuando confirma la suscripción,<br>Entonces el sistema activa el plan Premium y elimina las restricciones del plan gratuito cuando el backend verifica la confirmación del pago; mientras espera esa confirmación, la interfaz muestra el estado pendiente. |
 | Acceptance Criteria | **Escenario 2: Pago rechazado**<br>Dado que el usuario intenta pagar con una tarjeta que Stripe rechaza,<br>Cuando confirma la suscripción,<br>Entonces el sistema no activa el plan Premium e indica que el pago fue rechazado, permitiendo intentar con otra tarjeta. |
 
 *Fuente: elaboración de Gastify; especificación propuesta del producto.*
@@ -2059,6 +2059,12 @@ De ese segundo EventStorming surgen Bounded Contexts candidatos mediante dos té
 
 La arquitectura de software que cierra la sección se representará con el C4 Model, en sus niveles de contexto, contenedores y despliegue.
 
+<!-- pdf:omit-start -->
+
+Los [diagramas editables y las instrucciones de edición](diagrams/chapter_2/README.md) acompañan a las imágenes del informe. Las vistas C4 cuentan además con un [modelo de Structurizr DSL](diagrams/chapter_2/workspace.dsl).
+
+<!-- pdf:omit-end -->
+
 ### 2.5.1. EventStorming
 
 La leyenda empleada en los flujos To-Be distingue actor (amarillo), comando (celeste), evento confirmado (naranja), política (violeta), vista (verde), sistema externo o de infraestructura (rosado), problema (rojo) y contexto (blanco). En el Big Picture As-Is el azul se reservó para los sistemas actuales; al pasar al diseño de la solución se utiliza esta leyenda específica para no mezclar ambas lecturas.
@@ -2112,19 +2118,19 @@ La autenticación por el backend RESTful, las notificaciones locales, el calenda
 
 #### 2.5.1.2. Domain Message Flows Modeling
 
-Se modelan escenarios de CraveWallet indicando quién envía cada mensaje, quién lo recibe, su orden y sus datos relevantes. La notación adapta Domain Message Flow Modelling de DDD Crew [@dddcrewMessageFlows]. **C** identifica una orden que puede rechazarse; **Q**, una consulta; **R**, su respuesta; **E**, un hecho confirmado. Un evento interno no implica que exista un bus de mensajes: los contextos pueden implementarse como módulos del mismo backend.
+Se modelan escenarios de CraveWallet indicando quién envía cada mensaje, quién lo recibe, su orden y sus datos relevantes. La notación adapta Domain Message Flow Modelling de DDD Crew [@dddcrewMessageFlows] mediante secuencias por escenario. Cada flecha indica orden, tipo, nombre y datos del mensaje. Las respuestas se dibujan de manera explícita; los subpasos a/b/c separan los intercambios de una misma operación. **C** identifica una orden que puede rechazarse; **Q**, una consulta; **R**, su respuesta; **E**, un hecho confirmado. Un evento interno no implica que exista un bus de mensajes: los contextos pueden implementarse como módulos del mismo backend.
 
 ##### Escenario A. Registrar una suscripción y preparar el recordatorio
 
-La tabla 86 presenta escenario a. registrar una suscripción y preparar el recordatorio.
+La tabla 86 ordena los mensajes del alta, la comprobación del plan y la preparación del recordatorio en el dispositivo.
 
 *Tabla 86. Escenario A. Registrar una suscripción y preparar el recordatorio.*
 
 | Orden y tipo | Emisor → receptor | Mensaje y datos relevantes |
 | --- | --- | --- |
-| 1 — C | Aplicación móvil → Subscription Management | `RegisterSubscription`: usuario autenticado, nombre, importe, moneda, periodicidad y próxima fecha de renovación. |
+| 1 — C | Aplicación móvil → Subscription Management | `RegisterSubscription`: identidad del usuario obtenida de la autenticación, nombre, importe, moneda, categoría, periodicidad y próxima fecha de renovación. |
 | 2 — Q | Subscription Management → Premium & Billing | `GetPlanAccess(userId)`: consultar nivel de acceso y límite vigente. |
-| 3 — R | Premium & Billing → Subscription Management | `PlanAccess`: nivel Free/Premium y límite. El caso de uso compara ese límite con el número de registros activos; si lo alcanza, rechaza el alta según US39. |
+| 3 — R | Premium & Billing → Subscription Management | `PlanAccess`: nivel Free/Premium, límite y vigencia. El caso de uso compara ese límite con el número de registros activos; si lo alcanza, rechaza el alta según US39. |
 | 4 — E | Subscription → manejadores del mismo contexto | `SubscriptionRegistered(subscriptionId, userId, nextBillingDate)`, después de persistir el registro válido. |
 | 5 — R | Subscription Management → aplicación móvil | Registro confirmado y datos para preparar el aviso. Esto no significa que el calendario haya aceptado el recordatorio. |
 | 6 — C | Aplicación móvil → calendario del dispositivo | Crear recordatorio con identificador del registro, título y fecha/hora calculada 24 horas antes, previa autorización del usuario. |
@@ -2133,17 +2139,28 @@ La tabla 86 presenta escenario a. registrar una suscripción y preparar el recor
 *Fuente: modelado propuesto de Gastify, adaptado de DDD Crew [@dddcrewMessageFlows].*
 
 
-La conversión se solicita al consultar el portafolio: Subscription Management pide USD/PEN al adaptador, recibe la cotización y su fecha, y devuelve una estimación en soles. El registro conserva la moneda original; el tipo de cambio del banco no se conoce por esta consulta. La hora, zona horaria y reprogramación se deben concretar en SP03–SP04.
+La conversión se solicita al consultar el portafolio o previsualizar un importe según US34: Subscription Management pide USD/PEN al adaptador, recibe la cotización y su fecha, y devuelve una estimación en soles. El registro conserva la moneda original; el tipo de cambio del banco no se conoce por esta consulta. Si falla el proveedor, se indica la antigüedad de la última cotización válida o que la estimación no está disponible. La hora, zona horaria y reprogramación se deben concretar en SP03–SP04. La figura 18 representa el alta y la preparación del aviso.
+
+![Registro de suscripción y preparación del recordatorio](images/chapter_2/message-flow-subscription.png)
+
+<!-- pdf:omit-start -->
+
+*Figura 18. Registro de suscripción y preparación del recordatorio.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: elaboración de Gastify; notación adaptada de DDD Crew, Domain Message Flow Modelling (s. f.), CC BY 4.0.*
+
 
 ##### Escenario B. Registrar un gasto y comparar el presupuesto
 
-La tabla 87 presenta escenario b. registrar un gasto y comparar el presupuesto.
+La tabla 87 describe cómo se registra un gasto, se actualiza el presupuesto de su período y se consulta el resultado.
 
 *Tabla 87. Escenario B. Registrar un gasto y comparar el presupuesto.*
 
 | Orden y tipo | Emisor → receptor | Mensaje y datos relevantes |
 | --- | --- | --- |
-| 1 — C | Aplicación móvil → Delivery Expense Management | `RegisterExpense`: usuario, identificador de solicitud, comercio, importe, categoría y fecha. El identificador permite reconocer un reintento del mismo registro. |
+| 1 — C | Aplicación móvil → Delivery Expense Management | `RegisterExpense`: identidad autenticada, identificador de solicitud, comercio, importe en PEN, categoría y fecha. El identificador permite reconocer un reintento del mismo registro. |
 | 2 — E | DeliveryExpense → manejadores del mismo contexto | `DeliveryExpenseRegistered(expenseId, userId, amount, expenseDate)`, tras confirmar el gasto. |
 | 3 — C interno | Caso de uso → MonthlyBudget | Aplicar el gasto al período de su fecha, una sola vez. La implementación debe elegir una actualización transaccional o un consumidor idempotente; no ejecutar ambas para sumar el mismo gasto. |
 | 4 — E condicional | MonthlyBudget → manejadores del mismo contexto | `MonthlyLimitExceeded(budgetId, userId, period, limit, accumulated)` únicamente cuando el acumulado supera el límite definido. |
@@ -2153,66 +2170,82 @@ La tabla 87 presenta escenario b. registrar un gasto y comparar el presupuesto.
 *Fuente: modelado propuesto de Gastify, adaptado de DDD Crew [@dddcrewMessageFlows].*
 
 
-La búsqueda de comercios es una consulta auxiliar: el adaptador de Google Places devuelve sugerencias, y el usuario elige una o escribe un nombre (US18). No se emite «dirección validada» como prueba de que el pedido ocurrió. La figura 18 resume los escenarios A y B.
+La búsqueda de comercios es una consulta auxiliar: el adaptador de Google Places devuelve sugerencias, y el usuario elige una o escribe un nombre (US18). No se emite «dirección validada» como prueba de que el pedido ocurrió. La figura 19 representa el registro del gasto y la consulta del resumen. `MonthlyBudget` es un agregado de Delivery Expense Management; su presencia en la secuencia no lo convierte en otro Bounded Context.
 
-![Domain Message Flows: registro de suscripción y gasto de delivery](images/chapter_2/domain-message-flows-registration.png)
+![Registro de gasto de delivery y comparación del presupuesto](images/chapter_2/message-flow-delivery.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 18. Domain Message Flows: registro de suscripción y gasto de delivery.*
+*Figura 19. Registro de gasto de delivery y comparación del presupuesto.*
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración de Gastify, adaptada de DDD Crew, Domain Message Flow Modelling (s. f.). Diagrama adaptado bajo CC BY-SA 4.0.*
+*Fuente: elaboración de Gastify; notación adaptada de DDD Crew, Domain Message Flow Modelling (s. f.), CC BY 4.0.*
 
 ##### Escenario C. Activar o renovar Premium a partir de un pago confirmado
 
-La tabla 88 presenta escenario c. activar o renovar premium a partir de un pago confirmado.
+La tabla 88 distingue el inicio del checkout de la confirmación que habilita o renueva el acceso Premium.
 
 *Tabla 88. Escenario C. Activar o renovar Premium a partir de un pago confirmado.*
 
 | Orden y tipo | Emisor → receptor | Mensaje y datos relevantes |
 | --- | --- | --- |
-| 1 — C | Aplicación móvil → Premium & Billing | Iniciar checkout del usuario para el precio configurado. |
+| 1 — C | Aplicación móvil → Premium & Billing | Iniciar checkout con identidad autenticada. El servidor selecciona el precio de su catálogo; el cliente no define el importe a cobrar. |
 | 2 — C | Premium & Billing → Stripe | Crear sesión de suscripción y conservar la correlación entre usuario, cliente y operación. |
-| 3 — R | Stripe → Premium & Billing → aplicación móvil | Sesión/enlace de checkout. El usuario completa el pago en el flujo del proveedor; esta respuesta no activa Premium. |
+| 3a — R | Stripe → Premium & Billing | Sesión creada: `sessionId` y enlace de checkout. |
+| 3b — R | Premium & Billing → aplicación móvil | Enlace de la sesión. El usuario completa el pago con Stripe; esta respuesta todavía no activa Premium. |
 | 4 — E externo | Stripe → adaptador de Premium & Billing | `invoice.paid`: identificadores de evento, factura, cliente y suscripción. Verificar firma, correlación, entorno de prueba y estado vigente de la suscripción antes de actualizar acceso. |
 | 5 — E interno | SubscriptionPlan → manejadores del mismo contexto | `PlanUpgradedToPremium(planId, userId, billingPeriod)` cuando Free pasa a Premium. Una renovación actualiza la vigencia sin repetir esa transición. |
-| 6 — Q/R | Aplicación móvil → Premium & Billing → aplicación móvil | Consultar y recibir nivel y vigencia confirmados. Mostrar pendiente mientras no exista confirmación válida. |
+| 6a — Q | Aplicación móvil → Premium & Billing | Consultar acceso del usuario autenticado. |
+| 6b — R | Premium & Billing → aplicación móvil | `PlanAccess`: nivel y vigencia confirmados. Mostrar pendiente mientras no exista confirmación válida. |
 
 *Fuente: modelado propuesto de Gastify, adaptado de DDD Crew [@dddcrewMessageFlows].*
 
 
-Stripe documenta la confirmación por webhook y el control del estado de la suscripción [@stripeSubscriptionWebhooks]. La recepción debe admitir reintentos y notificaciones fuera de orden [@stripeWebhooks]. El registro único del identificador externo impide aplicar dos veces el mismo evento. SP05–SP06 deben validar el flujo; el informe no acredita pagos ni integración ejecutados.
+Stripe documenta la confirmación por webhook y el control del estado de la suscripción [@stripeSubscriptionWebhooks]. La recepción debe admitir reintentos y notificaciones fuera de orden [@stripeWebhooks]. El registro único del identificador externo impide aplicar dos veces el mismo evento. SP05–SP06 deben validar el flujo; el informe no acredita pagos ni integración ejecutados. La figura 20 separa la respuesta de Stripe al backend de la respuesta del backend al cliente.
+
+![Activación o renovación del plan Premium](images/chapter_2/message-flow-premium-activation.png)
+
+<!-- pdf:omit-start -->
+
+*Figura 20. Activación o renovación del plan Premium.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: elaboración de Gastify; notación adaptada de DDD Crew, Domain Message Flow Modelling (s. f.), CC BY 4.0.*
+
 
 ##### Escenario D. Cancelar la renovación del plan de CraveWallet
 
-La tabla 89 presenta escenario d. cancelar la renovación del plan de cravewallet.
+La tabla 89 separa la solicitud de cancelación del fin efectivo del acceso pagado a CraveWallet.
 
 *Tabla 89. Escenario D. Cancelar la renovación del plan de CraveWallet.*
 
 | Orden y tipo | Emisor → receptor | Mensaje y datos relevantes |
 | --- | --- | --- |
 | 1 — C | Aplicación móvil → Premium & Billing | Solicitar cancelación de la renovación del plan propio. |
-| 2 — C/R | Premium & Billing ↔ Stripe | Solicitar y confirmar cancelación al fin del período. Conservar la fecha de vigencia pagada. |
+| 2a — C | Premium & Billing → Stripe | Solicitar cancelación al fin del período de la suscripción correlacionada (`cancel_at_period_end`). |
+| 2b — R | Stripe → Premium & Billing | Confirmación y fecha de fin del período pagado. Premium sigue vigente hasta esa fecha. |
+| 2c — R | Premium & Billing → aplicación móvil | Renovación cancelada y vigencia restante. Si el proveedor rechaza la solicitud, informar el error sin confirmar cancelación. |
 | 3 — E externo | Stripe → adaptador de Premium & Billing | `customer.subscription.deleted` al finalizar la suscripción. Verificar firma y correlación, y reconciliar la vigencia. |
 | 4 — E interno | SubscriptionPlan → manejadores del mismo contexto | `PlanDowngradedToFree(planId, userId)` tras finalizar el acceso Premium. |
-| 5 — Q/R | Aplicación móvil ↔ Premium & Billing | Consultar y recibir el nivel Free. El tratamiento de registros que excedan el límite gratuito debe acordarse con el equipo. |
+| 5a — Q | Aplicación móvil → Premium & Billing | Consultar acceso del usuario autenticado. |
+| 5b — R | Premium & Billing → aplicación móvil | `PlanAccess`: nivel Free y límite vigente. El tratamiento de registros que excedan el límite gratuito debe acordarse con el equipo. |
 
 *Fuente: modelado propuesto de Gastify, adaptado de DDD Crew [@dddcrewMessageFlows].*
 
 
-La figura 19 muestra los escenarios C y D. La cancelación del plan propio no altera las suscripciones que el usuario paga a terceros.
+La figura 21 representa la cancelación. Entre la confirmación de la solicitud (2c) y la finalización (3) transcurre el período restante; el usuario conserva Premium durante ese intervalo. La cancelación del plan propio no altera las suscripciones que el usuario paga a terceros.
 
-![Domain Message Flows: activación y cancelación de Premium](images/chapter_2/domain-message-flows-premium.png)
+![Cancelación de la renovación y retorno al plan Free](images/chapter_2/message-flow-premium-cancellation.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 19. Domain Message Flows: activación y cancelación de Premium.*
+*Figura 21. Cancelación de la renovación y retorno al plan Free.*
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración de Gastify, adaptada de DDD Crew, Domain Message Flow Modelling (s. f.). Diagrama adaptado bajo CC BY-SA 4.0.*
+*Fuente: elaboración de Gastify; notación adaptada de DDD Crew, Domain Message Flow Modelling (s. f.), CC BY 4.0.*
 
 **Marcar una suscripción externa como cancelada:** la aplicación envía el comando a Subscription Management; `Subscription` confirma `SubscriptionCancelled`; el backend conserva el historial y devuelve el estado; el cliente solicita retirar el evento del calendario y verifica el resultado (US07, US13). Esto no comunica una cancelación a Netflix, un gimnasio u otro proveedor.
 
@@ -2220,21 +2253,24 @@ La autenticación es una capacidad técnica previa a los comandos del usuario. L
 
 #### 2.5.1.3. Bounded Context Canvases
 
-Cada canvas documenta el propósito y los límites de un contexto, sus colaboradores, mensajes, lenguaje y decisiones de negocio. Se adapta la estructura de DDD Crew [@dddcrewBoundedCanvas] a los tres contextos propuestos para CraveWallet. La figura 20 presenta una síntesis visual; las tablas siguientes desarrollan cada canvas. Son propuestas de diseño basadas en las historias de la sección 2.4 y en el diseño táctico de la sección 2.6, no resultados de una implementación validada.
+Cada canvas documenta el propósito y los límites de un contexto, sus colaboradores, mensajes, lenguaje y decisiones de negocio. Se adapta la estructura de DDD Crew [@dddcrewBoundedCanvas] a los tres contextos propuestos para CraveWallet. Las figuras 22–24 presentan un canvas individual por contexto y las tablas 90–92 desarrollan su contenido. Se conservan los campos del canvas v5: propósito, clasificación estratégica, roles, comunicación entrante y saliente, lenguaje, decisiones, supuestos, métricas y preguntas abiertas. La comunicación entrante agrupa colaboraciones iniciadas por otro participante; la saliente agrupa las iniciadas por el contexto. Cada consulta incluye su respuesta dentro de la misma colaboración. Los eventos internos se documentan en las decisiones de negocio. Son propuestas de diseño basadas en las historias de la sección 2.4 y en el diseño táctico de la sección 2.6, no resultados de una implementación validada.
 
-![Síntesis de los Bounded Context Canvases de CraveWallet](images/chapter_2/bounded-context-canvases.png)
-
-<!-- pdf:omit-start -->
-
-*Figura 20. Síntesis de los Bounded Context Canvases de CraveWallet.*
-
-<!-- pdf:omit-end -->
-
-*Fuente: elaboración del equipo Gastify, adaptada de The Bounded Context Canvas de DDD Crew (s. f.), licencia CC BY-SA 4.0. Diagrama adaptado distribuido bajo la misma licencia.*
 
 ##### Canvas 1. Subscription Management
 
-La tabla 90 presenta canvas 1. subscription management.
+La figura 22 reúne el propósito, los contratos y las decisiones del contexto que administra los registros de suscripciones y sus próximas renovaciones.
+
+![Bounded Context Canvas de Subscription Management](images/chapter_2/canvas-subscription.png)
+
+<!-- pdf:omit-start -->
+
+*Figura 22. Bounded Context Canvas de Subscription Management.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: elaboración de Gastify; adaptación del Bounded Context Canvas v5 de DDD Crew (s. f.), CC BY 4.0.*
+
+La tabla 90 desarrolla el canvas de Subscription Management y su trazabilidad a las historias de suscripciones y recordatorios.
 
 *Tabla 90. Canvas 1. Subscription Management.*
 
@@ -2242,10 +2278,10 @@ La tabla 90 presenta canvas 1. subscription management.
 | --- | --- |
 | Nombre | **Subscription Management — Gestión de suscripciones.** |
 | Propósito | Ayudar al usuario a conocer sus compromisos recurrentes, estimar su importe en soles y anticipar la próxima renovación. Administra los registros que el usuario crea en CraveWallet; marcar uno como cancelado no cancela el contrato con el proveedor. |
-| Clasificación estratégica | **Core**, porque concentra la anticipación de renovaciones y el portafolio de suscripciones. Su papel propuesto es promover el uso recurrente del producto. Evolución: solución propia en etapa de diseño; no se afirma que el mercado carezca de alternativas. |
-| Roles del dominio | Gestionar el ciclo de vida del registro y proporcionar información para la planificación del gasto. La ejecución del cobro externo queda fuera de su responsabilidad. |
-| Comunicación entrante | **Aplicación móvil:** comandos de registrar, editar y marcar una suscripción como cancelada; consultas del portafolio y detalle. **Premium & Billing:** respuesta a la consulta de nivel y límite del plan. **ExchangeRate-API:** respuesta de cotización traducida por un adaptador. Las respuestas externas no son eventos de negocio por sí mismas. |
-| Comunicación saliente | **Premium & Billing:** consulta de acceso antes de admitir un registro adicional. **ExchangeRate-API:** consulta de cotización USD/PEN. **Aplicación móvil:** portafolio, próxima fecha de renovación y datos para crear o retirar el recordatorio del calendario. Eventos internos propuestos: `SubscriptionRegistered` y `SubscriptionCancelled`. No se presupone un bus de mensajes. |
+| Clasificación estratégica | **Core**, porque concentra la anticipación de renovaciones y el portafolio de suscripciones. Modelo de negocio: **engagement creator**. Evolución propuesta: **custom built**, solución propia adaptada al portafolio y anticipación de renovaciones del producto. Esta clasificación no equivale a afirmar que el dominio sea nuevo. |
+| Roles del dominio | **Execution context:** gestionar el ciclo del registro. **Analysis context:** proporcionar el portafolio y estimaciones para planificar gastos. La ejecución del cobro externo queda fuera de su responsabilidad. |
+| Comunicación entrante | **Aplicación móvil (cliente):** inicia comandos de registrar, editar y marcar una suscripción como cancelada, y consultas del portafolio y detalle. El contexto responde con registro confirmado, estado, resumen y datos del aviso. No hay otro contexto que envíe un evento de negocio a Suscripciones en los escenarios modelados. |
+| Comunicación saliente | **Premium & Billing [U]:** Suscripciones inicia `GetPlanAccess(userId)` y recibe `PlanAccess` con nivel, límite y vigencia (Customer/Supplier propuesto). **ExchangeRate-API [U]:** inicia la consulta USD/PEN y recibe cotización y fecha traducidas mediante ACL. Las respuestas al móvil pertenecen a la colaboración entrante. `SubscriptionRegistered` y `SubscriptionCancelled` son eventos internos. |
 | Colaboradores y relaciones | Premium & Billing suministra las reglas de acceso; ExchangeRate-API suministra cotizaciones mediante una capa anticorrupción; el cliente móvil utiliza el contrato de la aplicación para gestionar el calendario del dispositivo. La relación Customer/Supplier propuesta y sus contratos se detallan en 2.5.2. |
 | Lenguaje ubicuo | **Suscripción:** registro de un compromiso recurrente con un tercero. **Importe original:** monto y moneda introducidos por el usuario. **Estimación en PEN:** conversión de referencia. **Próxima renovación:** fecha declarada del siguiente cargo. **Cancelada:** estado del registro dentro de CraveWallet. |
 | Decisiones y reglas | El agregado `Subscription` conserva importe, moneda, periodicidad y fecha de renovación de un registro activo. El registro pertenece a un usuario. Una suscripción cancelada se excluye del portafolio activo y deja de generar recordatorios, conservando el historial. La anticipación propuesta es de 24 horas (US12); la programación efectiva depende del permiso del dispositivo. El límite gratuito se aplica según US39, con cinco registros activos como propuesta inicial de 2.1.1, pendiente de confirmación del equipo. |
@@ -2259,7 +2295,19 @@ La tabla 90 presenta canvas 1. subscription management.
 
 ##### Canvas 2. Delivery Expense Management
 
-La tabla 91 presenta canvas 2. delivery expense management.
+La figura 23 delimita el registro de gastos y el presupuesto mensual; distingue la consulta opcional de comercios de los eventos internos del contexto.
+
+![Bounded Context Canvas de Delivery Expense Management](images/chapter_2/canvas-delivery.png)
+
+<!-- pdf:omit-start -->
+
+*Figura 23. Bounded Context Canvas de Delivery Expense Management.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: elaboración de Gastify; adaptación del Bounded Context Canvas v5 de DDD Crew (s. f.), CC BY 4.0.*
+
+La tabla 91 desarrolla el canvas de Delivery Expense Management, incluidos el presupuesto mensual y la búsqueda opcional de comercios.
 
 *Tabla 91. Canvas 2. Delivery Expense Management.*
 
@@ -2267,24 +2315,36 @@ La tabla 91 presenta canvas 2. delivery expense management.
 | --- | --- |
 | Nombre | **Delivery Expense Management — Gestión de gastos de delivery.** |
 | Propósito | Permitir al usuario registrar lo que gasta en pedidos de comida, consultar el total de un período y compararlo con su límite mensual. No toma pedidos, procesa pagos ni confirma entregas de los comercios. |
-| Clasificación estratégica | **Supporting**, porque complementa la planificación de gastos sin definir el ciclo de vida de las suscripciones. Su papel propuesto es promover el seguimiento del consumo. Evolución: solución propia en etapa de diseño. |
-| Roles del dominio | Registrar gastos, mantener un presupuesto mensual y producir resúmenes de consumo. |
-| Comunicación entrante | **Aplicación móvil:** comando de registrar un gasto y actualizar el límite; consultas del historial y resumen mensual. **Google Places:** respuesta a una búsqueda de comercio, cuando se utilice esa integración. La respuesta ayuda a identificar el comercio; el importe y la fecha proceden del registro del usuario. |
-| Comunicación saliente | **Aplicación móvil:** historial, resumen mensual y advertencia de exceso. **Google Places:** solicitud de sugerencias de comercios. Eventos internos propuestos: `DeliveryExpenseRegistered` y `MonthlyLimitExceeded`. El primer evento permite actualizar el presupuesto del período correspondiente. |
+| Clasificación estratégica | **Supporting**, porque complementa la planificación de gastos sin definir el ciclo de vida de las suscripciones. Modelo de negocio: **engagement creator**. Evolución propuesta: **custom built**, solución propia para el seguimiento de delivery. |
+| Roles del dominio | **Execution context:** registrar gastos y mantener el presupuesto mensual. **Analysis context:** producir resúmenes de consumo por período. |
+| Comunicación entrante | **Aplicación móvil (cliente):** inicia comandos de registrar, editar o eliminar un gasto y actualizar el límite; consultas del historial y resumen mensual. El contexto responde con el resultado, el total, el límite y la condición de exceso. El importe y la fecha proceden del registro del usuario. |
+| Comunicación saliente | **Google Places [U]:** Gastos inicia una búsqueda y recibe `MerchantSuggestion` traducida por su ACL; la integración es opcional. No se envían mensajes a los agregados de Suscripciones (Separate Ways). `DeliveryExpenseRegistered` y `MonthlyLimitExceeded` son eventos internos; las respuestas al móvil pertenecen a la colaboración entrante. |
 | Colaboradores y relaciones | El cliente móvil introduce y consulta gastos. Google Places proporciona información auxiliar sobre comercios. El Dashboard combina los resúmenes de gastos y suscripciones, pero esto no exige compartir sus agregados. La ACL de Google Places y la separación de modelos entre Gastos y Suscripciones se detallan en 2.5.2. |
 | Lenguaje ubicuo | **Gasto de delivery:** importe que el usuario registra por un pedido. **Comercio:** negocio asociado al gasto. **Período mensual:** mes al que se atribuye el gasto. **Límite mensual:** tope elegido por el usuario. **Acumulado:** suma de los gastos del período. **Exceso:** acumulado superior al límite. |
 | Decisiones y reglas | `DeliveryExpense` conserva un gasto individual y `MonthlyBudget` mantiene el límite y acumulado de un usuario y período. El gasto se atribuye al mes de su fecha. Superar el límite produce una advertencia; no bloquea pedidos en servicios externos. US18 permite elegir un comercio del catálogo o escribirlo manualmente, de modo que Google Places no debe ser obligatorio para registrar el gasto. |
 | Supuestos | El usuario consigna los gastos; no se cuenta con una importación automática de sus pedidos. El resumen corresponde a lo registrado, no necesariamente a todo el consumo real. La lectura local sin conexión es una propuesta técnica que requiere comprobar la sincronización. |
 | Métricas de verificación propuestas | Comparar el acumulado mensual con la suma de gastos del mismo usuario y período; contar registros duplicados después de sincronizar y gastos que no se pueden registrar cuando falla la búsqueda de comercios. No hay mediciones disponibles aún. |
-| Preguntas abiertas | ¿Cómo se corrige o elimina un gasto y se recalcula el acumulado? ¿Cómo se evita duplicar un registro al recuperar la conexión? ¿Se advierte una sola vez al superar el límite o después de cada nuevo gasto? ¿Qué ocurre si se reduce el límite por debajo del acumulado? |
-| Trazabilidad | Epic EP06, US18 y TS05; diseño táctico 2.6.2. |
+| Preguntas abiertas | ¿Qué actualización transaccional o consumidor idempotente recalcula el acumulado al corregir o eliminar un gasto según US30? ¿Cómo se evita duplicar un registro al recuperar la conexión? ¿Se advierte una sola vez al superar el límite o después de cada nuevo gasto? ¿Qué ocurre si se reduce el límite por debajo del acumulado? |
+| Trazabilidad | Epic EP06, US18–US20, US30, US38 y TS05; diseño táctico 2.6.2. |
 
 *Fuente: diseño propuesto de Gastify, adaptado de DDD Crew [@dddcrewBoundedCanvas].*
 
 
 ##### Canvas 3. Premium & Billing
 
-La tabla 92 presenta canvas 3. premium & billing.
+La figura 24 concentra las reglas del plan propio de CraveWallet, las colaboraciones con Stripe y el contrato de acceso que consume Subscription Management.
+
+![Bounded Context Canvas de Premium & Billing](images/chapter_2/canvas-premium.png)
+
+<!-- pdf:omit-start -->
+
+*Figura 24. Bounded Context Canvas de Premium & Billing.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: elaboración de Gastify; adaptación del Bounded Context Canvas v5 de DDD Crew (s. f.), CC BY 4.0.*
+
+La tabla 92 desarrolla el canvas de Premium & Billing y las reglas de vigencia del plan propio de CraveWallet.
 
 *Tabla 92. Canvas 3. Premium & Billing.*
 
@@ -2292,17 +2352,17 @@ La tabla 92 presenta canvas 3. premium & billing.
 | --- | --- |
 | Nombre | **Premium & Billing — Plan Premium y facturación de CraveWallet.** |
 | Propósito | Mantener el nivel de acceso a CraveWallet y su vigencia a partir del resultado confirmado de la facturación del propio producto. El plan de CraveWallet es distinto de las suscripciones a servicios externos que registra Subscription Management. |
-| Clasificación estratégica | **Generic**, porque la facturación y los niveles de acceso son capacidades comunes. Su papel propuesto es generar ingresos para CraveWallet. Evolución: integración de un proveedor existente con reglas de acceso propias; aún en etapa de diseño. |
-| Roles del dominio | Gestionar la vigencia del plan, interpretar el resultado de facturación y suministrar el nivel de acceso a los otros componentes. |
-| Comunicación entrante | **Aplicación móvil:** solicitud de iniciar checkout, consultar plan e historial, o solicitar la cancelación. **Stripe:** notificaciones de pago confirmado y finalización del período pagado, verificadas y traducidas por el adaptador. **Subscription Management:** consulta de nivel y límite de acceso. |
-| Comunicación saliente | **Stripe:** solicitud de checkout y operaciones de facturación previstas. **Aplicación móvil:** enlace o sesión de pago, estado del plan e historial. **Subscription Management:** respuesta de nivel y límite. Eventos internos propuestos: `PlanUpgradedToPremium` y `PlanDowngradedToFree`, conforme al diseño de 2.6.3. |
+| Clasificación estratégica | **Generic**, porque la facturación y los niveles de acceso son capacidades comunes. Modelo de negocio: **revenue generator**. Evolución propuesta: **product** para el proveedor Stripe, integrado con las reglas propias de acceso; el módulo permanece en etapa de diseño. |
+| Roles del dominio | **Execution context:** gestionar vigencia y nivel de acceso. **Gateway context:** interpretar y traducir el resultado externo de facturación al plan local. |
+| Comunicación entrante | **Aplicación móvil (cliente):** inicia checkout, consultas de plan e historial y cancelación; recibe sesión, estado y confirmación de la solicitud. **Stripe [U]:** inicia notificaciones `invoice.paid` y `customer.subscription.deleted`, verificadas y traducidas por ACL. **Subscription Management [D/C]:** inicia `GetPlanAccess` y recibe `PlanAccess` (Customer/Supplier propuesto). |
+| Comunicación saliente | **Stripe [U]:** Premium inicia creación de checkout, cancelación al fin del período y consultas para reconciliar estado; recibe sesión, vigencia y estado a través de `StripeGatewayAdapter`. Las respuestas al móvil y a Suscripciones pertenecen a colaboraciones entrantes. `PlanUpgradedToPremium` y `PlanDowngradedToFree` son eventos internos, conforme a 2.6.3. |
 | Colaboradores y relaciones | Stripe suministra el resultado de facturación; una capa anticorrupción lo convierte al lenguaje del plan de CraveWallet. Subscription Management consume la información de acceso. El cliente móvil presenta el flujo de pago, pero su retorno a una pantalla no prueba que el pago esté confirmado. |
 | Lenguaje ubicuo | **Plan Free:** nivel gratuito sujeto a un límite. **Plan Premium:** nivel con beneficios definidos. **Período de vigencia:** intervalo de acceso pagado. **Pago confirmado:** resultado verificado del proveedor. **Cancelación del plan:** fin de la renovación de CraveWallet; no cancela los servicios externos del usuario. |
 | Decisiones y reglas | El agregado `SubscriptionPlan` mantiene el nivel Free/Premium y la vigencia. La confirmación verificada activa Premium; abrir checkout no lo activa. Procesar dos veces una misma confirmación no debe duplicar la transición. TS06 propone conservar el acceso hasta el fin del período pagado y volver a Free tras la notificación correspondiente. Las pruebas con Stripe deben identificarse como operaciones de prueba y no como ingresos reales. |
 | Supuestos | El modelo propuesto utiliza facturación recurrente. El precio S/ 9.90 y los beneficios son propuestas comerciales pendientes de validación. SP05 investiga el flujo y SP06 debe comprobarlo mediante un prototipo; no se dispone aquí de resultados que acrediten su ejecución. |
 | Métricas de verificación propuestas | Contar activaciones sin pago confirmado, discrepancias entre vigencia y acceso, y transiciones duplicadas al repetir una notificación de prueba. Registrar el tiempo entre confirmación y actualización del plan. No hay mediciones disponibles aún. |
 | Preguntas abiertas | ¿Qué acceso se mantiene ante un pago fallido? ¿Cómo se recuperan notificaciones que no llegaron? ¿Cómo se administran reembolsos? ¿Qué ocurre con los registros existentes al volver a Free? ¿Cuál es la política comercial definitiva de precio y beneficios? |
-| Trazabilidad | Epic EP07, US39, TS06 y SP05–SP06; diseño táctico 2.6.3. |
+| Trazabilidad | Epic EP07, US21–US23, US31, US39, TS06 y SP05–SP06; diseño táctico 2.6.3. |
 
 *Fuente: diseño propuesto de Gastify, adaptado de DDD Crew [@dddcrewBoundedCanvas].*
 
@@ -2313,13 +2373,13 @@ Los límites permiten distinguir tres conceptos: un compromiso recurrente con un
 
 El Context Map propuesto identifica quién proporciona un modelo o contrato (**upstream, U**) y quién depende de él (**downstream, D**). Sus flechas representan influencia del modelo, no el sentido de cada petición HTTP. La selección se basa en las responsabilidades y mensajes de 2.5.1, siguiendo el material de DDD Crew [@dddcrewContextMapping]. Los tres contextos se proponen como módulos de un backend; no se presupone que existan tres equipos independientes.
 
-La tabla 93 presenta context mapping.
+La tabla 93 justifica cada relación del Context Map e identifica el contrato o adaptador que conserva la frontera entre modelos.
 
 *Tabla 93. Context Mapping.*
 
 | Relación propuesta | Patrón y justificación | Contrato o frontera |
 | --- | --- | --- |
-| Premium & Billing [U] → Subscription Management [D] | **Customer/Supplier** como acuerdo de diseño: las necesidades de registro y límites de Suscripciones deben formar parte de la planificación de Premium. Consumir un modelo sin posibilidad de negociación no basta para justificar este patrón. | `GetPlanAccess(userId)` devuelve nivel y límite vigente. Suscripciones cuenta sus registros activos y decide si admite el nuevo registro. |
+| Premium & Billing [U] → Subscription Management [D] | **Customer/Supplier** como acuerdo de diseño: las necesidades de registro y límites de Suscripciones deben formar parte de la planificación de Premium. Consumir un modelo sin posibilidad de negociación no basta para justificar este patrón. | `GetPlanAccess(userId)` devuelve nivel, límite y vigencia. En la relación, Premium ocupa U/S (proveedor) y Suscripciones D/C (cliente). Suscripciones cuenta sus registros activos y decide si admite el nuevo registro. |
 | Subscription Management / Delivery Expense Management | **Separate Ways** para sus modelos de dominio: no se propone un flujo directo entre sus agregados. El cliente compone sus resúmenes en el Dashboard. | Cada módulo conserva su lenguaje y almacenamiento. El identificador del usuario sirve para correlacionar datos; no implica código o esquema compartido como Shared Kernel. |
 | ExchangeRate-API [U] → Subscription Management [D] | **Anti-Corruption Layer (ACL):** `ExchangeRateApiAdapter` traduce la respuesta del proveedor a cotización, monedas y fecha de consulta del modelo local. | `ExchangeRatePort`; el precio en moneda original permanece intacto. La frecuencia y caché de TS03 son propuestas a comprobar en SP01–SP02. |
 | Stripe [U] → Premium & Billing [D] | **ACL:** el adaptador verifica y traduce las notificaciones a cambios del plan local. Los eventos técnicos de Stripe se conservan en la frontera de integración. | `PaymentGatewayPort`, correlación de facturación y deduplicación del identificador externo. Eventos internos: `PlanUpgradedToPremium` y `PlanDowngradedToFree`. |
@@ -2328,17 +2388,17 @@ La tabla 93 presenta context mapping.
 *Fuente: elaboración del equipo Gastify.*
 
 
-La figura 21 representa estas relaciones. Se eliminó la relación simultánea Partnership/Shared Kernel entre Suscripciones y Gastos porque compartir una pantalla o identificador no demuestra un modelo compartido ni entregas mutuamente dependientes. Si la implementación introduce esa dependencia, el equipo deberá justificar y actualizar el mapa.
+La figura 25 representa estas relaciones. Se eliminó la relación simultánea Partnership/Shared Kernel entre Suscripciones y Gastos porque compartir una pantalla o identificador no demuestra un modelo compartido ni entregas mutuamente dependientes. Si la implementación introduce esa dependencia, el equipo deberá justificar y actualizar el mapa.
 
 ![Context Map propuesto de CraveWallet](images/chapter_2/context-map-revised.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 21. Context Map propuesto de CraveWallet.*
+*Figura 25. Context Map propuesto de CraveWallet.*
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración de Gastify, adaptada de DDD Crew, Context Mapping (s. f.). Diagrama adaptado bajo CC BY-SA 4.0.*
+*Fuente: elaboración de Gastify; notación adaptada de DDD Crew, Context Mapping (s. f.), CC BY 4.0.*
 
 El calendario del dispositivo y la autenticación colaboran con los casos de uso, pero no se clasifican como nuevos Bounded Contexts de negocio en este avance. Las relaciones se comprobarán mediante cambios en los contratos y las pruebas de integración. La política de retorno a Free sigue pendiente de decisión del equipo.
 
@@ -2350,13 +2410,13 @@ Se usa C4 para distinguir el sistema completo, sus contenedores y los componente
 
 CraveWallet se representa como un sistema completo: incluye la experiencia móvil y el backend. Los usuarios pertenecen a los segmentos de estudiantes y profesionales jóvenes definidos en 1.3. El sistema consulta cotizaciones, prepara recordatorios en el calendario del dispositivo, recibe sugerencias de comercios y gestiona su plan propio con Stripe. Los pagos y cancelaciones de los servicios externos registrados por el usuario quedan fuera del alcance.
 
-La figura 22 presenta diagrama de contexto del sistema cravewallet.
+La figura 26 muestra una persona, CraveWallet como un único sistema y sus cuatro colaboradores externos. La solicitud a Stripe y las notificaciones de Stripe tienen flechas separadas. La vista omite tecnologías, almacenes y módulos internos para conservar el nivel de contexto.
 
 ![Diagrama de contexto del sistema CraveWallet](images/chapter_2/system-context-revised.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 22. Diagrama de contexto del sistema CraveWallet.*
+*Figura 26. Diagrama de contexto del sistema CraveWallet.*
 
 <!-- pdf:omit-end -->
 
@@ -2364,7 +2424,7 @@ La figura 22 presenta diagrama de contexto del sistema cravewallet.
 
 #### 2.5.3.2. Software Architecture Container Level Diagrams
 
-La tabla 94 presenta software architecture container level diagrams.
+La tabla 94 define los cuatro contenedores de la propuesta. Una frontera del sistema agrupa aplicaciones y almacenes; los tres contextos son módulos del backend y no se representan como microservicios independientes.
 
 *Tabla 94. Software Architecture Container Level Diagrams.*
 
@@ -2380,13 +2440,13 @@ La tabla 94 presenta software architecture container level diagrams.
 
 ExchangeRate-API, Stripe y Google Places son sistemas externos al backend. Sus adaptadores traducen respuestas al modelo local. El calendario lo administra el cliente móvil; el backend solo entrega los datos necesarios. No se presupone infraestructura de notificaciones push adicional para explicar los avisos del calendario.
 
-La figura 23 presenta diagrama de contenedores de cravewallet.
+La figura 27 indica el propósito y la tecnología de cada relación: HTTPS/JSON entre móvil y backend, JPA/JDBC hacia PostgreSQL, API local hacia SQLite, APIs externas por HTTPS y webhook firmado de Stripe hacia el backend. El calendario recibe operaciones únicamente desde el móvil. Los datos de tarjeta se ingresan en el flujo de Stripe; el retorno al cliente no confirma el acceso Premium.
 
 ![Diagrama de contenedores de CraveWallet](images/chapter_2/containers-revised.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 23. Diagrama de contenedores de CraveWallet.*
+*Figura 27. Diagrama de contenedores de CraveWallet.*
 
 <!-- pdf:omit-end -->
 
@@ -2394,15 +2454,15 @@ La figura 23 presenta diagrama de contenedores de cravewallet.
 
 #### 2.5.3.3. Software Architecture Deployment Diagrams
 
-El despliegue de la figura 24 es una opción de infraestructura: contenedor del backend en ECS/Fargate, base de datos PostgreSQL en RDS, entrada HTTPS y gestión de secretos. Su contratación, región, costos, cuotas y pipeline deberán decidirse y verificarse antes de implementar. No hay evidencia en este avance de un backend desplegado con esa configuración. La aplicación móvil se ejecutaría en el dispositivo y accedería al calendario mediante sus permisos.
+El despliegue de la figura 28 es una opción de infraestructura: contenedor del backend en ECS/Fargate, base de datos PostgreSQL en RDS, entrada HTTPS y gestión de secretos. Su contratación, región, costos, cuotas y pipeline deberán decidirse y verificarse antes de implementar. No hay evidencia en este avance de un backend desplegado con esa configuración. La aplicación móvil se ejecutaría en el dispositivo y accedería al calendario mediante sus permisos.
 
-La figura 24 presenta propuesta de despliegue de cravewallet.
+La figura 28 presenta propuesta de despliegue de cravewallet.
 
 ![Propuesta de despliegue de CraveWallet](images/chapter_2/deployment_diagram.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 24. Propuesta de despliegue de CraveWallet.*
+*Figura 28. Propuesta de despliegue de CraveWallet.*
 
 <!-- pdf:omit-end -->
 
@@ -2469,13 +2529,13 @@ El request de alta contiene nombre, importe, moneda, categoría, fecha y periodi
 
 #### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-La figura 25 presenta componentes de subscription management.
+La figura 29 presenta componentes de subscription management.
 
 ![Componentes de Subscription Management](images/chapter_2/subscription-components-revised.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 25. Componentes de Subscription Management.*
+*Figura 29. Componentes de Subscription Management.*
 
 <!-- pdf:omit-end -->
 
@@ -2487,13 +2547,13 @@ La figura 25 presenta componentes de subscription management.
 
 El diagrama conserva el agregado, sus objetos de valor, eventos y puertos. Las dependencias del dominio no incluyen HTTP, JPA ni clases del SDK externo. `PremiumStatusPort` es un contrato adicional de consulta de la aplicación; no convierte `UserId` en un Shared Kernel.
 
-La figura 26 presenta clases de dominio de subscription management.
+La figura 30 presenta clases de dominio de subscription management.
 
 ![Clases de dominio de Subscription Management](images/chapter_2/subscription_class_diagram.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 26. Clases de dominio de Subscription Management.*
+*Figura 30. Clases de dominio de Subscription Management.*
 
 <!-- pdf:omit-end -->
 
@@ -2503,13 +2563,13 @@ La figura 26 presenta clases de dominio de subscription management.
 
 La persistencia propuesta separa registros, historial declarado y caché de cotizaciones. El historial solo almacena cobros que el usuario consigna o confirma; una fecha programada no acredita un pago. `user_id` identifica al propietario, pero no representa una relación entre agregados de Suscripciones, Gastos y Premium. Las restricciones físicas y el esquema de autenticación se concretarán al implementar.
 
-La figura 27 presenta persistencia propuesta de subscription management.
+La figura 31 presenta persistencia propuesta de subscription management.
 
 ![Persistencia propuesta de Subscription Management](images/chapter_2/subscription-database-revised.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 27. Persistencia propuesta de Subscription Management.*
+*Figura 31. Persistencia propuesta de Subscription Management.*
 
 <!-- pdf:omit-end -->
 
@@ -2573,13 +2633,13 @@ Los manejadores internos pueden preparar el estado de exceso que consume la apli
 
 #### 2.6.2.5. Component Level Diagrams
 
-La figura 28 presenta componentes de delivery expense management.
+La figura 32 presenta componentes de delivery expense management.
 
 ![Componentes de Delivery Expense Management](images/chapter_2/delivery-components-revised.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 28. Componentes de Delivery Expense Management.*
+*Figura 32. Componentes de Delivery Expense Management.*
 
 <!-- pdf:omit-end -->
 
@@ -2591,13 +2651,13 @@ La figura 28 presenta componentes de delivery expense management.
 
 El diagrama muestra los dos agregados, sus objetos de valor y eventos. La asociación por usuario/período no fusiona el gasto y el presupuesto en un solo agregado.
 
-La figura 29 presenta clases de dominio de delivery expense management.
+La figura 33 presenta clases de dominio de delivery expense management.
 
 ![Clases de dominio de Delivery Expense Management](images/chapter_2/delivery_class_diagram.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 29. Clases de dominio de Delivery Expense Management.*
+*Figura 33. Clases de dominio de Delivery Expense Management.*
 
 <!-- pdf:omit-end -->
 
@@ -2607,13 +2667,13 @@ La figura 29 presenta clases de dominio de delivery expense management.
 
 `delivery_expenses` conserva los gastos y el identificador de solicitud para reconocer reintentos. `monthly_budgets` tiene una restricción única por usuario/año/mes. La línea entre tablas indica agrupación lógica por propietario y mes, no una clave foránea inventada hacia un presupuesto. La estrategia de concurrencia debe proteger el acumulado.
 
-La figura 30 presenta persistencia propuesta de delivery expense management.
+La figura 34 presenta persistencia propuesta de delivery expense management.
 
 ![Persistencia propuesta de Delivery Expense Management](images/chapter_2/delivery-database-revised.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 30. Persistencia propuesta de Delivery Expense Management.*
+*Figura 34. Persistencia propuesta de Delivery Expense Management.*
 
 <!-- pdf:omit-end -->
 
@@ -2677,13 +2737,13 @@ Para una factura pagada, se consulta y valida la suscripción vinculada antes de
 
 #### 2.6.3.5. Component Level Diagrams
 
-La figura 31 presenta componentes de premium & billing.
+La figura 35 presenta componentes de premium & billing.
 
 ![Componentes de Premium & Billing](images/chapter_2/premium-components-revised.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 31. Componentes de Premium & Billing.*
+*Figura 35. Componentes de Premium & Billing.*
 
 <!-- pdf:omit-end -->
 
@@ -2695,13 +2755,13 @@ La figura 31 presenta componentes de premium & billing.
 
 El diagrama conserva el agregado y los eventos locales. La operación de renovación debe respetar la actualización de vigencia descrita arriba. Los puertos se completarán con el contrato de cancelación al implementar; el diagrama representa el núcleo del modelo.
 
-La figura 32 presenta clases de dominio de premium & billing.
+La figura 36 presenta clases de dominio de premium & billing.
 
 ![Clases de dominio de Premium & Billing](images/chapter_2/premium_class_diagram.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 32. Clases de dominio de Premium & Billing.*
+*Figura 36. Clases de dominio de Premium & Billing.*
 
 <!-- pdf:omit-end -->
 
@@ -2711,13 +2771,13 @@ La figura 32 presenta clases de dominio de premium & billing.
 
 `user_plans` tiene un único registro por usuario. `billing_events` conserva identificador externo único, plan correlacionado, tipo, fecha y estado de procesamiento. La correlación se verifica antes de cambiar el plan; un índice no demuestra por sí solo procesamiento en tiempo constante ni consistencia con Stripe.
 
-La figura 33 presenta persistencia propuesta de premium & billing.
+La figura 37 presenta persistencia propuesta de premium & billing.
 
 ![Persistencia propuesta de Premium & Billing](images/chapter_2/premium-database-revised.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 33. Persistencia propuesta de Premium & Billing.*
+*Figura 37. Persistencia propuesta de Premium & Billing.*
 
 <!-- pdf:omit-end -->
 

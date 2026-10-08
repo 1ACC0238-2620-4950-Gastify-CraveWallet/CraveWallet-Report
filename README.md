@@ -8,6 +8,7 @@ La tabla 1 presenta registro de versiones del informe.
 |:-------:|:----------:|:--------------:|:---------------------------:|
 |   AV1   | 15/09/2026  | Todo el equipo |       Primera versión       |
 | AV1 — revisión | 07/10/2026 | Anghelo Faustino | Corrección de fuentes, Lean UX, flujos de mensajes, Context Map y coherencia del diseño. |
+| AV1 — revisión de diseño estratégico | 07/10/2026 | Alexander Aliaga | Corrección de las secciones 2.5.1.2, 2.5.1.3, 2.5.2, 2.5.3.1 y 2.5.3.2; fuentes editables, referencias y alineación del criterio de activación de Premium. |
 
 *Fuente: elaboración del equipo Gastify.*
 

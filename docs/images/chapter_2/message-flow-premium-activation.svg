@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1218" viewBox="0 0 1800 1218">
+<rect width="100%" height="100%" fill="white"/>
+<text x="40" y="60" font-family="Arial,sans-serif" font-size="34" font-weight="bold" fill="#18324a">C. Activar o renovar Premium tras un pago confirmado</text>
+<text x="40" y="101" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#18324a">C: comando | Q: consulta | R: respuesta | E: hecho confirmado. Orden propio del escenario.</text>
+<rect x="45" y="140" width="330" height="100" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
+<text x="61" y="176" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Cliente</text>
+<text x="61" y="214" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Aplicación móvil</text>
+<polyline points="210,240 210,1063" fill="none" stroke="#8196a8" stroke-width="3" stroke-dasharray="8 7"/>
+<rect x="485" y="140" width="330" height="100" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
+<text x="501" y="176" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Bounded Context</text>
+<text x="501" y="214" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Premium &amp; Billing</text>
+<polyline points="650,240 650,1063" fill="none" stroke="#8196a8" stroke-width="3" stroke-dasharray="8 7"/>
+<rect x="925" y="140" width="330" height="100" fill="#f0f5fa" stroke="#8196a8" stroke-width="2" />
+<text x="941" y="176" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#18324a">Sistema externo</text>
+<text x="941" y="214" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#18324a">Stripe</text>
+<polyline points="1090,240 1090,1063" fill="none" stroke="#8196a8" stroke-width="3" stroke-dasharray="8 7"/>
+<polyline points="210,373 650,373" fill="none" stroke="#176aa5" stroke-width="3" />
+<polygon points="650,373 636.4932934647098,379.52448301166845 636.4932934647098,366.47551698833155" fill="#176aa5"/>
+<rect x="218" y="287" width="1551" height="78" fill="white" stroke="white" stroke-width="2" />
+<text x="222" y="314" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#176aa5">1 [C] Iniciar checkout</text>
+<text x="222" y="345" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#176aa5">Identidad autenticada y precio del catálogo del servidor.</text>
+<polyline points="650,474 1090,474" fill="none" stroke="#176aa5" stroke-width="3" />
+<polygon points="1090,474 1076.49329346471,480.52448301166845 1076.49329346471,467.47551698833155" fill="#176aa5"/>
+<rect x="658" y="388" width="1111" height="78" fill="white" stroke="white" stroke-width="2" />
+<text x="662" y="415" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#176aa5">2 [C] Crear sesión de suscripción</text>
+<text x="662" y="446" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#176aa5">userId correlacionado, cliente y priceId; entorno de prueba.</text>
+<polyline points="1090,575 650,575" fill="none" stroke="#39714e" stroke-width="3" />
+<polygon points="650,575 663.5067065352902,568.4755169883315 663.5067065352902,581.5244830116685" fill="#39714e"/>
+<rect x="658" y="489" width="1111" height="78" fill="white" stroke="white" stroke-width="2" />
+<text x="662" y="516" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#39714e">3a [R] Sesión creada</text>
+<text x="662" y="547" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#39714e">sessionId y enlace de checkout.</text>
+<polyline points="650,676 210,676" fill="none" stroke="#39714e" stroke-width="3" />
+<polygon points="210,676 223.50670653529016,669.4755169883315 223.50670653529016,682.5244830116685" fill="#39714e"/>
+<rect x="218" y="590" width="1551" height="78" fill="white" stroke="white" stroke-width="2" />
+<text x="222" y="617" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#39714e">3b [R] Abrir checkout</text>
+<text x="222" y="648" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#39714e">Enlace de la sesión; el usuario completa el pago con Stripe.</text>
+<polyline points="1090,777 650,777" fill="none" stroke="#a65018" stroke-width="3" />
+<polygon points="650,777 663.5067065352902,770.4755169883315 663.5067065352902,783.5244830116685" fill="#a65018"/>
+<rect x="658" y="691" width="1111" height="78" fill="white" stroke="white" stroke-width="2" />
+<text x="662" y="718" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#a65018">4 [E] invoice.paid (externo)</text>
+<text x="662" y="749" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#a65018">eventId, invoiceId, customerId y subscriptionId; firma, correlación y estado verificados.</text>
+<polyline points="650,858 722,858 722,880 650,880" fill="none" stroke="#a65018" stroke-width="3" />
+<polygon points="650,880 663.5067065352902,873.4755169883315 663.5067065352902,886.5244830116685" fill="#a65018"/>
+<rect x="736" y="792" width="1033" height="78" fill="white" stroke="white" stroke-width="2" />
+<text x="740" y="819" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#a65018">5 [E] PlanUpgradedToPremium</text>
+<text x="740" y="850" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#a65018">planId, userId, período; renovación: actualizar vigencia sin repetir transición.</text>
+<polyline points="210,979 650,979" fill="none" stroke="#6557a5" stroke-width="3" />
+<polygon points="650,979 636.4932934647098,985.5244830116685 636.4932934647098,972.4755169883315" fill="#6557a5"/>
+<rect x="218" y="893" width="1551" height="78" fill="white" stroke="white" stroke-width="2" />
+<text x="222" y="920" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#6557a5">6a [Q] Consultar acceso</text>
+<text x="222" y="951" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#6557a5">userId</text>
+<polyline points="650,1080 210,1080" fill="none" stroke="#39714e" stroke-width="3" />
+<polygon points="210,1080 223.50670653529016,1073.4755169883315 223.50670653529016,1086.5244830116685" fill="#39714e"/>
+<rect x="218" y="994" width="1551" height="78" fill="white" stroke="white" stroke-width="2" />
+<text x="222" y="1021" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#39714e">6b [R] PlanAccess</text>
+<text x="222" y="1052" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#39714e">Nivel y vigencia confirmados; mostrar pendiente hasta recibir confirmación válida.</text>
+<text x="40" y="1128" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#18324a">El webhook llega al backend. Deduplicar eventId; reconciliar notificaciones fuera de orden.</text>
+<text x="40" y="1182" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#18324a">Fuente: Gastify; notación adaptada de DDD Crew, Domain Message Flow Modelling. CC BY 4.0.</text>
+</svg>
