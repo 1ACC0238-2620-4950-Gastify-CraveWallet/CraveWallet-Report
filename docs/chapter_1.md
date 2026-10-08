@@ -16,7 +16,7 @@ CraveWallet propone reunir en una experiencia móvil tres tipos de registro:
 2. **Suscripciones digitales y herramientas:** Plataformas de entretenimiento, educación en línea (Netzun, Cisco Networking Academy), herramientas de productividad (PedidosYa Plus), servicios de infraestructura cloud (MongoDB Atlas) con facturación recurrente en dólares. Las compras puntuales de videojuegos se distinguen de una suscripción.
 3. **Gastos recurrentes de delivery:** Categorización y registro de consumos habituales en establecimientos frecuentes como Up Burger, Dunkin', Popeyes, Little Caesars, Papa John's, Burgerboy, Pollivoro, Chifa Delicious y Chifa Monteoro, permitiendo al usuario visualizar el impacto acumulado de sus hábitos de entrega a domicilio.
 
-Los valores fundacionales de Gastify son: **transparencia financiera**, **diseño centrado en el usuario**, **aprendizaje continuo** y **responsabilidad técnica**. Este último valor se materializa directamente en el Student Outcome 7 del presente curso: la capacidad del equipo de investigar, evaluar e integrar tecnologías nuevas —como el SDK de Stripe y la ExchangeRate-API— de forma autónoma, documentando el proceso de aprendizaje como parte intrínseca del ciclo de vida del producto.
+Los valores fundacionales de Gastify son: **transparencia financiera**, **diseño centrado en el usuario**, **aprendizaje continuo** y **responsabilidad técnica**. Este último valor se relaciona con el Student Outcome 7 del curso: el equipo investiga, evalúa e integra tecnologías nuevas, como el SDK de Stripe y la ExchangeRate-API, y documenta ese aprendizaje durante el desarrollo del producto.
 
 ***
 
@@ -129,62 +129,32 @@ Cada hipótesis relaciona un resultado del negocio, un segmento, un beneficio pa
 
 #### 1.2.2.4. Lean UX Canvas
 
-La tabla 10 reúne los ocho bloques del Lean UX Canvas de CraveWallet. Se adapta el marco de Gothelf y Seiden [@gothelf2021leanux] y la guía de Gothelf [@gothelf2021canvas]. Las hipótesis completas y sus metas se desarrollan en la sección 1.2.2.3.
+La figura 2 presenta el Lean UX Canvas de CraveWallet con la distribución de ocho bloques propuesta por Gothelf [@gothelf2021canvas], y la tabla 10 desarrolla el contenido de cada bloque. Se adapta el marco de Gothelf y Seiden [@gothelf2021leanux]. Las hipótesis completas y sus metas se desarrollan en la sección 1.2.2.3.
+
+![Lean UX Canvas de CraveWallet](images/chapter_1/lean-ux-canvas.png)
 
 <!-- pdf:omit-start -->
 
-*Tabla 10. Lean UX Canvas de CraveWallet.*
+*Figura 2. Lean UX Canvas de CraveWallet.*
 
 <!-- pdf:omit-end -->
-
-<table id="lean-ux-canvas" data-table-number="10">
-  <colgroup>
-    <col width="16.66%">
-    <col width="16.66%">
-    <col width="16.66%">
-    <col width="16.66%">
-    <col width="16.66%">
-    <col width="16.66%">
-  </colgroup>
-  <thead>
-    <tr>
-      <th colspan="2"><b>1. Problema de negocio</b></th>
-      <th colspan="2"><b>5. Ideas de soluciones</b></th>
-      <th colspan="2"><b>2. Resultados comerciales</b></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan="2">Las seis entrevistas registradas describen dificultades para recordar renovaciones, interpretar cargos en dólares y seguir el gasto de delivery. La información se encuentra repartida entre servicios, fechas y monedas. CraveWallet busca reunirla para que el usuario conozca sus compromisos antes del cobro. El riesgo inicial es que registrar manualmente sus suscripciones exija tanto esfuerzo que abandone antes de descubrir ese valor.</td>
-      <td colspan="2">Ingreso progresivo: registrar una suscripción y mostrar de inmediato su resumen.<br>Dashboard de importes y próximas renovaciones.<br>Recordatorios en el calendario nativo, 24 horas antes del cobro.<br>Conversión estimada USD/PEN con fecha de actualización.<br>Registro de delivery y presupuesto mensual.<br>Plan Premium con analítica y registros ilimitados.</td>
-      <td colspan="2">Retención a 30 días superior al 45% entre usuarios con tres o más suscripciones registradas.<br>Conversión Premium de al menos el 12% entre usuarios activos que alcancen el límite gratuito, durante los primeros seis meses.<br>NPS superior a 40 al cierre del primer semestre de uso del producto.<br>Estos umbrales son metas propuestas; todavía no se han medido.</td>
-    </tr>
-    <tr>
-      <td colspan="3"><b>3. Usuarios y clientes</b></td>
-      <td colspan="3"><b>4. Beneficios del usuario</b></td>
-    </tr>
-    <tr>
-      <td colspan="3">El segmento primario son estudiantes de universidades privadas de Lima, de 18 a 25 años, con al menos tres suscripciones activas. El secundario son profesionales de Lima, de 25 a 32 años, con suscripciones en soles y dólares. Ambos necesitan seguir sus renovaciones y gastos; quienes contraten Premium serían los clientes de pago.</td>
-      <td colspan="3">Conocer cuánto dinero comprometen sus suscripciones y cuándo se renuevan.<br>Recibir avisos antes del cobro para decidir con tiempo.<br>Comparar los importes en soles, conservando la moneda original.<br>Reconocer el gasto acumulado de delivery y contrastarlo con su presupuesto.</td>
-    </tr>
-    <tr>
-      <td colspan="2"><b>6. Hipótesis</b></td>
-      <td colspan="2"><b>7. ¿Qué es lo más importante que necesitamos aprender primero?</b></td>
-      <td colspan="2"><b>8. ¿Cuál es la menor cantidad de trabajo que necesitamos hacer para aprenderlo?</b></td>
-    </tr>
-    <tr>
-      <td colspan="2">Un Dashboard claro ayudará a los estudiantes a comprender sus compromisos y volver a consultar la aplicación (H1).<br>Los recordatorios previos ayudarán a reducir los cargos que los usuarios no anticipan (H2).<br>La conversión comprensible a soles motivará a los profesionales a consultar sus importes con regularidad (H3).<br>El resumen de delivery ayudará a ambos segmentos a seguir su presupuesto mensual (H4).<br>Los beneficios de Premium motivarán a usuarios comprometidos a contratar el plan (H5).</td>
-      <td colspan="2">Primero debemos comprobar si un estudiante puede registrar su primera suscripción sin ayuda y comprender su importe y próxima renovación. Es un supuesto previo a H1: el Dashboard solo ofrece valor si el usuario incorpora sus datos. Esta prueba inicial evalúa comprensión y esfuerzo; la retención y la disposición a pagar requieren pruebas posteriores.</td>
-      <td colspan="2">Probar un prototipo navegable de Figma con cinco estudiantes del segmento primario que tengan tres o más suscripciones. Cada uno registrará una y explicará el importe original, la estimación en soles y la próxima renovación. Mediremos tiempo, ayuda, errores y abandono. Como criterio exploratorio, al menos cuatro de cinco deberán completar la tarea en cinco minutos o menos sin ayuda y explicar los tres datos. Si no se cumple, ajustaremos el flujo y repetiremos. No se requieren backend ni pagos reales.</td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- pdf:omit-start -->
 
 *Fuente: elaboración del equipo Gastify, adaptada del Lean UX Canvas de Jeff Gothelf [@gothelf2021canvas].*
 
-<!-- pdf:omit-end -->
+*Tabla 10. Bloques del Lean UX Canvas de CraveWallet.*
+
+| Bloque | Contenido |
+| --- | --- |
+| 1. Problema de negocio | Las seis entrevistas registradas describen dificultades para recordar renovaciones, interpretar cargos en dólares y seguir el gasto de delivery. La información se encuentra repartida entre servicios, fechas y monedas. CraveWallet busca reunirla para que el usuario conozca sus compromisos antes del cobro. El riesgo inicial es que registrar manualmente sus suscripciones exija tanto esfuerzo que abandone antes de descubrir ese valor. |
+| 2. Resultados comerciales | Retención a 30 días superior al 45% entre usuarios con tres o más suscripciones registradas.<br>Conversión Premium de al menos el 12% entre usuarios activos que alcancen el límite gratuito, durante los primeros seis meses.<br>NPS superior a 40 al cierre del primer semestre de uso del producto.<br>Estos umbrales son metas propuestas; todavía no se han medido. |
+| 3. Usuarios y clientes | El segmento primario son estudiantes de universidades privadas de Lima, de 18 a 25 años, con al menos tres suscripciones activas. El secundario son profesionales de Lima, de 25 a 32 años, con suscripciones en soles y dólares. Ambos necesitan seguir sus renovaciones y gastos; quienes contraten Premium serían los clientes de pago. |
+| 4. Beneficios del usuario | Conocer cuánto dinero comprometen sus suscripciones y cuándo se renuevan.<br>Recibir avisos antes del cobro para decidir con tiempo.<br>Comparar los importes en soles, conservando la moneda original.<br>Reconocer el gasto acumulado de delivery y contrastarlo con su presupuesto. |
+| 5. Ideas de soluciones | Ingreso progresivo: registrar una suscripción y mostrar de inmediato su resumen.<br>Dashboard de importes y próximas renovaciones.<br>Recordatorios en el calendario nativo, 24 horas antes del cobro.<br>Conversión estimada USD/PEN con fecha de actualización.<br>Registro de delivery y presupuesto mensual.<br>Plan Premium con analítica y registros ilimitados. |
+| 6. Hipótesis | Un Dashboard claro ayudará a los estudiantes a comprender sus compromisos y volver a consultar la aplicación (H1).<br>Los recordatorios previos ayudarán a reducir los cargos que los usuarios no anticipan (H2).<br>La conversión comprensible a soles motivará a los profesionales a consultar sus importes con regularidad (H3).<br>El resumen de delivery ayudará a ambos segmentos a seguir su presupuesto mensual (H4).<br>Los beneficios de Premium motivarán a usuarios comprometidos a contratar el plan (H5). |
+| 7. ¿Qué es lo más importante que necesitamos aprender primero? | Primero debemos comprobar si un estudiante puede registrar su primera suscripción sin ayuda y comprender su importe y próxima renovación. Es un supuesto previo a H1: el Dashboard solo ofrece valor si el usuario incorpora sus datos. Esta prueba inicial evalúa comprensión y esfuerzo; la retención y la disposición a pagar requieren pruebas posteriores. |
+| 8. ¿Cuál es la menor cantidad de trabajo que necesitamos hacer para aprenderlo? | Probar un prototipo navegable de Figma con cinco estudiantes del segmento primario que tengan tres o más suscripciones. Cada uno registrará una y explicará el importe original, la estimación en soles y la próxima renovación. Mediremos tiempo, ayuda, errores y abandono. Como criterio exploratorio, al menos cuatro de cinco deberán completar la tarea en cinco minutos o menos sin ayuda y explicar los tres datos. Si no se cumple, ajustaremos el flujo y repetiremos. No se requieren backend ni pagos reales. |
+
+*Fuente: elaboración del equipo Gastify, adaptada del Lean UX Canvas de Jeff Gothelf [@gothelf2021canvas].*
 
 El experimento del bloque 8 es una propuesta pendiente de ejecutar. El criterio de cuatro de cinco participantes sirve para orientar la siguiente iteración; no estima una tasa de éxito poblacional ni demuestra retención o conversión Premium. Se registrará el tiempo desde el inicio del formulario hasta el resumen y se conservarán las observaciones de cada sesión. El importe en soles será una estimación con fecha de actualización; los participantes podrán usar datos ficticios equivalentes a sus suscripciones.
 

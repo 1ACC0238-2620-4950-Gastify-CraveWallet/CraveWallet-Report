@@ -202,7 +202,7 @@ necesitas marcar estados en una tabla, escríbelos con palabras.
 
 ### Tablas
 
-Para las tablas ordinarias se usan tuberías. El Lean UX Canvas de `docs/chapter_1.md` utiliza una tabla HTML con `id="lean-ux-canvas"` y celdas combinadas (`colspan`), para conservar la distribución de sus ocho bloques en GitHub. `config/lean-canvas.lua` adapta únicamente ese canvas al PDF.
+Todas las tablas se escriben con tuberías de Markdown. El Lean UX Canvas de `docs/chapter_1.md` se presenta como imagen (`docs/images/chapter_1/lean-ux-canvas.png`, generada desde `docs/diagrams/chapter_1/lean-ux-canvas.html`) acompañada de una tabla Markdown con el contenido de sus ocho bloques.
 
 ```markdown
 | Versión | Fecha      | Autor |
@@ -216,7 +216,7 @@ cuadrícula tipo hoja de cálculo, importa desde CSV, y te devuelve el Markdown 
 formateado para pegar.
 
 > [!CAUTION]
-> No uses `<table>` de HTML para tablas ordinarias. La excepción es el Lean UX Canvas, convertido por su filtro específico. Al exportar, Pandoc descarta el marcado y conserva
+> No uses `<table>` de HTML. Al exportar, Pandoc descarta el marcado y conserva
 > solo el texto, así que la tabla se convierte en párrafos sueltos, sin estructura y
 > sin ningún mensaje de error. A `<div align="center">` le pasa lo mismo con el
 > centrado.
@@ -257,7 +257,7 @@ en una única celda gigante. El Student Outcome separa los criterios y dedica un
 fila a cada integrante; SMART utiliza un cuadro por persona. Esto permite paginar
 sin recortar las contribuciones.
 
-La compilación rechaza tablas HTML ordinarias para evitar que se pierda su estructura; permite el Lean UX Canvas identificado y convertido por su filtro específico.
+La compilación rechaza tablas HTML para evitar que se pierda su estructura.
 Las imágenes conservan su proporción y los identificadores de código admiten saltos
 de línea dentro de las celdas. El PDF se genera en `dist/`; revisa visualmente sus
 tablas, fotografías y diagramas antes de enviarlo.

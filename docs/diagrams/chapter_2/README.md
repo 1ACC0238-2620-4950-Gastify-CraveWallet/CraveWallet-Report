@@ -8,16 +8,16 @@ diagramas editables. El tablero representa el diseño propuesto del informe.
 
 | Figura | Contenido | Fuente colaborativa | Página de la copia local |
 | --- | --- | --- | --- |
-| 18 | A. Registrar una suscripción y preparar el aviso | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232310) | `message-flow-subscription` |
-| 19 | B. Registrar un gasto y comparar el presupuesto | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232311) | `message-flow-delivery` |
-| 20 | C. Activar o renovar Premium tras un pago confirmado | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232312) | `message-flow-premium-activation` |
-| 21 | D. Cancelar la renovación y volver a Free | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232313) | `message-flow-premium-cancellation` |
-| 22 | Bounded Context Canvas | Subscription Management | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232307) | `canvas-subscription` |
-| 23 | Bounded Context Canvas | Delivery Expense Management | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232308) | `canvas-delivery` |
-| 24 | Bounded Context Canvas | Premium & Billing | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232309) | `canvas-premium` |
-| 25 | CraveWallet | Context Map | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232314) | `context-map-revised` |
-| 26 | C4 | Contexto del sistema CraveWallet | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232315) | `system-context-revised` |
-| 27 | C4 | Contenedores de CraveWallet | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232316) | `containers-revised` |
+| 19 | A. Registrar una suscripción y preparar el aviso | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232310) | `message-flow-subscription` |
+| 20 | B. Registrar un gasto y comparar el presupuesto | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232311) | `message-flow-delivery` |
+| 21 | C. Activar o renovar Premium tras un pago confirmado | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232312) | `message-flow-premium-activation` |
+| 22 | D. Cancelar la renovación y volver a Free | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232313) | `message-flow-premium-cancellation` |
+| 23 | Bounded Context Canvas: Subscription Management | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232307) | `canvas-subscription` |
+| 24 | Bounded Context Canvas: Delivery Expense Management | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232308) | `canvas-delivery` |
+| 25 | Bounded Context Canvas: Premium & Billing | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232309) | `canvas-premium` |
+| 26 | CraveWallet: Context Map | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232314) | `context-map-revised` |
+| 27 | C4: Contexto del sistema CraveWallet | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232315) | `system-context-revised` |
+| 28 | C4: Contenedores de CraveWallet | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232316) | `containers-revised` |
 
 ## Referencias utilizadas
 

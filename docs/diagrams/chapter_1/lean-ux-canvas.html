@@ -1,0 +1,81 @@
+<!doctype html>
+<!-- Fuente editable de docs/images/chapter_1/lean-ux-canvas.png (Figura 2).
+     Regenerar: chrome --headless --hide-scrollbars --window-size=2400,1640
+     --screenshot=docs/images/chapter_1/lean-ux-canvas.png docs/diagrams/chapter_1/lean-ux-canvas.html -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Lean UX Canvas de CraveWallet</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 2400px; height: 1640px; background: #fff; color: #1f2933;
+         font-family: Arial, Helvetica, sans-serif; padding: 40px 48px; }
+  h1 { font-size: 40px; margin-bottom: 8px; }
+  .sub { font-size: 22px; color: #52606d; margin-bottom: 24px; }
+  .grid { display: grid; height: 1430px; border: 3px solid #3e4c59;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 1fr 1fr 1.15fr;
+          grid-template-areas: "b1 b5 b2" "b3 b5 b4" "b6 b7 b8"; }
+  .box { border: 1.5px solid #7b8794; padding: 22px 26px; overflow: hidden; }
+  .box h2 { font-size: 31px; margin-bottom: 14px; display: flex; gap: 12px; align-items: baseline; }
+  .n { display: inline-block; min-width: 40px; height: 40px; line-height: 40px; text-align: center;
+       border-radius: 50%; background: #3b4fd8; color: #fff; font-size: 23px; }
+  .q { font-size: 18px; color: #52606d; font-style: italic; margin-bottom: 12px; }
+  p, li { font-size: 26px; line-height: 1.4; }
+  ul { padding-left: 24px; } li { margin-bottom: 8px; }
+  .b1 { grid-area: b1; background: #fff7e6; } .b2 { grid-area: b2; background: #fff7e6; }
+  .b3 { grid-area: b3; background: #eef6ff; } .b4 { grid-area: b4; background: #eef6ff; }
+  .b5 { grid-area: b5; background: #f2fbf4; }
+  .b6 { grid-area: b6; background: #f6f1fd; } .b7 { grid-area: b7; background: #f6f1fd; }
+  .b8 { grid-area: b8; background: #f6f1fd; }
+  .foot { font-size: 18px; color: #7b8794; margin-top: 12px; }
+</style>
+</head>
+<body>
+<h1>Lean UX Canvas | CraveWallet</h1>
+<div class="sub">Equipo Gastify · Propuesta para validar; los umbrales son metas aún no medidas.</div>
+<div class="grid">
+  <div class="box b1"><h2><span class="n">1</span>Problema de negocio</h2>
+    <p>Las seis entrevistas describen dificultades para recordar renovaciones, interpretar cargos en dólares y seguir el gasto de delivery. La información está repartida entre servicios, fechas y monedas. CraveWallet busca reunirla para que el usuario conozca sus compromisos antes del cobro. Riesgo inicial: que el registro manual exija tanto esfuerzo que el usuario abandone antes de descubrir ese valor.</p></div>
+  <div class="box b5"><h2><span class="n">5</span>Ideas de soluciones</h2>
+    <ul>
+      <li>Ingreso progresivo: registrar una suscripción y mostrar de inmediato su resumen.</li>
+      <li>Dashboard de importes y próximas renovaciones.</li>
+      <li>Recordatorios en el calendario nativo, 24 horas antes del cobro.</li>
+      <li>Conversión estimada USD/PEN con fecha de actualización.</li>
+      <li>Registro de delivery y presupuesto mensual.</li>
+      <li>Plan Premium con analítica y registros ilimitados.</li>
+    </ul></div>
+  <div class="box b2"><h2><span class="n">2</span>Resultados comerciales</h2>
+    <ul>
+      <li>Retención a 30 días superior al 45 % entre usuarios con tres o más suscripciones registradas.</li>
+      <li>Conversión Premium de al menos 12 % entre usuarios activos que alcancen el límite gratuito, en los primeros seis meses.</li>
+      <li>NPS superior a 40 al cierre del primer semestre de uso.</li>
+    </ul></div>
+  <div class="box b3"><h2><span class="n">3</span>Usuarios y clientes</h2>
+    <p><b>Primario:</b> estudiantes de universidades privadas de Lima, de 18 a 25 años, con al menos tres suscripciones activas.</p>
+    <p style="margin-top:10px"><b>Secundario:</b> profesionales de Lima, de 25 a 32 años, con suscripciones en soles y dólares.</p>
+    <p style="margin-top:10px">Quienes contraten Premium serían los clientes de pago.</p></div>
+  <div class="box b4"><h2><span class="n">4</span>Beneficios del usuario</h2>
+    <ul>
+      <li>Conocer cuánto comprometen sus suscripciones y cuándo se renuevan.</li>
+      <li>Recibir avisos antes del cobro para decidir con tiempo.</li>
+      <li>Comparar importes en soles, conservando la moneda original.</li>
+      <li>Reconocer el gasto acumulado de delivery frente a su presupuesto.</li>
+    </ul></div>
+  <div class="box b6"><h2><span class="n">6</span>Hipótesis</h2>
+    <ul>
+      <li><b>H1</b> Un Dashboard claro ayudará a los estudiantes a comprender sus compromisos y volver a la aplicación.</li>
+      <li><b>H2</b> Los recordatorios previos reducirán los cargos no anticipados.</li>
+      <li><b>H3</b> La conversión a soles motivará a los profesionales a consultar sus importes.</li>
+      <li><b>H4</b> El resumen de delivery ayudará a seguir el presupuesto mensual.</li>
+      <li><b>H5</b> Los beneficios Premium motivarán a usuarios comprometidos a contratar el plan.</li>
+    </ul></div>
+  <div class="box b7"><h2><span class="n">7</span>¿Qué necesitamos aprender primero?</h2>
+    <p>Si un estudiante puede registrar su primera suscripción sin ayuda y comprender su importe y su próxima renovación. Es un supuesto previo a H1: el Dashboard solo aporta valor si el usuario incorpora sus datos. Retención y disposición a pagar requieren pruebas posteriores.</p></div>
+  <div class="box b8"><h2><span class="n">8</span>¿Cuál es el menor trabajo para aprenderlo?</h2>
+    <p>Prototipo navegable en Figma con cinco estudiantes del segmento primario con tres o más suscripciones. Cada uno registra una y explica importe original, estimación en soles y próxima renovación. Se mide tiempo, ayuda, errores y abandono. Criterio exploratorio: cuatro de cinco completan la tarea en cinco minutos o menos sin ayuda. Sin backend ni pagos reales.</p></div>
+</div>
+<div class="foot">Gastify. Adaptación del Lean UX Canvas de Jeff Gothelf (2021): https://jeffgothelf.com/blog/how-to-use-the-lean-ux-canvas/</div>
+</body>
+</html>
