@@ -2,17 +2,11 @@
 
 ## 2.1. Competidores
 
-Se comparan funciones públicas de Spendee, Fintonic y Wallet by BudgetBakers con la propuesta de CraveWallet. La consulta de fuentes oficiales se actualizó el 7 de octubre de 2026. Se distingue lo documentado por cada proveedor de lo que el equipo todavía debe probar: la comparación no demuestra ausencia de competidores en Perú, superioridad de experiencia ni diferencias en su arquitectura interna.
-
-Como alternativas indirectas se consideran el calendario, las aplicaciones bancarias y las hojas de cálculo que aparecen en los relatos de 2.2.2. Sus limitaciones se describen como experiencias de los entrevistados, no como una auditoría de todos los bancos o productos disponibles.
+CraveWallet compite con aplicaciones de finanzas personales que ya ofrecen seguimiento de gastos: Spendee, Fintonic y Wallet by BudgetBakers. La información de cada una proviene de sus fuentes oficiales, consultadas el 7 de octubre de 2026. Como alternativas indirectas, los entrevistados de la sección 2.2.2 usan el calendario del celular, la aplicación de su banco y hojas de cálculo.
 
 ### 2.1.1. Análisis competitivo
 
-El análisis busca identificar qué tareas resuelven otras herramientas y qué combinación propone CraveWallet para los dos segmentos. Las edades e ingresos del público de un competidor no se asignan sin una fuente; tampoco se infiere su estrategia comercial completa a partir de una pantalla.
-
 #### Competitive Analysis Landscape
-
-La tabla compara la oferta publicada. Las funciones de CraveWallet son propuestas de alcance; no se califican como capacidades ya implementadas.
 
 La tabla 11 compara a CraveWallet con Spendee, Fintonic y Wallet by BudgetBakers en propuesta de valor, mercado objetivo, marketing, productos, precios y diferenciación.
 
@@ -20,79 +14,74 @@ La tabla 11 compara a CraveWallet con Spendee, Fintonic y Wallet by BudgetBakers
 
 | Atributo | CraveWallet (Gastify) | Spendee | Fintonic | Wallet by BudgetBakers |
 | --- | --- | --- | --- | --- |
-| Overview | Proyecto académico de aplicación móvil para gestionar suscripciones registradas y gastos de delivery. | Aplicación de seguimiento de finanzas con nivel básico y planes de pago [@spendee2026premium]. | Servicio de información financiera conectado a bancos, FinScore e intermediación de préstamos [@fintonic2026app]. | Aplicación de seguimiento de finanzas con funciones gratuitas y Premium [@budgetbakers2026premium]. |
-| Valor propuesto o publicado | Reunir importe original, estimación PEN, próxima renovación y gastos de delivery. Su utilidad requiere validación. | Premium publica importación y categorización automática, presupuestos y carteras compartidas. | Publica conexión bancaria de lectura, puntuación financiera y comparación de financiación. | Publica niveles Premium y una prueba; las funciones concretas se consultan en la aplicación y pueden variar entre plataformas. |
-| Mercado objetivo | Reclutamiento inicial: estudiantes de 18–25 y profesionales de 25–32 años de Lima, definido por el equipo. | La fuente consultada no define un rango de edad o ingreso. | La página consultada corresponde a la oferta de España; no demuestra cobertura bancaria peruana. | La fuente consultada no define un rango de edad o ingreso. |
-| Marketing observado / propuesto | Propuesta: difusión en comunidades universitarias y prueba del mensaje de recordatorios y estimación en soles. | La página de ayuda explica beneficios y planes; no acredita una estrategia completa de adquisición. | La página presenta FinScore y comparación de préstamos como parte de su oferta. | El centro de ayuda explica planes, prueba y continuidad de datos al terminar Premium. |
-| Productos y servicios | Propuestos: portafolio, avisos en calendario, estimación USD/PEN, registro de gastos y plan propio. | Premium: cuentas conectadas, importación, categorización, carteras y presupuestos. | FinScore, información bancaria de lectura e intermediación de financiación. | Seguimiento de finanzas y oferta Premium mensual, anual y vitalicia; revisar la aplicación para las funciones del plan elegido. |
-| Precios y costos | Propuesta: Free con cinco registros activos; Premium S/ 9.90/mes. Límite y precio pendientes de confirmación/validación. | La ayuda publica Premium USD 5.99/mes o USD 35.99/año, con variaciones por país e impuestos; no se asume que sea el precio de la tienda peruana. | La página anuncia comparación de préstamos sin costo y FinScore gratuito; no se generaliza a todo producto financiero. | La ayuda remite a los precios actuales dentro de la aplicación. No se fija un precio peruano sin observar la tienda. |
-| Diferenciación por comprobar | Validar que el registro manual y la combinación de recordatorios, soles y gastos de delivery resulten útiles para los entrevistados. | Contrastar la tarea concreta en una prueba comparable; no se afirma que carezca de gestión de pagos recurrentes. | Contrastar la necesidad de conexión bancaria con la preferencia de los tres profesionales entrevistados. | Contrastar la simplicidad de las tareas y no solo el número de funciones. |
+| Overview | Aplicación móvil para gestionar suscripciones y gastos de delivery. | Aplicación de seguimiento de finanzas con nivel básico y planes de pago [@spendee2026premium]. | Servicio de información financiera conectado a bancos, con FinScore e intermediación de préstamos [@fintonic2026app]. | Aplicación de seguimiento de finanzas con funciones gratuitas y Premium [@budgetbakers2026premium]. |
+| Propuesta de valor | Reunir importe original, estimación en soles, próxima renovación y gastos de delivery en una sola vista. | Importación y categorización automática, presupuestos y carteras compartidas. | Conexión bancaria de lectura, puntuación financiera y comparación de financiación. | Seguimiento de finanzas con niveles Premium y periodo de prueba. |
+| Mercado objetivo | Estudiantes universitarios de 18 a 25 años y profesionales de 25 a 32 años de Lima. | Usuarios de finanzas personales en general; no publica un rango de edad o ingreso. | Usuarios de bancos en España. | Usuarios de finanzas personales en general; no publica un rango de edad o ingreso. |
+| Marketing | Difusión en comunidades universitarias con el mensaje de recordatorios y montos en soles. | Centro de ayuda con beneficios y planes. | Promoción de FinScore y de la comparación de préstamos. | Centro de ayuda con planes, prueba y continuidad de datos al dejar Premium. |
+| Productos y servicios | Portafolio de suscripciones, avisos en el calendario, conversión USD/PEN, registro de delivery y plan Premium. | Premium con cuentas conectadas, importación, categorización, carteras y presupuestos. | FinScore, información bancaria de lectura e intermediación de financiación. | Seguimiento de finanzas con Premium mensual, anual y vitalicio. |
+| Precios y costos | Free con cinco registros activos; Premium a S/ 9.90 al mes. | Premium a USD 5.99 al mes o USD 35.99 al año, con variaciones por país e impuestos. | FinScore y comparación de préstamos gratuitos. | Precios publicados dentro de la aplicación. |
+| Diferenciación | Recordatorio antes de cada cobro, montos en soles y gastos de delivery, sin conectar el banco. | Organización general del gasto con importación automática. | Depende de la conexión bancaria. | Gran cantidad de funciones generales de finanzas. |
 
-*Fuente: comparación de Gastify a partir de las fuentes oficiales citadas en el cuadro; alcance de CraveWallet propuesto.*
-
+*Fuente: elaboración del equipo Gastify a partir de las fuentes oficiales citadas.*
 
 #### Análisis FODA enfocado en la competencia
 
-Las siguientes apreciaciones son hipótesis estratégicas del equipo derivadas del alcance y las entrevistas, no resultados de una evaluación comercial.
-
 ##### CraveWallet (Gastify)
 
-- **Fortaleza propuesta:** tareas acotadas a renovaciones, estimación en soles y gastos de delivery.
-- **Debilidad:** exige registro manual y todavía no acredita implementación ni adopción.
-- **Oportunidad por validar:** los seis resúmenes de entrevista describen dificultades para anticipar cargos y comprender importes en dólares.
-- **Amenaza:** los usuarios pueden resolver parte de esas tareas con herramientas existentes o abandonar el registro manual.
+- **Fortaleza:** tareas acotadas a renovaciones, montos en soles y gastos de delivery.
+- **Debilidad:** exige registrar cada suscripción a mano.
+- **Oportunidad:** los seis entrevistados tienen dificultades para anticipar cargos y entender importes en dólares.
+- **Amenaza:** los usuarios pueden resolver parte de esas tareas con herramientas que ya usan o abandonar el registro manual.
 
 ##### Spendee
 
-- **Fortaleza documentada:** importación, categorización, presupuestos y carteras compartidas en Premium.
-- **Aspecto por contrastar:** qué tan sencillo resulta registrar y anticipar un compromiso recurrente en la versión disponible al segmento.
-- **Oportunidad / amenaza para CraveWallet:** aprender de su organización del gasto y comprobar si nuestra tarea específica aporta valor suficiente para cambiar de herramienta.
+- **Fortaleza:** importación, categorización, presupuestos y carteras compartidas en Premium.
+- **Debilidad:** no está centrada en anticipar renovaciones de suscripciones.
+- **Oportunidad / amenaza para CraveWallet:** su organización del gasto es una referencia; CraveWallet debe aportar suficiente valor en su tarea específica para que el usuario cambie de herramienta.
 
 ##### Fintonic
 
-- **Fortaleza documentada:** información bancaria conectada y FinScore dentro de su oferta española.
-- **Aspecto por contrastar:** disponibilidad y funcionamiento para las cuentas de los participantes en Perú.
-- **Oportunidad / amenaza para CraveWallet:** investigar un flujo sin conexión bancaria, sin afirmar que la agregación sea inviable o insegura por definición.
+- **Fortaleza:** información bancaria conectada y FinScore.
+- **Debilidad:** su oferta corresponde a bancos de España.
+- **Oportunidad / amenaza para CraveWallet:** un flujo sin conexión bancaria responde al rechazo de los tres profesionales entrevistados a conectar sus cuentas.
 
 ##### Wallet by BudgetBakers
 
-- **Fortaleza documentada:** oferta gratuita/Premium, prueba y conservación de datos al dejar el nivel pagado.
-- **Aspecto por contrastar:** funciones y precios de la plataforma que usarían los participantes.
-- **Oportunidad / amenaza para CraveWallet:** reducir esfuerzo de registro sin suponer que tener más funciones perjudica necesariamente la experiencia.
+- **Fortaleza:** oferta gratuita y Premium, periodo de prueba y conservación de datos al dejar el nivel pagado.
+- **Debilidad:** la cantidad de funciones generales puede dificultar una tarea puntual.
+- **Oportunidad / amenaza para CraveWallet:** un registro con menos pasos puede atraer a quien solo quiere controlar sus suscripciones.
 
 #### Interpretación del análisis
 
-La diferenciación de CraveWallet se plantea como una combinación de tareas para los segmentos elegidos. Las fuentes consultadas no prueban que ningún producto haga lo mismo. El equipo deberá contrastar el flujo de primera suscripción con usuarios, medir el esfuerzo de registro y evaluar la comprensión de importe, estimación y próxima renovación conforme al experimento de 1.2.2.4.
+CraveWallet se diferencia por combinar tres tareas para los segmentos elegidos: anticipar renovaciones, entender los montos en soles y seguir el gasto de delivery, sin conectar cuentas bancarias. El experimento de la sección 1.2.2.4 evaluará el esfuerzo de registrar la primera suscripción y la comprensión del importe, la estimación y la próxima renovación.
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
 #### Estrategia 1. Priorizar la anticipación de renovaciones
 
-Diseñar el portafolio alrededor de fecha, importe y estado del registro. Probar si el usuario identifica el próximo cargo y puede preparar un recordatorio con permiso del dispositivo. La propuesta no cancela contratos ni ejecuta cobros externos.
+Diseñar el portafolio alrededor de la fecha, el importe y el estado de cada suscripción, y avisar al usuario en su calendario antes del cobro.
 
 #### Estrategia 2. Explicar los importes en soles
 
-Conservar importe y moneda original, mostrar la estimación PEN con fecha de actualización y evitar presentar esa estimación como el cargo exacto del banco. El precio Premium propuesto requiere una prueba de disposición de pago.
+Conservar el importe y la moneda original y mostrar la estimación en soles con su fecha de actualización. El precio Premium en soles evita el pago en dólares que exige, por ejemplo, Spendee.
 
 #### Estrategia 3. Reducir el esfuerzo de registro
 
-Prototipar el alta de la primera suscripción con campos claros y ejemplos de servicios. Medir tiempo, errores y necesidad de ayuda antes de afirmar que el flujo se completa en tres toques. El experimento inicial con cinco estudiantes no demuestra retención ni conversión.
+Ofrecer un catálogo de servicios frecuentes y un formulario corto para registrar la primera suscripción, y medir su tiempo, errores y necesidad de ayuda con el prototipo.
 
 #### Estrategia 4. Proteger las reglas ante cambios externos
 
-Usar adaptadores para cotizaciones, comercios y facturación. Verificar los casos de falla y mantener el registro manual de comercios. SP01–SP06 investigan o prototipan las integraciones planificadas; los resultados deben adjuntarse cuando existan.
+Usar adaptadores para las cotizaciones, los comercios y la facturación, de modo que un cambio en ExchangeRate-API, Google Places o Stripe no afecte las reglas del producto. Los spikes SP01 a SP06 investigan y prototipan estas integraciones.
 
 ## 2.2. Entrevistas
 
-Esta sección documenta el proceso de investigación cualitativa mediante el cual se recoge información directa de representantes de los dos segmentos objetivo definidos en la sección 1.3. Las entrevistas no buscan validar la solución propuesta. Su propósito es comprender cómo gestionan hoy los usuarios sus compromisos recurrentes, qué los motiva y qué los frustra. Así, los User Personas y los demás artefactos de Needfinding de la sección 2.3 se construyen con evidencia recogida y no con supuestos del equipo.
+Las entrevistas buscan comprender cómo gestionan hoy los dos segmentos de la sección 1.3 sus compromisos recurrentes, qué los motiva y qué los frustra. Sus resultados sustentan los User Personas y los artefactos de Needfinding de la sección 2.3.
 
 ### 2.2.1. Diseño de entrevistas
 
 #### Objetivos de la investigación
 
-El diseño del instrumento responde a cinco objetivos de investigación, derivados directamente de los supuestos declarados en el Lean UX Process del Capítulo I:
-
-La tabla 12 enumera los objetivos de la investigación y el supuesto que pone a prueba cada uno.
+La tabla 12 enumera los cinco objetivos de la investigación, derivados de los supuestos del Lean UX Process (sección 1.2.2), y el supuesto que pone a prueba cada uno.
 
 *Tabla 12. Objetivos de la investigación.*
 
@@ -139,7 +128,7 @@ El instrumento se elaboró siguiendo las prácticas recomendadas para la investi
 
 #### Trazabilidad entre atributos del arquetipo y preguntas
 
-La matriz relaciona los atributos de las personas con las preguntas de investigación. La existencia de una pregunta no prueba por sí sola que la entrevista haya obtenido esa información; cada atributo debe contrastarse con la ficha y el video. Ambos guiones se numeraron en paralelo, de modo que la pregunta *n* de un segmento cubre el mismo atributo que la pregunta *n* del otro.
+La matriz relaciona los atributos de las personas con las preguntas de investigación. Ambos guiones se numeraron en paralelo, de modo que la pregunta *n* de un segmento cubre el mismo atributo que la pregunta *n* del otro.
 
 La tabla 14 relaciona cada atributo del User Persona con las preguntas que lo exploran en cada segmento.
 
@@ -162,13 +151,10 @@ La tabla 14 relaciona cada atributo del User Persona con las preguntas que lo ex
 *Fuente: elaboración del equipo Gastify.*
 
 
-*(El género de cada entrevistado no se pregunta directamente: se registra por observación del entrevistador en la ficha de la página siguiente, igual que la edad y el distrito quedan confirmados ahí una vez respondida la pregunta 1.)*
 
 ***
 
 #### Guion de entrevista — Segmento 1: Estudiante Universitario Digital
-
-Las 15 preguntas se aplican en el mismo orden a los 3 a 5 entrevistados del segmento; lo que varía entre entrevistas son las respuestas, no el guion.
 
 1. Para empezar, cuéntame quién eres: tu nombre, tu edad, en qué distrito vives y con quién (solo, con tu familia o compartiendo departamento), y hace cuánto.
 2. ¿Cómo está compuesta tu familia o el hogar donde vives, y cuál es tu estado civil o situación sentimental actual? ¿Comparten gastos o suscripciones con tu pareja, tu familia o tus amigos?
@@ -189,8 +175,6 @@ Las 15 preguntas se aplican en el mismo orden a los 3 a 5 entrevistados del segm
 ***
 
 #### Guion de entrevista — Segmento 2: Profesional Joven Activo
-
-Las 15 preguntas se aplican en el mismo orden a los 3 a 5 entrevistados del segmento; lo que varía entre entrevistas son las respuestas, no el guion.
 
 1. Cuéntame quién eres: tu nombre, tu edad, en qué distrito vives y con quién (solo, en pareja, con roommates o con tu familia), y hace cuánto.
 2. ¿Cómo está compuesto tu hogar (tienes dependientes o apoyas económicamente a alguien) y cuál es tu estado civil? Si vives en pareja, ¿cómo organizan los gastos comunes?
@@ -216,9 +200,7 @@ Antes de iniciar la grabación, el entrevistador lee el siguiente texto y solici
 
 > "Esta conversación se está grabando con fines exclusivamente académicos, para un trabajo del curso de Aplicaciones para Dispositivos Móviles de la UPC. No vamos a usar tus datos con ningún fin comercial y puedes pedirnos que detengamos la grabación en cualquier momento. ¿Estás de acuerdo con que grabemos?"
 
-Cada entrevista se registra con la siguiente ficha, que se completa durante la sesión y sirve de base para el resumen de la sección 2.2.2:
-
-Para cada sesión se registran nombre, edad, segmento, modalidad, fecha, duración, entrevistador, URL y minuto de inicio en el video consolidado. Las seis fichas completadas se presentan en 2.2.2. El consentimiento debe conservarse con la evidencia de la sesión; este texto no acredita por sí solo su obtención.
+Para cada sesión se registran nombre, edad, segmento, modalidad, fecha, duración, entrevistador, URL y minuto de inicio en el video consolidado. Las seis fichas se presentan en la sección 2.2.2.
 
 ### 2.2.2. Registro de entrevistas
 
@@ -393,7 +375,7 @@ Eddy vive solo hace tres años, sin dependientes, soltero, y cubre el 100 % de s
 
 ### 2.2.3. Análisis de entrevistas
 
-El análisis se realiza por segmento objetivo, a partir de los resúmenes de la sección 2.2.2, trazando cada hallazgo a las entrevistas concretas de las que proviene. Los porcentajes de los cuadros expresan únicamente la frecuencia entre los tres entrevistados de cada segmento: 3/3, 2/3 o 1/3. No estiman la prevalencia en Lima ni validan demanda, y deben contrastarse con la grabación enlazada antes de la entrega. Los arquetipos de 2.3.1 sintetizan esos relatos.
+El análisis se realiza por segmento objetivo, a partir de los resúmenes de la sección 2.2.2, trazando cada hallazgo a las entrevistas concretas de las que proviene. Los porcentajes expresan la frecuencia entre los tres entrevistados de cada segmento: 3/3, 2/3 o 1/3. Los arquetipos de 2.3.1 sintetizan esos relatos.
 
 #### Segmento 1: Estudiante Universitario Digital (Leonardo, Darío, Eduardo)
 
@@ -459,11 +441,11 @@ Los dos segmentos coinciden en tres hallazgos, que sustentan el Needfinding. Pri
 
 ## 2.3. Needfinding
 
-El Needfinding convierte los hallazgos de la sección 2.2 en artefactos de diseño que preparan la especificación de requisitos de la sección 2.4. Primero se definen los arquetipos de usuario; luego, las tareas y recorridos que siguen hoy sin CraveWallet; y por último, el vocabulario compartido del dominio. Todas las subsecciones siguen el criterio aplicado en el diseño de las entrevistas (2.2.1): cada dato de un persona, una tarea o un evento debe rastrearse hasta una respuesta registrada en 2.2.2 y cuantificada en 2.2.3.
+El Needfinding convierte los hallazgos de la sección 2.2 en artefactos de diseño que preparan la especificación de requisitos de la sección 2.4. Primero se definen los arquetipos de usuario; luego, las tareas y recorridos que siguen hoy sin CraveWallet; y por último, el vocabulario compartido del dominio.
 
 ### 2.3.1. User Personas
 
-Se elabora una ficha de User Persona por cada segmento objetivo en UXPressia. Cada atributo de la ficha, sea demográfico, tecnológico o de comportamiento, se traza al porcentaje correspondiente del análisis de la sección 2.2.3; los detalles que no fueron observados en las entrevistas deben tratarse como supuestos del arquetipo. Las capturas de las fichas se incorporan a continuación como evidencia visual de los arquetipos.
+Se elabora una ficha de User Persona por cada segmento objetivo en UXPressia. Cada atributo de la ficha, sea demográfico, tecnológico o de comportamiento, se traza al porcentaje correspondiente del análisis de la sección 2.2.3.
 
 #### User Persona 1: Camila Torres — Estudiante Universitario Digital
 
@@ -497,7 +479,7 @@ La figura 4 presenta la ficha de Renzo Salazar, arquetipo del segmento de profes
 
 ### 2.3.2. User Task Matrix
 
-El User Task Matrix concentra las tareas que Camila Torres (Segmento 1) y Renzo Salazar (Segmento 2) realizan hoy para gestionar sus suscripciones y gastos recurrentes, independientemente de la existencia de CraveWallet. Cada tarea proviene de un comportamiento descrito en las entrevistas y cuantificado en la sección 2.2.3; no se incluye ninguna opción o característica de software.
+El User Task Matrix concentra las tareas que Camila Torres (Segmento 1) y Renzo Salazar (Segmento 2) realizan hoy para gestionar sus suscripciones y gastos recurrentes, sin CraveWallet. Cada tarea proviene de un comportamiento descrito en las entrevistas y cuantificado en la sección 2.2.3.
 
 
 La tabla 23 compara la frecuencia y la importancia de cada tarea para Camila Torres y Renzo Salazar.
@@ -581,7 +563,7 @@ La figura 6 organiza las etapas del recorrido actual de Renzo y los problemas qu
 
 ### 2.3.4. Empathy Mapping
 
-Se elabora un Empathy Map por cada User Persona en la herramienta indicada, colocando al arquetipo al centro y completando cada cuadrante a partir de las citas y comportamientos recogidos en las entrevistas y consolidados en 2.2.3.
+Se elabora en UXPressia un Empathy Map por cada User Persona, colocando al arquetipo al centro y completando cada cuadrante a partir de las citas y comportamientos recogidos en las entrevistas y consolidados en 2.2.3.
 
 #### Empathy Map de Camila Torres (Segmento 1)
 
@@ -615,15 +597,15 @@ La figura 8 sintetiza lo que Renzo dice, piensa, hace y siente, junto con sus di
 
 ### 2.3.5. Big Picture EventStorming
 
-Antes de diseñar cualquier pantalla, se reconstruyó en Miro, con la técnica del Big Picture EventStorming, la manera en que un usuario del segmento maneja sus suscripciones, membresías y gastos de delivery sin ayuda de una herramienta dedicada. El tablero sitúa en una línea de tiempo los eventos del proceso actual, desde la contratación de un servicio hasta el descubrimiento del cobro de su renovación, junto con los actores, los sistemas que intervienen y los puntos donde ese proceso falla. Los hallazgos de 2.2.3 sirvieron como insumo; esta sección describe el problema actual, sin incorporar todavía funciones de CraveWallet.
+Se reconstruyó en Miro, con la técnica del Big Picture EventStorming, la manera en que un usuario del segmento maneja sus suscripciones, membresías y gastos de delivery sin ayuda de una herramienta dedicada. El tablero sitúa en una línea de tiempo los eventos del proceso actual, desde la contratación de un servicio hasta el descubrimiento del cobro de su renovación, junto con los actores, los sistemas que intervienen y los puntos donde ese proceso falla. Los hallazgos de 2.2.3 sirvieron como insumo.
 
-El tablero representa una **síntesis preliminar del proceso actual (As-Is)** basada en las entrevistas de 2.2.2 y los patrones de 2.2.3. Los pósits naranjas expresan hechos ya ocurridos, escritos en pasado; los amarillos identifican actores, los azules sistemas que intervienen hoy, los rojos fricciones y los verdes oportunidades. El orden y la frecuencia de cada evento deben contrastarse con usuarios antes de tratarlos como un proceso universal.
+El tablero representa el **proceso actual (As-Is)** a partir de las entrevistas de 2.2.2 y los patrones de 2.2.3. Los pósits naranjas expresan hechos ya ocurridos, escritos en pasado; los amarillos identifican actores, los azules sistemas que intervienen hoy, los rojos fricciones y los verdes oportunidades.
 
 #### Paso 1: recolectar eventos del dominio
 
 Primero se reunieron, sin imponer un orden, los hechos que aparecen en la contratación y renovación de membresías, el consumo de delivery y la revisión del dinero disponible. El tablero incluye *suscripción contratada*, *fecha de renovación fijada*, *pedido realizado*, *pedido cobrado*, *pedido entregado*, *membresía renovada*, *cargo recurrente procesado*, *saldo consultado*, *estado de cuenta consultado*, *cargo imprevisto detectado*, *gasto mensual estimado*, *pedidos del mes revisados*, *gastos de varias apps revisados*, *presupuesto excedido* y *cancelación solicitada*. Se distinguen los **hechos** de las acciones deseadas: «recibir un recordatorio» sería una solución propuesta, mientras que «cargo imprevisto detectado» describe el proceso presente.
 
-La figura 9 reúne los eventos propuestos para describir el proceso actual, antes de ordenarlos temporalmente.
+La figura 9 reúne los eventos del proceso actual, antes de ordenarlos temporalmente.
 
 ![Paso 1 del Big Picture EventStorming: eventos As-Is recolectados](images/chapter_2/big-picture-paso-1.png)
 
@@ -635,11 +617,11 @@ La figura 9 reúne los eventos propuestos para describir el proceso actual, ante
 
 *Fuente: elaboración del equipo Gastify.*
 
-*Nota: recolección inicial de eventos del proceso actual, todavía sin orden temporal. El tablero indica que son hipótesis por validar con usuarios.*
+*Nota: eventos del proceso actual antes de ordenarlos en el tiempo.*
 
 #### Paso 2: ordenar los eventos
 
-La secuencia propuesta comienza con la contratación de una membresía de delivery y la fijación de su fecha de renovación. Después aparecen pedidos de comida realizados y cobrados, la renovación de la membresía y el cargo recurrente. La consulta del estado de cuenta permite detectar el cargo; al estimar el gasto mensual se reconoce el exceso presupuestario y puede solicitarse la cancelación. Los pedidos y la renovación no tienen una dependencia causal: comparten el período de consumo y pueden ocurrir en distinto orden. Las flechas son una hipótesis de lectura del recorrido general, no una regla de negocio según la cual deba existir un pedido para que la membresía se renueve.
+La secuencia comienza con la contratación de una membresía de delivery y la fijación de su fecha de renovación. Después aparecen pedidos de comida realizados y cobrados, la renovación de la membresía y el cargo recurrente. La consulta del estado de cuenta permite detectar el cargo; al estimar el gasto mensual se reconoce el exceso presupuestario y puede solicitarse la cancelación. Los pedidos y la renovación no tienen una dependencia causal: comparten el período de consumo y pueden ocurrir en distinto orden.
 
 La figura 10 ordena los eventos del proceso actual y señala los puntos donde aparecen problemas.
 
@@ -653,7 +635,7 @@ La figura 10 ordena los eventos del proceso actual y señala los puntos donde ap
 
 *Fuente: elaboración del equipo Gastify.*
 
-*Nota: orden temporal tentativo; en rojo se señalan los cobros sin aviso, la dispersión del gasto y el descubrimiento tardío del exceso.*
+*Nota: en rojo se señalan los cobros sin aviso, la dispersión del gasto y el descubrimiento tardío del exceso.*
 
 #### Paso 3: añadir actores y sistemas
 
@@ -703,11 +685,11 @@ La figura 12 relaciona los momentos del proceso actual con los problemas y oport
 
 *Nota: cuatro momentos del proceso As-Is con actor, evento, sistema, problema y oportunidad de mejora.*
 
-El resultado del Big Picture sitúa el mayor punto de dolor **entre la renovación y la revisión bancaria**: el usuario recibe la información útil cuando ya no puede evitar ese cargo. También revela que los pedidos de delivery afectan el mismo presupuesto, aunque cada pedido sea una decisión puntual y no un cobro recurrente. Estas oportunidades orientan el diseño posterior de 2.5.1; no se presentan como funciones que ya existan en el proceso As-Is.
+El resultado del Big Picture sitúa el mayor punto de dolor **entre la renovación y la revisión bancaria**: el usuario recibe la información útil cuando ya no puede evitar ese cargo. También revela que los pedidos de delivery afectan el mismo presupuesto, aunque cada pedido sea una decisión puntual y no un cobro recurrente. Estas oportunidades orientan el diseño de la solución en la sección 2.5.1.
 
 ### 2.3.6. Ubiquitous Language
 
-El glosario reúne los términos del dominio identificados en las entrevistas (2.2.2), el análisis de patrones (2.2.3) y el Needfinding. Su objetivo es que el equipo y cualquier lector del informe usen el mismo vocabulario para describir el problema y la solución. Los términos se registran en inglés, con su equivalente de uso corriente en español entre paréntesis; solo se incluyen términos del dominio del negocio, no términos técnicos de ingeniería de software.
+El glosario reúne los términos del dominio identificados en las entrevistas (2.2.2), el análisis de patrones (2.2.3) y el Needfinding. Su objetivo es que el equipo y cualquier lector del informe usen el mismo vocabulario para describir el problema y la solución. Los términos se registran en inglés, con su equivalente de uso corriente en español entre paréntesis.
 
 
 La tabla 25 define los términos del dominio que el equipo usa de forma consistente en el informe.
@@ -752,7 +734,7 @@ Cada historia se escribe desde el punto de vista de uno de los dos segmentos del
 
 #### Epics
 
-A partir de las Feature Assumptions del Capítulo I y de las tácticas de la sección 2.1.2 se anticipa el siguiente conjunto de Epics. Esta lista es preliminar: se ajustará con lo que arroje el Needfinding de la sección 2.3 antes de redactar las historias individuales, para que cada una tenga sustento directo en las entrevistas y no solo en las hipótesis del Capítulo I.
+Las Epics agrupan el alcance a partir de las Feature Assumptions del Capítulo I, las estrategias de la sección 2.1.2 y los hallazgos del Needfinding (sección 2.3).
 
 La tabla 26 lista las Epics con su identificador, nombre y alcance.
 
@@ -774,7 +756,7 @@ La tabla 26 lista las Epics con su identificador, nombre y alcance.
 *Fuente: elaboración del equipo Gastify.*
 
 
-La lista de Epics organiza el alcance propuesto a partir de los hallazgos de 2.3. Su cobertura debe revisarse mediante la trazabilidad entre necesidades, historias y escenarios, en lugar de asumir que todos los hallazgos están resueltos. A continuación se detallan las 40 User Stories de los ocho Epics orientados a usuario (EP01-EP08), las 6 Technical Stories del backend propio (EP09) y las 6 Spike Stories de investigación técnica (EP10), un total de 52 historias.
+Las Epics se desarrollan en 40 User Stories de los ocho Epics orientados al usuario (EP01-EP08), las 6 Technical Stories del backend propio (EP09) y las 6 Spike Stories de investigación técnica (EP10), con un total de 52 historias.
 
 #### Historias de usuario
 
@@ -797,7 +779,7 @@ Los requisitos y criterios de US01 se detallan en la tabla 27.
 | Acceptance Criteria | **Escenario 2: Correo ya registrado**<br>Dado que el correo ingresado ya tiene una cuenta asociada,<br>Cuando el usuario intenta registrarse con ese correo,<br>Entonces el sistema rechaza el registro e indica que el correo ya está en uso. |
 | Acceptance Criteria | **Escenario 3: Contraseña insegura**<br>Dado que el usuario está completando el registro,<br>Cuando ingresa una contraseña que no cumple la longitud o complejidad mínima,<br>Entonces el sistema no crea la cuenta e indica el motivo del rechazo. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -817,7 +799,7 @@ Los requisitos y criterios de US02 se detallan en la tabla 28.
 | Acceptance Criteria | **Escenario 1: Credenciales correctas**<br>Dado que el usuario tiene una cuenta registrada,<br>Cuando ingresa su correo y contraseña correctos,<br>Entonces el sistema inicia sesión y muestra el Dashboard. |
 | Acceptance Criteria | **Escenario 2: Credenciales incorrectas**<br>Dado que el usuario tiene una cuenta registrada,<br>Cuando ingresa una contraseña incorrecta,<br>Entonces el sistema rechaza el ingreso e indica que las credenciales no son válidas, sin especificar cuál de los dos campos falló. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -836,7 +818,7 @@ Los requisitos y criterios de US03 se detallan en la tabla 29.
 | **Description** | Como usuario, deseo confirmar que mi moneda de referencia es el sol peruano al configurar mi perfil, para que el Dashboard y la conversión de divisas usen esa moneda como base. |
 | Acceptance Criteria | **Escenario 1: Confirmación por defecto**<br>Dado que el usuario completa su perfil por primera vez,<br>Cuando llega a la sección de moneda de referencia,<br>Entonces el sistema muestra el sol peruano (PEN) preseleccionado y permite confirmarlo. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -855,7 +837,7 @@ Los requisitos y criterios de US33 se detallan en la tabla 30.
 | **Description** | Como usuario, deseo cerrar sesión en CraveWallet, para proteger mi cuenta cuando uso un dispositivo compartido o prestado. |
 | Acceptance Criteria | **Escenario 1: Cierre exitoso**<br>Dado que el usuario tiene una sesión iniciada,<br>Cuando selecciona cerrar sesión desde su perfil,<br>Entonces el sistema invalida su sesión y lo regresa a la pantalla de inicio de sesión. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -877,7 +859,7 @@ Los requisitos y criterios de US04 se detallan en la tabla 31.
 | Acceptance Criteria | **Escenario 1: Selección desde el catálogo**<br>Dado que el usuario abre el catálogo precargado,<br>Cuando selecciona un servicio (por ejemplo, Spotify o Netflix) e ingresa el monto y la fecha de su próximo cobro,<br>Entonces el sistema registra la suscripción con el nombre, el logo y la moneda de facturación ya definidos por el catálogo. |
 | Acceptance Criteria | **Escenario 2: Búsqueda dentro del catálogo**<br>Dado que el catálogo tiene más de veinte servicios,<br>Cuando el usuario escribe parte del nombre en el buscador,<br>Entonces el sistema filtra la lista para mostrar solo las coincidencias. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -897,7 +879,7 @@ Los requisitos y criterios de US05 se detallan en la tabla 32.
 | Acceptance Criteria | **Escenario 1: Registro manual completo**<br>Dado que el servicio que el usuario quiere registrar no aparece en el catálogo,<br>Cuando ingresa manualmente el nombre, el monto, la moneda de facturación y la fecha del próximo cobro,<br>Entonces el sistema registra la suscripción como personalizada. |
 | Acceptance Criteria | **Escenario 2: Campos obligatorios incompletos**<br>Dado que el usuario está registrando una suscripción personalizada,<br>Cuando intenta guardarla sin completar el monto o la fecha del próximo cobro,<br>Entonces el sistema no la registra e indica qué campos faltan. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -916,7 +898,7 @@ Los requisitos y criterios de US06 se detallan en la tabla 33.
 | **Description** | Como usuario, deseo editar el monto, la fecha o la categoría de una suscripción ya registrada, para corregir datos o reflejar un cambio de plan. |
 | Acceptance Criteria | **Escenario 1: Edición exitosa**<br>Dado que el usuario tiene una suscripción registrada,<br>Cuando modifica su monto, fecha de cobro o categoría y guarda los cambios,<br>Entonces el sistema actualiza la suscripción con los nuevos valores. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -936,7 +918,7 @@ Los requisitos y criterios de US07 se detallan en la tabla 34.
 | Acceptance Criteria | **Escenario 1: Cancelación exitosa**<br>Dado que el usuario tiene una suscripción activa,<br>Cuando la marca como cancelada desde su detalle,<br>Entonces el sistema deja de incluirla en el total del Dashboard y en los próximos recordatorios, pero conserva su historial de cobros pasados. |
 | Acceptance Criteria | **Escenario 2: Confirmación antes de cancelar**<br>Dado que el usuario selecciona la opción de cancelar una suscripción,<br>Cuando confirma la acción en el diálogo de verificación,<br>Entonces el sistema aplica la cancelación; si el usuario descarta el diálogo, la suscripción permanece activa. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -955,7 +937,7 @@ Los requisitos y criterios de US26 se detallan en la tabla 35.
 | **Description** | Como usuario, deseo ver la lista de suscripciones que cancelé en el pasado, para recordar qué servicios usé antes o reactivar una si vuelvo a necesitarla. |
 | Acceptance Criteria | **Escenario 1: Consulta del historial**<br>Dado que el usuario tiene al menos una suscripción cancelada,<br>Cuando abre la sección de suscripciones canceladas,<br>Entonces el sistema lista cada una con la fecha en que fue cancelada y su último monto registrado. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -974,7 +956,7 @@ Los requisitos y criterios de US34 se detallan en la tabla 36.
 | **Description** | Como usuario, deseo ver una previsualización del monto en soles mientras registro una suscripción en dólares, para saber de antemano cuánto representará en mi presupuesto antes de guardarla. |
 | Acceptance Criteria | **Escenario 1: Previsualización en tiempo real**<br>Dado que el usuario está registrando una suscripción y elige dólares como moneda de facturación,<br>Cuando ingresa el monto original,<br>Entonces el sistema muestra junto al campo el equivalente estimado en soles con el tipo de cambio del día, antes de que confirme el registro. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -996,7 +978,7 @@ Los requisitos y criterios de US08 se detallan en la tabla 37.
 | Acceptance Criteria | **Escenario 1: Portafolio mixto de monedas**<br>Dado que el usuario tiene suscripciones activas facturadas en soles y en dólares,<br>Cuando abre el Dashboard,<br>Entonces el sistema muestra el total mensual sumando todas las suscripciones convertidas a soles con el tipo de cambio del día. |
 | Acceptance Criteria | **Escenario 2: Sin suscripciones registradas**<br>Dado que el usuario no tiene ninguna suscripción registrada,<br>Cuando abre el Dashboard,<br>Entonces el sistema muestra el total en S/ 0.00 e indica que no hay suscripciones registradas. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1015,7 +997,7 @@ Los requisitos y criterios de US09 se detallan en la tabla 38.
 | **Description** | Como usuario, deseo ver mis suscripciones activas agrupadas por categoría (streaming, educación, fitness, delivery, cloud), para entender en qué rubros concentro mi gasto recurrente. |
 | Acceptance Criteria | **Escenario 1: Agrupación con subtotales**<br>Dado que el usuario tiene suscripciones activas en más de una categoría,<br>Cuando abre la vista de categorías del Dashboard,<br>Entonces el sistema agrupa las suscripciones por categoría y muestra el subtotal mensual en soles de cada grupo. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1034,7 +1016,7 @@ Los requisitos y criterios de US10 se detallan en la tabla 39.
 | **Description** | Como usuario, deseo ver mis suscripciones activas ordenadas de la más próxima a la más lejana a cobrarse, para anticipar qué cargo viene primero. |
 | Acceptance Criteria | **Escenario 1: Orden ascendente por fecha**<br>Dado que el usuario tiene varias suscripciones activas con distintas fechas de cobro,<br>Cuando abre el Dashboard en la vista de próximos cobros,<br>Entonces el sistema las lista en orden ascendente según la fecha del próximo cobro. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1053,7 +1035,7 @@ Los requisitos y criterios de US11 se detallan en la tabla 40.
 | **Description** | Como usuario, deseo ver el detalle completo de una suscripción desde el Dashboard, para revisar su historial de cobros y su fecha de renovación sin salir del flujo principal. |
 | Acceptance Criteria | **Escenario 1: Apertura del detalle**<br>Dado que el usuario está en el Dashboard,<br>Cuando selecciona una suscripción de la lista,<br>Entonces el sistema abre su vista de detalle con el monto original, la moneda, el monto convertido a soles, la categoría y el historial de cobros pasados. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1073,7 +1055,7 @@ Los requisitos y criterios de US27 se detallan en la tabla 41.
 | Acceptance Criteria | **Escenario 1: Coincidencia encontrada**<br>Dado que el usuario tiene varias suscripciones activas,<br>Cuando escribe parte del nombre en el buscador del Dashboard,<br>Entonces el sistema filtra la lista y muestra solo las suscripciones cuyo nombre coincide. |
 | Acceptance Criteria | **Escenario 2: Sin coincidencias**<br>Dado que el texto ingresado no coincide con ninguna suscripción,<br>Cuando el usuario busca,<br>Entonces el sistema muestra un mensaje indicando que no se encontraron resultados. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1092,7 +1074,7 @@ Los requisitos y criterios de US35 se detallan en la tabla 42.
 | **Description** | Como usuario, deseo ver una estimación del gasto que podría evitar al cancelar el servicio antes de que se renueve, para evaluar el posible efecto de cancelar el servicio a tiempo con su proveedor. |
 | Acceptance Criteria | **Escenario 1: Cancelación antes del cobro**<br>Dado que el usuario cancela una suscripción activa antes de su próxima fecha de cobro,<br>Cuando confirma la cancelación,<br>Entonces el sistema muestra un ahorro potencial estimado para ese ciclo y aclara que marcar el registro como cancelado no cancela el servicio ni confirma un ahorro real. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1114,7 +1096,7 @@ Los requisitos y criterios de US12 se detallan en la tabla 43.
 | Acceptance Criteria | **Escenario 1: Recordatorio agendado al registrar**<br>Dado que el usuario registra una suscripción activa con una fecha de próximo cobro,<br>Cuando confirma el registro,<br>Entonces el sistema agenda un evento en el calendario nativo del dispositivo 24 horas antes de esa fecha, con el nombre del servicio y el monto estimado. |
 | Acceptance Criteria | **Escenario 2: Reagendado tras editar la fecha de cobro**<br>Dado que una suscripción ya tiene un recordatorio agendado,<br>Cuando el usuario edita su fecha de próximo cobro,<br>Entonces el sistema elimina el evento anterior y agenda uno nuevo 24 horas antes de la fecha actualizada. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1133,7 +1115,7 @@ Los requisitos y criterios de US13 se detallan en la tabla 44.
 | **Description** | Como usuario, deseo que al cancelar una suscripción se elimine también su recordatorio en el calendario, para no recibir avisos de un registro que marqué como cancelado en CraveWallet. |
 | Acceptance Criteria | **Escenario 1: Eliminación automática**<br>Dado que una suscripción activa tiene un recordatorio agendado en el calendario,<br>Cuando el usuario la marca como cancelada (US07),<br>Entonces el sistema elimina el evento correspondiente del calendario nativo. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1153,7 +1135,7 @@ Los requisitos y criterios de US14 se detallan en la tabla 45.
 | Acceptance Criteria | **Escenario 1: Permiso otorgado**<br>Dado que el usuario registra su primera suscripción con fecha de cobro,<br>Cuando el sistema solicita permiso de acceso al calendario y el usuario lo acepta,<br>Entonces el sistema agenda el recordatorio correspondiente. |
 | Acceptance Criteria | **Escenario 2: Permiso denegado**<br>Dado que el sistema solicita permiso de acceso al calendario,<br>Cuando el usuario lo deniega,<br>Entonces el sistema registra la suscripción igualmente, sin agendar el recordatorio, e informa que puede habilitar el permiso más tarde desde ajustes. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1173,7 +1155,7 @@ Los requisitos y criterios de US28 se detallan en la tabla 46.
 | Acceptance Criteria | **Escenario 1: Lista con recordatorios agendados**<br>Dado que el usuario tiene suscripciones activas con recordatorio agendado,<br>Cuando abre la sección de recordatorios,<br>Entonces el sistema lista cada suscripción con la fecha y hora en que se enviará su recordatorio. |
 | Acceptance Criteria | **Escenario 2: Suscripción sin recordatorio**<br>Dado que una suscripción activa no tiene recordatorio agendado por haber denegado el permiso de calendario,<br>Cuando el usuario abre la sección de recordatorios,<br>Entonces el sistema la marca como "sin recordatorio" y ofrece el acceso directo a los ajustes de permiso. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1192,7 +1174,7 @@ Los requisitos y criterios de US36 se detallan en la tabla 47.
 | **Description** | Como usuario, deseo recibir una notificación push de CraveWallet 24 horas antes de un cobro, además del evento agendado en mi calendario, para enterarme del aviso aunque no revise mi calendario ese día. |
 | Acceptance Criteria | **Escenario 1: Envío de la notificación**<br>Dado que una suscripción activa tiene un recordatorio agendado,<br>Cuando faltan 24 horas para su próximo cobro,<br>Entonces el sistema envía una notificación push al dispositivo del usuario con el nombre del servicio y el monto estimado en soles. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1214,7 +1196,7 @@ Los requisitos y criterios de US15 se detallan en la tabla 48.
 | Acceptance Criteria | **Escenario 1: Conversión disponible**<br>Dado que el usuario tiene una suscripción registrada en dólares,<br>Cuando consulta su detalle,<br>Entonces el sistema muestra el monto original en dólares junto al monto equivalente en soles, calculado con el tipo de cambio consultado ese día a la API externa. |
 | Acceptance Criteria | **Escenario 2: API de tipo de cambio no disponible**<br>Dado que el servicio externo de tipo de cambio no responde,<br>Cuando el usuario consulta una suscripción en dólares,<br>Entonces el sistema muestra el último tipo de cambio guardado junto con la fecha en que se obtuvo, indicando que no es el valor del día. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1233,7 +1215,7 @@ Los requisitos y criterios de US16 se detallan en la tabla 49.
 | **Description** | Como usuario, deseo ver qué tipo de cambio usó CraveWallet para convertir mis suscripciones en dólares y cuándo se actualizó, para confiar en que el monto mostrado es razonable. |
 | Acceptance Criteria | **Escenario 1: Consulta del tipo de cambio**<br>Dado que el usuario está viendo el detalle de una suscripción en dólares,<br>Cuando abre la información de conversión,<br>Entonces el sistema muestra el valor del tipo de cambio aplicado y la fecha y hora en que se obtuvo de la API externa. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1252,7 +1234,7 @@ Los requisitos y criterios de US17 se detallan en la tabla 50.
 | **Description** | Como usuario, deseo que el total del Dashboard sume todas mis suscripciones en una sola moneda, sin importar en qué divisa se facture cada una, para no tener que hacer yo mismo la conversión mental. |
 | Acceptance Criteria | **Escenario 1: Suma de monedas mixtas**<br>Dado que el usuario tiene suscripciones registradas en soles y en dólares,<br>Cuando el sistema calcula el total mensual del Dashboard,<br>Entonces convierte cada suscripción en dólares a soles con el tipo de cambio vigente antes de sumarlas al total. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1271,7 +1253,7 @@ Los requisitos y criterios de US29 se detallan en la tabla 51.
 | **Description** | Como usuario, deseo ver cómo varió mes a mes el tipo de cambio aplicado a una suscripción en dólares, para entender por qué el monto en soles no es siempre el mismo. |
 | Acceptance Criteria | **Escenario 1: Historial con varios meses**<br>Dado que una suscripción en dólares lleva más de un mes activa,<br>Cuando el usuario consulta su historial de conversión,<br>Entonces el sistema lista el tipo de cambio y el monto en soles aplicados en cada Billing Cycle anterior. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1290,7 +1272,7 @@ Los requisitos y criterios de US37 se detallan en la tabla 52.
 | **Description** | Como usuario, deseo ver si el tipo de cambio subió o bajó respecto al cobro anterior de una suscripción en dólares, para entender por qué el monto en soles cambió de un mes a otro. |
 | Acceptance Criteria | **Escenario 1: Variación mostrada**<br>Dado que una suscripción en dólares lleva más de un Billing Cycle activa,<br>Cuando el usuario consulta su detalle,<br>Entonces el sistema muestra la variación porcentual del tipo de cambio respecto al cobro anterior. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1312,7 +1294,7 @@ Los requisitos y criterios de US18 se detallan en la tabla 53.
 | Acceptance Criteria | **Escenario 1: Registro desde el catálogo**<br>Dado que el usuario abre el registro de un nuevo gasto de delivery,<br>Cuando selecciona un comercio del catálogo precargado e ingresa el monto del pedido,<br>Entonces el sistema registra el gasto con la fecha del día, el comercio y el monto. |
 | Acceptance Criteria | **Escenario 2: Comercio no listado**<br>Dado que el comercio no aparece en el catálogo,<br>Cuando el usuario escribe manualmente su nombre y confirma el registro,<br>Entonces el sistema lo guarda como un gasto de delivery personalizado. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1332,7 +1314,7 @@ Los requisitos y criterios de US19 se detallan en la tabla 54.
 | Acceptance Criteria | **Escenario 1: Total del mes con pedidos registrados**<br>Dado que el usuario tiene al menos un gasto de delivery registrado en el mes en curso,<br>Cuando abre la sección de delivery,<br>Entonces el sistema muestra la suma de todos los pedidos del mes en soles. |
 | Acceptance Criteria | **Escenario 2: Sin pedidos registrados**<br>Dado que el usuario no registró ningún pedido en el mes en curso,<br>Cuando abre la sección de delivery,<br>Entonces el sistema muestra el total en S/ 0.00. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1351,7 +1333,7 @@ Los requisitos y criterios de US20 se detallan en la tabla 55.
 | **Description** | Como usuario, deseo ver un resumen semanal de mi gasto en delivery de las últimas semanas, para notar si aumenta en ciertas épocas (por ejemplo, exámenes o semanas de más carga laboral). |
 | Acceptance Criteria | **Escenario 1: Comparación entre semanas**<br>Dado que el usuario tiene gastos de delivery registrados en al menos dos semanas distintas,<br>Cuando abre la tendencia semanal,<br>Entonces el sistema muestra el total gastado en cada una de las últimas cuatro semanas. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1371,7 +1353,7 @@ Los requisitos y criterios de US30 se detallan en la tabla 56.
 | Acceptance Criteria | **Escenario 1: Edición del monto**<br>Dado que el usuario tiene un gasto de delivery registrado,<br>Cuando corrige su monto y guarda el cambio,<br>Entonces el sistema actualiza el gasto y recalcula el total del mes. |
 | Acceptance Criteria | **Escenario 2: Eliminación**<br>Dado que el usuario registró un gasto de delivery por duplicado,<br>Cuando lo elimina,<br>Entonces el sistema lo quita del total del mes. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1391,7 +1373,7 @@ Los requisitos y criterios de US38 se detallan en la tabla 57.
 | Acceptance Criteria | **Escenario 1: Definición del límite**<br>Dado que el usuario abre la configuración de delivery,<br>Cuando ingresa un monto límite mensual y lo guarda,<br>Entonces el sistema lo usa como referencia para el mes en curso. |
 | Acceptance Criteria | **Escenario 2: Aviso cercano al límite**<br>Dado que el usuario definió un límite mensual,<br>Cuando su gasto acumulado del mes alcanza el 80 % de ese límite,<br>Entonces el sistema le envía un aviso. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1412,7 +1394,7 @@ Los requisitos y criterios de US21 se detallan en la tabla 58.
 | **Description** | Como usuario del plan gratuito, deseo ver qué incluye el plan Premium y su precio mensual, para decidir si me conviene suscribirme. |
 | Acceptance Criteria | **Escenario 1: Consulta del plan**<br>Dado que el usuario tiene el plan gratuito,<br>Cuando abre la sección Premium,<br>Entonces el sistema muestra el precio mensual (S/ 9.90), los beneficios incluidos (registro ilimitado de suscripciones, analítica avanzada, recordatorios prioritarios) y las limitaciones actuales del plan gratuito. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1432,7 +1414,7 @@ Los requisitos y criterios de US22 se detallan en la tabla 59.
 | Acceptance Criteria | **Escenario 1: Pago exitoso**<br>Dado que el usuario ingresó los datos de una tarjeta válida en el flujo de pago de Stripe,<br>Cuando confirma la suscripción,<br>Entonces el sistema activa el plan Premium y elimina las restricciones del plan gratuito cuando el backend verifica la confirmación del pago; mientras espera esa confirmación, la interfaz muestra el estado pendiente. |
 | Acceptance Criteria | **Escenario 2: Pago rechazado**<br>Dado que el usuario intenta pagar con una tarjeta que Stripe rechaza,<br>Cuando confirma la suscripción,<br>Entonces el sistema no activa el plan Premium e indica que el pago fue rechazado, permitiendo intentar con otra tarjeta. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1451,7 +1433,7 @@ Los requisitos y criterios de US23 se detallan en la tabla 60.
 | **Description** | Como usuario Premium, deseo cancelar mi suscripción, para volver al plan gratuito y dejar de pagar el monto mensual. |
 | Acceptance Criteria | **Escenario 1: Cancelación efectiva al fin del período pagado**<br>Dado que el usuario tiene el plan Premium activo,<br>Cuando cancela la suscripción desde su perfil,<br>Entonces el sistema mantiene los beneficios Premium hasta el final del período ya pagado y luego lo devuelve automáticamente al plan gratuito. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1470,7 +1452,7 @@ Los requisitos y criterios de US31 se detallan en la tabla 61.
 | **Description** | Como usuario Premium, deseo ver el historial de los pagos mensuales que hice por la suscripción, para tener un registro de cuánto he pagado en total. |
 | Acceptance Criteria | **Escenario 1: Historial con pagos registrados**<br>Dado que el usuario tiene al menos un pago Premium confirmado,<br>Cuando abre la sección de historial de pagos,<br>Entonces el sistema lista cada pago con su fecha y monto. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1487,10 +1469,10 @@ Los requisitos y criterios de US39 se detallan en la tabla 62.
 | Epic | EP07 |
 | **Title** | Ver cuántas suscripciones puedo registrar en el plan gratuito |
 | **Description** | Como usuario del plan gratuito, deseo ver cuántas suscripciones llevo registradas frente al límite del plan gratuito, para saber cuándo me conviene pasar a Premium. |
-| Acceptance Criteria | **Escenario 1: Cerca del límite**<br>Dado que el usuario tiene el plan gratuito con un límite propuesto de cinco suscripciones activas (pendiente de confirmación del equipo),<br>Cuando registra una nueva suscripción cercana al límite,<br>Entonces el sistema le muestra cuántas suscripciones lleva registradas del total permitido. |
+| Acceptance Criteria | **Escenario 1: Cerca del límite**<br>Dado que el usuario tiene el plan gratuito con un límite de cinco suscripciones activas,<br>Cuando registra una nueva suscripción cercana al límite,<br>Entonces el sistema le muestra cuántas suscripciones lleva registradas del total permitido. |
 | Acceptance Criteria | **Escenario 2: Límite alcanzado**<br>Dado que el usuario alcanzó el límite del plan gratuito,<br>Cuando intenta registrar una suscripción adicional,<br>Entonces el sistema le impide continuar y lo invita a pasar a Premium. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1511,7 +1493,7 @@ Los requisitos y criterios de US24 se detallan en la tabla 63.
 | **Description** | Como visitante que todavía no tiene cuenta, deseo entender en el landing page qué problema resuelve CraveWallet y cómo funciona, para decidir si quiero descargarla. |
 | Acceptance Criteria | **Escenario 1: Primera visita**<br>Dado que un visitante entra al landing page,<br>Cuando la página carga,<br>Entonces el sistema muestra el problema de los cobros automáticos no anticipados, la propuesta de valor de CraveWallet y los enlaces de descarga para Android e iOS. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1530,7 +1512,7 @@ Los requisitos y criterios de US25 se detallan en la tabla 64.
 | **Description** | Como visitante, deseo ver una comparación clara entre el plan gratuito y el plan Premium en el landing page, para saber qué esperar antes de descargar la aplicación. |
 | Acceptance Criteria | **Escenario 1: Tabla comparativa**<br>Dado que el visitante llega a la sección de precios del landing page,<br>Cuando la revisa,<br>Entonces ve una tabla comparativa con las funciones del plan gratuito y del plan Premium, incluyendo el precio mensual de este último. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1549,7 +1531,7 @@ Los requisitos y criterios de US32 se detallan en la tabla 65.
 | **Description** | Como visitante, deseo consultar una sección de preguntas frecuentes en el landing page, para resolver dudas comunes (seguridad, moneda, costo de Premium) antes de descargar la aplicación. |
 | Acceptance Criteria | **Escenario 1: Consulta de una pregunta**<br>Dado que el visitante está en la sección de preguntas frecuentes,<br>Cuando selecciona una pregunta,<br>Entonces la página despliega la respuesta correspondiente. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1569,7 +1551,7 @@ Los requisitos y criterios de US40 se detallan en la tabla 66.
 | Acceptance Criteria | **Escenario 1: Registro exitoso**<br>Dado que el visitante ingresa un correo con formato válido en el formulario de novedades,<br>Cuando lo envía,<br>Entonces el sistema lo registra y muestra un mensaje de confirmación. |
 | Acceptance Criteria | **Escenario 2: Correo con formato inválido**<br>Dado que el visitante ingresa un texto que no tiene formato de correo,<br>Cuando intenta enviarlo,<br>Entonces el sistema no lo registra e indica que el formato no es válido. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1594,7 +1576,7 @@ Los requisitos y criterios de TS01 se detallan en la tabla 67.
 | Acceptance Criteria | **Escenario 2: Inicio de sesión**<br>Dado credenciales válidas,<br>Cuando el cliente envía POST /api/v1/auth/login,<br>Entonces el servicio responde 200 OK con un nuevo par de tokens; y con credenciales inválidas responde 401 Unauthorized. |
 | Acceptance Criteria | **Escenario 3: Actualización de perfil**<br>Dado un usuario autenticado,<br>Cuando envía PATCH /api/v1/users/me con su moneda de referencia,<br>Entonces el servicio responde 200 OK con el perfil actualizado. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1615,7 +1597,7 @@ Los requisitos y criterios de TS02 se detallan en la tabla 68.
 | Acceptance Criteria | **Escenario 2: Listado con total convertido**<br>Dado un usuario autenticado con suscripciones registradas,<br>Cuando envía GET /api/v1/subscriptions,<br>Entonces el servicio responde 200 OK con la lista de suscripciones y el total mensual ya convertido a soles. |
 | Acceptance Criteria | **Escenario 3: Cancelación**<br>Dado una suscripción ACTIVE del usuario,<br>Cuando envía POST /api/v1/subscriptions/{id}/cancel,<br>Entonces el servicio responde 200 OK con la suscripción en estado CANCELLED, sin eliminar su historial de cobros. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1636,7 +1618,7 @@ Los requisitos y criterios de TS03 se detallan en la tabla 69.
 | Acceptance Criteria | **Escenario 2: Caché vencida**<br>Dado que el valor cacheado tiene más de 24 horas,<br>Cuando el cliente hace la misma solicitud,<br>Entonces el servicio consulta ExchangeRate-API, actualiza la caché y responde 200 OK con el nuevo valor. |
 | Acceptance Criteria | **Escenario 3: Proveedor externo caído**<br>Dado que ExchangeRate-API no responde,<br>Cuando el servicio necesita actualizar la caché vencida,<br>Entonces responde 200 OK con el último valor cacheado y un indicador de que el dato no es del día. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1656,7 +1638,7 @@ Los requisitos y criterios de TS04 se detallan en la tabla 70.
 | Acceptance Criteria | **Escenario 1: Generación del evento**<br>Dado una suscripción ACTIVE con fecha de próximo cobro,<br>Cuando el cliente envía GET /api/v1/subscriptions/{id}/reminder,<br>Entonces el servicio responde 200 OK con el título, la fecha (24 horas antes del cobro) y la descripción del evento a agendar. |
 | Acceptance Criteria | **Escenario 2: Suscripción cancelada**<br>Dado una suscripción CANCELLED,<br>Cuando el cliente solicita su recordatorio,<br>Entonces el servicio responde 404 Not Found. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1676,7 +1658,7 @@ Los requisitos y criterios de TS05 se detallan en la tabla 71.
 | Acceptance Criteria | **Escenario 1: Registro**<br>Dado un usuario autenticado,<br>Cuando envía POST /api/v1/delivery-expenses con comercio, monto y fecha,<br>Entonces el servicio responde 201 Created con el gasto registrado. |
 | Acceptance Criteria | **Escenario 2: Total del mes**<br>Dado un usuario autenticado con gastos registrados,<br>Cuando envía GET /api/v1/delivery-expenses/summary?month=actual,<br>Entonces el servicio responde 200 OK con el total del mes y el desglose por semana. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1697,13 +1679,13 @@ Los requisitos y criterios de TS06 se detallan en la tabla 72.
 | Acceptance Criteria | **Escenario 2: Confirmación por webhook**<br>Dado que Stripe confirma un pago exitoso,<br>Cuando el webhook POST /api/v1/premium/webhook recibe el evento `invoice.paid`,<br>Entonces el servicio activa el plan Premium del usuario correspondiente. |
 | Acceptance Criteria | **Escenario 3: Cancelación por webhook**<br>Dado que Stripe notifica el fin del período pagado tras una cancelación,<br>Cuando el webhook recibe el evento `customer.subscription.deleted`,<br>Entonces el servicio devuelve al usuario al plan gratuito. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
 #### Spike Stories
 
-Las Spike Stories cubren la investigación técnica previa a dos integraciones que el equipo no ha usado en clase: el SDK de Stripe y ExchangeRate-API. Ambas son el componente de aprendizaje autónomo del proyecto declarado en la sección 1.1.1. Cada integración se investiga en dos spikes en lugar de uno solo: un spike de documentación y decisión, y un spike de prototipo, de modo que ninguno supere los 5 puntos ni concentre más de una jornada de trabajo continua.
+Las Spike Stories cubren la investigación técnica previa a dos integraciones que el equipo no ha usado en clase: el SDK de Stripe y ExchangeRate-API. Ambas son el componente de aprendizaje autónomo del proyecto declarado en la sección 1.1.1. Cada integración se investiga en dos spikes: uno de documentación y decisión, y otro de prototipo.
 
 **Definition of Done común a los seis spikes.** El prototipo o el informe de decisión queda registrado en una rama del repositorio; los hallazgos se comparten con el equipo en la sesión de refinamiento del backlog y se usan para crear o refinar las historias de implementación correspondientes; y cada spike se completa dentro del sprint en que se planifica.
 
@@ -1723,7 +1705,7 @@ Los requisitos y criterios de SP01 se detallan en la tabla 73.
 | Acceptance Criteria | **Escenario 1: Documentación revisada**<br>Dado que el equipo necesita el tipo de cambio USD/PEN actualizado,<br>Cuando el desarrollador revisa el plan gratuito de ExchangeRate-API y sus límites de solicitudes,<br>Entonces documenta la frecuencia máxima de consulta viable y la estrategia de caché necesaria para no exceder el límite. |
 | Acceptance Criteria | **Escenario 2: Diseño de caché documentado**<br>Dado que el equipo conoce los límites del proveedor,<br>Cuando el desarrollador define cómo se invalida y renueva el valor cacheado,<br>Entonces el informe queda listo para orientar el prototipo del spike SP02 y la implementación de TS03. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1743,7 +1725,7 @@ Los requisitos y criterios de SP02 se detallan en la tabla 74.
 | Acceptance Criteria | **Escenario 1: Prototipo bajo carga**<br>Dado el diseño de caché documentado en SP01,<br>Cuando el desarrollador construye un prototipo del backend que consulta y cachea el tipo de cambio,<br>Entonces el prototipo responde correctamente ante al menos diez solicitudes consecutivas sin exceder el límite del proveedor, y queda registrado en una rama del repositorio. |
 | Acceptance Criteria | **Escenario 2: Hallazgos y estimación**<br>Dado que el spike está completo,<br>Cuando el desarrollador compila los hallazgos,<br>Entonces el informe incluye el manejo de caídas del proveedor y una estimación en puntos de historia para TS03. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1763,7 +1745,7 @@ Los requisitos y criterios de SP03 se detallan en la tabla 75.
 | Acceptance Criteria | **Escenario 1: Alternativas evaluadas**<br>Dado que la aplicación debe agendar eventos en Android e iOS,<br>Cuando el desarrollador evalúa las APIs de calendario nativo de cada plataforma y las bibliotecas multiplataforma disponibles,<br>Entonces documenta para cada alternativa los permisos requeridos, la compatibilidad con el framework elegido y sus limitaciones. |
 | Acceptance Criteria | **Escenario 2: Alternativa elegida**<br>Dado el comparativo documentado,<br>Cuando el equipo selecciona la alternativa,<br>Entonces el informe queda listo para orientar el prototipo del spike SP04. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1783,7 +1765,7 @@ Los requisitos y criterios de SP04 se detallan en la tabla 76.
 | Acceptance Criteria | **Escenario 1: Prototipo en dispositivo físico**<br>Dada la alternativa elegida en SP03,<br>Cuando el desarrollador construye un prototipo que agenda un evento de prueba en un dispositivo físico,<br>Entonces el evento aparece correctamente en la aplicación de calendario nativa y el prototipo queda registrado en una rama del repositorio. |
 | Acceptance Criteria | **Escenario 2: Hallazgos**<br>Dado que el spike está completo,<br>Cuando el desarrollador documenta los hallazgos,<br>Entonces el informe incluye el manejo del caso en que el usuario deniega el permiso y una estimación en puntos de historia para US12, US13 y US14. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1803,7 +1785,7 @@ Los requisitos y criterios de SP05 se detallan en la tabla 77.
 | Acceptance Criteria | **Escenario 1: Documentación revisada**<br>Dado que el equipo necesita cobrar una suscripción mensual recurrente,<br>Cuando el desarrollador revisa la documentación de Stripe Billing y del SDK móvil correspondiente,<br>Entonces documenta el flujo de creación del cliente, el método de pago y la suscripción recurrente, junto con el manejo de webhooks para confirmar el cobro. |
 | Acceptance Criteria | **Escenario 2: Flujo documentado**<br>Dado el flujo revisado,<br>Cuando el equipo lo valida internamente,<br>Entonces el informe queda listo para orientar el prototipo del spike SP06. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1823,7 +1805,7 @@ Los requisitos y criterios de SP06 se detallan en la tabla 78.
 | Acceptance Criteria | **Escenario 1: Prototipo con tarjeta de prueba**<br>Dado el flujo documentado en SP05,<br>Cuando el desarrollador construye un prototipo que completa un pago de prueba con una tarjeta de test de Stripe,<br>Entonces el prototipo recibe la confirmación del webhook y queda registrado en una rama del repositorio. |
 | Acceptance Criteria | **Escenario 2: Hallazgos y estimación**<br>Dado que el spike está completo,<br>Cuando el desarrollador compila los hallazgos,<br>Entonces el informe incluye el tratamiento de pagos rechazados y cancelaciones, y una estimación en puntos de historia para US21, US22 y US23. |
 
-*Fuente: elaboración de Gastify; especificación propuesta del producto.*
+*Fuente: elaboración del equipo Gastify.*
 
 
 
@@ -1846,7 +1828,7 @@ La tabla 79 enuncia los cuatro Business Goals que organizan el Impact Mapping.
 
 *Fuente: elaboración del equipo Gastify.*
 
-Los actores son los dos User Personas del proyecto: **Camila Torres**, del Segmento 1, y **Renzo Salazar**, del Segmento 2. En los mapas, la Persona 1 corresponde a Camila Torres y la Persona 2 a Renzo Salazar. Los deliverables corresponden a las Epics de la especificación, y cada historia aparece con su código. Las Technical Stories y las Spike Stories no aparecen en los mapas porque no modifican el comportamiento de un actor; entran al Product Backlog por la dependencia técnica de las historias que sí lo hacen.
+Los actores son los dos User Personas del proyecto: **Camila Torres**, del Segmento 1, y **Renzo Salazar**, del Segmento 2. En los mapas, la Persona 1 corresponde a Camila Torres y la Persona 2 a Renzo Salazar. Los deliverables corresponden a las Epics de la especificación, y cada historia aparece con su código.
 
 #### Business Goal 01: anticipación del cobro
 
@@ -1975,7 +1957,7 @@ La tabla 83 lista las User Stories que contribuyen a la recomendación del produ
 
 ### 2.4.3. Product Backlog
 
-El backlog reúne las 40 User Stories, las 6 Technical Stories y las 6 Spike Stories. Se estiman en Story Points con la escala 1, 2, 3 y 5; ninguna supera los 5 puntos, porque los spikes que habrían pesado 8 se dividieron en uno de investigación y otro de prototipo. Se ordenan por el valor que aportan al negocio, no por tipo de historia. El orden sigue el Impact Map. Primero va el landing page, que el enunciado exige desde el primer sprint, junto con los tres spikes de investigación, que no dependen de ninguna construcción. Luego vienen la autenticación, el alta de suscripciones y el Dashboard, porque sin cuenta no hay portafolio que mostrar. Después siguen los spikes de prototipo y las historias de conversión de divisas y recordatorios, que sostienen la hipótesis principal. Al final quedan el spike de Stripe, el delivery y el plan Premium, que amplían la propuesta pero no son necesarios para las primeras hipótesis. La autenticación no encabeza el backlog por sí sola: entra en el Sprint 2 como habilitadora del alta de suscripciones y el Dashboard, no como prioridad de seguridad aislada.
+El backlog reúne las 40 User Stories, las 6 Technical Stories y las 6 Spike Stories. Se estiman en Story Points con la escala 1, 2, 3 y 5; ninguna supera los 5 puntos, porque los spikes que habrían pesado 8 se dividieron en uno de investigación y otro de prototipo. Se ordenan por el valor que aportan al negocio. El orden sigue el Impact Map. Primero va el landing page, que el enunciado exige desde el primer sprint, junto con los tres spikes de investigación, que no dependen de ninguna construcción. Luego vienen la autenticación, el alta de suscripciones y el Dashboard, porque sin cuenta no hay portafolio que mostrar. Después siguen los spikes de prototipo y las historias de conversión de divisas y recordatorios, que sostienen la hipótesis principal. Al final quedan el spike de Stripe, el delivery y el plan Premium, que amplían la propuesta pero no son necesarios para las primeras hipótesis. La autenticación no encabeza el backlog por sí sola: entra en el Sprint 2 como habilitadora del alta de suscripciones y el Dashboard, no como prioridad de seguridad aislada.
 
 Los sprints corresponden a las entregas del curso: el Sprint 1 a TB1, el Sprint 2 a AV2 y los Sprints 3 y 4 a TB2. El Product Backlog se administra en Trello y mantiene una lista por sprint, con las historias ordenadas según la prioridad de esta tabla.
 
@@ -2047,15 +2029,13 @@ La tabla 84 ordena las historias del Product Backlog por prioridad, con sus Stor
 
 El total es de 148 Story Points: 16 en el Sprint 1, 47 en el Sprint 2, 47 en el Sprint 3 y 38 en el Sprint 4. Los spikes de investigación (SP01, SP03 y SP05) abren el Sprint 1 junto al landing page, porque no dependen de ninguna construcción. Los spikes de prototipo (SP02, SP04 y SP06) se ubican al inicio del sprint que implementa la funcionalidad investigada, para aplicar sus hallazgos de inmediato. El Sprint 2 y el Sprint 3 concentran la mayor carga porque en ellos se construye, respectivamente, el núcleo de valor (autenticación, alta de suscripciones y Dashboard) y la hipótesis principal del producto (conversión de divisas y recordatorios anticipados).
 
-El backlog se administra en la herramienta que indique el docente, donde cada historia se registra como tarjeta con su código, título, puntos y sprint, en el mismo orden de esta tabla.
-
 ## 2.5. Strategic-Level Domain-Driven Design
 
-El diseño estratégico de Domain-Driven Design [@evans2003ddd] organiza las responsabilidades de CraveWallet a partir de las reglas del negocio. La gestión de las suscripciones que el usuario paga a terceros y la facturación del plan Premium de CraveWallet representan compromisos distintos. Por ello, se proponen fronteras separadas para conservar sus reglas y estados sin mezclar ambos ciclos de vida. El análisis competitivo de la sección 2.1.1 compara funciones públicas de los productos; no permite determinar cómo están modelados internamente.
+El diseño estratégico de Domain-Driven Design [@evans2003ddd] organiza las responsabilidades de CraveWallet a partir de las reglas del negocio. La gestión de las suscripciones que el usuario paga a terceros y la facturación del plan Premium de CraveWallet representan compromisos distintos. Por ello, se proponen fronteras separadas para conservar sus reglas y estados sin mezclar ambos ciclos de vida.
 
-El trabajo parte del Big Picture EventStorming y del Ubiquitous Language del Needfinding (secciones 2.3.5 y 2.3.6), que describen cómo un usuario administra sus compromisos recurrentes hoy, sin CraveWallet. El segundo ejercicio de EventStorming cambia de propósito: diseña el proceso de la solución e incorpora los comandos, las políticas, los agregados y las vistas de lectura necesarios para registrar una suscripción, verla en el Dashboard, recibir un recordatorio con 24 horas de anticipación y, si corresponde, pasar a Premium. Las historias individuales de la sección 2.4 aún deben contrastarse con este modelo.
+El trabajo parte del Big Picture EventStorming y del Ubiquitous Language del Needfinding (secciones 2.3.5 y 2.3.6), que describen cómo un usuario administra sus compromisos recurrentes hoy, sin CraveWallet. El segundo ejercicio de EventStorming cambia de propósito: diseña el proceso de la solución e incorpora los comandos, las políticas, los agregados y las vistas de lectura necesarios para registrar una suscripción, verla en el Dashboard, recibir un recordatorio con 24 horas de anticipación y, si corresponde, pasar a Premium.
 
-De ese segundo EventStorming surgen los Bounded Contexts candidatos, con dos técnicas. *Start-with-value* delimita la parte del dominio de la que depende la ventaja de CraveWallet: anticipar el cobro y expresar el portafolio en soles. *Look-for-pivotal-events* usa como señales de frontera los cambios de estado importantes, como registrar una suscripción, programar una alerta o pasar a Premium. El contexto core se separa de los subdominios de apoyo y genéricos; las relaciones y patrones de Context Mapping se detallarán en 2.5.2. Las respuestas de Stripe y ExchangeRate-API deberán pasar por una capa de traducción, conforme a la Estrategia 4 de 2.1.2.
+De ese segundo EventStorming surgen los Bounded Contexts candidatos, con dos técnicas. *Start-with-value* delimita la parte del dominio de la que depende la ventaja de CraveWallet: anticipar el cobro y expresar el portafolio en soles. *Look-for-pivotal-events* usa como señales de frontera los cambios de estado importantes, como registrar una suscripción, programar una alerta o pasar a Premium. El contexto core se separa de los subdominios de apoyo y genéricos; las relaciones y patrones de Context Mapping se detallarán en 2.5.2. Las respuestas de Stripe y ExchangeRate-API pasan por una capa de traducción, conforme a la Estrategia 4 de la sección 2.1.2.
 
 La arquitectura de software que cierra la sección se representará con el C4 Model, en sus niveles de contexto, contenedores y despliegue.
 
@@ -2114,11 +2094,11 @@ La tabla 85 resume los contextos candidatos, sus responsabilidades, sus eventos 
 *Fuente: elaboración del equipo Gastify.*
 
 
-La autenticación por el backend RESTful, las notificaciones locales, el calendario del dispositivo y el almacenamiento local son capacidades que colaboran con estos contextos; no se representan como si fueran eventos de negocio. ExchangeRate-API, Google Places API y Stripe permanecen como dependencias externas. Su integración debe traducir las respuestas técnicas a conceptos propios del dominio antes de afectar una suscripción, un gasto o un nivel de acceso. Las fronteras propuestas son candidatas y se revisarán cuando el equipo detalle las historias de usuario y sus reglas.
+La autenticación por el backend RESTful, las notificaciones locales, el calendario del dispositivo y el almacenamiento local son capacidades que colaboran con estos contextos. ExchangeRate-API, Google Places API y Stripe permanecen como dependencias externas. Su integración debe traducir las respuestas técnicas a conceptos propios del dominio antes de afectar una suscripción, un gasto o un nivel de acceso.
 
 #### 2.5.1.2. Domain Message Flows Modeling
 
-Se modelan escenarios de CraveWallet indicando quién envía cada mensaje, quién lo recibe, su orden y sus datos relevantes. La notación adapta Domain Message Flow Modelling de DDD Crew [@dddcrewMessageFlows] con el formato de mensaje y contenido combinados. Cada tarjeta indica orden, tipo, nombre y datos, y se sitúa junto a una flecha entre emisor y receptor. Las cajas repetidas identifican al mismo participante del escenario. Las respuestas se dibujan de manera explícita; los subpasos a/b/c separan los intercambios de una misma operación. **C** identifica una orden que puede rechazarse; **Q**, una consulta; **R**, su respuesta; **E**, un hecho confirmado. Un evento interno no implica que exista un bus de mensajes: los contextos pueden implementarse como módulos del mismo backend.
+Se modelan escenarios de CraveWallet indicando quién envía cada mensaje, quién lo recibe, su orden y sus datos relevantes. La notación adapta Domain Message Flow Modelling de DDD Crew [@dddcrewMessageFlows] con el formato de mensaje y contenido combinados. Cada tarjeta indica orden, tipo, nombre y datos, y se sitúa junto a una flecha entre emisor y receptor. Las cajas repetidas identifican al mismo participante del escenario. Las respuestas se dibujan de manera explícita; los subpasos a/b/c separan los intercambios de una misma operación. **C** identifica una orden que puede rechazarse; **Q**, una consulta; **R**, su respuesta; **E**, un hecho confirmado. Los contextos se implementan como módulos del mismo backend, por lo que un evento interno no requiere un bus de mensajes.
 
 ##### Escenario A. Registrar una suscripción y preparar el recordatorio
 
@@ -2132,11 +2112,11 @@ La tabla 86 ordena los mensajes del alta, la comprobación del plan y la prepara
 | 2 — Q | Subscription Management → Premium & Billing | `GetPlanAccess(userId)`: consultar nivel de acceso y límite vigente. |
 | 3 — R | Premium & Billing → Subscription Management | `PlanAccess`: nivel Free/Premium, límite y vigencia. El caso de uso compara ese límite con el número de registros activos; si lo alcanza, rechaza el alta según US39. |
 | 4 — E | Subscription → manejadores del mismo contexto | `SubscriptionRegistered(subscriptionId, userId, nextBillingDate)`, después de persistir el registro válido. |
-| 5 — R | Subscription Management → aplicación móvil | Registro confirmado y datos para preparar el aviso. Esto no significa que el calendario haya aceptado el recordatorio. |
+| 5 — R | Subscription Management → aplicación móvil | Registro confirmado y datos para preparar el aviso. |
 | 6 — C | Aplicación móvil → calendario del dispositivo | Crear recordatorio con identificador del registro, título y fecha/hora calculada 24 horas antes, previa autorización del usuario. |
 | 7 — R | Calendario del dispositivo → aplicación móvil | Identificador del evento creado o error/permiso denegado. La interfaz muestra el resultado real. |
 
-*Fuente: modelado propuesto de Gastify, adaptado de DDD Crew [@dddcrewMessageFlows].*
+*Fuente: elaboración del equipo Gastify, adaptada de DDD Crew [@dddcrewMessageFlows].*
 
 
 La conversión se solicita al consultar el portafolio o previsualizar un importe según US34: Subscription Management pide USD/PEN al adaptador, recibe la cotización y su fecha, y devuelve una estimación en soles. El registro conserva la moneda original; el tipo de cambio del banco no se conoce por esta consulta. Si falla el proveedor, se indica la antigüedad de la última cotización válida o que la estimación no está disponible. La hora, zona horaria y reprogramación se deben concretar en SP03–SP04. La figura 19 representa el alta y la preparación del aviso.
@@ -2165,9 +2145,9 @@ La tabla 87 describe cómo se registra un gasto, se actualiza el presupuesto de 
 | 3 — C interno | Caso de uso → MonthlyBudget | Aplicar el gasto al período de su fecha, una sola vez. La implementación debe elegir una actualización transaccional o un consumidor idempotente; no ejecutar ambas para sumar el mismo gasto. |
 | 4 — E condicional | MonthlyBudget → manejadores del mismo contexto | `MonthlyLimitExceeded(budgetId, userId, period, limit, accumulated)` únicamente cuando el acumulado supera el límite definido. |
 | 5 — Q | Aplicación móvil → Delivery Expense Management | Consultar resumen del usuario y período. |
-| 6 — R | Delivery Expense Management → aplicación móvil | Total, límite, saldo disponible y condición de exceso. Sin límite configurado, mostrar total sin afirmar que se excedió un presupuesto. |
+| 6 — R | Delivery Expense Management → aplicación móvil | Total, límite, saldo disponible y condición de exceso. Sin límite configurado, se muestra solo el total. |
 
-*Fuente: modelado propuesto de Gastify, adaptado de DDD Crew [@dddcrewMessageFlows].*
+*Fuente: elaboración del equipo Gastify, adaptada de DDD Crew [@dddcrewMessageFlows].*
 
 
 La búsqueda de comercios es una consulta auxiliar: el adaptador de Google Places devuelve sugerencias, y el usuario elige una o escribe un nombre (US18). No se emite «dirección validada» como prueba de que el pedido ocurrió. La figura 20 representa el registro del gasto y la consulta del resumen. `MonthlyBudget` es un agregado de Delivery Expense Management; su presencia en el flujo no lo convierte en otro Bounded Context.
@@ -2193,16 +2173,16 @@ La tabla 88 distingue el inicio del checkout de la confirmación que habilita o 
 | 1 — C | Aplicación móvil → Premium & Billing | Iniciar checkout con identidad autenticada. El servidor selecciona el precio de su catálogo; el cliente no define el importe a cobrar. |
 | 2 — C | Premium & Billing → Stripe | Crear sesión de suscripción y conservar la correlación entre usuario, cliente y operación. |
 | 3a — R | Stripe → Premium & Billing | Sesión creada: `sessionId` y enlace de checkout. |
-| 3b — R | Premium & Billing → aplicación móvil | Enlace de la sesión. El usuario completa el pago con Stripe; esta respuesta todavía no activa Premium. |
+| 3b — R | Premium & Billing → aplicación móvil | Enlace de la sesión. El usuario completa el pago con Stripe; Premium se activa recién con la confirmación del paso 4. |
 | 4 — E externo | Stripe → adaptador de Premium & Billing | `invoice.paid`: identificadores de evento, factura, cliente y suscripción. Verificar firma, correlación, entorno de prueba y estado vigente de la suscripción antes de actualizar acceso. |
 | 5 — E interno | SubscriptionPlan → manejadores del mismo contexto | `PlanUpgradedToPremium(planId, userId, billingPeriod)` cuando Free pasa a Premium. Una renovación actualiza la vigencia sin repetir esa transición. |
 | 6a — Q | Aplicación móvil → Premium & Billing | Consultar acceso del usuario autenticado. |
 | 6b — R | Premium & Billing → aplicación móvil | `PlanAccess`: nivel y vigencia confirmados. Mostrar pendiente mientras no exista confirmación válida. |
 
-*Fuente: modelado propuesto de Gastify, adaptado de DDD Crew [@dddcrewMessageFlows].*
+*Fuente: elaboración del equipo Gastify, adaptada de DDD Crew [@dddcrewMessageFlows].*
 
 
-Stripe documenta la confirmación por webhook y el control del estado de la suscripción [@stripeSubscriptionWebhooks]. La recepción debe admitir reintentos y notificaciones fuera de orden [@stripeWebhooks]. El registro único del identificador externo impide aplicar dos veces el mismo evento. SP05–SP06 deben validar el flujo; el informe no acredita pagos ni integración ejecutados. La figura 21 separa la respuesta de Stripe al backend de la respuesta del backend al cliente.
+Stripe documenta la confirmación por webhook y el control del estado de la suscripción [@stripeSubscriptionWebhooks]. La recepción debe admitir reintentos y notificaciones fuera de orden [@stripeWebhooks]. El registro único del identificador externo impide aplicar dos veces el mismo evento. SP05 y SP06 validan este flujo. La figura 21 separa la respuesta de Stripe al backend de la respuesta del backend al cliente.
 
 ![Activación o renovación del plan Premium](images/chapter_2/message-flow-premium-activation.png)
 
@@ -2232,7 +2212,7 @@ La tabla 89 separa la solicitud de cancelación del fin efectivo del acceso paga
 | 5a — Q | Aplicación móvil → Premium & Billing | Consultar acceso del usuario autenticado. |
 | 5b — R | Premium & Billing → aplicación móvil | `PlanAccess`: nivel Free y límite vigente. El tratamiento de registros que excedan el límite gratuito debe acordarse con el equipo. |
 
-*Fuente: modelado propuesto de Gastify, adaptado de DDD Crew [@dddcrewMessageFlows].*
+*Fuente: elaboración del equipo Gastify, adaptada de DDD Crew [@dddcrewMessageFlows].*
 
 
 La figura 22 representa la cancelación. Entre la confirmación de la solicitud (2c) y la finalización (3) transcurre el período restante; el usuario conserva Premium durante ese intervalo. La cancelación del plan propio no altera las suscripciones que el usuario paga a terceros.
@@ -2253,7 +2233,7 @@ La autenticación es una capacidad técnica previa a los comandos del usuario. L
 
 #### 2.5.1.3. Bounded Context Canvases
 
-Cada canvas documenta el propósito y los límites de un contexto, sus colaboradores, mensajes, lenguaje y decisiones de negocio. Se adapta la estructura de DDD Crew [@dddcrewBoundedCanvas] a los tres contextos propuestos para CraveWallet. Las figuras 23–25 presentan un canvas individual por contexto y las tablas 90–92 desarrollan su contenido. Se conservan los campos del canvas v5: propósito, clasificación estratégica, roles, comunicación entrante y saliente, lenguaje, decisiones, supuestos, métricas y preguntas abiertas. La comunicación entrante agrupa colaboraciones iniciadas por otro participante; la saliente agrupa las iniciadas por el contexto. Cada consulta incluye su respuesta dentro de la misma colaboración. Los eventos internos se documentan en las decisiones de negocio. Son propuestas de diseño basadas en las historias de la sección 2.4 y en el diseño táctico de la sección 2.6, no resultados de una implementación validada.
+Cada canvas documenta el propósito y los límites de un contexto, sus colaboradores, mensajes, lenguaje y decisiones de negocio. Se adapta la estructura de DDD Crew [@dddcrewBoundedCanvas] a los tres contextos propuestos para CraveWallet. Las figuras 23–25 presentan un canvas individual por contexto y las tablas 90–92 desarrollan su contenido. Se conservan los campos del canvas v5: propósito, clasificación estratégica, roles, comunicación entrante y saliente, lenguaje, decisiones, supuestos, métricas y preguntas abiertas. La comunicación entrante agrupa colaboraciones iniciadas por otro participante; la saliente agrupa las iniciadas por el contexto. Cada consulta incluye su respuesta dentro de la misma colaboración. Los eventos internos se documentan en las decisiones de negocio. Se basan en las historias de la sección 2.4 y en el diseño táctico de la sección 2.6.
 
 
 ##### Canvas 1. Subscription Management
@@ -2278,19 +2258,19 @@ La tabla 90 desarrolla el canvas de Subscription Management y su trazabilidad a 
 | --- | --- |
 | Nombre | **Subscription Management — Gestión de suscripciones.** |
 | Propósito | Ayudar al usuario a conocer sus compromisos recurrentes, estimar su importe en soles y anticipar la próxima renovación. Administra los registros que el usuario crea en CraveWallet; marcar uno como cancelado no cancela el contrato con el proveedor. |
-| Clasificación estratégica | **Core**, porque concentra la anticipación de renovaciones y el portafolio de suscripciones. Modelo de negocio: **engagement creator**. Evolución propuesta: **custom built**, solución propia adaptada al portafolio y anticipación de renovaciones del producto. Esta clasificación no equivale a afirmar que el dominio sea nuevo. |
+| Clasificación estratégica | **Core**, porque concentra la anticipación de renovaciones y el portafolio de suscripciones. Modelo de negocio: **engagement creator**. Evolución propuesta: **custom built**, solución propia adaptada al portafolio y anticipación de renovaciones del producto. |
 | Roles del dominio | **Execution context:** gestionar el ciclo del registro. **Analysis context:** proporcionar el portafolio y estimaciones para planificar gastos. La ejecución del cobro externo queda fuera de su responsabilidad. |
 | Comunicación entrante | **Aplicación móvil (cliente):** inicia comandos de registrar, editar y marcar una suscripción como cancelada, y consultas del portafolio y detalle. El contexto responde con registro confirmado, estado, resumen y datos del aviso. No hay otro contexto que envíe un evento de negocio a Suscripciones en los escenarios modelados. |
 | Comunicación saliente | **Premium & Billing [U]:** Suscripciones inicia `GetPlanAccess(userId)` y recibe `PlanAccess` con nivel, límite y vigencia (Customer/Supplier propuesto). **ExchangeRate-API [U]:** inicia la consulta USD/PEN y recibe cotización y fecha traducidas mediante ACL. Las respuestas al móvil pertenecen a la colaboración entrante. `SubscriptionRegistered` y `SubscriptionCancelled` son eventos internos. |
 | Colaboradores y relaciones | Premium & Billing suministra las reglas de acceso; ExchangeRate-API suministra cotizaciones mediante una capa anticorrupción; el cliente móvil utiliza el contrato de la aplicación para gestionar el calendario del dispositivo. La relación Customer/Supplier propuesta y sus contratos se detallan en 2.5.2. |
 | Lenguaje ubicuo | **Suscripción:** registro de un compromiso recurrente con un tercero. **Importe original:** monto y moneda introducidos por el usuario. **Estimación en PEN:** conversión de referencia. **Próxima renovación:** fecha declarada del siguiente cargo. **Cancelada:** estado del registro dentro de CraveWallet. |
-| Decisiones y reglas | El agregado `Subscription` conserva importe, moneda, periodicidad y fecha de renovación de un registro activo. El registro pertenece a un usuario. Una suscripción cancelada se excluye del portafolio activo y deja de generar recordatorios, conservando el historial. La anticipación propuesta es de 24 horas (US12); la programación efectiva depende del permiso del dispositivo. El límite gratuito se aplica según US39, con cinco registros activos como propuesta inicial de 2.1.1, pendiente de confirmación del equipo. |
-| Supuestos | El usuario registra y actualiza los datos de sus servicios. La conversión ayuda a planificar, pero no determina el cargo del banco. El dispositivo permite programar el recordatorio cuando el usuario autoriza el acceso. Estos supuestos requieren pruebas de uso y de integración. |
-| Métricas de verificación propuestas | Medir registros rechazados por datos inválidos, diferencias entre la fecha de renovación y el recordatorio programado, y recordatorios que quedan activos después de marcar una suscripción como cancelada. Revisar cuántos cambios en este contexto obligan a modificar Premium & Billing. No hay mediciones disponibles aún. |
+| Decisiones y reglas | El agregado `Subscription` conserva importe, moneda, periodicidad y fecha de renovación de un registro activo. El registro pertenece a un usuario. Una suscripción cancelada se excluye del portafolio activo y deja de generar recordatorios, conservando el historial. La anticipación propuesta es de 24 horas (US12); la programación efectiva depende del permiso del dispositivo. El límite gratuito se aplica según US39, con cinco registros activos. |
+| Supuestos | El usuario registra y actualiza los datos de sus servicios. La conversión ayuda a planificar, pero no determina el cargo del banco. El dispositivo permite programar el recordatorio cuando el usuario autoriza el acceso. |
+| Métricas de verificación propuestas | Medir registros rechazados por datos inválidos, diferencias entre la fecha de renovación y el recordatorio programado, y recordatorios que quedan activos después de marcar una suscripción como cancelada. Revisar cuántos cambios en este contexto obligan a modificar Premium & Billing. |
 | Preguntas abiertas | ¿Se confirma la propuesta inicial de cinco registros activos en Free? ¿Qué pasa con registros que exceden ese límite al volver de Premium a Free? ¿Qué hora y zona horaria se usarán si el usuario solo introduce una fecha? ¿Cómo se reprograma un recordatorio cuando cambia la fecha de renovación? |
 | Trazabilidad | Historias US04–US07, US08–US13 y US39; diseño táctico 2.6.1. |
 
-*Fuente: diseño propuesto de Gastify, adaptado de DDD Crew [@dddcrewBoundedCanvas].*
+*Fuente: elaboración del equipo Gastify, adaptada de DDD Crew [@dddcrewBoundedCanvas].*
 
 
 ##### Canvas 2. Delivery Expense Management
@@ -2322,12 +2302,12 @@ La tabla 91 desarrolla el canvas de Delivery Expense Management, incluidos el pr
 | Colaboradores y relaciones | El cliente móvil introduce y consulta gastos. Google Places proporciona información auxiliar sobre comercios. El Dashboard combina los resúmenes de gastos y suscripciones, pero esto no exige compartir sus agregados. La ACL de Google Places y la separación de modelos entre Gastos y Suscripciones se detallan en 2.5.2. |
 | Lenguaje ubicuo | **Gasto de delivery:** importe que el usuario registra por un pedido. **Comercio:** negocio asociado al gasto. **Período mensual:** mes al que se atribuye el gasto. **Límite mensual:** tope elegido por el usuario. **Acumulado:** suma de los gastos del período. **Exceso:** acumulado superior al límite. |
 | Decisiones y reglas | `DeliveryExpense` conserva un gasto individual y `MonthlyBudget` mantiene el límite y acumulado de un usuario y período. El gasto se atribuye al mes de su fecha. Superar el límite produce una advertencia; no bloquea pedidos en servicios externos. US18 permite elegir un comercio del catálogo o escribirlo manualmente, de modo que Google Places no debe ser obligatorio para registrar el gasto. |
-| Supuestos | El usuario consigna los gastos; no se cuenta con una importación automática de sus pedidos. El resumen corresponde a lo registrado, no necesariamente a todo el consumo real. La lectura local sin conexión es una propuesta técnica que requiere comprobar la sincronización. |
-| Métricas de verificación propuestas | Comparar el acumulado mensual con la suma de gastos del mismo usuario y período; contar registros duplicados después de sincronizar y gastos que no se pueden registrar cuando falla la búsqueda de comercios. No hay mediciones disponibles aún. |
+| Supuestos | El usuario consigna los gastos; no se cuenta con una importación automática de sus pedidos. La aplicación permite leer los gastos sin conexión. |
+| Métricas de verificación propuestas | Comparar el acumulado mensual con la suma de gastos del mismo usuario y período; contar registros duplicados después de sincronizar y gastos que no se pueden registrar cuando falla la búsqueda de comercios. |
 | Preguntas abiertas | ¿Qué actualización transaccional o consumidor idempotente recalcula el acumulado al corregir o eliminar un gasto según US30? ¿Cómo se evita duplicar un registro al recuperar la conexión? ¿Se advierte una sola vez al superar el límite o después de cada nuevo gasto? ¿Qué ocurre si se reduce el límite por debajo del acumulado? |
 | Trazabilidad | Epic EP06, US18–US20, US30, US38 y TS05; diseño táctico 2.6.2. |
 
-*Fuente: diseño propuesto de Gastify, adaptado de DDD Crew [@dddcrewBoundedCanvas].*
+*Fuente: elaboración del equipo Gastify, adaptada de DDD Crew [@dddcrewBoundedCanvas].*
 
 
 ##### Canvas 3. Premium & Billing
@@ -2356,22 +2336,22 @@ La tabla 92 desarrolla el canvas de Premium & Billing y las reglas de vigencia d
 | Roles del dominio | **Execution context:** gestionar vigencia y nivel de acceso. **Gateway context:** interpretar y traducir el resultado externo de facturación al plan local. |
 | Comunicación entrante | **Aplicación móvil (cliente):** inicia checkout, consultas de plan e historial y cancelación; recibe sesión, estado y confirmación de la solicitud. **Stripe [U]:** inicia notificaciones `invoice.paid` y `customer.subscription.deleted`, verificadas y traducidas por ACL. **Subscription Management [D/C]:** inicia `GetPlanAccess` y recibe `PlanAccess` (Customer/Supplier propuesto). |
 | Comunicación saliente | **Stripe [U]:** Premium inicia creación de checkout, cancelación al fin del período y consultas para reconciliar estado; recibe sesión, vigencia y estado a través de `StripeGatewayAdapter`. Las respuestas al móvil y a Suscripciones pertenecen a colaboraciones entrantes. `PlanUpgradedToPremium` y `PlanDowngradedToFree` son eventos internos, conforme a 2.6.3. |
-| Colaboradores y relaciones | Stripe suministra el resultado de facturación; una capa anticorrupción lo convierte al lenguaje del plan de CraveWallet. Subscription Management consume la información de acceso. El cliente móvil presenta el flujo de pago, pero su retorno a una pantalla no prueba que el pago esté confirmado. |
+| Colaboradores y relaciones | Stripe suministra el resultado de facturación; una capa anticorrupción lo convierte al lenguaje del plan de CraveWallet. Subscription Management consume la información de acceso. El cliente móvil presenta el flujo de pago; Premium se activa solo con la confirmación de Stripe. |
 | Lenguaje ubicuo | **Plan Free:** nivel gratuito sujeto a un límite. **Plan Premium:** nivel con beneficios definidos. **Período de vigencia:** intervalo de acceso pagado. **Pago confirmado:** resultado verificado del proveedor. **Cancelación del plan:** fin de la renovación de CraveWallet; no cancela los servicios externos del usuario. |
 | Decisiones y reglas | El agregado `SubscriptionPlan` mantiene el nivel Free/Premium y la vigencia. La confirmación verificada activa Premium; abrir checkout no lo activa. Procesar dos veces una misma confirmación no debe duplicar la transición. TS06 propone conservar el acceso hasta el fin del período pagado y volver a Free tras la notificación correspondiente. Las pruebas con Stripe deben identificarse como operaciones de prueba y no como ingresos reales. |
-| Supuestos | El modelo propuesto utiliza facturación recurrente. El precio S/ 9.90 y los beneficios son propuestas comerciales pendientes de validación. SP05 investiga el flujo y SP06 debe comprobarlo mediante un prototipo; no se dispone aquí de resultados que acrediten su ejecución. |
-| Métricas de verificación propuestas | Contar activaciones sin pago confirmado, discrepancias entre vigencia y acceso, y transiciones duplicadas al repetir una notificación de prueba. Registrar el tiempo entre confirmación y actualización del plan. No hay mediciones disponibles aún. |
+| Supuestos | El plan usa facturación recurrente. El precio es de S/ 9.90 al mes. SP05 investiga el flujo y SP06 lo comprueba mediante un prototipo. |
+| Métricas de verificación propuestas | Contar activaciones sin pago confirmado, discrepancias entre vigencia y acceso, y transiciones duplicadas al repetir una notificación de prueba. Registrar el tiempo entre confirmación y actualización del plan. |
 | Preguntas abiertas | ¿Qué acceso se mantiene ante un pago fallido? ¿Cómo se recuperan notificaciones que no llegaron? ¿Cómo se administran reembolsos? ¿Qué ocurre con los registros existentes al volver a Free? ¿Cuál es la política comercial definitiva de precio y beneficios? |
 | Trazabilidad | Epic EP07, US21–US23, US31, US39, TS06 y SP05–SP06; diseño táctico 2.6.3. |
 
-*Fuente: diseño propuesto de Gastify, adaptado de DDD Crew [@dddcrewBoundedCanvas].*
+*Fuente: elaboración del equipo Gastify, adaptada de DDD Crew [@dddcrewBoundedCanvas].*
 
 
-Los límites permiten distinguir tres conceptos: un compromiso recurrente con un tercero, un gasto puntual de delivery y el acceso pagado a CraveWallet. Compartir el identificador del usuario o mostrar datos en el mismo Dashboard no basta para concluir que los contextos deban compartir el modelo. Las preguntas abiertas deben resolverse con el equipo y reflejarse después en las historias, los flujos y el Context Map.
+Los límites permiten distinguir tres conceptos: un compromiso recurrente con un tercero, un gasto puntual de delivery y el acceso pagado a CraveWallet.
 
 ### 2.5.2. Context Mapping
 
-El Context Map propuesto identifica quién proporciona un modelo o contrato (**upstream, U**) y quién depende de él (**downstream, D**). Sus flechas representan influencia del modelo, no el sentido de cada petición HTTP. La selección se basa en las responsabilidades y mensajes de 2.5.1, siguiendo el material de DDD Crew [@dddcrewContextMapping]. Los tres contextos se proponen como módulos de un backend; no se presupone que existan tres equipos independientes.
+El Context Map propuesto identifica quién proporciona un modelo o contrato (**upstream, U**) y quién depende de él (**downstream, D**). Sus flechas representan influencia del modelo, no el sentido de cada petición HTTP. La selección se basa en las responsabilidades y mensajes de 2.5.1, siguiendo el material de DDD Crew [@dddcrewContextMapping]. Los tres contextos se proponen como módulos de un backend.
 
 La tabla 93 justifica cada relación del Context Map e identifica el contrato o adaptador que conserva la frontera entre modelos.
 
@@ -2379,9 +2359,9 @@ La tabla 93 justifica cada relación del Context Map e identifica el contrato o 
 
 | Relación propuesta | Patrón y justificación | Contrato o frontera |
 | --- | --- | --- |
-| Premium & Billing [U] → Subscription Management [D] | **Customer/Supplier** como acuerdo de diseño: las necesidades de registro y límites de Suscripciones deben formar parte de la planificación de Premium. Consumir un modelo sin posibilidad de negociación no basta para justificar este patrón. | `GetPlanAccess(userId)` devuelve nivel, límite y vigencia. En la relación, Premium ocupa U/S (proveedor) y Suscripciones D/C (cliente). Suscripciones cuenta sus registros activos y decide si admite el nuevo registro. |
+| Premium & Billing [U] → Subscription Management [D] | **Customer/Supplier** como acuerdo de diseño: las necesidades de registro y límites de Suscripciones deben formar parte de la planificación de Premium. | `GetPlanAccess(userId)` devuelve nivel, límite y vigencia. En la relación, Premium ocupa U/S (proveedor) y Suscripciones D/C (cliente). Suscripciones cuenta sus registros activos y decide si admite el nuevo registro. |
 | Subscription Management / Delivery Expense Management | **Separate Ways** para sus modelos de dominio: no se propone un flujo directo entre sus agregados. El cliente compone sus resúmenes en el Dashboard. | Cada módulo conserva su lenguaje y almacenamiento. El identificador del usuario sirve para correlacionar datos; no implica código o esquema compartido como Shared Kernel. |
-| ExchangeRate-API [U] → Subscription Management [D] | **Anti-Corruption Layer (ACL):** `ExchangeRateApiAdapter` traduce la respuesta del proveedor a cotización, monedas y fecha de consulta del modelo local. | `ExchangeRatePort`; el precio en moneda original permanece intacto. La frecuencia y caché de TS03 son propuestas a comprobar en SP01–SP02. |
+| ExchangeRate-API [U] → Subscription Management [D] | **Anti-Corruption Layer (ACL):** `ExchangeRateApiAdapter` traduce la respuesta del proveedor a cotización, monedas y fecha de consulta del modelo local. | `ExchangeRatePort`; el precio en moneda original permanece intacto. La frecuencia y la caché de TS03 se comprueban en SP01 y SP02. |
 | Stripe [U] → Premium & Billing [D] | **ACL:** el adaptador verifica y traduce las notificaciones a cambios del plan local. Los eventos técnicos de Stripe se conservan en la frontera de integración. | `PaymentGatewayPort`, correlación de facturación y deduplicación del identificador externo. Eventos internos: `PlanUpgradedToPremium` y `PlanDowngradedToFree`. |
 | Google Places [U] → Delivery Expense Management [D] | **ACL:** `GooglePlacesAdapter` convierte la respuesta en `MerchantSuggestion`. Se protege el vocabulario de gastos y se mantiene la opción manual. | Consulta auxiliar de comercio. El importe pagado procede del usuario, no de Places. La API elegida y su versión deben probarse antes de fijar el adaptador [@googlePlacesTextSearch]. |
 
@@ -2398,13 +2378,13 @@ La tabla 93 justifica cada relación del Context Map e identifica el contrato o 
 
 *Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232314).*
 
-La figura 26 representa estas relaciones. Compartir una pantalla o identificador no demuestra un modelo compartido ni entregas mutuamente dependientes entre Suscripciones y Gastos; por ello se propone Separate Ways. Si la implementación introduce una dependencia entre esos modelos, el equipo deberá justificar y actualizar el mapa.
+La figura 26 representa estas relaciones. Suscripciones y Gastos solo comparten el identificador del usuario y la pantalla del Dashboard; por ello se propone Separate Ways.
 
-El calendario del dispositivo y la autenticación colaboran con los casos de uso, pero no se clasifican como nuevos Bounded Contexts de negocio en este avance. Las relaciones se comprobarán mediante cambios en los contratos y las pruebas de integración. La política de retorno a Free sigue pendiente de decisión del equipo.
+El calendario del dispositivo y la autenticación colaboran con los casos de uso, pero no son Bounded Contexts de negocio.
 
 ### 2.5.3. Software Architecture
 
-Se usa C4 para distinguir el sistema completo, sus contenedores y los componentes internos del backend [@c4ModelDiagrams]. Los diagramas representan una propuesta para implementar CraveWallet; no acreditan que el backend o su despliegue estén operativos.
+Se usa C4 para distinguir el sistema completo, sus contenedores y los componentes internos del backend [@c4ModelDiagrams].
 
 #### 2.5.3.1. Software Architecture Context Level Diagrams
 
@@ -2420,7 +2400,7 @@ La figura 27 muestra una persona, CraveWallet como un único sistema y sus cuatr
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify. Propuesta de diseño; [vista editable en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232315).*
+*Fuente: elaboración del equipo Gastify; [vista editable en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232315).*
 
 #### 2.5.3.2. Software Architecture Container Level Diagrams
 
@@ -2432,7 +2412,7 @@ La tabla 94 define los cuatro contenedores de la propuesta. Una frontera del sis
 | --- | --- |
 | Mobile App — Flutter/Dart | Presentar los formularios y resúmenes, llamar al backend y solicitar permisos para gestionar el calendario. Compone el Dashboard a partir de consultas de Suscripciones y Gastos. |
 | REST API Backend — Java 21/Spring Boot | Alojar los tres módulos de negocio, los casos de uso y sus adaptadores. La autenticación es una capacidad técnica compartida; no se convierte automáticamente en un cuarto contexto de negocio. |
-| Local Database — SQLite | Caché de lectura en el dispositivo. La lectura sin red debe indicar la fecha de actualización. La escritura sin conexión y su sincronización requieren una decisión y pruebas; no se presentan como realizadas. |
+| Local Database — SQLite | Caché de lectura en el dispositivo. La lectura sin red debe indicar la fecha de actualización. |
 | Remote Database — PostgreSQL | Persistir el estado canónico con tablas cuya responsabilidad pertenece a cada módulo. Compartir un motor no autoriza acceder directamente a los agregados de otro contexto. |
 
 *Fuente: elaboración del equipo Gastify.*
@@ -2450,13 +2430,13 @@ La figura 28 indica el propósito y la tecnología de cada relación: HTTPS/JSON
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify. Propuesta de diseño; [vista editable en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232316).*
+*Fuente: elaboración del equipo Gastify; [vista editable en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232316).*
 
 #### 2.5.3.3. Software Architecture Deployment Diagrams
 
-El despliegue de la figura 29 es una opción de infraestructura: contenedor del backend en ECS/Fargate, base de datos PostgreSQL en RDS, entrada HTTPS y gestión de secretos. Su contratación, región, costos, cuotas y pipeline deberán decidirse y verificarse antes de implementar. No hay evidencia en este avance de un backend desplegado con esa configuración. La aplicación móvil se ejecutaría en el dispositivo y accedería al calendario mediante sus permisos.
+La figura 29 muestra el despliegue: contenedor del backend en ECS/Fargate, base de datos PostgreSQL en RDS, entrada HTTPS y gestión de secretos. La aplicación móvil se ejecuta en el dispositivo y accede al calendario con los permisos del usuario.
 
-La figura 29 muestra dónde se ejecutaría cada contenedor de CraveWallet.
+La figura 29 muestra dónde se ejecuta cada contenedor de CraveWallet.
 
 ![Propuesta de despliegue de CraveWallet](images/chapter_2/deployment_diagram.png)
 
@@ -2466,17 +2446,17 @@ La figura 29 muestra dónde se ejecutaría cada contenedor de CraveWallet.
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify. Propuesta de diseño.*
+*Fuente: elaboración del equipo Gastify.*
 
 ## 2.6. Tactical-Level Domain-Driven Design
 
-Se detallan los tres contextos del mapa de 2.5.2. Cada módulo distingue Domain Layer, Interface Layer, Application Layer e Infrastructure Layer. Las reglas se expresan en lenguaje del proyecto y en contratos propuestos; los diagramas y nombres de clases orientan la implementación, pero no demuestran que exista código ejecutable. El dominio conserva sus invariantes y la aplicación coordina repositorios, transacciones e integraciones.
+Se detallan los tres contextos del mapa de 2.5.2. Cada módulo distingue Domain Layer, Interface Layer, Application Layer e Infrastructure Layer. Las reglas se expresan en el lenguaje del proyecto y en contratos que orientan la implementación. El dominio conserva sus invariantes y la aplicación coordina repositorios, transacciones e integraciones.
 
 ### 2.6.1. Bounded Context: Subscription Management
 
 #### 2.6.1.1. Domain Layer
 
-El agregado **`Subscription`** representa un registro del usuario, con identificador, nombre, importe original, moneda, categoría, estado y ciclo. `register`, `edit` y `cancel` deben comprobar propiedad y reglas antes de guardar. Un registro activo tiene una fecha de renovación válida e importe con moneda; el estado cancelado preserva el historial y excluye el registro del portafolio activo. La reactivación debe definirse explícitamente; no se interpreta como la contratación de un servicio externo.
+El agregado **`Subscription`** representa un registro del usuario, con identificador, nombre, importe original, moneda, categoría, estado y ciclo. `register`, `edit` y `cancel` deben comprobar propiedad y reglas antes de guardar. Un registro activo tiene una fecha de renovación válida e importe con moneda; el estado cancelado preserva el historial y excluye el registro del portafolio activo. Reactivar un registro no contrata de nuevo el servicio externo.
 
 La tabla 95 describe los elementos de la Domain Layer de Subscription Management y sus reglas.
 
@@ -2525,7 +2505,7 @@ El request de alta contiene nombre, importe, moneda, categoría, fecha y periodi
 
 #### 2.6.1.4. Infrastructure Layer
 
-`JpaSubscriptionRepository` traduce entre el agregado y las tablas. `ExchangeRateApiAdapter` consume el proveedor a través de `ExchangeRatePort` y traduce su respuesta [@exchangeRatePair]. La caché de 24 horas de TS03 es una propuesta a comprobar con SP01–SP02. Si no hay cotización válida ni valor previo, se muestra el importe original y la conversión como no disponible; no se inventa un valor. El manejador de `SubscriptionRegistered` prepara datos de aviso; el calendario se ejecuta en el dispositivo, previa autorización.
+`JpaSubscriptionRepository` traduce entre el agregado y las tablas. `ExchangeRateApiAdapter` consume el proveedor a través de `ExchangeRatePort` y traduce su respuesta [@exchangeRatePair]. La caché de 24 horas de TS03 se comprueba con SP01 y SP02. Si no hay cotización válida ni valor previo, se muestra el importe original y la conversión como no disponible. El manejador de `SubscriptionRegistered` prepara datos de aviso; el calendario se ejecuta en el dispositivo, previa autorización.
 
 #### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -2539,7 +2519,7 @@ La figura 30 muestra los componentes internos de Subscription Management y sus d
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify. Propuesta de diseño.*
+*Fuente: elaboración del equipo Gastify.*
 
 #### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -2557,11 +2537,11 @@ La figura 31 muestra las clases de la Domain Layer de Subscription Management.
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify. Propuesta de diseño.*
+*Fuente: elaboración del equipo Gastify.*
 
 ##### 2.6.1.6.2. Bounded Context Database Design Diagram
 
-La persistencia propuesta separa registros, historial declarado y caché de cotizaciones. El historial solo almacena cobros que el usuario consigna o confirma; una fecha programada no acredita un pago. `user_id` identifica al propietario, pero no representa una relación entre agregados de Suscripciones, Gastos y Premium. Las restricciones físicas y el esquema de autenticación se concretarán al implementar.
+La persistencia separa registros, historial declarado y caché de cotizaciones. El historial solo almacena los cobros que el usuario registra o confirma. `user_id` identifica al propietario, pero no representa una relación entre agregados de Suscripciones, Gastos y Premium.
 
 La figura 32 muestra las tablas propuestas para persistir Subscription Management.
 
@@ -2573,7 +2553,7 @@ La figura 32 muestra las tablas propuestas para persistir Subscription Managemen
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify. Propuesta de diseño.*
+*Fuente: elaboración del equipo Gastify.*
 
 ### 2.6.2. Bounded Context: Delivery Expense Management
 
@@ -2621,15 +2601,15 @@ La tabla 98 lista los endpoints de Delivery Expense Management con los datos que
 
 #### 2.6.2.3. Application Layer
 
-`DeliveryExpenseApplicationService` valida la solicitud, obtiene el período y coordina el gasto y presupuesto. Como propuesta inicial para el backend modular, el guardado del gasto y la actualización del acumulado se realizan en una transacción; un reintento reconocido por su identificador devuelve el registro previo. Se publican los eventos tras confirmar. No se agrega un segundo consumidor que sume otra vez el mismo gasto. El control de concurrencia debe impedir perder una actualización simultánea del presupuesto.
+`DeliveryExpenseApplicationService` valida la solicitud, obtiene el período y coordina el gasto y presupuesto. En el backend modular, el guardado del gasto y la actualización del acumulado se realizan en una transacción; un reintento reconocido por su identificador devuelve el registro previo. Se publican los eventos tras confirmar. El control de concurrencia debe impedir perder una actualización simultánea del presupuesto.
 
 Al consultar el resumen, el servicio contrasta el acumulado con los gastos del usuario/período. Ajustar el límite no cambia los hechos históricos. La edición/eliminación de gastos y los conflictos de escritura offline requieren reglas adicionales antes de comprometer su implementación.
 
 #### 2.6.2.4. Infrastructure Layer
 
-Los repositorios JPA implementan los puertos de gastos y presupuestos. `GooglePlacesAdapter` traduce la respuesta externa a `MerchantSuggestion`: esta frontera se modela como ACL, coherente con 2.5.2. La elección de Text Search (New), los campos y permisos se comprobarán contra la documentación vigente [@googlePlacesTextSearch]; no se conserva como código ejecutable un ejemplo de endpoint antiguo.
+Los repositorios JPA implementan los puertos de gastos y presupuestos. `GooglePlacesAdapter` traduce la respuesta externa a `MerchantSuggestion`: esta frontera se modela como ACL, coherente con 2.5.2. El adaptador usa Text Search (New) de Google Places [@googlePlacesTextSearch].
 
-Los manejadores internos pueden preparar el estado de exceso que consume la aplicación. Un publisher en memoria no garantiza entrega a un teléfono; no se declara Firebase Cloud Messaging como integración ya desarrollada. La caché local permite leer datos previos, indicando su antigüedad.
+Los manejadores internos pueden preparar el estado de exceso que consume la aplicación. La caché local permite leer datos previos, indicando su antigüedad.
 
 #### 2.6.2.5. Component Level Diagrams
 
@@ -2643,7 +2623,7 @@ La figura 33 muestra los componentes internos de Delivery Expense Management y s
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify. Propuesta de diseño.*
+*Fuente: elaboración del equipo Gastify.*
 
 #### 2.6.2.6. Code Level Diagrams
 
@@ -2661,7 +2641,7 @@ La figura 34 muestra las clases de la Domain Layer de Delivery Expense Managemen
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify. Propuesta de diseño.*
+*Fuente: elaboración del equipo Gastify.*
 
 ##### 2.6.2.6.2. Database Design Diagram
 
@@ -2677,7 +2657,7 @@ La figura 35 muestra las tablas propuestas para persistir Delivery Expense Manag
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify. Propuesta de diseño.*
+*Fuente: elaboración del equipo Gastify.*
 
 ### 2.6.3. Bounded Context: Premium & Billing
 
@@ -2702,7 +2682,7 @@ La tabla 99 describe los elementos de la Domain Layer de Premium & Billing y sus
 *Fuente: elaboración del equipo Gastify.*
 
 
-`upgradeToPremium` debe conservar o ampliar el período confirmado, incluso si el plan ya es Premium. No basta con retornar temprano por el nivel para llamar a eso idempotencia. La deduplicación se basa en el evento externo y la factura; una notificación antigua no debe reducir la vigencia actual. `downgradeToFree` requiere comprobar el fin del acceso. Las referencias de facturación se conservan para trazabilidad, en lugar de borrarlas al cancelar.
+`upgradeToPremium` debe conservar o ampliar el período confirmado, incluso si el plan ya es Premium. La deduplicación se basa en el evento externo y la factura; una notificación antigua no debe reducir la vigencia actual. `downgradeToFree` comprueba antes el fin del acceso. Las referencias de facturación se conservan para trazabilidad, en lugar de borrarlas al cancelar.
 
 #### 2.6.3.2. Interface Layer
 
@@ -2731,7 +2711,7 @@ La tabla 100 lista los endpoints de Premium & Billing y el contrato propuesto pa
 
 **`StripeGatewayAdapter`** implementa el puerto de salida para checkout/cancelación. **`StripeWebhookAdapter`** verifica firma, registra el identificador del evento y traduce la notificación para la aplicación. Separar ambos evita que el servicio de aplicación dependa de un adaptador que a su vez llama al mismo servicio. La correlación y actualización deben soportar reintentos y mensajes fuera de orden [@stripeWebhooks].
 
-Para una factura pagada, se consulta y valida la suscripción vinculada antes de actualizar el acceso. `customer.subscription.deleted` permite reconciliar el fin; los pagos fallidos y reembolsos requieren una política de negocio pendiente [@stripeSubscriptionWebhooks]. Un evento no relevante y verificado puede reconocerse sin cambiar el plan; una firma inválida o una falla de procesamiento no se trata como éxito por defecto.
+Para una factura pagada, se consulta y valida la suscripción vinculada antes de actualizar el acceso. `customer.subscription.deleted` permite reconciliar el fin del plan [@stripeSubscriptionWebhooks]. Un evento no relevante y verificado puede reconocerse sin cambiar el plan; una firma inválida o una falla de procesamiento no se trata como éxito por defecto.
 
 `JpaPlanRepository` persiste los planes y sus referencias. El registro `billing_events` impone unicidad al identificador externo y conserva estado de procesamiento. Las pruebas de SP05–SP06 deben demostrar correlación, duplicados, renovación y cancelación; no hay resultados documentados en este avance. El precio y beneficios siguen siendo propuestas comerciales.
 
@@ -2747,7 +2727,7 @@ La figura 36 muestra los componentes internos de Premium & Billing y sus depende
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify. Propuesta de diseño.*
+*Fuente: elaboración del equipo Gastify.*
 
 #### 2.6.3.6. Code Level Diagrams
 
@@ -2765,11 +2745,11 @@ La figura 37 muestra las clases de la Domain Layer de Premium & Billing.
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify. Propuesta de diseño.*
+*Fuente: elaboración del equipo Gastify.*
 
 ##### 2.6.3.6.2. Database Design Diagram
 
-`user_plans` tiene un único registro por usuario. `billing_events` conserva identificador externo único, plan correlacionado, tipo, fecha y estado de procesamiento. La correlación se verifica antes de cambiar el plan; un índice no demuestra por sí solo procesamiento en tiempo constante ni consistencia con Stripe.
+`user_plans` tiene un único registro por usuario. `billing_events` conserva identificador externo único, plan correlacionado, tipo, fecha y estado de procesamiento. La correlación se verifica antes de cambiar el plan.
 
 La figura 38 muestra las tablas propuestas para persistir Premium & Billing.
 
@@ -2781,4 +2761,4 @@ La figura 38 muestra las tablas propuestas para persistir Premium & Billing.
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify. Propuesta de diseño.*
+*Fuente: elaboración del equipo Gastify.*

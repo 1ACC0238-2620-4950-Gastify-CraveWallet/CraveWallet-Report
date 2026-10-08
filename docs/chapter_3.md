@@ -6,7 +6,7 @@
 
 #### 3.1.1.1. General Style Guidelines
 
-CraveWallet se posiciona como una herramienta de empoderamiento financiero para nativos digitales peruanos. Las decisiones de diseño de esta sección establecen el sistema visual que debe aplicarse de forma coherente en la aplicación móvil y en el landing page, de modo que cualquier pantalla nueva producida por el equipo sea reconocible como parte del mismo producto sin necesidad de revisión caso por caso.
+CraveWallet se posiciona como una herramienta de empoderamiento financiero para nativos digitales peruanos. Las decisiones de diseño de esta sección establecen el sistema visual que debe aplicarse de forma coherente en la aplicación móvil y en el landing page.
 
 ***
 
@@ -224,7 +224,7 @@ La tabla 110 presenta los tamaños de pantalla objetivo y los dispositivos de pr
 
 *Fuente: elaboración del equipo Gastify.*
 
-El equipo propone iniciar la validación del diseño con un ancho de 360dp (categoría compacta). Es una medida de prueba del prototipo; no representa una cuota verificada del mercado Android peruano.
+El diseño se valida primero en un ancho de 360dp (categoría compacta).
 
 ***
 
@@ -369,8 +369,6 @@ La tabla 115 presenta las etiquetas de navegación principal.
 | Perfil y ajustes | **Perfil** | `person` |
 
 *Fuente: elaboración del equipo Gastify.*
-
-*Nota: Se evita "Dashboard" como etiqueta visible porque el segmento objetivo (universitarios y jóvenes profesionales sin educación financiera formal) puede no reconocer el término. "Inicio" es universalmente comprendido y reduce la carga cognitiva en el primer uso.*
 
 ***
 
@@ -523,15 +521,12 @@ La tabla 120 presenta los campos de la ficha ASO en Google Play Store.
 | **App Subtitle / Short Description** (máx. 80 caracteres) | `Controla tus suscripciones. Recibe alertas. Todo en soles.` |
 | **App Keywords** (máx. 100 caracteres, separados por coma) | `suscripciones, gastos, presupuesto, finanzas, netflix, spotify, smart fit, delivery, membresías` |
 | **App Description (primeras 3 líneas — el fold)** | `¿Cuánto gastas realmente en suscripciones este mes? CraveWallet reúne todas tus suscripciones, membresías y gastos de delivery en una sola pantalla y te avisa 24 horas antes de cada cobro automático.` |
-| **App Description (cuerpo completo)** | Ver texto completo en Anexo — Assets de tienda |
 | **Categoría principal** | Finanzas |
 | **Categoría secundaria** | Productividad |
 | **Content Rating** | Apto para todos (PEGI 3 / ESRB Everyone) |
 | **Permisos requeridos** | `READ_CALENDAR`, `WRITE_CALENDAR` (recordatorios), `INTERNET` (ExchangeRate-API, Stripe) |
 
 *Fuente: elaboración del equipo Gastify.*
-
-**Nota sobre el título ASO:** el título incluye una abreviación ("Suscripc.") para respetar el límite de 30 caracteres de Google Play sin sacrificar las palabras clave de mayor volumen de búsqueda. En versiones futuras se evaluará A/B testing del título con "CraveWallet — Mis Suscripciones" como variante.
 
 #### 3.1.2.4. Searching Systems
 
@@ -1460,9 +1455,9 @@ La tabla 126 documenta las adaptaciones específicas de cada sección al breakpo
 
 ### 3.1.4. Mobile Applications UX/UI Design
 
-La aplicación móvil es el lugar donde CraveWallet cumple su promesa: que el usuario vea en una sola cifra, en soles, cuánto le cuestan sus suscripciones y que se entere de cada cobro antes de que ocurra. Su interfaz se diseñó en cinco artefactos que se leen en orden: los wireframes fijan la estructura de cada pantalla (3.1.4.1), los wireflows las unen en recorridos (3.1.4.2), los mock-ups aplican el Design System de la sección 3.1.1 (3.1.4.3), los user flows muestran las decisiones, alternativas y errores detrás de cada recorrido (3.1.4.4) y el prototipo permite recorrer los tres objetivos de usuario con el dedo (3.1.4.5).
+La aplicación móvil muestra en una sola cifra, en soles, cuánto cuestan las suscripciones del usuario y le avisa antes de cada cobro. Su interfaz se diseñó en cinco artefactos: los wireframes fijan la estructura de cada pantalla (3.1.4.1), los wireflows las unen en recorridos (3.1.4.2), los mock-ups aplican el Design System de la sección 3.1.1 (3.1.4.3), los user flows muestran las decisiones, alternativas y errores detrás de cada recorrido (3.1.4.4) y el prototipo permite recorrer los tres objetivos de usuario con el dedo (3.1.4.5).
 
-Son 31 pantallas de 360 x 800 dp, la clase compacta de las Mobile Style Guidelines (sección 3.1.1.3), para Android con Material Design 3. Cada pantalla lleva un código formado por la letra de su área y un número; el código se conserva en todos los artefactos, de modo que una pantalla se sigue del wireframe al mock-up, al wireflow, al user flow y al prototipo sin perderla. Las áreas corresponden a los cuatro destinos de la barra de navegación inferior definidos en la sección 3.1.2.5, más el flujo de alta, que se abre como hoja modal desde el botón Agregar (tabla 127).
+Son 31 pantallas de 360 x 800 dp, la clase compacta de las Mobile Style Guidelines (sección 3.1.1.3), para Android con Material Design 3. Cada pantalla lleva un código formado por la letra de su área y un número, que se mantiene en todos los artefactos. Las áreas corresponden a los cuatro destinos de la barra de navegación inferior definidos en la sección 3.1.2.5, más el flujo de alta, que se abre como hoja modal desde el botón Agregar (tabla 127).
 
 *Tabla 127. Áreas de la aplicación móvil.*
 
@@ -1492,13 +1487,13 @@ La tabla 128 presenta los User Goals, su persona y sus User Stories principales.
 
 Todas las pantallas comparten los mismos datos de ejemplo, tomados de lo que Renzo contó en su entrevista (sección 2.2.2): Spotify, Max, YouTube Premium, Smart Fit y PedidosYa Plus se cobran en soles; LinkedIn Premium (USD 39.99) y Amazon Prime (USD 14.99) se cobran en dólares y se muestran convertidos con el tipo de cambio del día (S/ 3.76). LinkedIn Premium es la suscripción que Renzo olvidó cancelar después de conseguir trabajo, y por eso es el ejemplo del detalle (G3) y del hallazgo del análisis (N1). Camila Torres aparece en los estados de usuario nuevo (I2) y del plan gratuito (A9, N5), que son los que vive una estudiante con un presupuesto ajustado.
 
-El archivo de Figma se organiza en nueve páginas: **00 Portada**, **01 Design System** (variables de color, estilos de texto, componentes e íconos), **02 Wireframes**, **03 Wireflows**, **04 Mock-ups**, **05 User Flows**, **06 Prototype**, **07 Modo oscuro** y **08 Prototype · Modo oscuro**. Las pantallas de los wireframes y de los mock-ups son componentes de Figma, y los wireflows y user flows usan instancias de esos componentes al 50 %, de modo que un cambio en una pantalla se propaga a todos los diagramas. Los colores de los mock-ups están enlazados a las variables `color/*` del Design System y los textos a los estilos `Mobile/*`, por lo que la paleta y la escala tipográfica se aplican sin valores sueltos.
+El archivo de Figma se organiza en nueve páginas: **00 Portada**, **01 Design System** (variables de color, estilos de texto, componentes e íconos), **02 Wireframes**, **03 Wireflows**, **04 Mock-ups**, **05 User Flows**, **06 Prototype**, **07 Modo oscuro** y **08 Prototype · Modo oscuro**.
 
 **Enlace al archivo de Figma:** [CraveWallet – Mobile Applications UX/UI Design](https://www.figma.com/design/lIN0zLBZ4E0PmQudY5JOip/Mobile-UX-UI?node-id=1-32&t=o4MJV6YoUPiTIhVj-1)
 
 #### 3.1.4.1. Mobile Applications Wireframes
 
-Los wireframes fijan qué hay en cada pantalla y en qué orden, sin color de marca ni imágenes, para discutir la estructura antes que la apariencia. Están en escala de grises con un solo tono oscuro para la acción principal y para la cifra que más pesa (el total mensual), y con el contenido real de cada pantalla, de modo que se lee qué dice cada título, botón y etiqueta y cuánto espacio ocupa. Los íconos se conservan porque indican qué es cada fila o cada botón. Cada lámina lleva su título y cada pantalla un pie con su código, su nombre y las User Stories que cubre.
+Los wireframes fijan qué hay en cada pantalla y en qué orden, sin color de marca ni imágenes, para discutir la estructura antes que la apariencia. Están en escala de grises con un solo tono oscuro para la acción principal y para la cifra que más pesa (el total mensual), y con el contenido real de cada pantalla. Cada lámina lleva su título y cada pantalla un pie con su código, su nombre y las User Stories que cubre.
 
 La estructura responde a la Arquitectura de la Información de la sección 3.1.2:
 
@@ -1659,7 +1654,7 @@ La figura 86 muestra los wireframes de la aplicación móvil: Perfil y recordato
 
 *Fuente: elaboración del equipo Gastify.*
 
-Cada área se resolvió con una decisión de estructura que se puede defender con lo que se ve en pantalla (tabla 131).
+La tabla 131 resume la decisión de estructura de cada área.
 
 *Tabla 131. Decisiones de estructura por área.*
 
@@ -1675,9 +1670,9 @@ Cada área se resolvió con una decisión de estructura que se puede defender co
 
 #### 3.1.4.2. Mobile Applications Wireflow Diagrams
 
-Un wireflow combina wireframes con un diagrama de flujo: miniaturas de baja fidelidad unidas por flechas que indican qué hace la persona para pasar de una pantalla a la siguiente [@laubheimer2016wireflows]. Sirve para comprobar que un recorrido funciona como secuencia y no solo que cada pantalla se vea bien.
+Un wireflow combina wireframes con un diagrama de flujo: miniaturas de baja fidelidad unidas por flechas que indican qué hace la persona para pasar de una pantalla a la siguiente [@laubheimer2016wireflows].
 
-Los tres wireflows corresponden a los User Goals UG1, UG2 y UG3. Usan instancias de los wireframes al 50 %. Cada uno lleva en su encabezado la persona, el objetivo y las historias que cubre, y debajo de cada miniatura el código, el nombre y las historias de la pantalla. Cada flecha lleva una etiqueta con el componente que dispara el cambio (por ejemplo, "Toca Ingresar manualmente" o "Elige USD" en el menú desplegable de Moneda). La línea continua es el camino principal y la línea punteada es una alternativa, un error o un retorno; las píldoras punteadas indican a qué pantalla se vuelve y las píldoras sólidas marcan el objetivo cumplido.
+Los tres wireflows corresponden a los User Goals UG1, UG2 y UG3. Usan los wireframes reducidos al 50 %. Cada uno lleva en su encabezado la persona, el objetivo y las historias que cubre, y debajo de cada miniatura el código, el nombre y las historias de la pantalla. Cada flecha lleva una etiqueta con el componente que dispara el cambio (por ejemplo, "Toca Ingresar manualmente" o "Elige USD" en el menú desplegable de Moneda). La línea continua es el camino principal y la línea punteada es una alternativa, un error o un retorno; las píldoras punteadas indican a qué pantalla se vuelve y las píldoras sólidas marcan el objetivo cumplido.
 
 La tabla 132 presenta los wireflows con su recorrido principal y alternativas.
 
@@ -1881,9 +1876,9 @@ La figura 100 muestra los mock-ups de la aplicación móvil: Perfil y recordator
 
 ##### Modo oscuro
 
-La aplicación también se diseñó en modo oscuro, porque Android aplica el tema del sistema y buena parte del segmento revisa sus gastos de noche. La Style Guide de la sección 3.1.1 solo define el modo claro, así que el modo oscuro se construyó sobre los mismos tokens, con estas reglas:
+La aplicación también se diseñó en modo oscuro, que Android aplica según el tema del sistema. El modo oscuro usa los mismos tokens del Design System, con estas reglas:
 
-- **Mismo nombre, otro valor.** Cada token `color/*` tiene un valor para el modo *Light* y otro para el modo *Dark* de la colección de variables de Figma. Las pantallas oscuras son las mismas pantallas con el modo *Dark* aplicado, sin colores escritos a mano. Si el plan de Figma no admite más de un modo, el plugin crea una segunda colección con los valores oscuros.
+- **Mismo nombre, otro valor.** Cada token `color/*` tiene un valor para el modo *Light* y otro para el modo *Dark* de la colección de variables de Figma. Las pantallas oscuras son las mismas pantallas con el modo *Dark* aplicado, sin colores escritos a mano.
 - **Se conserva el matiz y se ajusta la luminosidad.** Los fondos pasan a la gama azul pizarra del texto principal (`#0B1120`, `#151E31`, `#1E293B`). Los colores que funcionan como texto o como acción se aclaran: el primario pasa a `#AAB4FF` con texto `#0A1172` encima, y el naranja de acento a `#FB923C`. Así los botones primarios y el FAB siguen siendo los elementos más visibles de la pantalla, como en Material Design 3.
 - **Elevación por tono.** Las tarjetas se separan del fondo por un tono más claro de superficie y no solo por la sombra, que casi no se ve sobre fondos oscuros. El scrim de diálogos y hojas modales sube al 60 % de opacidad.
 - **Contraste verificado.** Todos los pares de texto y fondo cumplen WCAG AA, con un mínimo de 5.7:1. A diferencia del modo claro, los colores semánticos (`success`, `warning`, `error`, `info`) también alcanzan 6:1 o más como texto sobre `#151E31`.
@@ -1984,7 +1979,7 @@ La figura 105 muestra el user flow del User Goal 3 con el permiso de notificacio
 
 #### 3.1.4.5. Mobile Applications Prototyping
 
-El prototipo se armó en la página **06 Prototype** del archivo de Figma con los 31 mock-ups como frames de 360 x 800 dp y 186 interacciones configuradas en la pestaña Prototype. Es completamente navegable: una persona de prueba puede completar los tres User Goals desde el Inicio sin quedar en un callejón sin salida, porque cada pantalla tiene al menos una salida (Atrás, Cerrar, Cancelar, Ahora no o la barra inferior) y cada pantalla es alcanzable desde un punto de inicio. Ambas condiciones se verificaron automáticamente sobre la especificación del prototipo antes de generarlo.
+El prototipo se armó en la página **06 Prototype** del archivo de Figma con los 31 mock-ups como frames de 360 x 800 dp y 186 interacciones configuradas en la pestaña Prototype. Es completamente navegable: una persona de prueba puede completar los tres User Goals desde el Inicio sin quedar en un callejón sin salida, porque cada pantalla tiene al menos una salida (Atrás, Cerrar, Cancelar, Ahora no o la barra inferior) y cada pantalla es alcanzable desde un punto de inicio.
 
 Las transiciones siguen la arquitectura de navegación espacial de la sección 3.1.2.5 y el sistema de motion de Material 3 (300 ms para pantallas, curvas ease). La tabla 136 detalla las interacciones configuradas.
 
@@ -2041,8 +2036,6 @@ La página **08 Prototype · Modo oscuro** repite el prototipo completo con el m
 ##### Alcance y límites del prototipo
 
 Los campos de texto no aceptan escritura: al tocar un campo del formulario de alta, el prototipo completa los datos de ejemplo (Notion Plus, USD 12.00) para continuar el recorrido. Las filas que no forman parte de un User Goal (por ejemplo, Moneda de referencia o Datos de la cuenta) existen como mock-up, pero no están enlazadas. Para revisar el prototipo en el tamaño real conviene elegir el dispositivo *Android Large* (360 x 800) en la configuración de Prototype de Figma.
-
-El archivo de Figma se genera desde la especificación de pantallas versionada en el repositorio (`design/figma/`), con un plugin que crea las páginas, los componentes, las variables, los estilos y las interacciones; las láminas de este informe se exportan desde la misma especificación, de modo que el informe y el archivo de Figma no se desalinean.
 
 **Enlace al prototipo:** [CraveWallet – Prototipo móvil](https://www.figma.com/design/lIN0zLBZ4E0PmQudY5JOip/Mobile-UX-UI?node-id=1-32&t=o4MJV6YoUPiTIhVj-1)
 

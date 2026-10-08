@@ -4,11 +4,11 @@
 
 ### 4.1.1. Software Development Environment Configuration
 
-Esta sección presenta las herramientas que el equipo de CraveWallet usa para gestionar, diseñar, desarrollar y probar el producto, de modo que todos los integrantes trabajen en un entorno común y reproducible. Las herramientas se agrupan en cuatro actividades.
+El equipo usa las siguientes herramientas para gestionar, diseñar, desarrollar y probar CraveWallet, agrupadas en cuatro actividades.
 
 #### Project Management
 
-La gestión del proyecto organiza el trabajo del equipo y da seguimiento a las tareas de cada sprint. La tabla 138 describe las herramientas usadas.
+La tabla 138 describe las herramientas usadas.
 
 *Tabla 138. Herramientas de gestión del proyecto.*
 
@@ -21,7 +21,7 @@ La gestión del proyecto organiza el trabajo del equipo y da seguimiento a las t
 
 #### Product UX/UI Design
 
-Estas herramientas permiten investigar a los usuarios, modelar el dominio y construir los prototipos antes de implementar. La tabla 139 detalla su uso.
+La tabla 139 detalla las herramientas para investigar a los usuarios, modelar el dominio y construir los prototipos.
 
 *Tabla 139. Herramientas de investigación, diseño y modelado.*
 
@@ -76,7 +76,7 @@ Los criterios de aceptación de las User Stories se escriben en Gherkin, como in
 
 ### 4.1.2. Source Code Management
 
-En esta sección se describe la estrategia de gestión de código fuente (SCM, *Source Code Management*) adoptada por el equipo para garantizar la trazabilidad, organización y colaboración en el desarrollo del producto. Se emplea **GitHub** como sistema de control de versiones distribuido, bajo la organización [`1ACC0238-2620-4950-Gastify-CraveWallet`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet).
+El código fuente se gestiona en **GitHub**, bajo la organización [`1ACC0238-2620-4950-Gastify-CraveWallet`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet).
 
 Los repositorios del proyecto se listan en la tabla 142.
 
@@ -94,7 +94,7 @@ Los repositorios del proyecto se listan en la tabla 142.
 
 **GitFlow**
 
-El equipo adopta el modelo **GitFlow** como estrategia de ramificación. Este flujo organiza el trabajo en ramas de larga duración y ramas de soporte de corta duración, permitiendo el desarrollo paralelo de funcionalidades sin afectar la estabilidad del código en producción.
+El equipo usa **GitFlow** como estrategia de ramas: dos ramas permanentes y ramas de soporte de corta duración.
 
 **Main Branches (ramas principales):**
 
@@ -112,7 +112,7 @@ El equipo adopta el modelo **GitFlow** como estrategia de ramificación. Este fl
 
 **Conventional Commits**
 
-Para garantizar un historial de commits legible y semánticamente significativo, el equipo sigue el estándar de **Conventional Commits**. El formato base es:
+Los mensajes de commit siguen el estándar **Conventional Commits**, con este formato:
 
 ```
 <tipo>(<alcance>): <descripción breve>
@@ -155,13 +155,13 @@ La figura 107 muestra el network graph de ramas del repositorio CraveWallet-Repo
 
 ### 4.1.3. Source Code Style Guide & Conventions
 
-El equipo ha definido un conjunto de convenciones de estilo y nomenclatura con el objetivo de garantizar la legibilidad, mantenibilidad y coherencia del código en todos los repositorios del proyecto. Como regla transversal y obligatoria, toda la nomenclatura del sistema se redacta en **inglés**.
+Todos los repositorios siguen las mismas convenciones de estilo y nomenclatura. Toda la nomenclatura del código se escribe en **inglés**.
 
 ***
 
 #### Convenciones generales de nomenclatura
 
-Se adoptan las siguientes convenciones de capitalización según la naturaleza del elemento:
+Cada tipo de elemento usa una convención de capitalización:
 
 * **PascalCase:** Nombres de componentes React, interfaces TypeScript, tipos y clases Java (`UserProfile`, `SubscriptionCard`, `SubscriptionController`).
 * **camelCase:** Variables locales, parámetros, métodos Java, hooks y props (`userId`, `isLoading`, `handleSubmit`, `registerSubscription`).
@@ -235,7 +235,7 @@ La tabla 144 relaciona cada tecnología con la guía de estilo de referencia ado
 
 ### 4.1.4. Software Deployment Configuration
 
-La gestión del código fuente se realiza a través de **GitHub** bajo la organización del proyecto. Para el despliegue del landing page se utiliza **Vercel**, plataforma de nube optimizada para proyectos Next.js que permite publicar cambios de forma automática al integrar código en la rama `main`.
+El landing page se despliega en **Vercel**, que publica automáticamente cada cambio integrado en la rama `main` del repositorio `cravewallet-landing`.
 
 ***
 

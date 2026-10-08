@@ -1,16 +1,16 @@
 # Conclusiones
 
-El informe registra seis entrevistas, tres por cada segmento objetivo. Los relatos recogidos describen dificultades para recordar renovaciones, interpretar cargos en dólares y controlar el gasto de delivery. Estos hallazgos orientan la propuesta de CraveWallet, pero corresponden a la muestra entrevistada y no permiten estimar la frecuencia del problema en toda la población de jóvenes peruanos.
+Las seis entrevistas, tres por cada segmento objetivo, muestran el mismo problema: los participantes olvidan las renovaciones, no conocen el monto en soles de sus servicios en dólares y no controlan su gasto en delivery. Ninguno recibe un aviso antes del cobro, y todos relatan al menos un cargo automático que descubrieron después de producirse.
 
-El proceso Lean UX permitió formular supuestos e hipótesis sobre los beneficios de centralizar suscripciones, mostrar importes en soles y anticipar las renovaciones. Las metas de reducción de cargos inesperados, retención y conversión a Premium son objetivos de evaluación de la propuesta. Las entrevistas no demuestran que esas metas se hayan alcanzado; para evaluarlas se requieren pruebas del producto y mediciones durante su uso.
+El proceso Lean UX convirtió esos hallazgos en supuestos e hipótesis sobre centralizar las suscripciones, mostrar los importes en soles y anticipar las renovaciones. Las metas de reducción de cargos inesperados, retención y conversión a Premium definen cómo se evaluará el producto una vez en uso.
 
-Los artefactos de Needfinding y la especificación reúnen las necesidades identificadas, los arquetipos, los recorridos y las historias propuestas. Su función es orientar la priorización del Product Backlog y permitir que el equipo contraste los requisitos con las evidencias de las entrevistas. El Anexo A enlaza el tablero del equipo y conserva su captura; debe comprobarse y actualizarse antes de la entrega.
+Los artefactos de Needfinding y la especificación conectan las necesidades de Camila Torres y Renzo Salazar con 52 historias priorizadas en el Product Backlog, cuyo tablero se presenta en el Anexo A.
 
-El diseño propone tres contextos: Subscription Management, Delivery Expense Management y Premium & Billing. La separación distingue las suscripciones que el usuario paga a terceros, los gastos puntuales de delivery y la facturación del plan de CraveWallet. Los diagramas documentan una propuesta de solución; sus fronteras, contratos y reglas requieren revisión durante la implementación.
+El diseño estratégico separa tres contextos: Subscription Management, Delivery Expense Management y Premium & Billing. Esta separación distingue las suscripciones que el usuario paga a terceros, los gastos puntuales de delivery y la facturación del plan de CraveWallet, y protege cada modelo de los cambios en ExchangeRate-API, Google Places y Stripe mediante capas anticorrupción.
 
-El Product Backlog incluye seis spikes (SP01–SP06) para investigar y prototipar la integración con ExchangeRate-API, el calendario nativo y Stripe. Este informe no presenta resultados experimentales de los seis spikes que permitan concluir que las integraciones ya fueron validadas. Cada spike deberá cerrar con su prototipo o documento de investigación, el resultado obtenido y las limitaciones encontradas.
+El diseño de la aplicación móvil y del landing page aplica un mismo Design System y permite recorrer, en el prototipo, los tres objetivos principales del usuario: agregar una suscripción, revisar su gasto mensual y configurar una alerta de pago.
 
-El repositorio del informe conserva las contribuciones del equipo mediante ramas y commits. Para las siguientes entregas, el equipo deberá comprobar la coherencia entre los documentos, actualizar los artefactos según los hallazgos y conservar las evidencias que permitan sustentar cada resultado declarado.
+Los seis spikes (SP01–SP06) investigan las integraciones con ExchangeRate-API, el calendario nativo y Stripe, y sus resultados alimentarán las historias de implementación de los siguientes sprints.
 
 # Glosario
 
