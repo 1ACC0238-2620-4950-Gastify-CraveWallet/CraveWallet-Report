@@ -129,8 +129,9 @@ function Image(img)
   local path = img.src:gsub('%%(%x%x)', function(hex) return string.char(tonumber(hex, 16)) end)
   local file = io.open(path, 'rb')
   if file then file:close() else path = 'docs/' .. path end
-  local size = img.src:match('chapter_1/')
-    and 'width=1.55in,height=2.15in' or 'width=6.25in,height=6.8in'
+  -- Team photos are the only chapter_1 images sized as portraits.
+  local photo = img.src:match('chapter_1/') and not img.src:match('lean%-ux%-canvas')
+  local size = photo and 'width=1.55in,height=2.15in' or 'width=6.25in,height=6.8in'
   return pandoc.RawInline('latex', '\\includegraphics[' .. size .. ',keepaspectratio]{\\detokenize{' .. path .. '}}')
 end
 
