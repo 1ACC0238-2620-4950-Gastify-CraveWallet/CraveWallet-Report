@@ -25,7 +25,7 @@ class Entries(HTMLParser):
 
 with tempfile.TemporaryDirectory(prefix='cravewallet-bibliography-') as tmp:
     html=Path(tmp)/'references.html'
-    subprocess.run(['pandoc','README.md','docs/chapter_1.md','docs/chapter_2.md','docs/closing.md','--from=markdown-yaml_metadata_block','--to=html','--metadata-file=config/format.yaml','--citeproc','--bibliography=references.bib','--csl=config/apa.csl','--output='+str(html)],cwd=ROOT,check=True)
+    subprocess.run(['pandoc','README.md','docs/chapter_1.md','docs/chapter_2.md','docs/chapter_3.md','docs/chapter_4.md','docs/closing.md','--from=markdown-yaml_metadata_block','--to=html','--metadata-file=config/format.yaml','--citeproc','--bibliography=references.bib','--csl=config/apa.csl','--output='+str(html)],cwd=ROOT,check=True)
     parser=Entries();parser.feed(html.read_text(encoding='utf-8'))
     if not parser.entries: raise RuntimeError('No bibliography produced; preserve closing.md')
     path=ROOT/'docs/closing.md';text=path.read_text(encoding='utf-8')

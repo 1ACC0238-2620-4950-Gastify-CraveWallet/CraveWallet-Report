@@ -4,133 +4,83 @@
 
 ### 4.1.1. Software Development Environment Configuration
 
-En esta sección se detallan las herramientas y plataformas utilizadas por el equipo de CraveWallet para la gestión, diseño, desarrollo y pruebas del producto, con el objetivo de garantizar un entorno de trabajo homogéneo y reproducible para todos los integrantes.
+Esta sección presenta las herramientas que el equipo de CraveWallet usa para gestionar, diseñar, desarrollar y probar el producto, de modo que todos los integrantes trabajen en un entorno común y reproducible. Las herramientas se agrupan en cuatro actividades.
 
-***
+#### Project Management
 
-**Project Management**
+La gestión del proyecto organiza el trabajo del equipo y da seguimiento a las tareas de cada sprint. La tabla 139 describe las herramientas usadas.
 
-La gestión del proyecto tiene como objetivo organizar el trabajo del equipo y dar seguimiento al avance de las tareas planificadas en cada iteración de desarrollo.
+*Tabla 139. Herramientas de gestión del proyecto.*
 
-* **GitHub Projects:** Plataforma integrada en el repositorio de GitHub que permite gestionar el backlog del producto, planificar sprints y hacer seguimiento de issues mediante tableros Kanban. Se utiliza como herramienta central de planificación y coordinación del equipo.
-  | Link de referencia: | https://github.com/features/project-management |
-  | --- | --- |
+| Herramienta | Uso en CraveWallet | Sitio |
+| --- | --- | --- |
+| GitHub Projects | Backlog del producto, planificación de sprints y seguimiento de issues en tableros Kanban. | <https://github.com/features/project-management> |
+| Trello | Tablero del Product Backlog con una lista por sprint y columnas *To Do*, *In Progress* y *Done* (sección 2.4.3). | <https://trello.com/> |
 
-* **Trello:** Herramienta visual de gestión de tareas basada en tableros y tarjetas. Se emplea para organizar el flujo de trabajo del sprint en columnas como "To Do", "In Progress" y "Done", permitiendo al equipo monitorear el estado de cada tarea en tiempo real.
-  | Link de referencia: | https://trello.com/ |
-  | --- | --- |
+*Fuente: elaboración del equipo Gastify.*
 
-***
+#### Product UX/UI Design
 
-**Product UX/UI Design**
+Estas herramientas permiten investigar a los usuarios, modelar el dominio y construir los prototipos antes de implementar. La tabla 140 detalla su uso.
 
-Las siguientes herramientas permiten modelar la experiencia del usuario, establecer la arquitectura de información y construir los prototipos visuales del producto antes de su implementación.
+*Tabla 140. Herramientas de investigación, diseño y modelado.*
 
-* **Figma:** Editor de interfaces y herramienta de prototipado web colaborativa en tiempo real. Se utiliza para diseñar los wireframes de baja fidelidad, los mockups de alta fidelidad y el sistema de diseño de CraveWallet, abarcando tanto la aplicación móvil como el landing page.
-  | Link de referencia: | https://www.figma.com/ |
-  | --- | --- |
+| Herramienta | Uso en CraveWallet | Sitio |
+| --- | --- | --- |
+| Figma | Wireframes, mock-ups, Design System y prototipos del landing page y de la aplicación móvil (sección 3.1). | <https://www.figma.com/> |
+| UXPressia | User Personas, Empathy Maps, Journey Maps e Impact Maps (secciones 2.3 y 2.4.2). | <https://uxpressia.com/> |
+| Miro | EventStorming, Domain Message Flows, Bounded Context Canvases y Context Map (sección 2.5). | <https://miro.com/> |
+| Structurizr | Diagramas C4 de contexto, contenedores y componentes, versionados como DSL (sección 2.5.3). | <https://structurizr.com/> |
 
-* **Uxpressia:** Plataforma en línea para el mapeo de la experiencia del usuario. Permite construir User Personas, Empathy Maps y Customer Journey Maps, herramientas utilizadas en la fase de needfinding para comprender las necesidades y motivaciones del segmento objetivo.
-  | Link de referencia: | https://uxpressia.com/ |
-  | --- | --- |
+*Fuente: elaboración del equipo Gastify.*
 
-* **Miro:** Pizarra digital colaborativa utilizada para la sesión de Event Storming del dominio de CraveWallet. Permite que múltiples integrantes del equipo trabajen simultáneamente en la identificación de eventos de dominio, comandos y agregados.
-  | Link de referencia: | https://miro.com/ |
-  | --- | --- |
+#### Software Development
 
-* **Structurizr:** Herramienta de modelado de arquitectura de software basada en el modelo C4. Se emplea para representar el contexto del sistema, los contenedores y los componentes de la solución de forma estructurada y versionable.
-  | Link de referencia: | https://structurizr.com/ |
-  | --- | --- |
+El landing page se construye con Next.js, React y TypeScript; el backend, con Java 21 y Spring Boot; y la aplicación móvil, con Flutter, según el diagrama de contenedores de la sección 2.5.3.2. La tabla 141 agrupa las herramientas por producto.
 
-***
+*Tabla 141. Herramientas y tecnologías de desarrollo.*
 
-**Software Development**
+| Producto | Herramienta | Uso en CraveWallet | Sitio |
+| --- | --- | --- | --- |
+| Todos | GitHub | Repositorios, control de versiones con Git y revisión de pull requests. | <https://github.com/> |
+| Landing page | Visual Studio Code | Editor principal, con soporte para TypeScript, React y Tailwind CSS. | <https://code.visualstudio.com/> |
+| Landing page | WebStorm | IDE alternativo de JetBrains para JavaScript y TypeScript. | <https://www.jetbrains.com/webstorm/> |
+| Landing page | TypeScript 5 | Lenguaje del landing page, con verificación estática de tipos. | <https://www.typescriptlang.org/> |
+| Landing page | React 19 | Componentes de la interfaz del landing page. | <https://react.dev/> |
+| Landing page | Next.js 16 | Framework de React para el enrutamiento, la generación estática y el build. | <https://nextjs.org/> |
+| Landing page | Tailwind CSS 4 | Estilos con clases de utilidad sobre los tokens del Design System. | <https://tailwindcss.com/> |
+| Landing page | Vercel | Despliegue automático del landing page al integrar cambios en `main` (sección 4.1.4). | <https://vercel.com/> |
+| Backend | IntelliJ IDEA | IDE del backend, con soporte para Maven, Spring Boot, pruebas y depuración. | <https://www.jetbrains.com/idea/> |
+| Backend | Java 21 | Lenguaje del REST API y de los tres Bounded Contexts. | <https://openjdk.org/projects/jdk/21/> |
+| Backend | Spring Boot 3 | Framework del REST API: controladores web, configuración y publicación de Domain Events. | <https://spring.io/projects/spring-boot> |
+| Backend | Spring Data JPA | Repositorios de la Infrastructure Layer de cada Bounded Context. | <https://spring.io/projects/spring-data-jpa> |
+| Backend | Maven | Dependencias, compilación, pruebas y empaquetado del backend. | <https://maven.apache.org/> |
+| Backend | PostgreSQL 16 | Base de datos remota de suscripciones, gastos y planes. | <https://www.postgresql.org/> |
+| Backend | Docker | Imagen del REST API para su despliegue (sección 2.5.3.3). | <https://www.docker.com/> |
+| Aplicación móvil | Flutter y Dart | Interfaz y lógica de presentación de la aplicación móvil. | <https://flutter.dev/> |
+| Aplicación móvil | Android Studio | Emulador de Android y herramientas del SDK para probar la aplicación. | <https://developer.android.com/studio> |
 
-Las herramientas listadas a continuación conforman el entorno técnico de desarrollo del landing page y del backend de CraveWallet. El landing page se construye con Next.js, React y TypeScript; el backend, con Java 21 y Spring Boot.
+*Fuente: elaboración del equipo Gastify.*
 
-* **GitHub:** Plataforma de alojamiento de repositorios de código fuente basada en Git. Centraliza el control de versiones, la revisión de pull requests y la integración continua del proyecto.
-  | Link de referencia: | https://github.com/ |
-  | --- | --- |
+#### Software Testing
 
-* **Visual Studio Code:** Editor de código fuente ligero y extensible desarrollado por Microsoft. Es el IDE principal del equipo para el desarrollo del landing page, con soporte nativo para TypeScript, React y extensiones de Tailwind CSS.
-  | Link de referencia: | https://code.visualstudio.com/ |
-  | --- | --- |
+Los criterios de aceptación de las User Stories se escriben en Gherkin, como indica la tabla 142.
 
-* **WebStorm:** IDE de JetBrains orientado al desarrollo JavaScript y TypeScript. Ofrece análisis estático avanzado, refactoring inteligente y depuración integrada, empleado como alternativa a VS Code por algunos integrantes del equipo.
-  | Link de referencia: | https://www.jetbrains.com/webstorm/ |
-  | --- | --- |
+*Tabla 142. Herramientas de prueba.*
 
-* **IntelliJ IDEA:** IDE de JetBrains para el desarrollo en Java. Es el IDE del backend: integra Maven, el soporte de Spring Boot, la ejecución de pruebas y la depuración del REST API.
-  | Link de referencia: | https://www.jetbrains.com/idea/ |
-  | --- | --- |
+| Herramienta | Uso en CraveWallet | Sitio |
+| --- | --- | --- |
+| Gherkin | Escenarios *Given / When / Then* de los criterios de aceptación (sección 2.4.1), base de las pruebas de aceptación. | <https://cucumber.io/docs/gherkin/reference/> |
 
-* **HTML5:** Lenguaje de marcado estándar para la estructuración semántica del contenido web. Se emplea como base de las plantillas JSX/TSX que componen los componentes de React en el landing page.
-  | Link de referencia: | https://developer.mozilla.org/es/docs/Web/HTML |
-  | --- | --- |
-
-* **CSS3:** Lenguaje de estilos para la presentación visual de las interfaces. Se utiliza en combinación con Tailwind CSS para el diseño del landing page.
-  | Link de referencia: | https://developer.mozilla.org/es/docs/Web/CSS |
-  | --- | --- |
-
-* **TypeScript:** Superconjunto tipado de JavaScript que añade verificación estática de tipos. Es el lenguaje del landing page y permite detectar errores de tipos en tiempo de desarrollo.
-  | Link de referencia: | https://www.typescriptlang.org/ |
-  | --- | --- |
-
-* **React 19:** Biblioteca de JavaScript para la construcción de interfaces de usuario basadas en componentes reutilizables. Constituye la base de los componentes del landing page de CraveWallet.
-  | Link de referencia: | https://react.dev/ |
-  | --- | --- |
-
-* **Next.js 16:** Framework de React para aplicaciones web con soporte a renderizado del lado del servidor (SSR), generación estática (SSG) y enrutamiento basado en el sistema de archivos. Se utiliza para el desarrollo y despliegue del landing page de CraveWallet.
-  | Link de referencia: | https://nextjs.org/ |
-  | --- | --- |
-
-* **Tailwind CSS 4:** Framework de utilidades CSS que permite construir interfaces personalizadas directamente en el marcado, sin escribir hojas de estilo separadas. Se emplea para el estilizado del landing page para mantener la consistencia visual con el sistema de diseño definido en el capítulo III.
-  | Link de referencia: | https://tailwindcss.com/ |
-  | --- | --- |
-
-* **Java 21:** Lenguaje del backend de CraveWallet, en su versión LTS. Se utiliza para implementar el REST API y los Bounded Contexts Subscription Management, Delivery Expense Management y Premium & Billing.
-  | Link de referencia: | https://openjdk.org/projects/jdk/21/ |
-  | --- | --- |
-
-* **Spring Boot 3:** Framework de Java sobre el que se construye el REST API. Provee la configuración automática, el servidor web embebido, Spring Web para los controladores REST y el `ApplicationEventPublisher` para los Domain Events.
-  | Link de referencia: | https://spring.io/projects/spring-boot |
-  | --- | --- |
-
-* **Spring Data JPA:** Módulo de Spring para la persistencia con JPA/Hibernate. Implementa los repositorios de la Infrastructure Layer de cada Bounded Context.
-  | Link de referencia: | https://spring.io/projects/spring-data-jpa |
-  | --- | --- |
-
-* **Maven:** Herramienta de construcción y gestión de dependencias del backend. Define las dependencias de Spring Boot y ejecuta la compilación, las pruebas y el empaquetado del REST API.
-  | Link de referencia: | https://maven.apache.org/ |
-  | --- | --- |
-
-* **PostgreSQL 16:** Base de datos relacional del backend, donde se persiste el estado de las suscripciones, los gastos de delivery y los planes de los usuarios.
-  | Link de referencia: | https://www.postgresql.org/ |
-  | --- | --- |
-
-* **Docker:** Plataforma de contenedores con la que se empaqueta el REST API como imagen para su despliegue, de acuerdo con el diagrama de despliegue de la sección 2.5.3.3.
-  | Link de referencia: | https://www.docker.com/ |
-  | --- | --- |
-
-* **Vercel:** Plataforma de despliegue en la nube optimizada para proyectos Next.js. Permite publicar el landing page de forma automática al hacer merge en la rama principal, con previsualización de ramas por pull request.
-  | Link de referencia: | https://vercel.com/ |
-  | --- | --- |
-
-***
-
-**Software Testing**
-
-* **Lenguaje Gherkin:** DSL (Domain-Specific Language) utilizado para redactar criterios de aceptación en formato legible por negocio. Los escenarios de prueba se estructuran con las palabras clave `Feature`, `Scenario`, `Given`, `When`, `Then` y `And`, y se utilizan como base para los acceptance tests de las User Stories del producto.
-
-***
+*Fuente: elaboración del equipo Gastify.*
 
 ### 4.1.2. Source Code Management
 
 En esta sección se describe la estrategia de gestión de código fuente (SCM, *Source Code Management*) adoptada por el equipo para garantizar la trazabilidad, organización y colaboración en el desarrollo del producto. Se emplea **GitHub** como sistema de control de versiones distribuido, bajo la organización [`1ACC0238-2620-4950-Gastify-CraveWallet`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet).
 
-Los repositorios del proyecto se listan en la tabla 139.
+Los repositorios del proyecto se listan en la tabla 143.
 
-*Tabla 139. Repositorios del proyecto.*
+*Tabla 143. Repositorios del proyecto.*
 
 | Repositorio | Descripción | URL |
 | :--- | :--- | :--- |
@@ -168,9 +118,9 @@ Para garantizar un historial de commits legible y semánticamente significativo,
 <tipo>(<alcance>): <descripción breve>
 ```
 
-La tabla 140 describe los tipos de commit utilizados en el proyecto.
+La tabla 144 describe los tipos de commit utilizados en el proyecto.
 
-*Tabla 140. Tipos de commit.*
+*Tabla 144. Tipos de commit.*
 
 | Tipo | Descripción |
 | :--- | :--- |
@@ -264,9 +214,9 @@ Para la redacción de criterios de aceptación de las User Stories:
 
 #### Referencias de estándares adoptados
 
-La tabla 141 relaciona cada tecnología con la guía de estilo de referencia adoptada.
+La tabla 145 relaciona cada tecnología con la guía de estilo de referencia adoptada.
 
-*Tabla 141. Referencias de estándares adoptados.*
+*Tabla 145. Referencias de estándares adoptados.*
 
 | Tecnología | Referencia |
 | :--- | :--- |

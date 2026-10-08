@@ -65,11 +65,15 @@ ExchangeRate-API. (s. f.). Pair conversion requests. Recuperado 7 de octubre de 
 
 Fintonic. (s. f.). Organiza tu dinero y ahorra con la app de Fintonic. Fintonic. Recuperado 7 de octubre de 2026, de https://www.fintonic.com/es-ES/inicio/
 
-Google. (s. f.). Text Search (New). Recuperado 7 de octubre de 2026, de https://developers.google.com/maps/documentation/places/web-service/text-search
+Google. (s. f.-a). Material Design 3. Recuperado 8 de octubre de 2026, de https://m3.material.io/
+
+Google. (s. f.-b). Text Search (New). Recuperado 7 de octubre de 2026, de https://developers.google.com/maps/documentation/places/web-service/text-search
 
 Gothelf, J. (2021). How to use the Lean UX Canvas. https://jeffgothelf.com/blog/how-to-use-the-lean-ux-canvas/
 
 Gothelf, J., & Seiden, J. (2021). Lean UX: Creating Great Products with Agile Teams (3.ª ed.). O’Reilly Media.
+
+Laubheimer, P. (2016). Wireflows: A UX Deliverable for Workflows and Apps. Nielsen Norman Group. https://www.nngroup.com/articles/wireflows/
 
 Portigal, S. (2013). Interviewing Users: How to Uncover Compelling Insights. Rosenfeld Media.
 
@@ -80,6 +84,8 @@ Stripe. (s. f.-a). Receive Stripe events in your webhook endpoint. Recuperado 7 
 Stripe. (s. f.-b). Using webhooks with subscriptions. Recuperado 7 de octubre de 2026, de https://docs.stripe.com/billing/subscriptions/webhooks
 
 Superintendencia de Banca, Seguros y AFP, & CAF. (s. f.). Encuesta de Medición de Capacidades Financieras: Perú 2022. SBS y CAF. Recuperado 6 de octubre de 2026, de https://www.sbs.gob.pe/Portals/4/jer/CIFRAS-ENCUESTA/2022/Brochure_ENCUESTA_CAPACIDADES%20FINANACIERAS%202022_vr.pdf
+
+World Wide Web Consortium. (2018). Web Content Accessibility Guidelines (WCAG) 2.1. https://www.w3.org/TR/WCAG21/
 
 <!-- pdf:omit-end -->
 

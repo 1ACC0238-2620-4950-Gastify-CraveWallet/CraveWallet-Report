@@ -110,7 +110,7 @@ La tabla 105 presenta los colores semánticos de los estados del sistema.
 
 *Fuente: elaboración del equipo Gastify.*
 
-**Nota de accesibilidad:** todos los pares de color texto/fondo cumplen con el ratio de contraste mínimo de 4.5:1 exigido por WCAG 2.1 nivel AA. El par `#0F172A` sobre `#F8FAFC` alcanza un ratio de 16.8:1; el par `#FFFFFF` sobre `#3B4FD8` alcanza 5.2:1.
+**Nota de accesibilidad:** los pares de texto principales cumplen el contraste mínimo de 4.5:1 de WCAG 2.1 nivel AA [@w3c2018wcag21]: `#0F172A` sobre `#F8FAFC` alcanza 17.1:1 y `#FFFFFF` sobre `#3B4FD8`, 6.4:1. Dos pares no lo cumplen como texto: el blanco sobre `#F97316` (2.8:1) y `#EF4444` sobre blanco (3.8:1). Por eso, el contenido sobre naranja y los mensajes de error se escriben en `#0F172A`, como se detalla en la sección 3.1.4.3.
 
 ***
 
@@ -206,7 +206,7 @@ Se usa la biblioteca **Material Symbols** (variable font, peso 400, grado 0, tam
 
 #### 3.1.1.3. Mobile Style Guidelines
 
-Las Mobile Style Guidelines aplican a la aplicación nativa Android de CraveWallet, implementada siguiendo las pautas de Material Design 3 (Material You). El diseño adapta el sistema de tokens global a las restricciones y convenciones propias del entorno móvil.
+Las Mobile Style Guidelines aplican a la aplicación nativa Android de CraveWallet, implementada siguiendo las pautas de Material Design 3 (Material You) [@googleMaterial3]. El diseño adapta el sistema de tokens global a las restricciones y convenciones propias del entorno móvil.
 
 ***
 
@@ -854,13 +854,13 @@ El footer se divide en dos zonas en una sola fila: zona de marca a la izquierda 
 
 Los wireframes mobile corresponden al breakpoint inferior a 600px (grid de 4 columnas, gutters 16px). Todos los layouts multi-columna del desktop colapsan a columna única. Las descripciones a continuación documentan únicamente los cambios estructurales respecto al wireframe desktop; los principios de jerarquía y arquitectura de información son los mismos.
 
-La figura 48 muestra el wireframe del Chrome del navegador móvil — contexto de visualización (Mobile).
+La figura 48 muestra el wireframe del landing page dentro del navegador móvil (Mobile).
 
-![Wireframe Landing Page — Chrome Mobile](images/chapter_3/browser-chrome-mobile-wf.png)
+![Wireframe del landing page dentro del navegador móvil (Mobile)](images/chapter_3/browser-chrome-mobile-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 48. Wireframe del Chrome del navegador móvil — contexto de visualización (Mobile).*
+*Figura 48. Wireframe del landing page dentro del navegador móvil (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -1260,7 +1260,7 @@ La tabla 126 resume la correspondencia entre las secciones del mock-up desktop y
 
 | Sección | Principio de diseño | Elemento del Design System | Diseño inclusivo | Arquitectura de Información |
 | --- | --- | --- | --- | --- |
-| Navbar | Visibilidad constante (sticky) | Tokens `color-primary`, `color-surface`, Inter Medium 14px | Contraste 5.2:1 en CTA, acceso siempre disponible | Navegación top con anclas de sección (sección 3.1.2.5) |
+| Navbar | Visibilidad constante (sticky) | Tokens `color-primary`, `color-surface`, Inter Medium 14px | Contraste 6.4:1 en CTA, acceso siempre disponible | Navegación top con anclas de sección (sección 3.1.2.5) |
 | Hero | Jerarquía visual, contraste Gestalt | `color-on-surface`, Poppins Bold `clamp(44–76px)`, `color-primary` acento | Contraste `#FFFFFF`/`#0F172A` > 16:1, ícono + texto en CTAs | Esquema jerárquico: propuesta → descripción → acción |
 | El Problema | Proximidad Gestalt, ritmo oscuro/claro | `color-accent` eyebrow, Poppins Bold 48px para datos, `color-primary` borde tarjetas | Identificación de segmento en testimonios, diversidad de perfiles | Datos cuantitativos + cualitativos, logos de reconocimiento |
 | Solución | Esquema matricial, consistencia ícono+texto | `radius-lg` tarjetas, `color-surface-variant` bordes, `color-primary` íconos | Ícono siempre con etiqueta de texto | Grid 2×2 columnas, etiquetas descriptivas (sección 3.1.2.2) |
@@ -1278,13 +1278,13 @@ La tabla 126 resume la correspondencia entre las secciones del mock-up desktop y
 
 En breakpoints inferiores a 600px, el landing page adapta su layout al grid de 4 columnas con gutters de 16px definido en la sección 3.1.1.2. Todos los elementos en disposición horizontal o multi-columna colapsan a una única columna de lectura vertical. Los principios de diseño, tokens y arquitectura de información son los mismos que en la versión desktop; lo que varía es exclusivamente la disposición espacial de los componentes para adecuarse al viewport reducido. El Chrome del navegador móvil (barra de dirección con dominio `cravewallet.gastify.pe`) forma parte del contexto de uso antes del primer pixel del sitio.
 
-La figura 67 muestra el Chrome del navegador móvil — contexto de visualización del landing page de CraveWallet.
+La figura 67 muestra el landing page de CraveWallet dentro del navegador móvil.
 
-![Mock-up Landing Page — Chrome Mobile](images/chapter_3/browser-chrome-mobile.png)
+![Landing page de CraveWallet dentro del navegador móvil](images/chapter_3/browser-chrome-mobile.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 67. Chrome del navegador móvil — contexto de visualización del landing page de CraveWallet.*
+*Figura 67. Landing page de CraveWallet dentro del navegador móvil.*
 
 <!-- pdf:omit-end -->
 
@@ -1691,7 +1691,7 @@ Cada área se resolvió con una decisión de estructura que se puede defender co
 
 #### 3.1.4.2. Mobile Applications Wireflow Diagrams
 
-Un wireflow combina wireframes con un diagrama de flujo: miniaturas de baja fidelidad unidas por flechas que indican qué hace la persona para pasar de una pantalla a la siguiente. Sirve para comprobar que un recorrido funciona como secuencia y no solo que cada pantalla se vea bien.
+Un wireflow combina wireframes con un diagrama de flujo: miniaturas de baja fidelidad unidas por flechas que indican qué hace la persona para pasar de una pantalla a la siguiente [@laubheimer2016wireflows]. Sirve para comprobar que un recorrido funciona como secuencia y no solo que cada pantalla se vea bien.
 
 Los tres wireflows corresponden a los User Goals UG1, UG2 y UG3. Usan instancias de los wireframes al 50 %. Cada uno lleva en su encabezado la persona, el objetivo y las historias que cubre, y debajo de cada miniatura el código, el nombre y las historias de la pantalla. Cada flecha lleva una etiqueta con el componente que dispara el cambio (por ejemplo, "Toca Ingresar manualmente" o "Elige USD" en el menú desplegable de Moneda). La línea continua es el camino principal y la línea punteada es una alternativa, un error o un retorno; las píldoras punteadas indican a qué pantalla se vuelve y las píldoras sólidas marcan el objetivo cumplido.
 

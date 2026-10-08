@@ -14,7 +14,7 @@ El análisis busca identificar qué tareas resuelven otras herramientas y qué c
 
 La tabla compara la oferta publicada. Las funciones de CraveWallet son propuestas de alcance; no se califican como capacidades ya implementadas.
 
-La tabla 11 presenta competitive analysis landscape.
+La tabla 11 compara a CraveWallet con Spendee, Fintonic y Wallet by BudgetBakers en propuesta de valor, mercado objetivo, marketing, productos, precios y diferenciación.
 
 *Tabla 11. Competitive Analysis Landscape.*
 
@@ -84,7 +84,7 @@ Usar adaptadores para cotizaciones, comercios y facturación. Verificar los caso
 
 ## 2.2. Entrevistas
 
-Esta sección documenta el proceso de investigación cualitativa mediante el cual se recoge información directa de representantes de los dos segmentos objetivo definidos en la sección 1.3. El propósito de las entrevistas no es validar la solución propuesta, sino comprender el comportamiento, las motivaciones y las frustraciones reales de los usuarios frente a la gestión de sus compromisos financieros recurrentes, de modo que los arquetipos (User Personas) y los artefactos de Needfinding de la sección 2.3 se construyan sobre evidencia recolectada y no sobre supuestos del equipo.
+Esta sección documenta el proceso de investigación cualitativa mediante el cual se recoge información directa de representantes de los dos segmentos objetivo definidos en la sección 1.3. Las entrevistas no buscan validar la solución propuesta. Su propósito es comprender cómo gestionan hoy los usuarios sus compromisos recurrentes, qué los motiva y qué los frustra. Así, los User Personas y los demás artefactos de Needfinding de la sección 2.3 se construyen con evidencia recogida y no con supuestos del equipo.
 
 ### 2.2.1. Diseño de entrevistas
 
@@ -92,7 +92,7 @@ Esta sección documenta el proceso de investigación cualitativa mediante el cua
 
 El diseño del instrumento responde a cinco objetivos de investigación, derivados directamente de los supuestos declarados en el Lean UX Process del Capítulo I:
 
-La tabla 12 presenta objetivos de la investigación.
+La tabla 12 enumera los objetivos de la investigación y el supuesto que pone a prueba cada uno.
 
 *Tabla 12. Objetivos de la investigación.*
 
@@ -109,7 +109,7 @@ La tabla 12 presenta objetivos de la investigación.
 
 #### Metodología
 
-La tabla 13 presenta metodología.
+La tabla 13 define el tipo de entrevista, su duración, la muestra, los criterios de selección, la modalidad, el registro y el rol del entrevistador.
 
 *Tabla 13. Metodología.*
 
@@ -141,7 +141,7 @@ El instrumento se elaboró siguiendo las prácticas recomendadas para la investi
 
 La matriz relaciona los atributos de las personas con las preguntas de investigación. La existencia de una pregunta no prueba por sí sola que la entrevista haya obtenido esa información; cada atributo debe contrastarse con la ficha y el video. Ambos guiones se numeraron en paralelo, de modo que la pregunta *n* de un segmento cubre el mismo atributo que la pregunta *n* del otro.
 
-La tabla 14 presenta trazabilidad entre atributos del arquetipo y preguntas.
+La tabla 14 relaciona cada atributo del User Persona con las preguntas que lo exploran en cada segmento.
 
 *Tabla 14. Trazabilidad entre atributos del arquetipo y preguntas.*
 
@@ -227,7 +227,7 @@ Para cada sesión se registran nombre, edad, segmento, modalidad, fecha, duraci�
 
 #### Entrevista 1 — Segmento 1: Leonardo Sánchez
 
-La tabla 15 presenta entrevista 1 — segmento 1: leonardo sánchez.
+La tabla 15 registra los datos y el resumen de la entrevista a Leonardo Sánchez.
 
 *Tabla 15. Entrevista 1 — Segmento 1: Leonardo Sánchez.*
 
@@ -255,7 +255,7 @@ Leonardo vive con sus padres en San Juan de Lurigancho, está soltero y comparte
 
 #### Entrevista 2 — Segmento 1: Darío Romero
 
-La tabla 16 presenta entrevista 2 — segmento 1: darío romero.
+La tabla 16 registra los datos y el resumen de la entrevista a Darío Romero.
 
 *Tabla 16. Entrevista 2 — Segmento 1: Darío Romero.*
 
@@ -283,7 +283,7 @@ Darío vive con sus padres en Surquillo y tiene pareja, con quien no comparte su
 
 #### Entrevista 3 — Segmento 1: Eduardo Aguirre
 
-La tabla 17 presenta entrevista 3 — segmento 1: eduardo aguirre.
+La tabla 17 registra los datos y el resumen de la entrevista a Eduardo Aguirre.
 
 *Tabla 17. Entrevista 3 — Segmento 1: Eduardo Aguirre.*
 
@@ -311,7 +311,7 @@ Eduardo vive con su madre y hermanos en Ate, es soltero y aporta a los gastos de
 
 #### Entrevista 4 — Segmento 2: Micaela Rodriguez
 
-La tabla 18 presenta entrevista 4 — segmento 2: micaela rodriguez.
+La tabla 18 registra los datos y el resumen de la entrevista a Micaela Rodriguez.
 
 *Tabla 18. Entrevista 4 — Segmento 2: Micaela Rodriguez.*
 
@@ -339,7 +339,7 @@ Micaela comparte departamento con dos roommates desde hace año y medio, sin dep
 
 #### Entrevista 5 — Segmento 2: Leonardo Caycho
 
-La tabla 19 presenta entrevista 5 — segmento 2: leonardo caycho.
+La tabla 19 registra los datos y el resumen de la entrevista a Leonardo Caycho.
 
 *Tabla 19. Entrevista 5 — Segmento 2: Leonardo Caycho.*
 
@@ -367,7 +367,7 @@ Leonardo vive con su enamorada desde hace dos años, sin hijos, y mantienen una 
 
 #### Entrevista 6 — Segmento 2: Eddy Llamas
 
-La tabla 20 presenta entrevista 6 — segmento 2: eddy llamas.
+La tabla 20 registra los datos y el resumen de la entrevista a Eddy Llamas.
 
 *Tabla 20. Entrevista 6 — Segmento 2: Eddy Llamas.*
 
@@ -397,7 +397,7 @@ El análisis se realiza por segmento objetivo, a partir de los resúmenes de la 
 
 #### Segmento 1: Estudiante Universitario Digital (Leonardo, Darío, Eduardo)
 
-La tabla 21 presenta segmento 1: estudiante universitario digital (leonardo, darío, eduardo).
+La tabla 21 cuantifica las características observadas en las tres entrevistas del segmento de estudiantes.
 
 *Tabla 21. Segmento 1: Estudiante Universitario Digital (Leonardo, Darío, Eduardo).*
 
@@ -427,7 +427,7 @@ La tabla 21 presenta segmento 1: estudiante universitario digital (leonardo, dar
 
 #### Segmento 2: Profesional Joven Activo (Micaela, Leonardo, Eddy)
 
-La tabla 22 presenta segmento 2: profesional joven activo (micaela, leonardo, eddy).
+La tabla 22 cuantifica las características observadas en las tres entrevistas del segmento de profesionales.
 
 *Tabla 22. Segmento 2: Profesional Joven Activo (Micaela, Leonardo, Eddy).*
 
@@ -455,11 +455,11 @@ La tabla 22 presenta segmento 2: profesional joven activo (micaela, leonardo, ed
 - **Dependencia del calendario digital.** El 100 % menciona el calendario (Apple o Google) como su canal preferido para avisos importantes, por encima de correo o notificaciones sueltas.
 - **Reacción al concepto.** El 100 % reacciona positivamente y valora en particular la conversión automática a soles; dos de tres (Micaela, Eddy) además destacan no tener que conectar sus cuentas bancarias como un punto a favor frente a lo que ya rechazaron de otras apps.
 
-Los dos segmentos coinciden en tres hallazgos transversales que sustentarán directamente el Needfinding: ninguna de las seis personas recibe hoy una alerta anticipada de cobro (se enteran siempre después, revisando el banco), el 100 % de la muestra tiene al menos una suscripción facturada en dólares sin saber su equivalente en soles hasta el cargo, y el 100 % relata un episodio concreto de cobro automático olvidado. La diferencia principal entre segmentos es la relación con la conexión de cuentas bancarias: el Segmento 1 no la menciona como objeción, mientras que el 100 % del Segmento 2 la rechaza explícitamente, lo que condiciona el diseño de la propuesta de valor por segmento.
+Los dos segmentos coinciden en tres hallazgos, que sustentan el Needfinding. Primero, ninguna de las seis personas recibe hoy una alerta antes del cobro; todas se enteran después, al revisar el banco. Segundo, las seis tienen al menos una suscripción facturada en dólares y no conocen su equivalente en soles hasta ver el cargo. Tercero, las seis relatan un cobro automático olvidado. La principal diferencia está en la conexión de cuentas bancarias: el Segmento 1 no la menciona como objeción, mientras que los tres profesionales del Segmento 2 la rechazan de forma explícita. Esta diferencia condiciona la propuesta de valor para cada segmento.
 
 ## 2.3. Needfinding
 
-El Needfinding traduce los hallazgos de la sección 2.2 en los artefactos de diseño que sirven de puente hacia la especificación de requisitos de la sección 2.4: primero los arquetipos de usuario, luego las tareas y los recorridos que esos arquetipos ejecutan hoy sin CraveWallet, y finalmente el vocabulario compartido del dominio. El criterio de trabajo para todas las subsecciones es el mismo que ya rigió el diseño de las entrevistas en 2.2.1: cualquier dato que aparezca en un persona, una tarea o un evento debe poder rastrearse hasta una respuesta concreta registrada en 2.2.2 y cuantificada en 2.2.3, sin excepción.
+El Needfinding convierte los hallazgos de la sección 2.2 en artefactos de diseño que preparan la especificación de requisitos de la sección 2.4. Primero se definen los arquetipos de usuario; luego, las tareas y recorridos que siguen hoy sin CraveWallet; y por último, el vocabulario compartido del dominio. Todas las subsecciones siguen el criterio aplicado en el diseño de las entrevistas (2.2.1): cada dato de un persona, una tarea o un evento debe rastrearse hasta una respuesta registrada en 2.2.2 y cuantificada en 2.2.3.
 
 ### 2.3.1. User Personas
 
@@ -500,7 +500,7 @@ La figura 4 presenta la ficha de Renzo Salazar, arquetipo del segmento de profes
 El User Task Matrix concentra las tareas que Camila Torres (Segmento 1) y Renzo Salazar (Segmento 2) realizan hoy para gestionar sus suscripciones y gastos recurrentes, independientemente de la existencia de CraveWallet. Cada tarea proviene de un comportamiento descrito en las entrevistas y cuantificado en la sección 2.2.3; no se incluye ninguna opción o característica de software.
 
 
-La tabla 23 presenta user task matrix.
+La tabla 23 compara la frecuencia y la importancia de cada tarea para Camila Torres y Renzo Salazar.
 
 *Tabla 23. User Task Matrix.*
 
@@ -525,13 +525,13 @@ La tabla 23 presenta user task matrix.
 
 **Leyenda:** Frecuencia e Importancia se expresan en tres niveles: Baja, Media y Alta.
 
-Del cuadro se desprenden tres lecturas. La primera es que la tarea con mayor frecuencia e importancia combinadas para ambas personas es convertir mentalmente el monto de una suscripción en dólares a soles: ocurre en cada ciclo de facturación y concentra la principal fuente de fricción reportada en 2.2.3 (100 % de la muestra en ambos segmentos). La segunda es que recordar la fecha de renovación de cada suscripción es una tarea que ambas personas intentan realizar con poca frecuencia y ningún sistema de apoyo, pero cuyo fracaso concentra la mayor importancia percibida, porque es la causa directa de todos los cobros no anticipados relatados en las entrevistas; detectar que una suscripción ya no se usa y cancelarla a tiempo son tareas derivadas de ese mismo problema, con mayor importancia para Renzo porque los montos en juego son más altos (~$40-150 frente a compromisos más chicos en Segmento 1). La tercera es que dos tareas son exclusivas de un segmento: separar gastos personales de profesionales y actualizar manualmente el tipo de cambio en un registro propio solo aparecen en la rutina de Renzo, porque ningún entrevistado de Segmento 1 reporta gastos de tipo profesional ni lleva un registro formal en hoja de cálculo.
+Del cuadro se desprenden tres lecturas. La primera es que, para ambas personas, la tarea más frecuente e importante es convertir mentalmente a soles el monto de una suscripción en dólares. Ocurre en cada ciclo de facturación y es la principal fricción reportada en 2.2.3, presente en las seis entrevistas. La segunda es que recordar la fecha de renovación es una tarea poco frecuente y sin ningún apoyo, pero es la de mayor importancia percibida: olvidarla explica todos los cobros no anticipados relatados en las entrevistas. Detectar que una suscripción ya no se usa y cancelarla a tiempo derivan del mismo problema. Para Renzo son más importantes, porque los montos en juego son mayores (alrededor de USD 40 a 150, frente a compromisos menores en el Segmento 1). La tercera es que dos tareas aparecen solo en la rutina de Renzo: separar gastos personales de profesionales y actualizar a mano el tipo de cambio en una hoja de cálculo. Ningún entrevistado del Segmento 1 reporta gastos profesionales ni lleva un registro formal.
 
 Entre las tareas compartidas por ambos segmentos, destaca revisar el saldo o los movimientos bancarios al cierre del mes. Es el único mecanismo con el que ambas personas se enteran hoy de un cargo, y ocurre después del cobro porque no cuentan con una alerta anticipada.
 
 ### 2.3.3. User Journey Mapping
 
-Se elabora un User Journey Map As-Is por cada User Persona en UXPressia, vinculado a su ficha correspondiente en la misma herramienta, ilustrando el recorrido end-to-end que hoy sigue cada persona con un servicio de suscripción, sin la ayuda de CraveWallet: desde que contrata el servicio hasta que descubre, o no llega a descubrir, el cobro de su renovación. Ambos journeys comparten la misma estructura de etapas, derivada de los patrones de 2.2.3, aunque difieren en las emociones e intensidad de cada una.
+Se elabora en UXPressia un User Journey Map As-Is por cada User Persona, vinculado a su ficha. Cada mapa recorre lo que hoy hace la persona con un servicio de suscripción, sin CraveWallet: desde que lo contrata hasta que descubre, o no, el cobro de su renovación. Ambos journeys comparten la misma estructura de etapas, derivada de los patrones de 2.2.3, aunque difieren en las emociones e intensidad de cada una.
 
 #### Journey de Camila Torres (Segmento 1)
 
@@ -675,7 +675,7 @@ La figura 11 añade los actores y sistemas que participan en el proceso actual.
 
 #### Paso 4: identificar problemas y oportunidades
 
-La tabla 24 presenta paso 4: identificar problemas y oportunidades.
+La tabla 24 relaciona cada momento del proceso con el problema observado y la oportunidad de mejora.
 
 *Tabla 24. Paso 4: identificar problemas y oportunidades.*
 
@@ -707,10 +707,10 @@ El resultado del Big Picture sitúa el mayor punto de dolor **entre la renovaci�
 
 ### 2.3.6. Ubiquitous Language
 
-El siguiente glosario recoge los términos del dominio del negocio identificados a partir de las entrevistas (2.2.2), el análisis de patrones (2.2.3) y el Needfinding, de modo que el equipo y los stakeholders que revisen este informe usen el mismo vocabulario al describir el problema y la solución. Los términos se registran en inglés, con su equivalente de uso corriente en español entre paréntesis; solo se incluyen términos del dominio del negocio, no términos técnicos de ingeniería de software.
+El glosario reúne los términos del dominio identificados en las entrevistas (2.2.2), el análisis de patrones (2.2.3) y el Needfinding. Su objetivo es que el equipo y cualquier lector del informe usen el mismo vocabulario para describir el problema y la solución. Los términos se registran en inglés, con su equivalente de uso corriente en español entre paréntesis; solo se incluyen términos del dominio del negocio, no términos técnicos de ingeniería de software.
 
 
-La tabla 25 presenta ubiquitous language.
+La tabla 25 define los términos del dominio que el equipo usa de forma consistente en el informe.
 
 *Tabla 25. Ubiquitous Language.*
 
@@ -744,17 +744,17 @@ La tabla 25 presenta ubiquitous language.
 
 ## 2.4. Requirements specification
 
-La especificación que sigue traduce en requisitos concretos lo que las entrevistas y el Needfinding revelen sobre el comportamiento real de los dos segmentos, leído junto con las Feature Assumptions y los Hypothesis Statements ya declarados en el Capítulo I, y alcanza a la aplicación móvil, al backend propio y al landing page: los tres productos definidos en el alcance del proyecto. El resultado se organiza en tres piezas complementarias. Primero, el catálogo de historias (User Stories agrupadas en Epics, junto con las Technical Stories de infraestructura y las Spike Stories de investigación). Segundo, un Impact Map que conecta cada historia con los Business Outcome Assumptions de la sección 1.2.2.2. Tercero, el Product Backlog, donde esas historias reciben estimación de esfuerzo y prioridad.
+La especificación convierte en requisitos lo que las entrevistas y el Needfinding muestran sobre los dos segmentos, junto con las Feature Assumptions y los Hypothesis Statements del Capítulo I. Abarca los tres productos del proyecto: la aplicación móvil, el backend y el landing page. El resultado se organiza en tres piezas complementarias. Primero, el catálogo de historias (User Stories agrupadas en Epics, junto con las Technical Stories de infraestructura y las Spike Stories de investigación). Segundo, un Impact Map que conecta cada historia con los Business Outcome Assumptions de la sección 1.2.2.2. Tercero, el Product Backlog, donde esas historias reciben estimación de esfuerzo y prioridad.
 
 ### 2.4.1. User Stories
 
-Cada historia adoptará el punto de vista de uno de los dos segmentos objetivo del Capítulo I, agrupados bajo el rol genérico **usuario** cuando la historia les aplique a ambos por igual; se exceptúan las historias del landing page, escritas desde quien todavía no tiene cuenta, y las Technical Stories y Spike Stories, que documentan trabajo interno del equipo de desarrollo. Los criterios de aceptación se expresarán en Gherkin (Dado, Cuando, Entonces) y la prioridad de cada historia se derivará de las Hypothesis Statements de la sección 1.2.2.3: Alta cuando sostiene el Dashboard, la anticipación del cobro o la reducción de la fricción de onboarding; Media cuando completa un ciclo de uso ya cubierto por esas historias de prioridad Alta; Baja para lo que extiende la propuesta sin ser indispensable para validar las hipótesis.
+Cada historia se escribe desde el punto de vista de uno de los dos segmentos del Capítulo I, con el rol genérico **usuario** cuando aplica a ambos. Las excepciones son las historias del landing page, escritas desde un visitante sin cuenta, y las Technical Stories y Spike Stories, que documentan trabajo interno del equipo. Los criterios de aceptación se escriben en Gherkin (Dado, Cuando, Entonces). La prioridad se deriva de las Hypothesis Statements de la sección 1.2.2.3: es Alta si la historia sostiene el Dashboard, la anticipación del cobro o un registro inicial sin fricción; Media si completa un ciclo de uso ya cubierto; y Baja si amplía la propuesta sin ser necesaria para validar las hipótesis.
 
 #### Epics
 
 A partir de las Feature Assumptions del Capítulo I y de las tácticas de la sección 2.1.2 se anticipa el siguiente conjunto de Epics. Esta lista es preliminar: se ajustará con lo que arroje el Needfinding de la sección 2.3 antes de redactar las historias individuales, para que cada una tenga sustento directo en las entrevistas y no solo en las hipótesis del Capítulo I.
 
-La tabla 26 presenta epics.
+La tabla 26 lista las Epics con su identificador, nombre y alcance.
 
 *Tabla 26. Epics.*
 
@@ -1703,7 +1703,7 @@ Los requisitos y criterios de TS06 se detallan en la tabla 72.
 
 #### Spike Stories
 
-Las Spike Stories cubren la investigación técnica necesaria antes de comprometer en el backlog las dos integraciones de terceros que el equipo no ha usado en clase: el SDK de Stripe y ExchangeRate-API, declaradas como el feature de aprendizaje autónomo del proyecto en la sección 1.1.1 del Capítulo I. Cada integración se investiga en dos spikes en lugar de uno solo: un spike de documentación y decisión, y un spike de prototipo, de modo que ninguno supere los 5 puntos ni concentre más de una jornada de trabajo continua.
+Las Spike Stories cubren la investigación técnica previa a dos integraciones que el equipo no ha usado en clase: el SDK de Stripe y ExchangeRate-API. Ambas son el componente de aprendizaje autónomo del proyecto declarado en la sección 1.1.1. Cada integración se investiga en dos spikes en lugar de uno solo: un spike de documentación y decisión, y un spike de prototipo, de modo que ninguno supere los 5 puntos ni concentre más de una jornada de trabajo continua.
 
 **Definition of Done común a los seis spikes.** El prototipo o el informe de decisión queda registrado en una rama del repositorio; los hallazgos se comparten con el equipo en la sesión de refinamiento del backlog y se usan para crear o refinar las historias de implementación correspondientes; y cada spike se completa dentro del sprint en que se planifica.
 
@@ -1829,11 +1829,11 @@ Los requisitos y criterios de SP06 se detallan en la tabla 78.
 
 ### 2.4.2. Impact Mapping
 
-El Impact Map vincula los objetivos de negocio de CraveWallet con las personas que pueden hacerlos posibles, el cambio de comportamiento que se espera de ellas, lo que el producto entrega para provocar ese cambio y las historias que lo implementan. El equipo lo elabora en UXPressia a partir de las fichas de User Persona de Camila Torres y Renzo Salazar (2.3.1), respondiendo en cada nivel las preguntas del método: quiénes ayudan a lograr la meta, qué tendrían que hacer, qué puede hacer el negocio digital para provocarlo y con qué historias. Se elabora un mapa por cada Business Goal.
+El Impact Map vincula los objetivos de negocio de CraveWallet con las personas que pueden hacerlos posibles, el cambio de comportamiento que se espera de ellas, lo que el producto entrega para provocar ese cambio y las historias que lo implementan. El equipo lo elabora en UXPressia a partir de las fichas de Camila Torres y Renzo Salazar (2.3.1). Cada nivel responde una pregunta del método: quién ayuda a lograr la meta, qué tendría que hacer, qué puede ofrecer el producto para lograrlo y con qué historias. Se elabora un mapa por cada Business Goal.
 
 Los Business Goals se derivan, con los criterios SMART, de los Business Outcomes del Lean UX Canvas (sección 1.2.2.4 del Capítulo I), que recogen el criterio de éxito del Problem Statement (1.2.2.1) y los Business Outcome Assumptions (1.2.2.2).
 
-La tabla 79 presenta Impact Mapping.
+La tabla 79 enuncia los cuatro Business Goals que organizan el Impact Mapping.
 
 *Tabla 79. Impact Mapping.*
 
@@ -1850,7 +1850,7 @@ Los actores son los dos User Personas del proyecto: **Camila Torres**, del Segme
 
 #### Business Goal 01: anticipación del cobro
 
-Este mapa responde a qué tiene que cambiar para que un usuario deje de enterarse de un cobro automático solo al revisar su banco, el hallazgo transversal de la sección 2.2.3. De Camila Torres y de Renzo Salazar se espera el mismo cambio de comportamiento: que revisen el recordatorio que reciben antes del cobro y decidan a tiempo si mantienen o cancelan la suscripción, en lugar de descubrirlo después (recordatorios vía calendario nativo, con las historias de agendar y eliminar el recordatorio, otorgar el permiso de acceso al calendario, ver la lista de recordatorios agendados y recibir la notificación push complementaria).
+Este mapa responde a qué tiene que cambiar para que un usuario deje de enterarse de un cobro automático solo al revisar su banco, el hallazgo transversal de la sección 2.2.3. De Camila Torres y de Renzo Salazar se espera el mismo cambio: que revisen el recordatorio recibido antes del cobro y decidan a tiempo si mantienen o cancelan la suscripción. El producto lo facilita con los recordatorios en el calendario nativo, que incluyen las historias de agendar y eliminar el recordatorio, dar permiso al calendario, ver los recordatorios agendados y recibir la notificación push.
 
 La figura 13 relaciona el objetivo de anticipar los cobros con los actores, los cambios de comportamiento y las historias propuestas.
 
@@ -1864,7 +1864,7 @@ La figura 13 relaciona el objetivo de anticipar los cobros con los actores, los 
 
 *Fuente: elaboración del equipo Gastify.*
 
-La tabla 80 presenta Business Goal 01: anticipación del cobro.
+La tabla 80 lista las User Stories que contribuyen a la anticipación del cobro.
 
 *Tabla 80. Business Goal 01: anticipación del cobro.*
 
@@ -1880,7 +1880,7 @@ La tabla 80 presenta Business Goal 01: anticipación del cobro.
 
 #### Business Goal 02: retención por uso del Dashboard
 
-El segundo mapa sostiene la hipótesis de que un usuario vuelve a la aplicación si el Dashboard le ahorra el trabajo mental de sumar su portafolio de suscripciones. De ambas personas se espera que consulten el Dashboard con regularidad en lugar de llevar la cuenta mentalmente o revisando el banco (Dashboard unificado, con las historias de ver el total en soles, agrupar por categoría, ordenar por próxima renovación, buscar y ver el ahorro de una cancelación a tiempo); y que registren cada suscripción nueva apenas la contratan, en lugar de dejarla fuera del control (alta de suscripciones, con el catálogo precargado, el registro personalizado y la previsualización del monto en soles).
+El segundo mapa sostiene la hipótesis de que un usuario vuelve a la aplicación si el Dashboard le ahorra el trabajo mental de sumar su portafolio de suscripciones. Se espera que ambas personas consulten el Dashboard con regularidad, en vez de llevar la cuenta de memoria o revisando el banco. Para eso, el Dashboard unificado muestra el total en soles, agrupa por categoría, ordena por próxima renovación, permite buscar y muestra el ahorro de cancelar a tiempo. También se espera que registren cada suscripción nueva apenas la contratan, con ayuda del catálogo precargado, el registro personalizado y la vista previa del monto en soles.
 
 La figura 14 relaciona el objetivo de retención con los actores, los cambios de comportamiento y las historias propuestas.
 
@@ -1894,7 +1894,7 @@ La figura 14 relaciona el objetivo de retención con los actores, los cambios de
 
 *Fuente: elaboración del equipo Gastify.*
 
-La tabla 81 presenta Business Goal 02: retención por uso del Dashboard.
+La tabla 81 lista las User Stories que contribuyen a la retención por uso del Dashboard.
 
 *Tabla 81. Business Goal 02: retención por uso del Dashboard.*
 
@@ -1913,7 +1913,7 @@ La tabla 81 presenta Business Goal 02: retención por uso del Dashboard.
 
 #### Business Goal 03: conversión a Premium
 
-El tercer mapa se concentra en los usuarios de mayor compromiso, con 6 o más suscripciones registradas. De ambas personas se espera que perciban el límite del plan gratuito y decidan pagar por eliminarlo, en vez de abandonar el registro de sus suscripciones adicionales (plan Premium, con las historias de conocer el precio, suscribirse vía Stripe, ver el historial de pagos y ver cuánto falta para el límite gratuito).
+El tercer mapa se concentra en los usuarios de mayor compromiso, con 6 o más suscripciones registradas. Se espera que, al acercarse al límite del plan gratuito, decidan pagar por eliminarlo en vez de dejar de registrar sus suscripciones. El plan Premium lo facilita con las historias de conocer el precio, suscribirse con Stripe, ver el historial de pagos y saber cuánto falta para el límite.
 
 La figura 15 relaciona el objetivo de conversión a Premium con los actores, los cambios de comportamiento y las historias propuestas.
 
@@ -1927,7 +1927,7 @@ La figura 15 relaciona el objetivo de conversión a Premium con los actores, los
 
 *Fuente: elaboración del equipo Gastify.*
 
-La tabla 82 presenta Business Goal 03: conversión a Premium.
+La tabla 82 lista las User Stories que contribuyen a la conversión a Premium.
 
 *Tabla 82. Business Goal 03: conversión a Premium.*
 
@@ -1942,7 +1942,7 @@ La tabla 82 presenta Business Goal 03: conversión a Premium.
 
 #### Business Goal 04: recomendación del producto
 
-El cuarto mapa depende de que ambas personas perciban que CraveWallet resuelve mejor que la competencia (2.1) su problema principal. Se espera que un visitante entienda la propuesta de valor antes de descargar la aplicación (landing page, con las historias de ver la propuesta de valor, comparar planes y consultar preguntas frecuentes), y que un usuario activo experimente en conjunto el Dashboard, la conversión de divisas y los recordatorios como una solución coherente que lo lleve a recomendarla.
+El cuarto mapa depende de que ambas personas perciban que CraveWallet resuelve mejor que la competencia (2.1) su problema principal. Se espera que un visitante entienda la propuesta de valor antes de descargar la aplicación; el landing page lo permite con las historias de ver la propuesta, comparar planes y consultar preguntas frecuentes. También se espera que un usuario activo perciba el Dashboard, la conversión de divisas y los recordatorios como una sola solución que le convenga recomendar.
 
 La figura 16 relaciona el objetivo de recomendación del producto con los actores, los cambios de comportamiento y las historias propuestas.
 
@@ -1956,7 +1956,7 @@ La figura 16 relaciona el objetivo de recomendación del producto con los actore
 
 *Fuente: elaboración del equipo Gastify.*
 
-La tabla 83 presenta Business Goal 04: recomendación del producto.
+La tabla 83 lista las User Stories que contribuyen a la recomendación del producto.
 
 *Tabla 83. Business Goal 04: recomendación del producto.*
 
@@ -1975,7 +1975,7 @@ La tabla 83 presenta Business Goal 04: recomendación del producto.
 
 ### 2.4.3. Product Backlog
 
-El backlog consolida las 40 User Stories, las 6 Technical Stories y las 6 Spike Stories de la especificación, estimadas en Story Points con la escala 1, 2, 3 y 5 (ninguna historia supera los 5 puntos: los spikes que hubieran pesado 8 se dividieron en un spike de investigación y uno de prototipo) y ordenadas por el valor que aportan al negocio, no por tipo de historia. El orden sigue el Impact Map: primero lo que un visitante necesita para decidir descargar la aplicación (landing page, que el enunciado exige desde el primer sprint) junto con los tres spikes de investigación, que no dependen de ningún sprint de construcción y por eso se adelantan; luego la autenticación, junto con el alta de suscripciones y el Dashboard que dependen de ella, porque sin cuenta no hay portafolio que mostrar; después los spikes de prototipo y las historias de conversión de divisas y recordatorios, que sostienen la hipótesis principal de anticipar el cobro; y al final el spike de Stripe, el delivery y el plan Premium, que extienden la propuesta sin ser indispensables para las primeras hipótesis. La autenticación no encabeza el backlog por sí sola: entra en el Sprint 2 como habilitadora del alta de suscripciones y el Dashboard, no como prioridad de seguridad aislada.
+El backlog reúne las 40 User Stories, las 6 Technical Stories y las 6 Spike Stories. Se estiman en Story Points con la escala 1, 2, 3 y 5; ninguna supera los 5 puntos, porque los spikes que habrían pesado 8 se dividieron en uno de investigación y otro de prototipo. Se ordenan por el valor que aportan al negocio, no por tipo de historia. El orden sigue el Impact Map. Primero va el landing page, que el enunciado exige desde el primer sprint, junto con los tres spikes de investigación, que no dependen de ninguna construcción. Luego vienen la autenticación, el alta de suscripciones y el Dashboard, porque sin cuenta no hay portafolio que mostrar. Después siguen los spikes de prototipo y las historias de conversión de divisas y recordatorios, que sostienen la hipótesis principal. Al final quedan el spike de Stripe, el delivery y el plan Premium, que amplían la propuesta pero no son necesarios para las primeras hipótesis. La autenticación no encabeza el backlog por sí sola: entra en el Sprint 2 como habilitadora del alta de suscripciones y el Dashboard, no como prioridad de seguridad aislada.
 
 Los sprints corresponden a las entregas del curso: el Sprint 1 a TB1, el Sprint 2 a AV2 y los Sprints 3 y 4 a TB2. El Product Backlog se administra en Trello y mantiene una lista por sprint, con las historias ordenadas según la prioridad de esta tabla.
 
@@ -1983,7 +1983,7 @@ Los sprints corresponden a las entregas del curso: el Sprint 1 a TB1, el Sprint 
 
 La captura del tablero y la distribución de las historias por sprint se presentan en el Anexo A.
 
-La tabla 84 presenta product backlog.
+La tabla 84 ordena las historias del Product Backlog por prioridad, con sus Story Points y el sprint asignado.
 
 *Tabla 84. Product Backlog.*
 
@@ -2045,7 +2045,7 @@ La tabla 84 presenta product backlog.
 *Fuente: elaboración del equipo Gastify.*
 
 
-El total es de 148 Story Points: 16 en el Sprint 1, 47 en el Sprint 2, 47 en el Sprint 3 y 38 en el Sprint 4. Los spikes de investigación (SP01, SP03, SP05) abren el Sprint 1 junto al landing page porque no dependen de ningún sprint de construcción; sus spikes de prototipo correspondientes (SP02, SP04, SP06) se ubican al inicio del sprint donde se implementa la funcionalidad que investigan, para que sus hallazgos lleguen frescos a esa construcción. El Sprint 2 y el Sprint 3 concentran la mayor carga porque en ellos se construye, respectivamente, el núcleo de valor (autenticación, alta de suscripciones y Dashboard) y la hipótesis principal del producto (conversión de divisas y recordatorios anticipados).
+El total es de 148 Story Points: 16 en el Sprint 1, 47 en el Sprint 2, 47 en el Sprint 3 y 38 en el Sprint 4. Los spikes de investigación (SP01, SP03 y SP05) abren el Sprint 1 junto al landing page, porque no dependen de ninguna construcción. Los spikes de prototipo (SP02, SP04 y SP06) se ubican al inicio del sprint que implementa la funcionalidad investigada, para aplicar sus hallazgos de inmediato. El Sprint 2 y el Sprint 3 concentran la mayor carga porque en ellos se construye, respectivamente, el núcleo de valor (autenticación, alta de suscripciones y Dashboard) y la hipótesis principal del producto (conversión de divisas y recordatorios anticipados).
 
 El backlog se administra en la herramienta que indique el docente, donde cada historia se registra como tarjeta con su código, título, puntos y sprint, en el mismo orden de esta tabla.
 
@@ -2055,7 +2055,7 @@ El diseño estratégico de Domain-Driven Design [@evans2003ddd] organiza las res
 
 El trabajo parte del Big Picture EventStorming y del Ubiquitous Language del Needfinding (secciones 2.3.5 y 2.3.6), que describen cómo un usuario administra sus compromisos recurrentes hoy, sin CraveWallet. El segundo ejercicio de EventStorming cambia de propósito: diseña el proceso de la solución e incorpora los comandos, las políticas, los agregados y las vistas de lectura necesarios para registrar una suscripción, verla en el Dashboard, recibir un recordatorio con 24 horas de anticipación y, si corresponde, pasar a Premium. Las historias individuales de la sección 2.4 aún deben contrastarse con este modelo.
 
-De ese segundo EventStorming surgen Bounded Contexts candidatos mediante dos técnicas complementarias: *start-with-value*, que delimita el subconjunto del dominio del que depende la ventaja competitiva de CraveWallet (anticipar el cobro y mantener el portafolio expresado en soles), y *look-for-pivotal-events*, que toma como señales de frontera los cambios de estado significativos del ciclo: una suscripción queda registrada, se programa una alerta o una cuenta pasa a Premium. El contexto core se separa de los subdominios de apoyo y genéricos; las relaciones y patrones de Context Mapping se detallarán en 2.5.2. Las respuestas de Stripe y ExchangeRate-API deberán pasar por una capa de traducción, conforme a la Estrategia 4 de 2.1.2.
+De ese segundo EventStorming surgen los Bounded Contexts candidatos, con dos técnicas. *Start-with-value* delimita la parte del dominio de la que depende la ventaja de CraveWallet: anticipar el cobro y expresar el portafolio en soles. *Look-for-pivotal-events* usa como señales de frontera los cambios de estado importantes, como registrar una suscripción, programar una alerta o pasar a Premium. El contexto core se separa de los subdominios de apoyo y genéricos; las relaciones y patrones de Context Mapping se detallarán en 2.5.2. Las respuestas de Stripe y ExchangeRate-API deberán pasar por una capa de traducción, conforme a la Estrategia 4 de 2.1.2.
 
 La arquitectura de software que cierra la sección se representará con el C4 Model, en sus niveles de contexto, contenedores y despliegue.
 
@@ -2101,7 +2101,7 @@ La figura 18 representa los recorridos propuestos para registrar suscripciones y
 
 *Nota: dos recorridos de valor que permiten descubrir los contextos candidatos Suscripciones y Gastos.*
 
-La tabla 85 presenta candidate context discovery.
+La tabla 85 resume los contextos candidatos, sus responsabilidades, sus eventos y el tipo de subdominio.
 
 *Tabla 85. Candidate Context Discovery.*
 
@@ -2456,7 +2456,7 @@ La figura 28 indica el propósito y la tecnología de cada relación: HTTPS/JSON
 
 El despliegue de la figura 29 es una opción de infraestructura: contenedor del backend en ECS/Fargate, base de datos PostgreSQL en RDS, entrada HTTPS y gestión de secretos. Su contratación, región, costos, cuotas y pipeline deberán decidirse y verificarse antes de implementar. No hay evidencia en este avance de un backend desplegado con esa configuración. La aplicación móvil se ejecutaría en el dispositivo y accedería al calendario mediante sus permisos.
 
-La figura 29 presenta propuesta de despliegue de cravewallet.
+La figura 29 muestra dónde se ejecutaría cada contenedor de CraveWallet.
 
 ![Propuesta de despliegue de CraveWallet](images/chapter_2/deployment_diagram.png)
 
@@ -2478,7 +2478,7 @@ Se detallan los tres contextos del mapa de 2.5.2. Cada módulo distingue Domain 
 
 El agregado **`Subscription`** representa un registro del usuario, con identificador, nombre, importe original, moneda, categoría, estado y ciclo. `register`, `edit` y `cancel` deben comprobar propiedad y reglas antes de guardar. Un registro activo tiene una fecha de renovación válida e importe con moneda; el estado cancelado preserva el historial y excluye el registro del portafolio activo. La reactivación debe definirse explícitamente; no se interpreta como la contratación de un servicio externo.
 
-La tabla 95 presenta domain layer.
+La tabla 95 describe los elementos de la Domain Layer de Subscription Management y sus reglas.
 
 *Tabla 95. Domain Layer.*
 
@@ -2501,7 +2501,7 @@ La tabla 95 presenta domain layer.
 
 `SubscriptionController` traduce solicitudes autenticadas a comandos/consultas. La identidad se obtiene de la autenticación; enviar otro `userId` en el cuerpo no autoriza operar sobre otro usuario. La base propuesta es `/api/v1/subscriptions`.
 
-La tabla 96 presenta interface layer.
+La tabla 96 lista los endpoints de Subscription Management con su caso de uso e historia.
 
 *Tabla 96. Interface Layer.*
 
@@ -2529,7 +2529,7 @@ El request de alta contiene nombre, importe, moneda, categoría, fecha y periodi
 
 #### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-La figura 30 presenta componentes de subscription management.
+La figura 30 muestra los componentes internos de Subscription Management y sus dependencias.
 
 ![Componentes de Subscription Management](images/chapter_2/subscription-components-revised.png)
 
@@ -2547,7 +2547,7 @@ La figura 30 presenta componentes de subscription management.
 
 El diagrama conserva el agregado, sus objetos de valor, eventos y puertos. Las dependencias del dominio no incluyen HTTP, JPA ni clases del SDK externo. `PremiumStatusPort` es un contrato adicional de consulta de la aplicación; no convierte `UserId` en un Shared Kernel.
 
-La figura 31 presenta clases de dominio de subscription management.
+La figura 31 muestra las clases de la Domain Layer de Subscription Management.
 
 ![Clases de dominio de Subscription Management](images/chapter_2/subscription_class_diagram.png)
 
@@ -2563,7 +2563,7 @@ La figura 31 presenta clases de dominio de subscription management.
 
 La persistencia propuesta separa registros, historial declarado y caché de cotizaciones. El historial solo almacena cobros que el usuario consigna o confirma; una fecha programada no acredita un pago. `user_id` identifica al propietario, pero no representa una relación entre agregados de Suscripciones, Gastos y Premium. Las restricciones físicas y el esquema de autenticación se concretarán al implementar.
 
-La figura 32 presenta persistencia propuesta de subscription management.
+La figura 32 muestra las tablas propuestas para persistir Subscription Management.
 
 ![Persistencia propuesta de Subscription Management](images/chapter_2/subscription-database-revised.png)
 
@@ -2581,7 +2581,7 @@ La figura 32 presenta persistencia propuesta de subscription management.
 
 **`DeliveryExpense`** representa un gasto puntual con propietario, importe, comercio, categoría y fecha. **`MonthlyBudget`** mantiene el límite y acumulado del mismo usuario para un período mensual. Son agregados distintos dentro del contexto. Los registros de gastos y las suscripciones no comparten estos agregados ni sus tablas; el cliente combina consultas para mostrar el Dashboard.
 
-La tabla 97 presenta domain layer.
+La tabla 97 describe los elementos de la Domain Layer de Delivery Expense Management y sus reglas.
 
 *Tabla 97. Domain Layer.*
 
@@ -2603,7 +2603,7 @@ La tabla 97 presenta domain layer.
 
 `DeliveryExpenseController` expone las siguientes rutas relativas a `/api/v1/delivery-expenses`. Requieren autenticación y comprobación de propiedad.
 
-La tabla 98 presenta interface layer.
+La tabla 98 lista los endpoints de Delivery Expense Management con los datos que reciben y devuelven.
 
 *Tabla 98. Interface Layer.*
 
@@ -2633,7 +2633,7 @@ Los manejadores internos pueden preparar el estado de exceso que consume la apli
 
 #### 2.6.2.5. Component Level Diagrams
 
-La figura 33 presenta componentes de delivery expense management.
+La figura 33 muestra los componentes internos de Delivery Expense Management y sus dependencias.
 
 ![Componentes de Delivery Expense Management](images/chapter_2/delivery-components-revised.png)
 
@@ -2651,7 +2651,7 @@ La figura 33 presenta componentes de delivery expense management.
 
 El diagrama muestra los dos agregados, sus objetos de valor y eventos. La asociación por usuario/período no fusiona el gasto y el presupuesto en un solo agregado.
 
-La figura 34 presenta clases de dominio de delivery expense management.
+La figura 34 muestra las clases de la Domain Layer de Delivery Expense Management.
 
 ![Clases de dominio de Delivery Expense Management](images/chapter_2/delivery_class_diagram.png)
 
@@ -2667,7 +2667,7 @@ La figura 34 presenta clases de dominio de delivery expense management.
 
 `delivery_expenses` conserva los gastos y el identificador de solicitud para reconocer reintentos. `monthly_budgets` tiene una restricción única por usuario/año/mes. La línea entre tablas indica agrupación lógica por propietario y mes, no una clave foránea inventada hacia un presupuesto. La estrategia de concurrencia debe proteger el acumulado.
 
-La figura 35 presenta persistencia propuesta de delivery expense management.
+La figura 35 muestra las tablas propuestas para persistir Delivery Expense Management.
 
 ![Persistencia propuesta de Delivery Expense Management](images/chapter_2/delivery-database-revised.png)
 
@@ -2685,7 +2685,7 @@ La figura 35 presenta persistencia propuesta de delivery expense management.
 
 **`SubscriptionPlan`** representa el nivel de acceso a CraveWallet. Mantiene propietario, Free/Premium, período de vigencia y referencias para correlacionar facturación. La cancelación del plan propio no cambia los registros externos del usuario.
 
-La tabla 99 presenta domain layer.
+La tabla 99 describe los elementos de la Domain Layer de Premium & Billing y sus reglas.
 
 *Tabla 99. Domain Layer.*
 
@@ -2708,7 +2708,7 @@ La tabla 99 presenta domain layer.
 
 `PremiumController` atiende al usuario autenticado. `StripeWebhookController` recibe notificaciones del proveedor; no requiere el JWT del usuario, pero sí la verificación de firma y correlación antes de afectar un plan.
 
-La tabla 100 presenta interface layer.
+La tabla 100 lista los endpoints de Premium & Billing y el contrato propuesto para cada uno.
 
 *Tabla 100. Interface Layer.*
 
@@ -2737,7 +2737,7 @@ Para una factura pagada, se consulta y valida la suscripción vinculada antes de
 
 #### 2.6.3.5. Component Level Diagrams
 
-La figura 36 presenta componentes de premium & billing.
+La figura 36 muestra los componentes internos de Premium & Billing y sus dependencias.
 
 ![Componentes de Premium & Billing](images/chapter_2/premium-components-revised.png)
 
@@ -2755,7 +2755,7 @@ La figura 36 presenta componentes de premium & billing.
 
 El diagrama conserva el agregado y los eventos locales. La operación de renovación debe respetar la actualización de vigencia descrita arriba. Los puertos se completarán con el contrato de cancelación al implementar; el diagrama representa el núcleo del modelo.
 
-La figura 37 presenta clases de dominio de premium & billing.
+La figura 37 muestra las clases de la Domain Layer de Premium & Billing.
 
 ![Clases de dominio de Premium & Billing](images/chapter_2/premium_class_diagram.png)
 
@@ -2771,7 +2771,7 @@ La figura 37 presenta clases de dominio de premium & billing.
 
 `user_plans` tiene un único registro por usuario. `billing_events` conserva identificador externo único, plan correlacionado, tipo, fecha y estado de procesamiento. La correlación se verifica antes de cambiar el plan; un índice no demuestra por sí solo procesamiento en tiempo constante ni consistencia con Stripe.
 
-La figura 38 presenta persistencia propuesta de premium & billing.
+La figura 38 muestra las tablas propuestas para persistir Premium & Billing.
 
 ![Persistencia propuesta de Premium & Billing](images/chapter_2/premium-database-revised.png)
 

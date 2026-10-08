@@ -24,7 +24,7 @@ Los valores fundacionales de Gastify son: **transparencia financiera**, **diseñ
 
 El equipo de desarrollo de CraveWallet cuenta con cinco integrantes. A continuación se presentan sus perfiles académicos y técnicos.
 
-La tabla 9 presenta perfiles de integrantes del equipo.
+La tabla 9 presenta a cada integrante con su fotografía, código de estudiante y formación.
 
 *Tabla 9. Perfiles de integrantes del equipo.*
 

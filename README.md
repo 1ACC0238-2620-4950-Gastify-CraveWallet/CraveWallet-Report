@@ -1,21 +1,22 @@
 # Registro de Versiones del Informe
 
-La tabla 1 presenta registro de versiones del informe.
+La tabla 1 registra las versiones del informe, su fecha, su autor y los cambios incorporados en cada una.
 
 *Tabla 1. Registro de Versiones del Informe.*
 
-| Versión |    Fecha   |      Autor     | Descripción de modificación |
-|:-------:|:----------:|:--------------:|:---------------------------:|
-|   AV1   | 15/09/2026  | Todo el equipo |       Primera versión       |
+| Versión | Fecha | Autor | Descripción de modificación |
+| --- | --- | --- | --- |
+| AV1 | 15/09/2026 | Todo el equipo | Primera versión |
 | AV1 — revisión | 07/10/2026 | Anghelo Faustino | Corrección de fuentes, Lean UX, flujos de mensajes, Context Map y coherencia del diseño. |
 | AV1 — revisión de diseño estratégico | 07/10/2026 | Alexander Aliaga | Corrección de las secciones 2.5.1.2, 2.5.1.3, 2.5.2, 2.5.3.1 y 2.5.3.2; fuentes editables, referencias y alineación del criterio de activación de Premium. |
+| TB1 — avance | 08/10/2026 | Mario Sejuro | Redacción de las referencias a tablas y figuras y de oraciones extensas del Capítulo II; fuentes del Capítulo III; herramientas del 4.1.1 en tablas Markdown. |
 
 *Fuente: elaboración del equipo Gastify.*
 
 
 # Project Report Collaboration Insights
 
-La figura 1 presenta la captura de colaboración del repositorio utilizada como evidencia del trabajo del equipo.
+La figura 1 muestra la actividad de los integrantes en el repositorio del informe, como evidencia del trabajo colaborativo.
 
 ![Collaboration Insights — CraveWallet](docs/images/collaboration_insights.png)
 
@@ -116,7 +117,7 @@ Los siguientes cuadros describen las acciones realizadas por cada integrante y l
 
 Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software.
 
-La tabla 2 presenta criterio 1.
+La tabla 2 resume las acciones de cada integrante que sustentan el primer criterio.
 
 *Tabla 2. Criterio 1.*
 
@@ -139,7 +140,7 @@ La tabla 2 presenta criterio 1.
 
 Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de software.
 
-La tabla 3 presenta criterio 2.
+La tabla 3 resume las acciones de cada integrante que sustentan el segundo criterio.
 
 *Tabla 3. Criterio 2.*
 
@@ -164,7 +165,7 @@ Cada integrante plantea dos objetivos para su desarrollo profesional luego de te
 
 ## Alexander Aliaga
 
-La tabla 4 presenta alexander aliaga.
+La tabla 4 detalla los objetivos SMART de Alexander Aliaga.
 
 *Tabla 4. Alexander Aliaga.*
 
@@ -178,7 +179,7 @@ La tabla 4 presenta alexander aliaga.
 
 ## Josué Francisco Carpio Peña
 
-La tabla 5 presenta josué francisco carpio peña.
+La tabla 5 detalla los objetivos SMART de Josué Francisco Carpio Peña.
 
 *Tabla 5. Josué Francisco Carpio Peña.*
 
@@ -192,7 +193,7 @@ La tabla 5 presenta josué francisco carpio peña.
 
 ## Anghelo Edwin Faustino Hurtado
 
-La tabla 6 presenta anghelo edwin faustino hurtado.
+La tabla 6 detalla los objetivos SMART de Anghelo Edwin Faustino Hurtado.
 
 *Tabla 6. Anghelo Edwin Faustino Hurtado.*
 
@@ -206,7 +207,7 @@ La tabla 6 presenta anghelo edwin faustino hurtado.
 
 ## Sebastian Jared Roman Zeballos
 
-La tabla 7 presenta sebastian jared roman zeballos.
+La tabla 7 detalla los objetivos SMART de Sebastian Jared Roman Zeballos.
 
 *Tabla 7. Sebastian Jared Roman Zeballos.*
 
@@ -220,7 +221,7 @@ La tabla 7 presenta sebastian jared roman zeballos.
 
 ## Mario Gabriel Sejuro Medina
 
-La tabla 8 presenta mario gabriel sejuro medina.
+La tabla 8 detalla los objetivos SMART de Mario Gabriel Sejuro Medina.
 
 *Tabla 8. Mario Gabriel Sejuro Medina.*
 
