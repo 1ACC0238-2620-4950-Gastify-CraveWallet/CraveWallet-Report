@@ -103,5 +103,5 @@
     "Landscape empty Home primary action was below visible area; registration opened through Gastos",
     "Conversion preview says today although source updated on previous local day"
   ],
-  "status": "Flujos verificados en emulador. La prueba en celular físico la realizó Alexander Aliaga y no tiene capturas en este registro."
+  "status": "Flujos verificados en LDPlayer. El APK también se probó en el celular físico de Alexander Aliaga."
 }
