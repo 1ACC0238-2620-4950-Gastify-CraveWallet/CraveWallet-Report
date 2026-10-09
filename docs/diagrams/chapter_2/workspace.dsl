@@ -8,7 +8,7 @@ workspace "CraveWallet" "Arquitectura propuesta: contexto y contenedores" {
         calendar = softwareSystem "Calendario del dispositivo" "Recordatorios con permiso del usuario." "External"
         cw = softwareSystem "CraveWallet" "Registra suscripciones y delivery; estima importes en soles, prepara avisos y administra su plan propio." {
             tags "Internal"
-            mobile = container "Mobile App" "Formularios, Dashboard, permisos y recordatorios." "Flutter / Dart" "Internal"
+            mobile = container "Mobile App" "Formularios, Dashboard, permisos y recordatorios." "Kotlin / Jetpack Compose" "Internal"
             api = container "REST API Backend" "Modulos de Suscripciones, Gastos y Premium; autenticacion y adaptadores." "Java 21 / Spring Boot" "Internal"
             local = container "Local Database" "Cache de lectura con fecha de actualizacion." "SQLite" "Internal,Database"
             remote = container "Remote Database" "Estado canonico y tablas propiedad de cada modulo." "PostgreSQL" "Internal,Database"

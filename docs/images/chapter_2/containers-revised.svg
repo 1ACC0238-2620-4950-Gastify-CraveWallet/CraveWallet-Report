@@ -52,7 +52,7 @@
   <text x="171.0" y="292.195" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="29.0" font-weight="normal" data-miro-id="3458764686427232573">Interactúa con la aplicación.</text>
   <rect x="65.0" y="490.0" width="570.0" height="240.0" fill="#d9eaf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232574" />
   <text x="279.015625" y="570.24" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232574">Mobile App</text>
-  <text x="181.0" y="602.44" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232574">[Contenedor: Flutter / Dart]</text>
+  <text x="98.5" y="602.44" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232574">[Contenedor: Kotlin / Jetpack Compose]</text>
   <text x="122.5" y="634.64" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232574">Formularios, Dashboard, permisos y</text>
   <text x="306.0" y="666.84" fill="#1a1a1a" font-family="Arial,sans-serif" font-size="28.0" font-weight="normal" data-miro-id="3458764686427232574">avisos.</text>
   <rect x="1130.0" y="490.0" width="600.0" height="240.0" fill="#d9eaf7" stroke="#757575" stroke-width="2" data-miro-id="3458764686427232575" />

@@ -7,7 +7,8 @@
 <rect x="40" y="150" width="510" height="150" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
 <text x="55" y="163" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Contenedor</text>
 <text x="55" y="191" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Mobile App</text>
-<text x="55" y="230" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Formularios y consultas; Flutter/Dart</text>
+<text x="55" y="230" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Formularios y consultas; Kotlin/Jetpack</text>
+<text x="55" y="258" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">Compose</text>
 <rect x="1220" y="150" width="510" height="150" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
 <text x="1235" y="163" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#18324a">Sistema externo</text>
 <text x="1235" y="191" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Google Places</text>

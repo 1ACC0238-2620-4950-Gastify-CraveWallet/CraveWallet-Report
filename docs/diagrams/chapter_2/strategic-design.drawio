@@ -1515,7 +1515,7 @@
         <mxCell id="29" value="" style="rounded=0;fillColor=#d9eaf7;strokeColor=#757575;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="65.0" y="490.0" width="570.0" height="240.0" as="geometry" />
         </mxCell>
-        <mxCell id="30" value="Mobile App&#10;[Contenedor: Flutter / Dart]&#10;Formularios, Dashboard, permisos y avisos." style="text;html=0;align=center;verticalAlign=top;whiteSpace=wrap;fontFamily=Arial;fontSize=28.0;fontStyle=0;fontColor=#1a1a1a;" vertex="1" parent="1">
+        <mxCell id="30" value="Mobile App&#10;[Contenedor: Kotlin / Jetpack Compose]&#10;Formularios, Dashboard, permisos y avisos." style="text;html=0;align=center;verticalAlign=top;whiteSpace=wrap;fontFamily=Arial;fontSize=28.0;fontStyle=0;fontColor=#1a1a1a;" vertex="1" parent="1">
           <mxGeometry x="81.0" y="545.6" width="538.0" height="216.0" as="geometry" />
         </mxCell>
         <mxCell id="31" value="" style="rounded=0;fillColor=#d9eaf7;strokeColor=#757575;dashed=0;" vertex="1" parent="1">

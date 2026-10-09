@@ -24,9 +24,9 @@ Los seis spikes (SP01–SP06) investigan las integraciones con ExchangeRate-API,
 
 **EventStorming.** Taller colaborativo de modelado que descubre el flujo de Domain Events de un sistema mediante notas adhesivas, distinguiendo eventos, comandos, actores, políticas y sistemas externos. El equipo lo aplicó en dos modalidades: Big Picture (As-Is y To-Be) y detalle por Bounded Context.
 
-**Flutter.** Framework de desarrollo móvil multiplataforma de Google, basado en el lenguaje Dart, que genera aplicaciones nativas para Android e iOS desde una única base de código. Es el stack de la capa móvil de CraveWallet.
-
 **GitFlow.** Estrategia de ramificación para Git que organiza el trabajo en ramas de largo plazo (`main`, `develop`) y ramas de corto plazo (`feature/`, `fix/`, `release/`), facilitando el desarrollo paralelo y los releases controlados.
+
+**Kotlin y Jetpack Compose.** Kotlin es el lenguaje oficial de Android y Jetpack Compose, el toolkit declarativo de Google para construir interfaces nativas con Material 3. Son el stack de la capa móvil de CraveWallet.
 
 **Lean UX.** Marco de trabajo que combina pensamiento de diseño, metodologías ágiles y modelo de negocio Lean para validar hipótesis sobre el usuario antes de invertir en construcción. El equipo aplicó sus artefactos principales: Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas.
 
@@ -97,13 +97,13 @@ El Product Backlog de CraveWallet se gestiona en Trello. El tablero organiza las
 
 **Enlace público del tablero:** [CraveWallet – Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog)
 
-La figura 123 muestra la distribución de las historias en el tablero descrito en la sección 2.4.3.
+La figura 124 muestra la distribución de las historias en el tablero descrito en la sección 2.4.3.
 
 ![Product Backlog de CraveWallet en Trello](images/chapter_2/Product_Backlog_Trello.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 123. Product Backlog de CraveWallet en Trello.*
+*Figura 124. Product Backlog de CraveWallet en Trello.*
 
 <!-- pdf:omit-end -->
 

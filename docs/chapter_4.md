@@ -351,20 +351,16 @@ La figura 108 muestra la lista «Sprint 1 (TB1) – 16 SP» del [tablero públic
 | User Story Id | Task Id | Task Title | Estimation (Hours) | Assigned To | Status |
 | --- | --- | --- | ---: | --- | --- |
 | US24 | T01 | Presentar propuesta de valor y problema en el landing. | 9 | Mario / Sebastián | Done |
-| US24 | T02 | Enlazar las descargas Android e iOS. | 1 | Mario | To-do |
 | US25 | T03 | Comparar planes Free y Premium. | 3 | Sebastián | Done |
-| US32 | T04 | Publicar preguntas frecuentes. | 3 | Sebastián | Done en `feature/landing-sprint-1`; sin integrar a `main` |
-| US40 | T05 | Registrar correos del formulario de novedades. | 3 | Sebastián | In-Process en `feature/landing-sprint-1` |
-| SP01 | T06 | Documentar integración del tipo de cambio. | 6 | Anghelo | To-do |
-| SP03 | T07 | Documentar integración del calendario. | 6 | Josué | To-do |
-| SP05 | T08 | Documentar integración de Stripe. | 6 | Alexander | To-do |
-| Hito TB1 | T09 | Mostrar las pantallas core en Android. | — | Sebastián | Done en emulador |
+| Hito TB1 | T09 | Mostrar las pantallas core en Android. | — | Sebastián | Done |
 | Hito TB1 | T10 | Implementar y probar los servicios principales del backend. | — | Anghelo | Done |
 | Hito TB1 | T11 | Publicar el landing en Vercel. | — | Mario | Done |
 | Hito TB1 | T12 | Desplegar el REST API en Render con PostgreSQL. | — | Anghelo | Done |
-| Hito TB1 | T13 | Conectar la aplicación Android con el REST API público. | — | Anghelo | Done en pruebas; pendiente en dispositivo |
+| Hito TB1 | T13 | Conectar la aplicación Android con el REST API público. | — | Anghelo | Done |
 
 *Fuente: [tablero del Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) y commits de la sección 4.2.1.4. T09 a T13 no tienen estimación en el tablero.*
+
+Las tareas que no se completaron en el Sprint 1 pasan al Sprint 2: enlazar las descargas Android e iOS (T02, US24), publicar las preguntas frecuentes (T04, US32), registrar el formulario de novedades (T05, US40) y documentar las integraciones del tipo de cambio, el calendario y Stripe (T06 a T08, spikes SP01, SP03 y SP05).
 
 #### 4.2.1.4. Development Evidence for Sprint Review
 
@@ -756,13 +752,13 @@ La construcción del backend se verifica en GitHub Actions: el workflow `Backend
 
 #### 4.2.1.9. Team Collaboration Insights during Sprint
 
-El historial de los repositorios muestra el aporte de cada integrante en el Sprint 1. La tabla 160 presenta los commits de cada uno por repositorio entre el 16 de septiembre y el 9 de octubre de 2026, y excluye los commits de merge. Los commits de Anghelo Faustino en los repositorios de código figuran con el usuario `limozz05` y los del informe, con su cuenta `Limos05`.
+El historial de los repositorios muestra el aporte de cada integrante en el Sprint 1. La tabla 160 presenta los commits de cada uno por repositorio entre el 16 de septiembre y el 9 de octubre de 2026 (informe hasta el commit `3dbbc36`), y excluye los commits de merge. La figura 123 presenta los mismos datos. Los commits de Anghelo Faustino en los repositorios de código figuran con el usuario `limozz05` y los del informe, con su cuenta `Limos05`.
 
 *Tabla 160. Commits de cada integrante por repositorio en el Sprint 1.*
 
 | Integrante | Landing page | Aplicación Android | Servicios RESTful | Informe |
 | --- | ---: | ---: | ---: | ---: |
-| Sejuro Medina, Mario Gabriel | 8 | 0 | 0 | 30 |
+| Sejuro Medina, Mario Gabriel | 8 | 0 | 0 | 32 |
 | Faustino Hurtado, Anghelo Edwin | 0 | 4 | 7 | 32 |
 | Roman Zeballos, Sebastian Jared | 2 | 1 | 1 | 30 |
 | Carpio Peña, Josué Francisco | 0 | 0 | 0 | 7 |
@@ -770,7 +766,17 @@ El historial de los repositorios muestra el aporte de cada integrante en el Spri
 
 *Fuente: historial de commits de `cravewallet-landing`, `CraveWallet-Mobile`, `CraveWallet-Backend` y `CraveWallet-Report` en GitHub.*
 
-La implementación se concentra en tres integrantes. Mario Sejuro desarrolló el landing publicado; Sebastián Roman escribió las secciones adicionales del landing, inicializó el repositorio del backend y desarrolló la aplicación Android; y Anghelo Faustino implementó el backend, el despliegue en Render y la conexión de la aplicación con el API. Josué Carpio y Alexander Aliaga registran commits en el informe, pero no en los repositorios de código, y no se encontró en los repositorios revisados un documento de cierre de los spikes SP01, SP03 y SP05.
+![Commits por integrante y repositorio en el Sprint 1](images/chapter_4/contributors-sprint1.png)
+
+<!-- pdf:omit-start -->
+
+*Figura 123. Commits por integrante y repositorio en el Sprint 1.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: elaboración del equipo Gastify a partir del historial de todas las ramas de los cuatro repositorios. La pestaña Contributors de GitHub solo cuenta la rama predeterminada; en el backend es `main`, que conserva únicamente el commit inicial, por lo que no refleja el trabajo de `develop`.*
+
+La implementación se concentra en tres integrantes. Mario Sejuro desarrolló el landing publicado; Sebastián Roman escribió las secciones adicionales del landing, inicializó el repositorio del backend y desarrolló la aplicación Android; y Anghelo Faustino implementó el backend, el despliegue en Render y la conexión de la aplicación con el API. Josué Carpio y Alexander Aliaga registran commits en el informe, pero no en los repositorios de código, y no se encontró en los repositorios revisados un documento de cierre de los spikes SP01, SP03 y SP05, que pasan al Sprint 2.
 
 Los repositorios de código no registran pull requests ni revisiones entre integrantes: los cambios entraron directamente a `develop` o `main`. El repositorio del informe sí usó pull requests. El enunciado pide que todos participen en la implementación de cada producto, y en este Sprint eso no se cumplió. Para el Sprint 2 se propone que cada integrante lidere las historias de un Bounded Context en la aplicación y en el backend, que los cambios entren por pull request con una revisión y que los spikes se cierren con un informe versionado.
 

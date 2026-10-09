@@ -169,7 +169,7 @@ def components(kind):
     c=Canvas(1800,1600,'C4 | Componentes de '+titles[kind],'Componentes propuestos dentro del contenedor REST API Backend (Java / Spring Boot).')
     c.rect(20,370,1750,865,'#ffffff','#9aaabb')
     c.text(40,380,'REST API Backend — módulo '+titles[kind],25,True)
-    c.box(40,150,510,150,'Mobile App','Formularios y consultas; Flutter/Dart','Contenedor')
+    c.box(40,150,510,150,'Mobile App','Formularios y consultas; Kotlin/Jetpack Compose','Contenedor')
     provider={'subscription':'ExchangeRate-API','delivery':'Google Places','premium':'Stripe'}[kind]
     c.box(1220,150,510,150,provider,'Proveedor externo','Sistema externo')
     ctrl={'subscription':'SubscriptionController','delivery':'DeliveryExpenseController','premium':'PremiumController'}[kind]
@@ -240,7 +240,7 @@ def architecture():
     c.box(40,150,510,140,'Usuario','Interactúa con la aplicación','Persona')
     c.rect(20,370,1110,970,'#ffffff','#9aaabb')
     c.text(40,383,'Sistema CraveWallet',27,True)
-    c.box(40,460,510,220,'Mobile App','Flutter/Dart. Presentación, composición del Dashboard y permisos del calendario.','Contenedor')
+    c.box(40,460,510,220,'Mobile App','Kotlin/Jetpack Compose. Presentación, composición del Dashboard y permisos del calendario.','Contenedor')
     c.box(620,460,480,220,'REST API Backend','Java 21 / Spring Boot. Tres módulos de dominio y adaptadores.','Contenedor')
     c.box(40,1010,510,200,'Local Database','SQLite. Caché de lectura con fecha de actualización. Escritura offline pendiente de pruebas.','Contenedor')
     c.box(620,1010,480,200,'Remote Database','PostgreSQL. Estado canónico; tablas propias de cada módulo.','Contenedor')

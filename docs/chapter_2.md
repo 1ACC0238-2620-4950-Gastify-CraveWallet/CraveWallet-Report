@@ -2410,7 +2410,7 @@ La tabla 94 define los cuatro contenedores de la propuesta. Una frontera del sis
 
 | Contenedor propuesto | Responsabilidad y colaboración |
 | --- | --- |
-| Mobile App — Flutter/Dart | Presentar los formularios y resúmenes, llamar al backend y solicitar permisos para gestionar el calendario. Compone el Dashboard a partir de consultas de Suscripciones y Gastos. |
+| Mobile App — Kotlin/Jetpack Compose | Presentar los formularios y resúmenes, llamar al backend y solicitar permisos para gestionar el calendario. Compone el Dashboard a partir de consultas de Suscripciones y Gastos. |
 | REST API Backend — Java 21/Spring Boot | Alojar los tres módulos de negocio, los casos de uso y sus adaptadores. La autenticación es una capacidad técnica compartida; no se convierte automáticamente en un cuarto contexto de negocio. |
 | Local Database — SQLite | Caché de lectura en el dispositivo. La lectura sin red debe indicar la fecha de actualización. |
 | Remote Database — PostgreSQL | Persistir el estado canónico con tablas cuya responsabilidad pertenece a cada módulo. Compartir un motor no autoriza acceder directamente a los agregados de otro contexto. |
