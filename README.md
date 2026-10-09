@@ -11,7 +11,11 @@ La tabla 1 registra las versiones del informe, su fecha, su autor y los cambios 
 | AV1 — revisión de diseño estratégico | 07/10/2026 | Alexander Aliaga | Corrección de las secciones 2.5.1.2, 2.5.1.3, 2.5.2, 2.5.3.1 y 2.5.3.2; fuentes editables, referencias y alineación del criterio de activación de Premium. |
 | TB1 — avance | 08/10/2026 | Mario Sejuro | Redacción de las referencias a tablas y figuras y de oraciones extensas del Capítulo II; fuentes del Capítulo III; herramientas del 4.1.1 en tablas Markdown. |
 | TB1 — revisión de arquitectura | 09/10/2026 | Alexander Aliaga | Exportación de las seis vistas C4 en Structurizr; despliegue en Render y Vercel, stack Android y distinción de integraciones pendientes. |
-| TB1 — evidencias de despliegue | 09/10/2026 | Alexander Aliaga | Capturas públicas de Vercel y arranque de Render, copia de evidencia Live versionada y verificación HTTP del health; figuras 115–117 con procedencia. |
+| TB1 — evidencias de despliegue | 09/10/2026 | Alexander Aliaga | Capturas públicas de Vercel y arranque de Render, copia de evidencia Live versionada y verificación HTTP del health; figuras 107, 108, 120 y 123 con procedencia. |
+| TB1 — Student Outcome y capítulo 4 | 09/10/2026 | Mario Sejuro | Acciones y conclusiones TB1 en Student Outcome, alineación de la tabla de commits de testing, repositorio de la aplicación en la tabla 142 y retiro de la sección 4.3. |
+| TB1 — revisión de redacción | 09/10/2026 | Mario Sejuro | Reescritura de frases genéricas y retiro del estado pendiente en los capítulos I, II y III; precio de Premium unificado en S/ 9.99. |
+| TB1 — evidencia en dispositivo | 09/10/2026 | Sebastián Roman | Figuras 111 y 112 descritas como capturas en un celular Android físico. |
+| TB1 — Lean UX Canvas | 09/10/2026 | Anghelo Faustino | Tabla editable del Lean UX Canvas en lugar de imagen. |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -29,6 +33,8 @@ La figura 1 muestra la actividad de los integrantes en el repositorio del inform
 <!-- pdf:omit-end -->
 
 *Fuente: captura de GitHub del repositorio CraveWallet-Report.*
+
+En TB1 el informe se elaboró con GitFlow: cada sección se redactó en una rama `feature`, `fix` o `docs` creada desde `develop` y se integró mediante pull request. Mario Sejuro redactó el diseño de interfaces del capítulo III y la configuración del capítulo IV; Anghelo Faustino y Alexander Aliaga incorporaron las evidencias de despliegue y de arquitectura; Sebastián Roman revisó leyendas, citas y fuentes de las figuras y tablas; y Josué Carpio actualizó las fotografías del equipo. Los commits de cada integrante en los repositorios de código y del informe se muestran en la tabla 160 de la sección 4.2.1.9, y los cambios de cada versión, en la tabla 1.
 
 <!-- pdf:omit-start -->
 
