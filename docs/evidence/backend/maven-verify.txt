@@ -1,0 +1,11 @@
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.85 s -- in pe.edu.upc.gastify.cravewallet.AuthIntegrationTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.533 s -- in pe.edu.upc.gastify.cravewallet.BackendBootstrapTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.232 s -- in pe.edu.upc.gastify.cravewallet.DeliveryIntegrationTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.435 s -- in pe.edu.upc.gastify.cravewallet.ExchangeRateServiceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.383 s -- in pe.edu.upc.gastify.cravewallet.OpenExchangeRateAdapterTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.175 s -- in pe.edu.upc.gastify.cravewallet.PortfolioConversionTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.913 s -- in pe.edu.upc.gastify.cravewallet.SubscriptionIntegrationTest
+[INFO] Tests run: 32, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+[INFO] Total time:  31.206 s
+[INFO] Finished at: 2026-10-08T20:07:44-05:00
