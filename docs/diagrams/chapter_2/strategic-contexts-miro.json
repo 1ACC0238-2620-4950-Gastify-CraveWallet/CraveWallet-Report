@@ -1,0 +1,85 @@
+{
+  "board_url": "https://miro.com/app/board/uXjVEcjtdBM=/",
+  "source": "Native Miro shapes, text and attached connectors",
+  "read_date": "2026-10-09",
+  "source_file": "strategic-contexts-miro.svg",
+  "source_sha256": "068eacd2d67830bbb38c52c5146877d974171c03c5e445c8b5cdf97c54eac483",
+  "frames": [
+    {
+      "name": "canvas-subscription",
+      "figure": 23,
+      "miro_id": "3458764686427232307",
+      "title": "Figura 23. Bounded Context Canvas | Subscription Management",
+      "source_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232307",
+      "widget_count": 34,
+      "connector_count": 0,
+      "capture": {
+        "file": "docs/images/chapter_2/canvas-subscription.jpg",
+        "method": "Unaltered browser screenshot of the authenticated Miro editor",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "c12e70f428e25e9e7faae0041da5d2f967558ac8043d3765433f1c665fecd17e"
+      }
+    },
+    {
+      "name": "canvas-delivery",
+      "figure": 24,
+      "miro_id": "3458764686427232308",
+      "title": "Figura 24. Bounded Context Canvas | Delivery Expense Management",
+      "source_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232308",
+      "widget_count": 34,
+      "connector_count": 0,
+      "capture": {
+        "file": "docs/images/chapter_2/canvas-delivery.jpg",
+        "method": "Unaltered browser screenshot of the authenticated Miro editor",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "f02acc8d91246103223646d8813c210ec9c6ea056013528d956f1e85ca23dd07"
+      }
+    },
+    {
+      "name": "canvas-premium",
+      "figure": 25,
+      "miro_id": "3458764686427232309",
+      "title": "Figura 25. Bounded Context Canvas | Premium & Billing",
+      "source_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232309",
+      "widget_count": 34,
+      "connector_count": 0,
+      "capture": {
+        "file": "docs/images/chapter_2/canvas-premium.jpg",
+        "method": "Unaltered browser screenshot of the authenticated Miro editor",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "952eb6fc2cdafcae3910521d66160c223af0f74fbc99020f7d2823f395be7d1d"
+      }
+    },
+    {
+      "name": "context-map-revised",
+      "figure": 26,
+      "miro_id": "3458764686427232314",
+      "title": "Figura 26. CraveWallet | Context Map",
+      "source_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232314",
+      "widget_count": 21,
+      "connector_count": 4,
+      "capture": {
+        "file": "docs/images/chapter_2/context-map-revised.jpg",
+        "method": "Unaltered browser screenshot of the authenticated Miro editor",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "8386409611c8ae6c2dce7212e123ea3e7ec18a82da763abff26b1bc05a332431"
+      }
+    }
+  ]
+}
