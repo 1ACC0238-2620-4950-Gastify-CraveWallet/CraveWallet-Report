@@ -375,15 +375,20 @@ La figura 109 muestra el [tablero público](https://trello.com/b/W0MvIjVH/cravew
 
 | User Story Id | Task Id | Task Title | Estimation (Hours) | Assigned To | Status |
 | --- | --- | --- | ---: | --- | --- |
-| US24 | T01 | Presentar propuesta de valor y problema en el landing. | 9 | Mario / Sebastián | Done |
-| US25 | T02 | Comparar planes Free y Premium. | 3 | Sebastián | Done |
-| Hito TB1 | T03 | Mostrar las pantallas core en Android. | — | Sebastián | Done |
-| Hito TB1 | T04 | Implementar y probar los servicios principales del backend. | — | Anghelo | Done |
-| Hito TB1 | T05 | Publicar el landing en Vercel. | — | Mario | Done |
-| Hito TB1 | T06 | Desplegar el REST API en Render con PostgreSQL. | — | Anghelo | Done |
-| Hito TB1 | T07 | Conectar la aplicación Android con el REST API público. | — | Anghelo | Done |
+| US24 | T01 | Construir el Hero, la barra de navegación y la sección de funciones del landing. | 8 | Mario | Done |
+| US24 | T02 | Construir la sección El problema con las cifras de las entrevistas. | 5 | Sebastián | Done |
+| US25 | T03 | Construir la sección Planes con la tabla comparativa Free y Premium. | 4 | Sebastián | Done |
+| Hito TB1 | T04 | Publicar el landing en Vercel y verificar los deployments de producción. | 4 | Mario | Done |
+| Hito TB1 (US05, US08) | T05 | Implementar las pantallas Inicio, Gastos, Análisis y Perfil de la app con Jetpack Compose. | 8 | Sebastián | Done |
+| Hito TB1 (US05, US12) | T06 | Implementar el alta de suscripción y los recordatorios de la app. | 6 | Sebastián | Done |
+| TS01 | T07 | Implementar la autenticación con sesiones JWT revocables. | 6 | Anghelo | Done |
+| TS02 | T08 | Implementar las suscripciones del usuario con su historial de cancelación. | 6 | Anghelo | Done |
+| TS05 | T09 | Implementar los gastos de delivery idempotentes y el presupuesto mensual. | 5 | Anghelo | Done |
+| TS03, TS04 | T10 | Implementar la cotización USD/PEN con caché y los datos de recordatorio. | 6 | Anghelo | Done |
+| Hito TB1 | T11 | Empaquetar el API con Docker y desplegarlo en Render con PostgreSQL. | 6 | Anghelo | Done |
+| Hito TB1 | T12 | Conectar la app Android al API público y ejecutar las pruebas de integración. | 8 | Anghelo | Done |
 
-*Fuente: [tablero del Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) y commits de la sección 4.2.1.4. T03 a T07 no tienen estimación en el tablero.*
+*Fuente: [tablero del Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) y commits de la sección 4.2.1.4. Las horas son estimaciones hechas al cierre del sprint a partir de ese historial; el tablero solo tenía estimación para US24 y US25.*
 
 #### 4.2.1.4. Development Evidence for Sprint Review
 
