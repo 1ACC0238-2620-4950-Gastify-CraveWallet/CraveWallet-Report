@@ -1009,7 +1009,7 @@ Logo y tagline en la parte superior, enlaces de sección apilados o en dos colum
 
 #### 3.1.3.2. Landing Page Mock-up
 
-Los mock-ups del landing page de CraveWallet materializan las decisiones de diseño establecidas en el Design System (sección 3.1.1) y la Arquitectura de Información (sección 3.1.2) en una representación visual de alta fidelidad, lista para ser implementada. El landing page está diseñado como una experiencia de una sola página (SPA estático) cuya estructura narrativa sigue un flujo secuencial de persuasión: problema → solución → evidencia → planes → descarga. Esta secuencia sigue el modelo AIDA (Atención, Interés, Deseo, Acción).
+Los mock-ups aplican el Design System (sección 3.1.1) y la Arquitectura de Información (sección 3.1.2). La página ordena problema → solución → evidencia → planes → descarga, una secuencia basada en AIDA (Atención, Interés, Deseo, Acción).
 
 En todos los mock-ups se aplican los siguientes principios transversales:
 
@@ -1039,7 +1039,7 @@ La figura 57 muestra la barra de navegación superior del landing page de CraveW
 
 *Fuente: elaboración del equipo Gastify.*
 
-La barra de navegación es el primer elemento que el usuario percibe y el componente de arquitectura de información más crítico del sitio. Se implementa con posición `sticky`, de modo que permanece visible en todo momento durante el scroll, tal como se especificó en el sistema de navegación del landing page (sección 3.1.2.5).
+La barra de navegación permanece visible durante el desplazamiento mediante `position: sticky` y enlaza las secciones descritas en 3.1.2.5.
 
 El isologotipo "CraveWallet" se ubica en el extremo izquierdo sobre fondo blanco (`color-surface`), respetando la regla de uso de marca definida en el Design System. Los enlaces de sección ("Inicio", "El problema", "Solución", "Descarga" y "Premium") se disponen centrados con tipografía Inter Medium 14px en `color-on-surface-variant` (`#64748B`), adoptando el sistema de etiquetas de navegación definido en la sección 3.1.2.2. El CTA "Descargar gratis" ocupa el extremo derecho como botón primario con relleno `color-primary` (`#3B4FD8`) y texto blanco (`color-on-primary`). El contraste del par `#FFFFFF`/`#3B4FD8` es de 5.2:1, cumpliendo WCAG 2.1 AA.
 

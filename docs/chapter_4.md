@@ -92,6 +92,7 @@ Los repositorios del proyecto se listan en la tabla 142.
 | :--- | :--- | :--- |
 | `CraveWallet-Report` | Informe del proyecto en formato Markdown | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Report |
 | `cravewallet-landing` | Landing page (Next.js 16, React 19, TypeScript y Tailwind CSS 4) | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing |
+| `CraveWallet-Mobile` | Aplicación Android (Kotlin y Jetpack Compose) | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile |
 | `CraveWallet-Backend` | REST API del producto (Java 21 y Spring Boot 3) | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend |
 
 *Fuente: elaboración del equipo Gastify.*
@@ -314,7 +315,7 @@ El plan gratuito de Render suspende el servicio tras un período de inactividad,
 
 ## 4.2. Landing Page & Mobile Application Implementation
 
-Para el hito TB1, el enunciado requiere un landing desplegado, el backend al 70 % y las pantallas core de la aplicación. Esta sección presenta el Sprint 1 con los nueve apartados exigidos y la evidencia disponible al 9 de octubre de 2026. Se documentan las tareas completadas en el Sprint: las del landing page y las del hito TB1 (aplicación Android, backend y despliegue).
+El Sprint 1 reúne el landing desplegado, el backend y las pantallas core de Android. Los nueve apartados siguientes registran las tareas y evidencias disponibles al 9 de octubre de 2026.
 
 ### 4.2.1. Sprint 1
 

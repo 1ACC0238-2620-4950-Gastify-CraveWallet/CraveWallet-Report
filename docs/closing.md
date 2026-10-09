@@ -2,7 +2,7 @@
 
 Las seis entrevistas, tres por cada segmento objetivo, muestran el mismo problema: los participantes olvidan las renovaciones, no conocen el monto en soles de sus servicios en dólares y no controlan su gasto en delivery. Ninguno recibe un aviso antes del cobro, y todos relatan al menos un cargo automático que descubrieron después de producirse.
 
-El proceso Lean UX convirtió esos hallazgos en supuestos e hipótesis sobre centralizar las suscripciones, mostrar los importes en soles y anticipar las renovaciones. Las metas de reducción de cargos inesperados, retención y conversión a Premium definen cómo se evaluará el producto una vez en uso.
+Las seis entrevistas sustentan las hipótesis de centralizar suscripciones, estimar importes en soles y anticipar renovaciones. La reducción de cargos inesperados, la retención y la conversión a Premium se medirán cuando el producto esté en uso.
 
 Los artefactos de Needfinding y la especificación conectan las necesidades de Camila Torres y Renzo Salazar con 52 historias priorizadas en el Product Backlog, cuyo tablero se presenta en el Anexo A.
 
