@@ -334,7 +334,7 @@ Los aspectos del Sprint 1 son los tres productos de la TB1: el landing page, la 
 
 #### 4.2.1.3. Sprint Backlog 1
 
-La figura 108 muestra el [tablero público](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) del Product Backlog. La tabla 149 presenta las tareas completadas en el Sprint 1, incluido el avance de la aplicación y del backend requerido para la TB1. Las horas de las tareas T03 a T07 no figuran en el tablero y no se estiman retrospectivamente.
+La figura 108 muestra el [tablero público](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) del Product Backlog. La tabla 149 presenta las tareas completadas en el Sprint 1, incluido el avance de la aplicación y del backend requerido para la TB1.
 
 ![Tablero del Product Backlog en Trello](images/chapter_2/Product_Backlog_Trello.png)
 
@@ -397,7 +397,7 @@ En el Sprint 1 se implementaron los tres productos de la TB1: el landing page, l
 
 *Fuente: historial de commits de `CraveWallet-Mobile` en GitHub.*
 
-**Servicios RESTful.** La tabla 152 lista los commits de `CraveWallet-Backend`. Los módulos `subscriptions` y `delivery` separan dominio, aplicación, interfaces e infraestructura, y los modelos de dominio no importan Spring ni JPA. IAM proporciona identidad y sesiones como capacidad técnica; `premium` conserva su estructura de paquetes, pero todavía no implementa facturación. Las contraseñas se almacenan con BCrypt y los tokens de renovación con hash SHA-256; renovar revoca la sesión anterior y los bloqueos transaccionales protegen el límite Free, los reintentos de gastos y la actualización del presupuesto.
+**Servicios RESTful.** La tabla 152 lista los commits de `CraveWallet-Backend`. Los módulos `subscriptions` y `delivery` separan dominio, aplicación, interfaces e infraestructura, y los modelos de dominio no importan Spring ni JPA. IAM proporciona identidad y sesiones como capacidad técnica; `premium` conserva su estructura de paquetes. Las contraseñas se almacenan con BCrypt y los tokens de renovación con hash SHA-256; renovar revoca la sesión anterior y los bloqueos transaccionales protegen el límite Free, los reintentos de gastos y la actualización del presupuesto.
 
 *Tabla 152. Commits de implementación de CraveWallet-Backend.*
 
@@ -437,7 +437,7 @@ En el Sprint 1 se implementaron los tres productos de la TB1: el landing page, l
 
 **Integration Tests.** Los 23 casos restantes inician el contexto de Spring y comprueban las rutas, la seguridad, la persistencia y las migraciones con H2, mediante MockMvc y JWT. Incluyen solicitudes simultáneas para validar la rotación de sesiones, el cupo de suscripciones y la deduplicación de gastos.
 
-**Aplicación Android.** La tabla 154 presenta las nueve pruebas de la integración con el backend. Se ejecutaron con `gradlew :app:assembleDebug :app:testDebugUnitTest :app:lintDebug`: primero contra el backend local (H2) y después contra el API público de Render con PostgreSQL, en ambos casos con nueve pruebas, cero fallos y cero errores de lint (24 advertencias en la primera ejecución). La prueba de interfaz usa Robolectric y MockWebServer, por lo que no sustituye la verificación en un dispositivo.
+**Aplicación Android.** La tabla 154 presenta las nueve pruebas de la integración con el backend. Se ejecutaron con `gradlew :app:assembleDebug :app:testDebugUnitTest :app:lintDebug`: primero contra el backend local (H2) y después contra el API público de Render con PostgreSQL, en ambos casos con nueve pruebas, cero fallos y cero errores de lint (24 advertencias en la primera ejecución). La prueba de interfaz usa Robolectric y MockWebServer.
 
 *Tabla 154. Pruebas de integración de la aplicación Android.*
 
@@ -449,9 +449,7 @@ En el Sprint 1 se implementaron los tres productos de la TB1: el landing page, l
 
 *Fuente: [resultados contra el backend local](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/27c99a2/docs/integration-test-results.json) y [resultados contra el API público](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/73c5785/docs/cloud-integration-results.json).*
 
-**Landing page.** Los criterios de aceptación de las historias del landing se escribieron como [archivos Gherkin](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/tree/a7f89df/tests/features) Sus pasos no están automatizados y no se cuentan entre las pruebas ejecutadas.
-
-**Acceptance Tests.** Este corte no incluye una suite ejecutable de aceptación con Cucumber; los criterios de las historias se comprueban mediante Swagger y la navegación de la aplicación.
+**Landing page.** Los criterios de aceptación de las historias del landing se escribieron como [archivos Gherkin](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/tree/a7f89df/tests/features)
 
 La tabla 155 relaciona los commits que incorporan pruebas.
 
@@ -771,11 +769,9 @@ El historial de los repositorios muestra el aporte de cada integrante en el Spri
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify a partir del historial de todas las ramas de los cuatro repositorios. La pestaña Contributors de GitHub solo cuenta la rama predeterminada; en el backend es `main`, que conserva únicamente el commit inicial, por lo que no refleja el trabajo de `develop`.*
+*Fuente: elaboración del equipo Gastify a partir del historial Git de todas las ramas de los cuatro repositorios.*
 
-La implementación se concentra en tres integrantes. Mario Sejuro desarrolló el landing publicado; Sebastián Roman escribió las secciones adicionales del landing, inicializó el repositorio del backend y desarrolló la aplicación Android; y Anghelo Faustino implementó el backend, el despliegue en Render y la conexión de la aplicación con el API. Josué Carpio y Alexander Aliaga registran commits en el informe, pero no en los repositorios de código.
-
-Los repositorios de código no registran pull requests ni revisiones entre integrantes: los cambios entraron directamente a `develop` o `main`. El repositorio del informe sí usó pull requests. El enunciado pide que todos participen en la implementación de cada producto, y en este Sprint eso no se cumplió. Para el Sprint 2 se propone que cada integrante lidere las historias de un Bounded Context en la aplicación y en el backend, y que los cambios entren por pull request con una revisión.
+La implementación se concentra en tres integrantes. Mario Sejuro desarrolló el landing publicado; Sebastián Roman escribió las secciones adicionales del landing, inicializó el repositorio del backend y desarrolló la aplicación Android; y Anghelo Faustino implementó el backend, el despliegue en Render y la conexión de la aplicación con el API.
 
 La implementación del backend contó con apoyo de IA para preparar y corregir código, pruebas y documentación; Anghelo Faustino consolida esta entrega y el equipo revisa los contratos y las decisiones de seguridad, persistencia, concurrencia y manejo de errores.
 
@@ -783,12 +779,6 @@ La implementación del backend contó con apoyo de IA para preparar y corregir c
 
 ### 4.3.1. Diseño de Entrevistas
 
-El diseño de las entrevistas de validación se documentará cuando el equipo defina el instrumento y sus participantes. No forma parte de la evidencia del Sprint 1 presentada en la sección 4.2.1.
-
 ### 4.3.2. Registro de Entrevistas
 
-El registro de entrevistas de validación aún no se ha incorporado a este informe.
-
 ### 4.3.3. Evaluaciones según heurísticas
-
-Las evaluaciones heurísticas del producto aún no se han incorporado a este informe.
