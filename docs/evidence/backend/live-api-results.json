@@ -1,0 +1,159 @@
+{
+  "backendCommit": "2f36260dc1aa9b8e4ef71a7184847795e6cb6867",
+  "executionDate": "2026-10-08",
+  "timezone": "America/Lima",
+  "environment": "local",
+  "database": "H2 2.3.232",
+  "baseUrl": "http://localhost:8080",
+  "implementedMethodRouteCount": 16,
+  "requestCount": 19,
+  "checks": [
+    {
+      "method": "POST",
+      "route": "/api/v1/auth/register",
+      "expectedStatus": 201,
+      "observedStatus": 201,
+      "passed": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/auth/login",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/users/me",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "passed": true
+    },
+    {
+      "method": "PATCH",
+      "route": "/api/v1/users/me",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/exchange-rate?from=USD&to=PEN",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "passed": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/subscriptions",
+      "expectedStatus": 201,
+      "observedStatus": 201,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/subscriptions",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/subscriptions/{id}",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "passed": true
+    },
+    {
+      "method": "PATCH",
+      "route": "/api/v1/subscriptions/{id}",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/subscriptions/{id}/reminder",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "passed": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/subscriptions/{id}/cancel",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/subscriptions?status=CANCELLED",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "passed": true
+    },
+    {
+      "method": "PUT",
+      "route": "/api/v1/delivery-expenses/budget",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "passed": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/delivery-expenses",
+      "expectedStatus": 201,
+      "observedStatus": 201,
+      "passed": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/delivery-expenses",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/delivery-expenses/summary?year=2026&month=10",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "passed": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/auth/refresh",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "passed": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/auth/logout",
+      "expectedStatus": 204,
+      "observedStatus": 204,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/users/me",
+      "expectedStatus": 401,
+      "observedStatus": 401,
+      "passed": true
+    }
+  ],
+  "observations": {
+    "provider": "ExchangeRate-API",
+    "usdToPenRate": 3.43997,
+    "rateUpdatedAt": "2026-10-09T00:02:31Z",
+    "rateFetchedAt": "2026-10-09T01:09:01.506838100Z",
+    "conversionAvailable": true,
+    "reminderIntervalHours": 24,
+    "cancelledRecordPreserved": true,
+    "budgetPen": 100,
+    "expenseTotalPen": 35.5,
+    "remainingPen": 64.5,
+    "duplicateExpenseCountedOnce": true,
+    "logoutRevocationStatus": 401
+  }
+}
