@@ -3,8 +3,9 @@
 El diseño DDD y la arquitectura C4 utilizan sus herramientas correspondientes.
 Miro conserva los ocho diagramas DDD de las figuras 19–26 y los tres esquemas
 de persistencia de las figuras 32, 35 y 38. Structurizr es la fuente de las seis
-vistas C4 de las figuras 27–30, 33 y 36. Las figuras del informe muestran capturas
-reales de estas herramientas, con sus controles visibles.
+vistas C4 de las figuras 27–30, 33 y 36. Las figuras de Miro muestran capturas
+del editor con sus controles visibles; las de C4 utilizan las exportaciones
+oficiales de alta resolución de Structurizr.
 
 ## Diagramas DDD en Miro
 
@@ -92,20 +93,22 @@ e infraestructura se sustentan en los repositorios de CraveWallet.
 - [structurizr-captures.json](structurizr-captures.json): capturas del visor
   oficial, con identidad de Structurizr y navegación de vistas visibles;
   dimensiones, huellas y correspondencia con las exportaciones de alta resolución.
+  Se conservan como evidencia auxiliar, no como figuras del informe.
 
 | Figura | Vista de Structurizr | Imagen del informe |
 | --- | --- | --- |
-| 27 | SystemContext | `system-context-revised.jpg` |
-| 28 | Containers | `containers-revised.jpg` |
-| 29 | Deployment | `deployment_diagram.jpg` |
-| 30 | SubscriptionComponents | `subscription-components-revised.jpg` |
-| 33 | DeliveryComponents | `delivery-components-revised.jpg` |
-| 36 | PremiumComponents | `premium-components-revised.jpg` |
+| 27 | SystemContext | `system-context-revised.png` |
+| 28 | Containers | `containers-revised.png` |
+| 29 | Deployment | `deployment_diagram.png` |
+| 30 | SubscriptionComponents | `subscription-components-revised.png` |
+| 33 | DeliveryComponents | `delivery-components-revised.png` |
+| 36 | PremiumComponents | `premium-components-revised.png` |
 
 Los PNG/SVG C4 se exportan con el **renderizador oficial de Structurizr**.
-Se conservan como consultas de alta resolución, enlazadas bajo las capturas del
-informe. Las capturas JPG muestran el visor real; no una interfaz añadida a una
-imagen. Los controles de edición se abren con el botón de lápiz del visor.
+Los PNG vuelven a ser las figuras del informe para que el diagrama ocupe el
+espacio disponible sin las barras del visor. Las capturas JPG se conservan como
+evidencia auxiliar del visor real. Los controles de edición se abren con el botón
+de lápiz del visor.
 Los archivos `*-key.png` y `*-key.svg` contienen sus leyendas nativas. Se utilizan
 fronteras de sistema/contenedor, personas, bases de datos y nodos de despliegue.
 Los contornos y relaciones ámbar discontinuos marcan integraciones propuestas.
@@ -172,6 +175,6 @@ informe. `render-domain-design.py` también guarda sus derivados históricos en
 Requieren Python 3 y Pillow; el primero usa Arial o DejaVu Sans.
 
 Después de editar una figura en Miro, toma una captura nueva del marco y actualiza
-su lectura y manifiesto. Para C4, conserva las exportaciones oficiales y vuelve
-a capturar el visor. Las lecturas SVG de Miro son documentos de intercambio de
+su lectura y manifiesto. Para C4, actualiza las exportaciones oficiales que usa
+el informe; las capturas del visor son auxiliares. Las lecturas SVG de Miro son documentos de intercambio de
 objetos nativos, no imágenes exportadas por Miro.
