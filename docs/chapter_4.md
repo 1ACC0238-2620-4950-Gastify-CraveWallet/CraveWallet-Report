@@ -282,6 +282,14 @@ El REST API se ejecutó localmente con Java 21 y el perfil `local`, que utiliza 
 
 *Fuente: [configuración, migraciones y guía de ejecución del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/2f36260dc1aa9b8e4ef71a7184847795e6cb6867), y [resultado de Maven](evidence/backend/maven-verify.txt).*
 
+Con el servidor iniciado, se accede a `http://localhost:8080/swagger-ui.html`. Swagger muestra la versión del backend, el servidor local y las operaciones agrupadas por controlador (figura 109).
+
+![Documentación OpenAPI del backend CraveWallet en Swagger UI.](evidence/backend/swagger-overview.jpg)
+
+*Figura 109. Documentación OpenAPI del backend CraveWallet en Swagger UI.*
+
+*Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
+
 ## 4.2. Landing Page & Mobile Application Implementation
 
 ### 4.2.1. Sprint 1
@@ -368,18 +376,24 @@ El comando `mvnw.cmd -B verify`, ejecutado con Java 21 el 8 de octubre de 2026, 
 
 *Tabla 150. Suite de pruebas ejecutada del backend.*
 
-| Clase | Casos | Comprobación principal |
-| --- | ---: | --- |
-| `AuthIntegrationTest` | 8 | Registro y hashes, login, perfil propio, rotación concurrente, revocación y rechazo de JWT manipulados o vencidos. |
-| `BackendBootstrapTest` | 3 | Health, documentación OpenAPI con esquemas de alta separados y protección de rutas de negocio. |
-| `SubscriptionIntegrationTest` | 7 | Aislamiento entre cuentas, validación, edición, cancelación repetida, cupos concurrentes, filtros, totales, cotización y recordatorios. |
-| `DeliveryIntegrationTest` | 5 | Presupuesto, períodos, validación, aislamiento, deduplicación y altas simultáneas con un reintento. |
-| `ExchangeRateServiceTest` | 5 | Caché de 24 horas, respaldo antiguo acotado, retroceso tras fallos, tasa inversa, fechas inválidas y concurrencia. |
-| `OpenExchangeRateAdapterTest` | 2 | Traducción HTTP y rechazo de respuestas inválidas o 429 mediante servidor local. |
-| `PortfolioConversionTest` | 2 | Conversión antes del redondeo mensual anual y conservación del portafolio cuando falta cotización. |
-| **Total** | **32** | **0 fallos, 0 errores, 0 omitidas.** |
+| Tipo de prueba | Clase | Casos | Comprobación principal |
+| --- | --- | ---: | --- |
+| Integración | `AuthIntegrationTest` | 8 | Registro y hashes, login, perfil propio, rotación concurrente, revocación y rechazo de JWT manipulados o vencidos. |
+| Integración | `BackendBootstrapTest` | 3 | Health, documentación OpenAPI con esquemas de alta separados y protección de rutas de negocio. |
+| Integración | `SubscriptionIntegrationTest` | 7 | Aislamiento entre cuentas, validación, edición, cancelación repetida, cupos concurrentes, filtros, totales, cotización y recordatorios. |
+| Integración | `DeliveryIntegrationTest` | 5 | Presupuesto, períodos, validación, aislamiento, deduplicación y altas simultáneas con un reintento. |
+| Unitaria de aplicación | `ExchangeRateServiceTest` | 5 | Caché de 24 horas, respaldo antiguo acotado, retroceso tras fallos, tasa inversa, fechas inválidas y concurrencia. |
+| Adaptador HTTP aislado | `OpenExchangeRateAdapterTest` | 2 | Traducción HTTP y rechazo de respuestas inválidas o 429 mediante servidor local. |
+| Unitaria de aplicación | `PortfolioConversionTest` | 2 | Conversión antes del redondeo mensual anual y conservación del portafolio cuando falta cotización. |
+| **Total** | **7 clases** | **32** | **0 fallos, 0 errores, 0 omitidas.** |
 
 *Fuente: [resumen extraído de Surefire](evidence/backend/test-results.json), [salida de Maven](evidence/backend/maven-verify.txt) y [fuentes de las pruebas](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/src/test/java/pe/edu/upc/gastify/cravewallet).*
+
+**Unit Tests y pruebas aisladas.** Siete casos prueban el servicio de cotización y la conversión del portafolio sin iniciar Spring. Otros dos casos verifican el adaptador del proveedor mediante un servidor HTTP de prueba: nueve casos aislados en total.
+
+**Integration Tests.** Los 23 casos restantes inician el contexto de Spring y comprueban las rutas, seguridad, persistencia y migraciones con H2. Incluyen solicitudes simultáneas para validar la rotación de sesiones, el cupo de suscripciones y la deduplicación de gastos.
+
+**Acceptance Tests.** Este corte no incluye una suite ejecutable de aceptación con Cucumber. Los criterios de las historias y las comprobaciones manuales de Swagger permiten revisar comportamientos del backend; la aceptación de los flujos móviles debe comprobarse cuando el cliente esté integrado.
 
 Las pruebas de integración utilizan MockMvc, JWT y H2 con las migraciones reales. Las pruebas del proveedor usan simulaciones y un servidor HTTP local; no requieren acceso a Internet. Estos resultados verifican el backend en ese entorno, pero no acreditan PostgreSQL, instalación móvil ni pruebas de aceptación de las pantallas. El archivo [build.yaml](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/.github/workflows/build.yaml) configura `verify` en GitHub Actions; el resultado aquí presentado corresponde a la ejecución local.
 
@@ -403,30 +417,62 @@ Se ejecutó el backend local y se probaron sus 16 métodos/rutas mediante HTTP. 
 
 La información utilizada fue ficticia y se almacenó en H2 local. El endpoint de recordatorio prepara datos; no agenda un evento ni envía notificaciones. Como el modelo conserva una fecha sin hora, la renovación se representa provisionalmente a las 00:00 de America/Lima. La aplicación deberá comprobar que la fecha del aviso aún sea futura antes de agendarlo.
 
+Se ejecutó `POST /api/v1/subscriptions` con una suscripción ficticia en PEN. La respuesta contiene el identificador, el estado `ACTIVE`, la fecha de renovación y la cabecera `Location` (figura 110).
+
+![Registro de una suscripción: HTTP 201 y recurso creado.](evidence/backend/swagger-subscription-created.jpg)
+
+*Figura 110. Registro de una suscripción: HTTP 201 y recurso creado.*
+
+*Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
+
+Antes del alta anterior, se consultó el portafolio con una suscripción de USD 9,99. El servidor devolvió `monthlyTotalPen=34.37` y `conversionAvailable=true`; la tasa utilizada y sus fechas están conservadas en el [JSON de esta consulta](evidence/backend/swagger-subscriptions-response.json) (figura 111).
+
+![Consulta del portafolio de suscripciones: HTTP 200 y conversión a PEN.](evidence/backend/swagger-subscriptions-response.jpg)
+
+*Figura 111. Consulta del portafolio de suscripciones: HTTP 200 y conversión a PEN.*
+
+*Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
+
+Con un presupuesto de S/ 100 y un gasto de S/ 35,50 en octubre de 2026, el resumen devuelve el total, el saldo y los desgloses por categoría y semana (figura 112).
+
+![Resumen de Delivery: HTTP 200, gasto S/ 35,50 y saldo S/ 64,50.](evidence/backend/swagger-summary-response.jpg)
+
+*Figura 112. Resumen de Delivery: HTTP 200, gasto S/ 35,50 y saldo S/ 64,50.*
+
+*Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
+
+La consulta del recordatorio devuelve `reminderAt=2026-11-07T05:00:00Z` y `billingAt=2026-11-08T05:00:00Z`, con zona `America/Lima`. Esta operación entrega los datos para el cliente; no inserta un evento en el calendario (figura 113).
+
+![Datos del recordatorio: HTTP 200 y aviso 24 horas antes de la renovación.](evidence/backend/swagger-reminder-response.jpg)
+
+*Figura 113. Datos del recordatorio: HTTP 200 y aviso 24 horas antes de la renovación.*
+
+*Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
+
 #### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
 OpenAPI documenta los contratos y Swagger permite ejecutarlos con una sesión de prueba. La tabla 152 contiene las 16 rutas implementadas; la [especificación capturada](evidence/backend/openapi.json) permite revisar sus esquemas sin depender de que el servidor local continúe encendido.
 
 *Tabla 152. Endpoints implementados y documentados del backend.*
 
-| Método | Ruta | Acceso | Resultado exitoso |
-| --- | --- | --- | --- |
-| POST | `/api/v1/auth/register` | Sin JWT | 201; perfil y tokens. |
-| POST | `/api/v1/auth/login` | Sin JWT | 200; perfil y tokens. |
-| POST | `/api/v1/auth/refresh` | Token de renovación en el cuerpo | 200; nuevo par de tokens, anterior revocado. |
-| POST | `/api/v1/auth/logout` | Bearer JWT | 204; sesión revocada. |
-| GET | `/api/v1/users/me` | Bearer JWT | 200; perfil propio. |
-| PATCH | `/api/v1/users/me` | Bearer JWT | 200; moneda de referencia PEN. |
-| POST | `/api/v1/subscriptions` | Bearer JWT | 201; registro activo y cabecera Location. |
-| GET | `/api/v1/subscriptions` | Bearer JWT | 200; registros, desglose por moneda y estimación PEN. |
-| GET | `/api/v1/subscriptions/{id}` | Bearer JWT y propiedad | 200; detalle. |
-| PATCH | `/api/v1/subscriptions/{id}` | Bearer JWT y propiedad | 200; importe, categoría o fecha actualizados. |
-| POST | `/api/v1/subscriptions/{id}/cancel` | Bearer JWT y propiedad | 200; cancelación local idempotente. |
-| GET | `/api/v1/subscriptions/{id}/reminder` | Bearer JWT y propiedad | 200; datos del aviso para registro activo. |
-| GET | `/api/v1/exchange-rate` | Bearer JWT | 200; tasa PEN/USD, fuente, fechas y condición de antigüedad. |
-| POST | `/api/v1/delivery-expenses` | Bearer JWT | 201 al crear; 200 ante un reintento idéntico. |
-| GET | `/api/v1/delivery-expenses/summary` | Bearer JWT | 200; período, total, límite, saldo, categorías y semanas. |
-| PUT | `/api/v1/delivery-expenses/budget` | Bearer JWT | 200; límite opcional y acumulado del período. |
+| Método | Ruta | Acceso | Parámetros o cuerpo JSON | Resultado exitoso |
+| --- | --- | --- | --- | --- |
+| POST | `/api/v1/auth/register` | Sin JWT | JSON: `email`, `password`. | 201; perfil y tokens. |
+| POST | `/api/v1/auth/login` | Sin JWT | JSON: `email`, `password`. | 200; perfil y tokens. |
+| POST | `/api/v1/auth/refresh` | Token de renovación en el cuerpo | JSON: `refreshToken`. | 200; nuevo par de tokens, anterior revocado. |
+| POST | `/api/v1/auth/logout` | Bearer JWT | Sin cuerpo ni parámetros. | 204; sesión revocada. |
+| GET | `/api/v1/users/me` | Bearer JWT | Sin parámetros; usuario obtenido del JWT. | 200; perfil propio. |
+| PATCH | `/api/v1/users/me` | Bearer JWT | JSON: `referenceCurrency="PEN"`. | 200; moneda de referencia PEN. |
+| POST | `/api/v1/subscriptions` | Bearer JWT | JSON: `name`, `amount`, `currency`, `category`, `billingCycle`, `nextBillingDate`. | 201; registro activo y cabecera Location. |
+| GET | `/api/v1/subscriptions` | Bearer JWT | Query opcional: `status` (ACTIVE por defecto), `search`, `category`. | 200; registros, desglose por moneda y estimación PEN. |
+| GET | `/api/v1/subscriptions/{id}` | Bearer JWT y propiedad | Path: `id` UUID. | 200; detalle. |
+| PATCH | `/api/v1/subscriptions/{id}` | Bearer JWT y propiedad | Path: `id` UUID; JSON con al menos uno de `amount`, `category`, `nextBillingDate`. | 200; importe, categoría o fecha actualizados. |
+| POST | `/api/v1/subscriptions/{id}/cancel` | Bearer JWT y propiedad | Path: `id` UUID; sin cuerpo. | 200; cancelación local idempotente. |
+| GET | `/api/v1/subscriptions/{id}/reminder` | Bearer JWT y propiedad | Path: `id` UUID; sin cuerpo. | 200; datos del aviso para registro activo. |
+| GET | `/api/v1/exchange-rate` | Bearer JWT | Query: `from=USD`, `to=PEN` por defecto; monedas admitidas PEN/USD. | 200; tasa PEN/USD, fuente, fechas y condición de antigüedad. |
+| POST | `/api/v1/delivery-expenses` | Bearer JWT | JSON: `requestId` UUID, `merchant`, `amount`, `category`, `expenseDate`. | 201 al crear; 200 ante un reintento idéntico. |
+| GET | `/api/v1/delivery-expenses/summary` | Bearer JWT | Query: `year`, `month`; ambos numéricos o ninguno para el período actual de Lima. | 200; período, total, límite, saldo, categorías y semanas. |
+| PUT | `/api/v1/delivery-expenses/budget` | Bearer JWT | JSON: `year`, `month`, `spendingLimit` (null para retirar el límite). | 200; límite opcional y acumulado del período. |
 
 *Fuente: [OpenAPI capturado](evidence/backend/openapi.json) y [contratos del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/docs).*
 
@@ -435,6 +481,55 @@ Los contratos ampliados se encuentran en [autenticación y perfil](https://githu
 Los errores incluyen 400 para datos inválidos, 401 para autenticación no válida, 404 para recursos inexistentes o ajenos y 409 para conflictos de estado, cupos o reintentos con contenido distinto. La cotización devuelve 503 si no hay un valor utilizable. El portafolio conserva los importes originales y devuelve `monthlyTotalPen=null` con `conversionAvailable=false` si no puede convertirlos.
 
 La caché USD/PEN dura 24 horas por instancia; ante un fallo, puede usar una tasa anterior de menos de siete días indicando `stale=true`. La [documentación del proveedor](https://www.exchangerate-api.com/docs/free) exige atribución para el endpoint Open Access; el contrato devuelve `attributionUrl` para que la interfaz la muestre. Esta política y la hora del recordatorio son decisiones iniciales que el equipo debe validar.
+
+**Ejemplo de alta de suscripción.** La figura 114 muestra el cuerpo enviado desde Swagger a `POST /api/v1/subscriptions`, con `Content-Type: application/json` y una sesión Bearer autorizada. Los seis campos del cuerpo son obligatorios. `currency` admite PEN/USD y `billingCycle` admite MONTHLY/ANNUAL; la fecha debe ser actual o futura en America/Lima.
+
+```json
+{
+  "name": "Música de prueba",
+  "amount": 19.9,
+  "currency": "PEN",
+  "category": "Entretenimiento",
+  "billingCycle": "MONTHLY",
+  "nextBillingDate": "2026-11-08"
+}
+```
+
+![Cuerpo JSON de alta de suscripción en Swagger](evidence/backend/swagger-subscription-request.jpg)
+
+*Figura 114. Cuerpo JSON de alta de una suscripción en Swagger UI.*
+
+*Fuente: captura propia del backend local `2f36260`, 8 de octubre de 2026 (America/Lima). La respuesta real se presenta en la figura 110 y en [swagger-subscription-created.json](evidence/backend/swagger-subscription-created.json).*
+
+**Ejemplo de consulta del resumen mensual.** La figura 115 muestra los parámetros de `GET /api/v1/delivery-expenses/summary?year=2026&month=10`. El propietario se obtiene de la sesión y los importes se expresan en PEN.
+
+![Parámetros de consulta del resumen mensual en Swagger](evidence/backend/swagger-summary-request.jpg)
+
+*Figura 115. Parámetros year y month para consultar el resumen de Delivery.*
+
+*Fuente: captura propia del backend local `2f36260`, 8 de octubre de 2026 (America/Lima).*
+
+La respuesta HTTP 200 de la figura 112 contiene el siguiente JSON, [conservado desde Swagger](evidence/backend/swagger-summary-response.json):
+
+```json
+{
+  "currency": "PEN",
+  "exceeded": false,
+  "month": 10,
+  "remaining": 64.5,
+  "spendingLimit": 100,
+  "total": 35.5,
+  "totalsByCategory": {
+    "Comida": 35.5
+  },
+  "totalsByWeek": {
+    "2": 35.5
+  },
+  "year": 2026
+}
+```
+
+Las capturas se encuadran en los resultados para mostrar el código HTTP y el cuerpo sin publicar la cabecera Authorization del ejemplo Curl.
 
 #### 4.2.1.8. Software Deployment Evidence for Sprint Review
 
