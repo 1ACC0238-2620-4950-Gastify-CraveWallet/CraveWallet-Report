@@ -669,13 +669,13 @@ Los wireframes del landing page de CraveWallet representan la estructura de cont
 
 **Barra de navegación**
 
-La figura 39 muestra el wireframe de la barra de navegación del landing page de CraveWallet (Desktop).
+La figura 38 muestra el wireframe de la barra de navegación del landing page de CraveWallet (Desktop).
 
 ![Wireframe Landing Page — Navbar Desktop](images/chapter_3/navbar-desktop-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 39. Wireframe de la barra de navegación del landing page de CraveWallet (Desktop).*
+*Figura 38. Wireframe de la barra de navegación del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -687,13 +687,13 @@ La barra de navegación muestra tres zonas diferenciadas en una sola fila: zona 
 
 **Sección Hero**
 
-La figura 40 muestra el wireframe de la sección Hero del landing page de CraveWallet (Desktop).
+La figura 39 muestra el wireframe de la sección Hero del landing page de CraveWallet (Desktop).
 
 ![Wireframe Landing Page — Hero Desktop](images/chapter_3/hero-desktop-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 40. Wireframe de la sección Hero del landing page de CraveWallet (Desktop).*
+*Figura 39. Wireframe de la sección Hero del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -705,13 +705,13 @@ El Hero ocupa el viewport completo y se divide en dos columnas de igual peso. La
 
 **Sección El Problema**
 
-La figura 41 muestra el wireframe de la sección "El Problema" del landing page de CraveWallet (Desktop).
+La figura 40 muestra el wireframe de la sección "El Problema" del landing page de CraveWallet (Desktop).
 
 ![Wireframe Landing Page — El Problema Desktop](images/chapter_3/problem-desktop-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 41. Wireframe de la sección "El Problema" del landing page de CraveWallet (Desktop).*
+*Figura 40. Wireframe de la sección "El Problema" del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -723,13 +723,13 @@ La sección se estructura en tres bloques verticales. El primero contiene el eye
 
 **Sección Solución**
 
-La figura 42 muestra el wireframe de la sección "Solución" del landing page de CraveWallet (Desktop).
+La figura 41 muestra el wireframe de la sección "Solución" del landing page de CraveWallet (Desktop).
 
 ![Wireframe Landing Page — Solución Desktop](images/chapter_3/features-desktop-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 42. Wireframe de la sección "Solución" del landing page de CraveWallet (Desktop).*
+*Figura 41. Wireframe de la sección "Solución" del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -741,13 +741,13 @@ El bloque de encabezado ocupa el ancho completo con eyebrow label y titular de d
 
 **Sección App Preview**
 
-La figura 43 muestra el wireframe de la sección "App Preview" del landing page de CraveWallet (Desktop).
+La figura 42 muestra el wireframe de la sección "App Preview" del landing page de CraveWallet (Desktop).
 
 ![Wireframe Landing Page — App Preview Desktop](images/chapter_3/preview-desktop-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 43. Wireframe de la sección "App Preview" del landing page de CraveWallet (Desktop).*
+*Figura 42. Wireframe de la sección "App Preview" del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -759,13 +759,13 @@ La sección se divide verticalmente en dos bloques. El bloque superior muestra e
 
 **Sección Prueba Social**
 
-La figura 44 muestra el wireframe de la sección "Prueba Social" del landing page de CraveWallet (Desktop).
+La figura 43 muestra el wireframe de la sección "Prueba Social" del landing page de CraveWallet (Desktop).
 
 ![Wireframe Landing Page — Prueba Social Desktop](images/chapter_3/social-proof-desktop-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 44. Wireframe de la sección "Prueba Social" del landing page de CraveWallet (Desktop).*
+*Figura 43. Wireframe de la sección "Prueba Social" del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -777,13 +777,13 @@ El encabezado ocupa el ancho completo con eyebrow de metodología, titular y baj
 
 **Sección Planes**
 
-La figura 45 muestra el wireframe de la sección "Planes" del landing page de CraveWallet (Desktop).
+La figura 44 muestra el wireframe de la sección "Planes" del landing page de CraveWallet (Desktop).
 
 ![Wireframe Landing Page — Planes Desktop](images/chapter_3/premium-desktop-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 45. Wireframe de la sección "Planes" del landing page de CraveWallet (Desktop).*
+*Figura 44. Wireframe de la sección "Planes" del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -795,13 +795,13 @@ Encabezado de ancho completo con titular de dos líneas. Dos tarjetas de plan en
 
 **Sección Descarga**
 
-La figura 46 muestra el wireframe de la sección "Descarga" del landing page de CraveWallet (Desktop).
+La figura 45 muestra el wireframe de la sección "Descarga" del landing page de CraveWallet (Desktop).
 
 ![Wireframe Landing Page — Descarga Desktop](images/chapter_3/download-desktop-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 46. Wireframe de la sección "Descarga" del landing page de CraveWallet (Desktop).*
+*Figura 45. Wireframe de la sección "Descarga" del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -813,13 +813,13 @@ Sección de columna única centrada con tres elementos verticales: titular de tr
 
 **Footer**
 
-La figura 47 muestra el wireframe del footer del landing page de CraveWallet (Desktop).
+La figura 46 muestra el wireframe del footer del landing page de CraveWallet (Desktop).
 
 ![Wireframe Landing Page — Footer Desktop](images/chapter_3/footer-desktop-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 47. Wireframe del footer del landing page de CraveWallet (Desktop).*
+*Figura 46. Wireframe del footer del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -833,13 +833,13 @@ El footer se divide en dos zonas en una sola fila: zona de marca a la izquierda 
 
 Los wireframes mobile corresponden al breakpoint inferior a 600px (grid de 4 columnas, gutters 16px). Todos los layouts multi-columna del desktop colapsan a columna única. Las descripciones a continuación documentan únicamente los cambios estructurales respecto al wireframe desktop; los principios de jerarquía y arquitectura de información son los mismos.
 
-La figura 48 muestra el wireframe del landing page dentro del navegador móvil (Mobile).
+La figura 47 muestra el wireframe del landing page dentro del navegador móvil (Mobile).
 
 ![Wireframe del landing page dentro del navegador móvil (Mobile)](images/chapter_3/browser-chrome-mobile-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 48. Wireframe del landing page dentro del navegador móvil (Mobile).*
+*Figura 47. Wireframe del landing page dentro del navegador móvil (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -849,13 +849,13 @@ La figura 48 muestra el wireframe del landing page dentro del navegador móvil (
 
 **Barra de navegación — Mobile**
 
-La figura 49 muestra el wireframe de la barra de navegación del landing page de CraveWallet (Mobile).
+La figura 48 muestra el wireframe de la barra de navegación del landing page de CraveWallet (Mobile).
 
 ![Wireframe Landing Page — Navbar Mobile](images/chapter_3/navbar-mobile-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 49. Wireframe de la barra de navegación del landing page de CraveWallet (Mobile).*
+*Figura 48. Wireframe de la barra de navegación del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -867,13 +867,13 @@ Logo a la izquierda, CTA primario al centro-derecha, ícono de hamburger en el e
 
 **Sección Hero — Mobile**
 
-La figura 50 muestra el wireframe de la sección Hero del landing page de CraveWallet (Mobile).
+La figura 49 muestra el wireframe de la sección Hero del landing page de CraveWallet (Mobile).
 
 ![Wireframe Landing Page — Hero Mobile](images/chapter_3/hero-mobile-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 50. Wireframe de la sección Hero del landing page de CraveWallet (Mobile).*
+*Figura 49. Wireframe de la sección Hero del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -885,13 +885,13 @@ Columna única. Secuencia vertical: eyebrow pill → titular de tres líneas →
 
 **Sección El Problema — Mobile**
 
-La figura 51 muestra el wireframe de la sección "El Problema" del landing page de CraveWallet (Mobile).
+La figura 50 muestra el wireframe de la sección "El Problema" del landing page de CraveWallet (Mobile).
 
 ![Wireframe Landing Page — El Problema Mobile](images/chapter_3/problem-mobile-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 51. Wireframe de la sección "El Problema" del landing page de CraveWallet (Mobile).*
+*Figura 50. Wireframe de la sección "El Problema" del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -903,13 +903,13 @@ Las tres estadísticas pasan de tres columnas paralelas a stack vertical, cada c
 
 **Sección Solución — Mobile**
 
-La figura 52 muestra el wireframe de la sección "Solución" del landing page de CraveWallet (Mobile).
+La figura 51 muestra el wireframe de la sección "Solución" del landing page de CraveWallet (Mobile).
 
 ![Wireframe Landing Page — Solución Mobile](images/chapter_3/features-mobile-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 52. Wireframe de la sección "Solución" del landing page de CraveWallet (Mobile).*
+*Figura 51. Wireframe de la sección "Solución" del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -921,13 +921,13 @@ Grid 2×2 → stack 1×4. Cada tarjeta ocupa el ancho completo con placeholder d
 
 **Sección App Preview — Mobile**
 
-La figura 53 muestra el wireframe de la sección "App Preview" del landing page de CraveWallet (Mobile).
+La figura 52 muestra el wireframe de la sección "App Preview" del landing page de CraveWallet (Mobile).
 
 ![Wireframe Landing Page — App Preview Mobile](images/chapter_3/preview-mobile-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 53. Wireframe de la sección "App Preview" del landing page de CraveWallet (Mobile).*
+*Figura 52. Wireframe de la sección "App Preview" del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -939,13 +939,13 @@ Los tres placeholders de mockup de teléfono pasan de fila horizontal a stack ve
 
 **Sección Prueba Social — Mobile**
 
-La figura 54 muestra el wireframe de la sección "Prueba Social" del landing page de CraveWallet (Mobile).
+La figura 53 muestra el wireframe de la sección "Prueba Social" del landing page de CraveWallet (Mobile).
 
 ![Wireframe Landing Page — Prueba Social Mobile](images/chapter_3/social-proof-mobile-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 54. Wireframe de la sección "Prueba Social" del landing page de CraveWallet (Mobile).*
+*Figura 53. Wireframe de la sección "Prueba Social" del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -957,13 +957,13 @@ Tres tarjetas de testimonio en stack vertical a ancho completo. Bloque de hallaz
 
 **Sección Planes — Mobile**
 
-La figura 55 muestra el wireframe de la sección "Planes" del landing page de CraveWallet (Mobile).
+La figura 54 muestra el wireframe de la sección "Planes" del landing page de CraveWallet (Mobile).
 
 ![Wireframe Landing Page — Planes Mobile](images/chapter_3/premium-mobile-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 55. Wireframe de la sección "Planes" del landing page de CraveWallet (Mobile).*
+*Figura 54. Wireframe de la sección "Planes" del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -975,13 +975,13 @@ Las dos tarjetas de plan se apilan verticalmente, plan Básico primero. Cada tar
 
 **Sección Descarga — Mobile**
 
-La figura 56 muestra el wireframe de la sección "Descarga" del landing page de CraveWallet (Mobile).
+La figura 55 muestra el wireframe de la sección "Descarga" del landing page de CraveWallet (Mobile).
 
 ![Wireframe Landing Page — Descarga Mobile](images/chapter_3/download-mobile-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 56. Wireframe de la sección "Descarga" del landing page de CraveWallet (Mobile).*
+*Figura 55. Wireframe de la sección "Descarga" del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -993,13 +993,13 @@ Columna única centrada: titular → CTA a ancho completo → nota de requisito.
 
 **Footer — Mobile**
 
-La figura 57 muestra el wireframe del footer del landing page de CraveWallet (Mobile).
+La figura 56 muestra el wireframe del footer del landing page de CraveWallet (Mobile).
 
 ![Wireframe Landing Page — Footer Mobile](images/chapter_3/footer-mobile-wf.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 57. Wireframe del footer del landing page de CraveWallet (Mobile).*
+*Figura 56. Wireframe del footer del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -1027,13 +1027,13 @@ La versión desktop opera sobre el breakpoint de 960px o superior, desplegando e
 
 **Barra de navegación superior**
 
-La figura 58 muestra la barra de navegación superior del landing page de CraveWallet (Desktop).
+La figura 57 muestra la barra de navegación superior del landing page de CraveWallet (Desktop).
 
 ![Mock-up Landing Page — Navbar Desktop](images/chapter_3/navbar-desktop.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 58. Barra de navegación superior del landing page de CraveWallet (Desktop).*
+*Figura 57. Barra de navegación superior del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -1047,13 +1047,13 @@ El isologotipo "CraveWallet" se ubica en el extremo izquierdo sobre fondo blanco
 
 **Sección Hero — Propuesta de valor**
 
-La figura 59 muestra la sección Hero del landing page de CraveWallet (Desktop).
+La figura 58 muestra la sección Hero del landing page de CraveWallet (Desktop).
 
 ![Mock-up Landing Page — Hero Desktop](images/chapter_3/hero-desktop.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 59. Sección Hero del landing page de CraveWallet (Desktop).*
+*Figura 58. Sección Hero del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -1071,13 +1071,13 @@ La fila de estadísticas en la base ("4–8 suscripciones activas", "S/ → $", 
 
 **Sección El Problema**
 
-La figura 60 muestra la sección "El Problema" del landing page de CraveWallet (Desktop).
+La figura 59 muestra la sección "El Problema" del landing page de CraveWallet (Desktop).
 
 ![Mock-up Landing Page — El Problema Desktop](images/chapter_3/problem-desktop.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 60. Sección "El Problema" del landing page de CraveWallet (Desktop).*
+*Figura 59. Sección "El Problema" del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -1095,13 +1095,13 @@ Desde el ángulo del diseño inclusivo, los testimonios incluyen identificación
 
 **Sección Solución — Features**
 
-La figura 61 muestra la sección "Solución" del landing page de CraveWallet (Desktop).
+La figura 60 muestra la sección "Solución" del landing page de CraveWallet (Desktop).
 
 ![Mock-up Landing Page — Solución Desktop](images/chapter_3/features-desktop.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 61. Sección "Solución" del landing page de CraveWallet (Desktop).*
+*Figura 60. Sección "Solución" del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -1119,13 +1119,13 @@ El diseño inclusivo se manifiesta en el uso de íconos siempre acompañados de 
 
 **Sección App Preview**
 
-La figura 62 muestra la sección "App Preview" del landing page de CraveWallet (Desktop).
+La figura 61 muestra la sección "App Preview" del landing page de CraveWallet (Desktop).
 
 ![Mock-up Landing Page — Preview Desktop](images/chapter_3/preview-desktop.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 62. Sección "App Preview" del landing page de CraveWallet (Desktop).*
+*Figura 61. Sección "App Preview" del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -1141,13 +1141,13 @@ La parte inferior presenta tres ejemplos de microcopy de la aplicación en tarje
 
 **Sección Prueba Social**
 
-La figura 63 muestra la sección "Prueba Social" del landing page de CraveWallet (Desktop).
+La figura 62 muestra la sección "Prueba Social" del landing page de CraveWallet (Desktop).
 
 ![Mock-up Landing Page — Prueba Social Desktop](images/chapter_3/social-proof-desktop.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 63. Sección "Prueba Social" del landing page de CraveWallet (Desktop).*
+*Figura 62. Sección "Prueba Social" del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -1165,13 +1165,13 @@ Desde el diseño inclusivo, los testimonios incluyen diversidad de perfil socioe
 
 **Sección Planes**
 
-La figura 64 muestra la sección "Planes" del landing page de CraveWallet (Desktop).
+La figura 63 muestra la sección "Planes" del landing page de CraveWallet (Desktop).
 
 ![Mock-up Landing Page — Planes Desktop](images/chapter_3/premium-desktop.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 64. Sección "Planes" del landing page de CraveWallet (Desktop).*
+*Figura 63. Sección "Planes" del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -1189,13 +1189,13 @@ El diseño inclusivo se manifiesta en la presentación clara de las diferencias 
 
 **Sección Descarga — CTA Final**
 
-La figura 65 muestra la sección "Descarga" del landing page de CraveWallet (Desktop).
+La figura 64 muestra la sección "Descarga" del landing page de CraveWallet (Desktop).
 
 ![Mock-up Landing Page — Descarga Desktop](images/chapter_3/download-desktop.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 65. Sección "Descarga" del landing page de CraveWallet (Desktop).*
+*Figura 64. Sección "Descarga" del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -1211,13 +1211,13 @@ La fila de garantías al pie ("Sin conectar tu banco", "Plan gratis siempre disp
 
 **Footer**
 
-La figura 66 muestra el footer del landing page de CraveWallet (Desktop).
+La figura 65 muestra el footer del landing page de CraveWallet (Desktop).
 
 ![Mock-up Landing Page — Footer Desktop](images/chapter_3/footer-desktop.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 66. Footer del landing page de CraveWallet (Desktop).*
+*Figura 65. Footer del landing page de CraveWallet (Desktop).*
 
 <!-- pdf:omit-end -->
 
@@ -1257,13 +1257,13 @@ La tabla 125 resume la correspondencia entre las secciones del mock-up desktop y
 
 En breakpoints inferiores a 600px, el landing page adapta su layout al grid de 4 columnas con gutters de 16px definido en la sección 3.1.1.2. Todos los elementos en disposición horizontal o multi-columna colapsan a una única columna de lectura vertical. Los principios de diseño, tokens y arquitectura de información son los mismos que en la versión desktop; lo que varía es exclusivamente la disposición espacial de los componentes para adecuarse al viewport reducido. El Chrome del navegador móvil (barra de dirección con dominio `cravewallet.gastify.pe`) forma parte del contexto de uso antes del primer pixel del sitio.
 
-La figura 67 muestra el landing page de CraveWallet dentro del navegador móvil.
+La figura 66 muestra el landing page de CraveWallet dentro del navegador móvil.
 
 ![Landing page de CraveWallet dentro del navegador móvil](images/chapter_3/browser-chrome-mobile.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 67. Landing page de CraveWallet dentro del navegador móvil.*
+*Figura 66. Landing page de CraveWallet dentro del navegador móvil.*
 
 <!-- pdf:omit-end -->
 
@@ -1273,13 +1273,13 @@ La figura 67 muestra el landing page de CraveWallet dentro del navegador móvil.
 
 **Barra de navegación superior — Mobile**
 
-La figura 68 muestra la barra de navegación superior del landing page de CraveWallet (Mobile).
+La figura 67 muestra la barra de navegación superior del landing page de CraveWallet (Mobile).
 
 ![Mock-up Landing Page — Navbar Mobile](images/chapter_3/navbar-mobile.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 68. Barra de navegación superior del landing page de CraveWallet (Mobile).*
+*Figura 67. Barra de navegación superior del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -1291,13 +1291,13 @@ Los cinco enlaces colapsan a un hamburger (`≡`). El CTA "Descargar gratis" per
 
 **Sección Hero — Mobile**
 
-La figura 69 muestra la sección Hero del landing page de CraveWallet (Mobile).
+La figura 68 muestra la sección Hero del landing page de CraveWallet (Mobile).
 
 ![Mock-up Landing Page — Hero Mobile](images/chapter_3/hero-mobile.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 69. Sección Hero del landing page de CraveWallet (Mobile).*
+*Figura 68. Sección Hero del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -1309,13 +1309,13 @@ El layout de dos columnas colapsa a una sola. Los CTAs pasan a disposición vert
 
 **Sección El Problema — Mobile**
 
-La figura 70 muestra la sección "El Problema" del landing page de CraveWallet (Mobile).
+La figura 69 muestra la sección "El Problema" del landing page de CraveWallet (Mobile).
 
 ![Mock-up Landing Page — El Problema Mobile](images/chapter_3/problem-mobile.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 70. Sección "El Problema" del landing page de CraveWallet (Mobile).*
+*Figura 69. Sección "El Problema" del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -1327,13 +1327,13 @@ Las tres estadísticas pasan de tres columnas a stack vertical. Los testimonios 
 
 **Sección Solución — Mobile**
 
-La figura 71 muestra la sección "Solución" del landing page de CraveWallet (Mobile).
+La figura 70 muestra la sección "Solución" del landing page de CraveWallet (Mobile).
 
 ![Mock-up Landing Page — Solución Mobile](images/chapter_3/features-mobile.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 71. Sección "Solución" del landing page de CraveWallet (Mobile).*
+*Figura 70. Sección "Solución" del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -1345,13 +1345,13 @@ El grid 2×2 colapsa a un stack 1×4. La secuencia vertical (Centraliza → Aler
 
 **Sección App Preview — Mobile**
 
-La figura 72 muestra la sección "App Preview" del landing page de CraveWallet (Mobile).
+La figura 71 muestra la sección "App Preview" del landing page de CraveWallet (Mobile).
 
 ![Mock-up Landing Page — Preview Mobile](images/chapter_3/preview-mobile.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 72. Sección "App Preview" del landing page de CraveWallet (Mobile).*
+*Figura 71. Sección "App Preview" del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -1363,13 +1363,13 @@ Los tres mockups de teléfono pasan de fila horizontal a stack vertical. El cont
 
 **Sección Prueba Social — Mobile**
 
-La figura 73 muestra la sección "Prueba Social" del landing page de CraveWallet (Mobile).
+La figura 72 muestra la sección "Prueba Social" del landing page de CraveWallet (Mobile).
 
 ![Mock-up Landing Page — Prueba Social Mobile](images/chapter_3/social-proof-mobile.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 73. Sección "Prueba Social" del landing page de CraveWallet (Mobile).*
+*Figura 72. Sección "Prueba Social" del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -1381,13 +1381,13 @@ Las tres tarjetas de testimonio y los hallazgos transversales se apilan en colum
 
 **Sección Planes — Mobile**
 
-La figura 74 muestra la sección "Planes" del landing page de CraveWallet (Mobile).
+La figura 73 muestra la sección "Planes" del landing page de CraveWallet (Mobile).
 
 ![Mock-up Landing Page — Planes Mobile](images/chapter_3/premium-mobile.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 74. Sección "Planes" del landing page de CraveWallet (Mobile).*
+*Figura 73. Sección "Planes" del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -1399,13 +1399,13 @@ Las dos tarjetas de plan pasan de columnas paralelas a stack vertical, con el pl
 
 **Sección Descarga — Mobile**
 
-La figura 75 muestra la sección "Descarga" del landing page de CraveWallet (Mobile).
+La figura 74 muestra la sección "Descarga" del landing page de CraveWallet (Mobile).
 
 ![Mock-up Landing Page — Descarga Mobile](images/chapter_3/download-mobile.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 75. Sección "Descarga" del landing page de CraveWallet (Mobile).*
+*Figura 74. Sección "Descarga" del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -1417,13 +1417,13 @@ El CTA "Descargar en Android" pasa a ancho completo. Los trust badges se distrib
 
 **Footer — Mobile**
 
-La figura 76 muestra el footer del landing page de CraveWallet (Mobile).
+La figura 75 muestra el footer del landing page de CraveWallet (Mobile).
 
 ![Mock-up Landing Page — Footer Mobile](images/chapter_3/footer-mobile.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 76. Footer del landing page de CraveWallet (Mobile).*
+*Figura 75. Footer del landing page de CraveWallet (Mobile).*
 
 <!-- pdf:omit-end -->
 
@@ -1534,121 +1534,121 @@ Las 31 pantallas se agrupan en diez láminas (tabla 130).
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 77 muestra los wireframes de la aplicación móvil: Inicio y Gastos (I1, I2, G1, G2).
+La figura 76 muestra los wireframes de la aplicación móvil: Inicio y Gastos (I1, I2, G1, G2).
 
 ![Wireframes 1, Inicio y Gastos](images/chapter_3/mobile_wireframe_01_inicio_gastos.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 77. Wireframes de la aplicación móvil: Inicio y Gastos (I1, I2, G1, G2).*
+*Figura 76. Wireframes de la aplicación móvil: Inicio y Gastos (I1, I2, G1, G2).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 78 muestra los wireframes de la aplicación móvil: detalle y alta, paso 1 (G3, A1, A2).
+La figura 77 muestra los wireframes de la aplicación móvil: detalle y alta, paso 1 (G3, A1, A2).
 
 ![Wireframes 2, detalle y alta](images/chapter_3/mobile_wireframe_02_detalle_alta.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 78. Wireframes de la aplicación móvil: detalle y alta, paso 1 (G3, A1, A2).*
+*Figura 77. Wireframes de la aplicación móvil: detalle y alta, paso 1 (G3, A1, A2).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 79 muestra los wireframes de la aplicación móvil: validación, moneda y vista previa en soles (A3, A4, A5).
+La figura 78 muestra los wireframes de la aplicación móvil: validación, moneda y vista previa en soles (A3, A4, A5).
 
 ![Wireframes 3, validación y moneda](images/chapter_3/mobile_wireframe_03_alta_validacion.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 79. Wireframes de la aplicación móvil: validación, moneda y vista previa en soles (A3, A4, A5).*
+*Figura 78. Wireframes de la aplicación móvil: validación, moneda y vista previa en soles (A3, A4, A5).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 80 muestra los wireframes de la aplicación móvil: recordatorio, permiso y resultado del alta (A6, A7, I3, I4).
+La figura 79 muestra los wireframes de la aplicación móvil: recordatorio, permiso y resultado del alta (A6, A7, I3, I4).
 
 ![Wireframes 4, recordatorio y resultado](images/chapter_3/mobile_wireframe_04_alta_recordatorio.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 80. Wireframes de la aplicación móvil: recordatorio, permiso y resultado del alta (A6, A7, I3, I4).*
+*Figura 79. Wireframes de la aplicación móvil: recordatorio, permiso y resultado del alta (A6, A7, I3, I4).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 81 muestra los wireframes de la aplicación móvil: salidas alternas del alta (A8, A9).
+La figura 80 muestra los wireframes de la aplicación móvil: salidas alternas del alta (A8, A9).
 
 ![Wireframes 5, salidas alternas](images/chapter_3/mobile_wireframe_05_alta_alternas.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 81. Wireframes de la aplicación móvil: salidas alternas del alta (A8, A9).*
+*Figura 80. Wireframes de la aplicación móvil: salidas alternas del alta (A8, A9).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 82 muestra los wireframes de la aplicación móvil: Análisis, 1 de 2 (N1, N2, N3).
+La figura 81 muestra los wireframes de la aplicación móvil: Análisis, 1 de 2 (N1, N2, N3).
 
 ![Wireframes 6, análisis 1](images/chapter_3/mobile_wireframe_06_analisis_1.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 82. Wireframes de la aplicación móvil: Análisis, 1 de 2 (N1, N2, N3).*
+*Figura 81. Wireframes de la aplicación móvil: Análisis, 1 de 2 (N1, N2, N3).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 83 muestra los wireframes de la aplicación móvil: estados alternos del Análisis (N4, N5, N6).
+La figura 82 muestra los wireframes de la aplicación móvil: estados alternos del Análisis (N4, N5, N6).
 
 ![Wireframes 7, análisis 2](images/chapter_3/mobile_wireframe_07_analisis_2.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 83. Wireframes de la aplicación móvil: estados alternos del Análisis (N4, N5, N6).*
+*Figura 82. Wireframes de la aplicación móvil: estados alternos del Análisis (N4, N5, N6).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 84 muestra los wireframes de la aplicación móvil: Perfil y recordatorios, 1 de 3 (P1, P2, P3, P4).
+La figura 83 muestra los wireframes de la aplicación móvil: Perfil y recordatorios, 1 de 3 (P1, P2, P3, P4).
 
 ![Wireframes 8, perfil 1](images/chapter_3/mobile_wireframe_08_perfil_1.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 84. Wireframes de la aplicación móvil: Perfil y recordatorios, 1 de 3 (P1, P2, P3, P4).*
+*Figura 83. Wireframes de la aplicación móvil: Perfil y recordatorios, 1 de 3 (P1, P2, P3, P4).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 85 muestra los wireframes de la aplicación móvil: Perfil y recordatorios, 2 de 3 (P5, P6, P7).
+La figura 84 muestra los wireframes de la aplicación móvil: Perfil y recordatorios, 2 de 3 (P5, P6, P7).
 
 ![Wireframes 9, perfil 2](images/chapter_3/mobile_wireframe_09_perfil_2.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 85. Wireframes de la aplicación móvil: Perfil y recordatorios, 2 de 3 (P5, P6, P7).*
+*Figura 84. Wireframes de la aplicación móvil: Perfil y recordatorios, 2 de 3 (P5, P6, P7).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 86 muestra los wireframes de la aplicación móvil: Perfil y recordatorios, 3 de 3 (P8, P9).
+La figura 85 muestra los wireframes de la aplicación móvil: Perfil y recordatorios, 3 de 3 (P8, P9).
 
 ![Wireframes 10, perfil 3](images/chapter_3/mobile_wireframe_10_perfil_3.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 86. Wireframes de la aplicación móvil: Perfil y recordatorios, 3 de 3 (P8, P9).*
+*Figura 85. Wireframes de la aplicación móvil: Perfil y recordatorios, 3 de 3 (P8, P9).*
 
 <!-- pdf:omit-end -->
 
@@ -1686,37 +1686,37 @@ La tabla 132 presenta los wireflows con su recorrido principal y alternativas.
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 87 muestra el wireflow del User Goal 1: añadir una nueva suscripción recurrente de forma manual.
+La figura 86 muestra el wireflow del User Goal 1: añadir una nueva suscripción recurrente de forma manual.
 
 ![Wireflow 1, agregar una suscripción manualmente](images/chapter_3/mobile_wireflow_ug1.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 87. Wireflow del User Goal 1: añadir una nueva suscripción recurrente de forma manual.*
+*Figura 86. Wireflow del User Goal 1: añadir una nueva suscripción recurrente de forma manual.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 88 muestra el wireflow del User Goal 2: revisar el gráfico detallado de gastos mensuales.
+La figura 87 muestra el wireflow del User Goal 2: revisar el gráfico detallado de gastos mensuales.
 
 ![Wireflow 2, revisar el gráfico de gastos](images/chapter_3/mobile_wireflow_ug2.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 88. Wireflow del User Goal 2: revisar el gráfico detallado de gastos mensuales.*
+*Figura 87. Wireflow del User Goal 2: revisar el gráfico detallado de gastos mensuales.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 89 muestra el wireflow del User Goal 3: configurar una alerta o notificación de pago próximo.
+La figura 88 muestra el wireflow del User Goal 3: configurar una alerta o notificación de pago próximo.
 
 ![Wireflow 3, configurar una alerta](images/chapter_3/mobile_wireflow_ug3.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 89. Wireflow del User Goal 3: configurar una alerta o notificación de pago próximo.*
+*Figura 88. Wireflow del User Goal 3: configurar una alerta o notificación de pago próximo.*
 
 <!-- pdf:omit-end -->
 
@@ -1726,13 +1726,13 @@ La figura 89 muestra el wireflow del User Goal 3: configurar una alerta o notifi
 
 Los mock-ups son los wireframes con el Design System de la sección 3.1.1 aplicado: la paleta 60-30-10 (fondos neutros, azul primario `#3B4FD8` para la estructura y naranja `#F97316` reservado para el FAB y las alertas de cobro), Poppins para títulos y montos, Inter para cuerpo y datos, la retícula de 8 dp, los radios de 4 dp (chips y etiquetas), 8 dp (campos y botones compactos), 16 dp (tarjetas) y 24 dp (hojas modales y diálogos), los íconos Material Symbols Rounded y las elevaciones 1 y 3. Los componentes siguen Material Design 3: `NavigationBar`, top app bar, FAB extendido, bottom sheet, diálogo, campos outlined, chips de filtro, segmented button, switch y snackbar.
 
-La figura 90 muestra los tokens de color, escala tipográfica y componentes del Design System aplicados a la aplicación móvil.
+La figura 89 muestra los tokens de color, escala tipográfica y componentes del Design System aplicados a la aplicación móvil.
 
 ![Design System aplicado a la app móvil](images/chapter_3/mobile_design_system.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 90. Tokens de color, escala tipográfica y componentes del Design System aplicados a la aplicación móvil.*
+*Figura 89. Tokens de color, escala tipográfica y componentes del Design System aplicados a la aplicación móvil.*
 
 <!-- pdf:omit-end -->
 
@@ -1754,121 +1754,121 @@ El contraste se verificó con la fórmula de WCAG 2.1 para cada par de color que
 
 Las mismas diez láminas de los wireframes se presentan en alta fidelidad:
 
-La figura 91 muestra los mock-ups de la aplicación móvil: Inicio y Gastos (I1, I2, G1, G2).
+La figura 90 muestra los mock-ups de la aplicación móvil: Inicio y Gastos (I1, I2, G1, G2).
 
 ![Mock-ups 1, Inicio y Gastos](images/chapter_3/mobile_mockup_01_inicio_gastos.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 91. Mock-ups de la aplicación móvil: Inicio y Gastos (I1, I2, G1, G2).*
+*Figura 90. Mock-ups de la aplicación móvil: Inicio y Gastos (I1, I2, G1, G2).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 92 muestra los mock-ups de la aplicación móvil: detalle y alta, paso 1 (G3, A1, A2).
+La figura 91 muestra los mock-ups de la aplicación móvil: detalle y alta, paso 1 (G3, A1, A2).
 
 ![Mock-ups 2, detalle y alta](images/chapter_3/mobile_mockup_02_detalle_alta.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 92. Mock-ups de la aplicación móvil: detalle y alta, paso 1 (G3, A1, A2).*
+*Figura 91. Mock-ups de la aplicación móvil: detalle y alta, paso 1 (G3, A1, A2).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 93 muestra los mock-ups de la aplicación móvil: validación, moneda y vista previa en soles (A3, A4, A5).
+La figura 92 muestra los mock-ups de la aplicación móvil: validación, moneda y vista previa en soles (A3, A4, A5).
 
 ![Mock-ups 3, validación y moneda](images/chapter_3/mobile_mockup_03_alta_validacion.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 93. Mock-ups de la aplicación móvil: validación, moneda y vista previa en soles (A3, A4, A5).*
+*Figura 92. Mock-ups de la aplicación móvil: validación, moneda y vista previa en soles (A3, A4, A5).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 94 muestra los mock-ups de la aplicación móvil: recordatorio, permiso y resultado del alta (A6, A7, I3, I4).
+La figura 93 muestra los mock-ups de la aplicación móvil: recordatorio, permiso y resultado del alta (A6, A7, I3, I4).
 
 ![Mock-ups 4, recordatorio y resultado](images/chapter_3/mobile_mockup_04_alta_recordatorio.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 94. Mock-ups de la aplicación móvil: recordatorio, permiso y resultado del alta (A6, A7, I3, I4).*
+*Figura 93. Mock-ups de la aplicación móvil: recordatorio, permiso y resultado del alta (A6, A7, I3, I4).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 95 muestra los mock-ups de la aplicación móvil: salidas alternas del alta (A8, A9).
+La figura 94 muestra los mock-ups de la aplicación móvil: salidas alternas del alta (A8, A9).
 
 ![Mock-ups 5, salidas alternas](images/chapter_3/mobile_mockup_05_alta_alternas.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 95. Mock-ups de la aplicación móvil: salidas alternas del alta (A8, A9).*
+*Figura 94. Mock-ups de la aplicación móvil: salidas alternas del alta (A8, A9).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 96 muestra los mock-ups de la aplicación móvil: Análisis, 1 de 2 (N1, N2, N3).
+La figura 95 muestra los mock-ups de la aplicación móvil: Análisis, 1 de 2 (N1, N2, N3).
 
 ![Mock-ups 6, análisis 1](images/chapter_3/mobile_mockup_06_analisis_1.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 96. Mock-ups de la aplicación móvil: Análisis, 1 de 2 (N1, N2, N3).*
+*Figura 95. Mock-ups de la aplicación móvil: Análisis, 1 de 2 (N1, N2, N3).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 97 muestra los mock-ups de la aplicación móvil: estados alternos del Análisis (N4, N5, N6).
+La figura 96 muestra los mock-ups de la aplicación móvil: estados alternos del Análisis (N4, N5, N6).
 
 ![Mock-ups 7, análisis 2](images/chapter_3/mobile_mockup_07_analisis_2.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 97. Mock-ups de la aplicación móvil: estados alternos del Análisis (N4, N5, N6).*
+*Figura 96. Mock-ups de la aplicación móvil: estados alternos del Análisis (N4, N5, N6).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 98 muestra los mock-ups de la aplicación móvil: Perfil y recordatorios, 1 de 3 (P1, P2, P3, P4).
+La figura 97 muestra los mock-ups de la aplicación móvil: Perfil y recordatorios, 1 de 3 (P1, P2, P3, P4).
 
 ![Mock-ups 8, perfil 1](images/chapter_3/mobile_mockup_08_perfil_1.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 98. Mock-ups de la aplicación móvil: Perfil y recordatorios, 1 de 3 (P1, P2, P3, P4).*
+*Figura 97. Mock-ups de la aplicación móvil: Perfil y recordatorios, 1 de 3 (P1, P2, P3, P4).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 99 muestra los mock-ups de la aplicación móvil: Perfil y recordatorios, 2 de 3 (P5, P6, P7).
+La figura 98 muestra los mock-ups de la aplicación móvil: Perfil y recordatorios, 2 de 3 (P5, P6, P7).
 
 ![Mock-ups 9, perfil 2](images/chapter_3/mobile_mockup_09_perfil_2.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 99. Mock-ups de la aplicación móvil: Perfil y recordatorios, 2 de 3 (P5, P6, P7).*
+*Figura 98. Mock-ups de la aplicación móvil: Perfil y recordatorios, 2 de 3 (P5, P6, P7).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 100 muestra los mock-ups de la aplicación móvil: Perfil y recordatorios, 3 de 3 (P8, P9).
+La figura 99 muestra los mock-ups de la aplicación móvil: Perfil y recordatorios, 3 de 3 (P8, P9).
 
 ![Mock-ups 10, perfil 3](images/chapter_3/mobile_mockup_10_perfil_3.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 100. Mock-ups de la aplicación móvil: Perfil y recordatorios, 3 de 3 (P8, P9).*
+*Figura 99. Mock-ups de la aplicación móvil: Perfil y recordatorios, 3 de 3 (P8, P9).*
 
 <!-- pdf:omit-end -->
 
@@ -1899,25 +1899,25 @@ La tabla 134 presenta los tokens de color en modo claro y oscuro.
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 101 muestra los tokens de color en modo oscuro con su contraste WCAG, escala tipográfica y componentes.
+La figura 100 muestra los tokens de color en modo oscuro con su contraste WCAG, escala tipográfica y componentes.
 
 ![Design System en modo oscuro](images/chapter_3/mobile_design_system_dark.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 101. Tokens de color en modo oscuro con su contraste WCAG, escala tipográfica y componentes.*
+*Figura 100. Tokens de color en modo oscuro con su contraste WCAG, escala tipográfica y componentes.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 102 muestra los mock-ups en modo oscuro de una pantalla por área: Inicio, Gastos, alta con vista previa en soles, Análisis y Recordatorios (I1, G1, A5, N1, P4).
+La figura 101 muestra los mock-ups en modo oscuro de una pantalla por área: Inicio, Gastos, alta con vista previa en soles, Análisis y Recordatorios (I1, G1, A5, N1, P4).
 
 ![Mock-ups en modo oscuro, pantallas clave](images/chapter_3/mobile_mockup_dark_clave.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 102. Mock-ups en modo oscuro de una pantalla por área: Inicio, Gastos, alta con vista previa en soles, Análisis y Recordatorios (I1, G1, A5, N1, P4).*
+*Figura 101. Mock-ups en modo oscuro de una pantalla por área: Inicio, Gastos, alta con vista previa en soles, Análisis y Recordatorios (I1, G1, A5, N1, P4).*
 
 <!-- pdf:omit-end -->
 
@@ -1941,37 +1941,37 @@ La tabla 135 presenta las decisiones y caminos alternos de cada user flow.
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 103 muestra el user flow del User Goal 1 con su camino feliz, caminos alternos y error de validación.
+La figura 102 muestra el user flow del User Goal 1 con su camino feliz, caminos alternos y error de validación.
 
 ![User flow 1, agregar una suscripción manualmente](images/chapter_3/mobile_userflow_ug1.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 103. User flow del User Goal 1 con su camino feliz, caminos alternos y error de validación.*
+*Figura 102. User flow del User Goal 1 con su camino feliz, caminos alternos y error de validación.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 104 muestra el user flow del User Goal 2 con sus estados alternos: plan gratuito, sin datos (empty state) y sin conexión.
+La figura 103 muestra el user flow del User Goal 2 con sus estados alternos: plan gratuito, sin datos (empty state) y sin conexión.
 
 ![User flow 2, revisar el gráfico de gastos](images/chapter_3/mobile_userflow_ug2.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 104. User flow del User Goal 2 con sus estados alternos: plan gratuito, sin datos (empty state) y sin conexión.*
+*Figura 103. User flow del User Goal 2 con sus estados alternos: plan gratuito, sin datos (empty state) y sin conexión.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify.*
 
-La figura 105 muestra el user flow del User Goal 3 con el permiso de notificaciones denegado y la cancelación del cambio.
+La figura 104 muestra el user flow del User Goal 3 con el permiso de notificaciones denegado y la cancelación del cambio.
 
 ![User flow 3, configurar una alerta](images/chapter_3/mobile_userflow_ug3.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 105. User flow del User Goal 3 con el permiso de notificaciones denegado y la cancelación del cambio.*
+*Figura 104. User flow del User Goal 3 con el permiso de notificaciones denegado y la cancelación del cambio.*
 
 <!-- pdf:omit-end -->
 
@@ -2019,13 +2019,13 @@ El prototipo tiene ocho puntos de inicio. El primero recorre los tres User Goals
 
 El mapa resume el prototipo: las zonas con interacción tienen borde rojo punteado y las pantallas que son punto de inicio tienen borde verde.
 
-La figura 106 muestra el mapa del prototipo de la aplicación móvil con las zonas interactivas y los puntos de inicio.
+La figura 105 muestra el mapa del prototipo de la aplicación móvil con las zonas interactivas y los puntos de inicio.
 
 ![Mapa del prototipo](images/chapter_3/mobile_prototype_map.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 106. Mapa del prototipo de la aplicación móvil con las zonas interactivas y los puntos de inicio.*
+*Figura 105. Mapa del prototipo de la aplicación móvil con las zonas interactivas y los puntos de inicio.*
 
 <!-- pdf:omit-end -->
 

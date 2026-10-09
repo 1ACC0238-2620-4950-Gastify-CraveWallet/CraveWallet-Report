@@ -11,7 +11,7 @@ La tabla 1 registra las versiones del informe, su fecha, su autor y los cambios 
 | AV1 — revisión de diseño estratégico | 07/10/2026 | Alexander Aliaga | Corrección de las secciones 2.5.1.2, 2.5.1.3, 2.5.2, 2.5.3.1 y 2.5.3.2; fuentes editables, referencias y alineación del criterio de activación de Premium. |
 | TB1 — avance | 08/10/2026 | Mario Sejuro | Redacción de las referencias a tablas y figuras y de oraciones extensas del Capítulo II; fuentes del Capítulo III; herramientas del 4.1.1 en tablas Markdown. |
 | TB1 — revisión de arquitectura | 09/10/2026 | Alexander Aliaga | Exportación de las seis vistas C4 en Structurizr; despliegue en Render y Vercel, stack Android y distinción de integraciones pendientes. |
-| TB1 — evidencias de despliegue | 09/10/2026 | Alexander Aliaga | Capturas públicas de Vercel y arranque de Render, copia de evidencia Live versionada y verificación HTTP del health; figuras 116–118 con procedencia. |
+| TB1 — evidencias de despliegue | 09/10/2026 | Alexander Aliaga | Capturas públicas de Vercel y arranque de Render, copia de evidencia Live versionada y verificación HTTP del health; figuras 115–117 con procedencia. |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -86,10 +86,6 @@ La figura 1 muestra la actividad de los integrantes en el repositorio del inform
   - [4.1.4. Software Deployment Configuration](docs/chapter_4.md#414-software-deployment-configuration)
 - [4.2. Landing Page & Mobile Application Implementation](docs/chapter_4.md#42-landing-page--mobile-application-implementation)
   - [4.2.1. Sprint 1](docs/chapter_4.md#421-sprint-1)
-- [4.3. Validation Interviews](docs/chapter_4.md#43-validation-interviews)
-  - [4.3.1. Diseño de Entrevistas](docs/chapter_4.md#431-diseño-de-entrevistas)
-  - [4.3.2. Registro de Entrevistas](docs/chapter_4.md#432-registro-de-entrevistas)
-  - [4.3.3. Evaluaciones según heurísticas](docs/chapter_4.md#433-evaluaciones-según-heurísticas)
 
 ### [Conclusiones](docs/closing.md#conclusiones)
 
@@ -113,7 +109,7 @@ El curso contribuye al cumplimiento del siguiente Student Outcome ABET:
 
 **Criterio:** La capacidad de adquirir y aplicar nuevos conocimientos según sea necesario, utilizando estrategias de aprendizaje apropiadas.
 
-Los siguientes cuadros describen las acciones realizadas por cada integrante y las conclusiones que sustentan el logro de los dos criterios del Student Outcome durante la entrega AV1.
+Los siguientes cuadros describen las acciones realizadas por cada integrante y las conclusiones que sustentan el logro de los dos criterios del Student Outcome durante las entregas AV1 y TB1.
 
 ## Criterio 1
 
@@ -123,13 +119,13 @@ La tabla 2 resume las acciones de cada integrante que sustentan el primer criter
 
 *Tabla 2. Criterio 1.*
 
-| Integrante | Acciones realizadas en AV1 |
+| Integrante | Acciones realizadas en AV1 y TB1 |
 | --- | --- |
-| **Aliaga, Alexander** | **AV1:** Documentó el Big Picture EventStorming del proceso actual y el EventStorming de diseño de CraveWallet. Organizó los eventos, actores, sistemas, problemas y oportunidades del escenario As-Is; desarrolló el Candidate Context Discovery, los Domain Message Flows y los Bounded Context Canvases que sustentan los contextos de Suscripciones, Gastos y Premium. |
-| **Carpio Peña, Josué Francisco** | **AV1:** Registró y consolidó la información de las entrevistas del Segmento 2, incluyendo datos demográficos, ocupación, fecha, duración y responsable. Corrigió la identificación de los entrevistados y organizó los enlaces y tiempos de inicio del video consolidado para mantener trazabilidad entre las grabaciones y el análisis de entrevistas. |
-| **Faustino Hurtado, Anghelo Edwin** | **AV1:** Registró las entrevistas de Leonardo Sánchez, Darío Romero y Eduardo Aguirre, incorporando sus enlaces, fechas, horarios, duraciones y perfiles. Integró las evidencias de User Personas y As-Is Journey Maps, preparó la carátula y los metadatos de la entrega, y documentó el Product Backlog de 52 elementos con su enlace y evidencia visual en Trello. |
-| **Roman Zeballos, Sebastian Jared** | **AV1:** Desarrolló el análisis de competidores y el diseño de entrevistas; consolidó el análisis cuantitativo de los dos segmentos y elaboró los artefactos de Needfinding. Especificó las 40 User Stories, 6 Technical Stories y 6 Spike Stories, estructuró el Ubiquitous Language, elaboró los cuatro Impact Maps en UXPressia y organizó la priorización y estimación del Product Backlog. |
-| **Sejuro Medina, Mario Gabriel** | **AV1:** Redactó la descripción de la startup, el Lean UX Process y los segmentos objetivo; revisó las User Stories para alinearlas con la rúbrica. Desarrolló el Context Mapping, los diagramas C4 de contexto, contenedores y despliegue, y el diseño táctico de los Bounded Contexts Subscription Management, Delivery Expense Management y Premium & Billing con sus diagramas de componentes, clases y base de datos. |
+| **Aliaga, Alexander** | **AV1:** Documentó el Big Picture EventStorming del proceso actual y el EventStorming de diseño de CraveWallet. Organizó los eventos, actores, sistemas, problemas y oportunidades del escenario As-Is; desarrolló el Candidate Context Discovery, los Domain Message Flows y los Bounded Context Canvases que sustentan los contextos de Suscripciones, Gastos y Premium.<br><br>**TB1:** Generó las seis vistas C4 con Structurizr (DSL, modelo y exportaciones), publicó los diagramas nativos de Miro de los flujos de mensajes y los canvases, y reunió la evidencia pública del despliegue: capturas del landing en Vercel, de la pantalla de arranque de Render y del health del API, con su procedencia y huella SHA-256. |
+| **Carpio Peña, Josué Francisco** | **AV1:** Registró y consolidó la información de las entrevistas del Segmento 2, incluyendo datos demográficos, ocupación, fecha, duración y responsable. Corrigió la identificación de los entrevistados y organizó los enlaces y tiempos de inicio del video consolidado para mantener trazabilidad entre las grabaciones y el análisis de entrevistas.<br><br>**TB1:** Reemplazó las fotografías de los cinco integrantes del capítulo 1 por retratos con el mismo encuadre, fondo y tamaño, y los integró al informe mediante un pull request revisado. |
+| **Faustino Hurtado, Anghelo Edwin** | **AV1:** Registró las entrevistas de Leonardo Sánchez, Darío Romero y Eduardo Aguirre, incorporando sus enlaces, fechas, horarios, duraciones y perfiles. Integró las evidencias de User Personas y As-Is Journey Maps, preparó la carátula y los metadatos de la entrega, y documentó el Product Backlog de 52 elementos con su enlace y evidencia visual en Trello.<br><br>**TB1:** Implementó el backend en Java 21 y Spring Boot con autenticación JWT, suscripciones, gastos de Delivery con presupuesto, cotización USD/PEN con caché y datos de recordatorio (16 endpoints y 32 pruebas). Lo desplegó en Render con PostgreSQL 17, documentó sus contratos con OpenAPI y conectó la aplicación Android al API público. |
+| **Roman Zeballos, Sebastian Jared** | **AV1:** Desarrolló el análisis de competidores y el diseño de entrevistas; consolidó el análisis cuantitativo de los dos segmentos y elaboró los artefactos de Needfinding. Especificó las 40 User Stories, 6 Technical Stories y 6 Spike Stories, estructuró el Ubiquitous Language, elaboró los cuatro Impact Maps en UXPressia y organizó la priorización y estimación del Product Backlog.<br><br>**TB1:** Desarrolló la aplicación Android en Kotlin y Jetpack Compose a partir de los wireframes y el Design System (Inicio, Gastos, Análisis, Perfil, alta de suscripción y recordatorios). Agregó las secciones de planes, preguntas frecuentes y novedades del landing, escribió los escenarios Gherkin de sus historias y revisó leyendas, citas y fuentes de las figuras y tablas del informe. |
+| **Sejuro Medina, Mario Gabriel** | **AV1:** Redactó la descripción de la startup, el Lean UX Process y los segmentos objetivo; revisó las User Stories para alinearlas con la rúbrica. Desarrolló el Context Mapping, los diagramas C4 de contexto, contenedores y despliegue, y el diseño táctico de los Bounded Contexts Subscription Management, Delivery Expense Management y Premium & Billing con sus diagramas de componentes, clases y base de datos.<br><br>**TB1:** Diseñó la guía de estilo, la arquitectura de información, el landing (3.1.3) y la UX/UI de la app móvil (3.1.4) en Figma, con wireframes, wireflows, mock-ups en modo claro y oscuro, user flows y prototipo. Implementó el landing en Next.js 16 con modo oscuro y versión en español e inglés, y lo publicó en Vercel con cifras sustentadas en las entrevistas y la encuesta de la SBS. |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -137,6 +133,8 @@ La tabla 2 resume las acciones de cada integrante que sustentan el primer criter
 **Conclusiones**
 
 **AV1:** Los aportes individuales actualizaron y aplicaron conocimientos de Lean UX, investigación de usuarios, ingeniería de requisitos, EventStorming, priorización ágil, C4 Model y Domain-Driven Design sobre el problema real de gestionar suscripciones y gastos recurrentes. El resultado mantiene trazabilidad entre la problemática, las entrevistas, los artefactos de Needfinding, los requisitos y la arquitectura propuesta para CraveWallet.
+
+**TB1:** Los aportes aplicaron conocimientos nuevos en la implementación: diseño de interfaces en Figma, desarrollo del landing en Next.js, de la aplicación en Kotlin y Jetpack Compose y del backend en Java y Spring Boot, y despliegue en Vercel y Render. Cada producto quedó enlazado con las historias de usuario y los contratos documentados en los capítulos anteriores.
 
 ## Criterio 2
 
@@ -146,13 +144,13 @@ La tabla 3 resume las acciones de cada integrante que sustentan el segundo crite
 
 *Tabla 3. Criterio 2.*
 
-| Integrante | Acciones realizadas en AV1 |
+| Integrante | Acciones realizadas en AV1 y TB1 |
 | --- | --- |
-| **Aliaga, Alexander** | **AV1:** Estudió la diferencia entre EventStorming As-Is y To-Be, así como el uso correcto de eventos, comandos, políticas, vistas y sistemas externos. Aplicó Candidate Context Discovery y Bounded Context Canvas para convertir los hallazgos del dominio en fronteras de responsabilidad que podrán revisarse durante la implementación. |
-| **Carpio Peña, Josué Francisco** | **AV1:** Profundizó en buenas prácticas para documentar entrevistas, normalizar metadatos y construir un video consolidado con tiempos verificables. Reforzó el uso de Git y GitHub para corregir información compartida sin perder la trazabilidad de los cambios realizados por el equipo. |
-| **Faustino Hurtado, Anghelo Edwin** | **AV1:** Aprendió a transformar entrevistas en evidencias documentales consistentes y a relacionarlas con User Personas y Journey Maps. Fortaleció el uso de Markdown, Git, GitHub y Trello para integrar perfiles, enlaces, material visual y un Product Backlog versionado dentro del informe académico. |
-| **Roman Zeballos, Sebastian Jared** | **AV1:** Investigó técnicas de análisis competitivo, Needfinding, redacción de criterios de aceptación y estimación con Story Points. Aprendió a construir Impact Maps en UXPressia y a conectar objetivos de negocio, actores, impactos, entregables e historias de usuario antes de priorizarlas en el backlog. |
-| **Sejuro Medina, Mario Gabriel** | **AV1:** Estudió Lean UX, Context Mapping, C4 Model y diseño táctico de Domain-Driven Design para definir agregados, value objects, servicios, repositorios y adaptadores. Profundizó en la representación de arquitectura y en la separación de responsabilidades entre los contextos del dominio y servicios externos como Stripe y ExchangeRate-API. |
+| **Aliaga, Alexander** | **AV1:** Estudió la diferencia entre EventStorming As-Is y To-Be, así como el uso correcto de eventos, comandos, políticas, vistas y sistemas externos. Aplicó Candidate Context Discovery y Bounded Context Canvas para convertir los hallazgos del dominio en fronteras de responsabilidad que podrán revisarse durante la implementación.<br><br>**TB1:** Aprendió a modelar arquitectura como código con Structurizr y a exportar vistas reproducibles, y adoptó las capturas nativas de cada herramienta, con procedencia y huella registradas, como forma de sustentar las figuras del informe. |
+| **Carpio Peña, Josué Francisco** | **AV1:** Profundizó en buenas prácticas para documentar entrevistas, normalizar metadatos y construir un video consolidado con tiempos verificables. Reforzó el uso de Git y GitHub para corregir información compartida sin perder la trazabilidad de los cambios realizados por el equipo.<br><br>**TB1:** Aplicó el flujo de ramas y pull requests del repositorio, con la verificación `Commit policy`, para corregir material compartido sin afectar el trabajo de los demás. |
+| **Faustino Hurtado, Anghelo Edwin** | **AV1:** Aprendió a transformar entrevistas en evidencias documentales consistentes y a relacionarlas con User Personas y Journey Maps. Fortaleció el uso de Markdown, Git, GitHub y Trello para integrar perfiles, enlaces, material visual y un Product Backlog versionado dentro del informe académico.<br><br>**TB1:** Incorporó Flyway para versionar el esquema, bloqueos transaccionales para proteger el cupo, los reintentos y el presupuesto, y el despliegue en contenedores con Docker y Render. Verificó cada incremento con pruebas de integración y con GitHub Actions. |
+| **Roman Zeballos, Sebastian Jared** | **AV1:** Investigó técnicas de análisis competitivo, Needfinding, redacción de criterios de aceptación y estimación con Story Points. Aprendió a construir Impact Maps en UXPressia y a conectar objetivos de negocio, actores, impactos, entregables e historias de usuario antes de priorizarlas en el backlog.<br><br>**TB1:** Aprendió Jetpack Compose, Material 3 y Navigation Compose para convertir un Design System en pantallas nativas, y aplicó Gherkin para traducir criterios de aceptación en escenarios comprobables. |
+| **Sejuro Medina, Mario Gabriel** | **AV1:** Estudió Lean UX, Context Mapping, C4 Model y diseño táctico de Domain-Driven Design para definir agregados, value objects, servicios, repositorios y adaptadores. Profundizó en la representación de arquitectura y en la separación de responsabilidades entre los contextos del dominio y servicios externos como Stripe y ExchangeRate-API.<br><br>**TB1:** Aprendió a generar archivos de Figma con su Plugin API, a configurar rutas por idioma y modo oscuro en Next.js 16 y a publicar con despliegue continuo en Vercel. Incorporó pautas de accesibilidad (WCAG 2.1) y de Material Design 3 como referencias citadas en el diseño. |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -160,6 +158,8 @@ La tabla 3 resume las acciones de cada integrante que sustentan el segundo crite
 **Conclusiones**
 
 **AV1:** El equipo comprobó que cada sección exigió aprendizaje autónomo de métodos, herramientas y tecnologías que no se dominaban al inicio. Ese conocimiento se transfirió mediante commits, revisiones e integración en `develop`, quedando disponible para los demás integrantes. Las siguientes entregas requerirán mantener la consulta de documentación, la validación con usuarios y la revisión colaborativa para implementar y comprobar la solución móvil.
+
+**TB1:** Las herramientas nuevas (Structurizr, Flyway, Docker, Render, Vercel, Jetpack Compose y el plugin de Figma) se aprendieron durante el Sprint 1 y se compartieron mediante commits, documentación versionada y pull requests. Para el siguiente Sprint se mantendrá la revisión entre integrantes de los cambios en el código.
 
 # Objetivos SMART
 
