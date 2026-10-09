@@ -78,7 +78,7 @@ Los supuestos siguen el proceso Lean UX [@gothelf2021leanux].
 ##### Business Assumptions
 
 1. Creemos que los segmentos elegidos valorarán reunir importe, próxima renovación y gastos de delivery.
-2. Creemos que una propuesta Premium de S/ 9.90 mensuales podría interesar a usuarios que necesitan más registros y análisis.
+2. Creemos que una propuesta Premium de S/ 9.99 mensuales podría interesar a usuarios que necesitan más registros y análisis.
 3. Creemos que el esfuerzo de registro manual es un riesgo principal para la adopción.
 4. Creemos que un plan Free con cinco registros activos permite conocer el producto antes de pagar.
 5. Creemos que una propuesta enfocada puede diferenciarse de herramientas generales.

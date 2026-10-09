@@ -423,7 +423,7 @@ screen('A9', 'Límite del plan gratuito', 'US39, US21', function (th) {
       progressBar(th, { x: 48, y: 148, w: 264, pct: 100, h: 8 }),
       T('5 de 5 en el plan gratuito', { x: PAD, y: 162, w: W - 2 * PAD, align: 'center', ts: 'caption', color: 'onSurfaceVariant' }),
       F({ name: 'Beneficios', x: 40, y: 196, dir: 'V', gap: 10 }, rows),
-      btn(th, 'Ver Premium · S/ 9.90 al mes', { x: PAD, y: 316, w: W - 2 * PAD, h: 56, go: { to: 'P1', tr: 'push' } }),
+      btn(th, 'Ver Premium · S/ 9.99 al mes', { x: PAD, y: 316, w: W - 2 * PAD, h: 56, go: { to: 'P1', tr: 'push' } }),
       btn(th, 'Ahora no', { x: PAD, y: 380, w: W - 2 * PAD, kind: 'text', go: { back: true } })
     ])
   ]);
@@ -591,7 +591,7 @@ screen('N5', 'Análisis solo para Premium', 'US21, US39', function (th) {
       F({ name: 'Candado', w: 56, h: 56, r: 28, fill: 'primaryContainer', dir: 'H', main: 'center', cross: 'center' }, [I('lock-fill', { size: 28, color: 'onPrimaryContainer' })]),
       T('Análisis es parte de Premium', { ts: 'section', s: 20, lh: 26, color: 'onSurface', align: 'center', fillW: true }),
       F({ name: 'Beneficios', dir: 'V', gap: 10, fillW: true }, rows),
-      T('S/ 9.90 al mes, en soles. Cancela cuando quieras.', { ts: 'caption', color: 'onSurfaceVariant', align: 'center', fillW: true }),
+      T('S/ 9.99 al mes, en soles. Cancela cuando quieras.', { ts: 'caption', color: 'onSurfaceVariant', align: 'center', fillW: true }),
       btn(th, 'Ver Premium', { h: 56, fillW: true, icon: 'workspace_premium', go: { to: 'P1', tr: 'push' } }),
       btn(th, 'Ahora no', { kind: 'text', fillW: true, go: { to: 'I1', tr: 'fade' } })
     ]),
@@ -634,7 +634,7 @@ screen('P1', 'Perfil', 'US03, US33', function (th) {
       T('Cuenta', { x: PAD, y: 364, ts: 'label', color: 'onSurfaceVariant' }),
       group(392, [
         ['person', 'Datos de la cuenta', 'Correo y contraseña', null],
-        ['workspace_premium', 'Plan Premium', 'S/ 9.90 al mes · se renueva el 1 nov', null],
+        ['workspace_premium', 'Plan Premium', 'S/ 9.99 al mes · se renueva el 1 nov', null],
         ['shield', 'Ayuda y privacidad', 'No pedimos acceso a tu banco', null]
       ], 'Cuenta'),
       card(th, { name: 'Cerrar sesión', y: 604, h: 64, clip: true }, [listRow(th, { x: 0, y: 0, w: W - 2 * PAD, icon: 'logout', title: 'Cerrar sesión' })]),

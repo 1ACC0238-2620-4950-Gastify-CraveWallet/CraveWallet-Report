@@ -19,7 +19,7 @@ La tabla 11 compara a CraveWallet con Spendee, Fintonic y Wallet by BudgetBakers
 | Mercado objetivo | Estudiantes universitarios de 18 a 25 años y profesionales de 25 a 32 años de Lima. | Usuarios de finanzas personales en general; no publica un rango de edad o ingreso. | Usuarios de bancos en España. | Usuarios de finanzas personales en general; no publica un rango de edad o ingreso. |
 | Marketing | Difusión en comunidades universitarias con el mensaje de recordatorios y montos en soles. | Centro de ayuda con beneficios y planes. | Promoción de FinScore y de la comparación de préstamos. | Centro de ayuda con planes, prueba y continuidad de datos al dejar Premium. |
 | Productos y servicios | Portafolio de suscripciones, avisos en el calendario, conversión USD/PEN, registro de delivery y plan Premium. | Premium con cuentas conectadas, importación, categorización, carteras y presupuestos. | FinScore, información bancaria de lectura e intermediación de financiación. | Seguimiento de finanzas con Premium mensual, anual y vitalicio. |
-| Precios y costos | Free con cinco registros activos; Premium a S/ 9.90 al mes. | Premium a USD 5.99 al mes o USD 35.99 al año, con variaciones por país e impuestos. | FinScore y comparación de préstamos gratuitos. | Precios publicados dentro de la aplicación. |
+| Precios y costos | Free con cinco registros activos; Premium a S/ 9.99 al mes. | Premium a USD 5.99 al mes o USD 35.99 al año, con variaciones por país e impuestos. | FinScore y comparación de préstamos gratuitos. | Precios publicados dentro de la aplicación. |
 | Diferenciación | Recordatorio antes de cada cobro, montos en soles y gastos de delivery, sin conectar el banco. | Organización general del gasto con importación automática. | Depende de la conexión bancaria. | Gran cantidad de funciones generales de finanzas. |
 
 *Fuente: elaboración del equipo Gastify a partir de las fuentes oficiales citadas.*
@@ -1392,7 +1392,7 @@ Los requisitos y criterios de US21 se detallan en la tabla 58.
 | Epic | EP07 |
 | **Title** | Ver la propuesta de valor y el precio de Premium |
 | **Description** | Como usuario del plan gratuito, deseo ver qué incluye el plan Premium y su precio mensual, para decidir si me conviene suscribirme. |
-| Acceptance Criteria | **Escenario 1: Consulta del plan**<br>Dado que el usuario tiene el plan gratuito,<br>Cuando abre la sección Premium,<br>Entonces el sistema muestra el precio mensual (S/ 9.90), los beneficios incluidos (registro ilimitado de suscripciones, analítica avanzada, recordatorios prioritarios) y las limitaciones actuales del plan gratuito. |
+| Acceptance Criteria | **Escenario 1: Consulta del plan**<br>Dado que el usuario tiene el plan gratuito,<br>Cuando abre la sección Premium,<br>Entonces el sistema muestra el precio mensual (S/ 9.99), los beneficios incluidos (registro ilimitado de suscripciones, analítica avanzada, recordatorios prioritarios) y las limitaciones actuales del plan gratuito. |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -2339,7 +2339,7 @@ La tabla 92 desarrolla el canvas de Premium & Billing y las reglas de vigencia d
 | Colaboradores y relaciones | Stripe suministra el resultado de facturación; una capa anticorrupción lo convierte al lenguaje del plan de CraveWallet. Subscription Management consume la información de acceso. El cliente móvil presenta el flujo de pago; Premium se activa solo con la confirmación de Stripe. |
 | Lenguaje ubicuo | **Plan Free:** nivel gratuito sujeto a un límite. **Plan Premium:** nivel con beneficios definidos. **Período de vigencia:** intervalo de acceso pagado. **Pago confirmado:** resultado verificado del proveedor. **Cancelación del plan:** fin de la renovación de CraveWallet; no cancela los servicios externos del usuario. |
 | Decisiones y reglas | El agregado `SubscriptionPlan` mantiene el nivel Free/Premium y la vigencia. La confirmación verificada activa Premium; abrir checkout no lo activa. Procesar dos veces una misma confirmación no debe duplicar la transición. TS06 propone conservar el acceso hasta el fin del período pagado y volver a Free tras la notificación correspondiente. Las pruebas con Stripe deben identificarse como operaciones de prueba y no como ingresos reales. |
-| Supuestos | El plan usa facturación recurrente. El precio es de S/ 9.90 al mes. SP05 investiga el flujo y SP06 lo comprueba mediante un prototipo. |
+| Supuestos | El plan usa facturación recurrente. El precio es de S/ 9.99 al mes. SP05 investiga el flujo y SP06 lo comprueba mediante un prototipo. |
 | Métricas de verificación propuestas | Contar activaciones sin pago confirmado, discrepancias entre vigencia y acceso, y transiciones duplicadas al repetir una notificación de prueba. Registrar el tiempo entre confirmación y actualización del plan. |
 | Preguntas abiertas | ¿Qué acceso se mantiene ante un pago fallido? ¿Cómo se recuperan notificaciones que no llegaron? ¿Cómo se administran reembolsos? ¿Qué ocurre con los registros existentes al volver a Free? ¿Cuál es la política comercial definitiva de precio y beneficios? |
 | Trazabilidad | Epic EP07, US21–US23, US31, US39, TS06 y SP05–SP06; diseño táctico 2.6.3. |
