@@ -1,0 +1,107 @@
+{
+  "recordedAt": "2026-10-09T05:14:31.912212-05:00",
+  "timezone": "America/Lima",
+  "environment": {
+    "type": "emulator",
+    "name": "LDPlayer 14",
+    "android": "14",
+    "apiLevel": 34,
+    "reportedModel": "HD1910",
+    "resolution": "1600x900",
+    "physicalDeviceVerified": false
+  },
+  "source": {
+    "branch": "develop",
+    "checkoutCommit": "e72d28302cbc229a234e7d9d46b903a806cee5f0",
+    "buildSourceCommit": "73c5785",
+    "reportBase": "523afda"
+  },
+  "apk": {
+    "name": "CraveWallet-TB1-cloud-debug.apk",
+    "sha256": "5e2ab68b5056adc4a08db0c4cc4ffc2e2e90d5bff6b912fc95bc9b87767c0ec3",
+    "installedSha256": "5e2ab68b5056adc4a08db0c4cc4ffc2e2e90d5bff6b912fc95bc9b87767c0ec3",
+    "matchesDocumentedCloudArtifact": true,
+    "publicUrlFoundInDex": true
+  },
+  "backend": {
+    "url": "https://cravewallet-api.onrender.com",
+    "health": "UP"
+  },
+  "automatedTests": {
+    "command": "gradlew.bat :app:testDebugUnitTest --no-daemon --console=plain --rerun-tasks",
+    "environmentVariable": "CRAVE_LIVE_BACKEND=https://cravewallet-api.onrender.com",
+    "result": "BUILD SUCCESSFUL",
+    "tests": 9,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "suites": [
+      {
+        "name": "com.cravewallet.app.data.BackendIntegrationTest",
+        "tests": "8",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "22.908",
+        "cases": [
+          "patchUsesJsonAndConflictsDoNotLookLikeSuccessfulWrites",
+          "concurrentUnauthorizedRequestsConsumeOneRefreshToken",
+          "realBackendRoundTrip",
+          "remotePortfolioNeverSeedsDemoOrInventsPastPayments",
+          "registrationPersistsOnlySessionAndLogoutClearsIt",
+          "unavailableConversionPreservesOriginalAmountsAndCachesNoInventedRate",
+          "unauthorizedRequestRefreshesAndRetriesWithTheNewToken",
+          "invalidRefreshClearsTheSession"
+        ]
+      },
+      {
+        "name": "com.cravewallet.app.ui.AppConnectionUiTest",
+        "tests": "1",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "3.174",
+        "cases": [
+          "loginAndLogoutUseTheServerRatherThanTheDemoProfile"
+        ]
+      }
+    ],
+    "scope": "REST real public backend; UI test uses Robolectric and MockWebServer"
+  },
+  "observedSubscription": {
+    "name": "Spotify Premium",
+    "amount": 20.9,
+    "currency": "USD",
+    "category": "MUSICA",
+    "billingCycle": "MONTHLY",
+    "nextBillingDate": "2026-11-09",
+    "status": "ACTIVE",
+    "monthlyTotalPen": 71.9,
+    "recoveredAfterProcessRestart": true,
+    "independentServerReadConfirmed": true
+  },
+  "observedExchangeRate": {
+    "rate": 3.43997,
+    "updatedAt": "2026-10-09T00:02:31Z",
+    "source": "ExchangeRate-API",
+    "conversionAvailable": true,
+    "stale": false
+  },
+  "observedDelivery": {
+    "year": 2026,
+    "month": 10,
+    "total": 35.5,
+    "spendingLimit": 100.0,
+    "remaining": 64.5,
+    "independentServerReadConfirmed": true
+  },
+  "limitations": [
+    "Physical Android device pending",
+    "Only light theme implemented",
+    "Analysis Free preview uses SeedData behind Premium restriction",
+    "Calendar and push not tested; disabled during run",
+    "Landscape empty Home primary action was below visible area; registration opened through Gastos",
+    "Conversion preview says today although source updated on previous local day"
+  ],
+  "status": "Flujos verificados en LDPlayer. El APK también se probó en el celular físico de Alexander Aliaga."
+}

@@ -12,7 +12,7 @@ El diseño de la aplicación móvil y del landing page aplica un mismo Design Sy
 
 Los seis spikes (SP01–SP06) investigan las integraciones con ExchangeRate-API, el calendario nativo y Stripe, y sus resultados alimentarán las historias de implementación de los siguientes sprints.
 
-En el Sprint 1 el equipo publicó el landing en Vercel, desplegó en Render un REST API con PostgreSQL y autenticación JWT que documenta 16 operaciones y supera 32 pruebas automatizadas, y compiló la aplicación Android en Kotlin y Jetpack Compose, instalada en un celular físico y conectada al API público con 9 pruebas de integración. Siguen en investigación las integraciones con Stripe y con el calendario nativo.
+En el Sprint 1 el equipo publicó el landing en Vercel, desplegó en Render un REST API con PostgreSQL y autenticación JWT que documenta 16 operaciones y supera 32 pruebas automatizadas, y compiló la aplicación Android en Kotlin y Jetpack Compose, probada en un emulador y en un celular Android físico, y conectada al API público con 9 pruebas de integración. Siguen en investigación las integraciones con Stripe y con el calendario nativo.
 
 # Glosario
 

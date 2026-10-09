@@ -479,6 +479,8 @@ En el Sprint 1 se implementaron los tres productos de la TB1: el landing page, l
 
 *Fuente: [resultados contra el backend local](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/27c99a2/docs/integration-test-results.json) y [resultados contra el API público](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/73c5785/docs/cloud-integration-results.json).*
 
+**Reverificación móvil en la PC del compañero, 9 de octubre de 2026.** Se ejecutó `gradlew.bat :app:testDebugUnitTest --no-daemon --console=plain --rerun-tasks` con `CRAVE_LIVE_BACKEND=https://cravewallet-api.onrender.com`: `BUILD SUCCESSFUL`, nueve casos, cero fallos, cero errores y cero omitidos. La prueba contra el servidor público y la prueba de UI en Robolectric tienen alcances distintos de las capturas de LDPlayer. El [registro de pruebas](evidence/mobile/2026-10-09-ldplayer/results.json) y la [salida de Gradle](evidence/mobile/2026-10-09-ldplayer/gradle-tests.txt) conservan esta ejecución; no se volvió a ejecutar lint en este recorrido.
+
 **Landing page.** Los criterios de aceptación de las historias del landing se escribieron como [archivos Gherkin](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/tree/a7f89df/tests/features)
 
 La tabla 155 relaciona los commits que incorporan pruebas.
@@ -498,7 +500,7 @@ La tabla 155 relaciona los commits que incorporan pruebas.
 
 #### 4.2.1.6. Execution Evidence for Sprint Review
 
-En el Sprint 1 se ejecutaron los tres productos. La figura 110 muestra el landing publicado en Vercel; la figura 111 muestra la pantalla Inicio y la figura 112, la pantalla Análisis de la aplicación en un celular Android físico; y las figuras 113 a 116 muestran operaciones del backend en Swagger. Los enlaces de ejecución de cada producto están en la sección 4.2.1.8.
+En el Sprint 1 se ejecutaron los tres productos. La figura 110 muestra el landing publicado en Vercel; la figura 111 muestra la pantalla Inicio y la figura 112, la pantalla Análisis de la aplicación en un emulador Android; y las figuras 113 a 116 muestran operaciones del backend en Swagger. Los enlaces de ejecución de cada producto están en la sección 4.2.1.8.
 
 **Landing page.** La figura 110 presenta el Hero del sitio publicado, con la barra de navegación, el selector de idioma, el interruptor de modo oscuro y la vista previa de la aplicación.
 
@@ -512,13 +514,13 @@ En el Sprint 1 se ejecutaron los tres productos. La figura 110 muestra el landin
 
 *Fuente: captura de <https://cravewallet-landing.vercel.app/es> del 9 de octubre de 2026, elaboración del equipo Gastify.*
 
-**Aplicación Android.** La aplicación del commit `2d4200e` compiló con `BUILD SUCCESSFUL` y se instaló en un celular Android físico. Las pantallas Inicio (figura 111) y Análisis (figura 112) usan datos de demostración.
+**Aplicación Android.** La aplicación del commit `2d4200e` compiló con `BUILD SUCCESSFUL` y se instaló en un emulador Android. Las pantallas Inicio (figura 111) y Análisis (figura 112) usan datos de demostración.
 
 ![Pantalla Inicio de CraveWallet ejecutada en Android](images/chapter_4/mobile-home-emulator.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 111. Inicio de CraveWallet ejecutado en un celular Android físico.*
+*Figura 111. Inicio de CraveWallet ejecutado en un emulador Android.*
 
 <!-- pdf:omit-end -->
 
@@ -528,11 +530,15 @@ En el Sprint 1 se ejecutaron los tres productos. La figura 110 muestra el landin
 
 <!-- pdf:omit-start -->
 
-*Figura 112. Análisis de CraveWallet ejecutado en un celular Android físico.*
+*Figura 112. Análisis de CraveWallet ejecutado en un emulador Android.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: captura propia de `CraveWallet-Mobile` `2d4200e`, 8 de octubre de 2026, con datos de demostración.*
+
+**Versión conectada verificada en LDPlayer, 9 de octubre de 2026.** Se comprobó que el APK instalado coincide por SHA-256 con `CraveWallet-TB1-cloud-debug.apk` documentado y usa `https://cravewallet-api.onrender.com`. En LDPlayer 14, Android 14 (API 34), se registró una cuenta ficticia, se guardó Spotify Premium por USD 20.90 (estimación S/ 71.90), se recuperó el portafolio tras cerrar y volver a abrir el proceso, y se comprobó delivery con presupuesto S/ 100.00, gasto S/ 35.50 y saldo S/ 64.50. Una lectura REST independiente confirmó la suscripción y el resumen. Se verificaron navegación, validación de fecha obligatoria y cierre de sesión. El [registro complementario con acciones, resultados, historias y capturas M1–M6](evidence/mobile/2026-10-09-ldplayer/README.md) distingue cada alcance.
+
+**Limitaciones de esta ejecución móvil.** Solo se implementa el tema claro. Análisis presenta una vista previa de ejemplo bajo el bloqueo Premium; no acredita gráficos del gasto real. Calendario y notificaciones no se ensayaron. Las figuras 111 y 112 también se capturaron en un emulador. El APK se instaló además en el celular Android físico de Alexander Aliaga, donde la aplicación funcionó. **Flujos verificados en LDPlayer; el APK también se probó en un celular físico.**
 
 **Servicios RESTful.** Se ejecutó el backend local y se probaron sus 16 métodos mediante HTTP. En Swagger se revisaron registro, login, alta y listado de una suscripción USD, recordatorio, cotización, presupuesto, gasto y resumen. La tabla 156 muestra los resultados del ejercicio reproducible registrado en [live-api-results.json](evidence/backend/live-api-results.json).
 
@@ -710,7 +716,7 @@ En el Sprint 1 se publicaron el landing page, disponible en <https://cravewallet
 | Landing page | Publicado en Vercel desde `main`; HTTP 200. | [cravewallet-landing.vercel.app/es](https://cravewallet-landing.vercel.app/es); dos deployments `Production` correctos (tabla 159 y figura 107). |
 | REST API | Publicado en Render con PostgreSQL 17 y perfil `prod`; health `UP` y Swagger público habilitado. | [Health público](https://cravewallet-api.onrender.com/actuator/health), [Swagger UI](https://cravewallet-api.onrender.com/swagger-ui/index.html) y [OpenAPI](https://cravewallet-api.onrender.com/v3/api-docs); figuras 117 y 121 a 124. |
 | Base de datos | PostgreSQL 17 en Render; Flyway V1–V3. | 22 comprobaciones HTTP remotas y siete tras el reinicio del servicio ([resultados](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/evidence/cloud/remote-api-results.json)). |
-| Aplicación Android | APK `debug` generado; pruebas de integración contra el API público. | [Resultados](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/73c5785/docs/cloud-integration-results.json); APK `CraveWallet-TB1-cloud-debug.apk`. |
+| Aplicación Android | APK `debug` generado; pruebas de integración contra el API público y recorrido conectado en LDPlayer; prueba del APK en el celular físico de Alexander Aliaga. | [Resultados de compilación](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/73c5785/docs/cloud-integration-results.json); APK `CraveWallet-TB1-cloud-debug.apk`; [evidencia en emulador](evidence/mobile/2026-10-09-ldplayer/README.md). |
 
 *Fuente: paneles de Vercel y Render, GitHub Actions y los resultados versionados en los repositorios.*
 
