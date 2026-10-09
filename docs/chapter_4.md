@@ -492,7 +492,7 @@ La tabla 155 relaciona los commits que incorporan pruebas.
 
 #### 4.2.1.6. Execution Evidence for Sprint Review
 
-En el Sprint 1 se ejecutaron los tres productos. La figura 111 muestra el landing publicado en Vercel; la figura 112 muestra la pantalla Inicio y la figura 113, la pantalla Análisis de la aplicación en un emulador Android; y las figuras 114 a 117 muestran operaciones del backend en Swagger. Los enlaces de ejecución de cada producto están en la sección 4.2.1.8.
+En el Sprint 1 se ejecutaron los tres productos. La figura 111 muestra el landing publicado en Vercel; la figura 112 muestra la pantalla Inicio y la figura 113, la pantalla Análisis de la aplicación en un celular Android físico; y las figuras 114 a 117 muestran operaciones del backend en Swagger. Los enlaces de ejecución de cada producto están en la sección 4.2.1.8.
 
 **Landing page.** La figura 111 presenta el Hero del sitio publicado, con la barra de navegación, el selector de idioma, el interruptor de modo oscuro y la vista previa de la aplicación.
 
@@ -506,13 +506,13 @@ En el Sprint 1 se ejecutaron los tres productos. La figura 111 muestra el landin
 
 *Fuente: captura de <https://cravewallet-landing.vercel.app/es> del 9 de octubre de 2026, elaboración del equipo Gastify.*
 
-**Aplicación Android.** La aplicación del commit `2d4200e` compiló con `BUILD SUCCESSFUL` y se instaló en un emulador Android. Las pantallas Inicio (figura 112) y Análisis (figura 113) usan datos de demostración.
+**Aplicación Android.** La aplicación del commit `2d4200e` compiló con `BUILD SUCCESSFUL` y se instaló en un celular Android físico. Las pantallas Inicio (figura 112) y Análisis (figura 113) usan datos de demostración.
 
 ![Pantalla Inicio de CraveWallet ejecutada en Android](images/chapter_4/mobile-home-emulator.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 112. Inicio de CraveWallet ejecutado en el emulador Android.*
+*Figura 112. Inicio de CraveWallet ejecutado en un celular Android físico.*
 
 <!-- pdf:omit-end -->
 
@@ -522,7 +522,7 @@ En el Sprint 1 se ejecutaron los tres productos. La figura 111 muestra el landin
 
 <!-- pdf:omit-start -->
 
-*Figura 113. Análisis de CraveWallet ejecutado en el emulador Android.*
+*Figura 113. Análisis de CraveWallet ejecutado en un celular Android físico.*
 
 <!-- pdf:omit-end -->
 
