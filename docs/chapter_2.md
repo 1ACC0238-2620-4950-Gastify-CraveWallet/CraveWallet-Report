@@ -2613,7 +2613,7 @@ Los repositorios JPA implementan los puertos de gastos y presupuestos. `GooglePl
 
 Los manejadores internos pueden preparar el estado de exceso que consume la aplicación. La caché local permite leer datos previos, indicando su antigüedad.
 
-#### 2.6.2.5. Component Level Diagrams
+#### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
 
 La figura 33 presenta el diseño de componentes de Delivery Expense Management dentro del REST API. Las dependencias separan interfaz, aplicación, dominio y adaptadores; el almacenamiento y los sistemas externos se sitúan fuera de la frontera del backend. Los elementos y relaciones ámbar discontinuos son propuestas pendientes de integración. Esta vista describe responsabilidades y no una extracción automática de clases implementadas.
 
@@ -2627,9 +2627,9 @@ La figura 33 presenta el diseño de componentes de Delivery Expense Management d
 
 *Fuente: elaboración del equipo Gastify; exportación de Structurizr, vista DeliveryComponents.*
 
-#### 2.6.2.6. Code Level Diagrams
+#### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
 
-##### 2.6.2.6.1. Domain Layer Class Diagrams
+##### 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams
 
 El diagrama muestra los dos agregados, sus objetos de valor y eventos. La asociación por usuario/período no fusiona el gasto y el presupuesto en un solo agregado.
 
@@ -2645,7 +2645,7 @@ La figura 34 muestra las clases de la Domain Layer de Delivery Expense Managemen
 
 *Fuente: elaboración del equipo Gastify.*
 
-##### 2.6.2.6.2. Database Design Diagram
+##### 2.6.2.6.2. Bounded Context Database Design Diagram
 
 `delivery_expenses` conserva los gastos y el identificador de solicitud para reconocer reintentos. `monthly_budgets` tiene una restricción única por usuario/año/mes. La línea entre tablas indica agrupación lógica por propietario y mes, no una clave foránea inventada hacia un presupuesto. La estrategia de concurrencia debe proteger el acumulado.
 
@@ -2717,7 +2717,7 @@ Para una factura pagada, se consulta y valida la suscripción vinculada antes de
 
 `JpaPlanRepository` persiste los planes y sus referencias. El registro `billing_events` impone unicidad al identificador externo y conserva estado de procesamiento. Las pruebas de SP05–SP06 deben demostrar correlación, duplicados, renovación y cancelación; no hay resultados documentados en este avance. El precio y beneficios siguen siendo propuestas comerciales.
 
-#### 2.6.3.5. Component Level Diagrams
+#### 2.6.3.5. Bounded Context Software Architecture Component Level Diagrams
 
 La figura 36 presenta el diseño de componentes de Premium & Billing dentro del REST API. Las dependencias separan interfaz, aplicación, dominio y adaptadores; el almacenamiento y los sistemas externos se sitúan fuera de la frontera del backend. Los elementos y relaciones ámbar discontinuos son propuestas pendientes de integración. Esta vista describe responsabilidades y no una extracción automática de clases implementadas.
 
@@ -2731,9 +2731,9 @@ La figura 36 presenta el diseño de componentes de Premium & Billing dentro del 
 
 *Fuente: elaboración del equipo Gastify; exportación de Structurizr, vista PremiumComponents.*
 
-#### 2.6.3.6. Code Level Diagrams
+#### 2.6.3.6. Bounded Context Software Architecture Code Level Diagrams
 
-##### 2.6.3.6.1. Domain Layer Class Diagrams
+##### 2.6.3.6.1. Bounded Context Domain Layer Class Diagrams
 
 El diagrama conserva el agregado y los eventos locales. La operación de renovación debe respetar la actualización de vigencia descrita arriba. Los puertos se completarán con el contrato de cancelación al implementar; el diagrama representa el núcleo del modelo.
 
@@ -2749,7 +2749,7 @@ La figura 37 muestra las clases de la Domain Layer de Premium & Billing.
 
 *Fuente: elaboración del equipo Gastify.*
 
-##### 2.6.3.6.2. Database Design Diagram
+##### 2.6.3.6.2. Bounded Context Database Design Diagram
 
 `user_plans` tiene un único registro por usuario. `billing_events` conserva identificador externo único, plan correlacionado, tipo, fecha y estado de procesamiento. La correlación se verifica antes de cambiar el plan.
 
