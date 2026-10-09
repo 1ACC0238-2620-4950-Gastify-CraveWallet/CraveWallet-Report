@@ -55,7 +55,7 @@ joined='\n'.join(sources)
 story_ids=set(re.findall(r'\| Story ID \| (\w+) \|',joined))
 expected={f'US{i:02}' for i in range(1,41)}|{f'TS{i:02}' for i in range(1,7)}|{f'SP{i:02}' for i in range(1,7)}
 if story_ids != expected: errors.append('Story IDs differ: '+str(story_ids ^ expected))
-for kind, count in [('Figura',127),('Tabla',160)]:
+for kind, count in [('Figura',128),('Tabla',160)]:
     nums=[int(n) for n in re.findall(r'\*'+kind+r' (\d+)\.',joined)]
     if nums!=list(range(1,count+1)): errors.append(f'{kind} numbering is not sequential ({len(nums)} captions)')
 for context in ['Subscription Management','Delivery Expense Management','Premium & Billing']:
@@ -63,5 +63,5 @@ for context in ['Subscription Management','Delivery Expense Management','Premium
 if errors:
     print('\n'.join(errors))
     raise SystemExit(1)
-print('TB1: 52 stories, 127 figures, 160 tables; citation keys and image paths verified.')
+print('TB1: 52 stories, 128 figures, 160 tables; citation keys and image paths verified.')
 print('Sources parse with Pandoc. Experimental evidence and final export still require review.')
