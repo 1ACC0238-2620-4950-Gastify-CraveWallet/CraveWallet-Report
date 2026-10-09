@@ -103,5 +103,5 @@
     "Landscape empty Home primary action was below visible area; registration opened through Gastos",
     "Conversion preview says today although source updated on previous local day"
   ],
-  "status": "Flujos verificados en emulador; validación en dispositivo físico pendiente."
+  "status": "Flujos verificados en emulador. La prueba en celular físico la realizó Alexander Aliaga y no tiene capturas en este registro."
 }
