@@ -819,6 +819,18 @@ El historial de los repositorios muestra el aporte de cada integrante en el Spri
 
 *Fuente: elaboración del equipo Gastify a partir del historial Git de todas las ramas de los cuatro repositorios.*
 
+La figura 128 muestra la pestaña Contributors de `CraveWallet-Mobile` en GitHub, que registra los 4 commits de `limozz05` y el commit de `Chebas19` de la rama `develop`.
+
+![Contribuciones al repositorio CraveWallet-Mobile en GitHub](images/chapter_4/insights-mobile.png)
+
+<!-- pdf:omit-start -->
+
+*Figura 128. Contribuciones al repositorio CraveWallet-Mobile en GitHub (Insights > Contributors).*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura de GitHub Insights del repositorio `CraveWallet-Mobile`, 9 de octubre de 2026.*
+
 La implementación se concentra en tres integrantes. Mario Sejuro desarrolló el landing publicado; Sebastián Roman escribió las secciones adicionales del landing, inicializó el repositorio del backend y desarrolló la aplicación Android; y Anghelo Faustino implementó el backend, el despliegue en Render y la conexión de la aplicación con el API.
 
 ## 4.3. Validation Interviews
