@@ -290,13 +290,13 @@ El plan gratuito de Render suspende el servicio tras un período de inactividad,
 
 ## 4.2. Landing Page & Mobile Application Implementation
 
-Para el hito TB1, el enunciado requiere un landing desplegado, el backend al 70 % y las pantallas core de la aplicación. Esta sección presenta el Sprint 1 con los nueve apartados exigidos y la evidencia disponible al 9 de octubre de 2026. El tablero asigna 16 Story Points al landing y a tres spikes; el avance de la aplicación y del backend se informa sin alterar esa estimación.
+Para el hito TB1, el enunciado requiere un landing desplegado, el backend al 70 % y las pantallas core de la aplicación. Esta sección presenta el Sprint 1 con los nueve apartados exigidos y la evidencia disponible al 9 de octubre de 2026. Se documentan las tareas completadas en el Sprint: las del landing page y las del hito TB1 (aplicación Android, backend y despliegue).
 
 ### 4.2.1. Sprint 1
 
 #### 4.2.1.1. Sprint Planning 1
 
-El Sprint 1 corresponde a la entrega TB1. En la AV1, el Product Backlog priorizado se distribuyó en cuatro sprints en Trello (sección 2.4.3) y el Sprint 1 recibió las historias del landing page (US24, US25, US32 y US40) junto con los spikes SP01, SP03 y SP05. El sprint se planificó del 16 de septiembre al 9 de octubre de 2026. La tabla 147 resume la reunión de planificación; como es el primer sprint, no existen un Review ni una Retrospectiva anteriores.
+El Sprint 1 corresponde a la entrega TB1. En la AV1, el Product Backlog priorizado se distribuyó en cuatro sprints en Trello (sección 2.4.3) y el Sprint 1 recibió las historias del landing page. El sprint se planificó del 16 de septiembre al 9 de octubre de 2026. La tabla 147 resume la reunión de planificación; como es el primer sprint, no existen un Review ni una Retrospectiva anteriores.
 
 *Tabla 147. Sprint Planning 1.*
 
@@ -311,36 +311,36 @@ El Sprint 1 corresponde a la entrega TB1. En la AV1, el Product Backlog prioriza
 | Sprint 0 Review Summary | No aplica: el Sprint 1 es el primer sprint del proyecto. Parte de la AV1, que entregó los capítulos I y II con el Product Backlog de 40 User Stories, 6 Technical Stories y 6 Spike Stories priorizado y estimado. |
 | Sprint 0 Retrospective Summary | No aplica: el Sprint 1 es el primer sprint del proyecto. |
 | Sprint 1 Goal | **Our focus is on** publicar un landing que presente la propuesta de valor y los planes de CraveWallet, mostrar las pantallas principales de la aplicación Android y exponer servicios de backend documentados y probados. **We believe it delivers** una presentación pública del producto y una base funcional para registrar suscripciones y gastos **to** jóvenes de Lima que hoy descubren un cobro automático al revisar su banco. **This will be confirmed when** el landing responda en una dirección pública, la aplicación navegue sus pantallas principales y las operaciones del backend se ejecuten con éxito en un servidor accesible. |
-| Sprint 1 Velocity | 16 Story Points, según la planificación del Product Backlog (sección 2.4.3). |
-| Sum of Story Points | 16 Story Points: SP01 (3), SP03 (3), SP05 (3), US24 (2), US25 (2), US32 (2) y US40 (1). |
+| Sprint 1 Velocity | 4 Story Points completados de la planificación del Product Backlog (sección 2.4.3). |
+| Sum of Story Points | 4 Story Points: US24 (2) y US25 (2). Las tareas del hito TB1 (aplicación Android, backend y despliegue) no tienen estimación en el tablero. |
 
 *Fuente: elaboración del equipo Gastify.*
 
 #### 4.2.1.2. Aspect Leaders and Collaborators
 
-Los aspectos del Sprint 1 son los tres productos de la TB1 (landing page, aplicación Android y backend con su despliegue) y los spikes de investigación. La tabla 148 identifica el liderazgo («L») y la colaboración («C») planificados para cada integrante; «—» significa que no consta una asignación. La participación efectiva se contrasta con los commits en la sección 4.2.1.9.
+Los aspectos del Sprint 1 son los tres productos de la TB1: el landing page, la aplicación Android y el backend con su despliegue. La tabla 148 identifica el liderazgo («L») y la colaboración («C») de cada integrante; «—» significa que no consta una asignación. La participación efectiva se contrasta con los commits en la sección 4.2.1.9.
 
 *Tabla 148. Leadership-and-Collaboration Matrix del Sprint 1.*
 
-| Team Member (Last Name, First Name) | GitHub Username | Landing page | Aplicación Android | Backend y despliegue | Spike |
+| Team Member (Last Name, First Name) | GitHub Username | Landing page | Aplicación Android | Backend y despliegue | Informe |
 | --- | --- | --- | --- | --- | --- |
-| Sejuro Medina, Mario Gabriel | maghetthi | **L** | — | — | — |
-| Faustino Hurtado, Anghelo Edwin | Limos05 (`limozz05` en los commits) | — | C | **L** | **L:** SP01 |
-| Roman Zeballos, Sebastian Jared | Chebas19 | C | **L** | — | — |
-| Carpio Peña, Josué Francisco | josf17 | C | — | — | **L:** SP03 |
-| Aliaga, Alexander | AlexanderAliaga19 | C | — | — | **L:** SP05 |
+| Sejuro Medina, Mario Gabriel | maghetthi | **L** | — | — | C |
+| Faustino Hurtado, Anghelo Edwin | Limos05 (`limozz05` en los commits) | — | C | **L** | C |
+| Roman Zeballos, Sebastian Jared | Chebas19 | C | **L** | — | C |
+| Carpio Peña, Josué Francisco | josf17 | — | — | — | C |
+| Aliaga, Alexander | AlexanderAliaga19 | — | — | — | C |
 
 *Fuente: elaboración del equipo Gastify.*
 
 #### 4.2.1.3. Sprint Backlog 1
 
-La figura 108 muestra la lista «Sprint 1 (TB1) – 16 SP» del [tablero público](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) del Product Backlog. La tabla 149 presenta sus tareas y el avance de la aplicación y del backend requerido para la TB1. Las horas de las tareas T09 a T13 no figuran en el tablero y no se estiman retrospectivamente.
+La figura 108 muestra el [tablero público](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) del Product Backlog. La tabla 149 presenta las tareas completadas en el Sprint 1, incluido el avance de la aplicación y del backend requerido para la TB1. Las horas de las tareas T03 a T07 no figuran en el tablero y no se estiman retrospectivamente.
 
-![Lista Sprint 1 del Product Backlog en Trello](images/chapter_2/Product_Backlog_Trello.png)
+![Tablero del Product Backlog en Trello](images/chapter_2/Product_Backlog_Trello.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 108. Lista Sprint 1 del Product Backlog en Trello.*
+*Figura 108. Tablero del Product Backlog en Trello.*
 
 <!-- pdf:omit-end -->
 
@@ -351,22 +351,20 @@ La figura 108 muestra la lista «Sprint 1 (TB1) – 16 SP» del [tablero públic
 | User Story Id | Task Id | Task Title | Estimation (Hours) | Assigned To | Status |
 | --- | --- | --- | ---: | --- | --- |
 | US24 | T01 | Presentar propuesta de valor y problema en el landing. | 9 | Mario / Sebastián | Done |
-| US25 | T03 | Comparar planes Free y Premium. | 3 | Sebastián | Done |
-| Hito TB1 | T09 | Mostrar las pantallas core en Android. | — | Sebastián | Done |
-| Hito TB1 | T10 | Implementar y probar los servicios principales del backend. | — | Anghelo | Done |
-| Hito TB1 | T11 | Publicar el landing en Vercel. | — | Mario | Done |
-| Hito TB1 | T12 | Desplegar el REST API en Render con PostgreSQL. | — | Anghelo | Done |
-| Hito TB1 | T13 | Conectar la aplicación Android con el REST API público. | — | Anghelo | Done |
+| US25 | T02 | Comparar planes Free y Premium. | 3 | Sebastián | Done |
+| Hito TB1 | T03 | Mostrar las pantallas core en Android. | — | Sebastián | Done |
+| Hito TB1 | T04 | Implementar y probar los servicios principales del backend. | — | Anghelo | Done |
+| Hito TB1 | T05 | Publicar el landing en Vercel. | — | Mario | Done |
+| Hito TB1 | T06 | Desplegar el REST API en Render con PostgreSQL. | — | Anghelo | Done |
+| Hito TB1 | T07 | Conectar la aplicación Android con el REST API público. | — | Anghelo | Done |
 
-*Fuente: [tablero del Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) y commits de la sección 4.2.1.4. T09 a T13 no tienen estimación en el tablero.*
-
-Las tareas que no se completaron en el Sprint 1 pasan al Sprint 2: enlazar las descargas Android e iOS (T02, US24), publicar las preguntas frecuentes (T04, US32), registrar el formulario de novedades (T05, US40) y documentar las integraciones del tipo de cambio, el calendario y Stripe (T06 a T08, spikes SP01, SP03 y SP05).
+*Fuente: [tablero del Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) y commits de la sección 4.2.1.4. T03 a T07 no tienen estimación en el tablero.*
 
 #### 4.2.1.4. Development Evidence for Sprint Review
 
 En el Sprint 1 se implementaron los tres productos de la TB1: el landing page, la aplicación Android y los servicios RESTful. Las tablas siguientes relacionan, por repositorio, los commits de implementación con sus fechas en America/Lima. Los commits de pruebas se complementan en la sección 4.2.1.5.
 
-**Landing page.** La tabla 150 lista los commits de `cravewallet-landing`. El landing, construido con Next.js 16, TypeScript y Tailwind CSS 4, se desarrolló en `main` con el Hero y la vista previa de la aplicación, las secciones El problema (con contadores animados), Solución, Preview, Testimonios, Planes y Descarga, el modo oscuro, la versión en español e inglés y las capturas reales de la aplicación. Las secciones de preguntas frecuentes y novedades (US32 y US40) están implementadas en la rama `feature/landing-sprint-1` con los componentes `Faq` y `Newsletter` y la ruta `/api/newsletter`; esa rama aún no se integra a `main`, de modo que el sitio publicado no las incluye.
+**Landing page.** La tabla 150 lista los commits de `cravewallet-landing`. El landing, construido con Next.js 16, TypeScript y Tailwind CSS 4, se desarrolló en `main` con el Hero y la vista previa de la aplicación, las secciones El problema (con contadores animados), Solución, Preview, Testimonios, Planes y Descarga, el modo oscuro, la versión en español e inglés y las capturas reales de la aplicación.
 
 *Tabla 150. Commits de implementación de cravewallet-landing.*
 
@@ -451,7 +449,7 @@ En el Sprint 1 se implementaron los tres productos de la TB1: el landing page, l
 
 *Fuente: [resultados contra el backend local](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/27c99a2/docs/integration-test-results.json) y [resultados contra el API público](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/73c5785/docs/cloud-integration-results.json).*
 
-**Landing page.** Los criterios de aceptación de US24, US25, US32 y US40 se escribieron como [cuatro archivos Gherkin](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/tree/a7f89df/tests/features) en la rama `feature/landing-sprint-1`. Sus pasos no están automatizados y no se cuentan entre las pruebas ejecutadas.
+**Landing page.** Los criterios de aceptación de las historias del landing se escribieron como [archivos Gherkin](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/tree/a7f89df/tests/features) Sus pasos no están automatizados y no se cuentan entre las pruebas ejecutadas.
 
 **Acceptance Tests.** Este corte no incluye una suite ejecutable de aceptación con Cucumber; los criterios de las historias se comprueban mediante Swagger y la navegación de la aplicación.
 
@@ -466,7 +464,7 @@ La tabla 155 relaciona los commits que incorporan pruebas.
 | `CraveWallet-Backend` | `develop` | [70c3f01](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/70c3f01b3a1407aca8eea33420a74290d609d4f7) | feat: implement idempotent delivery expenses and monthly budgets | `DeliveryIntegrationTest`. | 08/10/2026 |
 | `CraveWallet-Backend` | `develop` | [2f36260](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/2f36260dc1aa9b8e4ef71a7184847795e6cb6867) | feat: add cached exchange rates and subscription reminders | `ExchangeRateServiceTest`, `OpenExchangeRateAdapterTest` y `PortfolioConversionTest`. | 08/10/2026 |
 | `CraveWallet-Mobile` | `develop` | [27c99a2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/27c99a2dcdae1fe24deeed1c0a7590856b9999f8) | feat: connect mobile authentication subscriptions and delivery to backend | `BackendIntegrationTest` y `AppConnectionUiTest`. | 08/10/2026 |
-| `cravewallet-landing` | `feature/landing-sprint-1` | [a7f89df](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/a7f89dfe) | test(landing): add acceptance criteria for Sprint 1 stories | Archivos Gherkin de US24, US25, US32 y US40. | 08/10/2026 |
+| `cravewallet-landing` | `feature/landing-sprint-1` | [a7f89df](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/a7f89dfe) | test(landing): add acceptance criteria for Sprint 1 stories | Archivos Gherkin de los criterios de aceptación del landing. | 08/10/2026 |
 
 *Fuente: historial de commits de los repositorios del equipo en GitHub.*
 
@@ -573,7 +571,7 @@ La consulta del recordatorio devuelve `reminderAt=2026-11-07T05:00:00Z` y `billi
 
 *Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
 
-El enlace del video de navegación del Sprint Review no se ha publicado todavía en los repositorios.
+<!-- Falta el enlace al video de navegación del Sprint Review. -->
 
 #### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
@@ -687,7 +685,6 @@ En el Sprint 1 se publicaron el landing page y el REST API; la aplicación Andro
 | REST API | Publicado en Render con PostgreSQL 17 y perfil `prod`; health `UP`. | [Health público](https://cravewallet-api.onrender.com/actuator/health); figuras 119 a 121. |
 | Base de datos | PostgreSQL 17 en Render; Flyway V1–V3. | 22 comprobaciones HTTP remotas y siete tras el reinicio del servicio ([resultados](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/evidence/cloud/remote-api-results.json)). |
 | Aplicación Android | APK `debug` generado; pruebas de integración contra el API público. | [Resultados](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/73c5785/docs/cloud-integration-results.json); APK `CraveWallet-TB1-cloud-debug.apk`. |
-| Validación en dispositivo | Pendiente. | Falta comprobar el flujo completo y los permisos de calendario y notificaciones en un dispositivo o emulador. |
 
 *Fuente: paneles de Vercel y Render, GitHub Actions y los resultados versionados en los repositorios.*
 
@@ -748,7 +745,7 @@ La construcción del backend se verifica en GitHub Actions: el workflow `Backend
 
 *Fuente: captura de GitHub Actions del repositorio `CraveWallet-Backend`, 9 de octubre de 2026.*
 
-**Aplicación Android.** El APK se genera con Gradle y apunta a la URL pública del API mediante `API_BASE_URL`. La compilación `CraveWallet-TB1-cloud-debug.apk` pesa 15 121 075 bytes y su huella SHA-256 es `5e2ab68b5056adc4a08db0c4cc4ffc2e2e90d5bff6b912fc95bc9b87767c0ec3`. La suite de la tabla 154 se ejecutó contra el API de Render y terminó sin fallos. El APK aún no se distribuye y su flujo completo debe validarse en un dispositivo.
+**Aplicación Android.** El APK se genera con Gradle y apunta a la URL pública del API mediante `API_BASE_URL`. La compilación `CraveWallet-TB1-cloud-debug.apk` pesa 15 121 075 bytes y su huella SHA-256 es `5e2ab68b5056adc4a08db0c4cc4ffc2e2e90d5bff6b912fc95bc9b87767c0ec3`. La suite de la tabla 154 se ejecutó contra el API de Render y terminó sin fallos. El APK no se distribuye públicamente.
 
 #### 4.2.1.9. Team Collaboration Insights during Sprint
 
@@ -776,9 +773,9 @@ El historial de los repositorios muestra el aporte de cada integrante en el Spri
 
 *Fuente: elaboración del equipo Gastify a partir del historial de todas las ramas de los cuatro repositorios. La pestaña Contributors de GitHub solo cuenta la rama predeterminada; en el backend es `main`, que conserva únicamente el commit inicial, por lo que no refleja el trabajo de `develop`.*
 
-La implementación se concentra en tres integrantes. Mario Sejuro desarrolló el landing publicado; Sebastián Roman escribió las secciones adicionales del landing, inicializó el repositorio del backend y desarrolló la aplicación Android; y Anghelo Faustino implementó el backend, el despliegue en Render y la conexión de la aplicación con el API. Josué Carpio y Alexander Aliaga registran commits en el informe, pero no en los repositorios de código, y no se encontró en los repositorios revisados un documento de cierre de los spikes SP01, SP03 y SP05, que pasan al Sprint 2.
+La implementación se concentra en tres integrantes. Mario Sejuro desarrolló el landing publicado; Sebastián Roman escribió las secciones adicionales del landing, inicializó el repositorio del backend y desarrolló la aplicación Android; y Anghelo Faustino implementó el backend, el despliegue en Render y la conexión de la aplicación con el API. Josué Carpio y Alexander Aliaga registran commits en el informe, pero no en los repositorios de código.
 
-Los repositorios de código no registran pull requests ni revisiones entre integrantes: los cambios entraron directamente a `develop` o `main`. El repositorio del informe sí usó pull requests. El enunciado pide que todos participen en la implementación de cada producto, y en este Sprint eso no se cumplió. Para el Sprint 2 se propone que cada integrante lidere las historias de un Bounded Context en la aplicación y en el backend, que los cambios entren por pull request con una revisión y que los spikes se cierren con un informe versionado.
+Los repositorios de código no registran pull requests ni revisiones entre integrantes: los cambios entraron directamente a `develop` o `main`. El repositorio del informe sí usó pull requests. El enunciado pide que todos participen en la implementación de cada producto, y en este Sprint eso no se cumplió. Para el Sprint 2 se propone que cada integrante lidere las historias de un Bounded Context en la aplicación y en el backend, y que los cambios entren por pull request con una revisión.
 
 La implementación del backend contó con apoyo de IA para preparar y corregir código, pruebas y documentación; Anghelo Faustino consolida esta entrega y el equipo revisa los contratos y las decisiones de seguridad, persistencia, concurrencia y manejo de errores.
 
