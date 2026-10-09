@@ -1,0 +1,89 @@
+{
+  "board_url": "https://miro.com/app/board/uXjVEcjtdBM=/",
+  "notation_reference": "https://github.com/ddd-crew/domain-message-flow-modelling",
+  "format": "Combined Message & Contents (adaptation)",
+  "source": "Native Miro shapes, text and attached connectors",
+  "read_date": "2026-10-09",
+  "frames": [
+    {
+      "name": "message-flow-subscription",
+      "figure": 19,
+      "miro_id": "3458764686580430269",
+      "title": "Figura 19 · Registrar una suscripción y preparar el aviso",
+      "source_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686580430269",
+      "widget_count": 35,
+      "capture": {
+        "file": "docs/images/chapter_2/message-flow-subscription.jpg",
+        "method": "Unaltered browser screenshot of the authenticated Miro editor",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "20c54c380ea2d9ea900e1e773621041502a8b7f8f8f4b108c9bcbe3373ea51da"
+      },
+      "shape_and_text_count": 20,
+      "connector_count": 14
+    },
+    {
+      "name": "message-flow-delivery",
+      "figure": 20,
+      "miro_id": "3458764686580430270",
+      "title": "Figura 20 · Registrar un gasto de delivery",
+      "source_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686580430270",
+      "widget_count": 31,
+      "capture": {
+        "file": "docs/images/chapter_2/message-flow-delivery.jpg",
+        "method": "Unaltered browser screenshot of the authenticated Miro editor",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "e5ed7a1f560ba38fb576a2963f6e7333716a1ba3f555196c4fb39d042b4357ff"
+      },
+      "shape_and_text_count": 18,
+      "connector_count": 12
+    },
+    {
+      "name": "message-flow-premium-activation",
+      "figure": 21,
+      "miro_id": "3458764686580430271",
+      "title": "Figura 21 · Activar Premium tras el pago",
+      "source_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686580430271",
+      "widget_count": 37,
+      "capture": {
+        "file": "docs/images/chapter_2/message-flow-premium-activation.jpg",
+        "method": "Unaltered browser screenshot of the authenticated Miro editor",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "5fac68aa0d9d37dee82a57c0c8ca66bed55f6eb9a9798f88152fe550b2a900b1"
+      },
+      "shape_and_text_count": 20,
+      "connector_count": 16
+    },
+    {
+      "name": "message-flow-premium-cancellation",
+      "figure": 22,
+      "miro_id": "3458764686580430272",
+      "title": "Figura 22 · Cancelar la renovación y finalizar Premium",
+      "source_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686580430272",
+      "widget_count": 37,
+      "capture": {
+        "file": "docs/images/chapter_2/message-flow-premium-cancellation.jpg",
+        "method": "Unaltered browser screenshot of the authenticated Miro editor",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "ae5eb801483b1b23ca2ba7272d73ebf00292d015989e9ce8818e945e48d833b7"
+      },
+      "shape_and_text_count": 20,
+      "connector_count": 16
+    }
+  ]
+}

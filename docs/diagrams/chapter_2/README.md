@@ -8,17 +8,24 @@ fuente de las seis vistas C4 de las figuras 27–30, 33 y 36.
 
 Los flujos, canvases y Context Map son objetos nativos del
 [tablero del equipo](https://miro.com/app/board/uXjVEcjtdBM=/).
-La lectura guardada en [miro-board.svg](miro-board.svg) y el
-[manifiesto](miro-board.json) conservan 304 objetos y diez marcos. Los dos marcos
+Los cuatro flujos de las figuras 19–22 se reconstruyeron como 140 objetos nativos
+en cuatro marcos nuevos. [message-flows-miro.svg](message-flows-miro.svg) conserva
+la lectura de esos objetos y [message-flows-miro.json](message-flows-miro.json)
+identifica los marcos vigentes.
+
+La lectura anterior guardada en [miro-board.svg](miro-board.svg) y el
+[manifiesto](miro-board.json) conserva 304 objetos y diez marcos, incluidos los
+cuatro flujos previos; sus marcos en el tablero se identifican como «Archivo ·
+Versión anterior» y ya no son la fuente vigente de las figuras 19–22. Los dos marcos
 C4 de esa lectura son antecedentes del diseño: las vistas vigentes de arquitectura
 se mantienen en Structurizr y sus PNG ya no se regeneran desde Miro.
 
 | Figura | Contenido | Fuente colaborativa | Página de la copia local |
 | --- | --- | --- | --- |
-| 19 | A. Registrar una suscripción y preparar el aviso | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232310) | `message-flow-subscription` |
-| 20 | B. Registrar un gasto y comparar el presupuesto | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232311) | `message-flow-delivery` |
-| 21 | C. Activar o renovar Premium tras un pago confirmado | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232312) | `message-flow-premium-activation` |
-| 22 | D. Cancelar la renovación y volver a Free | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232313) | `message-flow-premium-cancellation` |
+| 19 | A. Registrar una suscripción y preparar el aviso | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686580430269) | `message-flow-subscription` |
+| 20 | B. Registrar un gasto y comparar el presupuesto | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686580430270) | `message-flow-delivery` |
+| 21 | C. Activar o renovar Premium tras un pago confirmado | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686580430271) | `message-flow-premium-activation` |
+| 22 | D. Cancelar la renovación y volver a Free | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686580430272) | `message-flow-premium-cancellation` |
 | 23 | Bounded Context Canvas: Subscription Management | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232307) | `canvas-subscription` |
 | 24 | Bounded Context Canvas: Delivery Expense Management | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232308) | `canvas-delivery` |
 | 25 | Bounded Context Canvas: Premium & Billing | [Editar en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232309) | `canvas-premium` |
@@ -37,8 +44,11 @@ aparte; esta adaptación usa la estructura v5 publicada en el repositorio.
 Los flujos siguen el formato **Combined Message & Contents** de
 [Domain Message Flow Modelling](https://github.com/ddd-crew/domain-message-flow-modelling):
 cada tarjeta contiene orden, nombre y datos, junto a una flecha entre emisor y
-receptor. Las cajas repetidas representan al mismo participante. Las respuestas
-son explícitas y los eventos internos no presuponen un bus de mensajes.
+receptor. Cada participante aparece una sola vez; la tarjeta forma parte del
+recorrido emisor → mensaje → receptor. Las consultas son verdes, los comandos
+azules, los eventos naranjas y las respuestas grises. Los contextos tienen una
+etiqueta explícita y se distinguen de los colaboradores internos y externos.
+Las respuestas son explícitas y los eventos internos no presuponen un bus de mensajes.
 
 El mapa sigue
 [Context Mapping](https://github.com/ddd-crew/context-mapping): influencia U/D,
@@ -113,15 +123,24 @@ con Playwright. No es necesaria una cuenta de Structurizr para este uso local.
 
 ## Copias DDD y regeneración
 
-`strategic-design.drawio` contiene ocho páginas DDD portátiles para diagrams.net.
-Los PNG/SVG DDD son vistas derivadas de la lectura guardada de Miro; **no son
-exportaciones oficiales de su interfaz**. La lectura conserva los extremos y
-direcciones de los conectores, pero sus puntos de giro se recalculan en la copia.
+Las imágenes `message-flow-*.jpg` son **capturas reales del editor de Miro**, con
+su barra de herramientas, el tablero y los objetos nativos visibles. No se
+redibujaron ni se añadió una interfaz simulada. El manifiesto de los flujos
+registra su origen, dimensiones y huellas SHA-256. La copia
+[message-flows.drawio](message-flows.drawio) contiene cuatro páginas editables
+portátiles, con conectores unidos a los objetos.
+
+`strategic-design.drawio` conserva cuatro páginas: los tres canvases y el Context
+Map. Sus PNG/SVG siguen siendo vistas derivadas de la lectura anterior guardada
+de Miro; **no son exportaciones oficiales de su interfaz**. Sus puntos de giro
+se recalculan en la copia.
 
 ```powershell
 python scripts/export-miro-snapshots.py
 ```
 
 Requiere Python 3, Pillow y Arial en Windows o DejaVu Sans en Linux. El script
-omite los marcos C4 para conservar las exportaciones de Structurizr. Después de
-editar Miro, actualiza la lectura nativa antes de regenerar las vistas DDD.
+omite los marcos C4 y los cuatro flujos para conservar las exportaciones de
+Structurizr y las capturas del editor. Después de editar los flujos en Miro, toma
+una nueva captura del marco correspondiente y actualiza la lectura y el
+manifiesto. La regeneración por este script afecta solo a canvases y Context Map.
