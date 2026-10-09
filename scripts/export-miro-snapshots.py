@@ -14,7 +14,8 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'docs/diagrams/chapter_2'
-OUT=ROOT/'docs/images/chapter_2'
+OUT=ROOT/'work/legacy-miro-derivatives'
+OUT.mkdir(parents=True,exist_ok=True)
 NS='{http://www.w3.org/2000/svg}'
 INK='#1a1a1a'
 manifest=json.loads((SOURCE/'miro-board.json').read_text(encoding='utf-8'))
@@ -148,5 +149,5 @@ for f in manifest['frames']:
             snap.text(x,y,w,h,plain(e),float(e.get('font-size',26)),bold=e.get('font-weight')=='bold',color=e.get('fill',INK),miro_id=e.get('data-miro-id'))
     snap.save()
     page=E.SubElement(drawio,'diagram',id=f['name'],name=f['name']);page.append(snap.mx)
-E.indent(drawio);E.ElementTree(drawio).write(SOURCE/'strategic-design.drawio',encoding='utf-8',xml_declaration=True)
-print('Rendered 4 canvas/context-map PNG/SVG snapshots and diagrams.net pages. Native flow captures preserved.')
+E.indent(drawio);E.ElementTree(drawio).write(OUT/'strategic-design.drawio',encoding='utf-8',xml_declaration=True)
+print('Archived offline derivatives in work/legacy-miro-derivatives. Report screenshots and editables preserved.')

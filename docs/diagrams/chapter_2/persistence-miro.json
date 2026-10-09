@@ -1,0 +1,66 @@
+{
+  "board_url": "https://miro.com/app/board/uXjVEcjtdBM=/",
+  "source": "Native Miro shapes, text and attached connectors",
+  "read_date": "2026-10-09",
+  "source_file": "persistence-miro.svg",
+  "source_sha256": "9121dd4f5bd4668b199dcd8b9a8e89bc5d8a85f351b5835918f60bf65c95119c",
+  "frames": [
+    {
+      "name": "subscription-database-revised",
+      "figure": 32,
+      "miro_id": "3458764686584755100",
+      "title": "Figura 32. Persistencia | Subscription Management",
+      "source_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686584755100",
+      "widget_count": 10,
+      "connector_count": 1,
+      "capture": {
+        "file": "docs/images/chapter_2/subscription-database-revised.jpg",
+        "method": "Unaltered browser screenshot of the authenticated Miro editor",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "4d78f930cc9b3bbab9ee4553a4607054a0567563ad932c16e561b9c60bfc19fb"
+      }
+    },
+    {
+      "name": "delivery-database-revised",
+      "figure": 35,
+      "miro_id": "3458764686584755101",
+      "title": "Figura 35. Persistencia | Delivery Expense Management",
+      "source_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686584755101",
+      "widget_count": 8,
+      "connector_count": 1,
+      "capture": {
+        "file": "docs/images/chapter_2/delivery-database-revised.jpg",
+        "method": "Unaltered browser screenshot of the authenticated Miro editor",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "1b90bb8847a194ff54bc2d1220c178f63683bae180cd25120eddbe82696fd699"
+      }
+    },
+    {
+      "name": "premium-database-revised",
+      "figure": 38,
+      "miro_id": "3458764686584755102",
+      "title": "Figura 38. Persistencia | Premium & Billing",
+      "source_url": "https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686584755102",
+      "widget_count": 8,
+      "connector_count": 1,
+      "capture": {
+        "file": "docs/images/chapter_2/premium-database-revised.jpg",
+        "method": "Unaltered browser screenshot of the authenticated Miro editor",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "f1427e579c2c8cc6e3f41ed976742d7700786208bb5bde15e11f39f5973a8261"
+      }
+    }
+  ]
+}

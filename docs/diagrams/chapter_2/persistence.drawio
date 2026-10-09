@@ -1,0 +1,95 @@
+<mxfile host="app.diagrams.net" version="24.7.17" type="device">
+  <diagram id="3458764686584755100" name="Subscription Management">
+    <mxGraphModel page="1" pageWidth="2000" pageHeight="1100">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="m3458764686584755104" parent="1" vertex="1" value=" &lt;b&gt;subscriptions&lt;/b&gt;&lt;br /&gt;PK id: UUID&lt;br /&gt;user_id: UUID&lt;br /&gt;name: VARCHAR(100)&lt;br /&gt;original_amount: NUMERIC(12,2)&lt;br /&gt;currency: CHAR(3)&lt;br /&gt;category: VARCHAR(30)&lt;br /&gt;status: VARCHAR(20)&lt;br /&gt;periodicity: VARCHAR(20)&lt;br /&gt;next_billing_date: DATE" style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;fillColor=#eaf4fc;strokeColor=#6f91ae;fontColor=#18324a;fontSize=25;verticalAlign=middle;spacing=12;">
+          <mxGeometry x="140" y="245" width="530" height="458" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755105" parent="1" vertex="1" value=" &lt;b&gt;subscription_charges&lt;/b&gt;&lt;br /&gt;PK id: UUID&lt;br /&gt;FK subscription_id: UUID&lt;br /&gt;amount: NUMERIC(12,2)&lt;br /&gt;currency: CHAR(3)&lt;br /&gt;charge_date: DATE&lt;br /&gt;source: VARCHAR(30)" style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;fillColor=#eaf4fc;strokeColor=#6f91ae;fontColor=#18324a;fontSize=25;verticalAlign=middle;spacing=12;">
+          <mxGeometry x="750" y="245" width="530" height="344" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755106" parent="1" vertex="1" value=" &lt;b&gt;exchange_rate_cache&lt;/b&gt;&lt;br /&gt;PK from_currency: CHAR(3)&lt;br /&gt;PK to_currency: CHAR(3)&lt;br /&gt;rate: NUMERIC(18,6)&lt;br /&gt;fetched_at: TIMESTAMPTZ" style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;fillColor=#f1f1f1;strokeColor=#6f91ae;fontColor=#18324a;fontSize=25;verticalAlign=middle;spacing=12;">
+          <mxGeometry x="1360" y="245" width="500" height="268" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755107" parent="1" vertex="1" value="Persistencia | Subscription Management" style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;text;strokeColor=none;fillColor=none;fontColor=#18324a;fontSize=34;fontStyle=1;verticalAlign=top;">
+          <mxGeometry x="140" y="88.5" width="1760" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755108" parent="1" vertex="1" value="PK: clave primaria. FK: clave foránea local. user_id: referencia al propietario autenticado." style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;text;strokeColor=none;fillColor=none;fontColor=#18324a;fontSize=23;fontStyle=0;verticalAlign=top;">
+          <mxGeometry x="140" y="148" width="1760" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755109" parent="1" vertex="1" value="subscriptions 1 → 0..* subscription_charges. La caché es una dependencia de consulta." style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;text;strokeColor=none;fillColor=none;fontColor=#18324a;fontSize=24;fontStyle=0;verticalAlign=top;">
+          <mxGeometry x="154" y="830.5" width="1746" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755111" parent="1" vertex="1" value="Importe original ≥ 0; rate &gt; 0. Un cobro previsto no se registra como confirmado." style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;text;strokeColor=none;fillColor=none;fontColor=#18324a;fontSize=23;fontStyle=0;verticalAlign=top;">
+          <mxGeometry x="154" y="876" width="1746" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755112" parent="1" vertex="1" value="Fuente: Gastify. Propuesta de diseño; implementación y pruebas pendientes." style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;text;strokeColor=none;fillColor=none;fontColor=#18324a;fontSize=21;fontStyle=0;verticalAlign=top;">
+          <mxGeometry x="140" y="1003.5" width="1760" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755128" parent="1" edge="1" source="m3458764686584755104" target="m3458764686584755105" style="edgeStyle=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#486075;endArrow=classic;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="3458764686584755101" name="Delivery Expense Management">
+    <mxGraphModel page="1" pageWidth="2000" pageHeight="1100">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="m3458764686584755113" parent="1" vertex="1" value=" &lt;b&gt;delivery_expenses&lt;/b&gt;&lt;br /&gt;PK id: UUID&lt;br /&gt;user_id: UUID&lt;br /&gt;request_id: UUID&lt;br /&gt;amount: NUMERIC(12,2)&lt;br /&gt;merchant_name: VARCHAR(120)&lt;br /&gt;category: VARCHAR(30)&lt;br /&gt;expense_date: DATE&lt;br /&gt;created_at: TIMESTAMPTZ&lt;br /&gt;UNIQUE (user_id, request_id)" style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;fillColor=#eaf4fc;strokeColor=#6f91ae;fontColor=#18324a;fontSize=25;verticalAlign=middle;spacing=12;">
+          <mxGeometry x="160" y="245" width="770" height="458" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755114" parent="1" vertex="1" value=" &lt;b&gt;monthly_budgets&lt;/b&gt;&lt;br /&gt;PK id: UUID&lt;br /&gt;user_id: UUID&lt;br /&gt;year: SMALLINT; month: SMALLINT&lt;br /&gt;monthly_limit: NUMERIC(12,2)&lt;br /&gt;accumulated: NUMERIC(12,2)&lt;br /&gt;version: BIGINT&lt;br /&gt;updated_at: TIMESTAMPTZ&lt;br /&gt;UNIQUE (user_id, year, month)" style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;fillColor=#eaf4fc;strokeColor=#6f91ae;fontColor=#18324a;fontSize=25;verticalAlign=middle;spacing=12;">
+          <mxGeometry x="1070" y="245" width="770" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755115" parent="1" vertex="1" value="Persistencia | Delivery Expense Management" style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;text;strokeColor=none;fillColor=none;fontColor=#18324a;fontSize=34;fontStyle=1;verticalAlign=top;">
+          <mxGeometry x="140" y="88.5" width="1760" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755116" parent="1" vertex="1" value="Agrupación por propietario y período. Los dos agregados conservan claves propias." style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;text;strokeColor=none;fillColor=none;fontColor=#18324a;fontSize=23;fontStyle=0;verticalAlign=top;">
+          <mxGeometry x="140" y="148" width="1760" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755117" parent="1" vertex="1" value="Agrupación lógica: user_id + año/mes de expense_date. Gastos y presupuesto son agregados distintos." style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;text;strokeColor=none;fillColor=none;fontColor=#18324a;fontSize=24;fontStyle=0;verticalAlign=top;">
+          <mxGeometry x="160" y="889.5" width="1740" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755118" parent="1" vertex="1" value="Fuente: Gastify. Propuesta de diseño; implementación y pruebas pendientes." style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;text;strokeColor=none;fillColor=none;fontColor=#18324a;fontSize=21;fontStyle=0;verticalAlign=top;">
+          <mxGeometry x="140" y="1003.5" width="1760" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755129" parent="1" edge="1" source="m3458764686584755113" target="m3458764686584755114" style="edgeStyle=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#486075;endArrow=none;dashed=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="3458764686584755102" name="Premium &amp; Billing">
+    <mxGraphModel page="1" pageWidth="2000" pageHeight="1100">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="m3458764686584755119" parent="1" vertex="1" value=" &lt;b&gt;user_plans&lt;/b&gt;&lt;br /&gt;PK id: UUID&lt;br /&gt;user_id: UUID UNIQUE&lt;br /&gt;plan_type: VARCHAR(20)&lt;br /&gt;period_start: DATE; period_end: DATE&lt;br /&gt;stripe_customer_id: VARCHAR(255)&lt;br /&gt;stripe_subscription_id: VARCHAR(255)&lt;br /&gt;updated_at: TIMESTAMPTZ" style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;fillColor=#eaf4fc;strokeColor=#6f91ae;fontColor=#18324a;fontSize=25;verticalAlign=middle;spacing=12;">
+          <mxGeometry x="160" y="245" width="770" height="382" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755120" parent="1" vertex="1" value=" &lt;b&gt;billing_events&lt;/b&gt;&lt;br /&gt;PK id: UUID&lt;br /&gt;FK plan_id: UUID (tras correlación)&lt;br /&gt;stripe_event_id: VARCHAR(255) UNIQUE&lt;br /&gt;invoice_id: VARCHAR(255)&lt;br /&gt;event_type: VARCHAR(100)&lt;br /&gt;occurred_at: TIMESTAMPTZ&lt;br /&gt;processed_at: TIMESTAMPTZ&lt;br /&gt;processing_status: VARCHAR(30)" style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;fillColor=#eaf4fc;strokeColor=#6f91ae;fontColor=#18324a;fontSize=25;verticalAlign=middle;spacing=12;">
+          <mxGeometry x="1070" y="245" width="770" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755121" parent="1" vertex="1" value="Persistencia | Premium &amp; Billing" style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;text;strokeColor=none;fillColor=none;fontColor=#18324a;fontSize=34;fontStyle=1;verticalAlign=top;">
+          <mxGeometry x="140" y="88.5" width="1760" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755122" parent="1" vertex="1" value="Correlación de facturación y registro único del evento externo antes de aplicar cambios de acceso." style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;text;strokeColor=none;fillColor=none;fontColor=#18324a;fontSize=23;fontStyle=0;verticalAlign=top;">
+          <mxGeometry x="140" y="148" width="1760" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755123" parent="1" vertex="1" value="user_plans 1 → 0..* billing_events. Una renovación actualiza el período; no duplica la transición." style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;text;strokeColor=none;fillColor=none;fontColor=#18324a;fontSize=24;fontStyle=0;verticalAlign=top;">
+          <mxGeometry x="160" y="889.5" width="1740" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755124" parent="1" vertex="1" value="Fuente: Gastify. Propuesta de diseño; implementación y pruebas pendientes." style="html=1;whiteSpace=wrap;fontFamily=Arial;align=left;text;strokeColor=none;fillColor=none;fontColor=#18324a;fontSize=21;fontStyle=0;verticalAlign=top;">
+          <mxGeometry x="140" y="1003.5" width="1760" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="m3458764686584755132" parent="1" edge="1" source="m3458764686584755119" target="m3458764686584755120" style="edgeStyle=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#486075;endArrow=classic;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

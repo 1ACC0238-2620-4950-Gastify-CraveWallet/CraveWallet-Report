@@ -12,7 +12,8 @@ import math
 from html import escape
 from PIL import Image, ImageDraw, ImageFont
 
-OUT = Path(__file__).resolve().parents[1] / 'docs/images/chapter_2'
+OUT = Path(__file__).resolve().parents[1] / 'work/legacy-domain-derivatives'
+OUT.mkdir(parents=True, exist_ok=True)
 FONTS = Path('C:/Windows/Fonts')
 
 class Canvas:

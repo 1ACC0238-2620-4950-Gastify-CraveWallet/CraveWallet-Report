@@ -1,6 +1,10 @@
 # PDF generado por build.ps1
 dist/
 
+# Derivados históricos fuera de las figuras vigentes
+work/legacy-miro-derivatives/
+work/legacy-domain-derivatives/
+
 # Previsualizacion de la caratula
 config/preview/*.pdf
 
