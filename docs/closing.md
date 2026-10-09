@@ -49,7 +49,9 @@ Los seis spikes (SP01–SP06) investigan las integraciones con ExchangeRate-API,
 
 <!-- pdf:omit-start -->
 
-Brown, S. (s. f.). The C4 model for visualising software architecture. Recuperado 7 de octubre de 2026, de https://c4model.com/
+Brown, S. (s. f.-a). Deployment diagram. Recuperado 9 de octubre de 2026, de https://c4model.com/diagrams/deployment
+
+Brown, S. (s. f.-b). The C4 model for visualising software architecture. Recuperado 7 de octubre de 2026, de https://c4model.com/
 
 BudgetBakers. (2026). Everything about Premium. Wallet Help Center. https://support.budgetbakers.com/hc/en-us/articles/7151349344018-Everything-about-Premium
 
@@ -83,6 +85,8 @@ Stripe. (s. f.-a). Receive Stripe events in your webhook endpoint. Recuperado 7 
 
 Stripe. (s. f.-b). Using webhooks with subscriptions. Recuperado 7 de octubre de 2026, de https://docs.stripe.com/billing/subscriptions/webhooks
 
+Structurizr. (s. f.). Structurizr DSL: Language reference. Recuperado 9 de octubre de 2026, de https://docs.structurizr.com/dsl/language
+
 Superintendencia de Banca, Seguros y AFP, & CAF. (s. f.). Encuesta de Medición de Capacidades Financieras: Perú 2022. SBS y CAF. Recuperado 6 de octubre de 2026, de https://www.sbs.gob.pe/Portals/4/jer/CIFRAS-ENCUESTA/2022/Brochure_ENCUESTA_CAPACIDADES%20FINANACIERAS%202022_vr.pdf
 
 World Wide Web Consortium. (2018). Web Content Accessibility Guidelines (WCAG) 2.1. https://www.w3.org/TR/WCAG21/
@@ -97,13 +101,13 @@ El Product Backlog de CraveWallet se gestiona en Trello. El tablero organiza las
 
 **Enlace público del tablero:** [CraveWallet – Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog)
 
-La figura 124 muestra la distribución de las historias en el tablero descrito en la sección 2.4.3.
+La figura 126 muestra la distribución de las historias en el tablero descrito en la sección 2.4.3.
 
 ![Product Backlog de CraveWallet en Trello](images/chapter_2/Product_Backlog_Trello.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 124. Product Backlog de CraveWallet en Trello.*
+*Figura 126. Product Backlog de CraveWallet en Trello.*
 
 <!-- pdf:omit-end -->
 

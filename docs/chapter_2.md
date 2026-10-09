@@ -2041,7 +2041,7 @@ La arquitectura de software que cierra la sección se representará con el C4 Mo
 
 <!-- pdf:omit-start -->
 
-Las figuras 19–28 son vistas estáticas derivadas de los diagramas editables del [tablero de Miro](https://miro.com/app/board/uXjVEcjtdBM=/). Los [objetos guardados y las instrucciones de edición](diagrams/chapter_2/README.md) permiten revisar y mantener sus fuentes. Las vistas C4 cuentan además con un [modelo de Structurizr DSL](diagrams/chapter_2/workspace.dsl).
+Las figuras 19–26 conservan sus fuentes editables en el [tablero de Miro](https://miro.com/app/board/uXjVEcjtdBM=/). Las vistas C4 de las figuras 27–30, 33 y 36 se modelan y exportan con Structurizr. Los [archivos editables y las instrucciones de exportación](diagrams/chapter_2/README.md) se versionan junto con el informe.
 
 <!-- pdf:omit-end -->
 
@@ -2384,13 +2384,15 @@ El calendario del dispositivo y la autenticación colaboran con los casos de uso
 
 ### 2.5.3. Software Architecture
 
-Se usa C4 para distinguir el sistema completo, sus contenedores y los componentes internos del backend [@c4ModelDiagrams].
+Las vistas de arquitectura se elaboran en Structurizr a partir de un único [modelo editable DSL](diagrams/chapter_2/workspace.dsl), con un [archivo JSON que conserva la distribución](diagrams/chapter_2/workspace.json). Contexto y contenedores muestran usuarios, responsabilidades, fronteras y colaboraciones; despliegue ubica las instancias en la infraestructura. Los componentes de cada Bounded Context se presentan en 2.6 [@c4ModelDiagrams; @structurizrDsl]. Las figuras son exportaciones del renderizador de Structurizr.
+
+El modelo distingue el incremento documentado en 4.2.1.8 del diseño pendiente. Stripe, Google Places y las colaboraciones de Premium tienen contorno o flechas discontinuas de color ámbar y la indicación «propuesto». Las vistas de componentes describen el diseño por responsabilidades; no certifican que cada clase representada exista en el código desplegado.
 
 #### 2.5.3.1. Software Architecture Context Level Diagrams
 
-CraveWallet se representa como un sistema completo: incluye la experiencia móvil y el backend. Los usuarios pertenecen a los segmentos de estudiantes y profesionales jóvenes definidos en 1.3. El sistema consulta cotizaciones, prepara recordatorios en el calendario del dispositivo, recibe sugerencias de comercios y gestiona su plan propio con Stripe. Los pagos y cancelaciones de los servicios externos registrados por el usuario quedan fuera del alcance.
+CraveWallet reúne la landing, la experiencia móvil y el backend. El visitante conoce la propuesta y accede a la app; el usuario registra y consulta suscripciones y gastos. ExchangeRate-API proporciona cotizaciones y el calendario de Android recibe eventos desde el cliente. La integración futura con Stripe corresponde al plan propio de CraveWallet; registrar una suscripción no paga ni cancela el contrato con el proveedor externo.
 
-La figura 27 muestra una persona, CraveWallet como un único sistema y sus cuatro colaboradores externos. La solicitud a Stripe y las notificaciones de Stripe tienen flechas separadas. La vista omite tecnologías, almacenes y módulos internos para conservar el nivel de contexto. En las vistas C4, los números identifican las relaciones de la leyenda; no expresan un orden de ejecución.
+La figura 27 muestra dos roles, CraveWallet como un único sistema y cuatro colaboradores externos. Omite tecnologías, almacenes y módulos internos para conservar el nivel de contexto. La solicitud a Stripe y las notificaciones del proveedor tienen relaciones separadas, identificadas como propuestas; las flechas expresan colaboraciones y no una secuencia de ejecución.
 
 ![Diagrama de contexto del sistema CraveWallet](images/chapter_2/system-context-revised.png)
 
@@ -2400,27 +2402,23 @@ La figura 27 muestra una persona, CraveWallet como un único sistema y sus cuatr
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify; [vista editable en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232315).*
+*Fuente: elaboración del equipo Gastify; exportación de Structurizr, vista SystemContext.*
 
 #### 2.5.3.2. Software Architecture Container Level Diagrams
 
-La tabla 94 define los cuatro contenedores de la propuesta. Una frontera del sistema agrupa aplicaciones y almacenes; los tres contextos son módulos del backend y no se representan como microservicios independientes.
+La tabla 94 define los cinco contenedores. La tecnología móvil y el almacenamiento local se sustentan en la [versión integrada de la app Android](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/73c5785/README.md); el backend y PostgreSQL, en la [evidencia del despliegue TB1](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/cloud-deployment.md). Los contextos de negocio son módulos del backend; no se representan como microservicios independientes.
 
 *Tabla 94. Software Architecture Container Level Diagrams.*
 
-| Contenedor propuesto | Responsabilidad y colaboración |
+| Contenedor | Responsabilidad y colaboración |
 | --- | --- |
-| Mobile App — Kotlin/Jetpack Compose | Presentar los formularios y resúmenes, llamar al backend y solicitar permisos para gestionar el calendario. Compone el Dashboard a partir de consultas de Suscripciones y Gastos. |
-| REST API Backend — Java 21/Spring Boot | Alojar los tres módulos de negocio, los casos de uso y sus adaptadores. La autenticación es una capacidad técnica compartida; no se convierte automáticamente en un cuarto contexto de negocio. |
-| Local Database — SQLite | Caché de lectura en el dispositivo. La lectura sin red debe indicar la fecha de actualización. |
-| Remote Database — PostgreSQL | Persistir el estado canónico con tablas cuya responsabilidad pertenece a cada módulo. Compartir un motor no autoriza acceder directamente a los agregados de otro contexto. |
+| Landing Page — Next.js/React/Tailwind CSS | Presentar la propuesta y ofrecer acceso a la app. Se publica en Vercel, separada del REST API; su configuración se describe en 4.1.4. |
+| Aplicación Android — Kotlin/Jetpack Compose | Presentar formularios y resúmenes, autenticar al usuario, consumir el backend y gestionar eventos del calendario con permisos. El APK está generado; la validación en dispositivo permanece pendiente. |
+| REST API Backend — Java 21/Spring Boot | Alojar Suscripciones, Gastos y autenticación; preparar datos de recordatorios y cotizaciones. Premium y Google Places siguen pendientes. La autenticación es una capacidad técnica compartida. |
+| Almacenamiento local — SharedPreferences/JSON | Guardar preferencias, notas, sesión y datos de demostración. Los registros de suscripciones y Delivery de la sesión conectada se conservan en el backend. No se acredita una caché SQLite de lectura del API. |
+| Base de datos — PostgreSQL 17 | Persistir el estado canónico de usuarios, sesiones, suscripciones, gastos y presupuestos. Compartir el motor no autoriza acceder directamente a los agregados de otro contexto; las tablas de Premium forman parte del diseño pendiente. |
 
-*Fuente: elaboración del equipo Gastify.*
-
-
-ExchangeRate-API, Stripe y Google Places son sistemas externos al backend. Sus adaptadores traducen respuestas al modelo local. El calendario lo administra el cliente móvil; el backend solo entrega los datos necesarios. No se presupone infraestructura de notificaciones push adicional para explicar los avisos del calendario.
-
-La figura 28 indica el propósito y la tecnología de cada relación: HTTPS/JSON entre móvil y backend, JPA/JDBC hacia PostgreSQL, API local hacia SQLite, APIs externas por HTTPS y webhook firmado de Stripe hacia el backend. El calendario recibe operaciones únicamente desde el móvil. Los datos de tarjeta se ingresan en el flujo de Stripe; el retorno al cliente no confirma el acceso Premium.
+*Fuente: elaboración del equipo Gastify, basada en los repositorios de la app móvil y el backend citados en el texto.*
 
 ![Diagrama de contenedores de CraveWallet](images/chapter_2/containers-revised.png)
 
@@ -2430,23 +2428,27 @@ La figura 28 indica el propósito y la tecnología de cada relación: HTTPS/JSON
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify; [vista editable en Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232316).*
+*Fuente: elaboración del equipo Gastify; exportación de Structurizr, vista Containers.*
+
+La figura 28 muestra las tecnologías de las colaboraciones: HTTPS/JSON entre Android y backend, JPA/JDBC hacia PostgreSQL y APIs locales hacia SharedPreferences y CalendarContract. El calendario recibe operaciones desde Android. WorkManager prepara notificaciones locales; no se introduce un servidor de notificaciones push remotas. La colaboración con Stripe conserva el webhook firmado hacia el backend y el checkout del proveedor, ambos propuestos. El retorno al cliente no confirma el acceso Premium.
 
 #### 2.5.3.3. Software Architecture Deployment Diagrams
 
-La figura 29 muestra el despliegue: contenedor del backend en ECS/Fargate, base de datos PostgreSQL en RDS, entrada HTTPS y gestión de secretos. La aplicación móvil se ejecuta en el dispositivo y accede al calendario con los permisos del usuario.
+La figura 29 asigna instancias de los contenedores a nodos de despliegue anidados, conforme al diagrama de despliegue C4 [@c4Deployment]. El incremento TB1 ejecuta el REST API como servicio Docker de Java 21 en Render, región Oregon, y conserva sus datos en PostgreSQL 17 administrado por Render. El servicio usa el perfil `prod`, variables privadas y conexión interna a la base, con migraciones Flyway V1–V3. El endpoint público es [cravewallet-api.onrender.com](https://cravewallet-api.onrender.com). La evidencia de publicación y persistencia tras reinicio se presenta en la tabla 153 de 4.2.1.8.
 
-La figura 29 muestra dónde se ejecuta cada contenedor de CraveWallet.
+La landing se aloja por separado en Vercel. El nodo Android representa el destino del APK generado y su almacenamiento local; no acredita instalación ni verificación física del calendario y las notificaciones. La integración del cliente se probó contra el HTTPS público, según la evidencia citada en 4.2.1.8. Stripe y Google Places no aparecen como servicios ya desplegados porque sus integraciones siguen pendientes.
 
-![Propuesta de despliegue de CraveWallet](images/chapter_2/deployment_diagram.png)
+Render Free es un entorno de demostración temporal: el servicio puede suspenderse por inactividad y la base gratuita requiere renovación o migración antes de vencer. La configuración y las evidencias del corte publicado están disponibles en la [guía del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/cloud-deployment.md).
+
+![Despliegue TB1 de CraveWallet y cliente Android por validar](images/chapter_2/deployment_diagram.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 29. Propuesta de despliegue de CraveWallet.*
+*Figura 29. Despliegue TB1 de CraveWallet y cliente Android por validar.*
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify.*
+*Fuente: equipo Gastify; exportación de Structurizr, vista Deployment; evidencia del backend en 4.2.1.8.*
 
 ## 2.6. Tactical-Level Domain-Driven Design
 
@@ -2509,7 +2511,7 @@ El request de alta contiene nombre, importe, moneda, categoría, fecha y periodi
 
 #### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-La figura 30 muestra los componentes internos de Subscription Management y sus dependencias.
+La figura 30 presenta el diseño de componentes de Subscription Management dentro del REST API. Las dependencias separan interfaz, aplicación, dominio y adaptadores; el almacenamiento y los sistemas externos se sitúan fuera de la frontera del backend. Los elementos y relaciones ámbar discontinuos son propuestas pendientes de integración. Esta vista describe responsabilidades y no una extracción automática de clases implementadas.
 
 ![Componentes de Subscription Management](images/chapter_2/subscription-components-revised.png)
 
@@ -2519,7 +2521,7 @@ La figura 30 muestra los componentes internos de Subscription Management y sus d
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify.*
+*Fuente: elaboración del equipo Gastify; exportación de Structurizr, vista SubscriptionComponents.*
 
 #### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -2613,7 +2615,7 @@ Los manejadores internos pueden preparar el estado de exceso que consume la apli
 
 #### 2.6.2.5. Component Level Diagrams
 
-La figura 33 muestra los componentes internos de Delivery Expense Management y sus dependencias.
+La figura 33 presenta el diseño de componentes de Delivery Expense Management dentro del REST API. Las dependencias separan interfaz, aplicación, dominio y adaptadores; el almacenamiento y los sistemas externos se sitúan fuera de la frontera del backend. Los elementos y relaciones ámbar discontinuos son propuestas pendientes de integración. Esta vista describe responsabilidades y no una extracción automática de clases implementadas.
 
 ![Componentes de Delivery Expense Management](images/chapter_2/delivery-components-revised.png)
 
@@ -2623,7 +2625,7 @@ La figura 33 muestra los componentes internos de Delivery Expense Management y s
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify.*
+*Fuente: elaboración del equipo Gastify; exportación de Structurizr, vista DeliveryComponents.*
 
 #### 2.6.2.6. Code Level Diagrams
 
@@ -2717,7 +2719,7 @@ Para una factura pagada, se consulta y valida la suscripción vinculada antes de
 
 #### 2.6.3.5. Component Level Diagrams
 
-La figura 36 muestra los componentes internos de Premium & Billing y sus dependencias.
+La figura 36 presenta el diseño de componentes de Premium & Billing dentro del REST API. Las dependencias separan interfaz, aplicación, dominio y adaptadores; el almacenamiento y los sistemas externos se sitúan fuera de la frontera del backend. Los elementos y relaciones ámbar discontinuos son propuestas pendientes de integración. Esta vista describe responsabilidades y no una extracción automática de clases implementadas.
 
 ![Componentes de Premium & Billing](images/chapter_2/premium-components-revised.png)
 
@@ -2727,7 +2729,7 @@ La figura 36 muestra los componentes internos de Premium & Billing y sus depende
 
 <!-- pdf:omit-end -->
 
-*Fuente: elaboración del equipo Gastify.*
+*Fuente: elaboración del equipo Gastify; exportación de Structurizr, vista PremiumComponents.*
 
 #### 2.6.3.6. Code Level Diagrams
 

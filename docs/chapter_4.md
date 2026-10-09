@@ -680,7 +680,7 @@ En el Sprint 1 se publicaron el landing page y el REST API; la aplicación Andro
 | Producto | Estado | Evidencia |
 | --- | --- | --- |
 | Landing page | Publicado en Vercel desde `main`; HTTP 200. | [cravewallet-landing.vercel.app](https://cravewallet-landing.vercel.app); dos deployments `Production` correctos (tabla 159). |
-| REST API | Publicado en Render con PostgreSQL 17 y perfil `prod`; health `UP`. | [Health público](https://cravewallet-api.onrender.com/actuator/health); figuras 119 a 121. |
+| REST API | Publicado en Render con PostgreSQL 17 y perfil `prod`; health `UP`. | [Health público](https://cravewallet-api.onrender.com/actuator/health); figuras 120 a 123. |
 | Base de datos | PostgreSQL 17 en Render; Flyway V1–V3. | 22 comprobaciones HTTP remotas y siete tras el reinicio del servicio ([resultados](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/evidence/cloud/remote-api-results.json)). |
 | Aplicación Android | APK `debug` generado; pruebas de integración contra el API público. | [Resultados](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/73c5785/docs/cloud-integration-results.json); APK `CraveWallet-TB1-cloud-debug.apk`. |
 
@@ -695,15 +695,27 @@ En el Sprint 1 se publicaron el landing page y el REST API; la aplicación Andro
 | [eec794d](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/eec794d5a2e8bb2f616ba3445e970a9ebab90737) | 08/10/2026 21:58 | Production | Correcto |
 | [3cdc4c5](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/3cdc4c5d72969732a7f597ad62511a542658104f) | 08/10/2026 22:19 | Production | Correcto |
 
-*Fuente: [Deployments de GitHub](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/deployments) creados por Vercel para el repositorio `cravewallet-landing`.*
+*Fuente: [Deployments de GitHub](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/deployments) creados por Vercel para el repositorio `cravewallet-landing` y [registro del deployment Production](evidence/deployment/vercel-production.json).*
 
-**Servicios RESTful.** Se publicaron en Render como servicio Docker `cravewallet-api` en el plan gratuito (región Oregon), junto con una base PostgreSQL 17. El servicio compila la rama `feature/cloud-deployment` en el commit `67ede2a` y queda disponible por HTTPS en <https://cravewallet-api.onrender.com>. La figura 119 muestra el servicio en estado Live y la figura 120, el historial de eventos con el despliegue y el reinicio solicitado.
+La figura 119 muestra el landing servido en su dirección pública.
+
+![Landing de CraveWallet publicada en Vercel](evidence/deployment/landing-publica.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura 119. Landing de CraveWallet publicada en Vercel.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura del equipo Gastify de <https://cravewallet-landing.vercel.app/es>, 9 de octubre de 2026; procedencia en [capturas.json](evidence/deployment/capturas.json).*
+
+**Servicios RESTful.** Se publicaron en Render como servicio Docker `cravewallet-api` en el plan gratuito (región Oregon), junto con una base PostgreSQL 17. El servicio compila la rama `feature/cloud-deployment` en el commit `67ede2a` y queda disponible por HTTPS en <https://cravewallet-api.onrender.com>. La figura 120 muestra el servicio en estado Live y la figura 121, el historial de eventos con el despliegue y el reinicio solicitado.
 
 ![Servicio cravewallet-api en estado Live en Render](evidence/backend/cloud/render-live.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 119. Servicio cravewallet-api en estado Live en Render.*
+*Figura 120. Servicio cravewallet-api en estado Live en Render.*
 
 <!-- pdf:omit-end -->
 
@@ -713,31 +725,43 @@ En el Sprint 1 se publicaron el landing page y el REST API; la aplicación Andro
 
 <!-- pdf:omit-start -->
 
-*Figura 120. Eventos del servicio cravewallet-api en Render: despliegue y reinicio.*
+*Figura 121. Eventos del servicio cravewallet-api en Render: despliegue y reinicio.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: captura del panel de Render del equipo Gastify, 9 de octubre de 2026.*
 
-Tras el reinicio se comprobó que se conservaron la sesión, la suscripción editada y el presupuesto con su gasto, y que el cierre de sesión revocó el acceso. La figura 121 muestra la respuesta pública de `/actuator/health`.
+La figura 122 muestra la pantalla de arranque que Render presenta al abrir el health público de un servicio del plan gratuito tras un período de inactividad; la siguiente petición respondió HTTP 200 y `UP` a las 00:57:35 (America/Lima).
+
+![Pantalla de arranque de Render al acceder al health público](evidence/deployment/render-arranque.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura 122. Pantalla de arranque de Render al acceder al health público.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura del equipo Gastify de <https://cravewallet-api.onrender.com/actuator/health>, 9 de octubre de 2026; procedencia en [capturas.json](evidence/deployment/capturas.json).*
+
+Tras el reinicio se comprobó que se conservaron la sesión, la suscripción editada y el presupuesto con su gasto, y que el cierre de sesión revocó el acceso. La figura 123 muestra la respuesta pública de `/actuator/health`.
 
 ![Respuesta pública de /actuator/health del REST API](images/chapter_4/api-health.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 121. Respuesta pública de /actuator/health del REST API: estado UP.*
+*Figura 123. Respuesta pública de /actuator/health del REST API: estado UP.*
 
 <!-- pdf:omit-end -->
 
-*Fuente: captura de <https://cravewallet-api.onrender.com/actuator/health>, 9 de octubre de 2026.*
+*Fuente: captura de <https://cravewallet-api.onrender.com/actuator/health>, 9 de octubre de 2026; [respuesta registrada](evidence/deployment/health-publico.json).*
 
-La construcción del backend se verifica en GitHub Actions: el workflow `Backend build` terminó con éxito en sus siete ejecuciones, entre el commit `1f1b39b` y el `740aba0`, sobre `develop` y `feature/cloud-deployment` (figura 122).
+La construcción del backend se verifica en GitHub Actions: el workflow `Backend build` terminó con éxito en sus siete ejecuciones, entre el commit `1f1b39b` y el `740aba0`, sobre `develop` y `feature/cloud-deployment` (figura 124).
 
 ![Ejecuciones del workflow Backend build en GitHub Actions](images/chapter_4/backend-actions.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 122. Ejecuciones del workflow Backend build en GitHub Actions.*
+*Figura 124. Ejecuciones del workflow Backend build en GitHub Actions.*
 
 <!-- pdf:omit-end -->
 
@@ -747,7 +771,7 @@ La construcción del backend se verifica en GitHub Actions: el workflow `Backend
 
 #### 4.2.1.9. Team Collaboration Insights during Sprint
 
-El historial de los repositorios muestra el aporte de cada integrante en el Sprint 1. La tabla 160 presenta los commits de cada uno por repositorio entre el 16 de septiembre y el 9 de octubre de 2026 (informe hasta el commit `3dbbc36`), y excluye los commits de merge. La figura 123 presenta los mismos datos. Los commits de Anghelo Faustino en los repositorios de código figuran con el usuario `limozz05` y los del informe, con su cuenta `Limos05`.
+El historial de los repositorios muestra el aporte de cada integrante en el Sprint 1. La tabla 160 presenta los commits de cada uno por repositorio entre el 16 de septiembre y el 9 de octubre de 2026 (informe hasta el commit `3dbbc36`), y excluye los commits de merge. La figura 125 presenta los mismos datos. Los commits de Anghelo Faustino en los repositorios de código figuran con el usuario `limozz05` y los del informe, con su cuenta `Limos05`.
 
 *Tabla 160. Commits de cada integrante por repositorio en el Sprint 1.*
 
@@ -765,7 +789,7 @@ El historial de los repositorios muestra el aporte de cada integrante en el Spri
 
 <!-- pdf:omit-start -->
 
-*Figura 123. Commits por integrante y repositorio en el Sprint 1.*
+*Figura 125. Commits por integrante y repositorio en el Sprint 1.*
 
 <!-- pdf:omit-end -->
 

@@ -1,0 +1,23 @@
+{
+  "timezone": "America/Lima",
+  "screenshots": [
+    {
+      "file": "landing-publica.jpg",
+      "source": "https://cravewallet-landing.vercel.app/es",
+      "sha256": "293437d0dd43277d32edf1fc13c4be78bfaf1f5b9d502e7730628c5160462dc9",
+      "description": "Captura nueva de la landing pública.",
+      "captured_at": "2026-10-09T00:59:28-05:00"
+    },
+    {
+      "file": "render-arranque.jpg",
+      "source": "https://cravewallet-api.onrender.com/actuator/health",
+      "sha256": "b1d25a253d0cc8a57dbf247a6575dc2d4f7f582813dd648a135abb72b6e04b7c",
+      "description": "Captura nueva del intersticial Application loading; no es un log del proceso Java ni una respuesta UP.",
+      "captured_at": "2026-10-09T00:57:17-05:00"
+    }
+  ],
+  "limits": [
+    "Los paneles privados de Render y Vercel requieren sesión; no se capturaron en esta sesión.",
+    "La disponibilidad pública de la landing y el health no certifican todos los flujos de usuario ni una instalación física del APK."
+  ]
+}
