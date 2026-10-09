@@ -773,8 +773,6 @@ El historial de los repositorios muestra el aporte de cada integrante en el Spri
 
 La implementación se concentra en tres integrantes. Mario Sejuro desarrolló el landing publicado; Sebastián Roman escribió las secciones adicionales del landing, inicializó el repositorio del backend y desarrolló la aplicación Android; y Anghelo Faustino implementó el backend, el despliegue en Render y la conexión de la aplicación con el API.
 
-La implementación del backend contó con apoyo de IA para preparar y corregir código, pruebas y documentación; Anghelo Faustino consolida esta entrega y el equipo revisa los contratos y las decisiones de seguridad, persistencia, concurrencia y manejo de errores.
-
 ## 4.3. Validation Interviews
 
 ### 4.3.1. Diseño de Entrevistas
