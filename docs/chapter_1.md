@@ -6,7 +6,7 @@
 
 **Gastify** es una startup de tecnología financiera personal fundada en Lima, Perú, en 2026, por estudiantes de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC). Su producto insignia, **CraveWallet**, es un gestor integral de suscripciones y gastos recurrentes diseñado para el mercado latinoamericano, con foco en el segmento de universitarios y profesionales jóvenes que enfrentan la proliferación de servicios digitales de suscripción, membresías físicas y plataformas de entrega a domicilio.
 
-La **misión** de Gastify es democratizar la salud financiera personal mediante herramientas móviles inteligentes que devuelvan el control del presupuesto al usuario, eliminando la fricción y la opacidad que genera el ecosistema fragmentado de cobros automáticos, contratos recurrentes y micro-gastos.
+La **misión** de Gastify es democratizar la salud financiera personal mediante herramientas móviles que muestren cuánto se paga en suscripciones y cuándo vence cada cobro, para que el usuario recupere el control de su presupuesto.
 
 La **visión** de Gastify es posicionarse, al término de 2027, como una opción útil para la gestión de compromisos financieros recurrentes en los principales mercados de habla hispana de Latinoamérica, con foco inicial en los segmentos elegidos de Lima.
 

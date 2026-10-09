@@ -653,7 +653,7 @@ La tabla 124 presenta los enlaces de la Top Navigation Bar del landing page.
 
 *Fuente: elaboración del equipo Gastify.*
 
-El CTA principal de la navbar es un botón de color primario (`#3B4FD8`) con etiqueta **"Descargar gratis"** que lleva directamente al enlace de Google Play Store. Este botón es visible en todas las posiciones de scroll para maximizar la conversión.
+El CTA principal de la navbar es un botón de color primario (`#3B4FD8`) con etiqueta **"Descargar gratis"** que lleva a la sección de descarga. El botón permanece visible durante el scroll.
 
 ***
 
@@ -699,7 +699,7 @@ La figura 39 muestra el wireframe de la sección Hero del landing page de CraveW
 
 *Fuente: elaboración del equipo Gastify.*
 
-El Hero ocupa el viewport completo y se divide en dos columnas de igual peso. La columna izquierda jerarquiza el contenido en cuatro niveles verticales: (1) eyebrow pill de disponibilidad, (2) bloque de titular de tres líneas con énfasis en la segunda, (3) párrafo de descripción, y (4) par de CTAs en fila horizontal. Al pie de la columna izquierda, una línea divisoria separa una fila de tres métricas estadísticas, cada una con valor prominente y etiqueta. La columna derecha contiene el placeholder del mockup de teléfono, representado como un rectángulo proporcional al dispositivo Android objetivo. La jerarquía de lectura sigue el patrón en F establecido por la investigación de eye-tracking para layouts de dos columnas.
+El Hero ocupa el viewport completo y se divide en dos columnas de igual peso. La columna izquierda jerarquiza el contenido en cuatro niveles verticales: (1) eyebrow pill de disponibilidad, (2) bloque de titular de tres líneas con énfasis en la segunda, (3) párrafo de descripción, y (4) par de CTAs en fila horizontal. Al pie de la columna izquierda, una línea divisoria separa una fila de tres métricas estadísticas, cada una con valor prominente y etiqueta. La columna derecha contiene el placeholder del mockup de teléfono, representado como un rectángulo proporcional al dispositivo Android objetivo.
 
 ***
 
@@ -717,7 +717,7 @@ La figura 40 muestra el wireframe de la sección "El Problema" del landing page 
 
 *Fuente: elaboración del equipo Gastify.*
 
-La sección se estructura en tres bloques verticales. El primero contiene el eyebrow label, el titular de dos líneas y el párrafo de contexto, ocupando el ancho completo. El segundo bloque dispone tres columnas de igual ancho con una cifra estadística de gran escala y su descripción de fuente cada una. El tercer bloque muestra tres tarjetas de testimonio en fila, cada una con un bloque de cita, identificador de usuario y segmento. Al pie, una fila de logos de servicios representa el reconocimiento de marcas conocidas por el segmento objetivo. Las tres tarjetas de testimonio tienen la misma altura fija para que la fila quede alineada sin importar la extensión del texto.
+La sección se estructura en tres bloques verticales. El primero contiene el eyebrow label, el titular de dos líneas y el párrafo de contexto, ocupando el ancho completo. El segundo bloque dispone tres columnas de igual ancho con una cifra estadística de gran escala y su descripción de fuente cada una. El tercer bloque muestra tres tarjetas de testimonio en fila, cada una con un bloque de cita, identificador de usuario y segmento. Al pie, una fila de logos de servicios. Las tres tarjetas de testimonio tienen la misma altura fija para que la fila quede alineada sin importar la extensión del texto.
 
 ***
 
@@ -1009,7 +1009,7 @@ Logo y tagline en la parte superior, enlaces de sección apilados o en dos colum
 
 #### 3.1.3.2. Landing Page Mock-up
 
-Los mock-ups del landing page de CraveWallet materializan las decisiones de diseño establecidas en el Design System (sección 3.1.1) y la Arquitectura de Información (sección 3.1.2) en una representación visual de alta fidelidad, lista para ser implementada. El landing page está diseñado como una experiencia de una sola página (SPA estático) cuya estructura narrativa sigue un flujo secuencial de persuasión: problema → solución → evidencia → planes → descarga. Esta secuencia responde al modelo AIDA (Atención, Interés, Deseo, Acción) y garantiza que el usuario construya comprensión progresiva del producto antes de encontrar el llamado a la acción final.
+Los mock-ups del landing page de CraveWallet materializan las decisiones de diseño establecidas en el Design System (sección 3.1.1) y la Arquitectura de Información (sección 3.1.2) en una representación visual de alta fidelidad, lista para ser implementada. El landing page está diseñado como una experiencia de una sola página (SPA estático) cuya estructura narrativa sigue un flujo secuencial de persuasión: problema → solución → evidencia → planes → descarga. Esta secuencia sigue el modelo AIDA (Atención, Interés, Deseo, Acción).
 
 En todos los mock-ups se aplican los siguientes principios transversales:
 
@@ -1041,7 +1041,7 @@ La figura 57 muestra la barra de navegación superior del landing page de CraveW
 
 La barra de navegación es el primer elemento que el usuario percibe y el componente de arquitectura de información más crítico del sitio. Se implementa con posición `sticky`, de modo que permanece visible en todo momento durante el scroll, tal como se especificó en el sistema de navegación del landing page (sección 3.1.2.5).
 
-El isologotipo "CraveWallet" se ubica en el extremo izquierdo sobre fondo blanco (`color-surface`), respetando la regla de uso de marca definida en el Design System. Los enlaces de sección ("Inicio", "El problema", "Solución", "Descarga" y "Premium") se disponen centrados con tipografía Inter Medium 14px en `color-on-surface-variant` (`#64748B`), adoptando el sistema de etiquetas de navegación definido en la sección 3.1.2.2. El CTA "Descargar gratis" ocupa el extremo derecho como botón primario con relleno `color-primary` (`#3B4FD8`) y texto blanco (`color-on-primary`), lo que mantiene visible y accesible la acción principal independientemente de la posición en el scroll. El contraste del par `#FFFFFF`/`#3B4FD8` es de 5.2:1, cumpliendo WCAG 2.1 AA.
+El isologotipo "CraveWallet" se ubica en el extremo izquierdo sobre fondo blanco (`color-surface`), respetando la regla de uso de marca definida en el Design System. Los enlaces de sección ("Inicio", "El problema", "Solución", "Descarga" y "Premium") se disponen centrados con tipografía Inter Medium 14px en `color-on-surface-variant` (`#64748B`), adoptando el sistema de etiquetas de navegación definido en la sección 3.1.2.2. El CTA "Descargar gratis" ocupa el extremo derecho como botón primario con relleno `color-primary` (`#3B4FD8`) y texto blanco (`color-on-primary`). El contraste del par `#FFFFFF`/`#3B4FD8` es de 5.2:1, cumpliendo WCAG 2.1 AA.
 
 ***
 
@@ -1061,7 +1061,7 @@ La figura 58 muestra la sección Hero del landing page de CraveWallet (Desktop).
 
 La sección Hero ocupa el viewport completo (`min-h-screen`) con fondo oscuro `color-on-surface` (`#0F172A`), estableciendo el contraste visual necesario para capturar la atención inmediata del usuario. Se aplica un layout de dos columnas: la columna izquierda contiene el copy y los CTAs; la columna derecha contiene el mockup de teléfono que muestra la interfaz real de la aplicación, reduciendo la abstracción y generando credibilidad inmediata.
 
-El titular "Los cobros automáticos no avisan. CraveWallet sí." utiliza Poppins Bold en tamaño fluido (`clamp(44px, 6.5vw, 76px)`), con el fragmento "no avisan." en `color-primary` (`#3B4FD8`) para resaltar el problema y el nombre de la solución en texto blanco con opacidad reducida, creando una jerarquía de lectura de tres niveles. El principio de contraste de Gestalt se aplica deliberadamente: el texto más importante (la afirmación del problema) lleva el color más saturado.
+El titular "Los cobros automáticos no avisan. CraveWallet sí." utiliza Poppins Bold en tamaño fluido (`clamp(44px, 6.5vw, 76px)`), con el fragmento "no avisan." en `color-primary` (`#3B4FD8`) para resaltar el problema y el nombre de la solución en texto blanco con opacidad reducida, con tres niveles de lectura: la afirmación del problema lleva el color más saturado.
 
 El cuerpo de texto utiliza Inter Regular 16px en `rgba(255,255,255,0.55)` para mantener legibilidad sin competir con el titular. Los dos CTAs ("Descargar gratis" (botón primario `#3B4FD8`) y "Ver el problema" (botón fantasma con borde `rgba(255,255,255,0.15)`)) siguen la jerarquía de acciones definida en el sistema de etiquetas (sección 3.1.2.2), donde la acción primaria siempre tiene mayor peso visual. Un indicador de estado `Disponible para Android` con punto verde pulsante (`color-success` `#22C55E`) añade contexto de disponibilidad sin ocupar espacio prominente.
 
@@ -1087,7 +1087,7 @@ La sección de problema mantiene el fondo oscuro `color-on-surface` para crear c
 
 El titular "¿Sabes cuánto gastaste en suscripciones este mes?" utiliza Poppins SemiBold 32px en blanco, formulado como pregunta retórica para activar la identificación del usuario con el problema. Le sigue una bajada en Inter Regular 16px que nombra marcas específicas (Spotify, Adobe, Smart Fit) para anclar el problema en la experiencia cotidiana del segmento objetivo.
 
-Las tres estadísticas cuantitativas emplean Poppins Bold 48px (el tamaño de monto principal del sistema tipográfico) para maximizar el impacto de los datos. Cada una tiene sustento en el informe: hasta 2 meses tardaron los entrevistados en descubrir un cobro olvidado y el 100 % vivió uno (sección 2.2.3), y el 41 % de los adultos peruanos está por debajo del nivel mínimo de educación financiera [@sbs2022capacidades, p. 10]. Bajo cada cifra, una fuente de dato en Inter Regular 12px (`color-on-surface-variant`) mantiene la trazabilidad académica sin interrumpir el flujo visual. Los tres testimonios de usuario se presentan en tarjetas con borde izquierdo de acento (`color-primary`) y tipografía en cursiva, aplicando el principio de proximidad de Gestalt para agrupar la evidencia cualitativa. La fila de logos de servicios en la parte inferior (Spotify, Netflix, Disney+, Adobe, entre otros) refuerza el reconocimiento de marca y la relevancia del problema mediante el principio de similitud: todos los logos tienen el mismo tamaño y tratamiento visual monocromático.
+Las tres estadísticas cuantitativas usan Poppins Bold 48px, el tamaño de monto principal del sistema tipográfico. Cada una tiene sustento en el informe: hasta 2 meses tardaron los entrevistados en descubrir un cobro olvidado y el 100 % vivió uno (sección 2.2.3), y el 41 % de los adultos peruanos está por debajo del nivel mínimo de educación financiera [@sbs2022capacidades, p. 10]. Bajo cada cifra, la fuente del dato va en Inter Regular 12px (`color-on-surface-variant`). Los tres testimonios se presentan en tarjetas con borde izquierdo `color-primary` y tipografía en cursiva. La fila de logos de servicios en la parte inferior (Spotify, Netflix, Disney+, Adobe, entre otros) usa el mismo tamaño y tratamiento monocromático para todos.
 
 Desde el ángulo del diseño inclusivo, los testimonios incluyen identificación de segmento (edad, ciudad, ocupación) que incrementa la representatividad y facilita la empatía en usuarios de diferentes perfiles dentro del segmento objetivo.
 
@@ -1109,7 +1109,7 @@ La figura 60 muestra la sección "Solución" del landing page de CraveWallet (De
 
 La sección de solución introduce el primer fondo claro (`color-surface`, `#FFFFFF`), creando una ruptura visual deliberada que señala el cambio de tono: del problema a la respuesta. Este alternado oscuro/claro es un recurso de ritmo visual que facilita la segmentación cognitiva del contenido durante el scroll.
 
-El eyebrow "SOLUCIÓN" en `color-primary` y el titular "Todo lo que necesitas. / Nada de lo que no." en Poppins SemiBold combinan la promesa de completitud con la de simplicidad, valores centrales del tono de comunicación definido (casual 75%, sereno 40%). Las cuatro feature cards se organizan en un grid de 2×2 columnas, cada una con un ícono Material Symbols de 24px en `color-primary`, un título Inter SemiBold 16px y un cuerpo Inter Regular 14px en `color-on-surface-variant`. Las tarjetas tienen bordes `color-surface-variant` (`#EEF2F7`) y esquinas redondeadas con `border-radius: 16px` (token `radius-lg`), coherentes con el sistema de elevación nivel 1.
+El eyebrow "SOLUCIÓN" en `color-primary` y el titular "Todo lo que necesitas. / Nada de lo que no." en Poppins SemiBold encabezan la sección. Las cuatro feature cards se organizan en un grid de 2×2 columnas, cada una con un ícono Material Symbols de 24px en `color-primary`, un título Inter SemiBold 16px y un cuerpo Inter Regular 14px en `color-on-surface-variant`. Las tarjetas tienen bordes `color-surface-variant` (`#EEF2F7`) y esquinas redondeadas con `border-radius: 16px` (token `radius-lg`), coherentes con el sistema de elevación nivel 1.
 
 Las cuatro funcionalidades presentadas (centralización, alertas 24h, detección de inactividad y conversión PEN/USD) responden directamente a los hallazgos de investigación de usuario del Capítulo I, estableciendo un puente explícito entre necesidad detectada y feature implementada. Desde la perspectiva de arquitectura de información, este bloque aplica el esquema matricial (sección 3.1.2.1): cuatro funcionalidades comparables en el mismo nivel de jerarquía, organizadas espacialmente para facilitar la comparación visual.
 
@@ -1157,7 +1157,7 @@ La sección de prueba social refuerza la credibilidad mediante evidencia de inve
 
 Las tres tarjetas de testimonio presentan citas verbatim de usuarios reales entrevistados durante la fase de needfinding, identificados por segmento (Segmento 1, Segmento 2, Segmento 3) con avatar inicial, nombre, edad e identificador de segmento. Las citas están en cursiva Inter Regular 14px para distinguirlas visualmente del texto explicativo, siguiendo la convención tipográfica de cita directa.
 
-La fila de hallazgos transversales ("100% no recibe hoy ninguna alerta anticipada de cobro", "100% tiene al menos una suscripción en dólares sin saber su equivalente en soles", "100% relató un episodio concreto de cobro automático olvidado") utiliza el mismo tratamiento tipográfico de estadística que la sección de problema, creando consistencia de patrón y facilitando el reconocimiento del tipo de dato. Los porcentajes en `color-accent` (`#F97316`) anclan visualmente los hallazgos más críticos. El microcopy de cierre vuelve a presentar los tres ejemplos de tono de comunicación, cerrando la sección con la voz del producto en lugar de la voz del investigador.
+La fila de hallazgos transversales ("100% no recibe hoy ninguna alerta anticipada de cobro", "100% tiene al menos una suscripción en dólares sin saber su equivalente en soles", "100% relató un episodio concreto de cobro automático olvidado") usa el mismo tratamiento tipográfico de estadística que la sección de problema, con los porcentajes en `color-accent` (`#F97316`). El microcopy de cierre repite los tres ejemplos de tono de comunicación.
 
 Desde el diseño inclusivo, los testimonios incluyen diversidad de perfil socioeconómico y ocupacional (estudiante/trabajador, Lima/provincias), reflejando la amplitud real del segmento objetivo y evitando la representación homogénea.
 
@@ -1179,9 +1179,9 @@ La figura 63 muestra la sección "Planes" del landing page de CraveWallet (Deskt
 
 La sección de planes vuelve al fondo claro `color-surface-variant` (`#EEF2F7`) para diferenciarse visualmente de las secciones adyacentes. El titular "Gratis para siempre. / Premium cuando lo necesites." gestiona la expectativa del usuario desde la primera lectura: la gratuidad es permanente, no temporal. Esta elección de copy responde a la estrategia freemium del modelo de negocio documentado en el Capítulo I.
 
-Las dos tarjetas de plan (Básico y Premium) se disponen en un layout de dos columnas con jerarquía visual clara: la tarjeta Básico tiene fondo blanco `color-surface` con borde `color-surface-variant`; la tarjeta Premium tiene fondo oscuro `color-on-surface` con borde `color-primary` de 2px de grosor, siguiendo el principio de contraste de Gestalt para señalar el plan recomendado sin necesidad de una etiqueta explícita de "popular". La badge "Próximamente" en `color-primary` sobre la tarjeta Premium cumple función informativa y de expectativa.
+Las dos tarjetas de plan (Básico y Premium) se disponen en un layout de dos columnas con dos tarjetas: la tarjeta Básico tiene fondo blanco `color-surface` con borde `color-surface-variant`; la tarjeta Premium tiene fondo oscuro `color-on-surface` con borde `color-primary` de 2px. La badge "Próximamente" en `color-primary` sobre la tarjeta Premium indica que el plan aún no está disponible.
 
-Los listados de features utilizan íconos de verificación `✓` en `color-success` para el plan Básico y el mismo ícono en azul para Premium, creando consistencia semántica. La diferencia de densidad de features (5 vs 7) es visualmente evidente sin requerir comparación línea a línea. El precio "S/ 9.99 por mes" en Poppins Bold 48px aplica el token de tamaño de monto principal, coherente con la tipografía de datos numéricos del sistema. El botón "Descargar gratis" del plan Básico es el CTA principal de la sección; el botón "Disponible pronto" del plan Premium tiene opacidad reducida, señalando el estado deshabilitado sin necesidad de texto adicional.
+Los listados de features utilizan íconos de verificación `✓` en `color-success` para el plan Básico y el mismo ícono en azul para Premium. El plan Básico lista 5 features y Premium, 7. El precio "S/ 9.99 por mes" en Poppins Bold 48px usa el token de tamaño de monto principal. El botón "Descargar gratis" del plan Básico es el CTA principal de la sección; el botón "Disponible pronto" del plan Premium tiene opacidad reducida, para indicar que está deshabilitado.
 
 El diseño inclusivo se manifiesta en la presentación clara de las diferencias entre planes sin oscurecer el plan gratuito: el orden visual no penaliza al usuario que no puede o no quiere pagar el plan Premium.
 
@@ -1203,7 +1203,7 @@ La figura 64 muestra la sección "Descarga" del landing page de CraveWallet (Des
 
 La sección de descarga retorna al fondo oscuro `color-on-surface` para el cierre narrativo, creando simetría visual con la sección Hero y señalando el remate del flujo de persuasión. El titular "Empieza hoy. / Tu bolsillo / te lo agradece." en Poppins Bold a máximo tamaño rompe con el formato de dos columnas de las secciones anteriores, centrando toda la atención en el mensaje y el CTA único.
 
-El botón "Descargar en Android" es el único elemento interactivo de la sección, lo que elimina la competencia de atención y maximiza la tasa de conversión. Lleva el ícono de Play (Google Play Store) en blanco sobre `color-primary`, reproduciendo el patrón visual establecido desde el CTA del Hero. La nota "Requiere Android 8.0 o superior" en Inter Regular 12px `rgba(255,255,255,0.4)` gestiona expectativas técnicas sin ocupar espacio prominente.
+El botón "Descargar en Android" es el único elemento interactivo de la sección, sin otros enlaces que compitan con él. Lleva el ícono de Play (Google Play Store) en blanco sobre `color-primary`, reproduciendo el patrón visual establecido desde el CTA del Hero. La nota "Requiere Android 8.0 o superior" en Inter Regular 12px `rgba(255,255,255,0.4)` gestiona expectativas técnicas sin ocupar espacio prominente.
 
 La fila de garantías al pie ("Sin conectar tu banco", "Plan gratis siempre disponible", "Hecho para el mercado peruano") aplica el patrón de "trust badges" que reduce la fricción de la última milla antes de la descarga. El uso del separador "→" entre badges crea un ritmo de lectura izquierda-derecha coherente con el patrón de lectura occidental en pantallas amplias. Desde la arquitectura de información, esta sección cierra el esquema secuencial establecido en la sección 3.1.2.1: el usuario que llega aquí ha completado el flujo problema → solución → evidencia → planes → acción.
 
@@ -1240,12 +1240,12 @@ La tabla 125 resume la correspondencia entre las secciones del mock-up desktop y
 | Sección | Principio de diseño | Elemento del Design System | Diseño inclusivo | Arquitectura de Información |
 | --- | --- | --- | --- | --- |
 | Navbar | Visibilidad constante (sticky) | Tokens `color-primary`, `color-surface`, Inter Medium 14px | Contraste 6.4:1 en CTA, acceso siempre disponible | Navegación top con anclas de sección (sección 3.1.2.5) |
-| Hero | Jerarquía visual, contraste Gestalt | `color-on-surface`, Poppins Bold `clamp(44–76px)`, `color-primary` acento | Contraste `#FFFFFF`/`#0F172A` > 16:1, ícono + texto en CTAs | Esquema jerárquico: propuesta → descripción → acción |
-| El Problema | Proximidad Gestalt, ritmo oscuro/claro | `color-accent` eyebrow, Poppins Bold 48px para datos, `color-primary` borde tarjetas | Identificación de segmento en testimonios, diversidad de perfiles | Datos cuantitativos + cualitativos, logos de reconocimiento |
+| Hero | Jerarquía visual y contraste | `color-on-surface`, Poppins Bold `clamp(44–76px)`, `color-primary` acento | Contraste `#FFFFFF`/`#0F172A` > 16:1, ícono + texto en CTAs | Esquema jerárquico: propuesta → descripción → acción |
+| El Problema | Agrupación de evidencia, ritmo oscuro/claro | `color-accent` eyebrow, Poppins Bold 48px para datos, `color-primary` borde tarjetas | Identificación de segmento en testimonios, diversidad de perfiles | Datos cuantitativos + cualitativos, logos de reconocimiento |
 | Solución | Esquema matricial, consistencia ícono+texto | `radius-lg` tarjetas, `color-surface-variant` bordes, `color-primary` íconos | Ícono siempre con etiqueta de texto | Grid 2×2 columnas, etiquetas descriptivas (sección 3.1.2.2) |
 | Preview | Transparencia, prueba de producto | Mockups reales, `color-success`/`color-accent`/`color-info` microcopy | Pantallas reales reducen incertidumbre de adopción | Etiquetas por pantalla, microcopy clasificado por tipo |
 | Prueba Social | Credibilidad, universalidad | `color-accent` para datos clave, Inter cursiva para citas | Diversidad de perfil (edad, ciudad, ocupación) en testimonios | Evidencia primaria de investigación de usuarios |
-| Planes | Contraste Gestalt, jerarquía freemium | `color-on-surface` tarjeta premium, borde `color-primary` 2px, `color-success` checks | Plan gratuito no penalizado visualmente | Comparación de features, gestión de expectativa Premium |
+| Planes | Contraste del plan recomendado, jerarquía freemium | `color-on-surface` tarjeta premium, borde `color-primary` 2px, `color-success` checks | Plan gratuito no penalizado visualmente | Comparación de features, gestión de expectativa Premium |
 | Descarga | Foco único, trust badges | `color-primary` CTA único, Poppins Bold máximo tamaño | CTA único elimina ambigüedad de acción | Cierre del esquema secuencial (sección 3.1.2.1) |
 | Footer | Consistencia, mínimos legales | `color-surface`, Inter Regular 14px, mismo sistema de etiquetas que navbar | Acceso alternativo a secciones para usuarios no convertidos | Reafirmación del sistema de etiquetado de sección 3.1.2.2 |
 

@@ -2386,7 +2386,7 @@ El calendario del dispositivo y la autenticación colaboran con los casos de uso
 
 Las vistas de arquitectura se elaboran en Structurizr a partir de un único [modelo editable DSL](diagrams/chapter_2/workspace.dsl), con un [archivo JSON que conserva la distribución](diagrams/chapter_2/workspace.json). Contexto y contenedores muestran usuarios, responsabilidades, fronteras y colaboraciones; despliegue ubica las instancias en la infraestructura. Los componentes de cada Bounded Context se presentan en 2.6 [@c4ModelDiagrams; @structurizrDsl]. Las figuras son exportaciones del renderizador de Structurizr.
 
-El modelo distingue el incremento documentado en 4.2.1.8 del diseño pendiente. Stripe, Google Places y las colaboraciones de Premium tienen contorno o flechas discontinuas de color ámbar y la indicación «propuesto». Las vistas de componentes describen el diseño por responsabilidades; no certifican que cada clase representada exista en el código desplegado.
+El modelo distingue el incremento documentado en 4.2.1.8 del diseño propuesto. Stripe, Google Places y las colaboraciones de Premium tienen contorno o flechas discontinuas de color ámbar y la indicación «propuesto». Las vistas de componentes describen el diseño por responsabilidades.
 
 #### 2.5.3.1. Software Architecture Context Level Diagrams
 
@@ -2414,9 +2414,9 @@ La tabla 94 define los cinco contenedores. La tecnología móvil y el almacenami
 | --- | --- |
 | Landing Page — Next.js/React/Tailwind CSS | Presentar la propuesta y ofrecer acceso a la app. Se publica en Vercel, separada del REST API; su configuración se describe en 4.1.4. |
 | Aplicación Android — Kotlin/Jetpack Compose | Presentar formularios y resúmenes, autenticar al usuario, consumir el backend y gestionar eventos del calendario con permisos. El APK está generado; la validación en dispositivo permanece pendiente. |
-| REST API Backend — Java 21/Spring Boot | Alojar Suscripciones, Gastos y autenticación; preparar datos de recordatorios y cotizaciones. Premium y Google Places siguen pendientes. La autenticación es una capacidad técnica compartida. |
+| REST API Backend — Java 21/Spring Boot | Alojar Suscripciones, Gastos y autenticación; preparar datos de recordatorios y cotizaciones. Premium y Google Places quedan fuera del alcance del Sprint 1. La autenticación es una capacidad técnica compartida. |
 | Almacenamiento local — SharedPreferences/JSON | Guardar preferencias, notas, sesión y datos de demostración. Los registros de suscripciones y Delivery de la sesión conectada se conservan en el backend. No se acredita una caché SQLite de lectura del API. |
-| Base de datos — PostgreSQL 17 | Persistir el estado canónico de usuarios, sesiones, suscripciones, gastos y presupuestos. Compartir el motor no autoriza acceder directamente a los agregados de otro contexto; las tablas de Premium forman parte del diseño pendiente. |
+| Base de datos — PostgreSQL 17 | Persistir el estado canónico de usuarios, sesiones, suscripciones, gastos y presupuestos. Compartir el motor no autoriza acceder directamente a los agregados de otro contexto; las tablas de Premium quedan fuera del alcance del Sprint 1. |
 
 *Fuente: elaboración del equipo Gastify, basada en los repositorios de la app móvil y el backend citados en el texto.*
 
@@ -2436,7 +2436,7 @@ La figura 27 muestra las tecnologías de las colaboraciones: HTTPS/JSON entre An
 
 La figura 28 asigna instancias de los contenedores a nodos de despliegue anidados, conforme al diagrama de despliegue C4 [@c4Deployment]. El incremento TB1 ejecuta el REST API como servicio Docker de Java 21 en Render, región Oregon, y conserva sus datos en PostgreSQL 17 administrado por Render. El servicio usa el perfil `prod`, variables privadas y conexión interna a la base, con migraciones Flyway V1–V3. El endpoint público es [cravewallet-api.onrender.com](https://cravewallet-api.onrender.com). La evidencia de publicación y persistencia tras reinicio se presenta en la tabla 153 de 4.2.1.8.
 
-La landing se aloja por separado en Vercel. El nodo Android representa el destino del APK generado y su almacenamiento local; no acredita instalación ni verificación física del calendario y las notificaciones. La integración del cliente se probó contra el HTTPS público, según la evidencia citada en 4.2.1.8. Stripe y Google Places no aparecen como servicios ya desplegados porque sus integraciones siguen pendientes.
+La landing se aloja por separado en Vercel. El nodo Android representa el destino del APK generado y su almacenamiento local. La integración del cliente se probó contra el HTTPS público, según la evidencia citada en 4.2.1.8. Stripe y Google Places no aparecen como servicios desplegados porque sus integraciones quedan fuera del alcance del Sprint 1.
 
 Render Free es un entorno de demostración temporal: el servicio puede suspenderse por inactividad y la base gratuita requiere renovación o migración antes de vencer. La configuración y las evidencias del corte publicado están disponibles en la [guía del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/cloud-deployment.md).
 
