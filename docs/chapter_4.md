@@ -697,7 +697,7 @@ La respuesta HTTP 200 de la figura 116 contiene el siguiente JSON, [conservado d
 
 #### 4.2.1.8. Software Deployment Evidence for Sprint Review
 
-En el Sprint 1 se publicaron el landing page y el REST API; la aplicación Android se compiló como APK y se conectó al API público. La tabla 158 resume el estado de cada producto al 9 de octubre de 2026 y las secciones siguientes presentan su evidencia.
+En el Sprint 1 se publicaron el landing page, disponible en <https://cravewallet-landing.vercel.app/es>, y el REST API, disponible en <https://cravewallet-api.onrender.com>; la aplicación Android se compiló como APK y se conectó al API público. La tabla 158 resume el estado de cada producto al 9 de octubre de 2026 y las secciones siguientes presentan su evidencia.
 
 *Tabla 158. Estado de ejecución y despliegue al 9 de octubre de 2026.*
 
@@ -710,18 +710,7 @@ En el Sprint 1 se publicaron el landing page y el REST API; la aplicación Andro
 
 *Fuente: paneles de Vercel y Render, GitHub Actions y los resultados versionados en los repositorios.*
 
-**Landing page.** Se publica con Vercel desde la rama `main` de `cravewallet-landing`, en <https://cravewallet-landing.vercel.app/es>. Cada push a `main` genera un deployment de producción; la tabla 159 lista los que registra GitHub.
-
-*Tabla 159. Deployments de producción del landing page en Vercel.*
-
-| Commit | Fecha (America/Lima) | Entorno | Estado |
-| --- | --- | --- | --- |
-| [eec794d](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/eec794d5a2e8bb2f616ba3445e970a9ebab90737) | 08/10/2026 21:58 | Production | Correcto |
-| [3cdc4c5](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/3cdc4c5d72969732a7f597ad62511a542658104f) | 08/10/2026 22:19 | Production | Correcto |
-
-*Fuente: [Deployments de GitHub](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/deployments) creados por Vercel para el repositorio `cravewallet-landing` y [registro del deployment Production](evidence/deployment/vercel-production.json).*
-
-La figura 121 muestra el landing servido en su dirección pública.
+**Landing page.** Se publica con Vercel desde la rama `main` de `cravewallet-landing`, en <https://cravewallet-landing.vercel.app/es>, con la configuración de las figuras 108 y 109 (sección 4.1.4). La figura 121 muestra el sitio servido en esa dirección.
 
 ![Landing de CraveWallet publicada en Vercel](evidence/deployment/landing-publica.jpg)
 
@@ -732,6 +721,17 @@ La figura 121 muestra el landing servido en su dirección pública.
 <!-- pdf:omit-end -->
 
 *Fuente: captura del equipo Gastify de <https://cravewallet-landing.vercel.app/es>, 9 de octubre de 2026; procedencia en [capturas.json](evidence/deployment/capturas.json).*
+
+Cada push a `main` genera un deployment de producción; la tabla 159 lista los que registra GitHub.
+
+*Tabla 159. Deployments de producción del landing page en Vercel.*
+
+| Commit | Fecha (America/Lima) | Entorno | Estado |
+| --- | --- | --- | --- |
+| [eec794d](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/eec794d5a2e8bb2f616ba3445e970a9ebab90737) | 08/10/2026 21:58 | Production | Correcto |
+| [3cdc4c5](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/3cdc4c5d72969732a7f597ad62511a542658104f) | 08/10/2026 22:19 | Production | Correcto |
+
+*Fuente: [Deployments de GitHub](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/deployments) creados por Vercel para el repositorio `cravewallet-landing` y [registro del deployment Production](evidence/deployment/vercel-production.json).*
 
 **Servicios RESTful.** Se publicaron en Render como servicio Docker `cravewallet-api` en el plan gratuito (región Oregon), junto con una base PostgreSQL 17. El servicio compila la rama `feature/cloud-deployment` en el commit `67ede2a` y queda disponible por HTTPS en <https://cravewallet-api.onrender.com>. La figura 122 muestra el servicio en estado Live y la figura 123, el historial de eventos con el despliegue y el reinicio solicitado.
 
