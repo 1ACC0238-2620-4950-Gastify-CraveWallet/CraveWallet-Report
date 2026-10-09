@@ -11,6 +11,7 @@ La tabla 1 registra las versiones del informe, su fecha, su autor y los cambios 
 | AV1 — revisión de diseño estratégico | 07/10/2026 | Alexander Aliaga | Corrección de las secciones 2.5.1.2, 2.5.1.3, 2.5.2, 2.5.3.1 y 2.5.3.2; fuentes editables, referencias y alineación del criterio de activación de Premium. |
 | TB1 — avance | 08/10/2026 | Mario Sejuro | Redacción de las referencias a tablas y figuras y de oraciones extensas del Capítulo II; fuentes del Capítulo III; herramientas del 4.1.1 en tablas Markdown. |
 | TB1 — revisión de arquitectura | 09/10/2026 | Alexander Aliaga | Exportación de las seis vistas C4 en Structurizr; despliegue en Render y Vercel, stack Android y distinción de integraciones pendientes. |
+| TB1 — evidencias de despliegue | 09/10/2026 | Alexander Aliaga | Capturas públicas de Vercel y arranque de Render, copia de evidencia Live versionada y verificación HTTP del health; figuras 116–118 con procedencia. |
 
 *Fuente: elaboración del equipo Gastify.*
 

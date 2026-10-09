@@ -260,7 +260,7 @@ El landing page se despliega en **Vercel**, que publica automáticamente cada ca
 4. Vercel ejecuta automáticamente `npm run build` (`next build`) al detectar un nuevo push o merge en `main`.
 5. Una vez completado el build, el sitio queda publicado en la URL asignada por Vercel y disponible de forma global mediante su CDN.
 
-> **[IMAGEN PENDIENTE]:** Captura del dashboard de Vercel mostrando el proyecto `cravewallet-landing` con el último deployment exitoso, el nombre de la rama `main` y la URL de producción asignada.
+La publicación pública se acredita con la figura 116 de 4.2.1.8 y el [registro del despliegue Production exitoso](evidence/deployment/vercel-production.json), cuyo commit coincide con `main` en el corte revisado. La captura del dashboard privado de Vercel queda pendiente de acceso a la cuenta del proyecto.
 
 > **[IMAGEN PENDIENTE]:** Captura de la sección *Settings > Git* del proyecto en Vercel, mostrando la conexión con el repositorio de GitHub y la rama de producción configurada.
 
@@ -533,7 +533,7 @@ Las capturas se encuadran en los resultados para mostrar el código HTTP y el cu
 
 #### 4.2.1.8. Software Deployment Evidence for Sprint Review
 
-La [landing page de CraveWallet](https://cravewallet-landing.vercel.app) ya está publicada en Vercel; se comprobó una respuesta HTTP 200 el 8 de octubre de 2026 (America/Lima). El REST API también está publicado en **https://cravewallet-api.onrender.com**, con PostgreSQL 17 y el perfil `prod`. La tabla 153 distingue la ejecución local, la publicación remota y la validación Android pendiente en dispositivo.
+La [landing page de CraveWallet](https://cravewallet-landing.vercel.app/es) está publicada en Vercel; se comprobó nuevamente una respuesta HTTP 200 el 9 de octubre de 2026 (America/Lima). El [registro del despliegue Production](evidence/deployment/vercel-production.json) acredita el estado `success` de la revisión `3cdc4c5`. El REST API también está publicado en **https://cravewallet-api.onrender.com**, con PostgreSQL 17 y el perfil `prod`. La tabla 153 distingue la ejecución local, la publicación remota y la validación Android pendiente en dispositivo.
 
 *Tabla 153. Estado de ejecución y despliegue del backend.*
 
@@ -543,7 +543,7 @@ La [landing page de CraveWallet](https://cravewallet-landing.vercel.app) ya est�
 | JAR ejecutable | Generado | Maven termina con `BUILD SUCCESS`; Spring Boot empaqueta `cravewallet-backend-0.1.0-SNAPSHOT.jar`. |
 | PostgreSQL 17 en Render | Ejecutado | Flyway V1–V3; 22 comprobaciones HTTP remotas y siete después del reinicio. Se conservaron sesión, suscripción editada y presupuesto/gasto. [Resultados remotos](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/evidence/cloud/remote-api-results.json). La configuración de Compose local no se ejecutó. |
 | Perfil de producción | Publicado | Contenedor Java 21 sin usuario root; conexión interna a PostgreSQL, variables privadas persistentes y Swagger público deshabilitado. Corte de código desplegado: `67ede2a`. |
-| URL pública y HTTPS del REST API | Verificados | [Health público](https://cravewallet-api.onrender.com/actuator/health): HTTP 200 y `UP`. [Captura real de Render Live](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/evidence/cloud/render-live.png). |
+| URL pública y HTTPS del REST API | Verificados | [Health público](https://cravewallet-api.onrender.com/actuator/health): HTTP 200 y `UP`, comprobados el 9 de octubre de 2026 a las 00:57:35 (America/Lima), tras el arranque del servicio. [Respuesta registrada](evidence/deployment/health-publico.json). La figura 117 conserva la evidencia versionada de Render `Live`; la figura 118 muestra el arranque observado en esta sesión. |
 | Integración del cliente Android con el backend | Implementada y probada contra HTTPS público | [Commit `27c99a2`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/27c99a2dcdae1fe24deeed1c0a7590856b9999f8) en `feature/backend-integration`: autenticación, sesiones, suscripciones, cotización y Delivery. [Resultados de las nueve pruebas](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/27c99a2dcdae1fe24deeed1c0a7590856b9999f8/docs/integration-test-results.json), incluida una contra el backend real local; cero fallos. La misma suite se ejecutó contra Render y PostgreSQL: nueve pruebas, cero fallos; [resultados de integración pública](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/73c5785/docs/cloud-integration-results.json). El APK de esa rama utiliza la URL HTTPS pública de forma predeterminada. |
 | Validación en dispositivo Android | Pendiente | APK generado; las pruebas de UI utilizaron Robolectric. Falta comprobar el flujo completo y permisos de calendario/notificaciones en dispositivo o emulador. |
 
@@ -552,6 +552,43 @@ La [landing page de CraveWallet](https://cravewallet-landing.vercel.app) ya est�
 *Fuente: [guía de ejecución y configuración del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/README.md) y [resultado del build](evidence/backend/maven-verify.txt).*
 
 Para reproducir el entorno local se requiere Java 21: definir `JAVA_HOME`, ejecutar `mvnw.cmd -B verify` y luego `mvnw.cmd spring-boot:run` en el repositorio del backend. El perfil por defecto utiliza H2. Para probar PostgreSQL, el equipo debe configurar las credenciales de `.env` para Compose y las variables del proceso Java; los secretos no se incluyen en este informe. El bind local `127.0.0.1` requiere una configuración de conectividad específica antes de intentar acceso desde otro dispositivo.
+
+
+La figura 116 muestra la landing servida en su URL pública. Esta captura acredita la publicación de la interfaz, no la ejecución de todas las funciones anunciadas ni la configuración privada del proyecto en Vercel.
+
+![Landing de CraveWallet publicada en Vercel](evidence/deployment/landing-publica.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura 116. Landing de CraveWallet publicada en Vercel.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura del equipo Gastify del [sitio público](https://cravewallet-landing.vercel.app/es), 9 de octubre de 2026; procedencia y fecha en [el registro de capturas](evidence/deployment/capturas.json).*
+
+La figura 117 reproduce la captura de Render previamente versionada por el equipo. El panel identifica el servicio Docker `cravewallet-api`, la URL pública, la rama de publicación y el corte `67ede2a` con estado `Live`. Es evidencia de ese corte; no se presenta como una captura nueva del dashboard privado.
+
+![Servicio cravewallet-api Live en la evidencia versionada de Render](evidence/deployment/render-live-versionado.png)
+
+<!-- pdf:omit-start -->
+
+*Figura 117. Servicio cravewallet-api Live en la evidencia versionada de Render.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: equipo Gastify; copia íntegra de [render-live.png en la revisión 740aba0 del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/evidence/cloud/render-live.png).*
+
+La figura 118 registra el intersticial `Application loading` mostrado por Render al abrir el health público el 9 de octubre de 2026. Sus mensajes pertenecen a la pantalla de espera de la plataforma; no son logs del backend ni demuestran que la aplicación esté lista. El primer intento HTTP agotó 45 segundos. La petición posterior devolvió HTTP 200 y `UP` a las 00:57:35 (America/Lima), según la [respuesta preservada](evidence/deployment/health-publico.json). El navegador conservó el intersticial, por lo que no se atribuye ese estado `UP` a la captura.
+
+![Pantalla de arranque de Render al acceder al health público](evidence/deployment/render-arranque.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura 118. Pantalla de arranque de Render al acceder al health público.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura del equipo Gastify al acceder al [health público](https://cravewallet-api.onrender.com/actuator/health), 9 de octubre de 2026; registro de procedencia en [capturas.json](evidence/deployment/capturas.json).*
 
 #### 4.2.1.9. Team Collaboration Insights during Sprint
 
