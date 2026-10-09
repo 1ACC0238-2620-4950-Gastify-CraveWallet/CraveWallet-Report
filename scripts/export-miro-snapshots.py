@@ -132,8 +132,8 @@ class Snapshot:
 
 drawio=E.Element('mxfile',host='app.diagrams.net',version='24.7.17',type='device')
 for f in manifest['frames']:
-    if f['name'] in {'system-context-revised','containers-revised'}:
-        continue  # C4 is now exported from the canonical Structurizr model.
+    if f['name'] in {'system-context-revised','containers-revised'} or f['name'].startswith('message-flow-'):
+        continue  # Preserve native Miro editor captures and official C4 exports.
     g=next(x for x in native if x.get('data-miro-id')==f['miro_id'])
     snap=Snapshot(f['name'],2400,1560)
     nodes={x.get('id'):x for x in g if x.tag==NS+'rect' and x.get('data-type')!='frame'}
@@ -149,4 +149,4 @@ for f in manifest['frames']:
     snap.save()
     page=E.SubElement(drawio,'diagram',id=f['name'],name=f['name']);page.append(snap.mx)
 E.indent(drawio);E.ElementTree(drawio).write(SOURCE/'strategic-design.drawio',encoding='utf-8',xml_declaration=True)
-print('Rendered 8 DDD PNG/SVG snapshots and diagrams.net pages from the saved Miro board read.')
+print('Rendered 4 canvas/context-map PNG/SVG snapshots and diagrams.net pages. Native flow captures preserved.')

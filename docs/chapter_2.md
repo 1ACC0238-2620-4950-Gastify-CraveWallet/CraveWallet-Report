@@ -2098,7 +2098,7 @@ La autenticación por el backend RESTful, las notificaciones locales, el calenda
 
 #### 2.5.1.2. Domain Message Flows Modeling
 
-Se modelan escenarios de CraveWallet indicando quién envía cada mensaje, quién lo recibe, su orden y sus datos relevantes. La notación adapta Domain Message Flow Modelling de DDD Crew [@dddcrewMessageFlows] con el formato de mensaje y contenido combinados. Cada tarjeta indica orden, tipo, nombre y datos, y se sitúa junto a una flecha entre emisor y receptor. Las cajas repetidas identifican al mismo participante del escenario. Las respuestas se dibujan de manera explícita; los subpasos a/b/c separan los intercambios de una misma operación. **C** identifica una orden que puede rechazarse; **Q**, una consulta; **R**, su respuesta; **E**, un hecho confirmado. Los contextos se implementan como módulos del mismo backend, por lo que un evento interno no requiere un bus de mensajes.
+Se modelan escenarios de CraveWallet indicando quién envía cada mensaje, quién lo recibe, su orden y sus datos relevantes. La notación adapta Domain Message Flow Modelling de DDD Crew [@dddcrewMessageFlows] con el formato de mensaje y contenido combinados. Cada participante aparece una sola vez. Las tarjetas numeradas contienen el nombre y los datos del mensaje; los conectores permiten seguir el recorrido emisor → mensaje → receptor. Los contextos se distinguen de los clientes, los sistemas externos y los colaboradores internos mediante su etiqueta. Las respuestas se dibujan de manera explícita; los subpasos a/b/c separan los intercambios de una misma operación. **C** identifica una orden que puede rechazarse; **Q**, una consulta; **R**, su respuesta; **E**, un hecho confirmado. Los contextos se implementan como módulos del mismo backend, por lo que un evento interno no requiere un bus de mensajes.
 
 ##### Escenario A. Registrar una suscripción y preparar el recordatorio
 
@@ -2121,7 +2121,7 @@ La tabla 86 ordena los mensajes del alta, la comprobación del plan y la prepara
 
 La conversión se solicita al consultar el portafolio o previsualizar un importe según US34: Subscription Management pide USD/PEN al adaptador, recibe la cotización y su fecha, y devuelve una estimación en soles. El registro conserva la moneda original; el tipo de cambio del banco no se conoce por esta consulta. Si falla el proveedor, se indica la antigüedad de la última cotización válida o que la estimación no está disponible. La hora, zona horaria y reprogramación se deben concretar en SP03–SP04. La figura 19 representa el alta y la preparación del aviso.
 
-![Registro de suscripción y preparación del recordatorio](images/chapter_2/message-flow-subscription.png)
+![Registro de suscripción y preparación del recordatorio](images/chapter_2/message-flow-subscription.jpg)
 
 <!-- pdf:omit-start -->
 
@@ -2129,7 +2129,7 @@ La conversión se solicita al consultar el portafolio o previsualizar un importe
 
 <!-- pdf:omit-end -->
 
-*Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232310).*
+*Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686580430269).*
 
 
 ##### Escenario B. Registrar un gasto y comparar el presupuesto
@@ -2152,7 +2152,7 @@ La tabla 87 describe cómo se registra un gasto, se actualiza el presupuesto de 
 
 La búsqueda de comercios es una consulta auxiliar: el adaptador de Google Places devuelve sugerencias, y el usuario elige una o escribe un nombre (US18). No se emite «dirección validada» como prueba de que el pedido ocurrió. La figura 20 representa el registro del gasto y la consulta del resumen. `MonthlyBudget` es un agregado de Delivery Expense Management; su presencia en el flujo no lo convierte en otro Bounded Context.
 
-![Registro de gasto de delivery y comparación del presupuesto](images/chapter_2/message-flow-delivery.png)
+![Registro de gasto de delivery y comparación del presupuesto](images/chapter_2/message-flow-delivery.jpg)
 
 <!-- pdf:omit-start -->
 
@@ -2160,7 +2160,7 @@ La búsqueda de comercios es una consulta auxiliar: el adaptador de Google Place
 
 <!-- pdf:omit-end -->
 
-*Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232311).*
+*Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686580430270).*
 
 ##### Escenario C. Activar o renovar Premium a partir de un pago confirmado
 
@@ -2184,7 +2184,7 @@ La tabla 88 distingue el inicio del checkout de la confirmación que habilita o 
 
 Stripe documenta la confirmación por webhook y el control del estado de la suscripción [@stripeSubscriptionWebhooks]. La recepción debe admitir reintentos y notificaciones fuera de orden [@stripeWebhooks]. El registro único del identificador externo impide aplicar dos veces el mismo evento. SP05 y SP06 validan este flujo. La figura 21 separa la respuesta de Stripe al backend de la respuesta del backend al cliente.
 
-![Activación o renovación del plan Premium](images/chapter_2/message-flow-premium-activation.png)
+![Activación o renovación del plan Premium](images/chapter_2/message-flow-premium-activation.jpg)
 
 <!-- pdf:omit-start -->
 
@@ -2192,7 +2192,7 @@ Stripe documenta la confirmación por webhook y el control del estado de la susc
 
 <!-- pdf:omit-end -->
 
-*Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232312).*
+*Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686580430271).*
 
 
 ##### Escenario D. Cancelar la renovación del plan de CraveWallet
@@ -2217,7 +2217,7 @@ La tabla 89 separa la solicitud de cancelación del fin efectivo del acceso paga
 
 La figura 22 representa la cancelación. Entre la confirmación de la solicitud (2c) y la finalización (3) transcurre el período restante; el usuario conserva Premium durante ese intervalo. La cancelación del plan propio no altera las suscripciones que el usuario paga a terceros.
 
-![Cancelación de la renovación y retorno al plan Free](images/chapter_2/message-flow-premium-cancellation.png)
+![Cancelación de la renovación y retorno al plan Free](images/chapter_2/message-flow-premium-cancellation.jpg)
 
 <!-- pdf:omit-start -->
 
@@ -2225,7 +2225,7 @@ La figura 22 representa la cancelación. Entre la confirmación de la solicitud 
 
 <!-- pdf:omit-end -->
 
-*Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232313).*
+*Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686580430272).*
 
 **Marcar una suscripción externa como cancelada:** la aplicación envía el comando a Subscription Management; `Subscription` confirma `SubscriptionCancelled`; el backend conserva el historial y devuelve el estado; el cliente solicita retirar el evento del calendario y verifica el resultado (US07, US13). Esto no comunica una cancelación a Netflix, un gimnasio u otro proveedor.
 
