@@ -76,7 +76,7 @@ Los criterios de aceptación de las User Stories se escriben en Gherkin, como in
 | Gherkin | Escenarios *Given / When / Then* de los criterios de aceptación (sección 2.4.1), base de las pruebas de aceptación. | <https://cucumber.io/docs/gherkin/reference/> |
 | JUnit 5 y Spring Boot Test | Suite ejecutable del backend, con pruebas unitarias y de integración mediante MockMvc, JWT y H2. | [Suite versionada del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/src/test/java/pe/edu/upc/gastify/cravewallet) |
 | Mockito y servidor HTTP local | Simulación del proveedor de cotización y comprobación de respuestas inválidas, caché y caídas sin depender de Internet. | [Pruebas de cotización](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/src/test/java/pe/edu/upc/gastify/cravewallet/ExchangeRateServiceTest.java) |
-| Swagger UI y OpenAPI | Ejecución manual de solicitudes y consulta de los contratos publicados por el backend local. | [Especificación capturada](evidence/backend/openapi.json) |
+| Swagger UI y OpenAPI | Ejecución manual de solicitudes y consulta de contratos del backend público y local. | [Swagger público](https://cravewallet-api.onrender.com/swagger-ui/index.html) |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -306,7 +306,7 @@ El REST API se ejecuta localmente con Java 21 y el perfil `local`, que utiliza H
 | Construcción | Java 21, Spring Boot 3.5.16, Maven Wrapper; comando `mvnw.cmd -B verify`. |
 | Perfil `local` | H2 2.3.232 en memoria, `spring.jpa.hibernate.ddl-auto=validate` y Flyway habilitado. Puerto 8080 con `/actuator/health`, `/v3/api-docs` y `/swagger-ui.html`. Sin `JWT_SECRET` se genera una clave efímera. |
 | Perfil `postgres` | URL, usuario y contraseña mediante `DATABASE_URL`, `DATABASE_USERNAME` y `DATABASE_PASSWORD`; requiere `JWT_SECRET` de al menos 32 bytes. |
-| Perfil `prod` | Contenedor Java 21 sin usuario root, escucha en `0.0.0.0` y lee `PORT`. Conexión interna a PostgreSQL 17, pool de cinco conexiones, variables privadas persistentes en Render y Swagger público deshabilitado. |
+| Perfil `prod` | Contenedor Java 21 sin usuario root, escucha en `0.0.0.0` y lee `PORT`. Conexión interna a PostgreSQL 17, pool de cinco conexiones, variables privadas persistentes en Render. Swagger público habilitado; las operaciones sobre datos del usuario requieren Bearer JWT. |
 | Datos y secretos | H2 pierde sus datos al detener el proceso. Las credenciales y el `JWT_SECRET` se definen solo en el proveedor, nunca en Git. |
 
 *Fuente: [configuración, migraciones y guía de ejecución del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/740aba0) y [resultado de Maven](evidence/backend/maven-verify.txt).*
@@ -596,17 +596,17 @@ La consulta del recordatorio devuelve `reminderAt=2026-11-07T05:00:00Z` y `billi
 
 #### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
-El backend documenta con OpenAPI las 16 operaciones de la tabla 157. La documentación se genera desde el código con springdoc-openapi y se consulta en Swagger UI al ejecutar el servicio localmente (figura 117); el perfil de producción deshabilita Swagger público, por lo que la [especificación capturada](evidence/backend/openapi.json) permite revisar los esquemas, parámetros y respuestas sin depender de un servidor encendido.
+El backend documenta con OpenAPI las 16 operaciones de la tabla 157. La documentación se genera desde el código con springdoc-openapi y está disponible en [Swagger UI público de Render](https://cravewallet-api.onrender.com/swagger-ui/index.html) (figura 117) y en la [especificación OpenAPI pública](https://cravewallet-api.onrender.com/v3/api-docs). Desde el commit `445bee1`, el perfil de producción permite consultar la documentación sin iniciar sesión; ejecutar operaciones sobre los datos del usuario requiere el token Bearer mediante **Authorize**. La [especificación capturada anteriormente](evidence/backend/openapi.json) conserva la evidencia del entorno local.
 
-![Documentación OpenAPI del backend CraveWallet en Swagger UI.](evidence/backend/swagger-overview.jpg)
+![Swagger UI público de CraveWallet en Render, con el servidor HTTPS y sus operaciones.](evidence/backend/swagger-render-public.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 117. Documentación OpenAPI del backend CraveWallet en Swagger UI.*
+*Figura 117. Documentación OpenAPI del backend CraveWallet en Swagger UI público de Render.*
 
 <!-- pdf:omit-end -->
 
-*Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
+*Fuente: captura propia de <https://cravewallet-api.onrender.com/swagger-ui/index.html>, CraveWallet-Backend `445bee1`, perfil prod con PostgreSQL 17, 9 de octubre de 2026 (America/Lima), sin credenciales ni datos personales.*
 
 Las rutas parten de `https://cravewallet-api.onrender.com/api/v1` y todas requieren el token Bearer, salvo las de registro, login y renovación. La tabla 157 presenta, por cada operación, el verbo HTTP, la ruta, el acceso, los parámetros y la respuesta exitosa.
 
@@ -703,7 +703,7 @@ En el Sprint 1 se publicaron el landing page, disponible en <https://cravewallet
 | Producto | Estado | Evidencia |
 | --- | --- | --- |
 | Landing page | Publicado en Vercel desde `main`; HTTP 200. | [cravewallet-landing.vercel.app/es](https://cravewallet-landing.vercel.app/es); dos deployments `Production` correctos (tabla 159 y figura 107). |
-| REST API | Publicado en Render con PostgreSQL 17 y perfil `prod`; health `UP`. | [Health público](https://cravewallet-api.onrender.com/actuator/health); figuras 121 a 124. |
+| REST API | Publicado en Render con PostgreSQL 17 y perfil `prod`; health `UP` y Swagger público habilitado. | [Health público](https://cravewallet-api.onrender.com/actuator/health), [Swagger UI](https://cravewallet-api.onrender.com/swagger-ui/index.html) y [OpenAPI](https://cravewallet-api.onrender.com/v3/api-docs); figuras 117 y 121 a 124. |
 | Base de datos | PostgreSQL 17 en Render; Flyway V1–V3. | 22 comprobaciones HTTP remotas y siete tras el reinicio del servicio ([resultados](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/evidence/cloud/remote-api-results.json)). |
 | Aplicación Android | APK `debug` generado; pruebas de integración contra el API público. | [Resultados](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/73c5785/docs/cloud-integration-results.json); APK `CraveWallet-TB1-cloud-debug.apk`. |
 
@@ -732,7 +732,9 @@ Cada push a `main` genera un deployment de producción; la tabla 159 lista los q
 
 *Fuente: [Deployments de GitHub](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/deployments) creados por Vercel para el repositorio `cravewallet-landing` y [registro del deployment Production](evidence/deployment/vercel-production.json).*
 
-**Servicios RESTful.** Se publicaron en Render como servicio Docker `cravewallet-api` en el plan gratuito (región Oregon), junto con una base PostgreSQL 17. El servicio compila la rama `feature/cloud-deployment` en el commit `67ede2a` y queda disponible por HTTPS en <https://cravewallet-api.onrender.com>. La figura 121 muestra el servicio en estado Live y la figura 122, el historial de eventos con el despliegue y el reinicio solicitado.
+**Servicios RESTful.** Se publicaron en Render como servicio Docker `cravewallet-api` en el plan gratuito (región Oregon), junto con una base PostgreSQL 17. El despliegue inicial corresponde al commit `67ede2a`; el 9 de octubre se publicó el commit [445bee1](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/445bee1cebfa9953be5bb7a664d7155a9f7ee7a1) desde `feature/cloud-deployment` para habilitar Swagger público y queda disponible por HTTPS en <https://cravewallet-api.onrender.com>. La figura 121 muestra el servicio en estado Live y la figura 122, el historial de eventos con el despliegue y el reinicio solicitado.
+
+Después de publicar `445bee1`, se verificaron respuestas HTTP 200 en `/swagger-ui/index.html` y `/v3/api-docs`; OpenAPI identifica el servidor `https://cravewallet-api.onrender.com`. Consultar `/api/v1/subscriptions` sin token devolvió HTTP 401. La figura 117 muestra la documentación cargada en el navegador. La ejecución de `mvnw.cmd -B verify` para este cambio terminó con 33 pruebas, cero fallos, cero errores y ningún caso omitido, incluida [ProductionDocumentationTest](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/445bee1/src/test/java/pe/edu/upc/gastify/cravewallet/ProductionDocumentationTest.java), que verifica documentación pública y protección de suscripciones y perfil bajo el perfil `prod`. Las figuras 121 y 122 conservan la evidencia del despliegue inicial y del reinicio anterior.
 
 ![Servicio cravewallet-api en estado Live en Render](evidence/backend/cloud/render-live.png)
 

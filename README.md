@@ -15,6 +15,7 @@ La tabla 1 registra las versiones del informe, su fecha, su autor y los cambios 
 | TB1 — Student Outcome y capítulo 4 | 09/10/2026 | Mario Sejuro | Acciones y conclusiones TB1 en Student Outcome, alineación de la tabla de commits de testing, repositorio de la aplicación en la tabla 142 y retiro de la sección 4.3. |
 | TB1 — revisión de redacción | 09/10/2026 | Mario Sejuro | Reescritura de frases genéricas y retiro del estado pendiente en los capítulos I, II y III; precio de Premium unificado en S/ 9.99. |
 | TB1 — evidencia en dispositivo | 09/10/2026 | Sebastián Roman | Figuras 111 y 112 descritas como capturas en un celular Android físico. |
+| TB1 — Swagger público | 09/10/2026 | Anghelo Faustino | Enlace y captura de Swagger en Render; documentación del despliegue `445bee1` y verificación de acceso público a OpenAPI con recursos protegidos por JWT. |
 | TB1 — Lean UX Canvas | 09/10/2026 | Anghelo Faustino | Tabla editable del Lean UX Canvas en lugar de imagen. |
 
 *Fuente: elaboración del equipo Gastify.*
