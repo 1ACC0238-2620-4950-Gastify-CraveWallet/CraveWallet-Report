@@ -1,0 +1,30 @@
+{
+  "conversionAvailable": true,
+  "exchangeRate": {
+    "attributionUrl": "https://www.exchangerate-api.com",
+    "fetchedAt": "2026-10-09T01:09:01.506838100Z",
+    "from": "USD",
+    "rate": 3.43997,
+    "source": "ExchangeRate-API",
+    "stale": false,
+    "to": "PEN",
+    "updatedAt": "2026-10-09T00:02:31Z"
+  },
+  "items": [
+    {
+      "amount": 9.99,
+      "billingCycle": "MONTHLY",
+      "cancelledAt": null,
+      "category": "Entretenimiento",
+      "currency": "USD",
+      "id": "164fb32d-f37f-4150-87ce-b6795313ce70",
+      "name": "Streaming de prueba",
+      "nextBillingDate": "2026-11-08",
+      "status": "ACTIVE"
+    }
+  ],
+  "monthlyTotalPen": 34.37,
+  "monthlyTotalsByCurrency": {
+    "USD": 9.99
+  }
+}

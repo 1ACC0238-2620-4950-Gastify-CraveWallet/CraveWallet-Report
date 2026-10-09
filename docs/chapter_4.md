@@ -36,7 +36,7 @@ La tabla 139 detalla las herramientas para investigar a los usuarios, modelar el
 
 #### Software Development
 
-El landing page se construye con Next.js, React y TypeScript; el backend, con Java 21 y Spring Boot; y la aplicación móvil implementada hasta el corte del Sprint 1, con Kotlin y Jetpack Compose. Esta última elección difiere del diagrama de contenedores de la sección 2.5.3.2, que requiere actualización. La tabla 140 agrupa las herramientas por producto.
+El landing page se construye con Next.js, React y TypeScript; el backend, con Java 21 y Spring Boot; y la aplicación móvil, con Kotlin y Jetpack Compose. La tabla 140 agrupa las herramientas por producto.
 
 *Tabla 140. Herramientas y tecnologías de desarrollo.*
 
@@ -49,15 +49,18 @@ El landing page se construye con Next.js, React y TypeScript; el backend, con Ja
 | Landing page | React 19 | Componentes de la interfaz del landing page. | <https://react.dev/> |
 | Landing page | Next.js 16 | Framework de React para el enrutamiento, la generación estática y el build. | <https://nextjs.org/> |
 | Landing page | Tailwind CSS 4 | Estilos con clases de utilidad sobre los tokens del Design System. | <https://tailwindcss.com/> |
-| Landing page | Vercel | Plataforma prevista para el despliegue automático desde `main` (sección 4.1.4). | <https://vercel.com/> |
+| Landing page | Vercel | Despliegue automático del landing page al integrar cambios en `main` (sección 4.1.4). | <https://vercel.com/> |
 | Backend | IntelliJ IDEA | IDE del backend, con soporte para Maven, Spring Boot, pruebas y depuración. | <https://www.jetbrains.com/idea/> |
 | Backend | Java 21 | Lenguaje del REST API y de los tres Bounded Contexts. | <https://openjdk.org/projects/jdk/21/> |
-| Backend | Spring Boot 3 | Framework del REST API: controladores web, configuración y publicación de Domain Events. | <https://spring.io/projects/spring-boot> |
+| Backend | Spring Boot 3.5.16 | REST API con validación, seguridad JWT y servicios de aplicación. Versión declarada en el `pom.xml` del backend. | <https://spring.io/projects/spring-boot> |
 | Backend | Spring Data JPA | Repositorios de la Infrastructure Layer de cada Bounded Context. | <https://spring.io/projects/spring-data-jpa> |
 | Backend | Maven | Dependencias, compilación, pruebas y empaquetado del backend. | <https://maven.apache.org/> |
-| Backend | PostgreSQL | Base de datos prevista para el entorno remoto; el corte verificado utiliza H2 local. | <https://www.postgresql.org/> |
-| Backend | Docker | Imagen del REST API para su despliegue (sección 2.5.3.3). | <https://www.docker.com/> |
-| Aplicación móvil | Kotlin y Jetpack Compose | Interfaz y lógica de presentación Android implementadas en el repositorio móvil. | <https://developer.android.com/compose> |
+| Backend | PostgreSQL 17 | Base de datos del perfil `prod`, publicada en Render junto con el REST API (sección 4.1.4). | <https://www.postgresql.org/> |
+| Backend | H2 2.3.232 | Persistencia en memoria para ejecución local y pruebas de usuarios, sesiones, suscripciones, gastos y presupuestos. | <https://www.h2database.com/> |
+| Backend | Flyway | Migraciones V1–V3 del esquema; JPA valida las tablas sin crearlas automáticamente. | <https://www.red-gate.com/products/flyway/> |
+| Backend | Docker y Render | El `Dockerfile` empaqueta el JAR con Java 21 y Render publica el servicio con su base PostgreSQL (sección 4.1.4). | <https://www.docker.com/> |
+| Aplicación móvil | Kotlin y Jetpack Compose | Lenguaje y toolkit de interfaz de la aplicación Android, con Material 3 y Navigation Compose. | <https://developer.android.com/compose> |
+| Aplicación móvil | Gradle | Compilación, pruebas y empaquetado del APK. | <https://gradle.org/> |
 | Aplicación móvil | Android Studio | Emulador de Android y herramientas del SDK para probar la aplicación. | <https://developer.android.com/studio> |
 
 *Fuente: elaboración del equipo Gastify.*
@@ -71,6 +74,9 @@ Los criterios de aceptación de las User Stories se escriben en Gherkin, como in
 | Herramienta | Uso en CraveWallet | Sitio |
 | --- | --- | --- |
 | Gherkin | Escenarios *Given / When / Then* de los criterios de aceptación (sección 2.4.1), base de las pruebas de aceptación. | <https://cucumber.io/docs/gherkin/reference/> |
+| JUnit 5 y Spring Boot Test | Suite ejecutable del backend, con pruebas unitarias y de integración mediante MockMvc, JWT y H2. | [Suite versionada del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/src/test/java/pe/edu/upc/gastify/cravewallet) |
+| Mockito y servidor HTTP local | Simulación del proveedor de cotización y comprobación de respuestas inválidas, caché y caídas sin depender de Internet. | [Pruebas de cotización](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/src/test/java/pe/edu/upc/gastify/cravewallet/ExchangeRateServiceTest.java) |
+| Swagger UI y OpenAPI | Ejecución manual de solicitudes y consulta de los contratos publicados por el backend local. | [Especificación capturada](evidence/backend/openapi.json) |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -165,7 +171,7 @@ Cada tipo de elemento usa una convención de capitalización:
 
 * **PascalCase:** Nombres de componentes React, interfaces TypeScript, tipos y clases Java (`UserProfile`, `SubscriptionCard`, `SubscriptionController`).
 * **camelCase:** Variables locales, parámetros, métodos Java, hooks y props (`userId`, `isLoading`, `handleSubmit`, `registerSubscription`).
-* **lowercase con puntos:** Paquetes Java (`pe.gastify.cravewallet.subscriptions.domain.model`).
+* **lowercase con puntos:** Paquetes Java (`pe.edu.upc.gastify.cravewallet.subscriptions.domain.model`).
 * **kebab-case:** Nombres de archivos, rutas de URL, selectores CSS/Tailwind personalizados y nombres de ramas Git (`user-profile.tsx`, `feature/subscription-list`).
 * **SCREAMING_SNAKE_CASE:** Constantes globales, constantes `static final` de Java e identificadores de entorno (`API_BASE_URL`, `MAX_SUBSCRIPTIONS`).
 * **snake_case:** Tablas y columnas de PostgreSQL (`subscriptions`, `renewal_date`).
@@ -235,17 +241,25 @@ La tabla 144 relaciona cada tecnología con la guía de estilo de referencia ado
 
 ### 4.1.4. Software Deployment Configuration
 
-El landing page tiene previsto desplegarse en **Vercel** desde la rama `main` del repositorio `cravewallet-landing`. No se verificó una publicación en el corte descrito en la sección 4.2.1.8.
+Los tres productos del hito TB1 se publican por separado. La tabla 145 resume la plataforma, el mecanismo de despliegue y la dirección pública de cada uno al 9 de octubre de 2026.
 
-***
+*Tabla 145. Plataformas de despliegue de CraveWallet.*
+
+| Producto | Repositorio y rama | Plataforma | Mecanismo de despliegue | Dirección |
+| --- | --- | --- | --- | --- |
+| Landing page | `cravewallet-landing`, `main` | Vercel (equipo `gastify`) | Build `next build` automático en cada push a `main`. | <https://cravewallet-landing.vercel.app> |
+| REST API | `CraveWallet-Backend`, `feature/cloud-deployment` | Render Free (Docker, región Oregon) con PostgreSQL 17 | El `Dockerfile` ejecuta `mvnw verify` y empaqueta el JAR con Java 21; el servicio inicia con el perfil `prod`. | <https://cravewallet-api.onrender.com> |
+| Aplicación Android | `CraveWallet-Mobile`, `develop` | Compilación con Gradle | APK `debug` que apunta a la URL del API definida en `API_BASE_URL`. | Sin distribución pública |
+
+*Fuente: [configuración de despliegue del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/cloud-deployment.md), [guía de la aplicación](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/e72d283/README.md) y paneles de Vercel y Render.*
+
+#### Landing page en Vercel
 
 **Herramientas y tecnologías desplegadas en el landing page:**
 
 * **Next.js 16:** Framework utilizado como base del landing page, que provee el sistema de build y las optimizaciones de rendimiento en producción.
 * **TypeScript:** Lenguaje compilado a JavaScript en tiempo de build; Vercel ejecuta `tsc` y `next build` como parte del pipeline de despliegue.
 * **Tailwind CSS 4:** Procesado mediante PostCSS durante el build; los estilos no utilizados son eliminados automáticamente (purge) para reducir el tamaño del bundle.
-
-***
 
 **Pasos para el despliegue del Landing Page en Vercel:**
 
@@ -255,31 +269,48 @@ El landing page tiene previsto desplegarse en **Vercel** desde la rama `main` de
 4. Vercel ejecuta automáticamente `npm run build` (`next build`) al detectar un nuevo push o merge en `main`.
 5. Una vez completado el build, el sitio queda publicado en la URL asignada por Vercel y disponible de forma global mediante su CDN.
 
-La URL de producción y la configuración del proyecto en Vercel deberán documentarse cuando exista un despliegue verificable.
+#### REST API en Render
+
+El REST API se ejecuta localmente con Java 21 y el perfil `local`, que utiliza H2 en memoria y escucha en `127.0.0.1:8080`, y en Render con el perfil `prod` sobre PostgreSQL 17. Flyway aplica V1 para usuarios y sesiones, V2 para suscripciones y V3 para gastos de delivery y presupuestos. La tabla 146 distingue los perfiles de ejecución.
+
+*Tabla 146. Configuración de ejecución del backend.*
+
+| Elemento | Configuración |
+| --- | --- |
+| Proyecto | `CraveWallet-Backend`, paquete raíz `pe.edu.upc.gastify.cravewallet`. |
+| Construcción | Java 21, Spring Boot 3.5.16, Maven Wrapper; comando `mvnw.cmd -B verify`. |
+| Perfil `local` | H2 2.3.232 en memoria, `spring.jpa.hibernate.ddl-auto=validate` y Flyway habilitado. Puerto 8080 con `/actuator/health`, `/v3/api-docs` y `/swagger-ui.html`. Sin `JWT_SECRET` se genera una clave efímera. |
+| Perfil `postgres` | URL, usuario y contraseña mediante `DATABASE_URL`, `DATABASE_USERNAME` y `DATABASE_PASSWORD`; requiere `JWT_SECRET` de al menos 32 bytes. |
+| Perfil `prod` | Contenedor Java 21 sin usuario root, escucha en `0.0.0.0` y lee `PORT`. Conexión interna a PostgreSQL 17, pool de cinco conexiones, variables privadas persistentes en Render y Swagger público deshabilitado. |
+| Datos y secretos | H2 pierde sus datos al detener el proceso. Las credenciales y el `JWT_SECRET` se definen solo en el proveedor, nunca en Git. |
+
+*Fuente: [configuración, migraciones y guía de ejecución del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/740aba0) y [resultado de Maven](evidence/backend/maven-verify.txt).*
+
+El plan gratuito de Render suspende el servicio tras un período de inactividad, por lo que la primera solicitud puede tardar unos segundos adicionales, y su base de datos caduca el 7 de noviembre de 2026. La evidencia del despliegue se presenta en la sección 4.2.1.8.
 
 ## 4.2. Landing Page & Mobile Application Implementation
 
-Para el hito TB1, el enunciado requiere un landing desplegado, el backend al 70 % y las pantallas core de la aplicación. Esta sección presenta el Sprint 1 con los nueve apartados exigidos y evidencia disponible al 8 de octubre de 2026. El tablero asigna 16 Story Points al landing y tres spikes; el avance móvil y backend se informa sin alterar esa estimación.
+Para el hito TB1, el enunciado requiere un landing desplegado, el backend al 70 % y las pantallas core de la aplicación. Esta sección presenta el Sprint 1 con los nueve apartados exigidos y la evidencia disponible al 9 de octubre de 2026. El tablero asigna 16 Story Points al landing y a tres spikes; el avance de la aplicación y del backend se informa sin alterar esa estimación.
 
 ### 4.2.1. Sprint 1
 
 #### 4.2.1.1. Sprint Planning 1
 
-El Sprint 1 se planificó del 16 de septiembre al 9 de octubre de 2026. La tabla 145 resume la planificación consignada por el equipo. Como es el primer sprint, no existen un Review ni una Retrospectiva anteriores.
+El Sprint 1 corresponde a la entrega TB1. En la AV1, el Product Backlog priorizado se distribuyó en cuatro sprints en Trello (sección 2.4.3) y el Sprint 1 recibió las historias del landing page (US24, US25, US32 y US40) junto con los spikes SP01, SP03 y SP05. El sprint se planificó del 16 de septiembre al 9 de octubre de 2026. La tabla 147 resume la reunión de planificación; como es el primer sprint, no existen un Review ni una Retrospectiva anteriores.
 
-*Tabla 145. Sprint Planning 1.*
+*Tabla 147. Sprint Planning 1.*
 
 | Campo | Contenido |
 | --- | --- |
 | Sprint # | Sprint 1 |
 | Date | 2026-09-16 |
 | Time | 08:00 PM |
-| Location | Reunión virtual del equipo |
+| Location | Reunión virtual del equipo. El alcance se tomó del [tablero del Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) en Trello. |
 | Prepared By | Sejuro Medina, Mario Gabriel |
 | Attendees (to planning meeting) | Sejuro Medina, Mario Gabriel / Faustino Hurtado, Anghelo Edwin / Roman Zeballos, Sebastian Jared / Carpio Peña, Josué Francisco / Aliaga, Alexander |
-| Sprint 0 Review Summary | No aplica: el Sprint 1 es el primer sprint del proyecto. |
+| Sprint 0 Review Summary | No aplica: el Sprint 1 es el primer sprint del proyecto. Parte de la AV1, que entregó los capítulos I y II con el Product Backlog de 40 User Stories, 6 Technical Stories y 6 Spike Stories priorizado y estimado. |
 | Sprint 0 Retrospective Summary | No aplica: el Sprint 1 es el primer sprint del proyecto. |
-| Sprint 1 Goal | Presentar la propuesta de valor y los planes en un landing público, mostrar las pantallas principales de la app y disponer de servicios de backend documentados y probados. Se confirmará con el sitio publicado, la navegación móvil y la ejecución de las operaciones principales del servicio. |
+| Sprint 1 Goal | **Our focus is on** publicar un landing que presente la propuesta de valor y los planes de CraveWallet, mostrar las pantallas principales de la aplicación Android y exponer servicios de backend documentados y probados. **We believe it delivers** una presentación pública del producto y una base funcional para registrar suscripciones y gastos **to** jóvenes de Lima que hoy descubren un cobro automático al revisar su banco. **This will be confirmed when** el landing responda en una dirección pública, la aplicación navegue sus pantallas principales y las operaciones del backend se ejecuten con éxito en un servidor accesible. |
 | Sprint 1 Velocity | 16 Story Points, según la planificación del Product Backlog (sección 2.4.3). |
 | Sum of Story Points | 16 Story Points: SP01 (3), SP03 (3), SP05 (3), US24 (2), US25 (2), US32 (2) y US40 (1). |
 
@@ -287,24 +318,23 @@ El Sprint 1 se planificó del 16 de septiembre al 9 de octubre de 2026. La tabla
 
 #### 4.2.1.2. Aspect Leaders and Collaborators
 
-La tabla 146 identifica responsables de landing, móvil, backend y spikes. «L» indica liderazgo y «C» colaboración planificada en el landing; «—» significa que no consta una asignación verificable para ese producto. La participación efectiva se comprueba con los commits de la tabla 148.
+Los aspectos del Sprint 1 son los tres productos de la TB1 (landing page, aplicación Android y backend con su despliegue) y los spikes de investigación. La tabla 148 identifica el liderazgo («L») y la colaboración («C») planificados para cada integrante; «—» significa que no consta una asignación. La participación efectiva se contrasta con los commits en la sección 4.2.1.9.
 
-*Tabla 146. Leadership-and-Collaboration Matrix del Sprint 1.*
+*Tabla 148. Leadership-and-Collaboration Matrix del Sprint 1.*
 
-| Team Member | GitHub Username | Landing | Mobile | Backend | Spike / informe |
+| Team Member (Last Name, First Name) | GitHub Username | Landing page | Aplicación Android | Backend y despliegue | Spike |
 | --- | --- | --- | --- | --- | --- |
-| Sejuro Medina, Mario Gabriel | maghetthi | L | — | — | C |
-| Faustino Hurtado, Anghelo Edwin | Limos05 | C | — | L | L: SP01 |
-| Roman Zeballos, Sebastian Jared | Chebas19 | C | L | — | L: informe |
-| Carpio Peña, Josué Francisco | josf17 | C | — | — | L: SP03 |
-| Aliaga, Alexander | AlexanderAliaga19 | C | — | — | L: SP05 |
+| Sejuro Medina, Mario Gabriel | maghetthi | **L** | — | — | — |
+| Faustino Hurtado, Anghelo Edwin | Limos05 (`limozz05` en los commits) | — | C | **L** | **L:** SP01 |
+| Roman Zeballos, Sebastian Jared | Chebas19 | C | **L** | — | — |
+| Carpio Peña, Josué Francisco | josf17 | C | — | — | **L:** SP03 |
+| Aliaga, Alexander | AlexanderAliaga19 | C | — | — | **L:** SP05 |
 
 *Fuente: elaboración del equipo Gastify.*
 
-
 #### 4.2.1.3. Sprint Backlog 1
 
-La figura 108 muestra la lista «Sprint 1 (TB1) – 16 SP» del [tablero público](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog). La tabla 147 presenta sus tareas y el avance móvil y backend requerido para TB1. Las horas de estas dos últimas tareas no figuran en el tablero y no se estiman retrospectivamente.
+La figura 108 muestra la lista «Sprint 1 (TB1) – 16 SP» del [tablero público](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) del Product Backlog. La tabla 149 presenta sus tareas y el avance de la aplicación y del backend requerido para la TB1. Las horas de las tareas T09 a T13 no figuran en el tablero y no se estiman retrospectivamente.
 
 ![Lista Sprint 1 del Product Backlog en Trello](images/chapter_2/Product_Backlog_Trello.png)
 
@@ -316,117 +346,157 @@ La figura 108 muestra la lista «Sprint 1 (TB1) – 16 SP» del [tablero públic
 
 *Fuente: captura del tablero del equipo Gastify.*
 
-*Tabla 147. Sprint Backlog 1 y avances de TB1.*
+*Tabla 149. Sprint Backlog 1 y avances de la TB1.*
 
-| Historia | Task Id | Tarea | Horas | Responsable | Estado |
+| User Story Id | Task Id | Task Title | Estimation (Hours) | Assigned To | Status |
 | --- | --- | --- | ---: | --- | --- |
 | US24 | T01 | Presentar propuesta de valor y problema en el landing. | 9 | Mario / Sebastián | Done |
 | US24 | T02 | Enlazar las descargas Android e iOS. | 1 | Mario | To-do |
 | US25 | T03 | Comparar planes Free y Premium. | 3 | Sebastián | Done |
-| US32 | T04 | Publicar preguntas frecuentes. | 3 | Sebastián | Done |
-| US40 | T05 | Registrar correos del formulario de novedades. | 3 | Sebastián | In-Process |
+| US32 | T04 | Publicar preguntas frecuentes. | 3 | Sebastián | Done en `feature/landing-sprint-1`; sin integrar a `main` |
+| US40 | T05 | Registrar correos del formulario de novedades. | 3 | Sebastián | In-Process en `feature/landing-sprint-1` |
 | SP01 | T06 | Documentar integración del tipo de cambio. | 6 | Anghelo | To-do |
 | SP03 | T07 | Documentar integración del calendario. | 6 | Josué | To-do |
 | SP05 | T08 | Documentar integración de Stripe. | 6 | Alexander | To-do |
-| Hito TB1 | T09 | Mostrar pantallas core en Android. | — | Sebastián | Done en emulador |
-| Hito TB1 | T10 | Implementar y probar los servicios principales. | — | Anghelo | Done localmente |
-| Hito TB1 | T11 | Publicar el landing en Vercel. | — | Mario | Sin evidencia pública |
+| Hito TB1 | T09 | Mostrar las pantallas core en Android. | — | Sebastián | Done en emulador |
+| Hito TB1 | T10 | Implementar y probar los servicios principales del backend. | — | Anghelo | Done |
+| Hito TB1 | T11 | Publicar el landing en Vercel. | — | Mario | Done |
+| Hito TB1 | T12 | Desplegar el REST API en Render con PostgreSQL. | — | Anghelo | Done |
+| Hito TB1 | T13 | Conectar la aplicación Android con el REST API público. | — | Anghelo | Done en pruebas; pendiente en dispositivo |
 
-*Fuente: [tablero del Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) y commits de la tabla 148. T09 y T10 no tienen estimación en el tablero.*
+*Fuente: [tablero del Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) y commits de la sección 4.2.1.4. T09 a T13 no tienen estimación en el tablero.*
 
 #### 4.2.1.4. Development Evidence for Sprint Review
 
-La tabla 148 presenta los commits de los tres productos necesarios para TB1: landing, app Android y backend. El código móvil y el servicio se revisaron en sus ramas `develop` al 8 de octubre de 2026.
+En el Sprint 1 se implementaron los tres productos de la TB1: el landing page, la aplicación Android y los servicios RESTful. Las tablas siguientes relacionan, por repositorio, los commits de implementación con sus fechas en America/Lima. Los commits de pruebas se complementan en la sección 4.2.1.5.
 
-*Tabla 148. Commits de implementación disponibles para la revisión del Sprint 1.*
+**Landing page.** La tabla 150 lista los commits de `cravewallet-landing`. El landing, construido con Next.js 16, TypeScript y Tailwind CSS 4, se desarrolló en `main` con el Hero y la vista previa de la aplicación, las secciones El problema (con contadores animados), Solución, Preview, Testimonios, Planes y Descarga, el modo oscuro, la versión en español e inglés y las capturas reales de la aplicación. Las secciones de preguntas frecuentes y novedades (US32 y US40) están implementadas en la rama `feature/landing-sprint-1` con los componentes `Faq` y `Newsletter` y la ruta `/api/newsletter`; esa rama aún no se integra a `main`, de modo que el sitio publicado no las incluye.
 
-| Repositorio | Rama revisada | Commit | Resultado comprobable |
-| --- | --- | --- | --- |
-| `cravewallet-landing` | `main` | [21d55b2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/21d55b2) | Primera versión Next.js con propuesta de valor y vista previa. |
-| `cravewallet-landing` | `main` | [07300ce](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/07300ce) | Secciones El Problema, Planes, FAQ y novedades. |
-| `cravewallet-landing` | `main` | [3cdc4c5](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/3cdc4c5) | Vista previa de la app con capturas exportadas del prototipo Figma. |
-| `CraveWallet-Mobile` | `develop` | [2d4200e](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/2d4200ec2d951dc5c1e06ccc74ee4c432b3a610c) | App Android en Kotlin y Jetpack Compose: inicio, suscripciones, alta, análisis, perfil y recordatorios. |
-| `CraveWallet-Backend` | `develop` | [1f1b39b](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/1f1b39b4bc5ab9cc42f96912579a3dc36e944375) | Base Java 21, Spring Boot y estructura modular. |
-| `CraveWallet-Backend` | `develop` | [2c188be](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/2c188be9fef598d8824f49e4fdd44d27e2b83e9c) | Autenticación, perfil y sesiones JWT revocables. |
-| `CraveWallet-Backend` | `develop` | [adfea26](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/adfea26a6318673b3cff46425ff1a6ed9debe7ad) | Suscripciones por propietario, edición y cancelación. |
-| `CraveWallet-Backend` | `develop` | [70c3f01](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/70c3f01b3a1407aca8eea33420a74290d609d4f7) | Gastos Delivery idempotentes y presupuesto mensual. |
-| `CraveWallet-Backend` | `develop` | [2f36260](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/2f36260dc1aa9b8e4ef71a7184847795e6cb6867) | Tipo de cambio con caché y datos de recordatorios. |
-
-*Fuente: historial de commits de los repositorios del equipo en GitHub.*
-
-La app conserva los datos en el dispositivo y todavía no consume el REST API. Sus pantallas y el backend son avances separados; el modo Premium de Android es una demostración sin cobro.
-
-#### 4.2.1.5. Testing Suite Evidence for Sprint Review
-
-La tabla 149 resume 32 pruebas unitarias y de integración aprobadas para el backend con H2 local. La app móvil se compiló e instaló en emulador; aún no tiene pruebas automatizadas en el repositorio. Estas verificaciones no prueban un flujo integrado entre ambos productos.
-
-*Tabla 149. Pruebas automatizadas del backend ejecutadas para el corte TB1.*
-
-| Tipo | Clase | Casos | Comportamiento principal |
-| --- | --- | ---: | --- |
-| Integración | `AuthIntegrationTest` | 8 | Registro, login, perfil, renovación y revocación de JWT. |
-| Integración | `BackendBootstrapTest` | 3 | Health, OpenAPI y protección de rutas. |
-| Integración | `SubscriptionIntegrationTest` | 7 | Aislamiento de cuentas, cupos, cancelación, cotización y recordatorios. |
-| Integración | `DeliveryIntegrationTest` | 5 | Presupuesto, períodos, reintentos y gastos simultáneos. |
-| Unitaria | `ExchangeRateServiceTest` | 5 | Caché, respaldo de tasa, errores y concurrencia. |
-| Adaptador HTTP aislado | `OpenExchangeRateAdapterTest` | 2 | Respuestas válidas e inválidas del proveedor simulado. |
-| Unitaria | `PortfolioConversionTest` | 2 | Conversión y falta de cotización. |
-| **Total** | **7 clases** | **32** | **0 fallos, 0 errores, 0 omitidas.** |
-
-*Fuente: [resumen Surefire](evidence/backend/test-results.json), [salida de Maven](evidence/backend/maven-verify.txt) y [código de pruebas](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/src/test/java/pe/edu/upc/gastify/cravewallet).*
-
-El landing incluye [escenarios de aceptación en Gherkin](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/tree/a7f89df/tests/features); sus pasos no están automatizados y no se cuentan entre las 32 pruebas.
-
-
-La tabla 150 relaciona los commits principales de testing.
-
-*Tabla 150. Commits relacionados con testing.*
+*Tabla 150. Commits de implementación de cravewallet-landing.*
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 | --- | --- | --- | --- | --- | --- |
-| 1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend | develop | [2c188be](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/2c188be9fef598d8824f49e4fdd44d27e2b83e9c) | feat: implement authentication profile and revocable JWT sessions | Pruebas de autenticación, perfil y sesiones. | 08/10/2026 |
-| 1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend | develop | [70c3f01](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/70c3f01b3a1407aca8eea33420a74290d609d4f7) | feat: implement idempotent delivery expenses and monthly budgets | Pruebas de gastos y presupuesto. | 08/10/2026 |
-| 1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing | feature/landing-sprint-1 | a7f89df | test(landing): add acceptance criteria for Sprint 1 stories | Archivos Gherkin de US24, US25, US32 y US40 a partir de los criterios de aceptación de la sección 2.4.1. | 08/10/2026 |
+| `cravewallet-landing` | `main` | [fc8605d](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/fc8605d04592a8748ea47190a5934d39f3a3d258) | Initial commit from Create Next App | Sin cuerpo | 25/09/2026 |
+| `cravewallet-landing` | `main` | [21d55b2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/21d55b230876b46809b9e6ae6c5952fe3869185d) | feat(landing): build CraveWallet landing page | Hero section with phone mockup, headline y CTAs | 25/09/2026 |
+| `cravewallet-landing` | `main` | [07d6200](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/07d62009e066d35bd73654e1e71186047b7df137) | chore: remove AGENTS.md and CLAUDE.md, add to .gitignore | Sin cuerpo | 25/09/2026 |
+| `cravewallet-landing` | `main` | [cdb8c33](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/cdb8c33aaca1a16d48c100b13007f2f9d659a46f) | refactor(landing): redesign with Emil Kowalski principles | Headline a clamp(44px,6.5vw,76px) con leading 1.04 | 25/09/2026 |
+| `cravewallet-landing` | `main` | [a841252](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/a8412523fa1d3f794849cf3de06fa6e970e08561) | feat(landing): complete landing page from Cap. 3 IA | Secciones añadidas segun navegacion del Cap. 3.1.2.5: | 25/09/2026 |
+| `cravewallet-landing` | `main` | [5ece888](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/5ece88898fd507295254c41369f1ca9937936ab3) | feat(content): actualizar landing con datos reales de Cap. I y II | Hero: titular y body copy basados en enunciado 5W+2H; stats de Statista 2024 | 25/09/2026 |
+| `cravewallet-landing` | `feature/landing-sprint-1` | [07300ce](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/07300ceff73fe09027ff21717b08b5078176848b) | feat(landing): add problem, plans, FAQ and newsletter sections | Problem section with interview findings and their sample size (US24) | 08/10/2026 |
+| `cravewallet-landing` | `feature/landing-sprint-1` | [a7f89df](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/a7f89df8e2b8a56bb7ed75cbd8822796040dcacd) | test(landing): add acceptance criteria for Sprint 1 stories | Gherkin features for US24, US25, US32 and US40, taken from the | 08/10/2026 |
+| `cravewallet-landing` | `main` | [eec794d](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/eec794d5a2e8bb2f616ba3445e970a9ebab90737) | feat(landing): modo oscuro, i18n es/en y cifras alineadas con Figma | Corrige las estadísticas de la sección El problema (2 meses, 41 %, 100 %) | 08/10/2026 |
+| `cravewallet-landing` | `main` | [3cdc4c5](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/3cdc4c5d72969732a7f597ad62511a542658104f) | feat(landing): mostrar capturas reales del prototipo móvil | Sin cuerpo | 08/10/2026 |
+
+*Fuente: historial de commits de `cravewallet-landing` en GitHub.*
+
+**Aplicación Android.** La tabla 151 lista los commits de `CraveWallet-Mobile`. La aplicación se implementó en Kotlin y Jetpack Compose a partir de los wireframes y el Design System de la sección 3.1.4, con las pantallas Inicio, Gastos, Análisis, Perfil, alta de suscripción y recordatorios. Los commits posteriores corrigen recursos vectoriales, conectan la autenticación, las suscripciones y los gastos de Delivery con el backend, y apuntan la aplicación al API publicado.
+
+*Tabla 151. Commits de implementación de CraveWallet-Mobile.*
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| `CraveWallet-Mobile` | `develop` | [2d4200e](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/2d4200ec2d951dc5c1e06ccc74ee4c432b3a610c) | App móvil CraveWallet en Kotlin + Jetpack Compose | Implementa los wireframes y el Design System del Figma Mobile UX/UI: | 08/10/2026 |
+| `CraveWallet-Mobile` | `develop` | [2c7c2b3](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/2c7c2b35b30080c05fa2a7880c60ecdf47ab0f5d) | fix: correct mirrored vector drawable attributes | Sin cuerpo | 08/10/2026 |
+| `CraveWallet-Mobile` | `develop` | [27c99a2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/27c99a2dcdae1fe24deeed1c0a7590856b9999f8) | feat: connect mobile authentication subscriptions and delivery to backend | Sin cuerpo | 08/10/2026 |
+| `CraveWallet-Mobile` | `develop` | [73c5785](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/73c5785591b17bbdb4467035161b603a0fcd7141) | feat: connect Android to public HTTPS API and verify cloud flows | Sin cuerpo | 09/10/2026 |
+| `CraveWallet-Mobile` | `develop` | [e72d283](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/e72d28302cbc229a234e7d9d46b903a806cee5f0) | docs: record completed cloud APK build | Sin cuerpo | 09/10/2026 |
+
+*Fuente: historial de commits de `CraveWallet-Mobile` en GitHub.*
+
+**Servicios RESTful.** La tabla 152 lista los commits de `CraveWallet-Backend`. Los módulos `subscriptions` y `delivery` separan dominio, aplicación, interfaces e infraestructura, y los modelos de dominio no importan Spring ni JPA. IAM proporciona identidad y sesiones como capacidad técnica; `premium` conserva su estructura de paquetes, pero todavía no implementa facturación. Las contraseñas se almacenan con BCrypt y los tokens de renovación con hash SHA-256; renovar revoca la sesión anterior y los bloqueos transaccionales protegen el límite Free, los reintentos de gastos y la actualización del presupuesto.
+
+*Tabla 152. Commits de implementación de CraveWallet-Backend.*
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| `CraveWallet-Backend` | `develop` | [b507e7d](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/b507e7da455f87be904bd3a55d1989fa80425acc) | Initial commit | Sin cuerpo | 29/09/2026 |
+| `CraveWallet-Backend` | `develop` | [1f1b39b](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/1f1b39b4bc5ab9cc42f96912579a3dc36e944375) | feat: bootstrap Java 21 backend aligned with report contexts | Sin cuerpo | 08/10/2026 |
+| `CraveWallet-Backend` | `develop` | [2c188be](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/2c188be9fef598d8824f49e4fdd44d27e2b83e9c) | feat: implement authentication profile and revocable JWT sessions | Sin cuerpo | 08/10/2026 |
+| `CraveWallet-Backend` | `develop` | [adfea26](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/adfea26a6318673b3cff46425ff1a6ed9debe7ad) | feat: implement owner-scoped subscriptions and cancellation history | Sin cuerpo | 08/10/2026 |
+| `CraveWallet-Backend` | `develop` | [70c3f01](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/70c3f01b3a1407aca8eea33420a74290d609d4f7) | feat: implement idempotent delivery expenses and monthly budgets | Sin cuerpo | 08/10/2026 |
+| `CraveWallet-Backend` | `develop` | [2f36260](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/2f36260dc1aa9b8e4ef71a7184847795e6cb6867) | feat: add cached exchange rates and subscription reminders | Sin cuerpo | 08/10/2026 |
+| `CraveWallet-Backend` | `develop` | [67ede2a](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/67ede2ae8c2b9cb02bb8151f5a163344a7ef3d4f) | feat: prepare production Docker deployment with managed PostgreSQL | Sin cuerpo | 08/10/2026 |
+| `CraveWallet-Backend` | `develop` | [740aba0](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/740aba087efab41b500c4e26860f10bdcee663e8) | docs: record verified public API and persistence after restart | Sin cuerpo | 09/10/2026 |
+
+*Fuente: historial de commits de `CraveWallet-Backend` en GitHub; la implementación puede revisarse en el [código versionado](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/740aba0/src/main/java/pe/edu/upc/gastify/cravewallet).*
+
+#### 4.2.1.5. Testing Suite Evidence for Sprint Review
+
+**Backend.** El comando `mvnw.cmd -B verify`, ejecutado con Java 21 el 8 de octubre de 2026, terminó con `BUILD SUCCESS`: 32 pruebas, cero fallos, cero errores y ningún caso omitido. La tabla 153 relaciona cada suite con los comportamientos comprobados. El workflow [build.yaml](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/.github/workflows/build.yaml) ejecuta `verify` en GitHub Actions en cada push (sección 4.2.1.8).
+
+*Tabla 153. Suite de pruebas ejecutada del backend.*
+
+| Tipo de prueba | Clase | Casos | Comprobación principal |
+| --- | --- | ---: | --- |
+| Integración | `AuthIntegrationTest` | 8 | Registro y hashes, login, perfil propio, rotación concurrente, revocación y rechazo de JWT manipulados o vencidos. |
+| Integración | `BackendBootstrapTest` | 3 | Health, documentación OpenAPI con esquemas de alta separados y protección de rutas de negocio. |
+| Integración | `SubscriptionIntegrationTest` | 7 | Aislamiento entre cuentas, validación, edición, cancelación repetida, cupos concurrentes, filtros, totales, cotización y recordatorios. |
+| Integración | `DeliveryIntegrationTest` | 5 | Presupuesto, períodos, validación, aislamiento, deduplicación y altas simultáneas con un reintento. |
+| Unitaria de aplicación | `ExchangeRateServiceTest` | 5 | Caché de 24 horas, respaldo antiguo acotado, retroceso tras fallos, tasa inversa, fechas inválidas y concurrencia. |
+| Adaptador HTTP aislado | `OpenExchangeRateAdapterTest` | 2 | Traducción HTTP y rechazo de respuestas inválidas o 429 mediante servidor local. |
+| Unitaria de aplicación | `PortfolioConversionTest` | 2 | Conversión antes del redondeo mensual anual y conservación del portafolio cuando falta cotización. |
+| **Total** | **7 clases** | **32** | **0 fallos, 0 errores, 0 omitidas.** |
+
+*Fuente: [resumen extraído de Surefire](evidence/backend/test-results.json), [salida de Maven](evidence/backend/maven-verify.txt) y [fuentes de las pruebas](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/740aba0/src/test/java/pe/edu/upc/gastify/cravewallet).*
+
+**Unit Tests.** Siete casos prueban el servicio de cotización y la conversión del portafolio sin iniciar Spring; otros dos verifican el adaptador del proveedor mediante un servidor HTTP de prueba.
+
+**Integration Tests.** Los 23 casos restantes inician el contexto de Spring y comprueban las rutas, la seguridad, la persistencia y las migraciones con H2, mediante MockMvc y JWT. Incluyen solicitudes simultáneas para validar la rotación de sesiones, el cupo de suscripciones y la deduplicación de gastos.
+
+**Aplicación Android.** La tabla 154 presenta las nueve pruebas de la integración con el backend. Se ejecutaron con `gradlew :app:assembleDebug :app:testDebugUnitTest :app:lintDebug`: primero contra el backend local (H2) y después contra el API público de Render con PostgreSQL, en ambos casos con nueve pruebas, cero fallos y cero errores de lint (24 advertencias en la primera ejecución). La prueba de interfaz usa Robolectric y MockWebServer, por lo que no sustituye la verificación en un dispositivo.
+
+*Tabla 154. Pruebas de integración de la aplicación Android.*
+
+| Tipo de prueba | Clase | Casos | Comprobación principal |
+| --- | --- | ---: | --- |
+| Integración con el backend | `BackendIntegrationTest` | 8 | Escritura con JSON y conflictos, un solo uso del token de renovación en solicitudes concurrentes, ida y vuelta con el backend real, portafolio sin datos de demostración, sesión persistida y cierre de sesión, conversión no disponible, reintento tras 401 y sesión inválida. |
+| Interfaz | `AppConnectionUiTest` | 1 | Inicio y cierre de sesión contra el servidor en lugar del perfil de demostración. |
+| **Total** | **2 clases** | **9** | **0 fallos, 0 errores, 0 omitidas.** |
+
+*Fuente: [resultados contra el backend local](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/27c99a2/docs/integration-test-results.json) y [resultados contra el API público](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/73c5785/docs/cloud-integration-results.json).*
+
+**Landing page.** Los criterios de aceptación de US24, US25, US32 y US40 se escribieron como [cuatro archivos Gherkin](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/tree/a7f89df/tests/features) en la rama `feature/landing-sprint-1`. Sus pasos no están automatizados y no se cuentan entre las pruebas ejecutadas.
+
+**Acceptance Tests.** Este corte no incluye una suite ejecutable de aceptación con Cucumber; los criterios de las historias se comprueban mediante Swagger y la navegación de la aplicación.
+
+La tabla 155 relaciona los commits que incorporan pruebas.
+
+*Tabla 155. Commits relacionados con testing.*
+
+| Repository | Branch | Commit Id | Commit Message | Pruebas incorporadas | Committed on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| `CraveWallet-Backend` | `develop` | [2c188be](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/2c188be9fef598d8824f49e4fdd44d27e2b83e9c) | feat: implement authentication profile and revocable JWT sessions | `AuthIntegrationTest` y `BackendBootstrapTest`. | 08/10/2026 |
+| `CraveWallet-Backend` | `develop` | [adfea26](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/adfea26a6318673b3cff46425ff1a6ed9debe7ad) | feat: implement owner-scoped subscriptions and cancellation history | `SubscriptionIntegrationTest`. | 08/10/2026 |
+| `CraveWallet-Backend` | `develop` | [70c3f01](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/70c3f01b3a1407aca8eea33420a74290d609d4f7) | feat: implement idempotent delivery expenses and monthly budgets | `DeliveryIntegrationTest`. | 08/10/2026 |
+| `CraveWallet-Backend` | `develop` | [2f36260](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/2f36260dc1aa9b8e4ef71a7184847795e6cb6867) | feat: add cached exchange rates and subscription reminders | `ExchangeRateServiceTest`, `OpenExchangeRateAdapterTest` y `PortfolioConversionTest`. | 08/10/2026 |
+| `CraveWallet-Mobile` | `develop` | [27c99a2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/27c99a2dcdae1fe24deeed1c0a7590856b9999f8) | feat: connect mobile authentication subscriptions and delivery to backend | `BackendIntegrationTest` y `AppConnectionUiTest`. | 08/10/2026 |
+| `cravewallet-landing` | `feature/landing-sprint-1` | [a7f89df](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/a7f89dfe) | test(landing): add acceptance criteria for Sprint 1 stories | Archivos Gherkin de US24, US25, US32 y US40. | 08/10/2026 |
 
 *Fuente: historial de commits de los repositorios del equipo en GitHub.*
 
 #### 4.2.1.6. Execution Evidence for Sprint Review
 
-La figura 109 muestra el Hero del landing ejecutado localmente y la figura 110, su comparación de planes. La figura 111 muestra Inicio de la app Android y la figura 112, Análisis, ambas en emulador. La figura 113 presenta una operación del backend local. No se encontró en los repositorios el enlace al video de navegación solicitado para el Sprint Review.
+En el Sprint 1 se ejecutaron los tres productos. La figura 109 muestra el landing publicado en Vercel; la figura 110 muestra la pantalla Inicio y la figura 111, la pantalla Análisis de la aplicación en un emulador Android; y las figuras 112 a 115 muestran operaciones del backend en Swagger. Los enlaces de ejecución de cada producto están en la sección 4.2.1.8.
 
-El Hero presenta la propuesta de valor y navegación del landing.
+**Landing page.** La figura 109 presenta el Hero del sitio publicado, con la barra de navegación, el selector de idioma, el interruptor de modo oscuro y la vista previa de la aplicación.
 
-![Hero del landing page de CraveWallet](images/chapter_4/landing-hero.png)
-
-<!-- pdf:omit-start -->
-
-*Figura 109. Hero y barra de navegación del landing page (Desktop).*
-
-<!-- pdf:omit-end -->
-
-*Fuente: captura del landing page ejecutado localmente por el equipo Gastify.*
-
-
-La comparación de planes presenta el precio propuesto del plan Premium.
-
-![Sección Planes del landing page](images/chapter_4/landing-planes.png)
+![Hero del landing page de CraveWallet publicado en Vercel](images/chapter_4/landing-live.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 110. Sección Planes del landing page (Desktop).*
+*Figura 109. Hero del landing page publicado en Vercel (Desktop).*
 
 <!-- pdf:omit-end -->
 
-*Fuente: captura del landing page ejecutado localmente por el equipo Gastify.*
+*Fuente: captura de <https://cravewallet-landing.vercel.app/es> del 9 de octubre de 2026, elaboración del equipo Gastify.*
 
-
-La app del commit `2d4200e` compiló con `BUILD SUCCESSFUL` y se instaló en un emulador Android. Inicio y Análisis usan datos de demostración; estas capturas no acreditan una integración con el backend.
+**Aplicación Android.** La aplicación del commit `2d4200e` compiló con `BUILD SUCCESSFUL` y se instaló en un emulador Android. Las pantallas Inicio (figura 110) y Análisis (figura 111) usan datos de demostración.
 
 ![Pantalla Inicio de CraveWallet ejecutada en Android](images/chapter_4/mobile-home-emulator.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 111. Inicio de CraveWallet ejecutado en el emulador Android.*
+*Figura 110. Inicio de CraveWallet ejecutado en el emulador Android.*
 
 <!-- pdf:omit-end -->
 
@@ -436,71 +506,275 @@ La app del commit `2d4200e` compiló con `BUILD SUCCESSFUL` y se instaló en un 
 
 <!-- pdf:omit-start -->
 
-*Figura 112. Análisis de CraveWallet ejecutado en el emulador Android.*
+*Figura 111. Análisis de CraveWallet ejecutado en el emulador Android.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: captura propia de `CraveWallet-Mobile` `2d4200e`, 8 de octubre de 2026, con datos de demostración.*
 
-El backend respondió localmente a 16 operaciones HTTP con H2 y datos ficticios. El [registro de ejecución](evidence/backend/live-api-results.json) conserva los resultados; Swagger muestra el alta de una suscripción con HTTP 201.
+**Servicios RESTful.** Se ejecutó el backend local y se probaron sus 16 métodos mediante HTTP. En Swagger se revisaron registro, login, alta y listado de una suscripción USD, recordatorio, cotización, presupuesto, gasto y resumen. La tabla 156 muestra los resultados del ejercicio reproducible registrado en [live-api-results.json](evidence/backend/live-api-results.json).
 
-![Alta de suscripción en Swagger UI](evidence/backend/swagger-subscription-created.jpg)
+*Tabla 156. Resultados observados de ejecución del backend local.*
+
+| Flujo | Resultado observado |
+| --- | --- |
+| Registro y login | 201 y 200, respectivamente; consulta y actualización del perfil autenticado: 200. |
+| Suscripciones | Alta: 201; listado, detalle, edición y cancelación local: 200. La consulta del historial conserva el registro cancelado. |
+| Cotización y resumen | USD/PEN real consultado al proveedor; el portafolio devuelve total PEN, fuente y fecha. El valor cambia con cada actualización. |
+| Recordatorio | 200 para el propietario; `reminderAt` está 24 horas antes de `billingAt`, con zona America/Lima. |
+| Delivery y presupuesto | Presupuesto de S/ 100 y gasto ficticio de S/ 35,50: total S/ 35,50 y saldo S/ 64,50. Reintentar el mismo registro devuelve 200 sin duplicar el gasto. |
+| Renovación y logout | Renovación: 200; logout: 204; usar luego el token revocado: 401. |
+
+*Fuente: [registro de ejecución HTTP](evidence/backend/live-api-results.json), [especificación OpenAPI](evidence/backend/openapi.json) y pruebas de integración de la tabla 153.*
+
+La información utilizada fue ficticia y se almacenó en H2 local. El endpoint de recordatorio prepara datos; no agenda un evento ni envía notificaciones. Como el modelo conserva una fecha sin hora, la renovación se representa a las 00:00 de America/Lima.
+
+La figura 112 muestra `POST /api/v1/subscriptions` con una suscripción ficticia en PEN: la respuesta contiene el identificador, el estado `ACTIVE`, la fecha de renovación y la cabecera `Location`.
+
+![Registro de una suscripción: HTTP 201 y recurso creado.](evidence/backend/swagger-subscription-created.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 113. Alta de suscripción en el backend local: HTTP 201.*
+*Figura 112. Registro de una suscripción: HTTP 201 y recurso creado.*
 
 <!-- pdf:omit-end -->
 
-*Fuente: captura de Swagger UI, `CraveWallet-Backend` `2f36260`, H2 local, 8 de octubre de 2026, con datos ficticios.*
+*Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
 
+Antes del alta, se consultó el portafolio con una suscripción de USD 9,99. El servidor devolvió `monthlyTotalPen=34.37` y `conversionAvailable=true`; la tasa y sus fechas están en el [JSON de la consulta](evidence/backend/swagger-subscriptions-response.json) (figura 113).
+
+![Consulta del portafolio de suscripciones: HTTP 200 y conversión a PEN.](evidence/backend/swagger-subscriptions-response.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura 113. Consulta del portafolio de suscripciones: HTTP 200 y conversión a PEN.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
+
+Con un presupuesto de S/ 100 y un gasto de S/ 35,50 en octubre de 2026, el resumen devuelve el total, el saldo y los desgloses por categoría y semana (figura 114).
+
+![Resumen de Delivery: HTTP 200, gasto S/ 35,50 y saldo S/ 64,50.](evidence/backend/swagger-summary-response.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura 114. Resumen de Delivery: HTTP 200, gasto S/ 35,50 y saldo S/ 64,50.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
+
+La consulta del recordatorio devuelve `reminderAt=2026-11-07T05:00:00Z` y `billingAt=2026-11-08T05:00:00Z`, con zona `America/Lima` (figura 115).
+
+![Datos del recordatorio: HTTP 200 y aviso 24 horas antes de la renovación.](evidence/backend/swagger-reminder-response.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura 115. Datos del recordatorio: HTTP 200 y aviso 24 horas antes de la renovación.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
+
+El enlace del video de navegación del Sprint Review no se ha publicado todavía en los repositorios.
 
 #### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
-El backend documenta con OpenAPI las 16 operaciones de la tabla 151, implementadas en el commit `2f36260` y probadas localmente. La [especificación](evidence/backend/openapi.json) contiene los esquemas, parámetros y respuestas completos; el servicio aún no tiene URL pública acreditada.
+El backend documenta con OpenAPI las 16 operaciones de la tabla 157. La documentación se genera desde el código con springdoc-openapi y se consulta en Swagger UI al ejecutar el servicio localmente (figura 116); el perfil de producción deshabilita Swagger público, por lo que la [especificación capturada](evidence/backend/openapi.json) permite revisar los esquemas, parámetros y respuestas sin depender de un servidor encendido.
 
-*Tabla 151. Métodos y rutas implementados del backend al corte del Sprint 1.*
+![Documentación OpenAPI del backend CraveWallet en Swagger UI.](evidence/backend/swagger-overview.jpg)
 
-| Método | Ruta | Entrada principal | Resultado exitoso |
-| --- | --- | --- | --- |
-| POST | `/api/v1/auth/register` | `email`, `password` | 201; perfil y tokens. |
-| POST | `/api/v1/auth/login` | `email`, `password` | 200; perfil y tokens. |
-| POST | `/api/v1/auth/refresh` | `refreshToken` | 200; nuevo par de tokens. |
-| POST | `/api/v1/auth/logout` | JWT | 204; sesión revocada. |
-| GET | `/api/v1/users/me` | JWT | 200; perfil propio. |
-| PATCH | `/api/v1/users/me` | JWT, moneda de referencia | 200; perfil actualizado. |
-| POST | `/api/v1/subscriptions` | JWT, suscripción JSON | 201; recurso creado. |
-| GET | `/api/v1/subscriptions` | JWT, filtros opcionales | 200; portafolio y estimación en PEN. |
-| GET | `/api/v1/subscriptions/{id}` | JWT, UUID | 200; detalle propio. |
-| PATCH | `/api/v1/subscriptions/{id}` | JWT, UUID, campos editables | 200; suscripción actualizada. |
-| POST | `/api/v1/subscriptions/{id}/cancel` | JWT, UUID | 200; cancelación local. |
-| GET | `/api/v1/subscriptions/{id}/reminder` | JWT, UUID | 200; datos para aviso. |
-| GET | `/api/v1/exchange-rate` | JWT, `from`, `to` | 200; tasa, fuente y fechas. |
-| POST | `/api/v1/delivery-expenses` | JWT, `requestId`, gasto JSON | 201; gasto creado, o 200 en reintento idéntico. |
-| GET | `/api/v1/delivery-expenses/summary` | JWT, `year`, `month` opcionales | 200; totales, presupuesto y desgloses. |
-| PUT | `/api/v1/delivery-expenses/budget` | JWT, período y límite | 200; presupuesto actualizado. |
+<!-- pdf:omit-start -->
 
-*Fuente: [OpenAPI del corte](evidence/backend/openapi.json), [resultados HTTP](evidence/backend/live-api-results.json) y [contratos versionados](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/docs).*
+*Figura 116. Documentación OpenAPI del backend CraveWallet en Swagger UI.*
 
-Los contratos detallados y el código fuente están en el [repositorio de Web Services](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/docs). La figura 113 muestra su interacción en Swagger con datos de muestra.
+<!-- pdf:omit-end -->
+
+*Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
+
+Las rutas parten de `https://cravewallet-api.onrender.com/api/v1` y todas requieren el token Bearer, salvo las de registro, login y renovación. La tabla 157 presenta, por cada operación, el verbo HTTP, la ruta, el acceso, los parámetros y la respuesta exitosa.
+
+*Tabla 157. Endpoints implementados y documentados del backend.*
+
+| Método | Ruta | Acceso | Parámetros o cuerpo JSON | Resultado exitoso |
+| --- | --- | --- | --- | --- |
+| POST | `/api/v1/auth/register` | Sin JWT | JSON: `email`, `password`. | 201; perfil y tokens. |
+| POST | `/api/v1/auth/login` | Sin JWT | JSON: `email`, `password`. | 200; perfil y tokens. |
+| POST | `/api/v1/auth/refresh` | Token de renovación en el cuerpo | JSON: `refreshToken`. | 200; nuevo par de tokens, anterior revocado. |
+| POST | `/api/v1/auth/logout` | Bearer JWT | Sin cuerpo ni parámetros. | 204; sesión revocada. |
+| GET | `/api/v1/users/me` | Bearer JWT | Sin parámetros; usuario obtenido del JWT. | 200; perfil propio. |
+| PATCH | `/api/v1/users/me` | Bearer JWT | JSON: `referenceCurrency="PEN"`. | 200; moneda de referencia PEN. |
+| POST | `/api/v1/subscriptions` | Bearer JWT | JSON: `name`, `amount`, `currency`, `category`, `billingCycle`, `nextBillingDate`. | 201; registro activo y cabecera Location. |
+| GET | `/api/v1/subscriptions` | Bearer JWT | Query opcional: `status` (ACTIVE por defecto), `search`, `category`. | 200; registros, desglose por moneda y estimación PEN. |
+| GET | `/api/v1/subscriptions/{id}` | Bearer JWT y propiedad | Path: `id` UUID. | 200; detalle. |
+| PATCH | `/api/v1/subscriptions/{id}` | Bearer JWT y propiedad | Path: `id` UUID; JSON con al menos uno de `amount`, `category`, `nextBillingDate`. | 200; importe, categoría o fecha actualizados. |
+| POST | `/api/v1/subscriptions/{id}/cancel` | Bearer JWT y propiedad | Path: `id` UUID; sin cuerpo. | 200; cancelación local idempotente. |
+| GET | `/api/v1/subscriptions/{id}/reminder` | Bearer JWT y propiedad | Path: `id` UUID; sin cuerpo. | 200; datos del aviso para registro activo. |
+| GET | `/api/v1/exchange-rate` | Bearer JWT | Query: `from=USD`, `to=PEN` por defecto; monedas admitidas PEN/USD. | 200; tasa PEN/USD, fuente, fechas y condición de antigüedad. |
+| POST | `/api/v1/delivery-expenses` | Bearer JWT | JSON: `requestId` UUID, `merchant`, `amount`, `category`, `expenseDate`. | 201 al crear; 200 ante un reintento idéntico. |
+| GET | `/api/v1/delivery-expenses/summary` | Bearer JWT | Query: `year`, `month`; ambos numéricos o ninguno para el período actual de Lima. | 200; período, total, límite, saldo, categorías y semanas. |
+| PUT | `/api/v1/delivery-expenses/budget` | Bearer JWT | JSON: `year`, `month`, `spendingLimit` (null para retirar el límite). | 200; límite opcional y acumulado del período. |
+
+*Fuente: [OpenAPI capturado](evidence/backend/openapi.json) y [contratos del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/740aba0/docs).*
+
+Los contratos ampliados se encuentran en [autenticación y perfil](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/auth-api.md), [suscripciones](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/subscriptions-api.md), [Delivery](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/delivery-api.md) y [cotización y recordatorios](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/exchange-and-reminders-api.md); describen cuerpos JSON, límites, filtros y errores. Los importes usan `BigDecimal` y no se suman monedas diferentes sin cotización.
+
+Los errores incluyen 400 para datos inválidos, 401 para autenticación no válida, 404 para recursos inexistentes o ajenos y 409 para conflictos de estado, cupos o reintentos con contenido distinto. La cotización devuelve 503 si no hay un valor utilizable; en ese caso el portafolio conserva los importes originales y devuelve `monthlyTotalPen=null` con `conversionAvailable=false`.
+
+La caché USD/PEN dura 24 horas por instancia; ante un fallo, puede usar una tasa anterior de menos de siete días indicando `stale=true`. La [documentación del proveedor](https://www.exchangerate-api.com/docs/free) exige atribución para el endpoint Open Access, por lo que el contrato devuelve `attributionUrl` para que la interfaz la muestre.
+
+**Ejemplo de alta de suscripción.** La figura 117 muestra el cuerpo enviado desde Swagger a `POST /api/v1/subscriptions`, con `Content-Type: application/json` y una sesión Bearer autorizada. Los seis campos son obligatorios: `currency` admite PEN/USD, `billingCycle` admite MONTHLY/ANNUAL y la fecha debe ser actual o futura en America/Lima.
+
+```json
+{
+  "name": "Música de prueba",
+  "amount": 19.9,
+  "currency": "PEN",
+  "category": "Entretenimiento",
+  "billingCycle": "MONTHLY",
+  "nextBillingDate": "2026-11-08"
+}
+```
+
+![Cuerpo JSON de alta de suscripción en Swagger](evidence/backend/swagger-subscription-request.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura 117. Cuerpo JSON de alta de una suscripción en Swagger UI.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura propia del backend local `2f36260`, 8 de octubre de 2026 (America/Lima). La respuesta real se presenta en la figura 112 y en [swagger-subscription-created.json](evidence/backend/swagger-subscription-created.json).*
+
+**Ejemplo de consulta del resumen mensual.** La figura 118 muestra los parámetros de `GET /api/v1/delivery-expenses/summary?year=2026&month=10`. El propietario se obtiene de la sesión y los importes se expresan en PEN.
+
+![Parámetros de consulta del resumen mensual en Swagger](evidence/backend/swagger-summary-request.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura 118. Parámetros year y month para consultar el resumen de Delivery.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura propia del backend local `2f36260`, 8 de octubre de 2026 (America/Lima).*
+
+La respuesta HTTP 200 de la figura 114 contiene el siguiente JSON, [conservado desde Swagger](evidence/backend/swagger-summary-response.json):
+
+```json
+{
+  "currency": "PEN",
+  "exceeded": false,
+  "month": 10,
+  "remaining": 64.5,
+  "spendingLimit": 100,
+  "total": 35.5,
+  "totalsByCategory": {
+    "Comida": 35.5
+  },
+  "totalsByWeek": {
+    "2": 35.5
+  },
+  "year": 2026
+}
+```
 
 #### 4.2.1.8. Software Deployment Evidence for Sprint Review
 
-La tabla 152 separa los artefactos ejecutados de un despliegue público. No hay evidencia verificada en los repositorios de una URL de producción del landing page ni del REST API. La sección 4.1.4 describe el procedimiento previsto para Vercel, no un deployment acreditado en este corte.
+En el Sprint 1 se publicaron el landing page y el REST API; la aplicación Android se compiló como APK y se conectó al API público. La tabla 158 resume el estado de cada producto al 9 de octubre de 2026 y las secciones siguientes presentan su evidencia.
 
-*Tabla 152. Estado de ejecución y publicación al 8 de octubre de 2026.*
+*Tabla 158. Estado de ejecución y despliegue al 9 de octubre de 2026.*
 
-| Producto | Estado verificado | Pendiente para publicación o integración |
+| Producto | Estado | Evidencia |
 | --- | --- | --- |
-| Landing page | Código y capturas locales de las figuras 109–110. | Acreditar la URL pública de Vercel. |
-| App Android | APK `debug` compilado e instalado en emulador; figuras 111–112. | Integrar REST y distribuir versión final. |
-| Backend | 32 pruebas aprobadas, 16 operaciones locales con H2; figura 113. | Acreditar despliegue y verificación con PostgreSQL. |
+| Landing page | Publicado en Vercel desde `main`; HTTP 200. | [cravewallet-landing.vercel.app](https://cravewallet-landing.vercel.app); dos deployments `Production` correctos (tabla 159). |
+| REST API | Publicado en Render con PostgreSQL 17 y perfil `prod`; health `UP`. | [Health público](https://cravewallet-api.onrender.com/actuator/health); figuras 119 a 121. |
+| Base de datos | PostgreSQL 17 en Render; Flyway V1–V3. | 22 comprobaciones HTTP remotas y siete tras el reinicio del servicio ([resultados](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/evidence/cloud/remote-api-results.json)). |
+| Aplicación Android | APK `debug` generado; pruebas de integración contra el API público. | [Resultados](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/73c5785/docs/cloud-integration-results.json); APK `CraveWallet-TB1-cloud-debug.apk`. |
+| Validación en dispositivo | Pendiente. | Falta comprobar el flujo completo y los permisos de calendario y notificaciones en un dispositivo o emulador. |
 
-*Fuente: capturas y resultados de las secciones 4.2.1.5–4.2.1.7, [guía del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/README.md) y [guía de la app](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/2d4200ec2d951dc5c1e06ccc74ee4c432b3a610c/README.md).*
+*Fuente: paneles de Vercel y Render, GitHub Actions y los resultados versionados en los repositorios.*
+
+**Landing page.** Se publica con Vercel desde la rama `main` de `cravewallet-landing`, en <https://cravewallet-landing.vercel.app>. Cada push a `main` genera un deployment de producción; la tabla 159 lista los que registra GitHub.
+
+*Tabla 159. Deployments de producción del landing page en Vercel.*
+
+| Commit | Fecha (America/Lima) | Entorno | Estado |
+| --- | --- | --- | --- |
+| [eec794d](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/eec794d5a2e8bb2f616ba3445e970a9ebab90737) | 08/10/2026 21:58 | Production | Correcto |
+| [3cdc4c5](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/commit/3cdc4c5d72969732a7f597ad62511a542658104f) | 08/10/2026 22:19 | Production | Correcto |
+
+*Fuente: [Deployments de GitHub](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/deployments) creados por Vercel para el repositorio `cravewallet-landing`.*
+
+**Servicios RESTful.** Se publicaron en Render como servicio Docker `cravewallet-api` en el plan gratuito (región Oregon), junto con una base PostgreSQL 17. El servicio compila la rama `feature/cloud-deployment` en el commit `67ede2a` y queda disponible por HTTPS en <https://cravewallet-api.onrender.com>. La figura 119 muestra el servicio en estado Live y la figura 120, el historial de eventos con el despliegue y el reinicio solicitado.
+
+![Servicio cravewallet-api en estado Live en Render](evidence/backend/cloud/render-live.png)
+
+<!-- pdf:omit-start -->
+
+*Figura 119. Servicio cravewallet-api en estado Live en Render.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura del panel de Render del equipo Gastify, commit `67ede2a`, 8 de octubre de 2026.*
+
+![Eventos del servicio cravewallet-api en Render: despliegue y reinicio](evidence/backend/cloud/render-restart.png)
+
+<!-- pdf:omit-start -->
+
+*Figura 120. Eventos del servicio cravewallet-api en Render: despliegue y reinicio.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura del panel de Render del equipo Gastify, 9 de octubre de 2026.*
+
+Tras el reinicio se comprobó que se conservaron la sesión, la suscripción editada y el presupuesto con su gasto, y que el cierre de sesión revocó el acceso. La figura 121 muestra la respuesta pública de `/actuator/health`.
+
+![Respuesta pública de /actuator/health del REST API](images/chapter_4/api-health.png)
+
+<!-- pdf:omit-start -->
+
+*Figura 121. Respuesta pública de /actuator/health del REST API: estado UP.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura de <https://cravewallet-api.onrender.com/actuator/health>, 9 de octubre de 2026.*
+
+La construcción del backend se verifica en GitHub Actions: el workflow `Backend build` terminó con éxito en sus siete ejecuciones, entre el commit `1f1b39b` y el `740aba0`, sobre `develop` y `feature/cloud-deployment` (figura 122).
+
+![Ejecuciones del workflow Backend build en GitHub Actions](images/chapter_4/backend-actions.png)
+
+<!-- pdf:omit-start -->
+
+*Figura 122. Ejecuciones del workflow Backend build en GitHub Actions.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura de GitHub Actions del repositorio `CraveWallet-Backend`, 9 de octubre de 2026.*
+
+**Aplicación Android.** El APK se genera con Gradle y apunta a la URL pública del API mediante `API_BASE_URL`. La compilación `CraveWallet-TB1-cloud-debug.apk` pesa 15 121 075 bytes y su huella SHA-256 es `5e2ab68b5056adc4a08db0c4cc4ffc2e2e90d5bff6b912fc95bc9b87767c0ec3`. La suite de la tabla 154 se ejecutó contra el API de Render y terminó sin fallos. El APK aún no se distribuye y su flujo completo debe validarse en un dispositivo.
 
 #### 4.2.1.9. Team Collaboration Insights during Sprint
 
-La tabla 148 sustenta tres frentes de implementación: Mario Sejuro en la primera versión del landing page, Sebastián Roman en las secciones adicionales del landing y en la app Android, y Anghelo Faustino en las cinco entregas del backend. La matriz de la tabla 146 contiene responsabilidades planificadas para los cinco integrantes, pero los repositorios revisados no acreditan todavía commits de Josué Carpio ni Alexander Aliaga en estos tres productos. Tampoco se halló en este corte un documento de cierre de los spikes SP01, SP03 y SP05. La revisión del Sprint debe conciliar esos entregables y la participación efectiva con el tablero del equipo, sin deducirla de asignaciones o pantallas de demostración.
+El historial de los repositorios muestra el aporte de cada integrante en el Sprint 1. La tabla 160 presenta los commits de cada uno por repositorio entre el 16 de septiembre y el 9 de octubre de 2026, y excluye los commits de merge. Los commits de Anghelo Faustino en los repositorios de código figuran con el usuario `limozz05` y los del informe, con su cuenta `Limos05`.
+
+*Tabla 160. Commits de cada integrante por repositorio en el Sprint 1.*
+
+| Integrante | Landing page | Aplicación Android | Servicios RESTful | Informe |
+| --- | ---: | ---: | ---: | ---: |
+| Sejuro Medina, Mario Gabriel | 8 | 0 | 0 | 30 |
+| Faustino Hurtado, Anghelo Edwin | 0 | 4 | 7 | 32 |
+| Roman Zeballos, Sebastian Jared | 2 | 1 | 1 | 30 |
+| Carpio Peña, Josué Francisco | 0 | 0 | 0 | 7 |
+| Aliaga, Alexander | 0 | 0 | 0 | 3 |
+
+*Fuente: historial de commits de `cravewallet-landing`, `CraveWallet-Mobile`, `CraveWallet-Backend` y `CraveWallet-Report` en GitHub.*
+
+La implementación se concentra en tres integrantes. Mario Sejuro desarrolló el landing publicado; Sebastián Roman escribió las secciones adicionales del landing, inicializó el repositorio del backend y desarrolló la aplicación Android; y Anghelo Faustino implementó el backend, el despliegue en Render y la conexión de la aplicación con el API. Josué Carpio y Alexander Aliaga registran commits en el informe, pero no en los repositorios de código, y no se encontró en los repositorios revisados un documento de cierre de los spikes SP01, SP03 y SP05.
+
+Los repositorios de código no registran pull requests ni revisiones entre integrantes: los cambios entraron directamente a `develop` o `main`. El repositorio del informe sí usó pull requests. El enunciado pide que todos participen en la implementación de cada producto, y en este Sprint eso no se cumplió. Para el Sprint 2 se propone que cada integrante lidere las historias de un Bounded Context en la aplicación y en el backend, que los cambios entren por pull request con una revisión y que los spikes se cierren con un informe versionado.
+
+La implementación del backend contó con apoyo de IA para preparar y corregir código, pruebas y documentación; Anghelo Faustino consolida esta entrega y el equipo revisa los contratos y las decisiones de seguridad, persistencia, concurrencia y manejo de errores.
 
 ## 4.3. Validation Interviews
 
