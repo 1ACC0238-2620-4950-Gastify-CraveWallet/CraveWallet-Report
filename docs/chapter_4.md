@@ -307,7 +307,7 @@ El alcance técnico del backend para TB1 comprende la autenticación, el portafo
 | Incremento disponible | 16 métodos/rutas: seis de autenticación y perfil, seis de suscripciones y recordatorio, uno de cotización y tres de Delivery. |
 | Verificación | 32 pruebas automatizadas aprobadas; ejercicio de las 16 rutas en el servidor local y revisión de Swagger con datos ficticios. |
 | Alcance por cantidad de rutas | 16 de 22 rutas del inventario de trabajo: 72,7 %. Health, Swagger, filtros y reintentos no se cuentan como endpoints adicionales. |
-| Trabajo restante | Búsqueda de comercios y cinco rutas de Premium; integración móvil, verificación PostgreSQL, despliegue remoto y evidencia de los spikes. |
+| Trabajo restante | Búsqueda de comercios y cinco rutas de Premium; validación en dispositivo Android, verificación PostgreSQL, publicación remota del REST API y evidencia de los spikes. |
 
 *Fuente: [inventario versionado de endpoints](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/docs/tb1-endpoint-coverage.md) y evidencias de las secciones 4.2.1.5–4.2.1.7.*
 
@@ -533,7 +533,7 @@ Las capturas se encuadran en los resultados para mostrar el código HTTP y el cu
 
 #### 4.2.1.8. Software Deployment Evidence for Sprint Review
 
-La evidencia disponible es de ejecución local, no de publicación del REST API. La tabla 153 distingue el entorno comprobado de los elementos preparados para un despliegue posterior.
+La [landing page de CraveWallet](https://cravewallet-landing.vercel.app) ya está publicada en Vercel; se comprobó una respuesta HTTP 200 el 8 de octubre de 2026 (America/Lima). El REST API se ejecuta en el entorno local. La tabla 153 distingue el estado del backend y su integración con Android; la publicación pendiente corresponde al REST API.
 
 *Tabla 153. Estado de ejecución y despliegue del backend.*
 
@@ -543,7 +543,9 @@ La evidencia disponible es de ejecución local, no de publicación del REST API.
 | JAR ejecutable | Generado | Maven termina con `BUILD SUCCESS`; Spring Boot empaqueta `cravewallet-backend-0.1.0-SNAPSHOT.jar`. |
 | PostgreSQL 17 con Compose | Configurado, pendiente de ejecución | [compose.yaml](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/compose.yaml) y perfil `postgres`. |
 | Perfil de producción | Configurado, pendiente de publicación | Variables obligatorias de base de datos y JWT; documentación pública deshabilitada. |
-| URL pública, HTTPS e integración Android | Pendientes | No se presenta una URL remota del REST API ni un flujo móvil conectado como evidencia. |
+| URL pública y HTTPS del REST API | Pendientes | El backend comprobado utiliza una dirección local; la URL de Vercel corresponde a la landing page. |
+| Integración del cliente Android con el backend | Implementada y probada en entorno local | [Commit `27c99a2`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/27c99a2dcdae1fe24deeed1c0a7590856b9999f8) en `feature/backend-integration`: autenticación, sesiones, suscripciones, cotización y Delivery. [Resultados de las nueve pruebas](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/27c99a2dcdae1fe24deeed1c0a7590856b9999f8/docs/integration-test-results.json), incluida una contra el backend real local; cero fallos. |
+| Validación en dispositivo Android | Pendiente | APK generado; las pruebas de UI utilizaron Robolectric. Falta comprobar el flujo completo y permisos de calendario/notificaciones en dispositivo o emulador. |
 
 *Fuente: [guía de ejecución y configuración del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/README.md) y [resultado del build](evidence/backend/maven-verify.txt).*
 
@@ -558,9 +560,9 @@ El historial del backend al commit `2f36260` contiene cinco commits de implement
 | Trabajo | Evidencia de colaboración disponible |
 | --- | --- |
 | Implementación consolidada por Anghelo Faustino | Cinco commits enlazados en la tabla 149; suites y contratos versionados. |
-| Interfaces para integración | [Contratos y observaciones de integración móvil](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/docs/mobile-integration.md). La conexión del cliente todavía no se ha verificado. |
+| Interfaces para integración | [Contratos y observaciones de integración móvil](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/docs/mobile-integration.md). El cliente se conectó al backend local en la rama `feature/backend-integration`; el [procedimiento de integración y sus límites](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/27c99a2dcdae1fe24deeed1c0a7590856b9999f8/docs/backend-integration.md) permite reproducir la comprobación. Falta validar en dispositivo Android. |
 | Revisión por otros integrantes | No se identifican revisiones o commits adicionales del backend en este corte. Deben registrarse cuando se realicen para sustentar su participación. |
-| Coordinación siguiente | Validar políticas Free/Premium y horario del recordatorio; acordar el contrato del cliente; verificar PostgreSQL y el despliegue. |
+| Coordinación siguiente | Validar políticas Free/Premium y horario del recordatorio; validar la integración en dispositivo Android; verificar PostgreSQL y publicar el REST API. |
 
 *Fuente: [historial del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commits/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/), contratos y evidencias de esta sección.*
 
