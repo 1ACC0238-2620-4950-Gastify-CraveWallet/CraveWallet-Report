@@ -449,13 +449,13 @@ Se elabora una ficha de User Persona por cada segmento objetivo en UXPressia. Ca
 
 #### User Persona 1: Camila Torres — Estudiante Universitario Digital
 
-La figura 3 presenta la ficha de Camila Torres, arquetipo del segmento de estudiantes universitarios.
+La figura 2 presenta la ficha de Camila Torres, arquetipo del segmento de estudiantes universitarios.
 
 ![Ficha de User Persona 1 de Camila Torres](images/chapter_2/User%20Persona%201-Camila%20Torres.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 3. Ficha de User Persona 1 de Camila Torres.*
+*Figura 2. Ficha de User Persona 1 de Camila Torres.*
 
 <!-- pdf:omit-end -->
 
@@ -465,13 +465,13 @@ La figura 3 presenta la ficha de Camila Torres, arquetipo del segmento de estudi
 
 #### User Persona 2: Renzo Salazar — Profesional Joven Activo
 
-La figura 4 presenta la ficha de Renzo Salazar, arquetipo del segmento de profesionales jóvenes.
+La figura 3 presenta la ficha de Renzo Salazar, arquetipo del segmento de profesionales jóvenes.
 
 ![Ficha de User Persona 2 de Renzo Salazar](images/chapter_2/User%20Persona%202-Renzo%20Salazar.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 4. Ficha de User Persona 2 de Renzo Salazar.*
+*Figura 3. Ficha de User Persona 2 de Renzo Salazar.*
 
 <!-- pdf:omit-end -->
 
@@ -519,13 +519,13 @@ Se elabora en UXPressia un User Journey Map As-Is por cada User Persona, vincula
 
 El mapa muestra que Camila pasa de una contratación motivada por promociones o recomendaciones a una gestión pasiva de la suscripción. El cobro ocurre sin aviso y recién lo identifica al revisar su banco, lo que lleva la experiencia desde una aceptación inicial hasta la sorpresa, el estrés y la resignación. La principal oportunidad consiste en anticipar el cobro y mostrar su equivalente en soles sin exigirle un registro manual.
 
-La figura 5 organiza las etapas del recorrido actual de Camila y los problemas que enfrenta al gestionar suscripciones.
+La figura 4 organiza las etapas del recorrido actual de Camila y los problemas que enfrenta al gestionar suscripciones.
 
 ![As-Is Journey de Camila Torres](images/chapter_2/As-Is%20Journey%20%E2%80%94%20Camila%20Torres%20%281%29.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 5. As-Is Journey de Camila Torres.*
+*Figura 4. As-Is Journey de Camila Torres.*
 
 <!-- pdf:omit-end -->
 
@@ -542,13 +542,13 @@ La figura 5 organiza las etapas del recorrido actual de Camila y los problemas q
 
 El mapa muestra que Renzo contrata servicios profesionales o personales de mayor impacto económico, pero tampoco recibe información anticipada sobre la renovación. Descubre los cargos al revisar sus extractos, experimenta frustración o enojo y termina dependiendo de revisiones manuales porque rechaza vincular sus cuentas bancarias. La oportunidad principal es ofrecer transparencia, alertas anticipadas y control seguro sin conexión bancaria.
 
-La figura 6 organiza las etapas del recorrido actual de Renzo y los problemas que enfrenta al gestionar suscripciones.
+La figura 5 organiza las etapas del recorrido actual de Renzo y los problemas que enfrenta al gestionar suscripciones.
 
 ![As-Is Journey de Renzo Salazar](images/chapter_2/As-Is%20Journey%20%E2%80%94%20Renzo%20Salazar.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 6. As-Is Journey de Renzo Salazar.*
+*Figura 5. As-Is Journey de Renzo Salazar.*
 
 <!-- pdf:omit-end -->
 
@@ -567,13 +567,13 @@ Se elabora en UXPressia un Empathy Map por cada User Persona, colocando al arque
 
 #### Empathy Map de Camila Torres (Segmento 1)
 
-La figura 7 sintetiza lo que Camila dice, piensa, hace y siente, junto con sus dificultades y expectativas.
+La figura 6 sintetiza lo que Camila dice, piensa, hace y siente, junto con sus dificultades y expectativas.
 
 ![Empathy Map de Camila Torres](images/chapter_2/Empathy_map_1_Camila_Torres.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 7. Empathy Map de Camila Torres.*
+*Figura 6. Empathy Map de Camila Torres.*
 
 <!-- pdf:omit-end -->
 
@@ -583,13 +583,13 @@ La figura 7 sintetiza lo que Camila dice, piensa, hace y siente, junto con sus d
 
 #### Empathy Map de Renzo Salazar (Segmento 2)
 
-La figura 8 sintetiza lo que Renzo dice, piensa, hace y siente, junto con sus dificultades y expectativas.
+La figura 7 sintetiza lo que Renzo dice, piensa, hace y siente, junto con sus dificultades y expectativas.
 
 ![Empathy Map de Renzo Salazar](images/chapter_2/Empathy_map_2_Renzo_Salazar.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 8. Empathy Map de Renzo Salazar.*
+*Figura 7. Empathy Map de Renzo Salazar.*
 
 <!-- pdf:omit-end -->
 
@@ -605,13 +605,13 @@ El tablero representa el **proceso actual (As-Is)** a partir de las entrevistas 
 
 Primero se reunieron, sin imponer un orden, los hechos que aparecen en la contratación y renovación de membresías, el consumo de delivery y la revisión del dinero disponible. El tablero incluye *suscripción contratada*, *fecha de renovación fijada*, *pedido realizado*, *pedido cobrado*, *pedido entregado*, *membresía renovada*, *cargo recurrente procesado*, *saldo consultado*, *estado de cuenta consultado*, *cargo imprevisto detectado*, *gasto mensual estimado*, *pedidos del mes revisados*, *gastos de varias apps revisados*, *presupuesto excedido* y *cancelación solicitada*. Se distinguen los **hechos** de las acciones deseadas: «recibir un recordatorio» sería una solución propuesta, mientras que «cargo imprevisto detectado» describe el proceso presente.
 
-La figura 9 reúne los eventos del proceso actual, antes de ordenarlos temporalmente.
+La figura 8 reúne los eventos del proceso actual, antes de ordenarlos temporalmente.
 
 ![Paso 1 del Big Picture EventStorming: eventos As-Is recolectados](images/chapter_2/big-picture-paso-1.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 9. Paso 1 del Big Picture EventStorming: eventos As-Is recolectados.*
+*Figura 8. Paso 1 del Big Picture EventStorming: eventos As-Is recolectados.*
 
 <!-- pdf:omit-end -->
 
@@ -623,13 +623,13 @@ La figura 9 reúne los eventos del proceso actual, antes de ordenarlos temporalm
 
 La secuencia comienza con la contratación de una membresía de delivery y la fijación de su fecha de renovación. Después aparecen pedidos de comida realizados y cobrados, la renovación de la membresía y el cargo recurrente. La consulta del estado de cuenta permite detectar el cargo; al estimar el gasto mensual se reconoce el exceso presupuestario y puede solicitarse la cancelación. Los pedidos y la renovación no tienen una dependencia causal: comparten el período de consumo y pueden ocurrir en distinto orden.
 
-La figura 10 ordena los eventos del proceso actual y señala los puntos donde aparecen problemas.
+La figura 9 ordena los eventos del proceso actual y señala los puntos donde aparecen problemas.
 
 ![Paso 2 del Big Picture EventStorming: eventos As-Is ordenados](images/chapter_2/big-picture-paso-2.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 10. Paso 2 del Big Picture EventStorming: eventos As-Is ordenados.*
+*Figura 9. Paso 2 del Big Picture EventStorming: eventos As-Is ordenados.*
 
 <!-- pdf:omit-end -->
 
@@ -641,13 +641,13 @@ La figura 10 ordena los eventos del proceso actual y señala los puntos donde ap
 
 Se ubicaron sobre los eventos el **usuario** y la **plataforma de delivery**; debajo, la **aplicación de delivery**, el **banco o pasarela**, el **sistema de cobros** y el **estado bancario**. En la muestra de seis eventos clave, el usuario contrata la suscripción, realiza el pedido y consulta el cargo; la plataforma fija la renovación y la ejecuta. La aplicación de delivery y el banco conservan piezas distintas de la información. Esa separación explica por qué el usuario necesita reconstruir el gasto a partir de varias fuentes y por qué el estado de cuenta solo permite una detección posterior.
 
-La figura 11 añade los actores y sistemas que participan en el proceso actual.
+La figura 10 añade los actores y sistemas que participan en el proceso actual.
 
 ![Paso 3 del Big Picture EventStorming: actores y sistemas](images/chapter_2/big-picture-paso-3.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 11. Paso 3 del Big Picture EventStorming: actores y sistemas.*
+*Figura 10. Paso 3 del Big Picture EventStorming: actores y sistemas.*
 
 <!-- pdf:omit-end -->
 
@@ -671,13 +671,13 @@ La tabla 24 relaciona cada momento del proceso con el problema observado y la op
 *Fuente: elaboración del equipo Gastify.*
 
 
-La figura 12 relaciona los momentos del proceso actual con los problemas y oportunidades de mejora identificados.
+La figura 11 relaciona los momentos del proceso actual con los problemas y oportunidades de mejora identificados.
 
 ![Paso 4 del Big Picture EventStorming: problemas y oportunidades](images/chapter_2/big-picture-paso-4.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 12. Paso 4 del Big Picture EventStorming: problemas y oportunidades.*
+*Figura 11. Paso 4 del Big Picture EventStorming: problemas y oportunidades.*
 
 <!-- pdf:omit-end -->
 
@@ -1834,13 +1834,13 @@ Los actores son los dos User Personas del proyecto: **Camila Torres**, del Segme
 
 Este mapa responde a qué tiene que cambiar para que un usuario deje de enterarse de un cobro automático solo al revisar su banco, el hallazgo transversal de la sección 2.2.3. De Camila Torres y de Renzo Salazar se espera el mismo cambio: que revisen el recordatorio recibido antes del cobro y decidan a tiempo si mantienen o cancelan la suscripción. El producto lo facilita con los recordatorios en el calendario nativo, que incluyen las historias de agendar y eliminar el recordatorio, dar permiso al calendario, ver los recordatorios agendados y recibir la notificación push.
 
-La figura 13 relaciona el objetivo de anticipar los cobros con los actores, los cambios de comportamiento y las historias propuestas.
+La figura 12 relaciona el objetivo de anticipar los cobros con los actores, los cambios de comportamiento y las historias propuestas.
 
 ![Impact Map del Business Goal 01](images/chapter_2/Impact_Map_BG01.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 13. Impact Map del Business Goal 01.*
+*Figura 12. Impact Map del Business Goal 01.*
 
 <!-- pdf:omit-end -->
 
@@ -1864,13 +1864,13 @@ La tabla 80 lista las User Stories que contribuyen a la anticipación del cobro.
 
 El segundo mapa sostiene la hipótesis de que un usuario vuelve a la aplicación si el Dashboard le ahorra el trabajo mental de sumar su portafolio de suscripciones. Se espera que ambas personas consulten el Dashboard con regularidad, en vez de llevar la cuenta de memoria o revisando el banco. Para eso, el Dashboard unificado muestra el total en soles, agrupa por categoría, ordena por próxima renovación, permite buscar y muestra el ahorro de cancelar a tiempo. También se espera que registren cada suscripción nueva apenas la contratan, con ayuda del catálogo precargado, el registro personalizado y la vista previa del monto en soles.
 
-La figura 14 relaciona el objetivo de retención con los actores, los cambios de comportamiento y las historias propuestas.
+La figura 13 relaciona el objetivo de retención con los actores, los cambios de comportamiento y las historias propuestas.
 
 ![Impact Map del Business Goal 02](images/chapter_2/Impact_Map_BG02.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 14. Impact Map del Business Goal 02.*
+*Figura 13. Impact Map del Business Goal 02.*
 
 <!-- pdf:omit-end -->
 
@@ -1897,13 +1897,13 @@ La tabla 81 lista las User Stories que contribuyen a la retención por uso del D
 
 El tercer mapa se concentra en los usuarios de mayor compromiso, con 6 o más suscripciones registradas. Se espera que, al acercarse al límite del plan gratuito, decidan pagar por eliminarlo en vez de dejar de registrar sus suscripciones. El plan Premium lo facilita con las historias de conocer el precio, suscribirse con Stripe, ver el historial de pagos y saber cuánto falta para el límite.
 
-La figura 15 relaciona el objetivo de conversión a Premium con los actores, los cambios de comportamiento y las historias propuestas.
+La figura 14 relaciona el objetivo de conversión a Premium con los actores, los cambios de comportamiento y las historias propuestas.
 
 ![Impact Map del Business Goal 03](images/chapter_2/Impact_Map_BG03.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 15. Impact Map del Business Goal 03.*
+*Figura 14. Impact Map del Business Goal 03.*
 
 <!-- pdf:omit-end -->
 
@@ -1926,13 +1926,13 @@ La tabla 82 lista las User Stories que contribuyen a la conversión a Premium.
 
 El cuarto mapa depende de que ambas personas perciban que CraveWallet resuelve mejor que la competencia (2.1) su problema principal. Se espera que un visitante entienda la propuesta de valor antes de descargar la aplicación; el landing page lo permite con las historias de ver la propuesta, comparar planes y consultar preguntas frecuentes. También se espera que un usuario activo perciba el Dashboard, la conversión de divisas y los recordatorios como una sola solución que le convenga recomendar.
 
-La figura 16 relaciona el objetivo de recomendación del producto con los actores, los cambios de comportamiento y las historias propuestas.
+La figura 15 relaciona el objetivo de recomendación del producto con los actores, los cambios de comportamiento y las historias propuestas.
 
 ![Impact Map del Business Goal 04](images/chapter_2/Impact_Map_BG04.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 16. Impact Map del Business Goal 04.*
+*Figura 15. Impact Map del Business Goal 04.*
 
 <!-- pdf:omit-end -->
 
@@ -2041,7 +2041,7 @@ La arquitectura de software que cierra la sección se representará con el C4 Mo
 
 <!-- pdf:omit-start -->
 
-Las figuras 19–26 conservan sus fuentes editables en el [tablero de Miro](https://miro.com/app/board/uXjVEcjtdBM=/). Las vistas C4 de las figuras 27–30, 33 y 36 se modelan y exportan con Structurizr. Los [archivos editables y las instrucciones de exportación](diagrams/chapter_2/README.md) se versionan junto con el informe.
+Las figuras 18–25 conservan sus fuentes editables en el [tablero de Miro](https://miro.com/app/board/uXjVEcjtdBM=/). Las vistas C4 de las figuras 26–29, 33 y 36 se modelan y exportan con Structurizr. Los [archivos editables y las instrucciones de exportación](diagrams/chapter_2/README.md) se versionan junto con el informe.
 
 <!-- pdf:omit-end -->
 
@@ -2049,13 +2049,13 @@ Las figuras 19–26 conservan sus fuentes editables en el [tablero de Miro](http
 
 La leyenda empleada en los flujos To-Be distingue actor (amarillo), comando (celeste), evento confirmado (naranja), política (violeta), vista (verde), sistema externo o de infraestructura (rosado), problema (rojo) y contexto (blanco). En el Big Picture As-Is el azul se reservó para los sistemas actuales; al pasar al diseño de la solución se utiliza esta leyenda específica para no mezclar ambas lecturas.
 
-La figura 17 define la convención de colores utilizada para interpretar el EventStorming de la solución.
+La figura 16 define la convención de colores utilizada para interpretar el EventStorming de la solución.
 
 ![Leyenda de pósits del EventStorming To-Be](images/chapter_2/eventstorming-leyenda.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 17. Leyenda de pósits del EventStorming To-Be.*
+*Figura 16. Leyenda de pósits del EventStorming To-Be.*
 
 <!-- pdf:omit-end -->
 
@@ -2067,13 +2067,13 @@ La figura 17 define la convención de colores utilizada para interpretar el Even
 
 El segundo EventStorming modela el proceso **To-Be**: las acciones que el usuario iniciaría en CraveWallet y los cambios de estado que la aplicación tendría que conservar. Se partió del valor que distingue al producto, que es anticipar una renovación y comprender su efecto en el presupuesto, y se localizaron eventos que cambian el significado de la información: *suscripción registrada*, *alarma local programada*, *gasto registrado*, *límite mensual superado* y *plan Premium activado*. Estos eventos ayudan a proponer fronteras sin confundir las pantallas con los límites del dominio. En el tablero, los dos recorridos principales aparecen bajo los rótulos «suscripciones y avisos» y «gastos y presupuesto».
 
-La figura 18 representa los recorridos propuestos para registrar suscripciones y gastos.
+La figura 17 representa los recorridos propuestos para registrar suscripciones y gastos.
 
 ![EventStorming To-Be: flujos principales de suscripciones y gastos](images/chapter_2/eventstorming-flujos-principales.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 18. EventStorming To-Be: flujos principales de suscripciones y gastos.*
+*Figura 17. EventStorming To-Be: flujos principales de suscripciones y gastos.*
 
 <!-- pdf:omit-end -->
 
@@ -2119,13 +2119,13 @@ La tabla 86 ordena los mensajes del alta, la comprobación del plan y la prepara
 *Fuente: elaboración del equipo Gastify, adaptada de DDD Crew [@dddcrewMessageFlows].*
 
 
-La conversión se solicita al consultar el portafolio o previsualizar un importe según US34: Subscription Management pide USD/PEN al adaptador, recibe la cotización y su fecha, y devuelve una estimación en soles. El registro conserva la moneda original; el tipo de cambio del banco no se conoce por esta consulta. Si falla el proveedor, se indica la antigüedad de la última cotización válida o que la estimación no está disponible. La hora, zona horaria y reprogramación se deben concretar en SP03–SP04. La figura 19 representa el alta y la preparación del aviso.
+La conversión se solicita al consultar el portafolio o previsualizar un importe según US34: Subscription Management pide USD/PEN al adaptador, recibe la cotización y su fecha, y devuelve una estimación en soles. El registro conserva la moneda original; el tipo de cambio del banco no se conoce por esta consulta. Si falla el proveedor, se indica la antigüedad de la última cotización válida o que la estimación no está disponible. La hora, zona horaria y reprogramación se deben concretar en SP03–SP04. La figura 18 representa el alta y la preparación del aviso.
 
 ![Registro de suscripción y preparación del recordatorio](images/chapter_2/message-flow-subscription.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 19. Registro de suscripción y preparación del recordatorio.*
+*Figura 18. Registro de suscripción y preparación del recordatorio.*
 
 <!-- pdf:omit-end -->
 
@@ -2150,13 +2150,13 @@ La tabla 87 describe cómo se registra un gasto, se actualiza el presupuesto de 
 *Fuente: elaboración del equipo Gastify, adaptada de DDD Crew [@dddcrewMessageFlows].*
 
 
-La búsqueda de comercios es una consulta auxiliar: el adaptador de Google Places devuelve sugerencias, y el usuario elige una o escribe un nombre (US18). No se emite «dirección validada» como prueba de que el pedido ocurrió. La figura 20 representa el registro del gasto y la consulta del resumen. `MonthlyBudget` es un agregado de Delivery Expense Management; su presencia en el flujo no lo convierte en otro Bounded Context.
+La búsqueda de comercios es una consulta auxiliar: el adaptador de Google Places devuelve sugerencias, y el usuario elige una o escribe un nombre (US18). No se emite «dirección validada» como prueba de que el pedido ocurrió. La figura 19 representa el registro del gasto y la consulta del resumen. `MonthlyBudget` es un agregado de Delivery Expense Management; su presencia en el flujo no lo convierte en otro Bounded Context.
 
 ![Registro de gasto de delivery y comparación del presupuesto](images/chapter_2/message-flow-delivery.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 20. Registro de gasto de delivery y comparación del presupuesto.*
+*Figura 19. Registro de gasto de delivery y comparación del presupuesto.*
 
 <!-- pdf:omit-end -->
 
@@ -2182,13 +2182,13 @@ La tabla 88 distingue el inicio del checkout de la confirmación que habilita o 
 *Fuente: elaboración del equipo Gastify, adaptada de DDD Crew [@dddcrewMessageFlows].*
 
 
-Stripe documenta la confirmación por webhook y el control del estado de la suscripción [@stripeSubscriptionWebhooks]. La recepción debe admitir reintentos y notificaciones fuera de orden [@stripeWebhooks]. El registro único del identificador externo impide aplicar dos veces el mismo evento. SP05 y SP06 validan este flujo. La figura 21 separa la respuesta de Stripe al backend de la respuesta del backend al cliente.
+Stripe documenta la confirmación por webhook y el control del estado de la suscripción [@stripeSubscriptionWebhooks]. La recepción debe admitir reintentos y notificaciones fuera de orden [@stripeWebhooks]. El registro único del identificador externo impide aplicar dos veces el mismo evento. SP05 y SP06 validan este flujo. La figura 20 separa la respuesta de Stripe al backend de la respuesta del backend al cliente.
 
 ![Activación o renovación del plan Premium](images/chapter_2/message-flow-premium-activation.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 21. Activación o renovación del plan Premium.*
+*Figura 20. Activación o renovación del plan Premium.*
 
 <!-- pdf:omit-end -->
 
@@ -2215,13 +2215,13 @@ La tabla 89 separa la solicitud de cancelación del fin efectivo del acceso paga
 *Fuente: elaboración del equipo Gastify, adaptada de DDD Crew [@dddcrewMessageFlows].*
 
 
-La figura 22 representa la cancelación. Entre la confirmación de la solicitud (2c) y la finalización (3) transcurre el período restante; el usuario conserva Premium durante ese intervalo. La cancelación del plan propio no altera las suscripciones que el usuario paga a terceros.
+La figura 21 representa la cancelación. Entre la confirmación de la solicitud (2c) y la finalización (3) transcurre el período restante; el usuario conserva Premium durante ese intervalo. La cancelación del plan propio no altera las suscripciones que el usuario paga a terceros.
 
 ![Cancelación de la renovación y retorno al plan Free](images/chapter_2/message-flow-premium-cancellation.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 22. Cancelación de la renovación y retorno al plan Free.*
+*Figura 21. Cancelación de la renovación y retorno al plan Free.*
 
 <!-- pdf:omit-end -->
 
@@ -2233,18 +2233,18 @@ La autenticación es una capacidad técnica previa a los comandos del usuario. L
 
 #### 2.5.1.3. Bounded Context Canvases
 
-Cada canvas documenta el propósito y los límites de un contexto, sus colaboradores, mensajes, lenguaje y decisiones de negocio. Se adapta la estructura de DDD Crew [@dddcrewBoundedCanvas] a los tres contextos propuestos para CraveWallet. Las figuras 23–25 presentan un canvas individual por contexto y las tablas 90–92 desarrollan su contenido. Se conservan los campos del canvas v5: propósito, clasificación estratégica, roles, comunicación entrante y saliente, lenguaje, decisiones, supuestos, métricas y preguntas abiertas. La comunicación entrante agrupa colaboraciones iniciadas por otro participante; la saliente agrupa las iniciadas por el contexto. Cada consulta incluye su respuesta dentro de la misma colaboración. Los eventos internos se documentan en las decisiones de negocio. Se basan en las historias de la sección 2.4 y en el diseño táctico de la sección 2.6.
+Cada canvas documenta el propósito y los límites de un contexto, sus colaboradores, mensajes, lenguaje y decisiones de negocio. Se adapta la estructura de DDD Crew [@dddcrewBoundedCanvas] a los tres contextos propuestos para CraveWallet. Las figuras 22–24 presentan un canvas individual por contexto y las tablas 90–92 desarrollan su contenido. Se conservan los campos del canvas v5: propósito, clasificación estratégica, roles, comunicación entrante y saliente, lenguaje, decisiones, supuestos, métricas y preguntas abiertas. La comunicación entrante agrupa colaboraciones iniciadas por otro participante; la saliente agrupa las iniciadas por el contexto. Cada consulta incluye su respuesta dentro de la misma colaboración. Los eventos internos se documentan en las decisiones de negocio. Se basan en las historias de la sección 2.4 y en el diseño táctico de la sección 2.6.
 
 
 ##### Canvas 1. Subscription Management
 
-La figura 23 reúne el propósito, los contratos y las decisiones del contexto que administra los registros de suscripciones y sus próximas renovaciones.
+La figura 22 reúne el propósito, los contratos y las decisiones del contexto que administra los registros de suscripciones y sus próximas renovaciones.
 
 ![Bounded Context Canvas de Subscription Management](images/chapter_2/canvas-subscription.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 23. Bounded Context Canvas de Subscription Management.*
+*Figura 22. Bounded Context Canvas de Subscription Management.*
 
 <!-- pdf:omit-end -->
 
@@ -2275,13 +2275,13 @@ La tabla 90 desarrolla el canvas de Subscription Management y su trazabilidad a 
 
 ##### Canvas 2. Delivery Expense Management
 
-La figura 24 delimita el registro de gastos y el presupuesto mensual; distingue la consulta opcional de comercios de los eventos internos del contexto.
+La figura 23 delimita el registro de gastos y el presupuesto mensual; distingue la consulta opcional de comercios de los eventos internos del contexto.
 
 ![Bounded Context Canvas de Delivery Expense Management](images/chapter_2/canvas-delivery.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 24. Bounded Context Canvas de Delivery Expense Management.*
+*Figura 23. Bounded Context Canvas de Delivery Expense Management.*
 
 <!-- pdf:omit-end -->
 
@@ -2312,13 +2312,13 @@ La tabla 91 desarrolla el canvas de Delivery Expense Management, incluidos el pr
 
 ##### Canvas 3. Premium & Billing
 
-La figura 25 concentra las reglas del plan propio de CraveWallet, las colaboraciones con Stripe y el contrato de acceso que consume Subscription Management.
+La figura 24 concentra las reglas del plan propio de CraveWallet, las colaboraciones con Stripe y el contrato de acceso que consume Subscription Management.
 
 ![Bounded Context Canvas de Premium & Billing](images/chapter_2/canvas-premium.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 25. Bounded Context Canvas de Premium & Billing.*
+*Figura 24. Bounded Context Canvas de Premium & Billing.*
 
 <!-- pdf:omit-end -->
 
@@ -2372,13 +2372,13 @@ La tabla 93 justifica cada relación del Context Map e identifica el contrato o 
 
 <!-- pdf:omit-start -->
 
-*Figura 26. Context Map propuesto de CraveWallet.*
+*Figura 25. Context Map propuesto de CraveWallet.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: Gastify; adaptación del material de DDD Crew (s. f.), CC BY 4.0; [Miro](https://miro.com/app/board/uXjVEcjtdBM=/?moveToWidget=3458764686427232314).*
 
-La figura 26 representa estas relaciones. Suscripciones y Gastos solo comparten el identificador del usuario y la pantalla del Dashboard; por ello se propone Separate Ways.
+La figura 25 representa estas relaciones. Suscripciones y Gastos solo comparten el identificador del usuario y la pantalla del Dashboard; por ello se propone Separate Ways.
 
 El calendario del dispositivo y la autenticación colaboran con los casos de uso, pero no son Bounded Contexts de negocio.
 
@@ -2392,13 +2392,13 @@ El modelo distingue el incremento documentado en 4.2.1.8 del diseño pendiente. 
 
 CraveWallet reúne la landing, la experiencia móvil y el backend. El visitante conoce la propuesta y accede a la app; el usuario registra y consulta suscripciones y gastos. ExchangeRate-API proporciona cotizaciones y el calendario de Android recibe eventos desde el cliente. La integración futura con Stripe corresponde al plan propio de CraveWallet; registrar una suscripción no paga ni cancela el contrato con el proveedor externo.
 
-La figura 27 muestra dos roles, CraveWallet como un único sistema y cuatro colaboradores externos. Omite tecnologías, almacenes y módulos internos para conservar el nivel de contexto. La solicitud a Stripe y las notificaciones del proveedor tienen relaciones separadas, identificadas como propuestas; las flechas expresan colaboraciones y no una secuencia de ejecución.
+La figura 26 muestra dos roles, CraveWallet como un único sistema y cuatro colaboradores externos. Omite tecnologías, almacenes y módulos internos para conservar el nivel de contexto. La solicitud a Stripe y las notificaciones del proveedor tienen relaciones separadas, identificadas como propuestas; las flechas expresan colaboraciones y no una secuencia de ejecución.
 
 ![Diagrama de contexto del sistema CraveWallet](images/chapter_2/system-context-revised.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 27. Diagrama de contexto del sistema CraveWallet.*
+*Figura 26. Diagrama de contexto del sistema CraveWallet.*
 
 <!-- pdf:omit-end -->
 
@@ -2424,17 +2424,17 @@ La tabla 94 define los cinco contenedores. La tecnología móvil y el almacenami
 
 <!-- pdf:omit-start -->
 
-*Figura 28. Diagrama de contenedores de CraveWallet.*
+*Figura 27. Diagrama de contenedores de CraveWallet.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: elaboración del equipo Gastify; exportación de Structurizr, vista Containers.*
 
-La figura 28 muestra las tecnologías de las colaboraciones: HTTPS/JSON entre Android y backend, JPA/JDBC hacia PostgreSQL y APIs locales hacia SharedPreferences y CalendarContract. El calendario recibe operaciones desde Android. WorkManager prepara notificaciones locales; no se introduce un servidor de notificaciones push remotas. La colaboración con Stripe conserva el webhook firmado hacia el backend y el checkout del proveedor, ambos propuestos. El retorno al cliente no confirma el acceso Premium.
+La figura 27 muestra las tecnologías de las colaboraciones: HTTPS/JSON entre Android y backend, JPA/JDBC hacia PostgreSQL y APIs locales hacia SharedPreferences y CalendarContract. El calendario recibe operaciones desde Android. WorkManager prepara notificaciones locales; no se introduce un servidor de notificaciones push remotas. La colaboración con Stripe conserva el webhook firmado hacia el backend y el checkout del proveedor, ambos propuestos. El retorno al cliente no confirma el acceso Premium.
 
 #### 2.5.3.3. Software Architecture Deployment Diagrams
 
-La figura 29 asigna instancias de los contenedores a nodos de despliegue anidados, conforme al diagrama de despliegue C4 [@c4Deployment]. El incremento TB1 ejecuta el REST API como servicio Docker de Java 21 en Render, región Oregon, y conserva sus datos en PostgreSQL 17 administrado por Render. El servicio usa el perfil `prod`, variables privadas y conexión interna a la base, con migraciones Flyway V1–V3. El endpoint público es [cravewallet-api.onrender.com](https://cravewallet-api.onrender.com). La evidencia de publicación y persistencia tras reinicio se presenta en la tabla 153 de 4.2.1.8.
+La figura 28 asigna instancias de los contenedores a nodos de despliegue anidados, conforme al diagrama de despliegue C4 [@c4Deployment]. El incremento TB1 ejecuta el REST API como servicio Docker de Java 21 en Render, región Oregon, y conserva sus datos en PostgreSQL 17 administrado por Render. El servicio usa el perfil `prod`, variables privadas y conexión interna a la base, con migraciones Flyway V1–V3. El endpoint público es [cravewallet-api.onrender.com](https://cravewallet-api.onrender.com). La evidencia de publicación y persistencia tras reinicio se presenta en la tabla 153 de 4.2.1.8.
 
 La landing se aloja por separado en Vercel. El nodo Android representa el destino del APK generado y su almacenamiento local; no acredita instalación ni verificación física del calendario y las notificaciones. La integración del cliente se probó contra el HTTPS público, según la evidencia citada en 4.2.1.8. Stripe y Google Places no aparecen como servicios ya desplegados porque sus integraciones siguen pendientes.
 
@@ -2444,7 +2444,7 @@ Render Free es un entorno de demostración temporal: el servicio puede suspender
 
 <!-- pdf:omit-start -->
 
-*Figura 29. Despliegue TB1 de CraveWallet y cliente Android por validar.*
+*Figura 28. Despliegue TB1 de CraveWallet y cliente Android por validar.*
 
 <!-- pdf:omit-end -->
 
@@ -2511,13 +2511,13 @@ El request de alta contiene nombre, importe, moneda, categoría, fecha y periodi
 
 #### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-La figura 30 presenta el diseño de componentes de Subscription Management dentro del REST API. Las dependencias separan interfaz, aplicación, dominio y adaptadores; el almacenamiento y los sistemas externos se sitúan fuera de la frontera del backend. Los elementos y relaciones ámbar discontinuos son propuestas pendientes de integración. Esta vista describe responsabilidades y no una extracción automática de clases implementadas.
+La figura 29 presenta el diseño de componentes de Subscription Management dentro del REST API. Las dependencias separan interfaz, aplicación, dominio y adaptadores; el almacenamiento y los sistemas externos se sitúan fuera de la frontera del backend. Los elementos y relaciones ámbar discontinuos son propuestas pendientes de integración. Esta vista describe responsabilidades y no una extracción automática de clases implementadas.
 
 ![Componentes de Subscription Management](images/chapter_2/subscription-components-revised.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 30. Componentes de Subscription Management.*
+*Figura 29. Componentes de Subscription Management.*
 
 <!-- pdf:omit-end -->
 
@@ -2529,13 +2529,13 @@ La figura 30 presenta el diseño de componentes de Subscription Management dentr
 
 El diagrama conserva el agregado, sus objetos de valor, eventos y puertos. Las dependencias del dominio no incluyen HTTP, JPA ni clases del SDK externo. `PremiumStatusPort` es un contrato adicional de consulta de la aplicación; no convierte `UserId` en un Shared Kernel.
 
-La figura 31 muestra las clases de la Domain Layer de Subscription Management.
+La figura 30 muestra las clases de la Domain Layer de Subscription Management.
 
 ![Clases de dominio de Subscription Management](images/chapter_2/subscription_class_diagram.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 31. Clases de dominio de Subscription Management.*
+*Figura 30. Clases de dominio de Subscription Management.*
 
 <!-- pdf:omit-end -->
 
@@ -2545,13 +2545,13 @@ La figura 31 muestra las clases de la Domain Layer de Subscription Management.
 
 La persistencia separa registros, historial declarado y caché de cotizaciones. El historial solo almacena los cobros que el usuario registra o confirma. `user_id` identifica al propietario, pero no representa una relación entre agregados de Suscripciones, Gastos y Premium.
 
-La figura 32 muestra las tablas propuestas para persistir Subscription Management.
+La figura 31 muestra las tablas propuestas para persistir Subscription Management.
 
 ![Persistencia propuesta de Subscription Management](images/chapter_2/subscription-database-revised.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 32. Persistencia propuesta de Subscription Management.*
+*Figura 31. Persistencia propuesta de Subscription Management.*
 
 <!-- pdf:omit-end -->
 
@@ -2615,13 +2615,13 @@ Los manejadores internos pueden preparar el estado de exceso que consume la apli
 
 #### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
 
-La figura 33 presenta el diseño de componentes de Delivery Expense Management dentro del REST API. Las dependencias separan interfaz, aplicación, dominio y adaptadores; el almacenamiento y los sistemas externos se sitúan fuera de la frontera del backend. Los elementos y relaciones ámbar discontinuos son propuestas pendientes de integración. Esta vista describe responsabilidades y no una extracción automática de clases implementadas.
+La figura 32 presenta el diseño de componentes de Delivery Expense Management dentro del REST API. Las dependencias separan interfaz, aplicación, dominio y adaptadores; el almacenamiento y los sistemas externos se sitúan fuera de la frontera del backend. Los elementos y relaciones ámbar discontinuos son propuestas pendientes de integración. Esta vista describe responsabilidades y no una extracción automática de clases implementadas.
 
 ![Componentes de Delivery Expense Management](images/chapter_2/delivery-components-revised.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 33. Componentes de Delivery Expense Management.*
+*Figura 32. Componentes de Delivery Expense Management.*
 
 <!-- pdf:omit-end -->
 
@@ -2633,13 +2633,13 @@ La figura 33 presenta el diseño de componentes de Delivery Expense Management d
 
 El diagrama muestra los dos agregados, sus objetos de valor y eventos. La asociación por usuario/período no fusiona el gasto y el presupuesto en un solo agregado.
 
-La figura 34 muestra las clases de la Domain Layer de Delivery Expense Management.
+La figura 33 muestra las clases de la Domain Layer de Delivery Expense Management.
 
 ![Clases de dominio de Delivery Expense Management](images/chapter_2/delivery_class_diagram.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 34. Clases de dominio de Delivery Expense Management.*
+*Figura 33. Clases de dominio de Delivery Expense Management.*
 
 <!-- pdf:omit-end -->
 
@@ -2649,13 +2649,13 @@ La figura 34 muestra las clases de la Domain Layer de Delivery Expense Managemen
 
 `delivery_expenses` conserva los gastos y el identificador de solicitud para reconocer reintentos. `monthly_budgets` tiene una restricción única por usuario/año/mes. La línea entre tablas indica agrupación lógica por propietario y mes, no una clave foránea inventada hacia un presupuesto. La estrategia de concurrencia debe proteger el acumulado.
 
-La figura 35 muestra las tablas propuestas para persistir Delivery Expense Management.
+La figura 34 muestra las tablas propuestas para persistir Delivery Expense Management.
 
 ![Persistencia propuesta de Delivery Expense Management](images/chapter_2/delivery-database-revised.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 35. Persistencia propuesta de Delivery Expense Management.*
+*Figura 34. Persistencia propuesta de Delivery Expense Management.*
 
 <!-- pdf:omit-end -->
 
@@ -2719,13 +2719,13 @@ Para una factura pagada, se consulta y valida la suscripción vinculada antes de
 
 #### 2.6.3.5. Bounded Context Software Architecture Component Level Diagrams
 
-La figura 36 presenta el diseño de componentes de Premium & Billing dentro del REST API. Las dependencias separan interfaz, aplicación, dominio y adaptadores; el almacenamiento y los sistemas externos se sitúan fuera de la frontera del backend. Los elementos y relaciones ámbar discontinuos son propuestas pendientes de integración. Esta vista describe responsabilidades y no una extracción automática de clases implementadas.
+La figura 35 presenta el diseño de componentes de Premium & Billing dentro del REST API. Las dependencias separan interfaz, aplicación, dominio y adaptadores; el almacenamiento y los sistemas externos se sitúan fuera de la frontera del backend. Los elementos y relaciones ámbar discontinuos son propuestas pendientes de integración. Esta vista describe responsabilidades y no una extracción automática de clases implementadas.
 
 ![Componentes de Premium & Billing](images/chapter_2/premium-components-revised.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 36. Componentes de Premium & Billing.*
+*Figura 35. Componentes de Premium & Billing.*
 
 <!-- pdf:omit-end -->
 
@@ -2737,13 +2737,13 @@ La figura 36 presenta el diseño de componentes de Premium & Billing dentro del 
 
 El diagrama conserva el agregado y los eventos locales. La operación de renovación debe respetar la actualización de vigencia descrita arriba. Los puertos se completarán con el contrato de cancelación al implementar; el diagrama representa el núcleo del modelo.
 
-La figura 37 muestra las clases de la Domain Layer de Premium & Billing.
+La figura 36 muestra las clases de la Domain Layer de Premium & Billing.
 
 ![Clases de dominio de Premium & Billing](images/chapter_2/premium_class_diagram.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 37. Clases de dominio de Premium & Billing.*
+*Figura 36. Clases de dominio de Premium & Billing.*
 
 <!-- pdf:omit-end -->
 
@@ -2753,13 +2753,13 @@ La figura 37 muestra las clases de la Domain Layer de Premium & Billing.
 
 `user_plans` tiene un único registro por usuario. `billing_events` conserva identificador externo único, plan correlacionado, tipo, fecha y estado de procesamiento. La correlación se verifica antes de cambiar el plan.
 
-La figura 38 muestra las tablas propuestas para persistir Premium & Billing.
+La figura 37 muestra las tablas propuestas para persistir Premium & Billing.
 
 ![Persistencia propuesta de Premium & Billing](images/chapter_2/premium-database-revised.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 38. Persistencia propuesta de Premium & Billing.*
+*Figura 37. Persistencia propuesta de Premium & Billing.*
 
 <!-- pdf:omit-end -->
 
