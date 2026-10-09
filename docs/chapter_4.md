@@ -593,8 +593,6 @@ La consulta del recordatorio devuelve `reminderAt=2026-11-07T05:00:00Z` y `billi
 
 *Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
 
-<!-- Falta el enlace al video de navegación del Sprint Review. -->
-
 #### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
 El backend documenta con OpenAPI las 16 operaciones de la tabla 157. La documentación se genera desde el código con springdoc-openapi y se consulta en Swagger UI al ejecutar el servicio localmente (figura 118); el perfil de producción deshabilita Swagger público, por lo que la [especificación capturada](evidence/backend/openapi.json) permite revisar los esquemas, parámetros y respuestas sin depender de un servidor encendido.
