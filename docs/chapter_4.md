@@ -269,6 +269,18 @@ Los tres productos del hito TB1 se publican por separado. La tabla 145 resume la
 4. Vercel ejecuta automáticamente `npm run build` (`next build`) al detectar un nuevo push o merge en `main`.
 5. Una vez completado el build, el sitio queda publicado en la URL asignada por Vercel y disponible de forma global mediante su CDN.
 
+La figura 108 muestra el panel del proyecto `cravewallet-landing` en Vercel: el deployment de producción en estado `Ready`, la rama `main` como origen y el commit `3cdc4c5`.
+
+![Panel del proyecto cravewallet-landing en Vercel](images/chapter_4/vercel-dashboard.png)
+
+<!-- pdf:omit-start -->
+
+*Figura 108. Panel del proyecto cravewallet-landing en Vercel con el deployment de producción.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura del panel de Vercel del equipo Gastify, 9 de octubre de 2026.*
+
 #### REST API en Render
 
 El REST API se ejecuta localmente con Java 21 y el perfil `local`, que utiliza H2 en memoria y escucha en `127.0.0.1:8080`, y en Render con el perfil `prod` sobre PostgreSQL 17. Flyway aplica V1 para usuarios y sesiones, V2 para suscripciones y V3 para gastos de delivery y presupuestos. La tabla 146 distingue los perfiles de ejecución.
@@ -334,13 +346,13 @@ Los aspectos del Sprint 1 son los tres productos de la TB1: el landing page, la 
 
 #### 4.2.1.3. Sprint Backlog 1
 
-La figura 108 muestra el [tablero público](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) del Product Backlog. La tabla 149 presenta las tareas completadas en el Sprint 1, incluido el avance de la aplicación y del backend requerido para la TB1.
+La figura 109 muestra el [tablero público](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) del Product Backlog. La tabla 149 presenta las tareas completadas en el Sprint 1, incluido el avance de la aplicación y del backend requerido para la TB1.
 
 ![Tablero del Product Backlog en Trello](images/chapter_2/Product_Backlog_Trello.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 108. Tablero del Product Backlog en Trello.*
+*Figura 109. Tablero del Product Backlog en Trello.*
 
 <!-- pdf:omit-end -->
 
@@ -468,27 +480,27 @@ La tabla 155 relaciona los commits que incorporan pruebas.
 
 #### 4.2.1.6. Execution Evidence for Sprint Review
 
-En el Sprint 1 se ejecutaron los tres productos. La figura 109 muestra el landing publicado en Vercel; la figura 110 muestra la pantalla Inicio y la figura 111, la pantalla Análisis de la aplicación en un emulador Android; y las figuras 112 a 115 muestran operaciones del backend en Swagger. Los enlaces de ejecución de cada producto están en la sección 4.2.1.8.
+En el Sprint 1 se ejecutaron los tres productos. La figura 110 muestra el landing publicado en Vercel; la figura 111 muestra la pantalla Inicio y la figura 112, la pantalla Análisis de la aplicación en un emulador Android; y las figuras 113 a 116 muestran operaciones del backend en Swagger. Los enlaces de ejecución de cada producto están en la sección 4.2.1.8.
 
-**Landing page.** La figura 109 presenta el Hero del sitio publicado, con la barra de navegación, el selector de idioma, el interruptor de modo oscuro y la vista previa de la aplicación.
+**Landing page.** La figura 110 presenta el Hero del sitio publicado, con la barra de navegación, el selector de idioma, el interruptor de modo oscuro y la vista previa de la aplicación.
 
 ![Hero del landing page de CraveWallet publicado en Vercel](images/chapter_4/landing-live.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 109. Hero del landing page publicado en Vercel (Desktop).*
+*Figura 110. Hero del landing page publicado en Vercel (Desktop).*
 
 <!-- pdf:omit-end -->
 
 *Fuente: captura de <https://cravewallet-landing.vercel.app/es> del 9 de octubre de 2026, elaboración del equipo Gastify.*
 
-**Aplicación Android.** La aplicación del commit `2d4200e` compiló con `BUILD SUCCESSFUL` y se instaló en un emulador Android. Las pantallas Inicio (figura 110) y Análisis (figura 111) usan datos de demostración.
+**Aplicación Android.** La aplicación del commit `2d4200e` compiló con `BUILD SUCCESSFUL` y se instaló en un emulador Android. Las pantallas Inicio (figura 111) y Análisis (figura 112) usan datos de demostración.
 
 ![Pantalla Inicio de CraveWallet ejecutada en Android](images/chapter_4/mobile-home-emulator.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 110. Inicio de CraveWallet ejecutado en el emulador Android.*
+*Figura 111. Inicio de CraveWallet ejecutado en el emulador Android.*
 
 <!-- pdf:omit-end -->
 
@@ -498,7 +510,7 @@ En el Sprint 1 se ejecutaron los tres productos. La figura 109 muestra el landin
 
 <!-- pdf:omit-start -->
 
-*Figura 111. Análisis de CraveWallet ejecutado en el emulador Android.*
+*Figura 112. Análisis de CraveWallet ejecutado en el emulador Android.*
 
 <!-- pdf:omit-end -->
 
@@ -521,49 +533,49 @@ En el Sprint 1 se ejecutaron los tres productos. La figura 109 muestra el landin
 
 La información utilizada fue ficticia y se almacenó en H2 local. El endpoint de recordatorio prepara datos; no agenda un evento ni envía notificaciones. Como el modelo conserva una fecha sin hora, la renovación se representa a las 00:00 de America/Lima.
 
-La figura 112 muestra `POST /api/v1/subscriptions` con una suscripción ficticia en PEN: la respuesta contiene el identificador, el estado `ACTIVE`, la fecha de renovación y la cabecera `Location`.
+La figura 113 muestra `POST /api/v1/subscriptions` con una suscripción ficticia en PEN: la respuesta contiene el identificador, el estado `ACTIVE`, la fecha de renovación y la cabecera `Location`.
 
 ![Registro de una suscripción: HTTP 201 y recurso creado.](evidence/backend/swagger-subscription-created.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 112. Registro de una suscripción: HTTP 201 y recurso creado.*
+*Figura 113. Registro de una suscripción: HTTP 201 y recurso creado.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
 
-Antes del alta, se consultó el portafolio con una suscripción de USD 9,99. El servidor devolvió `monthlyTotalPen=34.37` y `conversionAvailable=true`; la tasa y sus fechas están en el [JSON de la consulta](evidence/backend/swagger-subscriptions-response.json) (figura 113).
+Antes del alta, se consultó el portafolio con una suscripción de USD 9,99. El servidor devolvió `monthlyTotalPen=34.37` y `conversionAvailable=true`; la tasa y sus fechas están en el [JSON de la consulta](evidence/backend/swagger-subscriptions-response.json) (figura 114).
 
 ![Consulta del portafolio de suscripciones: HTTP 200 y conversión a PEN.](evidence/backend/swagger-subscriptions-response.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 113. Consulta del portafolio de suscripciones: HTTP 200 y conversión a PEN.*
+*Figura 114. Consulta del portafolio de suscripciones: HTTP 200 y conversión a PEN.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
 
-Con un presupuesto de S/ 100 y un gasto de S/ 35,50 en octubre de 2026, el resumen devuelve el total, el saldo y los desgloses por categoría y semana (figura 114).
+Con un presupuesto de S/ 100 y un gasto de S/ 35,50 en octubre de 2026, el resumen devuelve el total, el saldo y los desgloses por categoría y semana (figura 115).
 
 ![Resumen de Delivery: HTTP 200, gasto S/ 35,50 y saldo S/ 64,50.](evidence/backend/swagger-summary-response.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 114. Resumen de Delivery: HTTP 200, gasto S/ 35,50 y saldo S/ 64,50.*
+*Figura 115. Resumen de Delivery: HTTP 200, gasto S/ 35,50 y saldo S/ 64,50.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
 
-La consulta del recordatorio devuelve `reminderAt=2026-11-07T05:00:00Z` y `billingAt=2026-11-08T05:00:00Z`, con zona `America/Lima` (figura 115).
+La consulta del recordatorio devuelve `reminderAt=2026-11-07T05:00:00Z` y `billingAt=2026-11-08T05:00:00Z`, con zona `America/Lima` (figura 116).
 
 ![Datos del recordatorio: HTTP 200 y aviso 24 horas antes de la renovación.](evidence/backend/swagger-reminder-response.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 115. Datos del recordatorio: HTTP 200 y aviso 24 horas antes de la renovación.*
+*Figura 116. Datos del recordatorio: HTTP 200 y aviso 24 horas antes de la renovación.*
 
 <!-- pdf:omit-end -->
 
@@ -573,13 +585,13 @@ La consulta del recordatorio devuelve `reminderAt=2026-11-07T05:00:00Z` y `billi
 
 #### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
-El backend documenta con OpenAPI las 16 operaciones de la tabla 157. La documentación se genera desde el código con springdoc-openapi y se consulta en Swagger UI al ejecutar el servicio localmente (figura 116); el perfil de producción deshabilita Swagger público, por lo que la [especificación capturada](evidence/backend/openapi.json) permite revisar los esquemas, parámetros y respuestas sin depender de un servidor encendido.
+El backend documenta con OpenAPI las 16 operaciones de la tabla 157. La documentación se genera desde el código con springdoc-openapi y se consulta en Swagger UI al ejecutar el servicio localmente (figura 117); el perfil de producción deshabilita Swagger público, por lo que la [especificación capturada](evidence/backend/openapi.json) permite revisar los esquemas, parámetros y respuestas sin depender de un servidor encendido.
 
 ![Documentación OpenAPI del backend CraveWallet en Swagger UI.](evidence/backend/swagger-overview.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 116. Documentación OpenAPI del backend CraveWallet en Swagger UI.*
+*Figura 117. Documentación OpenAPI del backend CraveWallet en Swagger UI.*
 
 <!-- pdf:omit-end -->
 
@@ -616,7 +628,7 @@ Los errores incluyen 400 para datos inválidos, 401 para autenticación no váli
 
 La caché USD/PEN dura 24 horas por instancia; ante un fallo, puede usar una tasa anterior de menos de siete días indicando `stale=true`. La [documentación del proveedor](https://www.exchangerate-api.com/docs/free) exige atribución para el endpoint Open Access, por lo que el contrato devuelve `attributionUrl` para que la interfaz la muestre.
 
-**Ejemplo de alta de suscripción.** La figura 117 muestra el cuerpo enviado desde Swagger a `POST /api/v1/subscriptions`, con `Content-Type: application/json` y una sesión Bearer autorizada. Los seis campos son obligatorios: `currency` admite PEN/USD, `billingCycle` admite MONTHLY/ANNUAL y la fecha debe ser actual o futura en America/Lima.
+**Ejemplo de alta de suscripción.** La figura 118 muestra el cuerpo enviado desde Swagger a `POST /api/v1/subscriptions`, con `Content-Type: application/json` y una sesión Bearer autorizada. Los seis campos son obligatorios: `currency` admite PEN/USD, `billingCycle` admite MONTHLY/ANNUAL y la fecha debe ser actual o futura en America/Lima.
 
 ```json
 {
@@ -633,25 +645,25 @@ La caché USD/PEN dura 24 horas por instancia; ante un fallo, puede usar una tas
 
 <!-- pdf:omit-start -->
 
-*Figura 117. Cuerpo JSON de alta de una suscripción en Swagger UI.*
+*Figura 118. Cuerpo JSON de alta de una suscripción en Swagger UI.*
 
 <!-- pdf:omit-end -->
 
-*Fuente: captura propia del backend local `2f36260`, 8 de octubre de 2026 (America/Lima). La respuesta real se presenta en la figura 112 y en [swagger-subscription-created.json](evidence/backend/swagger-subscription-created.json).*
+*Fuente: captura propia del backend local `2f36260`, 8 de octubre de 2026 (America/Lima). La respuesta real se presenta en la figura 113 y en [swagger-subscription-created.json](evidence/backend/swagger-subscription-created.json).*
 
-**Ejemplo de consulta del resumen mensual.** La figura 118 muestra los parámetros de `GET /api/v1/delivery-expenses/summary?year=2026&month=10`. El propietario se obtiene de la sesión y los importes se expresan en PEN.
+**Ejemplo de consulta del resumen mensual.** La figura 119 muestra los parámetros de `GET /api/v1/delivery-expenses/summary?year=2026&month=10`. El propietario se obtiene de la sesión y los importes se expresan en PEN.
 
 ![Parámetros de consulta del resumen mensual en Swagger](evidence/backend/swagger-summary-request.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 118. Parámetros year y month para consultar el resumen de Delivery.*
+*Figura 119. Parámetros year y month para consultar el resumen de Delivery.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: captura propia del backend local `2f36260`, 8 de octubre de 2026 (America/Lima).*
 
-La respuesta HTTP 200 de la figura 114 contiene el siguiente JSON, [conservado desde Swagger](evidence/backend/swagger-summary-response.json):
+La respuesta HTTP 200 de la figura 115 contiene el siguiente JSON, [conservado desde Swagger](evidence/backend/swagger-summary-response.json):
 
 ```json
 {
@@ -679,8 +691,8 @@ En el Sprint 1 se publicaron el landing page y el REST API; la aplicación Andro
 
 | Producto | Estado | Evidencia |
 | --- | --- | --- |
-| Landing page | Publicado en Vercel desde `main`; HTTP 200. | [cravewallet-landing.vercel.app](https://cravewallet-landing.vercel.app); dos deployments `Production` correctos (tabla 159). |
-| REST API | Publicado en Render con PostgreSQL 17 y perfil `prod`; health `UP`. | [Health público](https://cravewallet-api.onrender.com/actuator/health); figuras 120 a 123. |
+| Landing page | Publicado en Vercel desde `main`; HTTP 200. | [cravewallet-landing.vercel.app](https://cravewallet-landing.vercel.app); dos deployments `Production` correctos (tabla 159 y figura 108). |
+| REST API | Publicado en Render con PostgreSQL 17 y perfil `prod`; health `UP`. | [Health público](https://cravewallet-api.onrender.com/actuator/health); figuras 121 a 124. |
 | Base de datos | PostgreSQL 17 en Render; Flyway V1–V3. | 22 comprobaciones HTTP remotas y siete tras el reinicio del servicio ([resultados](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/evidence/cloud/remote-api-results.json)). |
 | Aplicación Android | APK `debug` generado; pruebas de integración contra el API público. | [Resultados](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/73c5785/docs/cloud-integration-results.json); APK `CraveWallet-TB1-cloud-debug.apk`. |
 
@@ -697,25 +709,25 @@ En el Sprint 1 se publicaron el landing page y el REST API; la aplicación Andro
 
 *Fuente: [Deployments de GitHub](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/deployments) creados por Vercel para el repositorio `cravewallet-landing` y [registro del deployment Production](evidence/deployment/vercel-production.json).*
 
-La figura 119 muestra el landing servido en su dirección pública.
+La figura 120 muestra el landing servido en su dirección pública.
 
 ![Landing de CraveWallet publicada en Vercel](evidence/deployment/landing-publica.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 119. Landing de CraveWallet publicada en Vercel.*
+*Figura 120. Landing de CraveWallet publicada en Vercel.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: captura del equipo Gastify de <https://cravewallet-landing.vercel.app/es>, 9 de octubre de 2026; procedencia en [capturas.json](evidence/deployment/capturas.json).*
 
-**Servicios RESTful.** Se publicaron en Render como servicio Docker `cravewallet-api` en el plan gratuito (región Oregon), junto con una base PostgreSQL 17. El servicio compila la rama `feature/cloud-deployment` en el commit `67ede2a` y queda disponible por HTTPS en <https://cravewallet-api.onrender.com>. La figura 120 muestra el servicio en estado Live y la figura 121, el historial de eventos con el despliegue y el reinicio solicitado.
+**Servicios RESTful.** Se publicaron en Render como servicio Docker `cravewallet-api` en el plan gratuito (región Oregon), junto con una base PostgreSQL 17. El servicio compila la rama `feature/cloud-deployment` en el commit `67ede2a` y queda disponible por HTTPS en <https://cravewallet-api.onrender.com>. La figura 121 muestra el servicio en estado Live y la figura 122, el historial de eventos con el despliegue y el reinicio solicitado.
 
 ![Servicio cravewallet-api en estado Live en Render](evidence/backend/cloud/render-live.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 120. Servicio cravewallet-api en estado Live en Render.*
+*Figura 121. Servicio cravewallet-api en estado Live en Render.*
 
 <!-- pdf:omit-end -->
 
@@ -725,43 +737,43 @@ La figura 119 muestra el landing servido en su dirección pública.
 
 <!-- pdf:omit-start -->
 
-*Figura 121. Eventos del servicio cravewallet-api en Render: despliegue y reinicio.*
+*Figura 122. Eventos del servicio cravewallet-api en Render: despliegue y reinicio.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: captura del panel de Render del equipo Gastify, 9 de octubre de 2026.*
 
-La figura 122 muestra la pantalla de arranque que Render presenta al abrir el health público de un servicio del plan gratuito tras un período de inactividad; la siguiente petición respondió HTTP 200 y `UP` a las 00:57:35 (America/Lima).
+La figura 123 muestra la pantalla de arranque que Render presenta al abrir el health público de un servicio del plan gratuito tras un período de inactividad; la siguiente petición respondió HTTP 200 y `UP` a las 00:57:35 (America/Lima).
 
 ![Pantalla de arranque de Render al acceder al health público](evidence/deployment/render-arranque.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura 122. Pantalla de arranque de Render al acceder al health público.*
+*Figura 123. Pantalla de arranque de Render al acceder al health público.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: captura del equipo Gastify de <https://cravewallet-api.onrender.com/actuator/health>, 9 de octubre de 2026; procedencia en [capturas.json](evidence/deployment/capturas.json).*
 
-Tras el reinicio se comprobó que se conservaron la sesión, la suscripción editada y el presupuesto con su gasto, y que el cierre de sesión revocó el acceso. La figura 123 muestra la respuesta pública de `/actuator/health`.
+Tras el reinicio se comprobó que se conservaron la sesión, la suscripción editada y el presupuesto con su gasto, y que el cierre de sesión revocó el acceso. La figura 124 muestra la respuesta pública de `/actuator/health`.
 
 ![Respuesta pública de /actuator/health del REST API](images/chapter_4/api-health.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 123. Respuesta pública de /actuator/health del REST API: estado UP.*
+*Figura 124. Respuesta pública de /actuator/health del REST API: estado UP.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: captura de <https://cravewallet-api.onrender.com/actuator/health>, 9 de octubre de 2026; [respuesta registrada](evidence/deployment/health-publico.json).*
 
-La construcción del backend se verifica en GitHub Actions: el workflow `Backend build` terminó con éxito en sus siete ejecuciones, entre el commit `1f1b39b` y el `740aba0`, sobre `develop` y `feature/cloud-deployment` (figura 124).
+La construcción del backend se verifica en GitHub Actions: el workflow `Backend build` terminó con éxito en sus siete ejecuciones, entre el commit `1f1b39b` y el `740aba0`, sobre `develop` y `feature/cloud-deployment` (figura 125).
 
 ![Ejecuciones del workflow Backend build en GitHub Actions](images/chapter_4/backend-actions.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 124. Ejecuciones del workflow Backend build en GitHub Actions.*
+*Figura 125. Ejecuciones del workflow Backend build en GitHub Actions.*
 
 <!-- pdf:omit-end -->
 
@@ -771,7 +783,7 @@ La construcción del backend se verifica en GitHub Actions: el workflow `Backend
 
 #### 4.2.1.9. Team Collaboration Insights during Sprint
 
-El historial de los repositorios muestra el aporte de cada integrante en el Sprint 1. La tabla 160 presenta los commits de cada uno por repositorio entre el 16 de septiembre y el 9 de octubre de 2026 (informe hasta el commit `3dbbc36`), y excluye los commits de merge. La figura 125 presenta los mismos datos. Los commits de Anghelo Faustino en los repositorios de código figuran con el usuario `limozz05` y los del informe, con su cuenta `Limos05`.
+El historial de los repositorios muestra el aporte de cada integrante en el Sprint 1. La tabla 160 presenta los commits de cada uno por repositorio entre el 16 de septiembre y el 9 de octubre de 2026 (informe hasta el commit `3dbbc36`), y excluye los commits de merge. La figura 126 presenta los mismos datos. Los commits de Anghelo Faustino en los repositorios de código figuran con el usuario `limozz05` y los del informe, con su cuenta `Limos05`.
 
 *Tabla 160. Commits de cada integrante por repositorio en el Sprint 1.*
 
@@ -789,7 +801,7 @@ El historial de los repositorios muestra el aporte de cada integrante en el Spri
 
 <!-- pdf:omit-start -->
 
-*Figura 125. Commits por integrante y repositorio en el Sprint 1.*
+*Figura 126. Commits por integrante y repositorio en el Sprint 1.*
 
 <!-- pdf:omit-end -->
 
