@@ -1,0 +1,1690 @@
+{
+  "configuration": {},
+  "description": "C4: contexto, contenedores, componentes y despliegue TB1.",
+  "documentation": {},
+  "id": 0,
+  "model": {
+    "deploymentNodes": [
+      {
+        "children": [
+          {
+            "containerInstances": [
+              {
+                "containerId": "9",
+                "environment": "TB1 verificado y cliente por validar",
+                "id": "77",
+                "instanceId": 1,
+                "properties": {
+                  "structurizr.dsl.identifier": "40ceef4f-0d6f-481a-baa4-05d861b75319"
+                },
+                "relationships": [
+                  {
+                    "description": "Lee y guarda datos locales",
+                    "destinationId": "78",
+                    "id": "79",
+                    "linkedRelationshipId": "42",
+                    "sourceId": "77",
+                    "technology": "API SharedPreferences"
+                  },
+                  {
+                    "description": "Crea, reprograma o retira eventos",
+                    "destinationId": "80",
+                    "id": "81",
+                    "linkedRelationshipId": "43",
+                    "sourceId": "77",
+                    "technology": "CalendarContract / permisos"
+                  },
+                  {
+                    "description": "Autentica y ejecuta casos de uso",
+                    "destinationId": "87",
+                    "id": "88",
+                    "linkedRelationshipId": "41",
+                    "sourceId": "77",
+                    "technology": "HTTPS / JSON"
+                  }
+                ],
+                "tags": "Container Instance"
+              },
+              {
+                "containerId": "10",
+                "environment": "TB1 verificado y cliente por validar",
+                "id": "78",
+                "instanceId": 1,
+                "properties": {
+                  "structurizr.dsl.identifier": "f5678097-1eec-447e-9a77-00145fec975e"
+                },
+                "tags": "Container Instance"
+              }
+            ],
+            "description": "Generado y probado con Robolectric; no acredita instalación física.",
+            "environment": "TB1 verificado y cliente por validar",
+            "id": "76",
+            "instances": "1",
+            "name": "CraveWallet APK",
+            "properties": {
+              "structurizr.dsl.identifier": "e6079b36-b6c3-4b43-ae92-099affd7da13"
+            },
+            "tags": "Element,Deployment Node",
+            "technology": "Android Runtime / Kotlin"
+          }
+        ],
+        "description": "Destino del APK; prueba física pendiente.",
+        "environment": "TB1 verificado y cliente por validar",
+        "id": "75",
+        "instances": "1",
+        "name": "Dispositivo Android",
+        "properties": {
+          "structurizr.dsl.identifier": "3ee6283b-8fee-4a65-9c24-e9aacd05fcc4"
+        },
+        "softwareSystemInstances": [
+          {
+            "environment": "TB1 verificado y cliente por validar",
+            "id": "80",
+            "instanceId": 1,
+            "properties": {
+              "structurizr.dsl.identifier": "c1db26e2-42df-4c09-9be1-5de9b5c9d46d"
+            },
+            "softwareSystemId": "6",
+            "tags": "Software System Instance"
+          }
+        ],
+        "tags": "Element,Deployment Node",
+        "technology": "Android 8 o superior"
+      },
+      {
+        "containerInstances": [
+          {
+            "containerId": "8",
+            "environment": "TB1 verificado y cliente por validar",
+            "id": "83",
+            "instanceId": 1,
+            "properties": {
+              "structurizr.dsl.identifier": "6465d5a5-b40c-425b-a9ec-ada9eca71e54"
+            },
+            "relationships": [
+              {
+                "description": "Ofrece acceso a la descarga",
+                "destinationId": "77",
+                "id": "84",
+                "linkedRelationshipId": "40",
+                "sourceId": "83",
+                "technology": "Enlace de descarga"
+              }
+            ],
+            "tags": "Container Instance"
+          }
+        ],
+        "description": "Landing publicada; independiente del REST API.",
+        "environment": "TB1 verificado y cliente por validar",
+        "id": "82",
+        "instances": "1",
+        "name": "Vercel",
+        "properties": {
+          "structurizr.dsl.identifier": "ef2abd8b-eb87-4ce4-afaf-76e58c36734d"
+        },
+        "tags": "Element,Deployment Node",
+        "technology": "Hosting estático / HTTPS"
+      },
+      {
+        "children": [
+          {
+            "containerInstances": [
+              {
+                "containerId": "12",
+                "environment": "TB1 verificado y cliente por validar",
+                "id": "87",
+                "instanceId": 1,
+                "properties": {
+                  "structurizr.dsl.identifier": "18072b58-d1f5-428a-bafa-af75a7095c98"
+                },
+                "relationships": [
+                  {
+                    "description": "Lee y persiste estado",
+                    "destinationId": "90",
+                    "id": "91",
+                    "linkedRelationshipId": "45",
+                    "sourceId": "87",
+                    "technology": "JPA / JDBC"
+                  },
+                  {
+                    "description": "Consulta cotizaciones",
+                    "destinationId": "93",
+                    "id": "94",
+                    "linkedRelationshipId": "46",
+                    "sourceId": "87",
+                    "technology": "HTTPS / JSON"
+                  }
+                ],
+                "tags": "Container Instance"
+              }
+            ],
+            "description": "HTTPS público; perfil prod; proceso sin root; variables privadas.",
+            "environment": "TB1 verificado y cliente por validar",
+            "id": "86",
+            "instances": "1",
+            "name": "Servicio cravewallet-api",
+            "properties": {
+              "structurizr.dsl.identifier": "a70f1c72-8347-4cd6-bf12-19be24ad8e1d"
+            },
+            "tags": "Element,Deployment Node",
+            "technology": "Docker / Java 21"
+          },
+          {
+            "containerInstances": [
+              {
+                "containerId": "11",
+                "environment": "TB1 verificado y cliente por validar",
+                "id": "90",
+                "instanceId": 1,
+                "properties": {
+                  "structurizr.dsl.identifier": "25c665bd-4920-4778-8447-e8b21a928d3b"
+                },
+                "tags": "Container Instance"
+              }
+            ],
+            "description": "Acceso externo bloqueado; conexión interna; Flyway V1–V3.",
+            "environment": "TB1 verificado y cliente por validar",
+            "id": "89",
+            "instances": "1",
+            "name": "PostgreSQL administrado",
+            "properties": {
+              "structurizr.dsl.identifier": "f132f55a-dca3-408d-a051-028c3a193bf4"
+            },
+            "tags": "Element,Deployment Node",
+            "technology": "Render PostgreSQL 17"
+          }
+        ],
+        "description": "Incremento TB1 publicado; plan gratuito temporal.",
+        "environment": "TB1 verificado y cliente por validar",
+        "id": "85",
+        "instances": "1",
+        "name": "Render — Oregon",
+        "properties": {
+          "structurizr.dsl.identifier": "b11e5dba-d330-48cf-b8f0-3bf51156135b"
+        },
+        "tags": "Element,Deployment Node",
+        "technology": "Plataforma administrada"
+      },
+      {
+        "description": "Proveedor externo consultado por el backend.",
+        "environment": "TB1 verificado y cliente por validar",
+        "id": "92",
+        "instances": "1",
+        "name": "Proveedor de cotizaciones",
+        "properties": {
+          "structurizr.dsl.identifier": "ae56f331-5f71-4817-ba79-e6585e8354ba"
+        },
+        "softwareSystemInstances": [
+          {
+            "environment": "TB1 verificado y cliente por validar",
+            "id": "93",
+            "instanceId": 1,
+            "properties": {
+              "structurizr.dsl.identifier": "05aae04f-e796-4331-a985-5bcd22958c2a"
+            },
+            "softwareSystemId": "3",
+            "tags": "Software System Instance"
+          }
+        ],
+        "tags": "Element,Deployment Node",
+        "technology": "Servicio HTTPS"
+      }
+    ],
+    "people": [
+      {
+        "description": "Estudiante o profesional joven que controla suscripciones y gastos.",
+        "id": "1",
+        "name": "Usuario",
+        "properties": {
+          "structurizr.dsl.identifier": "user"
+        },
+        "relationships": [
+          {
+            "description": "Registra y consulta suscripciones y gastos",
+            "destinationId": "7",
+            "id": "30",
+            "sourceId": "1",
+            "tags": "Relationship"
+          },
+          {
+            "description": "Completa el pago del plan (propuesto)",
+            "destinationId": "4",
+            "id": "32",
+            "properties": {
+              "structurizr.dsl.identifier": "userCheckout"
+            },
+            "sourceId": "1",
+            "tags": "Relationship,Propuesto"
+          },
+          {
+            "description": "Usa formularios y resúmenes",
+            "destinationId": "9",
+            "id": "38",
+            "sourceId": "1",
+            "tags": "Relationship",
+            "technology": "Interfaz Android"
+          }
+        ],
+        "tags": "Element,Person"
+      },
+      {
+        "description": "Conoce la propuesta y accede a la descarga de la app.",
+        "id": "2",
+        "name": "Visitante",
+        "properties": {
+          "structurizr.dsl.identifier": "visitor"
+        },
+        "relationships": [
+          {
+            "description": "Conoce la propuesta y accede a la app",
+            "destinationId": "7",
+            "id": "31",
+            "sourceId": "2",
+            "tags": "Relationship"
+          },
+          {
+            "description": "Consulta la propuesta",
+            "destinationId": "8",
+            "id": "39",
+            "sourceId": "2",
+            "tags": "Relationship",
+            "technology": "HTTPS"
+          }
+        ],
+        "tags": "Element,Person"
+      }
+    ],
+    "softwareSystems": [
+      {
+        "description": "Cotizaciones para estimar importes en soles.",
+        "documentation": {},
+        "id": "3",
+        "name": "ExchangeRate-API",
+        "properties": {
+          "structurizr.dsl.identifier": "rates"
+        },
+        "tags": "Element,Software System,Externo"
+      },
+      {
+        "description": "Checkout y facturación del plan de CraveWallet; integración pendiente.",
+        "documentation": {},
+        "id": "4",
+        "name": "Stripe (propuesto)",
+        "properties": {
+          "structurizr.dsl.identifier": "stripe"
+        },
+        "relationships": [
+          {
+            "description": "Notifica pago y fin del plan (propuesto)",
+            "destinationId": "7",
+            "id": "36",
+            "sourceId": "4",
+            "tags": "Relationship,Propuesto"
+          },
+          {
+            "description": "Entrega eventos verificados (propuesto)",
+            "destinationId": "12",
+            "id": "48",
+            "sourceId": "4",
+            "tags": "Relationship,Propuesto",
+            "technology": "HTTPS / webhook firmado"
+          },
+          {
+            "description": "Entrega evento de facturación",
+            "destinationId": "29",
+            "id": "72",
+            "sourceId": "4",
+            "tags": "Relationship,Propuesto",
+            "technology": "HTTPS / webhook firmado"
+          }
+        ],
+        "tags": "Element,Software System,Externo,Propuesto"
+      },
+      {
+        "description": "Sugerencias de comercios; integración pendiente.",
+        "documentation": {},
+        "id": "5",
+        "name": "Google Places (propuesto)",
+        "properties": {
+          "structurizr.dsl.identifier": "places"
+        },
+        "tags": "Element,Software System,Externo,Propuesto"
+      },
+      {
+        "description": "Eventos del cliente con permisos; validación en dispositivo pendiente.",
+        "documentation": {},
+        "id": "6",
+        "name": "Calendario de Android",
+        "properties": {
+          "structurizr.dsl.identifier": "calendar"
+        },
+        "tags": "Element,Software System,Externo"
+      },
+      {
+        "containers": [
+          {
+            "description": "Presenta la propuesta y ofrece acceso a la app; publicada en Vercel.",
+            "documentation": {},
+            "id": "8",
+            "name": "Landing Page",
+            "properties": {
+              "structurizr.dsl.identifier": "landing"
+            },
+            "relationships": [
+              {
+                "description": "Ofrece acceso a la descarga",
+                "destinationId": "9",
+                "id": "40",
+                "sourceId": "8",
+                "tags": "Relationship",
+                "technology": "Enlace de descarga"
+              }
+            ],
+            "tags": "Element,Container,Web",
+            "technology": "Next.js / React / Tailwind CSS"
+          },
+          {
+            "description": "Formularios, Dashboard, autenticación, API y avisos locales. APK generado; falta validar en dispositivo.",
+            "documentation": {},
+            "id": "9",
+            "name": "Aplicación Android",
+            "properties": {
+              "structurizr.dsl.identifier": "mobile"
+            },
+            "relationships": [
+              {
+                "description": "Autentica y ejecuta casos de uso",
+                "destinationId": "12",
+                "id": "41",
+                "sourceId": "9",
+                "tags": "Relationship",
+                "technology": "HTTPS / JSON"
+              },
+              {
+                "description": "Lee y guarda datos locales",
+                "destinationId": "10",
+                "id": "42",
+                "sourceId": "9",
+                "tags": "Relationship",
+                "technology": "API SharedPreferences"
+              },
+              {
+                "description": "Crea, reprograma o retira eventos",
+                "destinationId": "6",
+                "id": "43",
+                "sourceId": "9",
+                "tags": "Relationship",
+                "technology": "CalendarContract / permisos"
+              },
+              {
+                "description": "Abre checkout (propuesto)",
+                "destinationId": "4",
+                "id": "44",
+                "sourceId": "9",
+                "tags": "Relationship,Propuesto",
+                "technology": "HTTPS"
+              },
+              {
+                "description": "Gestiona suscripciones y consulta recordatorios",
+                "destinationId": "13",
+                "id": "50",
+                "sourceId": "9",
+                "tags": "Relationship",
+                "technology": "HTTPS / JSON"
+              },
+              {
+                "description": "Registra gastos y consulta resumen",
+                "destinationId": "19",
+                "id": "59",
+                "sourceId": "9",
+                "tags": "Relationship",
+                "technology": "HTTPS / JSON"
+              },
+              {
+                "description": "Solicita checkout, estado y cancelación (propuesto)",
+                "destinationId": "24",
+                "id": "66",
+                "sourceId": "9",
+                "tags": "Relationship,Propuesto",
+                "technology": "HTTPS / JSON"
+              }
+            ],
+            "tags": "Element,Container,Móvil",
+            "technology": "Kotlin / Jetpack Compose"
+          },
+          {
+            "description": "Preferencias, notas, sesión y datos de demostración. Los registros conectados se conservan en el backend.",
+            "documentation": {},
+            "id": "10",
+            "name": "Almacenamiento local",
+            "properties": {
+              "structurizr.dsl.identifier": "local"
+            },
+            "tags": "Element,Container,Datos",
+            "technology": "SharedPreferences / JSON"
+          },
+          {
+            "description": "Estado canónico de usuarios, sesiones, suscripciones, gastos y presupuestos; esquema de Premium propuesto.",
+            "documentation": {},
+            "id": "11",
+            "name": "Base de datos",
+            "properties": {
+              "structurizr.dsl.identifier": "remote"
+            },
+            "tags": "Element,Container,Datos",
+            "technology": "PostgreSQL 17"
+          },
+          {
+            "components": [
+              {
+                "description": "Traduce solicitudes autenticadas a comandos y DTO de recordatorios.",
+                "documentation": {},
+                "id": "13",
+                "name": "SubscriptionController",
+                "properties": {
+                  "structurizr.dsl.identifier": "subController"
+                },
+                "relationships": [
+                  {
+                    "description": "Envía comandos y consultas",
+                    "destinationId": "14",
+                    "id": "51",
+                    "sourceId": "13",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Suscripciones",
+                "technology": "Spring MVC"
+              },
+              {
+                "description": "Coordina registro, edición, cancelación local y consultas.",
+                "documentation": {},
+                "id": "14",
+                "name": "Subscription Application Service",
+                "properties": {
+                  "structurizr.dsl.identifier": "subService"
+                },
+                "relationships": [
+                  {
+                    "description": "Aplica invariantes",
+                    "destinationId": "15",
+                    "id": "52",
+                    "sourceId": "14",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Guarda y consulta por propietario",
+                    "destinationId": "16",
+                    "id": "53",
+                    "sourceId": "14",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Solicita cotización mediante ExchangeRatePort",
+                    "destinationId": "17",
+                    "id": "54",
+                    "sourceId": "14",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Consulta acceso y límite (propuesto)",
+                    "destinationId": "18",
+                    "id": "55",
+                    "sourceId": "14",
+                    "tags": "Relationship,Propuesto"
+                  }
+                ],
+                "tags": "Element,Component,Suscripciones",
+                "technology": "Servicio de aplicación"
+              },
+              {
+                "description": "Reglas de importe, moneda, ciclo y estado del registro.",
+                "documentation": {},
+                "id": "15",
+                "name": "Subscription / Money",
+                "properties": {
+                  "structurizr.dsl.identifier": "subDomain"
+                },
+                "tags": "Element,Component,Suscripciones",
+                "technology": "Modelo de dominio"
+              },
+              {
+                "description": "Persiste y consulta registros por propietario.",
+                "documentation": {},
+                "id": "16",
+                "name": "JpaSubscriptionRepository",
+                "properties": {
+                  "structurizr.dsl.identifier": "subRepo"
+                },
+                "relationships": [
+                  {
+                    "description": "Lee y escribe tablas de Suscripciones",
+                    "destinationId": "11",
+                    "id": "57",
+                    "sourceId": "16",
+                    "tags": "Relationship",
+                    "technology": "JPA / JDBC"
+                  }
+                ],
+                "tags": "Element,Component,Suscripciones",
+                "technology": "JPA / Spring Data"
+              },
+              {
+                "description": "Traduce cotizaciones a ExchangeRate con fecha y disponibilidad.",
+                "documentation": {},
+                "id": "17",
+                "name": "ExchangeRateApiAdapter",
+                "properties": {
+                  "structurizr.dsl.identifier": "exchange"
+                },
+                "relationships": [
+                  {
+                    "description": "Consulta el proveedor",
+                    "destinationId": "3",
+                    "id": "58",
+                    "sourceId": "17",
+                    "tags": "Relationship",
+                    "technology": "HTTPS / JSON"
+                  }
+                ],
+                "tags": "Element,Component,Suscripciones",
+                "technology": "Adaptador / HTTPS"
+              },
+              {
+                "description": "Contrato local de nivel y límite; integración Premium pendiente.",
+                "documentation": {},
+                "id": "18",
+                "name": "PremiumStatusPort (propuesto)",
+                "properties": {
+                  "structurizr.dsl.identifier": "planAccess"
+                },
+                "relationships": [
+                  {
+                    "description": "Consume contrato local (propuesto)",
+                    "destinationId": "25",
+                    "id": "56",
+                    "sourceId": "18",
+                    "tags": "Relationship,Propuesto"
+                  }
+                ],
+                "tags": "Element,Component,Suscripciones,Propuesto",
+                "technology": "Puerto de colaboración"
+              },
+              {
+                "description": "Recibe gastos, presupuestos y consultas del propietario.",
+                "documentation": {},
+                "id": "19",
+                "name": "DeliveryExpenseController",
+                "properties": {
+                  "structurizr.dsl.identifier": "deliveryController"
+                },
+                "relationships": [
+                  {
+                    "description": "Envía comandos y consultas",
+                    "destinationId": "20",
+                    "id": "60",
+                    "sourceId": "19",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Gastos",
+                "technology": "Spring MVC"
+              },
+              {
+                "description": "Coordina gasto y presupuesto, reintentos y cálculo del exceso.",
+                "documentation": {},
+                "id": "20",
+                "name": "Delivery Expense Application Service",
+                "properties": {
+                  "structurizr.dsl.identifier": "deliveryService"
+                },
+                "relationships": [
+                  {
+                    "description": "Aplica reglas de gasto y presupuesto",
+                    "destinationId": "21",
+                    "id": "61",
+                    "sourceId": "20",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Persiste con deduplicación",
+                    "destinationId": "22",
+                    "id": "62",
+                    "sourceId": "20",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Busca sugerencias mediante puerto (propuesto)",
+                    "destinationId": "23",
+                    "id": "63",
+                    "sourceId": "20",
+                    "tags": "Relationship,Propuesto"
+                  }
+                ],
+                "tags": "Element,Component,Gastos",
+                "technology": "Servicio de aplicación"
+              },
+              {
+                "description": "Agregados distintos vinculados por usuario y período.",
+                "documentation": {},
+                "id": "21",
+                "name": "DeliveryExpense / MonthlyBudget",
+                "properties": {
+                  "structurizr.dsl.identifier": "deliveryDomain"
+                },
+                "tags": "Element,Component,Gastos",
+                "technology": "Modelo de dominio"
+              },
+              {
+                "description": "Guarda gasto y presupuesto dentro de la transacción.",
+                "documentation": {},
+                "id": "22",
+                "name": "Repositorios de gastos y presupuestos",
+                "properties": {
+                  "structurizr.dsl.identifier": "deliveryRepo"
+                },
+                "relationships": [
+                  {
+                    "description": "Lee y escribe tablas de Gastos",
+                    "destinationId": "11",
+                    "id": "64",
+                    "sourceId": "22",
+                    "tags": "Relationship",
+                    "technology": "JPA / JDBC"
+                  }
+                ],
+                "tags": "Element,Component,Gastos",
+                "technology": "JPA / Spring Data"
+              },
+              {
+                "description": "Traduce a MerchantSuggestion; conserva el registro manual.",
+                "documentation": {},
+                "id": "23",
+                "name": "GooglePlacesAdapter (propuesto)",
+                "properties": {
+                  "structurizr.dsl.identifier": "placesAdapter"
+                },
+                "relationships": [
+                  {
+                    "description": "Consulta y traduce comercios (propuesto)",
+                    "destinationId": "5",
+                    "id": "65",
+                    "sourceId": "23",
+                    "tags": "Relationship,Propuesto",
+                    "technology": "HTTPS / JSON"
+                  }
+                ],
+                "tags": "Element,Component,Gastos,Propuesto",
+                "technology": "ACL / HTTPS"
+              },
+              {
+                "description": "Checkout, estado, historial y cancelación de renovación.",
+                "documentation": {},
+                "id": "24",
+                "name": "PremiumController",
+                "properties": {
+                  "structurizr.dsl.identifier": "premiumController"
+                },
+                "relationships": [
+                  {
+                    "description": "Envía comandos y consultas",
+                    "destinationId": "25",
+                    "id": "67",
+                    "sourceId": "24",
+                    "tags": "Relationship,Propuesto"
+                  }
+                ],
+                "tags": "Element,Component,Premium,Propuesto",
+                "technology": "Spring MVC"
+              },
+              {
+                "description": "Correlación, deduplicación y vigencia tras pago verificado.",
+                "documentation": {},
+                "id": "25",
+                "name": "Premium Application Service",
+                "properties": {
+                  "structurizr.dsl.identifier": "premiumService"
+                },
+                "relationships": [
+                  {
+                    "description": "Aplica vigencia y nivel confirmados",
+                    "destinationId": "26",
+                    "id": "68",
+                    "sourceId": "25",
+                    "tags": "Relationship,Propuesto"
+                  },
+                  {
+                    "description": "Guarda plan y eventos en una transacción",
+                    "destinationId": "27",
+                    "id": "69",
+                    "sourceId": "25",
+                    "tags": "Relationship,Propuesto"
+                  },
+                  {
+                    "description": "Solicita checkout o fin de renovación",
+                    "destinationId": "28",
+                    "id": "70",
+                    "sourceId": "25",
+                    "tags": "Relationship,Propuesto"
+                  }
+                ],
+                "tags": "Element,Component,Premium,Propuesto",
+                "technology": "Servicio de aplicación"
+              },
+              {
+                "description": "Nivel, vigencia y facturación; conserva el período pagado.",
+                "documentation": {},
+                "id": "26",
+                "name": "Plan / BillingEvent",
+                "properties": {
+                  "structurizr.dsl.identifier": "premiumDomain"
+                },
+                "tags": "Element,Component,Premium,Propuesto",
+                "technology": "Modelo de dominio"
+              },
+              {
+                "description": "Persiste plan y eventos; unicidad del identificador externo.",
+                "documentation": {},
+                "id": "27",
+                "name": "JpaPlanRepository / billing_events",
+                "properties": {
+                  "structurizr.dsl.identifier": "premiumRepo"
+                },
+                "relationships": [
+                  {
+                    "description": "Lee y escribe tablas de Premium (propuesto)",
+                    "destinationId": "11",
+                    "id": "74",
+                    "sourceId": "27",
+                    "tags": "Relationship,Propuesto",
+                    "technology": "JPA / JDBC"
+                  }
+                ],
+                "tags": "Element,Component,Premium,Propuesto",
+                "technology": "JPA / PostgreSQL"
+              },
+              {
+                "description": "PaymentGatewayPort para checkout y cancelación.",
+                "documentation": {},
+                "id": "28",
+                "name": "StripeGatewayAdapter",
+                "properties": {
+                  "structurizr.dsl.identifier": "gateway"
+                },
+                "relationships": [
+                  {
+                    "description": "Invoca al proveedor",
+                    "destinationId": "4",
+                    "id": "71",
+                    "sourceId": "28",
+                    "tags": "Relationship,Propuesto",
+                    "technology": "HTTPS / Stripe API"
+                  }
+                ],
+                "tags": "Element,Component,Premium,Propuesto",
+                "technology": "ACL / Stripe API"
+              },
+              {
+                "description": "Verifica firma y traduce eventos; no usa el JWT del usuario.",
+                "documentation": {},
+                "id": "29",
+                "name": "StripeWebhookController / Adapter",
+                "properties": {
+                  "structurizr.dsl.identifier": "webhook"
+                },
+                "relationships": [
+                  {
+                    "description": "Entrega evento verificado y correlacionado",
+                    "destinationId": "25",
+                    "id": "73",
+                    "sourceId": "29",
+                    "tags": "Relationship,Propuesto"
+                  }
+                ],
+                "tags": "Element,Component,Premium,Propuesto",
+                "technology": "Spring MVC / ACL"
+              }
+            ],
+            "description": "Suscripciones, Delivery y autenticación implementados; Premium y Places pendientes. Publicado con perfil prod.",
+            "documentation": {},
+            "id": "12",
+            "name": "REST API Backend",
+            "properties": {
+              "structurizr.dsl.identifier": "api"
+            },
+            "relationships": [
+              {
+                "description": "Lee y persiste estado",
+                "destinationId": "11",
+                "id": "45",
+                "sourceId": "12",
+                "tags": "Relationship",
+                "technology": "JPA / JDBC"
+              },
+              {
+                "description": "Consulta cotizaciones",
+                "destinationId": "3",
+                "id": "46",
+                "sourceId": "12",
+                "tags": "Relationship",
+                "technology": "HTTPS / JSON"
+              },
+              {
+                "description": "Crea checkout y cancela renovación (propuesto)",
+                "destinationId": "4",
+                "id": "47",
+                "sourceId": "12",
+                "tags": "Relationship,Propuesto",
+                "technology": "HTTPS / Stripe API"
+              },
+              {
+                "description": "Consulta comercios (propuesto)",
+                "destinationId": "5",
+                "id": "49",
+                "sourceId": "12",
+                "tags": "Relationship,Propuesto",
+                "technology": "HTTPS / JSON"
+              }
+            ],
+            "tags": "Element,Container",
+            "technology": "Java 21 / Spring Boot"
+          }
+        ],
+        "description": "Registra suscripciones y Delivery, estima importes en soles y prepara recordatorios. Premium forma parte del diseño pendiente.",
+        "documentation": {},
+        "id": "7",
+        "name": "CraveWallet",
+        "properties": {
+          "structurizr.dsl.identifier": "cw"
+        },
+        "relationships": [
+          {
+            "description": "Consulta cotizaciones",
+            "destinationId": "3",
+            "id": "33",
+            "sourceId": "7",
+            "tags": "Relationship"
+          },
+          {
+            "description": "Prepara eventos desde el móvil",
+            "destinationId": "6",
+            "id": "34",
+            "sourceId": "7",
+            "tags": "Relationship"
+          },
+          {
+            "description": "Solicita checkout y cancelación (propuesto)",
+            "destinationId": "4",
+            "id": "35",
+            "sourceId": "7",
+            "tags": "Relationship,Propuesto"
+          },
+          {
+            "description": "Consulta sugerencias (propuesto)",
+            "destinationId": "5",
+            "id": "37",
+            "sourceId": "7",
+            "tags": "Relationship,Propuesto"
+          }
+        ],
+        "tags": "Element,Software System"
+      }
+    ]
+  },
+  "name": "CraveWallet",
+  "properties": {
+    "structurizr.inspection.error": "26",
+    "structurizr.dsl": "d29ya3NwYWNlICJDcmF2ZVdhbGxldCIgIkM0OiBjb250ZXh0bywgY29udGVuZWRvcmVzLCBjb21wb25lbnRlcyB5IGRlc3BsaWVndWUgVEIxLiIgew0KICAgICFpbXBsaWVkUmVsYXRpb25zaGlwcyBmYWxzZQ0KICAgIG1vZGVsIHsNCiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXN1YXJpbyIgIkVzdHVkaWFudGUgbyBwcm9mZXNpb25hbCBqb3ZlbiBxdWUgY29udHJvbGEgc3VzY3JpcGNpb25lcyB5IGdhc3Rvcy4iDQogICAgICAgIHZpc2l0b3IgPSBwZXJzb24gIlZpc2l0YW50ZSIgIkNvbm9jZSBsYSBwcm9wdWVzdGEgeSBhY2NlZGUgYSBsYSBkZXNjYXJnYSBkZSBsYSBhcHAuIg0KICAgICAgICByYXRlcyA9IHNvZnR3YXJlU3lzdGVtICJFeGNoYW5nZVJhdGUtQVBJIiAiQ290aXphY2lvbmVzIHBhcmEgZXN0aW1hciBpbXBvcnRlcyBlbiBzb2xlcy4iICJFeHRlcm5vIg0KICAgICAgICBzdHJpcGUgPSBzb2Z0d2FyZVN5c3RlbSAiU3RyaXBlIChwcm9wdWVzdG8pIiAiQ2hlY2tvdXQgeSBmYWN0dXJhY2nDs24gZGVsIHBsYW4gZGUgQ3JhdmVXYWxsZXQ7IGludGVncmFjacOzbiBwZW5kaWVudGUuIiAiRXh0ZXJubyxQcm9wdWVzdG8iDQogICAgICAgIHBsYWNlcyA9IHNvZnR3YXJlU3lzdGVtICJHb29nbGUgUGxhY2VzIChwcm9wdWVzdG8pIiAiU3VnZXJlbmNpYXMgZGUgY29tZXJjaW9zOyBpbnRlZ3JhY2nDs24gcGVuZGllbnRlLiIgIkV4dGVybm8sUHJvcHVlc3RvIg0KICAgICAgICBjYWxlbmRhciA9IHNvZnR3YXJlU3lzdGVtICJDYWxlbmRhcmlvIGRlIEFuZHJvaWQiICJFdmVudG9zIGRlbCBjbGllbnRlIGNvbiBwZXJtaXNvczsgdmFsaWRhY2nDs24gZW4gZGlzcG9zaXRpdm8gcGVuZGllbnRlLiIgIkV4dGVybm8iDQogICAgICAgIGN3ID0gc29mdHdhcmVTeXN0ZW0gIkNyYXZlV2FsbGV0IiAiUmVnaXN0cmEgc3VzY3JpcGNpb25lcyB5IERlbGl2ZXJ5LCBlc3RpbWEgaW1wb3J0ZXMgZW4gc29sZXMgeSBwcmVwYXJhIHJlY29yZGF0b3Jpb3MuIFByZW1pdW0gZm9ybWEgcGFydGUgZGVsIGRpc2XDsW8gcGVuZGllbnRlLiIgew0KICAgICAgICAgICAgbGFuZGluZyA9IGNvbnRhaW5lciAiTGFuZGluZyBQYWdlIiAiUHJlc2VudGEgbGEgcHJvcHVlc3RhIHkgb2ZyZWNlIGFjY2VzbyBhIGxhIGFwcDsgcHVibGljYWRhIGVuIFZlcmNlbC4iICJOZXh0LmpzIC8gUmVhY3QgLyBUYWlsd2luZCBDU1MiICJXZWIiDQogICAgICAgICAgICBtb2JpbGUgPSBjb250YWluZXIgIkFwbGljYWNpw7NuIEFuZHJvaWQiICJGb3JtdWxhcmlvcywgRGFzaGJvYXJkLCBhdXRlbnRpY2FjacOzbiwgQVBJIHkgYXZpc29zIGxvY2FsZXMuIEFQSyBnZW5lcmFkbzsgZmFsdGEgdmFsaWRhciBlbiBkaXNwb3NpdGl2by4iICJLb3RsaW4gLyBKZXRwYWNrIENvbXBvc2UiICJNw7N2aWwiDQogICAgICAgICAgICBsb2NhbCA9IGNvbnRhaW5lciAiQWxtYWNlbmFtaWVudG8gbG9jYWwiICJQcmVmZXJlbmNpYXMsIG5vdGFzLCBzZXNpw7NuIHkgZGF0b3MgZGUgZGVtb3N0cmFjacOzbi4gTG9zIHJlZ2lzdHJvcyBjb25lY3RhZG9zIHNlIGNvbnNlcnZhbiBlbiBlbCBiYWNrZW5kLiIgIlNoYXJlZFByZWZlcmVuY2VzIC8gSlNPTiIgIkRhdG9zIg0KICAgICAgICAgICAgcmVtb3RlID0gY29udGFpbmVyICJCYXNlIGRlIGRhdG9zIiAiRXN0YWRvIGNhbsOzbmljbyBkZSB1c3Vhcmlvcywgc2VzaW9uZXMsIHN1c2NyaXBjaW9uZXMsIGdhc3RvcyB5IHByZXN1cHVlc3RvczsgZXNxdWVtYSBkZSBQcmVtaXVtIHByb3B1ZXN0by4iICJQb3N0Z3JlU1FMIDE3IiAiRGF0b3MiDQogICAgICAgICAgICBhcGkgPSBjb250YWluZXIgIlJFU1QgQVBJIEJhY2tlbmQiICJTdXNjcmlwY2lvbmVzLCBEZWxpdmVyeSB5IGF1dGVudGljYWNpw7NuIGltcGxlbWVudGFkb3M7IFByZW1pdW0geSBQbGFjZXMgcGVuZGllbnRlcy4gUHVibGljYWRvIGNvbiBwZXJmaWwgcHJvZC4iICJKYXZhIDIxIC8gU3ByaW5nIEJvb3QiIHsNCiAgICAgICAgICAgICAgICBzdWJDb250cm9sbGVyID0gY29tcG9uZW50ICJTdWJzY3JpcHRpb25Db250cm9sbGVyIiAiVHJhZHVjZSBzb2xpY2l0dWRlcyBhdXRlbnRpY2FkYXMgYSBjb21hbmRvcyB5IERUTyBkZSByZWNvcmRhdG9yaW9zLiIgIlNwcmluZyBNVkMiICJTdXNjcmlwY2lvbmVzIg0KICAgICAgICAgICAgICAgIHN1YlNlcnZpY2UgPSBjb21wb25lbnQgIlN1YnNjcmlwdGlvbiBBcHBsaWNhdGlvbiBTZXJ2aWNlIiAiQ29vcmRpbmEgcmVnaXN0cm8sIGVkaWNpw7NuLCBjYW5jZWxhY2nDs24gbG9jYWwgeSBjb25zdWx0YXMuIiAiU2VydmljaW8gZGUgYXBsaWNhY2nDs24iICJTdXNjcmlwY2lvbmVzIg0KICAgICAgICAgICAgICAgIHN1YkRvbWFpbiA9IGNvbXBvbmVudCAiU3Vic2NyaXB0aW9uIC8gTW9uZXkiICJSZWdsYXMgZGUgaW1wb3J0ZSwgbW9uZWRhLCBjaWNsbyB5IGVzdGFkbyBkZWwgcmVnaXN0cm8uIiAiTW9kZWxvIGRlIGRvbWluaW8iICJTdXNjcmlwY2lvbmVzIg0KICAgICAgICAgICAgICAgIHN1YlJlcG8gPSBjb21wb25lbnQgIkpwYVN1YnNjcmlwdGlvblJlcG9zaXRvcnkiICJQZXJzaXN0ZSB5IGNvbnN1bHRhIHJlZ2lzdHJvcyBwb3IgcHJvcGlldGFyaW8uIiAiSlBBIC8gU3ByaW5nIERhdGEiICJTdXNjcmlwY2lvbmVzIg0KICAgICAgICAgICAgICAgIGV4Y2hhbmdlID0gY29tcG9uZW50ICJFeGNoYW5nZVJhdGVBcGlBZGFwdGVyIiAiVHJhZHVjZSBjb3RpemFjaW9uZXMgYSBFeGNoYW5nZVJhdGUgY29uIGZlY2hhIHkgZGlzcG9uaWJpbGlkYWQuIiAiQWRhcHRhZG9yIC8gSFRUUFMiICJTdXNjcmlwY2lvbmVzIg0KICAgICAgICAgICAgICAgIHBsYW5BY2Nlc3MgPSBjb21wb25lbnQgIlByZW1pdW1TdGF0dXNQb3J0IChwcm9wdWVzdG8pIiAiQ29udHJhdG8gbG9jYWwgZGUgbml2ZWwgeSBsw61taXRlOyBpbnRlZ3JhY2nDs24gUHJlbWl1bSBwZW5kaWVudGUuIiAiUHVlcnRvIGRlIGNvbGFib3JhY2nDs24iICJTdXNjcmlwY2lvbmVzLFByb3B1ZXN0byINCiAgICAgICAgICAgICAgICBkZWxpdmVyeUNvbnRyb2xsZXIgPSBjb21wb25lbnQgIkRlbGl2ZXJ5RXhwZW5zZUNvbnRyb2xsZXIiICJSZWNpYmUgZ2FzdG9zLCBwcmVzdXB1ZXN0b3MgeSBjb25zdWx0YXMgZGVsIHByb3BpZXRhcmlvLiIgIlNwcmluZyBNVkMiICJHYXN0b3MiDQogICAgICAgICAgICAgICAgZGVsaXZlcnlTZXJ2aWNlID0gY29tcG9uZW50ICJEZWxpdmVyeSBFeHBlbnNlIEFwcGxpY2F0aW9uIFNlcnZpY2UiICJDb29yZGluYSBnYXN0byB5IHByZXN1cHVlc3RvLCByZWludGVudG9zIHkgY8OhbGN1bG8gZGVsIGV4Y2Vzby4iICJTZXJ2aWNpbyBkZSBhcGxpY2FjacOzbiIgIkdhc3RvcyINCiAgICAgICAgICAgICAgICBkZWxpdmVyeURvbWFpbiA9IGNvbXBvbmVudCAiRGVsaXZlcnlFeHBlbnNlIC8gTW9udGhseUJ1ZGdldCIgIkFncmVnYWRvcyBkaXN0aW50b3MgdmluY3VsYWRvcyBwb3IgdXN1YXJpbyB5IHBlcsOtb2RvLiIgIk1vZGVsbyBkZSBkb21pbmlvIiAiR2FzdG9zIg0KICAgICAgICAgICAgICAgIGRlbGl2ZXJ5UmVwbyA9IGNvbXBvbmVudCAiUmVwb3NpdG9yaW9zIGRlIGdhc3RvcyB5IHByZXN1cHVlc3RvcyIgIkd1YXJkYSBnYXN0byB5IHByZXN1cHVlc3RvIGRlbnRybyBkZSBsYSB0cmFuc2FjY2nDs24uIiAiSlBBIC8gU3ByaW5nIERhdGEiICJHYXN0b3MiDQogICAgICAgICAgICAgICAgcGxhY2VzQWRhcHRlciA9IGNvbXBvbmVudCAiR29vZ2xlUGxhY2VzQWRhcHRlciAocHJvcHVlc3RvKSIgIlRyYWR1Y2UgYSBNZXJjaGFudFN1Z2dlc3Rpb247IGNvbnNlcnZhIGVsIHJlZ2lzdHJvIG1hbnVhbC4iICJBQ0wgLyBIVFRQUyIgIkdhc3RvcyxQcm9wdWVzdG8iDQogICAgICAgICAgICAgICAgcHJlbWl1bUNvbnRyb2xsZXIgPSBjb21wb25lbnQgIlByZW1pdW1Db250cm9sbGVyIiAiQ2hlY2tvdXQsIGVzdGFkbywgaGlzdG9yaWFsIHkgY2FuY2VsYWNpw7NuIGRlIHJlbm92YWNpw7NuLiIgIlNwcmluZyBNVkMiICJQcmVtaXVtLFByb3B1ZXN0byINCiAgICAgICAgICAgICAgICBwcmVtaXVtU2VydmljZSA9IGNvbXBvbmVudCAiUHJlbWl1bSBBcHBsaWNhdGlvbiBTZXJ2aWNlIiAiQ29ycmVsYWNpw7NuLCBkZWR1cGxpY2FjacOzbiB5IHZpZ2VuY2lhIHRyYXMgcGFnbyB2ZXJpZmljYWRvLiIgIlNlcnZpY2lvIGRlIGFwbGljYWNpw7NuIiAiUHJlbWl1bSxQcm9wdWVzdG8iDQogICAgICAgICAgICAgICAgcHJlbWl1bURvbWFpbiA9IGNvbXBvbmVudCAiUGxhbiAvIEJpbGxpbmdFdmVudCIgIk5pdmVsLCB2aWdlbmNpYSB5IGZhY3R1cmFjacOzbjsgY29uc2VydmEgZWwgcGVyw61vZG8gcGFnYWRvLiIgIk1vZGVsbyBkZSBkb21pbmlvIiAiUHJlbWl1bSxQcm9wdWVzdG8iDQogICAgICAgICAgICAgICAgcHJlbWl1bVJlcG8gPSBjb21wb25lbnQgIkpwYVBsYW5SZXBvc2l0b3J5IC8gYmlsbGluZ19ldmVudHMiICJQZXJzaXN0ZSBwbGFuIHkgZXZlbnRvczsgdW5pY2lkYWQgZGVsIGlkZW50aWZpY2Fkb3IgZXh0ZXJuby4iICJKUEEgLyBQb3N0Z3JlU1FMIiAiUHJlbWl1bSxQcm9wdWVzdG8iDQogICAgICAgICAgICAgICAgZ2F0ZXdheSA9IGNvbXBvbmVudCAiU3RyaXBlR2F0ZXdheUFkYXB0ZXIiICJQYXltZW50R2F0ZXdheVBvcnQgcGFyYSBjaGVja291dCB5IGNhbmNlbGFjacOzbi4iICJBQ0wgLyBTdHJpcGUgQVBJIiAiUHJlbWl1bSxQcm9wdWVzdG8iDQogICAgICAgICAgICAgICAgd2ViaG9vayA9IGNvbXBvbmVudCAiU3RyaXBlV2ViaG9va0NvbnRyb2xsZXIgLyBBZGFwdGVyIiAiVmVyaWZpY2EgZmlybWEgeSB0cmFkdWNlIGV2ZW50b3M7IG5vIHVzYSBlbCBKV1QgZGVsIHVzdWFyaW8uIiAiU3ByaW5nIE1WQyAvIEFDTCIgIlByZW1pdW0sUHJvcHVlc3RvIg0KICAgICAgICAgICAgfQ0KICAgICAgICB9DQogICAgICAgIHVzZXIgLT4gY3cgIlJlZ2lzdHJhIHkgY29uc3VsdGEgc3VzY3JpcGNpb25lcyB5IGdhc3RvcyINCiAgICAgICAgdmlzaXRvciAtPiBjdyAiQ29ub2NlIGxhIHByb3B1ZXN0YSB5IGFjY2VkZSBhIGxhIGFwcCINCiAgICAgICAgdXNlckNoZWNrb3V0ID0gdXNlciAtPiBzdHJpcGUgIkNvbXBsZXRhIGVsIHBhZ28gZGVsIHBsYW4gKHByb3B1ZXN0bykiIHsNCiAgICAgICAgICAgIHRhZ3MgIlByb3B1ZXN0byINCiAgICAgICAgfQ0KICAgICAgICBjdyAtPiByYXRlcyAiQ29uc3VsdGEgY290aXphY2lvbmVzIg0KICAgICAgICBjdyAtPiBjYWxlbmRhciAiUHJlcGFyYSBldmVudG9zIGRlc2RlIGVsIG3Ds3ZpbCINCiAgICAgICAgY3cgLT4gc3RyaXBlICJTb2xpY2l0YSBjaGVja291dCB5IGNhbmNlbGFjacOzbiAocHJvcHVlc3RvKSIgew0KICAgICAgICAgICAgdGFncyAiUHJvcHVlc3RvIg0KICAgICAgICB9DQogICAgICAgIHN0cmlwZSAtPiBjdyAiTm90aWZpY2EgcGFnbyB5IGZpbiBkZWwgcGxhbiAocHJvcHVlc3RvKSIgew0KICAgICAgICAgICAgdGFncyAiUHJvcHVlc3RvIg0KICAgICAgICB9DQogICAgICAgIGN3IC0+IHBsYWNlcyAiQ29uc3VsdGEgc3VnZXJlbmNpYXMgKHByb3B1ZXN0bykiIHsNCiAgICAgICAgICAgIHRhZ3MgIlByb3B1ZXN0byINCiAgICAgICAgfQ0KICAgICAgICB1c2VyIC0+IG1vYmlsZSAiVXNhIGZvcm11bGFyaW9zIHkgcmVzw7ptZW5lcyIgIkludGVyZmF6IEFuZHJvaWQiDQogICAgICAgIHZpc2l0b3IgLT4gbGFuZGluZyAiQ29uc3VsdGEgbGEgcHJvcHVlc3RhIiAiSFRUUFMiDQogICAgICAgIGxhbmRpbmcgLT4gbW9iaWxlICJPZnJlY2UgYWNjZXNvIGEgbGEgZGVzY2FyZ2EiICJFbmxhY2UgZGUgZGVzY2FyZ2EiDQogICAgICAgIG1vYmlsZSAtPiBhcGkgIkF1dGVudGljYSB5IGVqZWN1dGEgY2Fzb3MgZGUgdXNvIiAiSFRUUFMgLyBKU09OIg0KICAgICAgICBtb2JpbGUgLT4gbG9jYWwgIkxlZSB5IGd1YXJkYSBkYXRvcyBsb2NhbGVzIiAiQVBJIFNoYXJlZFByZWZlcmVuY2VzIg0KICAgICAgICBtb2JpbGUgLT4gY2FsZW5kYXIgIkNyZWEsIHJlcHJvZ3JhbWEgbyByZXRpcmEgZXZlbnRvcyIgIkNhbGVuZGFyQ29udHJhY3QgLyBwZXJtaXNvcyINCiAgICAgICAgbW9iaWxlIC0+IHN0cmlwZSAiQWJyZSBjaGVja291dCAocHJvcHVlc3RvKSIgIkhUVFBTIiB7DQogICAgICAgICAgICB0YWdzICJQcm9wdWVzdG8iDQogICAgICAgIH0NCiAgICAgICAgYXBpIC0+IHJlbW90ZSAiTGVlIHkgcGVyc2lzdGUgZXN0YWRvIiAiSlBBIC8gSkRCQyINCiAgICAgICAgYXBpIC0+IHJhdGVzICJDb25zdWx0YSBjb3RpemFjaW9uZXMiICJIVFRQUyAvIEpTT04iDQogICAgICAgIGFwaSAtPiBzdHJpcGUgIkNyZWEgY2hlY2tvdXQgeSBjYW5jZWxhIHJlbm92YWNpw7NuIChwcm9wdWVzdG8pIiAiSFRUUFMgLyBTdHJpcGUgQVBJIiB7DQogICAgICAgICAgICB0YWdzICJQcm9wdWVzdG8iDQogICAgICAgIH0NCiAgICAgICAgc3RyaXBlIC0+IGFwaSAiRW50cmVnYSBldmVudG9zIHZlcmlmaWNhZG9zIChwcm9wdWVzdG8pIiAiSFRUUFMgLyB3ZWJob29rIGZpcm1hZG8iIHsNCiAgICAgICAgICAgIHRhZ3MgIlByb3B1ZXN0byINCiAgICAgICAgfQ0KICAgICAgICBhcGkgLT4gcGxhY2VzICJDb25zdWx0YSBjb21lcmNpb3MgKHByb3B1ZXN0bykiICJIVFRQUyAvIEpTT04iIHsNCiAgICAgICAgICAgIHRhZ3MgIlByb3B1ZXN0byINCiAgICAgICAgfQ0KICAgICAgICBtb2JpbGUgLT4gc3ViQ29udHJvbGxlciAiR2VzdGlvbmEgc3VzY3JpcGNpb25lcyB5IGNvbnN1bHRhIHJlY29yZGF0b3Jpb3MiICJIVFRQUyAvIEpTT04iDQogICAgICAgIHN1YkNvbnRyb2xsZXIgLT4gc3ViU2VydmljZSAiRW52w61hIGNvbWFuZG9zIHkgY29uc3VsdGFzIg0KICAgICAgICBzdWJTZXJ2aWNlIC0+IHN1YkRvbWFpbiAiQXBsaWNhIGludmFyaWFudGVzIg0KICAgICAgICBzdWJTZXJ2aWNlIC0+IHN1YlJlcG8gIkd1YXJkYSB5IGNvbnN1bHRhIHBvciBwcm9waWV0YXJpbyINCiAgICAgICAgc3ViU2VydmljZSAtPiBleGNoYW5nZSAiU29saWNpdGEgY290aXphY2nDs24gbWVkaWFudGUgRXhjaGFuZ2VSYXRlUG9ydCINCiAgICAgICAgc3ViU2VydmljZSAtPiBwbGFuQWNjZXNzICJDb25zdWx0YSBhY2Nlc28geSBsw61taXRlIChwcm9wdWVzdG8pIiB7DQogICAgICAgICAgICB0YWdzICJQcm9wdWVzdG8iDQogICAgICAgIH0NCiAgICAgICAgcGxhbkFjY2VzcyAtPiBwcmVtaXVtU2VydmljZSAiQ29uc3VtZSBjb250cmF0byBsb2NhbCAocHJvcHVlc3RvKSIgew0KICAgICAgICAgICAgdGFncyAiUHJvcHVlc3RvIg0KICAgICAgICB9DQogICAgICAgIHN1YlJlcG8gLT4gcmVtb3RlICJMZWUgeSBlc2NyaWJlIHRhYmxhcyBkZSBTdXNjcmlwY2lvbmVzIiAiSlBBIC8gSkRCQyINCiAgICAgICAgZXhjaGFuZ2UgLT4gcmF0ZXMgIkNvbnN1bHRhIGVsIHByb3ZlZWRvciIgIkhUVFBTIC8gSlNPTiINCiAgICAgICAgbW9iaWxlIC0+IGRlbGl2ZXJ5Q29udHJvbGxlciAiUmVnaXN0cmEgZ2FzdG9zIHkgY29uc3VsdGEgcmVzdW1lbiIgIkhUVFBTIC8gSlNPTiINCiAgICAgICAgZGVsaXZlcnlDb250cm9sbGVyIC0+IGRlbGl2ZXJ5U2VydmljZSAiRW52w61hIGNvbWFuZG9zIHkgY29uc3VsdGFzIg0KICAgICAgICBkZWxpdmVyeVNlcnZpY2UgLT4gZGVsaXZlcnlEb21haW4gIkFwbGljYSByZWdsYXMgZGUgZ2FzdG8geSBwcmVzdXB1ZXN0byINCiAgICAgICAgZGVsaXZlcnlTZXJ2aWNlIC0+IGRlbGl2ZXJ5UmVwbyAiUGVyc2lzdGUgY29uIGRlZHVwbGljYWNpw7NuIg0KICAgICAgICBkZWxpdmVyeVNlcnZpY2UgLT4gcGxhY2VzQWRhcHRlciAiQnVzY2Egc3VnZXJlbmNpYXMgbWVkaWFudGUgcHVlcnRvIChwcm9wdWVzdG8pIiB7DQogICAgICAgICAgICB0YWdzICJQcm9wdWVzdG8iDQogICAgICAgIH0NCiAgICAgICAgZGVsaXZlcnlSZXBvIC0+IHJlbW90ZSAiTGVlIHkgZXNjcmliZSB0YWJsYXMgZGUgR2FzdG9zIiAiSlBBIC8gSkRCQyINCiAgICAgICAgcGxhY2VzQWRhcHRlciAtPiBwbGFjZXMgIkNvbnN1bHRhIHkgdHJhZHVjZSBjb21lcmNpb3MgKHByb3B1ZXN0bykiICJIVFRQUyAvIEpTT04iIHsNCiAgICAgICAgICAgIHRhZ3MgIlByb3B1ZXN0byINCiAgICAgICAgfQ0KICAgICAgICBtb2JpbGUgLT4gcHJlbWl1bUNvbnRyb2xsZXIgIlNvbGljaXRhIGNoZWNrb3V0LCBlc3RhZG8geSBjYW5jZWxhY2nDs24gKHByb3B1ZXN0bykiICJIVFRQUyAvIEpTT04iIHsNCiAgICAgICAgICAgIHRhZ3MgIlByb3B1ZXN0byINCiAgICAgICAgfQ0KICAgICAgICBwcmVtaXVtQ29udHJvbGxlciAtPiBwcmVtaXVtU2VydmljZSAiRW52w61hIGNvbWFuZG9zIHkgY29uc3VsdGFzIiB7DQogICAgICAgICAgICB0YWdzICJQcm9wdWVzdG8iDQogICAgICAgIH0NCiAgICAgICAgcHJlbWl1bVNlcnZpY2UgLT4gcHJlbWl1bURvbWFpbiAiQXBsaWNhIHZpZ2VuY2lhIHkgbml2ZWwgY29uZmlybWFkb3MiIHsNCiAgICAgICAgICAgIHRhZ3MgIlByb3B1ZXN0byINCiAgICAgICAgfQ0KICAgICAgICBwcmVtaXVtU2VydmljZSAtPiBwcmVtaXVtUmVwbyAiR3VhcmRhIHBsYW4geSBldmVudG9zIGVuIHVuYSB0cmFuc2FjY2nDs24iIHsNCiAgICAgICAgICAgIHRhZ3MgIlByb3B1ZXN0byINCiAgICAgICAgfQ0KICAgICAgICBwcmVtaXVtU2VydmljZSAtPiBnYXRld2F5ICJTb2xpY2l0YSBjaGVja291dCBvIGZpbiBkZSByZW5vdmFjacOzbiIgew0KICAgICAgICAgICAgdGFncyAiUHJvcHVlc3RvIg0KICAgICAgICB9DQogICAgICAgIGdhdGV3YXkgLT4gc3RyaXBlICJJbnZvY2EgYWwgcHJvdmVlZG9yIiAiSFRUUFMgLyBTdHJpcGUgQVBJIiB7DQogICAgICAgICAgICB0YWdzICJQcm9wdWVzdG8iDQogICAgICAgIH0NCiAgICAgICAgc3RyaXBlIC0+IHdlYmhvb2sgIkVudHJlZ2EgZXZlbnRvIGRlIGZhY3R1cmFjacOzbiIgIkhUVFBTIC8gd2ViaG9vayBmaXJtYWRvIiB7DQogICAgICAgICAgICB0YWdzICJQcm9wdWVzdG8iDQogICAgICAgIH0NCiAgICAgICAgd2ViaG9vayAtPiBwcmVtaXVtU2VydmljZSAiRW50cmVnYSBldmVudG8gdmVyaWZpY2FkbyB5IGNvcnJlbGFjaW9uYWRvIiB7DQogICAgICAgICAgICB0YWdzICJQcm9wdWVzdG8iDQogICAgICAgIH0NCiAgICAgICAgcHJlbWl1bVJlcG8gLT4gcmVtb3RlICJMZWUgeSBlc2NyaWJlIHRhYmxhcyBkZSBQcmVtaXVtIChwcm9wdWVzdG8pIiAiSlBBIC8gSkRCQyIgew0KICAgICAgICAgICAgdGFncyAiUHJvcHVlc3RvIg0KICAgICAgICB9DQogICAgICAgIHRiMSA9IGRlcGxveW1lbnRFbnZpcm9ubWVudCAiVEIxIHZlcmlmaWNhZG8geSBjbGllbnRlIHBvciB2YWxpZGFyIiB7DQogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiRGlzcG9zaXRpdm8gQW5kcm9pZCIgIkRlc3Rpbm8gZGVsIEFQSzsgcHJ1ZWJhIGbDrXNpY2EgcGVuZGllbnRlLiIgIkFuZHJvaWQgOCBvIHN1cGVyaW9yIiB7DQogICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkNyYXZlV2FsbGV0IEFQSyIgIkdlbmVyYWRvIHkgcHJvYmFkbyBjb24gUm9ib2xlY3RyaWM7IG5vIGFjcmVkaXRhIGluc3RhbGFjacOzbiBmw61zaWNhLiIgIkFuZHJvaWQgUnVudGltZSAvIEtvdGxpbiIgew0KICAgICAgICAgICAgICAgICAgICBjb250YWluZXJJbnN0YW5jZSBtb2JpbGUNCiAgICAgICAgICAgICAgICAgICAgY29udGFpbmVySW5zdGFuY2UgbG9jYWwNCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgc29mdHdhcmVTeXN0ZW1JbnN0YW5jZSBjYWxlbmRhcg0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIlZlcmNlbCIgIkxhbmRpbmcgcHVibGljYWRhOyBpbmRlcGVuZGllbnRlIGRlbCBSRVNUIEFQSS4iICJIb3N0aW5nIGVzdMOhdGljbyAvIEhUVFBTIiB7DQogICAgICAgICAgICAgICAgY29udGFpbmVySW5zdGFuY2UgbGFuZGluZw0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIlJlbmRlciDigJQgT3JlZ29uIiAiSW5jcmVtZW50byBUQjEgcHVibGljYWRvOyBwbGFuIGdyYXR1aXRvIHRlbXBvcmFsLiIgIlBsYXRhZm9ybWEgYWRtaW5pc3RyYWRhIiB7DQogICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIlNlcnZpY2lvIGNyYXZld2FsbGV0LWFwaSIgIkhUVFBTIHDDumJsaWNvOyBwZXJmaWwgcHJvZDsgcHJvY2VzbyBzaW4gcm9vdDsgdmFyaWFibGVzIHByaXZhZGFzLiIgIkRvY2tlciAvIEphdmEgMjEiIHsNCiAgICAgICAgICAgICAgICAgICAgY29udGFpbmVySW5zdGFuY2UgYXBpDQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJQb3N0Z3JlU1FMIGFkbWluaXN0cmFkbyIgIkFjY2VzbyBleHRlcm5vIGJsb3F1ZWFkbzsgY29uZXhpw7NuIGludGVybmE7IEZseXdheSBWMeKAk1YzLiIgIlJlbmRlciBQb3N0Z3JlU1FMIDE3IiB7DQogICAgICAgICAgICAgICAgICAgIGNvbnRhaW5lckluc3RhbmNlIHJlbW90ZQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJQcm92ZWVkb3IgZGUgY290aXphY2lvbmVzIiAiUHJvdmVlZG9yIGV4dGVybm8gY29uc3VsdGFkbyBwb3IgZWwgYmFja2VuZC4iICJTZXJ2aWNpbyBIVFRQUyIgew0KICAgICAgICAgICAgICAgIHNvZnR3YXJlU3lzdGVtSW5zdGFuY2UgcmF0ZXMNCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgIH0NCiAgICB2aWV3cyB7DQogICAgICAgIHN5c3RlbUNvbnRleHQgY3cgIlN5c3RlbUNvbnRleHQiICJVc3VhcmlvcyBlIGludGVncmFjaW9uZXMgYWN0dWFsZXMgeSBwcm9wdWVzdGFzLiIgew0KICAgICAgICAgICAgaW5jbHVkZSB1c2VyIHZpc2l0b3IgY3cgcmF0ZXMgc3RyaXBlIHBsYWNlcyBjYWxlbmRhcg0KICAgICAgICAgICAgYXV0b0xheW91dCB0YiAzNTAgNDAwDQogICAgICAgICAgICB0aXRsZSAiQ3JhdmVXYWxsZXQg4oCUIENvbnRleHRvIGRlbCBzaXN0ZW1hIg0KICAgICAgICB9DQogICAgICAgIGNvbnRhaW5lciBjdyAiQ29udGFpbmVycyIgIkFwbGljYWNpb25lcywgYWxtYWNlbmFtaWVudG8geSB0ZWNub2xvZ8OtYXMuIiB7DQogICAgICAgICAgICBpbmNsdWRlIHVzZXIgdmlzaXRvciBsYW5kaW5nIG1vYmlsZSBhcGkgbG9jYWwgcmVtb3RlIHJhdGVzIHN0cmlwZSBwbGFjZXMgY2FsZW5kYXINCiAgICAgICAgICAgIGV4Y2x1ZGUgdXNlckNoZWNrb3V0DQogICAgICAgICAgICBhdXRvTGF5b3V0IHRiIDM1MCA0MDANCiAgICAgICAgICAgIHRpdGxlICJDcmF2ZVdhbGxldCDigJQgQ29udGVuZWRvcmVzIg0KICAgICAgICB9DQogICAgICAgIGNvbXBvbmVudCBhcGkgIlN1YnNjcmlwdGlvbkNvbXBvbmVudHMiICJEaXNlw7FvIGRlIFN1YnNjcmlwdGlvbiBNYW5hZ2VtZW50LiIgew0KICAgICAgICAgICAgaW5jbHVkZSAiZWxlbWVudC50YWc9PVN1c2NyaXBjaW9uZXMiDQogICAgICAgICAgICBpbmNsdWRlIG1vYmlsZSByZW1vdGUgcmF0ZXMgcHJlbWl1bVNlcnZpY2UNCiAgICAgICAgICAgIGF1dG9MYXlvdXQgdGIgMzUwIDM1MA0KICAgICAgICAgICAgdGl0bGUgIkNyYXZlV2FsbGV0IOKAlCBDb21wb25lbnRlcyBkZSBTdXNjcmlwY2lvbmVzIChkaXNlw7FvKSINCiAgICAgICAgfQ0KICAgICAgICBjb21wb25lbnQgYXBpICJEZWxpdmVyeUNvbXBvbmVudHMiICJEaXNlw7FvIGRlIERlbGl2ZXJ5IEV4cGVuc2UgTWFuYWdlbWVudC4iIHsNCiAgICAgICAgICAgIGluY2x1ZGUgImVsZW1lbnQudGFnPT1HYXN0b3MiDQogICAgICAgICAgICBpbmNsdWRlIG1vYmlsZSByZW1vdGUgcGxhY2VzDQogICAgICAgICAgICBhdXRvTGF5b3V0IHRiIDM1MCAzNTANCiAgICAgICAgICAgIHRpdGxlICJDcmF2ZVdhbGxldCDigJQgQ29tcG9uZW50ZXMgZGUgR2FzdG9zIChkaXNlw7FvKSINCiAgICAgICAgfQ0KICAgICAgICBjb21wb25lbnQgYXBpICJQcmVtaXVtQ29tcG9uZW50cyIgIkRpc2XDsW8gZGUgUHJlbWl1bSBwZW5kaWVudGUgZGUgaW1wbGVtZW50YWNpw7NuLiIgew0KICAgICAgICAgICAgaW5jbHVkZSAiZWxlbWVudC50YWc9PVByZW1pdW0iDQogICAgICAgICAgICBpbmNsdWRlIG1vYmlsZSByZW1vdGUgc3RyaXBlDQogICAgICAgICAgICBhdXRvTGF5b3V0IHRiIDM1MCAzNTANCiAgICAgICAgICAgIHRpdGxlICJDcmF2ZVdhbGxldCDigJQgQ29tcG9uZW50ZXMgZGUgUHJlbWl1bSAocHJvcHVlc3RvKSINCiAgICAgICAgfQ0KICAgICAgICBkZXBsb3ltZW50IGN3IHRiMSAiRGVwbG95bWVudCIgIkluc3RhbmNpYXMgc29icmUgaW5mcmFlc3RydWN0dXJhIGFjcmVkaXRhZGE7IEFuZHJvaWQgcG9yIHZhbGlkYXIuIiB7DQogICAgICAgICAgICBpbmNsdWRlICoNCiAgICAgICAgICAgIGF1dG9MYXlvdXQgbHIgMzUwIDM1MA0KICAgICAgICAgICAgdGl0bGUgIkNyYXZlV2FsbGV0IOKAlCBEZXNwbGllZ3VlIFRCMSB5IGNsaWVudGUgQW5kcm9pZCBwb3IgdmFsaWRhciINCiAgICAgICAgfQ0KICAgICAgICBzdHlsZXMgew0KICAgICAgICAgICAgZWxlbWVudCAiRWxlbWVudCIgew0KICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgew0KICAgICAgICAgICAgICAgIHNoYXBlIFBlcnNvbg0KICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzA4NDI3Yg0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgZWxlbWVudCAiU29mdHdhcmUgU3lzdGVtIiB7DQogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMTE2OGJkDQogICAgICAgICAgICB9DQogICAgICAgICAgICBlbGVtZW50ICJDb250YWluZXIiIHsNCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICM0MzhkZDUNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGVsZW1lbnQgIkNvbXBvbmVudCIgew0KICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzg1YmJmMA0KICAgICAgICAgICAgICAgIGNvbG9yICMxMDJiNDYNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGVsZW1lbnQgIkV4dGVybm8iIHsNCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICM3Nzc3NzcNCiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmDQogICAgICAgICAgICB9DQogICAgICAgICAgICBlbGVtZW50ICJNw7N2aWwiIHsNCiAgICAgICAgICAgICAgICBzaGFwZSBNb2JpbGVEZXZpY2VQb3J0cmFpdA0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgZWxlbWVudCAiV2ViIiB7DQogICAgICAgICAgICAgICAgc2hhcGUgV2ViQnJvd3Nlcg0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgZWxlbWVudCAiRGF0b3MiIHsNCiAgICAgICAgICAgICAgICBzaGFwZSBDeWxpbmRlcg0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgZWxlbWVudCAiRGVwbG95bWVudCBOb2RlIiB7DQogICAgICAgICAgICAgICAgY29sb3IgIzI2MzIzOA0KICAgICAgICAgICAgICAgIGJhY2tncm91bmQgI2ZmZmZmZg0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgZWxlbWVudCAiUHJvcHVlc3RvIiB7DQogICAgICAgICAgICAgICAgc3Ryb2tlICNiNDUzMDkNCiAgICAgICAgICAgICAgICBib3JkZXIgRGFzaGVkDQogICAgICAgICAgICB9DQogICAgICAgICAgICByZWxhdGlvbnNoaXAgIlJlbGF0aW9uc2hpcCIgew0KICAgICAgICAgICAgICAgIGNvbG9yICM0YjU1NjMNCiAgICAgICAgICAgICAgICByb3V0aW5nIERpcmVjdA0KICAgICAgICAgICAgICAgIGRhc2hlZCBmYWxzZQ0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgcmVsYXRpb25zaGlwICJQcm9wdWVzdG8iIHsNCiAgICAgICAgICAgICAgICBjb2xvciAjYjQ1MzA5DQogICAgICAgICAgICAgICAgZGFzaGVkIHRydWUNCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgIH0NCn0=",
+    "structurizr.inspection.info": "0",
+    "structurizr.inspection.ignore": "0",
+    "structurizr.inspection.warning": "0"
+  },
+  "views": {
+    "componentViews": [
+      {
+        "containerId": "12",
+        "description": "Diseño de Subscription Management.",
+        "elements": [
+          {
+            "id": "3",
+            "x": 100,
+            "y": 1800
+          },
+          {
+            "id": "9",
+            "x": 1750,
+            "y": 100
+          },
+          {
+            "id": "11",
+            "x": 1750,
+            "y": 3050
+          },
+          {
+            "id": "13",
+            "x": 1750,
+            "y": 750
+          },
+          {
+            "id": "14",
+            "x": 1750,
+            "y": 1200
+          },
+          {
+            "id": "15",
+            "x": 800,
+            "y": 1800
+          },
+          {
+            "id": "16",
+            "x": 2200,
+            "y": 1800
+          },
+          {
+            "id": "17",
+            "x": 1500,
+            "y": 1800
+          },
+          {
+            "id": "18",
+            "x": 2900,
+            "y": 1800
+          },
+          {
+            "id": "25",
+            "x": 2900,
+            "y": 2400
+          }
+        ],
+        "externalContainerBoundariesVisible": false,
+        "key": "SubscriptionComponents",
+        "name": "Component View: CraveWallet - REST API Backend",
+        "order": 3,
+        "relationships": [
+          {
+            "id": "50",
+            "position": 50
+          },
+          {
+            "id": "51",
+            "position": 50
+          },
+          {
+            "id": "52",
+            "position": 50
+          },
+          {
+            "id": "53",
+            "position": 50
+          },
+          {
+            "id": "54",
+            "position": 50
+          },
+          {
+            "id": "55",
+            "position": 50
+          },
+          {
+            "id": "56",
+            "position": 50
+          },
+          {
+            "id": "57",
+            "position": 50
+          },
+          {
+            "id": "58",
+            "position": 50,
+            "vertices": [
+              {
+                "x": 1400,
+                "y": 1650
+              },
+              {
+                "x": 550,
+                "y": 1650
+              }
+            ]
+          }
+        ],
+        "title": "CraveWallet — Componentes de Suscripciones (diseño)",
+        "dimensions": {
+          "width": 3900,
+          "height": 3750
+        }
+      },
+      {
+        "containerId": "12",
+        "description": "Diseño de Delivery Expense Management.",
+        "elements": [
+          {
+            "id": "5",
+            "x": 2400,
+            "y": 1800
+          },
+          {
+            "id": "9",
+            "x": 800,
+            "y": 100
+          },
+          {
+            "id": "11",
+            "x": 800,
+            "y": 2400
+          },
+          {
+            "id": "19",
+            "x": 800,
+            "y": 750
+          },
+          {
+            "id": "20",
+            "x": 800,
+            "y": 1200
+          },
+          {
+            "id": "21",
+            "x": 100,
+            "y": 1800
+          },
+          {
+            "id": "22",
+            "x": 800,
+            "y": 1800
+          },
+          {
+            "id": "23",
+            "x": 1500,
+            "y": 1800
+          }
+        ],
+        "externalContainerBoundariesVisible": false,
+        "key": "DeliveryComponents",
+        "name": "Component View: CraveWallet - REST API Backend",
+        "order": 4,
+        "relationships": [
+          {
+            "id": "59",
+            "position": 50
+          },
+          {
+            "id": "60",
+            "position": 50
+          },
+          {
+            "id": "61",
+            "position": 50
+          },
+          {
+            "id": "62",
+            "position": 50
+          },
+          {
+            "id": "63",
+            "position": 50
+          },
+          {
+            "id": "64",
+            "position": 50
+          },
+          {
+            "id": "65",
+            "position": 50
+          }
+        ],
+        "title": "CraveWallet — Componentes de Gastos (diseño)",
+        "dimensions": {
+          "width": 3400,
+          "height": 3100
+        }
+      },
+      {
+        "containerId": "12",
+        "description": "Diseño de Premium pendiente de implementación.",
+        "elements": [
+          {
+            "id": "4",
+            "x": 2700,
+            "y": 750
+          },
+          {
+            "id": "9",
+            "x": 100,
+            "y": 100
+          },
+          {
+            "id": "11",
+            "x": 950,
+            "y": 2400
+          },
+          {
+            "id": "24",
+            "x": 100,
+            "y": 750
+          },
+          {
+            "id": "25",
+            "x": 950,
+            "y": 1200
+          },
+          {
+            "id": "26",
+            "x": 100,
+            "y": 1800
+          },
+          {
+            "id": "27",
+            "x": 950,
+            "y": 1800
+          },
+          {
+            "id": "28",
+            "x": 1800,
+            "y": 1800
+          },
+          {
+            "id": "29",
+            "x": 1800,
+            "y": 750
+          }
+        ],
+        "externalContainerBoundariesVisible": false,
+        "key": "PremiumComponents",
+        "name": "Component View: CraveWallet - REST API Backend",
+        "order": 5,
+        "relationships": [
+          {
+            "id": "44",
+            "position": 50,
+            "vertices": [
+              {
+                "x": 850,
+                "y": 550
+              },
+              {
+                "x": 2450,
+                "y": 550
+              }
+            ]
+          },
+          {
+            "id": "66",
+            "position": 50
+          },
+          {
+            "id": "67",
+            "position": 50
+          },
+          {
+            "id": "68",
+            "position": 50
+          },
+          {
+            "id": "69",
+            "position": 50
+          },
+          {
+            "id": "70",
+            "position": 50
+          },
+          {
+            "id": "71",
+            "position": 50
+          },
+          {
+            "id": "72",
+            "position": 50
+          },
+          {
+            "id": "73",
+            "position": 50
+          },
+          {
+            "id": "74",
+            "position": 50
+          }
+        ],
+        "title": "CraveWallet — Componentes de Premium (propuesto)",
+        "dimensions": {
+          "width": 3700,
+          "height": 3100
+        }
+      }
+    ],
+    "configuration": {
+      "styles": {
+        "elements": [
+          {
+            "background": "#85bbf0",
+            "color": "#102b46",
+            "tag": "Component",
+            "width": 550,
+            "height": 300,
+            "fontSize": 26
+          },
+          {
+            "background": "#438dd5",
+            "tag": "Container"
+          },
+          {
+            "shape": "Cylinder",
+            "tag": "Datos"
+          },
+          {
+            "background": "#ffffff",
+            "color": "#263238",
+            "tag": "Deployment Node"
+          },
+          {
+            "color": "#ffffff",
+            "tag": "Element"
+          },
+          {
+            "background": "#777777",
+            "color": "#ffffff",
+            "tag": "Externo"
+          },
+          {
+            "shape": "MobileDevicePortrait",
+            "tag": "Móvil"
+          },
+          {
+            "background": "#08427b",
+            "shape": "Person",
+            "tag": "Person"
+          },
+          {
+            "border": "Dashed",
+            "stroke": "#b45309",
+            "tag": "Propuesto"
+          },
+          {
+            "background": "#1168bd",
+            "tag": "Software System"
+          },
+          {
+            "shape": "WebBrowser",
+            "tag": "Web"
+          }
+        ],
+        "relationships": [
+          {
+            "color": "#b45309",
+            "dashed": true,
+            "tag": "Propuesto"
+          },
+          {
+            "color": "#4b5563",
+            "dashed": false,
+            "routing": "Direct",
+            "tag": "Relationship"
+          }
+        ]
+      },
+      "terminology": {}
+    },
+    "containerViews": [
+      {
+        "description": "Aplicaciones, almacenamiento y tecnologías.",
+        "elements": [
+          {
+            "id": "1",
+            "x": 1500,
+            "y": 100
+          },
+          {
+            "id": "2",
+            "x": 700,
+            "y": 100
+          },
+          {
+            "id": "3",
+            "x": 2300,
+            "y": 2100
+          },
+          {
+            "id": "4",
+            "x": 3100,
+            "y": 100
+          },
+          {
+            "id": "5",
+            "x": 3100,
+            "y": 2100
+          },
+          {
+            "id": "6",
+            "x": 700,
+            "y": 2100
+          },
+          {
+            "id": "8",
+            "x": 700,
+            "y": 750
+          },
+          {
+            "id": "9",
+            "x": 1500,
+            "y": 750
+          },
+          {
+            "id": "10",
+            "x": 1500,
+            "y": 1450
+          },
+          {
+            "id": "11",
+            "x": 3100,
+            "y": 750
+          },
+          {
+            "id": "12",
+            "x": 2300,
+            "y": 750
+          }
+        ],
+        "externalSoftwareSystemBoundariesVisible": false,
+        "key": "Containers",
+        "name": "Container View: CraveWallet",
+        "order": 2,
+        "relationships": [
+          {
+            "id": "38",
+            "position": 50
+          },
+          {
+            "id": "39",
+            "position": 50
+          },
+          {
+            "id": "40",
+            "position": 50
+          },
+          {
+            "id": "41",
+            "position": 50
+          },
+          {
+            "id": "42",
+            "position": 50
+          },
+          {
+            "id": "43",
+            "position": 50
+          },
+          {
+            "id": "44",
+            "position": 50,
+            "vertices": [
+              {
+                "x": 2200,
+                "y": 500
+              },
+              {
+                "x": 3000,
+                "y": 500
+              }
+            ]
+          },
+          {
+            "id": "45",
+            "position": 50
+          },
+          {
+            "id": "46",
+            "position": 50
+          },
+          {
+            "id": "47",
+            "position": 50,
+            "vertices": [
+              {
+                "x": 3850,
+                "y": 550
+              }
+            ]
+          },
+          {
+            "id": "48",
+            "position": 50,
+            "vertices": [
+              {
+                "x": 2950,
+                "y": 650
+              }
+            ]
+          },
+          {
+            "id": "49",
+            "position": 50
+          }
+        ],
+        "softwareSystemId": "7",
+        "title": "CraveWallet — Contenedores",
+        "dimensions": {
+          "width": 4100,
+          "height": 2800
+        }
+      }
+    ],
+    "deploymentViews": [
+      {
+        "automaticLayout": {
+          "edgeSeparation": 50,
+          "nodeSeparation": 350,
+          "rankDirection": "LeftRight",
+          "rankSeparation": 350,
+          "vertices": true
+        },
+        "description": "Instancias sobre infraestructura acreditada; Android por validar.",
+        "elements": [
+          {
+            "id": "75",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "id": "76",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "id": "77",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "id": "78",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "id": "80",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "id": "82",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "id": "83",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "id": "85",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "id": "86",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "id": "87",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "id": "89",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "id": "90",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "id": "92",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "id": "93",
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "environment": "TB1 verificado y cliente por validar",
+        "key": "Deployment",
+        "name": "Deployment View: CraveWallet - TB1 verificado y cliente por validar",
+        "order": 6,
+        "relationships": [
+          {
+            "id": "79"
+          },
+          {
+            "id": "81"
+          },
+          {
+            "id": "84"
+          },
+          {
+            "id": "88"
+          },
+          {
+            "id": "91"
+          },
+          {
+            "id": "94"
+          }
+        ],
+        "softwareSystemId": "7",
+        "title": "CraveWallet — Despliegue TB1 y cliente Android por validar"
+      }
+    ],
+    "systemContextViews": [
+      {
+        "description": "Usuarios e integraciones actuales y propuestas.",
+        "elements": [
+          {
+            "id": "1",
+            "x": 2000,
+            "y": 100
+          },
+          {
+            "id": "2",
+            "x": 400,
+            "y": 100
+          },
+          {
+            "id": "3",
+            "x": 100,
+            "y": 1500
+          },
+          {
+            "id": "4",
+            "x": 2500,
+            "y": 1500
+          },
+          {
+            "id": "5",
+            "x": 1700,
+            "y": 1500
+          },
+          {
+            "id": "6",
+            "x": 900,
+            "y": 1500
+          },
+          {
+            "id": "7",
+            "x": 1200,
+            "y": 750
+          }
+        ],
+        "enterpriseBoundaryVisible": true,
+        "key": "SystemContext",
+        "name": "System Context View: CraveWallet",
+        "order": 1,
+        "relationships": [
+          {
+            "id": "30",
+            "position": 50
+          },
+          {
+            "id": "31",
+            "position": 50
+          },
+          {
+            "id": "32",
+            "position": 50,
+            "vertices": [
+              {
+                "x": 3200,
+                "y": 650
+              },
+              {
+                "x": 3200,
+                "y": 1650
+              }
+            ]
+          },
+          {
+            "id": "33",
+            "position": 50
+          },
+          {
+            "id": "34",
+            "position": 50
+          },
+          {
+            "id": "35",
+            "position": 50,
+            "vertices": [
+              {
+                "x": 2200,
+                "y": 1200
+              }
+            ]
+          },
+          {
+            "id": "36",
+            "position": 50,
+            "vertices": [
+              {
+                "x": 2700,
+                "y": 650
+              }
+            ]
+          },
+          {
+            "id": "37",
+            "position": 50
+          }
+        ],
+        "softwareSystemId": "7",
+        "title": "CraveWallet — Contexto del sistema",
+        "dimensions": {
+          "width": 3500,
+          "height": 2200
+        }
+      }
+    ]
+  }
+}

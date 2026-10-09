@@ -36,7 +36,7 @@ La tabla 139 detalla las herramientas para investigar a los usuarios, modelar el
 
 #### Software Development
 
-El landing page se construye con Next.js, React y TypeScript; el backend, con Java 21 y Spring Boot; y la aplicación móvil, con Flutter, según el diagrama de contenedores de la sección 2.5.3.2. La tabla 140 agrupa las herramientas por producto.
+El landing page se construye con Next.js, React y TypeScript; el backend, con Java 21 y Spring Boot; y la aplicación Android, con Kotlin y Jetpack Compose, según el diagrama de contenedores de la sección 2.5.3.2 y el repositorio móvil citado en 4.2.1.8. La tabla 140 agrupa las herramientas por producto.
 
 *Tabla 140. Herramientas y tecnologías de desarrollo.*
 
@@ -55,11 +55,11 @@ El landing page se construye con Next.js, React y TypeScript; el backend, con Ja
 | Backend | Spring Boot 3.5.16 | REST API con validación, seguridad JWT y servicios de aplicación. Versión declarada en el `pom.xml` del backend. | <https://spring.io/projects/spring-boot> |
 | Backend | Spring Data JPA | Repositorios de la Infrastructure Layer de cada Bounded Context. | <https://spring.io/projects/spring-data-jpa> |
 | Backend | Maven | Dependencias, compilación, pruebas y empaquetado del backend. | <https://maven.apache.org/> |
-| Backend | PostgreSQL 17 | Base prevista para el perfil `postgres`; Compose define la imagen `postgres:17`. Su ejecución todavía no se verificó. | <https://www.postgresql.org/> |
+| Backend | PostgreSQL 17 | Base publicada en Render y verificada con Flyway V1–V3 y pruebas remotas; evidencia en 4.2.1.8. Compose conserva una configuración local no ejecutada. | <https://www.postgresql.org/> |
 | Backend | H2 2.3.232 | Persistencia en memoria para ejecución local y pruebas de usuarios, sesiones, suscripciones, gastos y presupuestos. | <https://www.h2database.com/> |
 | Backend | Flyway | Migraciones V1–V3 del esquema; JPA valida las tablas sin crearlas automáticamente. | <https://www.red-gate.com/products/flyway/> |
 | Backend | Docker Compose | Configuración del contenedor PostgreSQL; el backend se ejecutó como aplicación Java local. | <https://www.docker.com/> |
-| Aplicación móvil | Flutter y Dart | Interfaz y lógica de presentación de la aplicación móvil. | <https://flutter.dev/> |
+| Aplicación móvil | Kotlin y Jetpack Compose | Interfaz y lógica de presentación de la aplicación Android; stack declarado en el repositorio móvil citado en 4.2.1.8. | <https://developer.android.com/compose> |
 | Aplicación móvil | Android Studio | Emulador de Android y herramientas del SDK para probar la aplicación. | <https://developer.android.com/studio> |
 
 *Fuente: elaboración del equipo Gastify.*

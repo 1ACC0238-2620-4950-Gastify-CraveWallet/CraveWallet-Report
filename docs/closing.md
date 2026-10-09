@@ -49,7 +49,9 @@ Los seis spikes (SP01–SP06) investigan las integraciones con ExchangeRate-API,
 
 <!-- pdf:omit-start -->
 
-Brown, S. (s. f.). The C4 model for visualising software architecture. Recuperado 7 de octubre de 2026, de https://c4model.com/
+Brown, S. (s. f.-a). Deployment diagram. Recuperado 9 de octubre de 2026, de https://c4model.com/diagrams/deployment
+
+Brown, S. (s. f.-b). The C4 model for visualising software architecture. Recuperado 7 de octubre de 2026, de https://c4model.com/
 
 BudgetBakers. (2026). Everything about Premium. Wallet Help Center. https://support.budgetbakers.com/hc/en-us/articles/7151349344018-Everything-about-Premium
 
@@ -82,6 +84,8 @@ Spendee. (2025). What is Spendee Premium? Spendee Help Center. https://help.spen
 Stripe. (s. f.-a). Receive Stripe events in your webhook endpoint. Recuperado 7 de octubre de 2026, de https://docs.stripe.com/webhooks
 
 Stripe. (s. f.-b). Using webhooks with subscriptions. Recuperado 7 de octubre de 2026, de https://docs.stripe.com/billing/subscriptions/webhooks
+
+Structurizr. (s. f.). Structurizr DSL: Language reference. Recuperado 9 de octubre de 2026, de https://docs.structurizr.com/dsl/language
 
 Superintendencia de Banca, Seguros y AFP, & CAF. (s. f.). Encuesta de Medición de Capacidades Financieras: Perú 2022. SBS y CAF. Recuperado 6 de octubre de 2026, de https://www.sbs.gob.pe/Portals/4/jer/CIFRAS-ENCUESTA/2022/Brochure_ENCUESTA_CAPACIDADES%20FINANACIERAS%202022_vr.pdf
 

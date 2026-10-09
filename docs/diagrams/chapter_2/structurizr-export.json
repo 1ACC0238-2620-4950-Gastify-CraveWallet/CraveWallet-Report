@@ -1,0 +1,14 @@
+{
+  "renderer": "Official Structurizr browser renderer (Playwright build)",
+  "exported_on": "2026-10-09",
+  "dsl_sha256": "b8ee313da0a5eecd09a8a08e882242580ef57a22e924b2c9b570efb639301b92",
+  "json_sha256": "dc3fafa86999fe68ee63adda85d0444b9e8eea2572a24c2eb990a9e99ff11aac",
+  "views": {
+    "SystemContext": "system-context-revised",
+    "Containers": "containers-revised",
+    "Deployment": "deployment_diagram",
+    "SubscriptionComponents": "subscription-components-revised",
+    "DeliveryComponents": "delivery-components-revised",
+    "PremiumComponents": "premium-components-revised"
+  }
+}
