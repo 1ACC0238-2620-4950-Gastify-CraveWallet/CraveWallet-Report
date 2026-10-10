@@ -2039,4 +2039,4 @@ Los campos de texto no aceptan escritura: al tocar un campo del formulario de al
 
 **Enlace al prototipo:** [CraveWallet – Prototipo móvil](https://www.figma.com/design/lIN0zLBZ4E0PmQudY5JOip/Mobile-UX-UI?node-id=1-32&t=o4MJV6YoUPiTIhVj-1)
 
-**Video del prototipo:** *(agregar el enlace al video del recorrido de los tres User Goals)*
+**Video del prototipo:** *https://acortar.link/2uxERA*
