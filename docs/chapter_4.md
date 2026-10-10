@@ -661,6 +661,18 @@ Los errores incluyen 400 para datos inválidos, 401 para autenticación no váli
 
 La caché USD/PEN dura 24 horas por instancia; ante un fallo, puede usar una tasa anterior de menos de siete días indicando `stale=true`. La [documentación del proveedor](https://www.exchangerate-api.com/docs/free) exige atribución para el endpoint Open Access, por lo que el contrato devuelve `attributionUrl` para que la interfaz la muestre.
 
+**Comprobación del avance del backend al cierre de TB1.** La tabla 157 acredita 16 operaciones implementadas. Para calcular el avance por cantidad de operaciones se toma como base el [inventario de 22 contratos REST](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/445bee1/docs/tb1-endpoint-coverage.md), derivado de TS01–TS06 y de las Interface Layers de la sección 2.6:
+
+- Autenticación y perfil: 6 de 6 operaciones implementadas (registro, login, renovación, logout, consulta y edición del perfil).
+- Suscripciones y recordatorios: 6 de 6 (alta, listado, detalle, edición, cancelación y consulta de datos del recordatorio).
+- Cotización: 1 de 1 (consulta USD/PEN).
+- Delivery: 3 de 4 (registro de gasto, resumen mensual y presupuesto); la consulta de sugerencias de comercios permanece pendiente.
+- Premium & Billing: 0 de 5; permanecen pendientes checkout, consulta de estado, cancelación, historial de pagos y webhook de Stripe.
+
+El cálculo sobre este inventario es **16 ÷ 22 × 100 = 72,7 %**. Se cuenta una operación por combinación de método HTTP y ruta; health, Swagger, OpenAPI, filtros y reintentos no incrementan el total. Las operaciones implementadas se documentan en la tabla 157 y su ejecución y despliegue se sustentan en las secciones 4.2.1.6 y 4.2.1.8.
+
+Este porcentaje mide únicamente los contratos REST enumerados, no el cumplimiento completo de historias de usuario ni el avance de toda la aplicación. El catálogo remoto y la edición/eliminación de gastos de Delivery, mencionados en otros casos de uso, no forman parte de este inventario de 22 contratos; si se incorporan al alcance evaluado, debe ampliarse el denominador y recalcularse el porcentaje. Obtener los datos de un recordatorio tampoco acredita su ejecución en el calendario o la entrega de una notificación en Android.
+
 **Ejemplo de alta de suscripción.** La figura 118 muestra el cuerpo enviado desde Swagger a `POST /api/v1/subscriptions`, con `Content-Type: application/json` y una sesión Bearer autorizada. Los seis campos son obligatorios: `currency` admite PEN/USD, `billingCycle` admite MONTHLY/ANNUAL y la fecha debe ser actual o futura en America/Lima.
 
 ```json
