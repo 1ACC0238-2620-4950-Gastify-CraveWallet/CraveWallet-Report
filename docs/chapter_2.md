@@ -1957,7 +1957,7 @@ La tabla 83 lista las User Stories que contribuyen a la recomendación del produ
 
 ### 2.4.3. Product Backlog
 
-El backlog reúne las 40 User Stories, las 6 Technical Stories y las 6 Spike Stories. Se estiman en Story Points con la escala 1, 2, 3 y 5; ninguna supera los 5 puntos, porque los spikes que habrían pesado 8 se dividieron en uno de investigación y otro de prototipo. Se ordenan por el valor que aportan al negocio. El orden sigue el Impact Map. Primero va el landing page, que el enunciado exige desde el primer sprint, junto con los tres spikes de investigación, que no dependen de ninguna construcción. Luego vienen la autenticación, el alta de suscripciones y el Dashboard, porque sin cuenta no hay portafolio que mostrar. Después siguen los spikes de prototipo y las historias de conversión de divisas y recordatorios, que sostienen la hipótesis principal. Al final quedan el spike de Stripe, el delivery y el plan Premium, que amplían la propuesta pero no son necesarios para las primeras hipótesis. La autenticación no encabeza el backlog por sí sola: entra en el Sprint 2 como habilitadora del alta de suscripciones y el Dashboard, no como prioridad de seguridad aislada.
+El backlog reúne las 40 User Stories, las 6 Technical Stories y las 6 Spike Stories. Se estiman en Story Points con la escala 1, 2, 3 y 5; ninguna supera los 5 puntos, porque los spikes que habrían pesado 8 se dividieron en uno de investigación y otro de prototipo. Se ordenan por el valor que aportan al negocio. El orden sigue el Impact Map. Primero va el landing page, que el enunciado exige desde el primer sprint, junto con los tres spikes de investigación, que no dependen de ninguna construcción. Luego vienen la autenticación, el alta de suscripciones y el Dashboard, porque sin cuenta no hay portafolio que mostrar. Después siguen los spikes de prototipo y las historias de conversión de divisas y recordatorios, que sostienen la hipótesis principal. Al final quedan el spike de Stripe, el delivery y el plan Premium, que amplían la propuesta pero no son necesarios para las primeras hipótesis. Esta fue la planificación inicial de AV1. Durante TB1 se adelantaron autenticación, suscripciones, cotización, preparación de recordatorios y parte de Delivery para construir el incremento requerido; la revisión del 10 de octubre de 2026 registra ese ajuste sin modificar las estimaciones originales ni declarar terminadas las historias parciales.
 
 Los sprints corresponden a las entregas del curso: el Sprint 1 a TB1, el Sprint 2 a AV2 y los Sprints 3 y 4 a TB2. El Product Backlog se administra en Trello y mantiene una lista por sprint, con las historias ordenadas según la prioridad de esta tabla.
 
@@ -1965,69 +1965,73 @@ Los sprints corresponden a las entregas del curso: el Sprint 1 a TB1, el Sprint 
 
 La captura del tablero y la distribución de las historias por sprint se presentan en el Anexo A.
 
-La tabla 84 ordena las historias del Product Backlog por prioridad, con sus Story Points y el sprint asignado.
+La tabla 84 conserva el orden de prioridad y los Story Points originales, y distingue el sprint inicial de AV1 del sprint asignado tras la revisión TB1. Las 18 historias adelantadas al Sprint 1 tienen una nota fechada en su tarjeta de Trello con la asignación original, evidencia y limitaciones. La asignación al sprint no acredita por sí sola el cumplimiento de todos los criterios de aceptación.
 
 *Tabla 84. Product Backlog.*
 
-| # Orden | User Story Id | Título | Story Points (1 / 2 / 3 / 5) | Sprint |
-| --- | --- | --- | --- | --- |
-| 1 | SP01 | Investigar y documentar la integración con ExchangeRate-API | 3 | 1 |
-| 2 | SP03 | Investigar las alternativas de integración con el calendario nativo | 3 | 1 |
-| 3 | SP05 | Investigar el flujo de suscripción recurrente del SDK de Stripe | 3 | 1 |
-| 4 | US24 | Ver la propuesta de valor de CraveWallet | 2 | 1 |
-| 5 | US25 | Comparar el plan gratuito y el plan Premium | 2 | 1 |
-| 6 | US32 | Consultar preguntas frecuentes en el landing page | 2 | 1 |
-| 7 | US40 | Dejar mi correo para recibir novedades del lanzamiento | 1 | 1 |
-| 8 | TS01 | Servicio de autenticación y perfil | 5 | 2 |
-| 9 | US01 | Registrarme con correo y contraseña | 3 | 2 |
-| 10 | US02 | Iniciar sesión | 2 | 2 |
-| 11 | US03 | Configurar mi moneda de referencia | 1 | 2 |
-| 12 | US33 | Cerrar sesión | 1 | 2 |
-| 13 | TS02 | Servicio de suscripciones | 5 | 2 |
-| 14 | US04 | Registrar una suscripción desde el catálogo precargado | 3 | 2 |
-| 15 | US05 | Registrar una suscripción personalizada | 3 | 2 |
-| 16 | US06 | Editar una suscripción registrada | 2 | 2 |
-| 17 | US07 | Cancelar una suscripción registrada | 2 | 2 |
-| 18 | US26 | Ver el historial de suscripciones canceladas | 1 | 2 |
-| 19 | US34 | Previsualizar el monto en soles antes de guardar una suscripción en dólares | 2 | 2 |
-| 20 | US08 | Ver el total mensual de mis suscripciones activas en soles | 5 | 2 |
-| 21 | US09 | Ver mis suscripciones agrupadas por categoría | 3 | 2 |
-| 22 | US10 | Ver mis suscripciones ordenadas por próxima fecha de renovación | 2 | 2 |
-| 23 | US11 | Ver el detalle de una suscripción desde el Dashboard | 2 | 2 |
-| 24 | US27 | Buscar una suscripción por nombre en el Dashboard | 2 | 2 |
-| 25 | US35 | Ver el ahorro estimado por cancelar una suscripción antes de su renovación | 3 | 2 |
-| 26 | SP02 | Prototipar el consumo y caché de ExchangeRate-API | 5 | 3 |
-| 27 | TS03 | Servicio de conversión de divisas | 5 | 3 |
-| 28 | US15 | Ver el monto en soles de una suscripción facturada en dólares | 5 | 3 |
-| 29 | US16 | Ver el tipo de cambio utilizado y su fecha de actualización | 2 | 3 |
-| 30 | US17 | Ver mi portafolio completo unificado en soles | 3 | 3 |
-| 31 | US29 | Ver el historial del tipo de cambio aplicado a una suscripción | 2 | 3 |
-| 32 | US37 | Ver la variación del tipo de cambio respecto al cobro anterior | 2 | 3 |
-| 33 | SP04 | Prototipar el agendado de eventos en el calendario nativo | 5 | 3 |
-| 34 | TS04 | Servicio de recordatorios | 3 | 3 |
-| 35 | US12 | Recibir un recordatorio 24 horas antes de un cobro automático | 5 | 3 |
-| 36 | US13 | Que se elimine el recordatorio de una suscripción cancelada | 2 | 3 |
-| 37 | US14 | Otorgar permiso de acceso al calendario | 3 | 3 |
-| 38 | US28 | Ver la lista de mis próximos recordatorios agendados | 2 | 3 |
-| 39 | US36 | Recibir una notificación push además del recordatorio de calendario | 3 | 3 |
-| 40 | SP06 | Prototipar el pago recurrente con el SDK de Stripe | 5 | 4 |
-| 41 | TS05 | Servicio de gastos de delivery | 3 | 4 |
-| 42 | US18 | Registrar un pedido de delivery desde un catálogo de comercios frecuentes | 3 | 4 |
-| 43 | US19 | Ver el total gastado en delivery en el mes | 2 | 4 |
-| 44 | US20 | Ver la tendencia de mi gasto de delivery por semana | 3 | 4 |
-| 45 | US30 | Editar o eliminar un gasto de delivery registrado por error | 2 | 4 |
-| 46 | US38 | Definir un límite mensual de gasto en delivery y recibir aviso al acercarme | 3 | 4 |
-| 47 | TS06 | Servicio de suscripción Premium y webhooks de Stripe | 5 | 4 |
-| 48 | US21 | Ver la propuesta de valor y el precio de Premium | 2 | 4 |
-| 49 | US22 | Suscribirme al plan Premium | 5 | 4 |
-| 50 | US23 | Cancelar mi suscripción Premium | 2 | 4 |
-| 51 | US31 | Ver mi historial de pagos Premium | 1 | 4 |
-| 52 | US39 | Ver cuántas suscripciones puedo registrar en el plan gratuito | 2 | 4 |
+| # Orden | User Story Id | Título | Story Points (1 / 2 / 3 / 5) | Sprint inicial AV1 | Sprint revisado TB1 |
+| --- | --- | --- | --- | --- | --- |
+| 1 | SP01 | Investigar y documentar la integración con ExchangeRate-API | 3 | 1 | 1 |
+| 2 | SP03 | Investigar las alternativas de integración con el calendario nativo | 3 | 1 | 1 |
+| 3 | SP05 | Investigar el flujo de suscripción recurrente del SDK de Stripe | 3 | 1 | 1 |
+| 4 | US24 | Ver la propuesta de valor de CraveWallet | 2 | 1 | 1 |
+| 5 | US25 | Comparar el plan gratuito y el plan Premium | 2 | 1 | 1 |
+| 6 | US32 | Consultar preguntas frecuentes en el landing page | 2 | 1 | 1 |
+| 7 | US40 | Dejar mi correo para recibir novedades del lanzamiento | 1 | 1 | 1 |
+| 8 | TS01 | Servicio de autenticación y perfil | 5 | 2 | 1 |
+| 9 | US01 | Registrarme con correo y contraseña | 3 | 2 | 1 |
+| 10 | US02 | Iniciar sesión | 2 | 2 | 1 |
+| 11 | US03 | Configurar mi moneda de referencia | 1 | 2 | 2 |
+| 12 | US33 | Cerrar sesión | 1 | 2 | 1 |
+| 13 | TS02 | Servicio de suscripciones | 5 | 2 | 1 |
+| 14 | US04 | Registrar una suscripción desde el catálogo precargado | 3 | 2 | 2 |
+| 15 | US05 | Registrar una suscripción personalizada | 3 | 2 | 1 |
+| 16 | US06 | Editar una suscripción registrada | 2 | 2 | 1 |
+| 17 | US07 | Cancelar una suscripción registrada | 2 | 2 | 1 |
+| 18 | US26 | Ver el historial de suscripciones canceladas | 1 | 2 | 2 |
+| 19 | US34 | Previsualizar el monto en soles antes de guardar una suscripción en dólares | 2 | 2 | 1 |
+| 20 | US08 | Ver el total mensual de mis suscripciones activas en soles | 5 | 2 | 1 |
+| 21 | US09 | Ver mis suscripciones agrupadas por categoría | 3 | 2 | 2 |
+| 22 | US10 | Ver mis suscripciones ordenadas por próxima fecha de renovación | 2 | 2 | 2 |
+| 23 | US11 | Ver el detalle de una suscripción desde el Dashboard | 2 | 2 | 2 |
+| 24 | US27 | Buscar una suscripción por nombre en el Dashboard | 2 | 2 | 2 |
+| 25 | US35 | Ver el ahorro estimado por cancelar una suscripción antes de su renovación | 3 | 2 | 2 |
+| 26 | SP02 | Prototipar el consumo y caché de ExchangeRate-API | 5 | 3 | 3 |
+| 27 | TS03 | Servicio de conversión de divisas | 5 | 3 | 1 |
+| 28 | US15 | Ver el monto en soles de una suscripción facturada en dólares | 5 | 3 | 1 |
+| 29 | US16 | Ver el tipo de cambio utilizado y su fecha de actualización | 2 | 3 | 1 |
+| 30 | US17 | Ver mi portafolio completo unificado en soles | 3 | 3 | 1 |
+| 31 | US29 | Ver el historial del tipo de cambio aplicado a una suscripción | 2 | 3 | 3 |
+| 32 | US37 | Ver la variación del tipo de cambio respecto al cobro anterior | 2 | 3 | 3 |
+| 33 | SP04 | Prototipar el agendado de eventos en el calendario nativo | 5 | 3 | 3 |
+| 34 | TS04 | Servicio de recordatorios | 3 | 3 | 1 |
+| 35 | US12 | Recibir un recordatorio 24 horas antes de un cobro automático | 5 | 3 | 3 |
+| 36 | US13 | Que se elimine el recordatorio de una suscripción cancelada | 2 | 3 | 3 |
+| 37 | US14 | Otorgar permiso de acceso al calendario | 3 | 3 | 3 |
+| 38 | US28 | Ver la lista de mis próximos recordatorios agendados | 2 | 3 | 3 |
+| 39 | US36 | Recibir una notificación push además del recordatorio de calendario | 3 | 3 | 3 |
+| 40 | SP06 | Prototipar el pago recurrente con el SDK de Stripe | 5 | 4 | 4 |
+| 41 | TS05 | Servicio de gastos de delivery | 3 | 4 | 1 |
+| 42 | US18 | Registrar un pedido de delivery desde un catálogo de comercios frecuentes | 3 | 4 | 4 |
+| 43 | US19 | Ver el total gastado en delivery en el mes | 2 | 4 | 1 |
+| 44 | US20 | Ver la tendencia de mi gasto de delivery por semana | 3 | 4 | 4 |
+| 45 | US30 | Editar o eliminar un gasto de delivery registrado por error | 2 | 4 | 4 |
+| 46 | US38 | Definir un límite mensual de gasto en delivery y recibir aviso al acercarme | 3 | 4 | 1 |
+| 47 | TS06 | Servicio de suscripción Premium y webhooks de Stripe | 5 | 4 | 4 |
+| 48 | US21 | Ver la propuesta de valor y el precio de Premium | 2 | 4 | 4 |
+| 49 | US22 | Suscribirme al plan Premium | 5 | 4 | 4 |
+| 50 | US23 | Cancelar mi suscripción Premium | 2 | 4 | 4 |
+| 51 | US31 | Ver mi historial de pagos Premium | 1 | 4 | 4 |
+| 52 | US39 | Ver cuántas suscripciones puedo registrar en el plan gratuito | 2 | 4 | 4 |
 
 *Fuente: elaboración del equipo Gastify.*
 
 
-El total es de 148 Story Points: 16 en el Sprint 1, 47 en el Sprint 2, 47 en el Sprint 3 y 38 en el Sprint 4. Los spikes de investigación (SP01, SP03 y SP05) abren el Sprint 1 junto al landing page, porque no dependen de ninguna construcción. Los spikes de prototipo (SP02, SP04 y SP06) se ubican al inicio del sprint que implementa la funcionalidad investigada, para aplicar sus hallazgos de inmediato. El Sprint 2 y el Sprint 3 concentran la mayor carga porque en ellos se construye, respectivamente, el núcleo de valor (autenticación, alta de suscripciones y Dashboard) y la hipótesis principal del producto (conversión de divisas y recordatorios anticipados).
+El total se conserva en 148 Story Points. La revisión TB1 deja 25 historias y 72 SP asignados al Sprint 1, 8 historias y 17 SP al Sprint 2, 9 historias y 29 SP al Sprint 3, y 10 historias y 30 SP al Sprint 4. Son puntos de alcance asignado, no puntos completados. La distribución inicial fue 16, 47, 47 y 38 SP, respectivamente, y permanece trazable en la columna Sprint inicial AV1.
+
+Los servicios TS01–TS04 están implementados en el backend, pero TS04 solo prepara datos del recordatorio. TS05 es parcial: registro y resumen disponibles, edición de gastos pendiente. US06 y US07 requieren comprobar el flujo Android completo; US16 y US34 requieren revisar la presentación de la fecha de cotización; y US38 cuenta con presupuesto y saldo, sin prueba del aviso al acercarse al límite. Los spikes necesitan sus propios resultados; US32 y US40 conservan trabajo en una rama del landing sin integración al sitio publicado. Las demás historias no se declaran completas por tener una tarea de ingeniería asociada en Done.
+
+El seguimiento de las 12 tareas de ingeniería se registra por separado en el [Sprint Backlog 1](https://trello.com/b/1BI59q74/cravewallet-sprint1-tb1), documentado en 4.2.1.3. Esta separación permite mantener el Product Backlog del producto y la evidencia de ejecución del sprint sin confundir historias asignadas con historias aceptadas.
 
 ## 2.5. Strategic-Level Domain-Driven Design
 

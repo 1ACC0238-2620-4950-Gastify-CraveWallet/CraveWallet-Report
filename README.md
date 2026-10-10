@@ -4,27 +4,28 @@ La tabla 1 registra las versiones del informe, su fecha, su autor y los cambios 
 
 *Tabla 1. Registro de Versiones del Informe.*
 
-| Versión | Fecha | Autor | Descripción de modificación |
-| --- | --- | --- | --- |
-| AV1 | 15/09/2026 | Todo el equipo | Primera versión |
-| AV1 — revisión | 07/10/2026 | Anghelo Faustino | Corrección de fuentes, Lean UX, flujos de mensajes, Context Map y coherencia del diseño. |
-| AV1 — revisión de diseño estratégico | 07/10/2026 | Alexander Aliaga | Corrección de las secciones 2.5.1.2, 2.5.1.3, 2.5.2, 2.5.3.1 y 2.5.3.2; fuentes editables, referencias y alineación del criterio de activación de Premium. |
-| TB1 — avance | 08/10/2026 | Mario Sejuro | Redacción de las referencias a tablas y figuras y de oraciones extensas del Capítulo II; fuentes del Capítulo III; herramientas del 4.1.1 en tablas Markdown. |
-| TB1 — revisión de arquitectura | 09/10/2026 | Alexander Aliaga | Exportación de las seis vistas C4 en Structurizr; despliegue en Render y Vercel, stack Android y distinción de integraciones pendientes. |
-| TB1 — evidencias de despliegue | 09/10/2026 | Alexander Aliaga | Capturas públicas de Vercel y arranque de Render, copia de evidencia Live versionada y verificación HTTP del health; figuras 107, 108, 120 y 123 con procedencia. |
-| TB1 — Student Outcome y capítulo 4 | 09/10/2026 | Mario Sejuro | Acciones y conclusiones TB1 en Student Outcome, alineación de la tabla de commits de testing, repositorio de la aplicación en la tabla 142 y retiro de la sección 4.3. |
-| TB1 — revisión de redacción | 09/10/2026 | Mario Sejuro | Reescritura de frases genéricas y retiro del estado pendiente en los capítulos I, II y III; precio de Premium unificado en S/ 9.99. |
-| TB1 — evidencia móvil | 09/10/2026 | Sebastián Roman | Registro de la prueba en LDPlayer (capturas M1–M6, resultados y salida de Gradle) y aclaración de que las figuras 111 y 112 provienen del emulador. |
-| TB1 — Swagger público | 09/10/2026 | Anghelo Faustino | Enlace y captura de Swagger en Render; documentación del despliegue `445bee1` y verificación de acceso público a OpenAPI con recursos protegidos por JWT. |
-| TB1 — Lean UX Canvas | 09/10/2026 | Anghelo Faustino | Tabla editable del Lean UX Canvas en lugar de imagen. |
+| Versión | Fecha | Autor | Descripción de modificación                                                                                                                                                                                                                                                        |
+| --- | --- | --- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AV1 | 15/09/2026 | Todo el equipo | Primera versión                                                                                                                                                                                                                                                                    |
+| AV1 — revisión | 07/10/2026 | Anghelo Faustino | Corrección de fuentes, Lean UX, flujos de mensajes, Context Map y coherencia del diseño.                                                                                                                                                                                           |
+| AV1 — revisión de diseño estratégico | 07/10/2026 | Alexander Aliaga | Corrección de las secciones 2.5.1.2, 2.5.1.3, 2.5.2, 2.5.3.1 y 2.5.3.2; fuentes editables, referencias y alineación del criterio de activación de Premium.                                                                                                                         |
+| TB1 — avance | 08/10/2026 | Mario Sejuro | Redacción de las referencias a tablas y figuras y de oraciones extensas del Capítulo II; fuentes del Capítulo III; herramientas del 4.1.1 en tablas Markdown.                                                                                                                      |
+| TB1 — revisión de arquitectura | 09/10/2026 | Alexander Aliaga | Exportación de las seis vistas C4 en Structurizr; despliegue en Render y Vercel, stack Android y distinción de integraciones pendientes.                                                                                                                                           |
+| TB1 — evidencias de despliegue | 09/10/2026 | Alexander Aliaga | Capturas públicas de Vercel y arranque de Render, copia de evidencia Live versionada y verificación HTTP del health; figuras 107, 108, 120 y 123 con procedencia.                                                                                                                  |
+| TB1 — Student Outcome y capítulo 4 | 09/10/2026 | Mario Sejuro | Acciones y conclusiones TB1 en Student Outcome, alineación de la tabla de commits de testing, repositorio de la aplicación en la tabla 142 y retiro de la sección 4.3.                                                                                                             |
+| TB1 — revisión de redacción | 09/10/2026 | Mario Sejuro | Reescritura de frases genéricas y retiro del estado pendiente en los capítulos I, II y III; precio de Premium unificado en S/ 9.99.                                                                                                                                                |
+| TB1 — evidencia móvil | 09/10/2026 | Sebastián Roman | Registro de la prueba en LDPlayer (capturas M1–M6, resultados y salida de Gradle) y aclaración de que las figuras 111 y 112 provienen del emulador.                                                                                                                                |
+| TB1 — Swagger público | 09/10/2026 | Anghelo Faustino | Enlace y captura de Swagger en Render; documentación del despliegue `445bee1` y verificación de acceso público a OpenAPI con recursos protegidos por JWT.                                                                                                                          |
+| TB1 — Lean UX Canvas | 09/10/2026 | Anghelo Faustino | Tabla editable del Lean UX Canvas en lugar de imagen.                                                                                                                                                                                                                              |
+| TB1 — Sprint Backlog y evidencias audiovisuales | 10/10/2026 | Josué Carpio | Organización del Sprint Backlog 1 en Trello con 12 tareas, incorporación de su enlace y captura en el Capítulo IV, grabación del video de navegación de la Landing Page, aplicación Android y Swagger UI, realización de audit y del recorrido del prototipo interactivo en Figma. |
 | TB1 — remediación de auditoría | 10/10/2026 | Equipo Gastify | Conciliación del alcance del Sprint 1, matriz de cobertura REST, corrección de contradicciones sobre dispositivo, APK, API y navegación, y plantillas para evidencias pendientes. |
 
-*Fuente: elaboración del equipo Gastify.*
+*Fuente: elaboración del equipo Gastify*
 
 
 # Project Report Collaboration Insights
 
-La figura 1 muestra la actividad de los integrantes en el repositorio del informe, como evidencia del trabajo colaborativo.
+La figura 1 muestra el resumen de actividad (Pulse) del repositorio del informe entre el 3 y el 10 de octubre de 2026: 14 pull requests integrados y 63 commits de 6 autores, como evidencia del trabajo colaborativo.
 
 ![Collaboration Insights — CraveWallet](docs/images/collaboration_insights.png)
 

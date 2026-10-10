@@ -103,7 +103,7 @@ El Product Backlog de CraveWallet se gestiona en Trello. El tablero organiza las
 
 **Enlace público del tablero:** [CraveWallet – Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog)
 
-La figura 128 muestra la distribución de las historias en el tablero descrito en la sección 2.4.3.
+La figura 128 muestra una vista parcial del tablero después de la revisión TB1 del 10 de octubre de 2026. El [inventario observado de las 52 tarjetas](evidence/backlog/2026-10-10-board.json) registra los cuatro sprints: 25 tarjetas / 72 SP, 8 / 17 SP, 9 / 29 SP y 10 / 30 SP. La tabla 84 conserva la asignación inicial y la revisada; los puntos representan alcance asignado, no trabajo completado. La [captura de la planificación inicial de AV1](images/chapter_2/Product_Backlog_Trello_av1.png) se conserva para trazar el cambio.
 
 ![Product Backlog de CraveWallet en Trello](images/chapter_2/Product_Backlog_Trello.png)
 
@@ -113,4 +113,4 @@ La figura 128 muestra la distribución de las historias en el tablero descrito e
 
 <!-- pdf:omit-end -->
 
-*Fuente: tablero de Trello del equipo Gastify.*
+*Fuente: captura del tablero público de Trello del equipo Gastify, 10 de octubre de 2026 (America/Lima); el inventario completo se registra en evidence/backlog/2026-10-10-board.json.*

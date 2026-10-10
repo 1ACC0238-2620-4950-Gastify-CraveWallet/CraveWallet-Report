@@ -2043,4 +2043,4 @@ Los campos de texto no aceptan escritura: al tocar un campo del formulario de al
 
 **Enlace al prototipo:** [CraveWallet – Prototipo móvil](https://www.figma.com/design/lIN0zLBZ4E0PmQudY5JOip/Mobile-UX-UI?node-id=1-32&t=o4MJV6YoUPiTIhVj-1)
 
-**Evidencia de recorrido:** el archivo de Figma anterior contiene puntos de inicio para UG1, UG2 y UG3 y sus alternativas. En este corte no se adjunta un video; el evaluador debe recibir acceso de visualización al prototipo. Si el enunciado de entrega exige una grabación, esta deberá añadirse después de recorrer y comprobar los tres User Goals en el archivo publicado.
+**Video del prototipo:** *https://acortar.link/2uxERA*

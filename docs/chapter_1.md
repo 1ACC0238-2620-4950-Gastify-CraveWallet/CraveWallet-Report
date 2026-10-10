@@ -130,9 +130,13 @@ Cada hipótesis relaciona un resultado del negocio, un segmento, un beneficio pa
 
 La tabla 10 presenta el Lean UX Canvas de CraveWallet con la distribución de ocho bloques propuesta por Gothelf [@gothelf2021canvas]. Se adapta el marco de Gothelf y Seiden [@gothelf2021leanux]. Las hipótesis completas y sus metas se desarrollan en la sección 1.2.2.3.
 
+<!-- pdf:omit-start -->
+
 *Tabla 10. Lean UX Canvas de CraveWallet.*
 
-<table id="lean-ux-canvas">
+<!-- pdf:omit-end -->
+
+<table id="lean-ux-canvas" data-table-number="10">
   <colgroup>
     <col width="16.66%">
     <col width="16.66%">
@@ -143,9 +147,9 @@ La tabla 10 presenta el Lean UX Canvas de CraveWallet con la distribución de oc
   </colgroup>
   <thead>
     <tr>
-      <th colspan="2">1. Problema de negocio</th>
-      <th colspan="2">5. Ideas de soluciones</th>
-      <th colspan="2">2. Resultados comerciales</th>
+      <th colspan="2">1&#46; Problema de negocio</th>
+      <th colspan="2">5&#46; Ideas de soluciones</th>
+      <th colspan="2">2&#46; Resultados comerciales</th>
     </tr>
   </thead>
   <tbody>
@@ -155,17 +159,17 @@ La tabla 10 presenta el Lean UX Canvas de CraveWallet con la distribución de oc
       <td colspan="2">Retención a 30 días superior al 45% entre usuarios con tres o más suscripciones registradas.<br>Conversión Premium de al menos el 12% entre usuarios activos que alcancen el límite gratuito, durante los primeros seis meses.<br>NPS superior a 40 al cierre del primer semestre de uso del producto.<br>Estos umbrales son metas propuestas; todavía no se han medido.</td>
     </tr>
     <tr>
-      <th colspan="3">3. Usuarios y clientes</th>
-      <th colspan="3">4. Beneficios del usuario</th>
+      <th colspan="3">3&#46; Usuarios y clientes</th>
+      <th colspan="3">4&#46; Beneficios del usuario</th>
     </tr>
     <tr>
       <td colspan="3">El segmento primario son estudiantes de universidades privadas de Lima, de 18 a 25 años, con al menos tres suscripciones activas. El secundario son profesionales de Lima, de 25 a 32 años, con suscripciones en soles y dólares. Ambos necesitan seguir sus renovaciones y gastos; quienes contraten Premium serían los clientes de pago.</td>
       <td colspan="3">Conocer cuánto dinero comprometen sus suscripciones y cuándo se renuevan.<br>Recibir avisos antes del cobro para decidir con tiempo.<br>Comparar los importes en soles, conservando la moneda original.<br>Reconocer el gasto acumulado de delivery y contrastarlo con su presupuesto.</td>
     </tr>
     <tr>
-      <th colspan="2">6. Hipótesis</th>
-      <th colspan="2">7. ¿Qué es lo más importante que necesitamos aprender primero?</th>
-      <th colspan="2">8. ¿Cuál es la menor cantidad de trabajo que necesitamos hacer para aprenderlo?</th>
+      <th colspan="2">6&#46; Hipótesis</th>
+      <th colspan="2">7&#46; ¿Qué es lo más importante que necesitamos aprender primero?</th>
+      <th colspan="2">8&#46; ¿Cuál es la menor cantidad de trabajo que necesitamos hacer para aprenderlo?</th>
     </tr>
     <tr>
       <td colspan="2">Un Dashboard claro ayudará a los estudiantes a comprender sus compromisos y volver a consultar la aplicación (H1).<br>Los recordatorios previos ayudarán a reducir los cargos que los usuarios no anticipan (H2).<br>La conversión comprensible a soles motivará a los profesionales a consultar sus importes con regularidad (H3).<br>El resumen de delivery ayudará a ambos segmentos a seguir su presupuesto mensual (H4).<br>Los beneficios de Premium motivarán a usuarios comprometidos a contratar el plan (H5).</td>
@@ -175,7 +179,11 @@ La tabla 10 presenta el Lean UX Canvas de CraveWallet con la distribución de oc
   </tbody>
 </table>
 
+<!-- pdf:omit-start -->
+
 *Fuente: elaboración del equipo Gastify, adaptada del Lean UX Canvas de Jeff Gothelf [@gothelf2021canvas].*
+
+<!-- pdf:omit-end -->
 
 En el experimento del bloque 8 se registrará el tiempo desde el inicio del formulario hasta el resumen y se conservarán las observaciones de cada sesión. Los participantes podrán usar datos ficticios equivalentes a sus suscripciones.
 

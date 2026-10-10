@@ -39,7 +39,11 @@ function Pandoc(doc)
   for _, block in ipairs(doc.blocks) do
     local html = block.t == 'RawBlock' and block.format == 'html' and block.text or ''
     if not pending and html:match('<table%s+id="lean%-ux%-canvas"') then
-      pending = pandoc.List({block})
+      if html:match('</table>') then
+        out:insert(render_canvas(html))
+      else
+        pending = pandoc.List({block})
+      end
     elseif pending then
       pending:insert(block)
       if html:match('</table>') then

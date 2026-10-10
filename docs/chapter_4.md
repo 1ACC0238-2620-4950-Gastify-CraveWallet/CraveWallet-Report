@@ -323,7 +323,7 @@ El Sprint 1 reúne el landing desplegado, el backend y las pantallas core de And
 
 #### 4.2.1.1. Sprint Planning 1
 
-El Sprint 1 corresponde a la entrega TB1. En la AV1, el Product Backlog priorizado se distribuyó en cuatro sprints en Trello (sección 2.4.3) y el Sprint 1 recibió las historias del landing page. El sprint se planificó del 16 de septiembre al 9 de octubre de 2026. La tabla 147 resume la reunión de planificación; como es el primer sprint, no existen un Review ni una Retrospectiva anteriores.
+El Sprint 1 corresponde a la entrega TB1. En la AV1, el Product Backlog priorizado se distribuyó en cuatro sprints en Trello (sección 2.4.3) y el Sprint 1 recibió las historias del landing page. El sprint se planificó del 16 de septiembre al 9 de octubre de 2026. Durante la ejecución se adelantaron servicios y flujos móviles previstos para sprints posteriores; la revisión del Product Backlog del 10 de octubre conserva la asignación inicial y registra el alcance actualizado en la tabla 84. La tabla 147 resume la reunión de planificación; como es el primer sprint, no existen un Review ni una Retrospectiva anteriores.
 
 *Tabla 147. Sprint Planning 1.*
 
@@ -342,6 +342,7 @@ El Sprint 1 corresponde a la entrega TB1. En la AV1, el Product Backlog prioriza
 | Alcance de historias acreditado al cierre | 4 Story Points: US24 (2) y US25 (2). Las otras cinco historias del plan original no cuentan como terminadas en la velocidad: SP01, SP03 y SP05 continúan como investigación, y US32 y US40 se adelantaron parcialmente en el landing sin una trazabilidad completa de aceptación. |
 | Trabajo agregado durante el sprint | Aplicación Android, backend y despliegues requeridos por el hito TB1. Este trabajo se documenta en la tabla 149, pero no tenía Story Points asignados en el tablero y por ello no se suma a la velocidad comprometida. |
 | Sprint 1 Velocity | 4 de 16 Story Points del plan original (25 %). La diferencia se explica como cambio de alcance y trabajo agregado, no como 16 puntos completados. |
+| Sum of Story Points | Línea base AV1: 16 SP. Revisión TB1 del 10/10/2026: 72 SP asignados a 25 historias, conservando sus estimaciones originales (tabla 84). Este total es alcance asignado; incluye historias parciales y no representa velocidad ni puntos aceptados. Las 12 tareas de ingeniería suman 72 horas en la tabla 149; horas y Story Points son unidades distintas. |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -363,17 +364,22 @@ Los aspectos del Sprint 1 son los tres productos de la TB1: el landing page, la 
 
 #### 4.2.1.3. Sprint Backlog 1
 
-La figura 109 muestra el [tablero público](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) del Product Backlog. La tabla 149 presenta una reconstrucción al cierre de las tareas completadas, incluido el avance de la aplicación y del backend requerido para la TB1. No se presenta esta tabla como prueba de seguimiento progresivo: el tablero no conservó actividad suficiente para acreditar el paso de cada tarjeta por todos los estados.
+El Sprint Backlog 1 de CraveWallet se gestionó mediante un tablero de Trello independiente del Product Backlog general del proyecto. Este tablero permite visualizar las tareas del Sprint 1 mediante cuatro estados: To Do, In-Process, To-Review y Done.
 
-![Tablero del Product Backlog en Trello](images/chapter_2/Product_Backlog_Trello.png)
+La figura 109 presenta el tablero del Sprint Backlog 1. La tabla 149 detalla las 12 tareas registradas para la TB1, incluyendo las actividades del Landing Page, la aplicación móvil Android y los servicios del backend, con sus responsables, estimaciones y estados.
+
+
+**Enlace al Sprint Backlog 1:** [CraveWallet – Sprint 1 en Trello](https://acortar.link/clKCQj)
+
+![Tablero del Sprint Backlog 1](images/chapter_4/TrelloSprint1.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 109. Tablero del Product Backlog en Trello.*
+*Figura 109. Tablero del Sprint Backlog 1 de CraveWallet en Trello.*
 
 <!-- pdf:omit-end -->
 
-*Fuente: captura del tablero del equipo Gastify.*
+*Fuente: elaboración del equipo Gastify.*
 
 *Tabla 149. Sprint Backlog 1 y avances de la TB1.*
 
@@ -392,9 +398,7 @@ La figura 109 muestra el [tablero público](https://trello.com/b/W0MvIjVH/cravew
 | Hito TB1 | T11 | Empaquetar el API con Docker y desplegarlo en Render con PostgreSQL. | 6 | Anghelo | Done |
 | Hito TB1 | T12 | Conectar la app Android al API público y ejecutar las pruebas de integración. | 8 | Anghelo | Done |
 
-*Fuente: [tablero del Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) y commits de la sección 4.2.1.4. Las horas son una reconstrucción retrospectiva a partir de ese historial; no reemplazan estimaciones registradas antes de ejecutar el trabajo. El tablero solo tenía estimación para US24 y US25.*
-
-**Mejora de seguimiento acordada.** Desde el siguiente sprint, cada tarea de 4 a 8 horas se creará antes de iniciarse con historia, responsable, estimación y criterio de término. La actividad del tablero conservará fecha y responsable en las transiciones *To Do → In Process → To Review → Done*. El cierre enlazará la tarjeta con el pull request o commit, el caso de prueba ejecutado y el artefacto desplegado. La [plantilla de trazabilidad](evidence/sprint-task-traceability-template.md) reúne esos campos. Esta medida mejora el proceso futuro; no se usa para atribuir al Sprint 1 un historial que no existe.
+*Fuente: [tablero del Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) y commits de la sección 4.2.1.4. Las horas son estimaciones hechas al cierre del sprint a partir de ese historial. El Product Backlog conserva las estimaciones originales de las historias y su reasignación al corte TB1 (tabla 84); el tablero independiente del Sprint 1 conserva las tareas T01–T12. Este ajuste no reconstruye una evolución histórica de estados que no se registró durante la ejecución.*
 
 #### 4.2.1.4. Development Evidence for Sprint Review
 
@@ -611,6 +615,12 @@ La consulta del recordatorio devuelve `reminderAt=2026-11-07T05:00:00Z` y `billi
 
 *Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
 
+Video de demostración Del Sprint 1
+
+Como evidencia de ejecución del Sprint 1, se presenta un video de demostración del backend de CraveWallet mediante Swagger UI. Se muestra el funcionamiento de los endpoints del Bounded Context Delivery Expense Management, incluyendo la gestión del presupuesto mensual, el registro de gastos de delivery y la consulta del resumen de gastos.
+
+Enlace del video: https://acortar.link/8y5yu3
+
 #### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
 El alcance funcional del backend para TB1 se fija en las 16 operaciones necesarias para TS01–TS05, enumeradas en la tabla 157. La documentación se genera desde el código con springdoc-openapi y, en el corte del 9 de octubre de 2026, estuvo disponible en [Swagger UI público de Render](https://cravewallet-api.onrender.com/swagger-ui/index.html) (figura 117) y en la [especificación OpenAPI pública](https://cravewallet-api.onrender.com/v3/api-docs). Desde el commit `445bee1`, el perfil de producción permite consultar la documentación sin iniciar sesión; ejecutar operaciones sobre los datos del usuario requiere el token Bearer mediante **Authorize**. La [especificación capturada](evidence/backend/openapi.json) conserva la evidencia del entorno local, pero no sustituye la comprobación de disponibilidad pública al momento de exponer.
@@ -659,6 +669,18 @@ Los contratos ampliados se encuentran en [autenticación y perfil](https://githu
 Los errores incluyen 400 para datos inválidos, 401 para autenticación no válida, 404 para recursos inexistentes o ajenos y 409 para conflictos de estado, cupos o reintentos con contenido distinto. La cotización devuelve 503 si no hay un valor utilizable; en ese caso el portafolio conserva los importes originales y devuelve `monthlyTotalPen=null` con `conversionAvailable=false`.
 
 La caché USD/PEN dura 24 horas por instancia; ante un fallo, puede usar una tasa anterior de menos de siete días indicando `stale=true`. La [documentación del proveedor](https://www.exchangerate-api.com/docs/free) exige atribución para el endpoint Open Access, por lo que el contrato devuelve `attributionUrl` para que la interfaz la muestre.
+
+**Comprobación del avance del backend al cierre de TB1.** La tabla 157 acredita 16 operaciones implementadas. Para calcular el avance por cantidad de operaciones se toma como base el [inventario de 22 contratos REST](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/445bee1/docs/tb1-endpoint-coverage.md), derivado de TS01–TS06 y de las Interface Layers de la sección 2.6:
+
+- Autenticación y perfil: 6 de 6 operaciones implementadas (registro, login, renovación, logout, consulta y edición del perfil).
+- Suscripciones y recordatorios: 6 de 6 (alta, listado, detalle, edición, cancelación y consulta de datos del recordatorio).
+- Cotización: 1 de 1 (consulta USD/PEN).
+- Delivery: 3 de 4 (registro de gasto, resumen mensual y presupuesto); la consulta de sugerencias de comercios permanece pendiente.
+- Premium & Billing: 0 de 5; permanecen pendientes checkout, consulta de estado, cancelación, historial de pagos y webhook de Stripe.
+
+El cálculo sobre este inventario es **16 ÷ 22 × 100 = 72,7 %**. Se cuenta una operación por combinación de método HTTP y ruta; health, Swagger, OpenAPI, filtros y reintentos no incrementan el total. Las operaciones implementadas se documentan en la tabla 157 y su ejecución y despliegue se sustentan en las secciones 4.2.1.6 y 4.2.1.8.
+
+Este porcentaje mide únicamente los contratos REST enumerados, no el cumplimiento completo de historias de usuario ni el avance de toda la aplicación. El catálogo remoto y la edición/eliminación de gastos de Delivery, mencionados en otros casos de uso, no forman parte de este inventario de 22 contratos; si se incorporan al alcance evaluado, debe ampliarse el denominador y recalcularse el porcentaje. Obtener los datos de un recordatorio tampoco acredita su ejecución en el calendario o la entrega de una notificación en Android.
 
 **Ejemplo de alta de suscripción.** La figura 118 muestra el cuerpo enviado desde Swagger a `POST /api/v1/subscriptions`, con `Content-Type: application/json` y una sesión Bearer autorizada. Los seis campos son obligatorios: `currency` admite PEN/USD, `billingCycle` admite MONTHLY/ANNUAL y la fecha debe ser actual o futura en America/Lima.
 
