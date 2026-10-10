@@ -605,6 +605,12 @@ La consulta del recordatorio devuelve `reminderAt=2026-11-07T05:00:00Z` y `billi
 
 *Fuente: captura propia de Swagger UI, CraveWallet-Backend `2f36260`, entorno local H2, 8 de octubre de 2026 (America/Lima), con datos ficticios.*
 
+Video de demostración Del Sprint 1
+
+Como evidencia de ejecución del Sprint 1, se presenta un video de demostración del backend de CraveWallet mediante Swagger UI. Se muestra el funcionamiento de los endpoints del Bounded Context Delivery Expense Management, incluyendo la gestión del presupuesto mensual, el registro de gastos de delivery y la consulta del resumen de gastos.
+
+Enlace del video: https://acortar.link/8y5yu3
+
 #### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
 El backend documenta con OpenAPI las 16 operaciones de la tabla 157. La documentación se genera desde el código con springdoc-openapi y está disponible en [Swagger UI público de Render](https://cravewallet-api.onrender.com/swagger-ui/index.html) (figura 117) y en la [especificación OpenAPI pública](https://cravewallet-api.onrender.com/v3/api-docs). Desde el commit `445bee1`, el perfil de producción permite consultar la documentación sin iniciar sesión; ejecutar operaciones sobre los datos del usuario requiere el token Bearer mediante **Authorize**. La [especificación capturada anteriormente](evidence/backend/openapi.json) conserva la evidencia del entorno local.
