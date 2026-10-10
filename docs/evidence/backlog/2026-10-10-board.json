@@ -1,0 +1,248 @@
+{
+  "recordedDate": "2026-10-10",
+  "timezone": "America/Lima",
+  "url": "https://trello.com/b/W0MvIjVH/cravewallet-product-backlog",
+  "visibility": "public",
+  "sprints": [
+    {
+      "name": "Sprint 1 (TB1) – 72 SP",
+      "sprint": 1,
+      "cards": [
+        {
+          "id": "SP01",
+          "storyPoints": 3
+        },
+        {
+          "id": "SP03",
+          "storyPoints": 3
+        },
+        {
+          "id": "SP05",
+          "storyPoints": 3
+        },
+        {
+          "id": "US24",
+          "storyPoints": 2
+        },
+        {
+          "id": "US25",
+          "storyPoints": 2
+        },
+        {
+          "id": "US32",
+          "storyPoints": 2
+        },
+        {
+          "id": "US40",
+          "storyPoints": 1
+        },
+        {
+          "id": "TS01",
+          "storyPoints": 5
+        },
+        {
+          "id": "US01",
+          "storyPoints": 3
+        },
+        {
+          "id": "US02",
+          "storyPoints": 2
+        },
+        {
+          "id": "US33",
+          "storyPoints": 1
+        },
+        {
+          "id": "TS02",
+          "storyPoints": 5
+        },
+        {
+          "id": "US05",
+          "storyPoints": 3
+        },
+        {
+          "id": "US06",
+          "storyPoints": 2
+        },
+        {
+          "id": "US07",
+          "storyPoints": 2
+        },
+        {
+          "id": "US34",
+          "storyPoints": 2
+        },
+        {
+          "id": "US08",
+          "storyPoints": 5
+        },
+        {
+          "id": "TS03",
+          "storyPoints": 5
+        },
+        {
+          "id": "US15",
+          "storyPoints": 5
+        },
+        {
+          "id": "US16",
+          "storyPoints": 2
+        },
+        {
+          "id": "US17",
+          "storyPoints": 3
+        },
+        {
+          "id": "TS04",
+          "storyPoints": 3
+        },
+        {
+          "id": "TS05",
+          "storyPoints": 3
+        },
+        {
+          "id": "US19",
+          "storyPoints": 2
+        },
+        {
+          "id": "US38",
+          "storyPoints": 3
+        }
+      ],
+      "count": 25,
+      "storyPoints": 72
+    },
+    {
+      "name": "Sprint 2 (AV2) – 17 SP",
+      "sprint": 2,
+      "cards": [
+        {
+          "id": "US03",
+          "storyPoints": 1
+        },
+        {
+          "id": "US04",
+          "storyPoints": 3
+        },
+        {
+          "id": "US26",
+          "storyPoints": 1
+        },
+        {
+          "id": "US09",
+          "storyPoints": 3
+        },
+        {
+          "id": "US10",
+          "storyPoints": 2
+        },
+        {
+          "id": "US11",
+          "storyPoints": 2
+        },
+        {
+          "id": "US27",
+          "storyPoints": 2
+        },
+        {
+          "id": "US35",
+          "storyPoints": 3
+        }
+      ],
+      "count": 8,
+      "storyPoints": 17
+    },
+    {
+      "name": "Sprint 3 (TB2) – 29 SP",
+      "sprint": 3,
+      "cards": [
+        {
+          "id": "SP02",
+          "storyPoints": 5
+        },
+        {
+          "id": "US29",
+          "storyPoints": 2
+        },
+        {
+          "id": "US37",
+          "storyPoints": 2
+        },
+        {
+          "id": "SP04",
+          "storyPoints": 5
+        },
+        {
+          "id": "US12",
+          "storyPoints": 5
+        },
+        {
+          "id": "US13",
+          "storyPoints": 2
+        },
+        {
+          "id": "US14",
+          "storyPoints": 3
+        },
+        {
+          "id": "US28",
+          "storyPoints": 2
+        },
+        {
+          "id": "US36",
+          "storyPoints": 3
+        }
+      ],
+      "count": 9,
+      "storyPoints": 29
+    },
+    {
+      "name": "Sprint 4 (TB2) – 30 SP",
+      "sprint": 4,
+      "cards": [
+        {
+          "id": "SP06",
+          "storyPoints": 5
+        },
+        {
+          "id": "US18",
+          "storyPoints": 3
+        },
+        {
+          "id": "US20",
+          "storyPoints": 3
+        },
+        {
+          "id": "US30",
+          "storyPoints": 2
+        },
+        {
+          "id": "TS06",
+          "storyPoints": 5
+        },
+        {
+          "id": "US21",
+          "storyPoints": 2
+        },
+        {
+          "id": "US22",
+          "storyPoints": 5
+        },
+        {
+          "id": "US23",
+          "storyPoints": 2
+        },
+        {
+          "id": "US31",
+          "storyPoints": 1
+        },
+        {
+          "id": "US39",
+          "storyPoints": 2
+        }
+      ],
+      "count": 10,
+      "storyPoints": 30
+    }
+  ]
+}
