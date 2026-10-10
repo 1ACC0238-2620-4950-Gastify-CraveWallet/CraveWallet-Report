@@ -321,7 +321,7 @@ El Sprint 1 reúne el landing desplegado, el backend y las pantallas core de And
 
 #### 4.2.1.1. Sprint Planning 1
 
-El Sprint 1 corresponde a la entrega TB1. En la AV1, el Product Backlog priorizado se distribuyó en cuatro sprints en Trello (sección 2.4.3) y el Sprint 1 recibió las historias del landing page. El sprint se planificó del 16 de septiembre al 9 de octubre de 2026. La tabla 147 resume la reunión de planificación; como es el primer sprint, no existen un Review ni una Retrospectiva anteriores.
+El Sprint 1 corresponde a la entrega TB1. En la AV1, el Product Backlog priorizado se distribuyó en cuatro sprints en Trello (sección 2.4.3) y el Sprint 1 recibió las historias del landing page. El sprint se planificó del 16 de septiembre al 9 de octubre de 2026. Durante la ejecución se adelantaron servicios y flujos móviles previstos para sprints posteriores; la revisión del Product Backlog del 10 de octubre conserva la asignación inicial y registra el alcance actualizado en la tabla 84. La tabla 147 resume la reunión de planificación; como es el primer sprint, no existen un Review ni una Retrospectiva anteriores.
 
 *Tabla 147. Sprint Planning 1.*
 
@@ -337,7 +337,7 @@ El Sprint 1 corresponde a la entrega TB1. En la AV1, el Product Backlog prioriza
 | Sprint 0 Retrospective Summary | No aplica: el Sprint 1 es el primer sprint del proyecto. |
 | Sprint 1 Goal | **Our focus is on** publicar un landing que presente la propuesta de valor y los planes de CraveWallet, mostrar las pantallas principales de la aplicación Android y exponer servicios de backend documentados y probados. **We believe it delivers** una presentación pública del producto y una base funcional para registrar suscripciones y gastos **to** jóvenes de Lima que hoy descubren un cobro automático al revisar su banco. **This will be confirmed when** el landing responda en una dirección pública, la aplicación navegue sus pantallas principales y las operaciones del backend se ejecuten con éxito en un servidor accesible. |
 | Sprint 1 Velocity | 4 Story Points completados de la planificación del Product Backlog (sección 2.4.3). |
-| Sum of Story Points | 4 Story Points: US24 (2) y US25 (2). Las tareas del hito TB1 (aplicación Android, backend y despliegue) no tienen estimación en el tablero. |
+| Sum of Story Points | Línea base AV1: 16 SP. Revisión TB1 del 10/10/2026: 72 SP asignados a 25 historias, conservando sus estimaciones originales (tabla 84). Este total es alcance asignado; incluye historias parciales y no representa velocidad ni puntos aceptados. Las 12 tareas de ingeniería suman 72 horas en la tabla 149; horas y Story Points son unidades distintas. |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -393,7 +393,7 @@ La figura 109 presenta el tablero del Sprint Backlog 1. La tabla 149 detalla las
 | Hito TB1 | T11 | Empaquetar el API con Docker y desplegarlo en Render con PostgreSQL. | 6 | Anghelo | Done |
 | Hito TB1 | T12 | Conectar la app Android al API público y ejecutar las pruebas de integración. | 8 | Anghelo | Done |
 
-*Fuente: [tablero del Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) y commits de la sección 4.2.1.4. Las horas son estimaciones hechas al cierre del sprint a partir de ese historial; el tablero solo tenía estimación para US24 y US25.*
+*Fuente: [tablero del Product Backlog](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) y commits de la sección 4.2.1.4. Las horas son estimaciones hechas al cierre del sprint a partir de ese historial. El Product Backlog conserva las estimaciones originales de las historias y su reasignación al corte TB1 (tabla 84); el tablero independiente del Sprint 1 conserva las tareas T01–T12. Este ajuste no reconstruye una evolución histórica de estados que no se registró durante la ejecución.*
 
 #### 4.2.1.4. Development Evidence for Sprint Review
 
