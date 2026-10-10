@@ -165,7 +165,7 @@ La tabla 108 presenta ejemplos de textos corregidos según el tono de CraveWalle
 | Alerta de renovación | "Aviso: su suscripción se renovará." | "Mañana te cobran Spotify — S/ 15. ¿Lo dejamos pasar?" |
 | Estado vacío (sin suscripciones) | "No existen registros en el sistema." | "Aún no tienes gastos registrados. Agrega tu primera suscripción y toma el control." |
 | Error de conexión | "Error 503. Intente más tarde." | "Sin conexión. Revisamos el tipo de cambio en cuanto vuelvas a estar en línea." |
-| Celebración de ahorro | "Operación completada." | "¡Cancelaste Dropbox! Eso son USD 9.99 que vuelven a tu bolsillo cada mes." |
+| Cancelación del registro | "Operación completada." | "Marcamos Dropbox como cancelado en CraveWallet. Si aún no lo hiciste, cancélalo también con el proveedor para detener el cobro." |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -598,7 +598,7 @@ El sistema de navegación de CraveWallet sigue patrones distintos según el prod
 
 ##### Aplicación móvil — Bottom Navigation Bar
 
-El patrón principal de navegación es la **barra de navegación inferior** (`NavigationBar` de Material Design 3), que permanece visible en todas las pantallas de primer nivel. Se definen 4 destinos, el número máximo recomendado por las pautas de Material Design para este componente (tabla 123).
+El patrón principal de navegación es la **barra de navegación inferior** (`NavigationBar` de Material Design 3), que permanece visible en todas las pantallas de primer nivel. La versión implementada usa los cinco destinos de la tabla 123 —Inicio, Gastos, Análisis, Delivery y Perfil—, cantidad admitida por las pautas de Material Design para este componente. Delivery se incorporó durante la implementación del Sprint 1; por ello se distingue de la línea base de diseño de cuatro destinos que todavía conservan los wireframes y el prototipo de Figma.
 
 *Tabla 123. Bottom Navigation Bar de la aplicación móvil.*
 
@@ -607,7 +607,8 @@ El patrón principal de navegación es la **barra de navegación inferior** (`Na
 | 1 | **Inicio** (Dashboard) | `home` | Número de alertas activas (cobros en ≤ 24h) |
 | 2 | **Gastos** (lista completa) | `receipt_long` | — |
 | 3 | **Análisis** (solo Premium) | `bar_chart` | Candado si el usuario es freemium |
-| 4 | **Perfil** | `person` | — |
+| 4 | **Delivery** (presupuesto y gastos) | `delivery_dining` | — |
+| 5 | **Perfil** | `person` | — |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -627,6 +628,9 @@ NavigationBar
 │   └── → Detalle de suscripción [push]
 ├── Análisis (Premium)
 │   └── → Vista de categoría detallada [push]
+├── Delivery
+│   ├── → Registrar gasto [formulario]
+│   └── → Configurar presupuesto mensual [formulario]
 └── Perfil
     ├── → Configuración de recordatorios [push]
     ├── → Gestión de cuenta [push]
@@ -1227,7 +1231,7 @@ El footer retorna al fondo blanco `color-surface` y cumple una doble función: r
 
 Los cinco enlaces de sección ("El problema", "Solución", "Preview", "Descarga", "Premium") se ubican en el extremo derecho con tipografía Inter Regular 14px `color-on-surface-variant`, siguiendo el mismo sistema de etiquetas de la barra de navegación y reforzando la consistencia del sistema de etiquetado (sección 3.1.2.2). La línea divisoria superior y el copyright "© 2026 CraveWallet" en Inter Regular 12px cierran el footer con los elementos mínimos de cumplimiento legal y temporal.
 
-La simplicidad del footer es deliberada: en el contexto de un landing page de producto en etapa de lanzamiento, añadir columnas de links, formularios de newsletter o redes sociales generaría ruido visual sin aportar valor a los objetivos de conversión del sitio.
+La implementación TB1 conserva únicamente los enlaces internos anteriores, por lo que todavía no satisface el requisito de contacto y presencia social. La siguiente revisión del footer debe añadir un canal de contacto del proyecto y los perfiles sociales académicos o del producto que el equipo mantenga realmente, con etiquetas accesibles y apertura segura de enlaces externos. No se publicarán direcciones o perfiles ficticios solo para completar la maqueta.
 
 ***
 
@@ -1457,7 +1461,7 @@ La tabla 126 documenta las adaptaciones específicas de cada sección al breakpo
 
 La aplicación móvil muestra en una sola cifra, en soles, cuánto cuestan las suscripciones del usuario y le avisa antes de cada cobro. Su interfaz se diseñó en cinco artefactos: los wireframes fijan la estructura de cada pantalla (3.1.4.1), los wireflows las unen en recorridos (3.1.4.2), los mock-ups aplican el Design System de la sección 3.1.1 (3.1.4.3), los user flows muestran las decisiones, alternativas y errores detrás de cada recorrido (3.1.4.4) y el prototipo permite recorrer los tres objetivos de usuario con el dedo (3.1.4.5).
 
-Son 31 pantallas de 360 x 800 dp, la clase compacta de las Mobile Style Guidelines (sección 3.1.1.3), para Android con Material Design 3. Cada pantalla lleva un código formado por la letra de su área y un número, que se mantiene en todos los artefactos. Las áreas corresponden a los cuatro destinos de la barra de navegación inferior definidos en la sección 3.1.2.5, más el flujo de alta, que se abre como hoja modal desde el botón Agregar (tabla 127).
+La línea base de diseño contiene 31 pantallas de 360 x 800 dp, la clase compacta de las Mobile Style Guidelines (sección 3.1.1.3), para Android con Material Design 3. Cada pantalla lleva un código formado por la letra de su área y un número, que se mantiene en todos los artefactos. Esas pantallas corresponden a los cuatro destinos originales de la barra de navegación inferior, más el flujo de alta, que se abre como hoja modal desde el botón Agregar (tabla 127). La implementación añadió Delivery como quinto destino; sus pantallas ejecutables se documentan en el capítulo IV y todavía deben incorporarse a los wireframes, wireflows, mock-ups y prototipo para restablecer la correspondencia completa entre diseño y producto.
 
 *Tabla 127. Áreas de la aplicación móvil.*
 
@@ -1497,7 +1501,7 @@ Los wireframes fijan qué hay en cada pantalla y en qué orden, sin color de mar
 
 La estructura responde a la Arquitectura de la Información de la sección 3.1.2:
 
-- **Sistema de navegación.** Las pantallas de primer nivel (I1, G1, N1, P1) tienen la `NavigationBar` de cuatro destinos con las etiquetas de la sección 3.1.2.2 (Inicio, Gastos, Análisis, Perfil); el destino activo se marca con el indicador relleno, el ícono relleno y la etiqueta en negrita. Las pantallas de segundo nivel (G3, N3, P2) usan el patrón push-and-pop con la flecha de retroceso en la AppBar y conservan la barra inferior. El alta se abre como bottom sheet desde el FAB Agregar, con un botón Cerrar (X) y un indicador de tres pasos (Servicio, Detalles, Recordatorio), que es el esquema secuencial definido para ese flujo.
+- **Sistema de navegación.** La línea base de Figma usa cuatro destinos (Inicio, Gastos, Análisis y Perfil); el destino activo se marca con el indicador relleno, el ícono relleno y la etiqueta en negrita. La aplicación del Sprint 1 añadió Delivery como quinto destino, según la sección 3.1.2.5. Las pantallas de segundo nivel (G3, N3, P2) usan el patrón push-and-pop con la flecha de retroceso en la AppBar y conservan la barra inferior. El alta se abre como bottom sheet desde el FAB Agregar, con un botón Cerrar (X) y un indicador de tres pasos (Servicio, Detalles, Recordatorio), que es el esquema secuencial definido para ese flujo. La actualización visual de los artefactos de Figma para incluir Delivery queda identificada como deuda de sincronización del diseño, no como una función ya representada allí.
 - **Sistema de organización.** El Inicio sigue la jerarquía top-down: primero el total mensual en soles, después el cobro más próximo, los próximos cobros en un carrusel horizontal y el gasto por categoría. La lista de Gastos se ordena por próximo cobro ascendente, con búsqueda y chips de filtro deslizables (sección 3.1.2.4). El Análisis usa el esquema matricial: gráfico por mes, dona por categoría y mapa de calor categoría x mes.
 - **Sistema de etiquetado.** Los estados de suscripción (Activa, Cobro hoy, Pronto, Sin usar, Cancelada, Pendiente), las acciones (Agregar, Guardar, Descartar, Activar recordatorio, Ver Premium) y los mensajes de estado vacío son los de la sección 3.1.2.2.
 
@@ -2039,4 +2043,4 @@ Los campos de texto no aceptan escritura: al tocar un campo del formulario de al
 
 **Enlace al prototipo:** [CraveWallet – Prototipo móvil](https://www.figma.com/design/lIN0zLBZ4E0PmQudY5JOip/Mobile-UX-UI?node-id=1-32&t=o4MJV6YoUPiTIhVj-1)
 
-**Video del prototipo:** *(agregar el enlace al video del recorrido de los tres User Goals)*
+**Evidencia de recorrido:** el archivo de Figma anterior contiene puntos de inicio para UG1, UG2 y UG3 y sus alternativas. En este corte no se adjunta un video; el evaluador debe recibir acceso de visualización al prototipo. Si el enunciado de entrega exige una grabación, esta deberá añadirse después de recorrer y comprobar los tres User Goals en el archivo publicado.

@@ -203,7 +203,7 @@ Estructura de secciones (en orden):
 | Alerta de renovación | "Mañana te cobran Spotify — S/ 15. ¿Lo dejamos pasar?" |
 | Estado vacío | "Aún no tienes gastos registrados. Agrega tu primera suscripción y toma el control." |
 | Error de conexión | "Sin conexión. Revisamos el tipo de cambio en cuanto vuelvas a estar en línea." |
-| Celebración | "¡Cancelaste Dropbox! Eso son USD 9.99 que vuelven a tu bolsillo cada mes." |
+| Cancelación del registro | "Marcamos Dropbox como cancelado en CraveWallet. Si aún no lo hiciste, cancélalo también con el proveedor para detener el cobro." |
 
 ---
 
