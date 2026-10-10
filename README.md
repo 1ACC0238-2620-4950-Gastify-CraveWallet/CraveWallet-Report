@@ -24,7 +24,7 @@ La tabla 1 registra las versiones del informe, su fecha, su autor y los cambios 
 
 # Project Report Collaboration Insights
 
-La figura 1 muestra la actividad de los integrantes en el repositorio del informe, como evidencia del trabajo colaborativo.
+La figura 1 muestra el resumen de actividad (Pulse) del repositorio del informe entre el 3 y el 10 de octubre de 2026: 14 pull requests integrados y 63 commits de 6 autores, como evidencia del trabajo colaborativo.
 
 ![Collaboration Insights — CraveWallet](docs/images/collaboration_insights.png)
 
