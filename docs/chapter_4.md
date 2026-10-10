@@ -359,17 +359,22 @@ Los aspectos del Sprint 1 son los tres productos de la TB1: el landing page, la 
 
 #### 4.2.1.3. Sprint Backlog 1
 
-La figura 109 muestra el [tablero público](https://trello.com/b/W0MvIjVH/cravewallet-product-backlog) del Product Backlog. La tabla 149 presenta las tareas completadas en el Sprint 1, incluido el avance de la aplicación y del backend requerido para la TB1.
+El Sprint Backlog 1 de CraveWallet se gestionó mediante un tablero de Trello independiente del Product Backlog general del proyecto. Este tablero permite visualizar las tareas del Sprint 1 mediante cuatro estados: To Do, In-Process, To-Review y Done.
 
-![Tablero del Product Backlog en Trello](images/chapter_2/Product_Backlog_Trello.png)
+La figura 109 presenta el tablero del Sprint Backlog 1. La tabla 149 detalla las 12 tareas registradas para la TB1, incluyendo las actividades del Landing Page, la aplicación móvil Android y los servicios del backend, con sus responsables, estimaciones y estados.
+
+
+**Enlace al Sprint Backlog 1:** [CraveWallet – Sprint 1 en Trello](https://acortar.link/clKCQj)
+
+![Tablero del Sprint Backlog 1](images/chapter_4/TrelloSprint1.png)
 
 <!-- pdf:omit-start -->
 
-*Figura 109. Tablero del Product Backlog en Trello.*
+*Figura 109. Tablero del Sprint Backlog 1 de CraveWallet en Trello.*
 
 <!-- pdf:omit-end -->
 
-*Fuente: captura del tablero del equipo Gastify.*
+*Fuente: elaboración del equipo Gastify.*
 
 *Tabla 149. Sprint Backlog 1 y avances de la TB1.*
 
