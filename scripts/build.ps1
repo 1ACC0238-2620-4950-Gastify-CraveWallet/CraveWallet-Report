@@ -4,9 +4,9 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-$Period     = '[[PERIODO]]'
-$CourseCode = '[[codigo-curso]]'
-$Nrc        = '[[NRC]]'
+$Period     = '202620'
+$CourseCode = '1ACC0238'
+$Nrc        = '4950'
 $Startup    = 'CraveWallet'
 
 $Deliveries = @('av1', 'tb1', 'av2', 'tb2')
@@ -48,6 +48,9 @@ $ConfigFiles = @(
     'config/format.yaml'
     'config/apa7.tex'
     'config/cover.tex'
+    'config/lean-canvas.lua'
+    'config/pdf-only.lua'
+    'config/pdf-layout.lua'
     'config/apa.csl'
     'references.bib'
 )
@@ -125,6 +128,13 @@ if ($missing.Count -gt 0) {
 # sale en cada build para que ninguno llegue a la entrega sin que nadie lo vea.
 $pending = Select-String -Path $Chapters -Pattern '\[\[PENDIENTE' -ErrorAction SilentlyContinue
 
+$htmlTables = Select-String -Path $Chapters -Pattern '<table\b(?![^>]*id="lean-ux-canvas")' -ErrorAction SilentlyContinue
+if ($htmlTables) {
+    Write-Host 'ERROR: use Markdown tables; only the Lean UX Canvas supports merged HTML cells.' -ForegroundColor Red
+    $htmlTables | ForEach-Object { Write-Host ('  {0}:{1}' -f $_.Path, $_.LineNumber) }
+    exit 1
+}
+
 if ($pending) {
     Write-Host ''
     Write-Host ('AVISO: {0} marcador(es) PENDIENTE sin rellenar.' -f $pending.Count) -ForegroundColor Yellow
@@ -148,7 +158,9 @@ pandoc $Chapters `
     --metadata-file=config/format.yaml `
     --include-in-header=config/apa7.tex `
     --include-before-body=config/cover.tex `
+    --lua-filter=config/lean-canvas.lua `
     --lua-filter=config/pdf-only.lua `
+    --lua-filter=config/pdf-layout.lua `
     --citeproc `
     --csl=config/apa.csl `
     --bibliography=references.bib `

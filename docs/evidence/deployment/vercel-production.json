@@ -1,0 +1,13 @@
+{
+  "deployment_api": "https://api.github.com/repos/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/deployments/6952111368",
+  "statuses_api": "https://api.github.com/repos/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing/deployments/6952111368/statuses",
+  "deployment_id": 6952111368,
+  "environment": "Production",
+  "sha": "3cdc4c5d72969732a7f597ad62511a542658104f",
+  "created_at": "2026-10-09T03:19:33Z",
+  "state": "success",
+  "description": "Deployment has completed",
+  "environment_url": "https://cravewallet-landing-1xa2m83vo-gastify.vercel.app",
+  "captured_at": "2026-10-09T01:02:35-05:00",
+  "limit": "El registro de GitHub acredita el despliegue Production de esa revisión; no sustituye una captura de Settings > Git en Vercel."
+}

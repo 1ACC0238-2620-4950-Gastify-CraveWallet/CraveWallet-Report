@@ -1,0 +1,9 @@
+{
+  "name": "CraveWallet · 3.1.4 Mobile UX/UI",
+  "id": "cravewallet-mobile-uxui-314",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": { "allowedDomains": ["none"] }
+}

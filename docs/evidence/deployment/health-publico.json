@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "https://cravewallet-api.onrender.com/actuator/health",
+  "status_code": 200,
+  "response": {
+    "status": "UP",
+    "groups": [
+      "liveness",
+      "readiness"
+    ]
+  },
+  "server_date": "Fri, 09 Oct 2026 05:57:35 GMT",
+  "observed_date_lima": "2026-10-09T00:57:35-05:00",
+  "initial_attempt": "El primer intento HTTP agotó 45 segundos durante el arranque; una petición posterior devolvió HTTP 200 y UP.",
+  "capture_limit": "El navegador conservó el intersticial de Render y no permitió una nueva navegación al JSON. No se presenta una captura de ese intersticial como respuesta UP."
+}

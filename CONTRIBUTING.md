@@ -202,7 +202,7 @@ necesitas marcar estados en una tabla, escríbelos con palabras.
 
 ### Tablas
 
-Solo tablas de tuberías.
+Todas las tablas se escriben con tuberías de Markdown. El Lean UX Canvas de `docs/chapter_1.md` se presenta como imagen (`docs/images/chapter_1/lean-ux-canvas.png`, generada desde `docs/diagrams/chapter_1/lean-ux-canvas.html`) acompañada de una tabla Markdown con el contenido de sus ocho bloques.
 
 ```markdown
 | Versión | Fecha      | Autor |
@@ -216,7 +216,7 @@ cuadrícula tipo hoja de cálculo, importa desde CSV, y te devuelve el Markdown 
 formateado para pegar.
 
 > [!CAUTION]
-> Nunca uses `<table>` de HTML. Al exportar, Pandoc descarta el marcado y conserva
+> No uses `<table>` de HTML. Al exportar, Pandoc descarta el marcado y conserva
 > solo el texto, así que la tabla se convierte en párrafos sueltos, sin estructura y
 > sin ningún mensaje de error. A `<div align="center">` le pasa lo mismo con el
 > centrado.
@@ -241,8 +241,26 @@ Sin esto, una celda como las del Student Outcome sale en el PDF como un párrafo
 corrido donde el nombre de una persona aparece en mitad de la frase de otra, y no se
 distingue quién hizo qué.
 
-`<br>` es la única etiqueta HTML que sobrevive al PDF, y solo porque
+En las tablas ordinarias, `<br>` se conserva en el PDF porque
 `config/pdf-only.lua` la traduce a un salto de línea de verdad antes de exportar.
+
+#### Presentación en el PDF
+
+`config/pdf-layout.lua` asigna anchos según el contenido: foto y perfil,
+integrante y acciones, campo y contenido, SMART, matriz de tareas y backlog.
+El comparativo de competidores usa páginas horizontales. El texto de las tablas
+se imprime a 10 puntos con interlineado compacto, conservando el formato del cuerpo.
+
+Las historias usan tablas de dos columnas (`Campo` y `Contenido`): una fila para
+cada dato y una fila para cada escenario de aceptación. No combines los escenarios
+en una única celda gigante. El Student Outcome separa los criterios y dedica una
+fila a cada integrante; SMART utiliza un cuadro por persona. Esto permite paginar
+sin recortar las contribuciones.
+
+La compilación rechaza tablas HTML para evitar que se pierda su estructura.
+Las imágenes conservan su proporción y los identificadores de código admiten saltos
+de línea dentro de las celdas. El PDF se genera en `dist/`; revisa visualmente sus
+tablas, fotografías y diagramas antes de enviarlo.
 
 ### Imágenes
 
@@ -286,7 +304,7 @@ De eso se encarga `config/pdf-only.lua`, que el build pasa con `--lua-filter`.
 
 ### Citas y bibliografía
 
-La lista de referencias se genera sola. No se escribe a mano.
+La lista de referencias del PDF se genera con citeproc a partir de las fuentes citadas. Para actualizar la versión visible en GitHub después de cambiar las citas o `references.bib`, ejecuta `python scripts/sync-bibliography.py`. Este comando actualiza únicamente la bibliografía de `docs/closing.md` y no genera un PDF.
 
 **Uno.** Agrega la fuente a `references.bib`. En Google Scholar la sacas del botón
 de comillas, opción BibTeX. La primera palabra de la entrada es la clave con la que
@@ -317,6 +335,8 @@ etiqueta `[Computer software]` y el número de versión.
 con sangría francesa.
 
 Una fuente que no cites no aparece, y así debe ser: APA solo lista lo que se cita.
+
+Antes de hacer commit, ejecuta `python scripts/check-report.py`. Comprueba las historias del alcance AV1, la numeración y referencias de figuras y tablas, las claves bibliográficas y las rutas de imágenes. Requiere Pandoc; no certifica resultados de experimentos ni sustituye la revisión del equipo.
 
 > [!CAUTION]
 > En `docs/closing.md` hay un bloque que parece vacío y que no se debe borrar:

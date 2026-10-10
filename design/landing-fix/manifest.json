@@ -1,0 +1,9 @@
+{
+  "name": "CraveWallet · Corregir cifras del landing",
+  "id": "cravewallet-landing-fix",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": { "allowedDomains": ["none"] }
+}

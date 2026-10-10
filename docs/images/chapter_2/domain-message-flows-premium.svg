@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1630" viewBox="0 0 1800 1630">
+<rect width="100%" height="100%" fill="white"/>
+<text x="40" y="25" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#18324a">Domain Message Flows | Premium</text>
+<text x="40" y="77" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="#18324a">El checkout no confirma un pago. El webhook externo se verifica antes de cambiar el acceso.</text>
+<text x="40" y="130" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#18324a">C. Activar o renovar el plan propio</text>
+<rect x="40" y="180" width="340" height="92" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="55" y="193" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Aplicación móvil</text>
+<polyline points="210,272 210,780" fill="none" stroke="#a6b4c1" stroke-width="3" stroke-dasharray="8 6"/>
+<rect x="480" y="180" width="340" height="92" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="495" y="193" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Premium &amp; Billing</text>
+<polyline points="650,272 650,780" fill="none" stroke="#a6b4c1" stroke-width="3" stroke-dasharray="8 6"/>
+<rect x="920" y="180" width="340" height="92" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="935" y="193" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Stripe</text>
+<polyline points="1090,272 1090,780" fill="none" stroke="#a6b4c1" stroke-width="3" stroke-dasharray="8 6"/>
+<polyline points="210,363 650,363" fill="none" stroke="#1467a1" stroke-width="3"/>
+<polygon points="650,363 636.4932934647098,369.52448301166845 636.4932934647098,356.47551698833155" fill="#1467a1"/>
+<rect x="218" y="307" width="1250" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="222" y="310" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1467a1">1 [C] Iniciar checkout</text>
+<text x="222" y="337" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#1467a1">userId y precio configurado</text>
+<polyline points="650,443 1090,443" fill="none" stroke="#1467a1" stroke-width="3"/>
+<polygon points="1090,443 1076.49329346471,449.52448301166845 1076.49329346471,436.47551698833155" fill="#1467a1"/>
+<rect x="658" y="387" width="1114" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="662" y="390" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1467a1">2 [C] Crear sesión de suscripción</text>
+<text x="662" y="417" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#1467a1">correlación de usuario, cliente y operación</text>
+<polyline points="1090,523 210,523" fill="none" stroke="#476f50" stroke-width="3"/>
+<polygon points="210,523 223.50670653529016,516.4755169883315 223.50670653529016,529.5244830116685" fill="#476f50"/>
+<rect x="218" y="467" width="1250" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="222" y="470" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#476f50">3 [R] Sesión de checkout (vía backend)</text>
+<text x="222" y="497" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#476f50">el usuario completa el pago; acceso aún pendiente</text>
+<polyline points="1090,603 650,603" fill="none" stroke="#a34f17" stroke-width="3"/>
+<polygon points="650,603 663.5067065352902,596.4755169883315 663.5067065352902,609.5244830116685" fill="#a34f17"/>
+<rect x="658" y="547" width="1114" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="662" y="550" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#a34f17">4 [E] invoice.paid (externo)</text>
+<text x="662" y="577" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#a34f17">eventId, factura y suscripción; verificar y reconciliar</text>
+<polyline points="650,670 735,670 735,692 650,692" fill="none" stroke="#a34f17" stroke-width="3"/>
+<polygon points="650,692 663.5067065352902,685.4755169883315 663.5067065352902,698.5244830116685" fill="#a34f17"/>
+<rect x="751" y="627" width="1021" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="755" y="630" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#a34f17">5 [E] PlanUpgradedToPremium</text>
+<text x="755" y="657" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#a34f17">Free pasa a Premium; una renovación solo actualiza vigencia</text>
+<polyline points="210,763 650,763" fill="none" stroke="#5365a0" stroke-width="3"/>
+<polygon points="650,763 636.4932934647098,769.5244830116685 636.4932934647098,756.4755169883315" fill="#5365a0"/>
+<rect x="218" y="707" width="1250" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="222" y="710" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#5365a0">6 [Q] Consultar plan / recibir respuesta</text>
+<text x="222" y="737" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#5365a0">nivel y período confirmado; no solo retorno del checkout</text>
+<text x="40" y="870" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#18324a">D. Cancelar renovación y volver a Free</text>
+<rect x="40" y="920" width="340" height="92" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="55" y="933" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Aplicación móvil</text>
+<polyline points="210,1012 210,1440" fill="none" stroke="#a6b4c1" stroke-width="3" stroke-dasharray="8 6"/>
+<rect x="480" y="920" width="340" height="92" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="495" y="933" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Premium &amp; Billing</text>
+<polyline points="650,1012 650,1440" fill="none" stroke="#a6b4c1" stroke-width="3" stroke-dasharray="8 6"/>
+<rect x="920" y="920" width="340" height="92" fill="#edf3f8" stroke="#7990a5" stroke-width="2"/>
+<text x="935" y="933" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#18324a">Stripe</text>
+<polyline points="1090,1012 1090,1440" fill="none" stroke="#a6b4c1" stroke-width="3" stroke-dasharray="8 6"/>
+<polyline points="210,1103 650,1103" fill="none" stroke="#1467a1" stroke-width="3"/>
+<polygon points="650,1103 636.4932934647098,1109.5244830116685 636.4932934647098,1096.4755169883315" fill="#1467a1"/>
+<rect x="218" y="1047" width="1250" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="222" y="1050" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1467a1">1 [C] Cancelar renovación</text>
+<text x="222" y="1077" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#1467a1">userId; conservar período pagado</text>
+<polyline points="650,1183 1090,1183" fill="none" stroke="#1467a1" stroke-width="3"/>
+<polygon points="1090,1183 1076.49329346471,1189.5244830116685 1076.49329346471,1176.4755169883315" fill="#1467a1"/>
+<rect x="658" y="1127" width="1114" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="662" y="1130" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1467a1">2 [C] Cancelar al fin del período</text>
+<text x="662" y="1157" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#1467a1">solicitud y confirmación con fecha de vigencia</text>
+<polyline points="1090,1263 650,1263" fill="none" stroke="#a34f17" stroke-width="3"/>
+<polygon points="650,1263 663.5067065352902,1256.4755169883315 663.5067065352902,1269.5244830116685" fill="#a34f17"/>
+<rect x="658" y="1207" width="1114" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="662" y="1210" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#a34f17">3 [E] customer.subscription.deleted</text>
+<text x="662" y="1237" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#a34f17">notificación verificada del fin; reconciliar estado</text>
+<polyline points="650,1330 735,1330 735,1352 650,1352" fill="none" stroke="#a34f17" stroke-width="3"/>
+<polygon points="650,1352 663.5067065352902,1345.4755169883315 663.5067065352902,1358.5244830116685" fill="#a34f17"/>
+<rect x="751" y="1287" width="1021" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="755" y="1290" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#a34f17">4 [E] PlanDowngradedToFree</text>
+<text x="755" y="1317" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#a34f17">planId, userId; conservar trazabilidad de facturación</text>
+<polyline points="210,1423 650,1423" fill="none" stroke="#5365a0" stroke-width="3"/>
+<polygon points="650,1423 636.4932934647098,1429.5244830116685 636.4932934647098,1416.4755169883315" fill="#5365a0"/>
+<rect x="218" y="1367" width="1250" height="50" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+<text x="222" y="1370" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#5365a0">5 [Q] Consultar plan / recibir respuesta</text>
+<text x="222" y="1397" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#5365a0">Free; tratamiento del exceso pendiente del equipo</text>
+<text x="40" y="1561" dominant-baseline="text-before-edge" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#18324a">Fuente: Gastify; notación adaptada de DDD Crew, Domain Message Flow Modelling. CC BY-SA 4.0.</text>
+</svg>

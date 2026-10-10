@@ -1,0 +1,104 @@
+{
+  "source": "Official Structurizr local diagram viewer",
+  "captured_on": "2026-10-09",
+  "dsl_sha256": "b8ee313da0a5eecd09a8a08e882242580ef57a22e924b2c9b570efb639301b92",
+  "json_sha256": "dc3fafa86999fe68ee63adda85d0444b9e8eea2572a24c2eb990a9e99ff11aac",
+  "views": [
+    {
+      "key": "SystemContext",
+      "figure": 27,
+      "source_url": "http://localhost:8092/workspace/1/diagrams#SystemContext",
+      "high_resolution_export": "docs/images/chapter_2/system-context-revised.png",
+      "capture": {
+        "file": "docs/images/chapter_2/system-context-revised.jpg",
+        "method": "Unaltered browser screenshot of the official Structurizr diagram viewer",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "b3725e9c483ef4dfb76416ad02aca5f1257fba1c9425266d17ab26ff00218229"
+      }
+    },
+    {
+      "key": "Containers",
+      "figure": 28,
+      "source_url": "http://localhost:8092/workspace/1/diagrams#Containers",
+      "high_resolution_export": "docs/images/chapter_2/containers-revised.png",
+      "capture": {
+        "file": "docs/images/chapter_2/containers-revised.jpg",
+        "method": "Unaltered browser screenshot of the official Structurizr diagram viewer",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "c46224ac211a1d6686dd2d39dba585e9a11b5c781c4c46b966035106e11ceebf"
+      }
+    },
+    {
+      "key": "Deployment",
+      "figure": 29,
+      "source_url": "http://localhost:8092/workspace/1/diagrams#Deployment",
+      "high_resolution_export": "docs/images/chapter_2/deployment_diagram.png",
+      "capture": {
+        "file": "docs/images/chapter_2/deployment_diagram.jpg",
+        "method": "Unaltered browser screenshot of the official Structurizr diagram viewer",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "7eb2e20d354f40110322f3b205081bf10e164116e81c845a18aa9b81986ad349"
+      }
+    },
+    {
+      "key": "SubscriptionComponents",
+      "figure": 30,
+      "source_url": "http://localhost:8092/workspace/1/diagrams#SubscriptionComponents",
+      "high_resolution_export": "docs/images/chapter_2/subscription-components-revised.png",
+      "capture": {
+        "file": "docs/images/chapter_2/subscription-components-revised.jpg",
+        "method": "Unaltered browser screenshot of the official Structurizr diagram viewer",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "2004d7370df629d3a56625a96b401f0600ecc27cef3cda1ea0de7e061959d5bc"
+      }
+    },
+    {
+      "key": "DeliveryComponents",
+      "figure": 33,
+      "source_url": "http://localhost:8092/workspace/1/diagrams#DeliveryComponents",
+      "high_resolution_export": "docs/images/chapter_2/delivery-components-revised.png",
+      "capture": {
+        "file": "docs/images/chapter_2/delivery-components-revised.jpg",
+        "method": "Unaltered browser screenshot of the official Structurizr diagram viewer",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "c74a47d196ac82d3f5dbb8136352ad048bce4aebd037e67a67916fc2ef57bfc9"
+      }
+    },
+    {
+      "key": "PremiumComponents",
+      "figure": 36,
+      "source_url": "http://localhost:8092/workspace/1/diagrams#PremiumComponents",
+      "high_resolution_export": "docs/images/chapter_2/premium-components-revised.png",
+      "capture": {
+        "file": "docs/images/chapter_2/premium-components-revised.jpg",
+        "method": "Unaltered browser screenshot of the official Structurizr diagram viewer",
+        "captured_on": "2026-10-09",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "sha256": "a51ab81b16b2e9cc3936b6cfe9a8a3a98e2ea494c530a675b6601530b8a5ad5d"
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "backendCommit": "2f36260dc1aa9b8e4ef71a7184847795e6cb6867",
+  "executionDate": "2026-10-08",
+  "timezone": "America/Lima",
+  "command": "mvnw.cmd -B verify",
+  "database": "H2 2.3.232",
+  "testSuites": [
+    {
+      "suite": "pe.edu.upc.gastify.cravewallet.AuthIntegrationTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "pe.edu.upc.gastify.cravewallet.BackendBootstrapTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "pe.edu.upc.gastify.cravewallet.DeliveryIntegrationTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "pe.edu.upc.gastify.cravewallet.ExchangeRateServiceTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "pe.edu.upc.gastify.cravewallet.OpenExchangeRateAdapterTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "pe.edu.upc.gastify.cravewallet.PortfolioConversionTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "pe.edu.upc.gastify.cravewallet.SubscriptionIntegrationTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "totalTests": 32.0,
+  "totalFailures": 0.0,
+  "totalErrors": 0.0
+}
