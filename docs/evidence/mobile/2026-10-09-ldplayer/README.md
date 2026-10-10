@@ -1,6 +1,6 @@
 # Evidencia móvil TB1: LDPlayer, 9 de octubre de 2026
 
-**Flujos verificados en LDPlayer. El APK también se probó en el celular físico de Alexander Aliaga.**
+**Flujos verificados únicamente en LDPlayer dentro de esta evidencia. No se adjunta una ejecución verificable en teléfono físico.**
 
 Se probó la app instalada en LDPlayer 14, Android 14 (API 34), resolución horizontal 1600 × 900. El modelo HD1910 informado por el emulador no corresponde a un teléfono físico probado. Se usó una cuenta ficticia; no se publican sus credenciales ni tokens.
 
@@ -34,7 +34,7 @@ Resultado: `BUILD SUCCESSFUL`, nueve casos, cero fallos, cero errores y cero omi
 
 ## Limitaciones
 
-- Las capturas de esta sesión provienen de LDPlayer; la prueba en el celular físico de Alexander Aliaga se hizo fuera de esta sesión.
+- Las capturas de esta sesión provienen de LDPlayer. Una prueba en teléfono físico solo podrá declararse cuando exista un registro con modelo, versión Android, fecha, hash del APK y resultados observados de los flujos ejecutados.
 - Calendario y push quedaron desactivados. No se acreditan permisos, eventos, notificaciones, cancelación ni reprogramación en Android. La prueba REST de recordatorio no sustituye esa comprobación.
 - Análisis presenta una vista previa difuminada calculada desde `SeedData` bajo el bloqueo de Free; no representa el historial real. No se realizó ni simuló un pago Premium.
 - Solo se implementa el tema claro en este APK. En el Inicio vacío horizontal, la acción de alta queda fuera del área visible; se accedió por Gastos. Los formularios requieren desplazamiento para llegar a la fecha y categoría.

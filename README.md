@@ -18,6 +18,7 @@ La tabla 1 registra las versiones del informe, su fecha, su autor y los cambios 
 | TB1 — Swagger público | 09/10/2026 | Anghelo Faustino | Enlace y captura de Swagger en Render; documentación del despliegue `445bee1` y verificación de acceso público a OpenAPI con recursos protegidos por JWT.                                                                                                                          |
 | TB1 — Lean UX Canvas | 09/10/2026 | Anghelo Faustino | Tabla editable del Lean UX Canvas en lugar de imagen.                                                                                                                                                                                                                              |
 | TB1 — Sprint Backlog y evidencias audiovisuales | 10/10/2026 | Josué Carpio | Organización del Sprint Backlog 1 en Trello con 12 tareas, incorporación de su enlace y captura en el Capítulo IV, grabación del video de navegación de la Landing Page, aplicación Android y Swagger UI, realización de audit y del recorrido del prototipo interactivo en Figma. |
+| TB1 — remediación de auditoría | 10/10/2026 | Equipo Gastify | Conciliación del alcance del Sprint 1, matriz de cobertura REST, corrección de contradicciones sobre dispositivo, APK, API y navegación, y plantillas para evidencias pendientes. |
 
 *Fuente: elaboración del equipo Gastify*
 
