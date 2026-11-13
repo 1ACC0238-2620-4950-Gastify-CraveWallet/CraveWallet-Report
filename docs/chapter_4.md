@@ -916,9 +916,9 @@ La figura AV2-1 muestra la migración y los ajustes posteriores en la rama `deve
 - **Delivery.** Formulario de gasto, resumen mensual y edición del presupuesto del mes conectado al backend.
 - **Análisis, perfil y recordatorios.** La aplicación incorpora la navegación y las pantallas correspondientes. El formulario de recordatorios permite ajustar opciones de calendario, notificaciones, anticipación y hora. El recorrido en dispositivo y la programación efectiva de avisos requieren su propia evidencia.
 
-**Backend.** La [rama de AV2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/feature/av2-mercadopago) incorpora persistencia y consulta del estado de la membresía Premium, control del cupo según el plan, un adaptador de búsqueda de comercios con Google Places y operaciones de consulta de totales por categoría y ahorro estimado por cancelación.
+**Backend.** El [corte de AV2, commit `3a59d60`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/3a59d60a8c15eebe29546e5bd69ef75b7ab776fd), incorpora persistencia y consulta de la membresía Premium, control del cupo según el plan, un adaptador de búsqueda de comercios con Google Places y consultas de totales por categoría y ahorro estimado por cancelación.
 
-**Premium con Mercado Pago.** Para AV2, Mercado Pago sustituye a Stripe como proveedor de cobros recurrentes de Premium. Las menciones de Stripe en AV1 y TB1 corresponden al diseño de esas entregas. La rama contiene el [contrato de inicio del checkout mensual](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/22ecef8808a3bfc1bf103014e9ff4448c544c03a). Quedan por acreditar el adaptador del proveedor, el recorrido de checkout, la recepción de webhooks y el pago de prueba de extremo a extremo.
+**Premium con Mercado Pago.** El [PR #1](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/pull/1) integró en `feature/av2-premium-backend` el adaptador de Suscripciones de Mercado Pago, el checkout mensual de S/ 9.99, la consulta de estado, la cancelación de futuras renovaciones, el historial de pagos y la recepción de webhooks firmados. Las menciones de Stripe en AV1 y TB1 corresponden al diseño de esas entregas.
 
 La figura AV2-2 muestra el commit que incorpora el contrato de checkout mensual al backend.
 
@@ -932,21 +932,45 @@ La figura AV2-2 muestra el commit que incorpora el contrato de checkout mensual 
 
 *Fuente: captura del [commit 22ecef8 de CraveWallet-Backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/22ecef8808a3bfc1bf103014e9ff4448c544c03a), 13 de noviembre de 2026.*
 
+La figura AV2-3 muestra el PR integrado en la rama de AV2.
+
+![Figura AV2-3. Integración de Mercado Pago en el backend de AV2.](images/chapter_4/av2/backend-mercado-pago-merge.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura AV2-3. Integración de Mercado Pago en el backend de AV2.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura del [PR #1 de CraveWallet-Backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/pull/1), 13 de noviembre de 2026.*
+
 #### 4.2.2.5. Testing Suite Evidence for Sprint Review
 
 El [repositorio Flutter](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/tree/ad7ace8de934938d79f8301e96c7c9656cd8b4e3) versiona dos pruebas de modelos. Una comprueba la normalización del costo mensual en PEN de una suscripción anual y otra comprueba la lectura de una suscripción desde la respuesta REST. La [ejecución de Flutter CI](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/actions/runs/43304678864) terminó con éxito para `ad7ace8` e incluyó `flutter pub get`, `flutter analyze` y `flutter test`. La rama de backend versiona pruebas para estado Premium, autenticación, límite por plan, totales por categoría y ahorro estimado.
 
-La figura AV2-3 muestra el resultado de la validación automatizada de Flutter.
+La figura AV2-4 muestra el resultado de la validación automatizada de Flutter.
 
-![Figura AV2-3. Flutter CI finalizado con éxito para el commit ad7ace8.](images/chapter_4/av2/ci.jpg)
+![Figura AV2-4. Flutter CI finalizado con éxito para el commit ad7ace8.](images/chapter_4/av2/ci.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura AV2-3. Flutter CI finalizado con éxito para el commit ad7ace8.*
+*Figura AV2-4. Flutter CI finalizado con éxito para el commit ad7ace8.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: captura de [Flutter CI, ejecución 43304678864](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/actions/runs/43304678864), 13 de noviembre de 2026.*
+
+La figura AV2-5 registra que `Backend build` completó `mvnw -B verify` para el commit `3a59d60`. La suite de Premium usa H2, MockMvc y respuestas simuladas del proveedor para cubrir el ciclo de cobro recurrente. La evidencia de un pago de extremo a extremo en el entorno de prueba de Mercado Pago sigue pendiente.
+
+![Figura AV2-5. Backend build finalizado con éxito para el commit 3a59d60.](images/chapter_4/av2/backend-build.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura AV2-5. Backend build finalizado con éxito para el commit 3a59d60.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura de [Backend build, ejecución 43355415595](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/actions/runs/43355415595), 13 de noviembre de 2026.*
 
 #### 4.2.2.6. Execution Evidence for Sprint Review
 
@@ -956,27 +980,39 @@ El recorrido previsto para la revisión comprende iniciar sesión, registrar una
 
 El [cliente REST de Flutter](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/blob/ad7ace8de934938d79f8301e96c7c9656cd8b4e3/lib/src/api_client.dart) permite configurar `API_BASE_URL`. Sus servicios principales cubren autenticación, perfil, suscripciones y gastos de delivery. El despliegue de referencia de TB1 publicó la [documentación Swagger](https://cravewallet-api.onrender.com/swagger-ui/index.html) y la [especificación OpenAPI](https://cravewallet-api.onrender.com/v3/api-docs).
 
-Para Premium, la integración propuesta usa la API de Suscripciones de Mercado Pago. El backend conservará la referencia de la suscripción del proveedor y confirmará el pago antes de habilitar o renovar el acceso. Los webhooks notifican cambios de pago y de suscripción. El backend verificará la notificación y consultará el estado del recurso correspondiente antes de actualizar el plan [@mercadoPagoSubscriptions; @mercadoPagoWebhooks].
+La [documentación de Premium](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/3a59d60a8c15eebe29546e5bd69ef75b7ab776fd/docs/premium-api.md) describe las cinco operaciones bajo `/api/v1/premium`: `GET /status`, `POST /checkout`, `POST /cancel`, `GET /payments` y `POST /webhook`. El backend usa la API de Suscripciones de Mercado Pago, conserva la referencia del proveedor, verifica la firma de las notificaciones y consulta el recurso asociado antes de habilitar o renovar el acceso tras un pago aprobado [@mercadoPagoSubscriptions; @mercadoPagoWebhooks].
 
 #### 4.2.2.8. Software Deployment Evidence for Sprint Review
 
 El [landing de CraveWallet](https://cravewallet-landing.vercel.app/es) respondió HTTP 200 en la revisión del 12 de noviembre de 2026. Ese día, las consultas al estado del backend de Render, Swagger y OpenAPI agotaron el tiempo de espera. Queda pendiente verificar la versión desplegada y su cobertura del alcance AV2. La compilación Flutter y su ejecución en dispositivo requieren evidencia identificada por versión.
 
-La figura AV2-4 muestra la página de inicio publicada en Vercel.
+La figura AV2-6 muestra la página de inicio publicada en Vercel.
 
-![Figura AV2-4. Landing público de CraveWallet.](images/chapter_4/av2/landing.jpg)
+![Figura AV2-6. Landing público de CraveWallet.](images/chapter_4/av2/landing.jpg)
 
 <!-- pdf:omit-start -->
 
-*Figura AV2-4. Landing público de CraveWallet.*
+*Figura AV2-6. Landing público de CraveWallet.*
 
 <!-- pdf:omit-end -->
 
 *Fuente: captura del [landing público de CraveWallet](https://cravewallet-landing.vercel.app/es), 13 de noviembre de 2026.*
 
+**Base de datos de AV2.** La figura AV2-7 muestra las migraciones Flyway versionadas. V1–V3 definen usuarios, sesiones, suscripciones, gastos y presupuestos. V4 crea `premium_memberships`. V5 agrega `premium_checkouts`, `premium_payments` y `premium_webhook_deliveries`. Sus restricciones únicas evitan registrar dos veces el mismo pago o una factura aprobada. La aplicación de V1–V5 en PostgreSQL de Render queda pendiente de comprobar en el historial de Flyway.
+
+![Figura AV2-7. Migraciones Flyway V1–V5 del backend de AV2.](images/chapter_4/av2/backend-flyway-migrations.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura AV2-7. Migraciones Flyway V1–V5 del backend de AV2.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura del [directorio de migraciones en el commit 3a59d60](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/3a59d60a8c15eebe29546e5bd69ef75b7ab776fd/src/main/resources/db/migration), 13 de noviembre de 2026.*
+
 #### 4.2.2.9. Team Collaboration Insights during Sprint
 
-El [historial de Flutter](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commits/develop/) registra cuatro commits de `AlexanderAliaga19` en el corte, incluida la inicialización, la migración y los dos ajustes de dependencias. El [historial de la rama de backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commits/feature/av2-mercadopago/) permite revisar las contribuciones de la implementación AV2. La actividad del informe se consulta en **Project Report Collaboration Insights**.
+El [historial de Flutter](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commits/develop/) registra cuatro commits de `AlexanderAliaga19` en el corte, incluida la inicialización, la migración y los dos ajustes de dependencias. El [PR #1 del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/pull/1/commits) reúne los commits de la integración de Mercado Pago. La actividad del informe se consulta en **Project Report Collaboration Insights**.
 
 ## 4.3. Validation Evidence for AV2
 

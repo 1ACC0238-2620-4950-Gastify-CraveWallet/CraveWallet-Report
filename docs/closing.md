@@ -18,7 +18,7 @@ En el Sprint 1 el equipo publicó el landing en Vercel, desplegó en Render un R
 
 El Sprint 2 trasladó a Flutter los flujos de acceso, suscripciones y gastos de delivery. El cliente reutiliza el contrato REST y conserva un modo demostración para recorrer la interfaz. El código y las pruebas de modelos quedan vinculados a los commits de la sección 4.2.2.
 
-Mercado Pago es el proveedor elegido para los cobros recurrentes de Premium. La rama de backend aporta el estado de membresía, el control del cupo y el contrato para iniciar el checkout. La validación del pago, el despliegue completo del alcance de AV2 y las tres grabaciones requieren evidencias propias de esta entrega.
+El backend de AV2 integra Mercado Pago para el checkout mensual, la consulta de estado, la cancelación, el historial de pagos y los webhooks. Las migraciones V4 y V5 incorporan la persistencia de membresías y facturación. GitHub Actions confirmó la validación automatizada del commit integrado. La verificación en PostgreSQL de Render, el pago de prueba de extremo a extremo y las tres grabaciones requieren evidencias propias de esta entrega.
 
 # Glosario
 
@@ -128,12 +128,15 @@ La figura 128 muestra una vista parcial del tablero después de la revisión TB1
 ## Anexo B. Evidencias del Sprint 2
 
 - [Código Flutter en el corte de AV2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/tree/ad7ace8de934938d79f8301e96c7c9656cd8b4e3) y [pruebas de modelos](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/blob/ad7ace8de934938d79f8301e96c7c9656cd8b4e3/test/models_test.dart).
-- [Código del backend revisado para AV2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/27ee5edaf1f055f61434cdb532fbad8c6fcff99a), [landing público](https://cravewallet-landing.vercel.app/es) y [Swagger del backend](https://cravewallet-api.onrender.com/swagger-ui/index.html).
+- [Código del backend revisado para AV2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/3a59d60a8c15eebe29546e5bd69ef75b7ab776fd), [contrato de Premium](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/3a59d60a8c15eebe29546e5bd69ef75b7ab776fd/docs/premium-api.md), [landing público](https://cravewallet-landing.vercel.app/es) y [Swagger del backend](https://cravewallet-api.onrender.com/swagger-ui/index.html).
 - El estado de los videos de validación, About-the-Product y About-the-Team se registra en la sección 4.3. Al adjuntarlos, se registrarán el enlace y la fecha de cada grabación.
 
 | Figura | Evidencia | Sección del informe |
 | --- | --- | --- |
 | AV2-1 | Historial de commits de Flutter | [4.2.2.4. Desarrollo](chapter_4.md#4224-development-evidence-for-sprint-review) |
 | AV2-2 | Commit del contrato de checkout del backend | [4.2.2.4. Desarrollo](chapter_4.md#4224-development-evidence-for-sprint-review) |
-| AV2-3 | Validación de Flutter en GitHub Actions | [4.2.2.5. Pruebas](chapter_4.md#4225-testing-suite-evidence-for-sprint-review) |
-| AV2-4 | Landing publicado | [4.2.2.8. Despliegue](chapter_4.md#4228-software-deployment-evidence-for-sprint-review) |
+| AV2-3 | PR integrado de Mercado Pago | [4.2.2.4. Desarrollo](chapter_4.md#4224-development-evidence-for-sprint-review) |
+| AV2-4 | Validación de Flutter en GitHub Actions | [4.2.2.5. Pruebas](chapter_4.md#4225-testing-suite-evidence-for-sprint-review) |
+| AV2-5 | Validación del backend en GitHub Actions | [4.2.2.5. Pruebas](chapter_4.md#4225-testing-suite-evidence-for-sprint-review) |
+| AV2-6 | Landing publicado | [4.2.2.8. Despliegue](chapter_4.md#4228-software-deployment-evidence-for-sprint-review) |
+| AV2-7 | Migraciones Flyway V1–V5 | [4.2.2.8. Despliegue](chapter_4.md#4228-software-deployment-evidence-for-sprint-review) |
