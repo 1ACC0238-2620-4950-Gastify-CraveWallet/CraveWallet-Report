@@ -899,6 +899,18 @@ Alexander Aliaga realizó la migración móvil y los ajustes de compatibilidad r
 
 **Aplicación Flutter.** El [commit de migración](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/853687cd1e54466b6c39a84d114480441f0da725) incorpora una aplicación en Dart con el tema y la navegación propios de Flutter. El [ajuste de Material](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/079f9ce8504fa0fc86f0dad9b0c05355852a30d6) y el [ajuste de `intl`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/ad7ace8de934938d79f8301e96c7c9656cd8b4e3) completan los cambios de dependencias del corte.
 
+La figura AV2-1 muestra la migración y los ajustes posteriores en la rama `develop`.
+
+![Figura AV2-1. Historial de commits de CraveWallet-Flutter en develop.](images/chapter_4/av2/flutter.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura AV2-1. Historial de commits de CraveWallet-Flutter en develop.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura del [historial de Flutter en GitHub](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commits/develop/), 13 de noviembre de 2026.*
+
 - **Acceso y sesión.** Registro e inicio de sesión por correo, renovación de JWT y cierre de sesión. El cliente conserva los datos de sesión en `shared_preferences` e incluye un modo demostración.
 - **Inicio y suscripciones.** Resumen mensual, importes normalizados a PEN, alta por formulario, búsqueda, detalle, cancelación y consulta de suscripciones canceladas. El cliente consume los servicios REST de suscripciones.
 - **Delivery.** Formulario de gasto, resumen mensual y edición del presupuesto del mes conectado al backend.
@@ -908,9 +920,33 @@ Alexander Aliaga realizó la migración móvil y los ajustes de compatibilidad r
 
 **Premium con Mercado Pago.** Para AV2, Mercado Pago sustituye a Stripe como proveedor de cobros recurrentes de Premium. Las menciones de Stripe en AV1 y TB1 corresponden al diseño de esas entregas. La rama contiene el [contrato de inicio del checkout mensual](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/22ecef8808a3bfc1bf103014e9ff4448c544c03a). Quedan por acreditar el adaptador del proveedor, el recorrido de checkout, la recepción de webhooks y el pago de prueba de extremo a extremo.
 
+La figura AV2-2 muestra el commit que incorpora el contrato de checkout mensual al backend.
+
+![Figura AV2-2. Commit del contrato de checkout mensual de Premium.](images/chapter_4/av2/backend.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura AV2-2. Commit del contrato de checkout mensual de Premium.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura del [commit 22ecef8 de CraveWallet-Backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/22ecef8808a3bfc1bf103014e9ff4448c544c03a), 13 de noviembre de 2026.*
+
 #### 4.2.2.5. Testing Suite Evidence for Sprint Review
 
 El [repositorio Flutter](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/tree/ad7ace8de934938d79f8301e96c7c9656cd8b4e3) versiona dos pruebas de modelos. Una comprueba la normalización del costo mensual en PEN de una suscripción anual y otra comprueba la lectura de una suscripción desde la respuesta REST. La [ejecución de Flutter CI](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/actions/runs/43304678864) terminó con éxito para `ad7ace8` e incluyó `flutter pub get`, `flutter analyze` y `flutter test`. La rama de backend versiona pruebas para estado Premium, autenticación, límite por plan, totales por categoría y ahorro estimado.
+
+La figura AV2-3 muestra el resultado de la validación automatizada de Flutter.
+
+![Figura AV2-3. Flutter CI finalizado con éxito para el commit ad7ace8.](images/chapter_4/av2/ci.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura AV2-3. Flutter CI finalizado con éxito para el commit ad7ace8.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura de [Flutter CI, ejecución 43304678864](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/actions/runs/43304678864), 13 de noviembre de 2026.*
 
 #### 4.2.2.6. Execution Evidence for Sprint Review
 
@@ -926,7 +962,17 @@ Para Premium, la integración propuesta usa la API de Suscripciones de Mercado P
 
 El [landing de CraveWallet](https://cravewallet-landing.vercel.app/es) respondió HTTP 200 en la revisión del 12 de noviembre de 2026. Ese día, las consultas al estado del backend de Render, Swagger y OpenAPI agotaron el tiempo de espera. Queda pendiente verificar la versión desplegada y su cobertura del alcance AV2. La compilación Flutter y su ejecución en dispositivo requieren evidencia identificada por versión.
 
-El Anexo B incluye las capturas del landing, del historial de Flutter, del contrato de pagos y de la ejecución exitosa de Flutter CI.
+La figura AV2-4 muestra la página de inicio publicada en Vercel.
+
+![Figura AV2-4. Landing público de CraveWallet.](images/chapter_4/av2/landing.jpg)
+
+<!-- pdf:omit-start -->
+
+*Figura AV2-4. Landing público de CraveWallet.*
+
+<!-- pdf:omit-end -->
+
+*Fuente: captura del [landing público de CraveWallet](https://cravewallet-landing.vercel.app/es), 13 de noviembre de 2026.*
 
 #### 4.2.2.9. Team Collaboration Insights during Sprint
 

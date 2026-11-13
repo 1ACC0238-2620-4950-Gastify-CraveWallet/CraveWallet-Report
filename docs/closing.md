@@ -131,26 +131,9 @@ La figura 128 muestra una vista parcial del tablero después de la revisión TB1
 - [Código del backend revisado para AV2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/27ee5edaf1f055f61434cdb532fbad8c6fcff99a), [landing público](https://cravewallet-landing.vercel.app/es) y [Swagger del backend](https://cravewallet-api.onrender.com/swagger-ui/index.html).
 - El estado de los videos de validación, About-the-Product y About-the-Team se registra en la sección 4.3. Al adjuntarlos, se registrarán el enlace y la fecha de cada grabación.
 
-### Historial de commits de Flutter
-
-![Historial de commits de CraveWallet-Flutter en develop](images/chapter_4/av2/flutter.jpg)
-
-*Fuente: [GitHub, rama develop](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commits/develop/), captura del 13 de noviembre de 2026.*
-
-### Contrato de checkout del backend
-
-![Commit 22ecef8 del contrato PremiumPaymentGateway](images/chapter_4/av2/backend.jpg)
-
-*Fuente: [GitHub, commit 22ecef8](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/22ecef8808a3bfc1bf103014e9ff4448c544c03a), captura del 13 de noviembre de 2026.*
-
-### Validación de Flutter en GitHub Actions
-
-![Flutter CI finalizado con éxito para el commit ad7ace8](images/chapter_4/av2/ci.jpg)
-
-*Fuente: [Flutter CI, ejecución 43304678864](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/actions/runs/43304678864), captura del 13 de noviembre de 2026.*
-
-### Landing page publicado
-
-![Página de inicio pública de CraveWallet](images/chapter_4/av2/landing.jpg)
-
-*Fuente: [landing público de CraveWallet](https://cravewallet-landing.vercel.app/es), captura del 13 de noviembre de 2026.*
+| Figura | Evidencia | Sección del informe |
+| --- | --- | --- |
+| AV2-1 | Historial de commits de Flutter | [4.2.2.4. Desarrollo](chapter_4.md#4224-development-evidence-for-sprint-review) |
+| AV2-2 | Commit del contrato de checkout del backend | [4.2.2.4. Desarrollo](chapter_4.md#4224-development-evidence-for-sprint-review) |
+| AV2-3 | Validación de Flutter en GitHub Actions | [4.2.2.5. Pruebas](chapter_4.md#4225-testing-suite-evidence-for-sprint-review) |
+| AV2-4 | Landing publicado | [4.2.2.8. Despliegue](chapter_4.md#4228-software-deployment-evidence-for-sprint-review) |
