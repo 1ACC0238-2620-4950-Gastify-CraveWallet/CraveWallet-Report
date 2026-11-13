@@ -19,6 +19,7 @@ La tabla 1 registra las versiones del informe, su fecha, su autor y los cambios 
 | TB1 — Lean UX Canvas | 09/10/2026 | Anghelo Faustino | Tabla editable del Lean UX Canvas en lugar de imagen.                                                                                                                                                                                                                              |
 | TB1 — Sprint Backlog y evidencias audiovisuales | 10/10/2026 | Josué Carpio | Organización del Sprint Backlog 1 en Trello con 12 tareas, incorporación de su enlace y captura en el Capítulo IV, grabación del video de navegación de la Landing Page, aplicación Android y Swagger UI, realización de audit y del recorrido del prototipo interactivo en Figma. |
 | TB1 — remediación de auditoría | 10/10/2026 | Equipo Gastify | Conciliación del alcance del Sprint 1, matriz de cobertura REST, corrección de contradicciones sobre dispositivo, APK, API y navegación, y plantillas para evidencias pendientes. |
+| AV2 — Sprint Review 2 | 12/11/2026 | Alexander Aliaga | Incorporación del Sprint 2, evidencia de la migración móvil a Flutter y actualización del diseño de pagos Premium a Mercado Pago. |
 
 *Fuente: elaboración del equipo Gastify*
 
@@ -38,6 +39,8 @@ La figura 1 muestra el resumen de actividad (Pulse) del repositorio del informe 
 *Fuente: captura de GitHub del repositorio CraveWallet-Report.*
 
 En TB1 el informe se elaboró con GitFlow: cada sección se redactó en una rama `feature`, `fix` o `docs` creada desde `develop` y se integró mediante pull request. Mario Sejuro redactó el diseño de interfaces del capítulo III y la configuración del capítulo IV; Anghelo Faustino y Alexander Aliaga incorporaron las evidencias de despliegue y de arquitectura; Sebastián Roman revisó leyendas, citas y fuentes de las figuras y tablas; y Josué Carpio actualizó las fotografías del equipo. Los commits de cada integrante en los repositorios de código y del informe se muestran en la tabla 160 de la sección 4.2.1.9, y los cambios de cada versión, en la tabla 1.
+
+**AV2.** La revisión del informe para el Sprint 2 se preparó en la rama `feature/av2-sprint-2-report` a partir de `develop`. Los enlaces de [actividad del informe](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Report/activity) y de [pull requests del informe](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Report/pulls?q=is%3Apr) permiten revisar la colaboración registrada en GitHub. La sección 4.2.2.9 identifica por separado los aportes comprobables en los repositorios de implementación.
 
 <!-- pdf:omit-start -->
 
@@ -95,6 +98,7 @@ En TB1 el informe se elaboró con GitFlow: cada sección se redactó en una rama
   - [4.1.4. Software Deployment Configuration](docs/chapter_4.md#414-software-deployment-configuration)
 - [4.2. Landing Page & Mobile Application Implementation](docs/chapter_4.md#42-landing-page--mobile-application-implementation)
   - [4.2.1. Sprint 1](docs/chapter_4.md#421-sprint-1)
+  - [4.2.2. Sprint 2](docs/chapter_4.md#422-sprint-2)
 
 ### [Conclusiones](docs/closing.md#conclusiones)
 
@@ -169,6 +173,13 @@ La tabla 3 resume las acciones de cada integrante que sustentan el segundo crite
 **AV1:** El equipo comprobó que cada sección exigió aprendizaje autónomo de métodos, herramientas y tecnologías que no se dominaban al inicio. Ese conocimiento se transfirió mediante commits, revisiones e integración en `develop`, quedando disponible para los demás integrantes. Las siguientes entregas requerirán mantener la consulta de documentación, la validación con usuarios y la revisión colaborativa para implementar y comprobar la solución móvil.
 
 **TB1:** Las herramientas nuevas (Structurizr, Flyway, Docker, Render, Vercel, Jetpack Compose y el plugin de Figma) se aprendieron durante el Sprint 1 y se compartieron mediante commits, documentación versionada y pull requests. Para el siguiente Sprint se mantendrá la revisión entre integrantes de los cambios en el código.
+
+## Evidencia adicional de AV2
+
+| Criterio | Integrante | Acción y evidencia en el Sprint 2 | Conclusión |
+| --- | --- | --- | --- |
+| Actualiza conceptos y conocimientos para su desarrollo profesional y el proyecto. | Alexander Aliaga | Migró los flujos móviles a Dart y Flutter, reutilizó el contrato REST y ajustó las dependencias de Material y localización para la versión de Flutter empleada. La evidencia consta en la [migración inicial](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/853687cd1e54466b6c39a84d114480441f0da725) y en el [ajuste de dependencias](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/ad7ace8de934938d79f8301e96c7c9656cd8b4e3). | La separación del cliente REST y la interfaz permitió trasladar los flujos a otra tecnología conservando la comunicación con el backend. |
+| Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo del proyecto. | Alexander Aliaga | Configuró verificación automatizada de la app Flutter e incorporó pruebas para la conversión de importes y la lectura del contrato REST. Consultó la documentación oficial de Mercado Pago para describir en el informe la integración de cobros recurrentes prevista para Premium. | Los cambios de framework y proveedor requieren revisar compatibilidad, probar los flujos afectados y respaldar los resultados con evidencia. |
 
 # Objetivos SMART
 

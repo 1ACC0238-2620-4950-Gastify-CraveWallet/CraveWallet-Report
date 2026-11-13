@@ -14,6 +14,12 @@ Los seis spikes (SP01–SP06) investigan las integraciones con ExchangeRate-API,
 
 En el Sprint 1 el equipo publicó el landing en Vercel, desplegó en Render un REST API con PostgreSQL y autenticación JWT que cubre funcionalmente 16 de 16 operaciones del alcance TB1 y supera 32 pruebas automatizadas, y compiló la aplicación Android en Kotlin y Jetpack Compose, recorrida en LDPlayer y conectada al API público con 9 pruebas de integración. La evidencia versionada no acredita todavía una ejecución en teléfono físico. Siguen en investigación las integraciones con Stripe y con el calendario nativo.
 
+## Conclusiones de AV2
+
+El Sprint 2 trasladó a Flutter los flujos de acceso, suscripciones y gastos de delivery. El cliente reutiliza el contrato REST y conserva un modo demostración para recorrer la interfaz. El código y las pruebas de modelos quedan vinculados a los commits de la sección 4.2.2.
+
+Mercado Pago es el proveedor elegido para los cobros recurrentes de Premium. La rama de backend aporta el estado de membresía, el control del cupo y el contrato para iniciar el checkout. La validación del pago, el despliegue completo del alcance de AV2 y las tres grabaciones requieren evidencias propias de esta entrega.
+
 # Glosario
 
 **Anti-Corruption Layer (ACL).** Patrón de Context Mapping que interpone un adaptador entre dos Bounded Contexts, o entre un contexto y un sistema externo, para traducir modelos sin contaminar el dominio propio. En CraveWallet se propone en las integraciones con ExchangeRate-API, Stripe y Google Places.
@@ -79,6 +85,10 @@ Gothelf, J., & Seiden, J. (2021). Lean UX: Creating Great Products with Agile Te
 
 Laubheimer, P. (2016). Wireflows: A UX Deliverable for Workflows and Apps. Nielsen Norman Group. https://www.nngroup.com/articles/wireflows/
 
+Mercado Pago. (s. f.-a). Suscripciones: resumen. Recuperado 12 de noviembre de 2026, de https://www.mercadopago.com.pe/developers/es/docs/subscriptions/overview
+
+Mercado Pago. (s. f.-b). Webhooks. Recuperado 12 de noviembre de 2026, de https://www.mercadopago.com.pe/developers/es/docs/subscriptions/additional-content/your-integrations/notifications/webhooks
+
 Portigal, S. (2013). Interviewing Users: How to Uncover Compelling Insights. Rosenfeld Media.
 
 Spendee. (2025). What is Spendee Premium? Spendee Help Center. https://help.spendee.com/article/202-what-is-spendee-premium
@@ -114,3 +124,33 @@ La figura 128 muestra una vista parcial del tablero después de la revisión TB1
 <!-- pdf:omit-end -->
 
 *Fuente: captura del tablero público de Trello del equipo Gastify, 10 de octubre de 2026 (America/Lima); el inventario completo se registra en evidence/backlog/2026-10-10-board.json.*
+
+## Anexo B. Evidencias del Sprint 2
+
+- [Código Flutter en el corte de AV2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/tree/ad7ace8de934938d79f8301e96c7c9656cd8b4e3) y [pruebas de modelos](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/blob/ad7ace8de934938d79f8301e96c7c9656cd8b4e3/test/models_test.dart).
+- [Código del backend revisado para AV2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/27ee5edaf1f055f61434cdb532fbad8c6fcff99a), [landing público](https://cravewallet-landing.vercel.app/es) y [Swagger del backend](https://cravewallet-api.onrender.com/swagger-ui/index.html).
+- El estado de los videos de validación, About-the-Product y About-the-Team se registra en la sección 4.3. Al adjuntarlos, se registrarán el enlace y la fecha de cada grabación.
+
+### Historial de commits de Flutter
+
+![Historial de commits de CraveWallet-Flutter en develop](images/chapter_4/av2/flutter.jpg)
+
+*Fuente: [GitHub, rama develop](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commits/develop/), captura del 13 de noviembre de 2026.*
+
+### Contrato de checkout del backend
+
+![Commit 22ecef8 del contrato PremiumPaymentGateway](images/chapter_4/av2/backend.jpg)
+
+*Fuente: [GitHub, commit 22ecef8](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/22ecef8808a3bfc1bf103014e9ff4448c544c03a), captura del 13 de noviembre de 2026.*
+
+### Validación de Flutter en GitHub Actions
+
+![Flutter CI finalizado con éxito para el commit ad7ace8](images/chapter_4/av2/ci.jpg)
+
+*Fuente: [Flutter CI, ejecución 43304678864](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/actions/runs/43304678864), captura del 13 de noviembre de 2026.*
+
+### Landing page publicado
+
+![Página de inicio pública de CraveWallet](images/chapter_4/av2/landing.jpg)
+
+*Fuente: [landing público de CraveWallet](https://cravewallet-landing.vercel.app/es), captura del 13 de noviembre de 2026.*

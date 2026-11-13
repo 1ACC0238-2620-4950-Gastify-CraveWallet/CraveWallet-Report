@@ -878,3 +878,64 @@ La figura 127 muestra la pestaña Contributors de `CraveWallet-Mobile` en GitHub
 *Fuente: captura de GitHub Insights del repositorio `CraveWallet-Mobile`, 9 de octubre de 2026.*
 
 La implementación se concentra en tres integrantes. Mario Sejuro desarrolló el landing publicado; Sebastián Roman escribió las secciones adicionales del landing, inicializó el repositorio del backend y desarrolló la aplicación Android; y Anghelo Faustino implementó el backend, el despliegue en Render y la conexión de la aplicación con el API.
+
+### 4.2.2. Sprint 2
+
+#### 4.2.2.1. Sprint Planning 2
+
+El Sprint 2 se presenta en AV2, en la semana 12. Su objetivo es mostrar los flujos principales de CraveWallet en Flutter, continuar los servicios del backend y documentar el cambio de proveedor de pagos para Premium. El alcance toma como punto de partida la revisión del backlog de TB1 y registra por separado los trabajos incorporados durante AV2.
+
+#### 4.2.2.2. Aspect Leaders and Collaborators
+
+Alexander Aliaga realizó la migración móvil y los ajustes de compatibilidad registrados en `CraveWallet-Flutter`. En `CraveWallet-Backend`, los commits del usuario `josf17` registran trabajo en la membresía Premium, el límite por plan y los servicios de análisis y comercios. La atribución corresponde a los historiales citados en la sección 4.2.2.9.
+
+#### 4.2.2.3. Sprint Backlog 2
+
+- La línea base de la tabla 84 asigna US03, US04, US26, US09, US10, US11, US27 y US35 al Sprint 2, por un total de 17 Story Points planificados.
+- La aplicación Flutter incorpora búsqueda por nombre o categoría, orden por próximo cobro, detalle y consulta de suscripciones canceladas. El backend registra trabajo para totales por categoría y ahorro estimado por cancelación. El estado de aceptación de las ocho historias requiere contrastar los criterios de cada una con el tablero y las pruebas de la entrega.
+- Como trabajo adicional se registra la migración a Flutter y el avance técnico de Premium y comercios. Los 17 Story Points corresponden al alcance de la línea base.
+
+#### 4.2.2.4. Development Evidence for Sprint Review
+
+**Aplicación Flutter.** El [commit de migración](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/853687cd1e54466b6c39a84d114480441f0da725) incorpora una aplicación en Dart con el tema y la navegación propios de Flutter. El [ajuste de Material](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/079f9ce8504fa0fc86f0dad9b0c05355852a30d6) y el [ajuste de `intl`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/ad7ace8de934938d79f8301e96c7c9656cd8b4e3) completan los cambios de dependencias del corte.
+
+- **Acceso y sesión.** Registro e inicio de sesión por correo, renovación de JWT y cierre de sesión. El cliente conserva los datos de sesión en `shared_preferences` e incluye un modo demostración.
+- **Inicio y suscripciones.** Resumen mensual, importes normalizados a PEN, alta por formulario, búsqueda, detalle, cancelación y consulta de suscripciones canceladas. El cliente consume los servicios REST de suscripciones.
+- **Delivery.** Formulario de gasto, resumen mensual y edición del presupuesto del mes conectado al backend.
+- **Análisis, perfil y recordatorios.** La aplicación incorpora la navegación y las pantallas correspondientes. El formulario de recordatorios permite ajustar opciones de calendario, notificaciones, anticipación y hora. El recorrido en dispositivo y la programación efectiva de avisos requieren su propia evidencia.
+
+**Backend.** La [rama de AV2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/feature/av2-mercadopago) incorpora persistencia y consulta del estado de la membresía Premium, control del cupo según el plan, un adaptador de búsqueda de comercios con Google Places y operaciones de consulta de totales por categoría y ahorro estimado por cancelación.
+
+**Premium con Mercado Pago.** Para AV2, Mercado Pago sustituye a Stripe como proveedor de cobros recurrentes de Premium. Las menciones de Stripe en AV1 y TB1 corresponden al diseño de esas entregas. La rama contiene el [contrato de inicio del checkout mensual](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/22ecef8808a3bfc1bf103014e9ff4448c544c03a). Quedan por acreditar el adaptador del proveedor, el recorrido de checkout, la recepción de webhooks y el pago de prueba de extremo a extremo.
+
+#### 4.2.2.5. Testing Suite Evidence for Sprint Review
+
+El [repositorio Flutter](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/tree/ad7ace8de934938d79f8301e96c7c9656cd8b4e3) versiona dos pruebas de modelos. Una comprueba la normalización del costo mensual en PEN de una suscripción anual y otra comprueba la lectura de una suscripción desde la respuesta REST. La [ejecución de Flutter CI](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/actions/runs/43304678864) terminó con éxito para `ad7ace8` e incluyó `flutter pub get`, `flutter analyze` y `flutter test`. La rama de backend versiona pruebas para estado Premium, autenticación, límite por plan, totales por categoría y ahorro estimado.
+
+#### 4.2.2.6. Execution Evidence for Sprint Review
+
+El recorrido previsto para la revisión comprende iniciar sesión, registrar una suscripción en dólares, consultar su importe mensual en soles, registrar un gasto de delivery y revisar el presupuesto mensual. El modo demostración permite recorrer las pantallas con suscripciones de ejemplo. El flujo de delivery requiere una cuenta conectada al API.
+
+#### 4.2.2.7. Services Documentation Evidence for Sprint Review
+
+El [cliente REST de Flutter](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/blob/ad7ace8de934938d79f8301e96c7c9656cd8b4e3/lib/src/api_client.dart) permite configurar `API_BASE_URL`. Sus servicios principales cubren autenticación, perfil, suscripciones y gastos de delivery. El despliegue de referencia de TB1 publicó la [documentación Swagger](https://cravewallet-api.onrender.com/swagger-ui/index.html) y la [especificación OpenAPI](https://cravewallet-api.onrender.com/v3/api-docs).
+
+Para Premium, la integración propuesta usa la API de Suscripciones de Mercado Pago. El backend conservará la referencia de la suscripción del proveedor y confirmará el pago antes de habilitar o renovar el acceso. Los webhooks notifican cambios de pago y de suscripción. El backend verificará la notificación y consultará el estado del recurso correspondiente antes de actualizar el plan [@mercadoPagoSubscriptions; @mercadoPagoWebhooks].
+
+#### 4.2.2.8. Software Deployment Evidence for Sprint Review
+
+El [landing de CraveWallet](https://cravewallet-landing.vercel.app/es) respondió HTTP 200 en la revisión del 12 de noviembre de 2026. Ese día, las consultas al estado del backend de Render, Swagger y OpenAPI agotaron el tiempo de espera. Queda pendiente verificar la versión desplegada y su cobertura del alcance AV2. La compilación Flutter y su ejecución en dispositivo requieren evidencia identificada por versión.
+
+El Anexo B incluye las capturas del landing, del historial de Flutter, del contrato de pagos y de la ejecución exitosa de Flutter CI.
+
+#### 4.2.2.9. Team Collaboration Insights during Sprint
+
+El [historial de Flutter](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commits/develop/) registra cuatro commits de `AlexanderAliaga19` en el corte, incluida la inicialización, la migración y los dos ajustes de dependencias. El [historial de la rama de backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commits/feature/av2-mercadopago/) permite revisar las contribuciones de la implementación AV2. La actividad del informe se consulta en **Project Report Collaboration Insights**.
+
+## 4.3. Validation Evidence for AV2
+
+| Video requerido | Contenido previsto | Estado de la evidencia |
+| --- | --- | --- |
+| Validación de la aplicación | Recorrido de los flujos principales en Flutter con un usuario de prueba, observaciones y resultado de la validación. | Pendiente de adjuntar la grabación y el registro de resultados. |
+| About-the-Product | Problema, propuesta de valor y demostración de suscripciones, gastos y presupuesto. | Pendiente de adjuntar el enlace a la primera versión. |
+| About-the-Team | Presentación del equipo y responsabilidades en el Sprint 2. | Pendiente de adjuntar el enlace a la primera versión. |
