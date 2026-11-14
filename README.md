@@ -21,6 +21,7 @@ La tabla 1 registra las versiones del informe, su fecha, su autor y los cambios 
 | TB1 — remediación de auditoría | 10/10/2026 | Equipo Gastify | Conciliación del alcance del Sprint 1, matriz de cobertura REST, corrección de contradicciones sobre dispositivo, APK, API y navegación, y plantillas para evidencias pendientes. |
 | AV2 — Sprint Review 2 | 12/11/2026 | Alexander Aliaga | Incorporación del Sprint 2, evidencia de la migración móvil a Flutter y actualización del diseño de pagos Premium a Mercado Pago. |
 | AV2 — evidencia del backend | 13/11/2026 | Alexander Aliaga | Registro de la integración de Mercado Pago, las migraciones Flyway V1–V5 y el resultado de Backend build. |
+| AV2 — Flutter conectado y despliegue | 13/11/2026 | Alexander Aliaga | Integración del flujo Premium en Flutter, ocho pruebas, compilación web, CORS restringido al origen de GitHub Pages y actualización de la evidencia de backend, PostgreSQL y CI/CD. |
 
 *Fuente: elaboración del equipo Gastify*
 
