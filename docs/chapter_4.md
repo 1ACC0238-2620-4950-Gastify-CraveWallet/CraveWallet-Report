@@ -36,7 +36,7 @@ La tabla 139 detalla las herramientas para investigar a los usuarios, modelar el
 
 #### Software Development
 
-El landing page se construye con Next.js, React y TypeScript; el backend, con Java 21 y Spring Boot; y la aplicación móvil, con Kotlin y Jetpack Compose. La tabla 140 agrupa las herramientas por producto.
+El landing page se construye con Next.js, React y TypeScript; el backend, con Java 21 y Spring Boot; y las dos aplicaciones móviles del proyecto se implementan tanto en Android nativo con Kotlin y Jetpack Compose (`CraveWallet-Mobile`) como en multiplataforma con Dart y Flutter (`CraveWallet-Flutter`). La tabla 140 agrupa las herramientas por producto.
 
 *Tabla 140. Herramientas y tecnologías de desarrollo.*
 
@@ -56,12 +56,13 @@ El landing page se construye con Next.js, React y TypeScript; el backend, con Ja
 | Backend | Spring Data JPA | Repositorios de la Infrastructure Layer de cada Bounded Context. | <https://spring.io/projects/spring-data-jpa> |
 | Backend | Maven | Dependencias, compilación, pruebas y empaquetado del backend. | <https://maven.apache.org/> |
 | Backend | PostgreSQL 17 | Base de datos del perfil `prod`, publicada en Render junto con el REST API (sección 4.1.4). | <https://www.postgresql.org/> |
-| Backend | H2 2.3.232 | Persistencia en memoria para ejecución local y pruebas de usuarios, sesiones, suscripciones, gastos y presupuestos. | <https://www.h2database.com/> |
-| Backend | Flyway | Migraciones V1–V3 del esquema; JPA valida las tablas sin crearlas automáticamente. | <https://www.red-gate.com/products/flyway/> |
+| Backend | H2 2.3.232 | Persistencia en memoria y archivo para ejecución local y pruebas de usuarios, sesiones, suscripciones, gastos, presupuestos y membresías Premium. | <https://www.h2database.com/> |
+| Backend | Flyway | Migraciones V1–V5 del esquema; JPA valida las tablas sin crearlas automáticamente. | <https://www.red-gate.com/products/flyway/> |
 | Backend | Docker y Render | El `Dockerfile` empaqueta el JAR con Java 21 y Render publica el servicio con su base PostgreSQL (sección 4.1.4). | <https://www.docker.com/> |
-| Aplicación móvil | Kotlin y Jetpack Compose | Lenguaje y toolkit de interfaz de la aplicación Android, con Material 3 y Navigation Compose. | <https://developer.android.com/compose> |
-| Aplicación móvil | Gradle | Compilación, pruebas y empaquetado del APK. | <https://gradle.org/> |
-| Aplicación móvil | Android Studio | Emulador de Android y herramientas del SDK para probar la aplicación. | <https://developer.android.com/studio> |
+| Aplicación móvil (Android nativa) | Kotlin y Jetpack Compose | Lenguaje y toolkit de interfaz de la aplicación Android nativa (`CraveWallet-Mobile`), con Material 3 y Navigation Compose. | <https://developer.android.com/compose> |
+| Aplicación móvil (Android nativa) | Gradle | Compilación, pruebas y empaquetado del APK de la aplicación nativa. | <https://gradle.org/> |
+| Aplicación móvil (Android nativa) | Android Studio | Emulador de Android y herramientas del SDK para probar la aplicación. | <https://developer.android.com/studio> |
+| Aplicación móvil (Multiplataforma) | Dart 3 y Flutter 3 | Lenguaje y SDK de la aplicación móvil multiplataforma (`CraveWallet-Flutter`), con Material 3, `http`, `shared_preferences` y `url_launcher`. | <https://flutter.dev/> |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -74,8 +75,9 @@ Los criterios de aceptación de las User Stories se escriben en Gherkin, como in
 | Herramienta | Uso en CraveWallet | Sitio |
 | --- | --- | --- |
 | Gherkin | Escenarios *Given / When / Then* de los criterios de aceptación (sección 2.4.1), base de las pruebas de aceptación. | <https://cucumber.io/docs/gherkin/reference/> |
-| JUnit 5 y Spring Boot Test | Suite ejecutable del backend, con pruebas unitarias y de integración mediante MockMvc, JWT y H2. | [Suite versionada del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/src/test/java/pe/edu/upc/gastify/cravewallet) |
-| Mockito y servidor HTTP local | Simulación del proveedor de cotización y comprobación de respuestas inválidas, caché y caídas sin depender de Internet. | [Pruebas de cotización](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/2f36260dc1aa9b8e4ef71a7184847795e6cb6867/src/test/java/pe/edu/upc/gastify/cravewallet/ExchangeRateServiceTest.java) |
+| JUnit 5 y Spring Boot Test | Suite ejecutable del backend, con pruebas unitarias y de integración mediante MockMvc, JWT y H2. | [Suite versionada del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/a0aeabc/src/test/java/pe/edu/upc/gastify/cravewallet) |
+| Mockito y servidor HTTP local | Simulación de proveedores externos (ExchangeRate-API, Google Places y Mercado Pago) y comprobación de respuestas inválidas, caché y caídas sin depender de Internet. | [Pruebas de cotización](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/src/test/java/pe/edu/upc/gastify/cravewallet/ExchangeRateServiceTest.java) |
+| Flutter Test (`flutter_test`) | Pruebas unitarias de modelos y controladores, y pruebas de widgets del flujo Premium en `CraveWallet-Flutter`. | [Pruebas de Flutter](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/tree/d32ecc0/test) |
 | Swagger UI y OpenAPI | Ejecución manual de solicitudes y consulta de contratos del backend público y local. | [Swagger público](https://cravewallet-api.onrender.com/swagger-ui/index.html) |
 
 *Fuente: elaboración del equipo Gastify.*
@@ -92,7 +94,8 @@ Los repositorios del proyecto se listan en la tabla 142.
 | :--- | :--- | :--- |
 | `CraveWallet-Report` | Informe del proyecto en formato Markdown | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Report |
 | `cravewallet-landing` | Landing page (Next.js 16, React 19, TypeScript y Tailwind CSS 4) | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing |
-| `CraveWallet-Mobile` | Aplicación Android (Kotlin y Jetpack Compose) | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile |
+| `CraveWallet-Mobile` | Aplicación Android nativa (Kotlin y Jetpack Compose) | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile |
+| `CraveWallet-Flutter` | Aplicación móvil multiplataforma (Dart 3 y Flutter 3) | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter |
 | `CraveWallet-Backend` | REST API del producto (Java 21 y Spring Boot 3) | https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend |
 
 *Fuente: elaboración del equipo Gastify.*
@@ -883,23 +886,81 @@ La implementación se concentra en tres integrantes. Mario Sejuro desarrolló el
 
 #### 4.2.2.1. Sprint Planning 2
 
-El Sprint 2 se presenta en AV2, en la semana 12. Su objetivo es mostrar los flujos principales de CraveWallet en Flutter, continuar los servicios del backend y documentar el cambio de proveedor de pagos para Premium. El alcance toma como punto de partida la revisión del backlog de TB1 y registra por separado los trabajos incorporados durante AV2.
+El Sprint 2 corresponde a la entrega de la semana 12 (AV2) y abarca el trabajo ejecutado entre el 11 de octubre y el 13 de noviembre de 2026. Su planificación parte del inventario revisado en TB1 (tabla 84 de la sección 2.4.3), que asigna al Sprint 2 ocho historias de usuario (`US03`, `US04`, `US26`, `US09`, `US10`, `US11`, `US27` y `US35`, por un total de 17 Story Points), e incorpora en paralelo la integración de pagos recurrentes para CraveWallet Premium con Mercado Pago (`TS06`, `US21`, `US22`, `US23`, `US31`, `US39`, `SP05` y `SP06`), las sugerencias de comercios de delivery con Google Places (`US18` y `TS05`), la actualización de la aplicación nativa Android en Kotlin (`CraveWallet-Mobile`) y la construcción de la aplicación móvil multiplataforma en Flutter (`CraveWallet-Flutter`). La tabla 161 sintetiza el acta de planificación del Sprint 2 siguiendo el formato del curso y la plantilla de Sprint Goal de Scrum.org.
+
+*Tabla 161. Sprint Planning 2.*
+
+| Aspecto | Detalle |
+| --- | --- |
+| **Sprint #** | Sprint 2 |
+| **Sprint Planning Background** | |
+| Date | **[COMPLETAR: fecha de la reunión de Sprint Planning 2, formato YYYY-MM-DD]** |
+| Time | **[COMPLETAR: hora de la reunión de Sprint Planning 2, formato HH:MM AM/PM]** |
+| Location | **[COMPLETAR: ubicación o plataforma virtual de la reunión de Sprint Planning 2]** |
+| Prepared By | **[COMPLETAR: nombre del integrante que preparó el Sprint Planning 2]** |
+| Attendees (to planning meeting) | **[COMPLETAR: lista de integrantes asistentes a la reunión de Sprint Planning 2]** |
+| Sprint 1 Review Summary | En la revisión del Sprint 1 (TB1) se presentó el landing page bilingüe desplegado en Vercel (`cravewallet-landing.vercel.app`), el backend RESTful en Java 21 y Spring Boot desplegado en Render con PostgreSQL 17 y Flyway V1–V3 (16 endpoints operativos y 32 pruebas automatizadas para IAM, suscripciones, cotización USD/PEN y resumen de delivery) y la aplicación Android en Kotlin y Jetpack Compose verificada en LDPlayer con 9 pruebas de integración. Se identificó la necesidad de completar la agrupación por categoría y el ahorro estimado en suscripciones, implementar la pasarela de cobro recurrente en soles para el plan Premium, incorporar las sugerencias de comercios con Google Places y disponer de la versión multiplataforma en Flutter junto con la aplicación nativa en Kotlin. |
+| Sprint 1 Retrospective Summary | **[COMPLETAR: resumen de las opiniones del equipo sobre qué funcionó bien, qué aspectos por mejorar se detectaron y qué acuerdos se tomaron en la retrospectiva del Sprint 1]** |
+| **Sprint Goal & User Stories** | |
+| Sprint 2 Goal | **Our focus is on** consolidar el análisis del portafolio de suscripciones (totales por categoría, orden por próxima renovación, búsqueda, historial de canceladas y ahorro estimado al cancelar), habilitar la suscripción recurrente al plan Premium en soles mediante Mercado Pago y ofrecer la experiencia móvil completa tanto en Android nativo (Kotlin) como en multiplataforma (Flutter). **We believe it delivers** transparencia sobre el gasto recurrente por rubro y acceso sin fricción cambiaria ni límite de registros **to** los estudiantes universitarios y profesionales jóvenes de Lima que administran compromisos en soles y dólares. **This will be confirmed when** un usuario autenticado pueda consultar sus subtotales por categoría y el ahorro estimado al cancelar una suscripción, iniciar y verificar su membresía Premium de S/ 9.99 con Mercado Pago (desbloqueando más de 5 suscripciones y la vista de análisis) y recorrer los flujos principales en las aplicaciones Kotlin y Flutter conectadas al backend REST. |
+| Sprint 2 Velocity | **[COMPLETAR: Velocity establecido por el equipo para el Sprint 2 en Story Points]** (línea base planificada en el Product Backlog revisado: 17 Story Points). |
+| Sum of Story Points | **17 Story Points** en las 8 User Stories de la línea base del Sprint 2 (tabla 84): `US03` (1 SP), `US04` (3 SP), `US26` (1 SP), `US09` (3 SP), `US10` (2 SP), `US11` (2 SP), `US27` (2 SP) y `US35` (3 SP). Adicionalmente, el sprint ejecuta el incremento técnico y funcional de Premium con Mercado Pago (`TS06`, `US21`–`US23`, `US31`, `US39`, `SP05`–`SP06`), sugerencias de comercios con Google Places (`US18`, `TS05`), actualización de `CraveWallet-Mobile` (Kotlin) y migración multiplataforma en `CraveWallet-Flutter`. |
+
+*Fuente: elaboración del equipo Gastify a partir del Product Backlog revisado (tabla 84) y los repositorios del proyecto.*
 
 #### 4.2.2.2. Aspect Leaders and Collaborators
 
-Alexander Aliaga realizó la migración móvil y los ajustes de compatibilidad registrados en `CraveWallet-Flutter`. En `CraveWallet-Backend`, los commits del usuario `josf17` registran trabajo en la membresía Premium, el límite por plan y los servicios de análisis y comercios. La atribución corresponde a los historiales citados en la sección 4.2.2.9.
+La distribución de liderazgo (`L`) y colaboración (`C`) durante el Sprint 2 se sustenta en la actividad registrada en los repositorios de la organización entre el 11 de octubre y el 13 de noviembre de 2026 (detallada en la sección 4.2.2.9). En `CraveWallet-Backend` y `CraveWallet-Mobile`, Josué Carpio (`josf17`) lideró la implementación del Bounded Context `Premium & Billing` con Mercado Pago, el control de cupo por plan, las consultas de totales por categoría y ahorro estimado, el adaptador de Google Places y la integración Premium en la aplicación Android nativa en Kotlin. En `CraveWallet-Flutter` y `CraveWallet-Report`, Alexander Aliaga (`AlexanderAliaga19`) lideró la construcción de la aplicación móvil multiplataforma en Flutter, su flujo Premium y el avance del informe técnico, en colaboración con Anghelo Faustino (`Limos05` / `limozz05`) en la documentación y verificación del reporte. La tabla 162 presenta la matriz LACX del Sprint 2 con los cinco integrantes del equipo.
+
+*Tabla 162. Leadership-and-Collaboration Matrix del Sprint 2.*
+
+| Miembro del equipo (Apellidos, Nombres) | Usuario GitHub | App Flutter (`CraveWallet-Flutter`) | App Android Kotlin (`CraveWallet-Mobile`) | Backend Premium y Mercado Pago | Backend Suscripciones y Comercios | Landing Page (`cravewallet-landing`) | Informe (`CraveWallet-Report`) | Validación y Videos |
+| --- | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aliaga, Alexander | `AlexanderAliaga19` | L | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | C | **[COMPLETAR: L/C/—]** |
+| Carpio Peña, Josué Francisco | `josf17` | **[COMPLETAR: L/C/—]** | L | L | L | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** |
+| Faustino Hurtado, Anghelo Edwin | `Limos05` / `limozz05` | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | L | **[COMPLETAR: L/C/—]** |
+| Roman Zeballos, Sebastian Jared | `Chebas19` | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** |
+| Sejuro Medina, Mario Gabriel | `maghetthi` | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** | **[COMPLETAR: L/C/—]** |
+
+*Fuente: elaboración del equipo Gastify a partir del historial de commits del Sprint 2.*
 
 #### 4.2.2.3. Sprint Backlog 2
 
-- La línea base de la tabla 84 asigna US03, US04, US26, US09, US10, US11, US27 y US35 al Sprint 2, por un total de 17 Story Points planificados.
-- La aplicación Flutter incorpora búsqueda por nombre o categoría, orden por próximo cobro, detalle y consulta de suscripciones canceladas. El backend registra trabajo para totales por categoría y ahorro estimado por cancelación. El estado de aceptación de las ocho historias requiere contrastar los criterios de cada una con el tablero y las pruebas de la entrega.
-- Como trabajo adicional se registra la migración a Flutter y el avance técnico de Premium y comercios. Los 17 Story Points corresponden al alcance de la línea base.
+El Sprint Backlog 2 desglosa las ocho historias de usuario de la línea base del Sprint 2 (`US03`, `US04`, `US26`, `US09`, `US10`, `US11`, `US27` y `US35`, con 17 Story Points en la tabla 84) junto con las historias y tareas técnicas ejecutadas en los repositorios `CraveWallet-Backend`, `CraveWallet-Mobile` y `CraveWallet-Flutter` durante el corte de AV2.
+
+**Enlace público del tablero de Sprint Backlog 2 en Trello:** **[COMPLETAR: URL pública del tablero de Trello correspondiente al Sprint Backlog 2]**
+
+**[COMPLETAR: insertar captura de pantalla del tablero de Trello del Sprint Backlog 2 mostrando las listas To Do, In Process, To Review y Done]**
+
+La tabla 163 detalla el control de estado de los elementos del Sprint Backlog 2, vinculando cada historia con sus tareas de ingeniería, responsable según la evidencia de commits y estado al cierre del sprint.
+
+*Tabla 163. Sprint Backlog 2 y control de estado de tareas.*
+
+| Sprint # | User Story Id | User Story Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status |
+| :---: | :---: | --- | :---: | --- | --- | :---: | --- | :---: |
+| 2 | US03 | Configurar mi moneda de referencia | S2-T01 | Confirmación de moneda PEN en perfil móvil y backend | Exponer y consumir `GET` y `PATCH /api/v1/users/me` con `referenceCurrency = PEN` en Kotlin y Flutter, validando rechazo de monedas no soportadas. | **[COMPLETAR: horas]** | Josué Carpio (`josf17`) / Alexander Aliaga (`AlexanderAliaga19`) | Done |
+| 2 | US04 | Registrar una suscripción desde el catálogo precargado | S2-T02 | Alta de suscripción y sugerencias rápidas en interfaz móvil | Implementar el formulario de alta de suscripción con selección rápida e integración con `POST /api/v1/subscriptions` en Flutter y Kotlin. | **[COMPLETAR: horas]** | Alexander Aliaga (`AlexanderAliaga19`) | Done |
+| 2 | US26 | Ver el historial de suscripciones canceladas | S2-T03 | Filtro y vista de suscripciones en estado CANCELLED | Consumir `GET /api/v1/subscriptions?status=CANCELLED` y presentar la lista de bajas previas con su último monto en Flutter y Kotlin. | **[COMPLETAR: horas]** | Alexander Aliaga (`AlexanderAliaga19`) | Done |
+| 2 | US09 | Ver mis suscripciones agrupadas por categoría | S2-T04 | Cálculo de subtotales mensuales por categoría en PEN | Agregar `monthlyTotalsByCategory` en `GET /api/v1/subscriptions` (`8461f02`) y su visualización por rubro en las pantallas de Inicio y Análisis. | **[COMPLETAR: horas]** | Josué Carpio (`josf17`) / Alexander Aliaga (`AlexanderAliaga19`) | Done |
+| 2 | US10 | Ver mis suscripciones ordenadas por próxima fecha de renovación | S2-T05 | Ordenamiento ascendente por `nextBillingDate` | Ordenar las suscripciones activas por fecha de próximo cobro ascendente en el backend y en las vistas de portafolio y próximos cobros de Kotlin y Flutter. | **[COMPLETAR: horas]** | Josué Carpio (`josf17`) / Alexander Aliaga (`AlexanderAliaga19`) | Done |
+| 2 | US11 | Ver el detalle de una suscripción desde el Dashboard | S2-T06 | Vista de detalle, edición y recordatorio de suscripción | Conectar `GET /api/v1/subscriptions/{id}`, `PATCH /{id}` y `GET /{id}/reminder` con la pantalla de detalle de suscripción en Flutter y Kotlin. | **[COMPLETAR: horas]** | Alexander Aliaga (`AlexanderAliaga19`) | Done |
+| 2 | US27 | Buscar una suscripción por nombre en el Dashboard | S2-T07 | Buscador incremental por nombre y filtro de categoría | Integrar el parámetro `search` y `category` de `GET /api/v1/subscriptions` con la barra de búsqueda en la pantalla de Gastos en Flutter y Kotlin. | **[COMPLETAR: horas]** | Alexander Aliaga (`AlexanderAliaga19`) | Done |
+| 2 | US35 | Ver el ahorro estimado por cancelar una suscripción antes de su renovación | S2-T08 | Cálculo de `estimatedSavings` al cancelar una suscripción | Incorporar el objeto `estimatedSavings` (`amount`, `currency`, `amountPen`, `exchangeRate`) en `POST /api/v1/subscriptions/{id}/cancel` (`8461f02`) cuando la baja ocurre antes de la fecha de renovación en zona `America/Lima`. | **[COMPLETAR: horas]** | Josué Carpio (`josf17`) | Done |
+| 2 | TS06 / US21–US23 / US31 / US39 | Servicio de suscripción Premium, cupo del plan Free y pasarela Mercado Pago | S2-T09 | Dominio, persistencia V4–V5, adaptador Mercado Pago y webhook firmado | Implementar `PremiumMembership`, migraciones V4 y V5, límite de 5 suscripciones en plan Free (`d417efb`), `MercadoPagoPaymentAdapter`, `MercadoPagoWebhookSignature` y endpoints `/api/v1/premium/*`. | **[COMPLETAR: horas]** | Josué Carpio (`josf17`) | Done |
+| 2 | US18 / TS05 | Sugerencias de comercios de delivery con Google Places | S2-T10 | Adaptador ACL de Google Places Text Search y endpoint de sugerencias | Implementar `GooglePlacesAdapter` (`b152bf6`) y exponer `GET /api/v1/delivery-expenses/merchants/suggestions` (`f6f85d2`, `e0fd574`) con validación de longitud y autenticación JWT. | **[COMPLETAR: horas]** | Josué Carpio (`josf17`) | Done |
+| 2 | US21–US23 / US39 | Integración de CraveWallet Premium en aplicación Android nativa (Kotlin) | S2-T11 | Estado Premium, `PremiumSheet`, desbloqueo de Análisis y estado en Perfil en Kotlin | Actualizar `CraveWallet-Mobile` (rama `feature/premium`, PR #1 `c94e795`) con `PremiumStatus`, consumo de `/api/v1/premium/*`, hoja modal de pago con Mercado Pago y prueba de integración. | **[COMPLETAR: horas]** | Josué Carpio (`josf17`) | Done |
+| 2 | Transversal / US21–US23 / US31 | Aplicación móvil multiplataforma en Flutter e integración con Mercado Pago | S2-T12 | Migración a Flutter 3 y flujo completo de checkout, estado e historial Premium | Construir `CraveWallet-Flutter` (`853687c`, `d32ecc0`) con autenticación, suscripciones, delivery, `PremiumScreen`, apertura de checkout en Mercado Pago y suite `premium_flow_test.dart`. | **[COMPLETAR: horas]** | Alexander Aliaga (`AlexanderAliaga19`) | Done |
+| 2 | Transversal | Configuración de despliegue en Render y CORS para clientes web/móviles | S2-T13 | Blueprint `render.yaml`, CORS para Flutter Web y documentación de despliegue | Añadir `render.yaml` (`a7e1437`), soporte CORS para puertos locales de Flutter Web (`014c83d`) y guías técnicas en `docs/` del backend. | **[COMPLETAR: horas]** | Josué Carpio (`josf17`) | Done |
+
+*Fuente: elaboración del equipo Gastify a partir del Product Backlog y los commits de `CraveWallet-Backend`, `CraveWallet-Mobile` y `CraveWallet-Flutter`.*
 
 #### 4.2.2.4. Development Evidence for Sprint Review
 
-**Aplicación Flutter.** El [commit de migración](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/853687cd1e54466b6c39a84d114480441f0da725) incorpora una aplicación en Dart con el tema y la navegación propios de Flutter. El [ajuste de Material](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/079f9ce8504fa0fc86f0dad9b0c05355852a30d6) y el [ajuste de `intl`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/ad7ace8de934938d79f8301e96c7c9656cd8b4e3) completan los cambios de dependencias del corte.
+Durante el Sprint 2 el desarrollo abarcó tres repositorios de código productivo: la aplicación móvil nativa para Android en Kotlin y Jetpack Compose (`CraveWallet-Mobile`), la aplicación móvil multiplataforma en Dart y Flutter (`CraveWallet-Flutter`) y el backend de servicios RESTful en Java 21 y Spring Boot (`CraveWallet-Backend`). Disponer tanto de la implementación nativa en Kotlin como de la implementación multiplataforma en Flutter responde al alcance de ingeniería móvil del proyecto y se alinea con la literatura reciente sobre frameworks multiplataforma, que destaca a Flutter por su consistencia visual mediante motor de renderizado propio y su coexistencia con arquitecturas nativas orientadas a rendimiento y acceso directo a APIs del sistema [@jost2025crossplatform].
 
-La figura AV2-1 muestra la migración y los ajustes posteriores en la rama `develop`.
+**Aplicación Android nativa (`CraveWallet-Mobile`, Kotlin y Jetpack Compose).** En la rama `feature/premium`, integrada a `develop` mediante el [PR #1 (`c94e795`)](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/c94e795), se completó la integración del módulo Premium de extremo a extremo con el backend. Se añadieron los modelos `PlanType`, `MembershipStatus`, `PremiumStatus` y `PremiumCheckoutSession` (`687b6cf`), las operaciones HTTP `getPremiumStatus`, `startPremiumCheckout` y `cancelPremium` en `ApiClient` (`6699ca1`) y su coordinación en `Repository` y `AppState` (`0b5d75f`, `cdd1905`). En la capa de interfaz se implementó el componente `PremiumSheet` (`982956f`), que presenta el detalle del plan de S/ 9.99/mes, abre el checkout alojado de Mercado Pago en el navegador del dispositivo, permite verificar el estado confirmado por el servidor y gestionar la cancelación al cierre del período; además, se conectó el bloqueo/desbloqueo de la pestaña `AnalysisScreen` (`359b035`, `3d40aa8`) y la visualización del estado de membresía en `ProfileScreen` (`ea4b12d`). Asimismo, se integró en `develop` la corrección del precio mensual a S/ 9.99 (`6f0ca26`).
+
+**Aplicación móvil multiplataforma (`CraveWallet-Flutter`, Dart y Flutter 3).** El [commit de migración `853687c`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/853687cd1e54466b6c39a84d114480441f0da725) incorporó la aplicación multiplataforma en Dart con Material 3 y la arquitectura de estado `CraveWalletController`. Los commits [`079f9ce`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/079f9ce8504fa0fc86f0dad9b0c05355852a30d6) y [`ad7ace8`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/ad7ace8de934938d79f8301e96c7c9656cd8b4e3) alinearon las dependencias de Material y `intl`, y el commit [`d32ecc0`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/d32ecc0) (integrado en `develop` mediante el PR #1 `40ee310`) incorporó el flujo completo de CraveWallet Premium con Mercado Pago (`PremiumScreen`, validación de dominio de checkout, refresco automático al reanudar la aplicación con `WidgetsBindingObserver`, cancelación de renovación e historial de pagos). La figura AV2-1 muestra el historial inicial de commits en la rama `develop` de `CraveWallet-Flutter`.
 
 ![Figura AV2-1. Historial de commits de CraveWallet-Flutter en develop.](images/chapter_4/av2/flutter.jpg)
 
@@ -911,16 +972,21 @@ La figura AV2-1 muestra la migración y los ajustes posteriores en la rama `deve
 
 *Fuente: captura del [historial de Flutter en GitHub](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commits/develop/), 13 de noviembre de 2026.*
 
-- **Acceso y sesión.** Registro e inicio de sesión por correo, renovación de JWT y cierre de sesión. El cliente conserva los datos de sesión en `shared_preferences` e incluye un modo demostración.
-- **Inicio y suscripciones.** Resumen mensual, importes normalizados a PEN, alta por formulario, búsqueda, detalle, cancelación y consulta de suscripciones canceladas. El cliente consume los servicios REST de suscripciones.
-- **Delivery.** Formulario de gasto, resumen mensual y edición del presupuesto del mes conectado al backend.
-- **Análisis, perfil y recordatorios.** La aplicación incorpora la navegación y las pantallas correspondientes. El formulario de recordatorios permite ajustar opciones de calendario, notificaciones, anticipación y hora. El recorrido en dispositivo y la programación efectiva de avisos requieren su propia evidencia.
+Los módulos implementados en `CraveWallet-Flutter` cubren los siguientes flujos:
 
-**Backend.** El [corte de AV2, commit `3a59d60`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/3a59d60a8c15eebe29546e5bd69ef75b7ab776fd), incorpora persistencia y consulta de la membresía Premium, control del cupo según el plan, un adaptador de búsqueda de comercios con Google Places y consultas de totales por categoría y ahorro estimado por cancelación.
+- **Acceso y sesión:** registro e inicio de sesión por correo, rotación automática de JWT ante respuestas `401`, persistencia local en `shared_preferences` y modo demostración aislado cuando no hay sesión remota.
+- **Inicio y suscripciones:** resumen mensual con conversión a PEN, alta por formulario, búsqueda incremental por nombre o categoría, orden por próximo cobro, vista de detalle, edición, cancelación y consulta de suscripciones canceladas.
+- **Delivery:** formulario de registro de gasto con categoría y fecha, resumen mensual por categoría y semana, y edición del presupuesto mensual conectado al backend.
+- **Análisis, Premium, perfil y recordatorios:** bloqueo de la vista de análisis para cuentas en plan `FREE` con redirección a `PremiumScreen`, mapa de calor de próximos cobros y desglose por categoría para cuentas `PREMIUM`, checkout con Mercado Pago mediante `url_launcher`, historial de cobros y configuración de recordatorios.
 
-**Premium con Mercado Pago.** El [PR #1](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/pull/1) integró en `feature/av2-premium-backend` el adaptador de Suscripciones de Mercado Pago, el checkout mensual de S/ 9.99, la consulta de estado, la cancelación de futuras renovaciones, el historial de pagos y la recepción de webhooks firmados. Las menciones de Stripe en AV1 y TB1 corresponden al diseño de esas entregas.
+**Servicios RESTful (`CraveWallet-Backend`, Java 21 y Spring Boot 3).** En las ramas `feature/av2-premium-backend` y `feature/av2-mercadopago`, integradas en `develop` mediante el [PR #1 (`3a59d60`)](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/pull/1) y el [PR #2 (`a0aeabc`)](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/pull/2) junto con el ajuste `072be4d`, el backend incorporó:
 
-La figura AV2-2 muestra el commit que incorpora el contrato de checkout mensual al backend.
+1. **Bounded Context `Premium & Billing` y control de cupo por plan:** modelo de dominio (`PremiumMembership`, `MembershipStatus`, `PlanType`), migraciones Flyway `V4__add_premium_memberships.sql` y `V5__add_premium_billing.sql`, adaptador `PremiumPlanAccessAdapter` que impone el límite de 5 suscripciones activas en el plan `FREE` con bloqueo pesimista por usuario (`d417efb`), y los cinco endpoints bajo `/api/v1/premium`.
+2. **Subtotales por categoría y ahorro estimado por cancelación (`US09`, `US35`):** extensión de `GET /api/v1/subscriptions` con el mapa `monthlyTotalsByCategory` en PEN y de `POST /api/v1/subscriptions/{id}/cancel` con el cálculo de `estimatedSavings` cuando la suscripción se cancela antes de su fecha de renovación en la zona horaria `America/Lima` (`8461f02`).
+3. **Sugerencias de comercios con Google Places (`US18`, `TS05`):** puerto `MerchantSearchPort`, servicio `MerchantSearchService`, adaptador anticorrupción `GooglePlacesAdapter` hacia `https://places.googleapis.com/v1/places:searchText` (`b152bf6`) y endpoint protegido `GET /api/v1/delivery-expenses/merchants/suggestions` (`f6f85d2`, `e0fd574`).
+4. **Seguridad y despliegue:** configuración de CORS para clientes Flutter Web locales (`014c83d`) y descriptor `render.yaml` para despliegue automatizado en Render (`a7e1437`).
+
+La figura AV2-2 muestra el commit que incorpora el contrato del puerto de pago recurrente y la figura AV2-3 presenta el pull request de integración de Mercado Pago en el backend.
 
 ![Figura AV2-2. Commit del contrato de checkout mensual de Premium.](images/chapter_4/av2/backend.jpg)
 
@@ -932,8 +998,6 @@ La figura AV2-2 muestra el commit que incorpora el contrato de checkout mensual 
 
 *Fuente: captura del [commit 22ecef8 de CraveWallet-Backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/22ecef8808a3bfc1bf103014e9ff4448c544c03a), 13 de noviembre de 2026.*
 
-La figura AV2-3 muestra el PR integrado en la rama de AV2.
-
 ![Figura AV2-3. Integración de Mercado Pago en el backend de AV2.](images/chapter_4/av2/backend-mercado-pago-merge.jpg)
 
 <!-- pdf:omit-start -->
@@ -944,11 +1008,94 @@ La figura AV2-3 muestra el PR integrado en la rama de AV2.
 
 *Fuente: captura del [PR #1 de CraveWallet-Backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/pull/1), 13 de noviembre de 2026.*
 
+##### Aprendizaje autónomo: Integración de pagos recurrentes con Mercado Pago Suscripciones
+
+Como componente de aprendizaje autónomo del curso (vinculado al *Student Outcome 7* y a los spikes `SP05` y `SP06`), el equipo investigó e implementó la facturación recurrente del plan CraveWallet Premium utilizando la API de Suscripciones y Webhooks de Mercado Pago [@mercadoPagoSubscriptions; @mercadoPagoWebhooks]:
+
+- **Justificación de la elección frente a Stripe:** durante AV1 y TB1 se modeló la integración con Stripe Billing. Al prototipar el flujo para el mercado peruano en el Sprint 2, el equipo verificó que Mercado Pago ofrece soporte nativo en Perú para cobros recurrentes directamente en soles peruanos (`PEN`, S/ 9.99 mensuales) mediante un checkout alojado (`init_point`), evitando recargos por conversión de divisa en las tarjetas locales de los dos segmentos objetivo.
+- **Aspectos técnicos investigados y aprendidos:** el equipo estudió el ciclo de vida del recurso `preapproval` en Mercado Pago y la diferencia operativa entre suscripciones asociadas a un plan predefinido (`preapproval_plan_id`, que exigen enviar `card_token_id` en la creación) y suscripciones directas creadas en estado `pending` mediante `POST /preapproval` con `auto_recurring` (`frequency = 1`, `frequency_type = months`, `transaction_amount = 9.99`, `currency_id = PEN`), las cuales devuelven la URL `init_point` para que el usuario autorice el medio de pago en el entorno seguro del proveedor. Asimismo, se investigaron las particularidades del entorno de pruebas de Mercado Pago (cuentas de prueba vendedor/comprador y comportamiento del campo `live_mode` en notificaciones de suscripciones) y el esquema criptográfico de verificación de webhooks mediante el encabezado `x-signature` (`ts` y firma `v1` HMAC-SHA256 sobre el manifiesto `id:[data.id];request-id:[x-request-id];ts:[ts];`).
+- **Aplicación en la arquitectura de CraveWallet:** para proteger el dominio conforme a la Estrategia 4 (sección 2.1.2) y el patrón *Anti-Corruption Layer* (sección 2.5.2), se definió el puerto `PremiumPaymentGateway` en la capa de dominio y se implementó en infraestructura mediante `MercadoPagoPaymentAdapter` y `MercadoPagoWebhookSignature`. El servicio `PremiumBillingService` y el repositorio transaccional `JdbcPremiumBillingRepository` aseguran que: (1) iniciar un checkout (`POST /api/v1/premium/checkout`) solo reserve o reutilice una sesión `PENDING` sin otorgar privilegios Premium; (2) el acceso `ACTIVE` solo se conceda cuando `POST /api/v1/premium/webhook` valide la firma HMAC-SHA256, consulte el pago/factura en la API de Mercado Pago y confirme que está aprobado por S/ 9.99 `PEN` y vinculado a una suscripción autorizada; y (3) las entregas repetidas o fuera de orden se dedupliquen mediante restricciones únicas sobre `external_id` e `invoice_id` en PostgreSQL/H2. Tanto en Kotlin (`CraveWallet-Mobile`) como en Flutter (`CraveWallet-Flutter`), el cliente móvil abre el `checkoutUrl` externo y consulta `GET /api/v1/premium/status` al retomar el foco para reflejar exclusivamente el estado confirmado por el servidor.
+
+##### Registro de commits de desarrollo del Sprint 2
+
+Las tablas 164, 165 y 166 registran todos los commits de implementación realizados durante el Sprint 2 (11 de octubre al 13 de noviembre de 2026) en `CraveWallet-Flutter`, `CraveWallet-Mobile` y `CraveWallet-Backend`, excluyendo los commits dedicados únicamente a pruebas automatizadas (que se listan en la sección 4.2.2.5). El repositorio `cravewallet-landing` mantiene en producción el corte publicado al cierre del Sprint 1 (último commit `634f5e7` del 9 de octubre de 2026).
+
+*Tabla 164. Commits de desarrollo en CraveWallet-Flutter durante el Sprint 2.*
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| `CraveWallet-Flutter` | `main` | [`b803bfe`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/b803bfe) | `Initial commit` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Flutter` | `develop` | [`853687c`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/853687c) | `feat: migrate CraveWallet mobile app to Flutter` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Flutter` | `develop` | [`079f9ce`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/079f9ce) | `fix: support Flutter 3.50 Material package` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Flutter` | `develop` | [`ad7ace8`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/ad7ace8) | `fix: align intl with material_ui` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Flutter` | `feature/av2-premium-flutter` | [`d32ecc0`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/d32ecc0) | `feat: integrate Premium and Mercado Pago in Flutter` | Sin cuerpo | 13/11/2026 |
+
+*Fuente: historial Git del repositorio `CraveWallet-Flutter`.*
+
+*Tabla 165. Commits de desarrollo en CraveWallet-Mobile (Kotlin) durante el Sprint 2.*
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| `CraveWallet-Mobile` | `feature/premium` | [`cdd1905`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/cdd1905) | `feat(premium): integrate premium state management` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Mobile` | `feature/premium` | [`6699ca1`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/6699ca1) | `feat(api): add premium backend endpoints` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Mobile` | `feature/premium` | [`687b6cf`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/687b6cf) | `feat(models): add premium subscription models` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Mobile` | `feature/premium` | [`0b5d75f`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/0b5d75f) | `feat(data): implement premium repository operations` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Mobile` | `feature/premium` | [`359b035`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/359b035) | `feat(analysis): update premium analytics features` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Mobile` | `feature/premium` | [`3d40aa8`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/3d40aa8) | `feat(ui): integrate premium navigation and access` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Mobile` | `feature/premium` | [`982956f`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/982956f) | `feat(premium): implement premium subscription interface` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Mobile` | `feature/premium` | [`ea4b12d`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/ea4b12d) | `feat(profile): display premium membership status` | Sin cuerpo | 13/11/2026 |
+
+*Fuente: historial Git del repositorio `CraveWallet-Mobile`.*
+
+*Tabla 166. Commits de desarrollo en CraveWallet-Backend durante el Sprint 2.*
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`6501fbd`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/6501fbd) | `feat(premium): define membership lifecycle states` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`c7e6893`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/c7e6893) | `feat(premium): implement membership domain model` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`e622701`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/e622701) | `feat(database): add premium membership migration` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`e25b915`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/e25b915) | `feat(premium): add membership JPA entity` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`c7d4dcc`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/c7d4dcc) | `feat(premium): define membership repository contract` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`b3d095d`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/b3d095d) | `feat(premium): implement membership persistence` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`95fc3cf`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/95fc3cf) | `feat(premium): implement membership status service` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`0a09c26`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/0a09c26) | `feat(premium): expose membership status endpoint` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`b8c46bb`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/b8c46bb) | `feat(security): protect premium status endpoint` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`2d0c1a6`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/2d0c1a6) | `feat(subscriptions): define plan access contract` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`5a3c5f8`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/5a3c5f8) | `feat(premium): expose active membership access` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`d417efb`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/d417efb) | `feat(subscriptions): enforce plan-based registration limits` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`6bc89c1`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/6bc89c1) | `feat(delivery): add merchant suggestion domain model` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`593e35c`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/593e35c) | `feat(delivery): define merchant search port` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`22ecef8`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/22ecef8) | `feat(premium): define payment gateway contract` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`d3becd2`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/d3becd2) | `feat(delivery): implement merchant search application service` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`b152bf6`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/b152bf6) | `feat(delivery): implement Google Places search adapter` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`8461f02`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/8461f02) | `feat(subscriptions): add category totals and estimated cancellation savings` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`14eb098`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/14eb098) | `feat(premium): update premium membership management` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`5a16a06`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/5a16a06) | `feat(premium): implement Mercado Pago billing service` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`ee05cd4`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/ee05cd4) | `feat(premium): add billing error handling` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`8efa658`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/8efa658) | `feat(premium): define premium billing repository` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`1468431`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/1468431) | `feat(premium): extend payment gateway contract` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`7835275`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/7835275) | `feat(premium): integrate Mercado Pago subscription API` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`56cdc16`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/56cdc16) | `feat(premium): validate Mercado Pago webhook signatures` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`a5718c6`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/a5718c6) | `feat(premium): implement billing persistence` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`5d05469`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/5d05469) | `feat(premium): add checkout and payment endpoints` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`a5feb7a`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/a5feb7a) | `feat(premium): implement payment webhook endpoint` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`cee4ad0`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/cee4ad0) | `fix(security): configure premium webhook access` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`b6ccef5`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/b6ccef5) | `feat(premium): handle payment integration errors` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`1fa0158`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/1fa0158) | `feat(database): add premium billing migration` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`8522793`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/8522793) | `chore(config): enable persistent local database for premium testing` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`a7e1437`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/a7e1437) | `chore(deploy): configure Render deployment` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`f6f85d2`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/f6f85d2) | `feat(delivery): add merchant suggestions endpoint` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`e0fd574`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/e0fd574) | `fix(security): secure merchant suggestions endpoint` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`014c83d`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/014c83d) | `fix(security): configure CORS for Flutter Web` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Backend` | `develop` | [`072be4d`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/072be4d) | `fix(premium): bug after you cancelled` | Sin cuerpo | 13/11/2026 |
+
+*Fuente: historial Git del repositorio `CraveWallet-Backend`.*
+
 #### 4.2.2.5. Testing Suite Evidence for Sprint Review
 
-El [repositorio Flutter](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/tree/ad7ace8de934938d79f8301e96c7c9656cd8b4e3) versiona dos pruebas de modelos. Una comprueba la normalización del costo mensual en PEN de una suscripción anual y otra comprueba la lectura de una suscripción desde la respuesta REST. La [ejecución de Flutter CI](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/actions/runs/43304678864) terminó con éxito para `ad7ace8` e incluyó `flutter pub get`, `flutter analyze` y `flutter test`. La rama de backend versiona pruebas para estado Premium, autenticación, límite por plan, totales por categoría y ahorro estimado.
+Estudios empíricos sobre proyectos Android demuestran que la ausencia de pruebas automatizadas sobre flujos asíncronos, red y estados de interfaz es una de las principales causas de regresiones en aplicaciones móviles [@mahmud2025android]. Por ello, durante el Sprint 2 el equipo amplió la suite de pruebas automatizadas tanto en el backend (`CraveWallet-Backend`, pasando de 32 pruebas en TB1 a **72 pruebas** en 13 clases de prueba sobre `develop`) como en las dos aplicaciones móviles: **10 pruebas** en `CraveWallet-Mobile` (Kotlin) y **8 pruebas** en `CraveWallet-Flutter` (Dart/Flutter).
 
-La figura AV2-4 muestra el resultado de la validación automatizada de Flutter.
+La figura AV2-4 muestra la ejecución satisfactoria del workflow `Flutter CI` (`flutter pub get`, `flutter analyze` y `flutter test`) en GitHub Actions, y la figura AV2-5 muestra la ejecución satisfactoria de `Backend build` (`mvnw -B verify`) en GitHub Actions.
 
 ![Figura AV2-4. Flutter CI finalizado con éxito para el commit ad7ace8.](images/chapter_4/av2/ci.jpg)
 
@@ -960,8 +1107,6 @@ La figura AV2-4 muestra el resultado de la validación automatizada de Flutter.
 
 *Fuente: captura de [Flutter CI, ejecución 43304678864](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/actions/runs/43304678864), 13 de noviembre de 2026.*
 
-La figura AV2-5 registra que `Backend build` completó `mvnw -B verify` para el commit `3a59d60`. La suite de Premium usa H2, MockMvc y respuestas simuladas del proveedor para cubrir el ciclo de cobro recurrente. La evidencia de un pago de extremo a extremo en el entorno de prueba de Mercado Pago sigue pendiente.
-
 ![Figura AV2-5. Backend build finalizado con éxito para el commit 3a59d60.](images/chapter_4/av2/backend-build.jpg)
 
 <!-- pdf:omit-start -->
@@ -972,21 +1117,208 @@ La figura AV2-5 registra que `Backend build` completó `mvnw -B verify` para el 
 
 *Fuente: captura de [Backend build, ejecución 43355415595](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/actions/runs/43355415595), 13 de noviembre de 2026.*
 
+La tabla 167 detalla las 13 clases de prueba del backend en `src/test/java/pe/edu/upc/gastify/cravewallet/` y los comportamientos verificados en cada una.
+
+*Tabla 167. Suite de pruebas automatizadas del backend en el Sprint 2.*
+
+| Clase de prueba | Casos | Comportamientos verificados |
+| --- | :---: | --- |
+| `AuthIntegrationTest` | 9 | Registro normalizado, rechazo de correo duplicado e inválido, opacidad de error en login, inicio en plan `FREE` (`GET /api/v1/premium/status`), rotación y revocación de `refreshToken`, actualización de moneda `PEN` (`US03`), rechazo de JWT manipulado/expirado y serialización de refresh concurrente. |
+| `BackendBootstrapTest` | 4 | Respuesta a preflight CORS desde puertos locales de Flutter Web, disponibilidad pública de `/actuator/health`, exposición de rutas de autenticación en OpenAPI y protección `401` de rutas de negocio sin token. |
+| `SubscriptionIntegrationTest` | 7 | Aislamiento por propietario, edición/cancelación/historial (`US26`) y liberación de cupo en plan `FREE`, validación de solicitudes vacías o inválidas, cálculo de subtotales `monthlyTotalsByCategory` (`US09`) y `estimatedSavings` al cancelar (`US35`), recordatorio 24 horas antes (`US12`), endpoint de tipo de cambio y bloqueo concurrente del límite de 5 suscripciones en plan `FREE` (`US39`). |
+| `DeliveryIntegrationTest` | 7 | Autenticación y validación de longitud en búsqueda de comercios, traducción de sugerencias de Google Places y manejo de error `503` (`US18`), resumen mensual y límites de período, idempotencia por `requestId` y conflicto `409`, aislamiento por usuario, validación de entradas y acumulación bajo escrituras simultáneas. |
+| `ExchangeRateServiceTest` | 5 | Reutilización de caché de 24 horas, respaldo (*fallback*) de hasta 7 días ante caída del proveedor, error `503` sin caché e identidad `1.0` para monedas iguales, rechazo de marcas de tiempo inválidas y deduplicación de consultas concurrentes. |
+| `OpenExchangeRateAdapterTest` | 2 | Traducción del JSON de ExchangeRate-API al modelo de dominio y rechazo controlado de respuestas HTTP de error, `429` o JSON malformado. |
+| `PortfolioConversionTest` | 5 | Normalización de suscripciones anuales en USD a costo mensual en PEN antes de redondear, preservación del portafolio sin tasa disponible, cálculo del ahorro anual completo en `estimatedSavings` antes de la fecha de renovación en Lima (`US35`), ahorro en moneda original sin tasa y ahorro nulo cuando se cancela en la fecha de cobro o después. |
+| `PremiumIntegrationTest` | 2 | Rechazo `401` a consultas anónimas en `/api/v1/premium/status` y estado inicial `FREE` (`monthlyPrice = 9.99`, `currency = PEN`) para cuentas nuevas. |
+| `PremiumPlanAccessIntegrationTest` | 2 | Permiso para registrar una sexta suscripción activa cuando la membresía Premium está `ACTIVE` y bloqueo `409` al sexto registro cuando la membresía ha expirado (`EXPIRED`). |
+| `PremiumBillingIntegrationTest` | 16 | Autenticación y reutilización de checkout `PENDING`, protección ante resultados inciertos del proveedor, bloqueo de concurrencia en creación de checkout, recuperación por `external_reference`, rechazo de firmas HMAC-SHA256 inválidas, expiradas o con cuerpo alterado, validación de `data.id` y `ts` en milisegundos, activación e historial de pagos ante cobro aprobado, rechazo de pagos pendientes/rechazados/con monto o moneda distintos o sin suscripción autorizada, prevención de apropiación cruzada de suscripciones, idempotencia ante pagos fuera de orden, conservación de vigencia hasta `periodEndsAt` tras cancelar (`US23`) y creación de nueva sesión tras cancelar un checkout pendiente. |
+| `PremiumPaymentModeTest` | 3 | Activación cuando `live_mode` coincide con el modo esperado, reprocesamiento idempotente de entregas previas y rechazo cuando `live_mode` no coincide o está ausente. |
+| `MercadoPagoPaymentAdapterTest` | 9 | Creación de suscripción alojada con términos fijos (`S/ 9.99 PEN`) y lectura de `init_point`, ordenamiento por fecha de modificación en búsquedas de recuperación, registro diagnóstico seguro ante rechazos HTTP o no-JSON, consulta separada de facturas (`authorized_payments`) y pagos (`/v1/payments`), coincidencia exacta de `external_reference`, cancelación remota y manejo de credenciales ausentes. |
+| `ProductionDocumentationTest` | 1 | Exposición pública de Swagger UI y OpenAPI en el perfil `prod` manteniendo protegidos con JWT los endpoints de perfil y sugerencias de comercios. |
+
+*Fuente: código fuente de pruebas en `CraveWallet-Backend` (`src/test/java/pe/edu/upc/gastify/cravewallet/`).*
+
+La tabla 168 resume las pruebas automatizadas ejecutadas en las dos aplicaciones móviles (`CraveWallet-Mobile` en Kotlin y `CraveWallet-Flutter` en Dart/Flutter).
+
+*Tabla 168. Suite de pruebas automatizadas de las aplicaciones móviles (Kotlin y Flutter) en el Sprint 2.*
+
+| Repositorio | Archivo / Clase de prueba | Casos | Comportamientos verificados |
+| --- | --- | :---: | --- |
+| `CraveWallet-Mobile` (Kotlin) | `BackendIntegrationTest.kt` | 9 | Escritura JSON y manejo de conflictos, rotación de `refreshToken` bajo concurrencia, recorrido completo contra el backend, portafolio vacío sin datos demo para cuentas reales, sesión persistida y logout, manejo de cotización no disponible, reintento automático tras `401`, limpieza de sesión inválida y **`premiumCheckoutKeepsAccessLockedUntilTheServerConfirmsPayment`** (verifica `503` sin configurar, creación de checkout en `/api/v1/premium/checkout`, mantenimiento del plan `FREE` mientras el estado es `PENDING` y desbloqueo de `PREMIUM` a S/ 9.99 solo tras confirmación del servidor). |
+| `CraveWallet-Mobile` (Kotlin) | `AppConnectionUiTest.kt` | 1 | Prueba instrumentada de interfaz en Jetpack Compose para inicio y cierre de sesión contra el servidor. |
+| `CraveWallet-Flutter` (Dart) | `test/models_test.dart` | 2 | Normalización a costo mensual en PEN de una suscripción anual en USD (`Subscription.monthlyAmountInPen`) y deserialización de `Subscription.fromApi` desde el contrato REST. |
+| `CraveWallet-Flutter` (Dart) | `test/premium_flow_test.dart` | 6 | (1) El checkout mantiene el plan en `FREE` mientras el estado es `PENDING` y activa `PREMIUM` solo cuando el backend confirma `ACTIVE`; (2) `cancelPremium` conserva acceso hasta `periodEndsAt` y carga el historial de pagos; (3) una respuesta `404` en endpoints de Premium preserva la sesión autenticada y muestra mensaje de respaldo; (4) el controlador rechaza URLs de checkout fuera de los dominios de Mercado Pago; (5) prueba de widgets que verifica que la pestaña `Análisis` muestra el bloqueo `Ver Premium` en cuentas gratuitas y navega a `CraveWallet Premium`; (6) prueba de widgets que verifica que la pestaña `Análisis` despliega el `Mapa de calor de próximos cobros` cuando el usuario es `PREMIUM`. |
+
+*Fuente: archivos de prueba en `CraveWallet-Mobile` y `CraveWallet-Flutter`.*
+
+##### Especificaciones de aceptación en Gherkin (`.feature`) del Sprint 2
+
+A continuación se presentan las especificaciones de aceptación en sintaxis Gherkin correspondientes a las historias de usuario del Sprint 2 (`US03`, `US04`, `US26`, `US09`, `US10`, `US11`, `US27`, `US35` y `US22`), derivadas directamente de los criterios de aceptación de la sección 2.4.1 y verificadas por las suites de las tablas 167 y 168:
+
+```gherkin
+# language: es
+Característica: Configuración de perfil y portafolio de suscripciones en el Sprint 2
+
+  Escenario: US03 - Confirmación por defecto de la moneda de referencia en soles
+    Dado que el usuario completa su perfil por primera vez
+    Cuando consulta o confirma su moneda de referencia en "/api/v1/users/me"
+    Entonces el sistema muestra el sol peruano ("PEN") preseleccionado y permite confirmarlo
+
+  Escenario: US04 - Selección y registro de una suscripción desde el catálogo precargado
+    Dado que el usuario abre el catálogo precargado en la aplicación móvil
+    Cuando selecciona un servicio como Spotify o Netflix e ingresa el monto y la fecha de su próximo cobro
+    Entonces el sistema registra la suscripción con el nombre y la moneda de facturación definidos
+
+  Escenario: US26 - Consulta del historial de suscripciones canceladas
+    Dado que el usuario tiene al menos una suscripción en estado "CANCELLED"
+    Cuando abre la sección de suscripciones canceladas
+    Entonces el sistema lista cada suscripción cancelada con la fecha de cancelación y su último monto registrado
+
+  Escenario: US09 - Agrupación de suscripciones activas por categoría con subtotales en soles
+    Dado que el usuario tiene suscripciones activas en más de una categoría
+    Cuando consulta el portafolio en el Dashboard o en la vista de Análisis
+    Entonces el sistema agrupa las suscripciones por categoría y expone en "monthlyTotalsByCategory" el subtotal mensual en soles de cada grupo
+
+  Escenario: US10 - Orden ascendente de suscripciones activas por próxima fecha de renovación
+    Dado que el usuario tiene varias suscripciones activas con distintas fechas de cobro
+    Cuando abre el Dashboard en la vista de próximos cobros
+    Entonces el sistema las lista en orden ascendente según "nextBillingDate"
+
+  Escenario: US11 - Apertura del detalle de una suscripción desde el Dashboard
+    Dado que el usuario está en el Dashboard
+    Cuando selecciona una suscripción de la lista
+    Entonces el sistema abre su vista de detalle con el monto original, la moneda, el equivalente en soles, la categoría y la fecha de renovación
+
+  Escenario: US27 - Búsqueda de suscripción por nombre en el Dashboard con y sin coincidencias
+    Dado que el usuario tiene varias suscripciones activas registradas
+    Cuando escribe parte del nombre en el buscador del Dashboard
+    Entonces el sistema filtra la lista mostrando las coincidencias o informa que no se encontraron resultados si ninguna coincide
+
+  Escenario: US35 - Visualización del ahorro estimado al cancelar una suscripción antes de su renovación
+    Dado que el usuario cancela una suscripción activa antes de su próxima fecha de cobro en Lima
+    Cuando confirma la cancelación en "POST /api/v1/subscriptions/{id}/cancel"
+    Entonces el sistema devuelve en "estimatedSavings" el ahorro potencial estimado del ciclo en moneda original y en soles
+
+  Escenario: US22 - Suscripción al plan CraveWallet Premium mediante Mercado Pago
+    Dado que el usuario autenticado en el plan "FREE" inicia el checkout en "POST /api/v1/premium/checkout"
+    Cuando completa el pago en Mercado Pago y el backend verifica la notificación firmada en "POST /api/v1/premium/webhook"
+    Entonces el sistema cambia el estado de la membresía a "ACTIVE", habilita el plan "PREMIUM" y elimina el límite de cinco suscripciones
+```
+
+La tabla 169 enumera los commits específicos de pruebas automatizadas registrados durante el Sprint 2.
+
+*Tabla 169. Commits de pruebas automatizadas en el Sprint 2.*
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`a345595`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/a345595) | `test(premium): verify free membership status and authentication` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`d534b8a`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/d534b8a) | `test(premium): verify plan-based subscription limits` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`7285ed5`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/7285ed5) | `test(subscriptions): verify category totals and currency conversion` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`a8264f0`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/a8264f0) | `test(subscriptions): verify estimated savings on cancellation` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`5f581f9`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/5f581f9) | `test(auth): validate authentication flow` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`ebf8146`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/ebf8146) | `test(premium): validate payment modes` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`d17b5c9`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/d17b5c9) | `test(premium): cover Mercado Pago API integration` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`80e55b0`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/80e55b0) | `test(premium): validate recurring payment lifecycle` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`90ccaa1`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/90ccaa1) | `test(config): add isolated H2 configuration for integration tests` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`9d9065f`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/9d9065f) | `test(delivery): cover merchant search functionality` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`6e80537`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/6e80537) | `test(docs): validate production API endpoints` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`299c800`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/299c800) | `test(security): validate backend CORS configuration` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Mobile` | `feature/premium` | [`3536360`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/3536360) | `test(api): validate premium backend integration` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Flutter` | `develop` | [`853687c`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/853687c) | `feat: migrate CraveWallet mobile app to Flutter` (incluye `test/models_test.dart`) | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Flutter` | `feature/av2-premium-flutter` | [`d32ecc0`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commit/d32ecc0) | `feat: integrate Premium and Mercado Pago in Flutter` (incluye `test/premium_flow_test.dart`) | Sin cuerpo | 13/11/2026 |
+
+*Fuente: historial Git de `CraveWallet-Backend`, `CraveWallet-Mobile` y `CraveWallet-Flutter`.*
+
 #### 4.2.2.6. Execution Evidence for Sprint Review
 
-El recorrido previsto para la revisión comprende iniciar sesión, registrar una suscripción en dólares, consultar su importe mensual en soles, registrar un gasto de delivery y revisar el presupuesto mensual. El modo demostración permite recorrer las pantallas con suscripciones de ejemplo. El flujo de delivery requiere una cuenta conectada al API.
+Ambas aplicaciones móviles (`CraveWallet-Flutter` y `CraveWallet-Mobile` en Kotlin) permiten recorrer los flujos principales de la solución conectadas al backend RESTful y disponen además de un modo de demostración con datos locales cuando no se ha iniciado sesión contra el servidor. La tabla 170 sintetiza las pantallas y flujos alcanzables desde la navegación principal en ambas implementaciones según el código versionado en `develop`.
+
+*Tabla 170. Pantallas y flujos de ejecución verificables en CraveWallet-Flutter y CraveWallet-Mobile.*
+
+| Pantalla / Flujo | Implementación en `CraveWallet-Flutter` (`lib/src/app.dart`) | Implementación en `CraveWallet-Mobile` (`ui/Screens.kt`, `PremiumSheet.kt`) | Endpoints REST consumidos |
+| --- | --- | --- | --- |
+| **1. Acceso (Login / Registro)** | `LoginScreen`: pestañas `Iniciar sesión` y `Crear cuenta`, validación de correo/contraseña y acceso opcional al modo demo. | `LoginScreen`: formulario en Jetpack Compose con alternancia entre login y registro y persistencia en `SharedPreferences`. | `POST /api/v1/auth/register`, `POST /api/v1/auth/login`, `GET /api/v1/users/me` |
+| **2. Inicio (Dashboard)** | `HomeScreen`: total mensual consolidado en PEN, contador de cupo (`X/5` en plan `FREE`), próximos cobros ordenados ascendentemente y resumen rápido de delivery. | `HomeScreen`: tarjeta principal en PEN, alerta del límite del plan gratuito, lista de próximas renovaciones y acceso al alta. | `GET /api/v1/subscriptions`, `GET /api/v1/delivery-expenses/summary`, `GET /api/v1/premium/status` |
+| **3. Alta de suscripción** | `AddSubscriptionScreen`: selección rápida o manual de nombre, monto, moneda (`PEN`/`USD`), ciclo (`MONTHLY`/`ANNUAL`), categoría y fecha de próximo cobro; redirige a `PremiumScreen` si se alcanza el cupo `5/5`. | `AddSubscriptionScreen`: formulario de 3 pasos con previsualización en soles y apertura automática de `PremiumSheet` ante respuesta HTTP `409` por límite del plan gratuito. | `POST /api/v1/subscriptions`, `GET /api/v1/exchange-rate` |
+| **4. Gastos, búsqueda y detalle** | `ExpensesScreen` y `SubscriptionDetailScreen`: buscador por nombre/categoría (`US27`), filtro por categoría, vista de detalle (`US11`), edición, cancelación y lista de suscripciones canceladas (`US26`). | `ExpensesScreen` y `SubscriptionDetailScreen`: barra de búsqueda incremental, chips de categoría, detalle con conversión USD/PEN, cancelación y consulta de bajas. | `GET /api/v1/subscriptions`, `GET /api/v1/subscriptions/{id}`, `PATCH /api/v1/subscriptions/{id}`, `POST /api/v1/subscriptions/{id}/cancel` |
+| **5. Delivery y presupuesto mensual** | `DeliveryScreen`: formulario de gasto con comercio, monto en PEN, categoría y fecha; tarjeta de presupuesto mensual (`US38`) y desglose por categoría y semana. | `DeliveryScreen`: registro idempotente por `requestId`, edición de tope mensual y barra de progreso del presupuesto del mes. | `POST /api/v1/delivery-expenses`, `GET /api/v1/delivery-expenses/summary`, `PUT /api/v1/delivery-expenses/budget`, `GET /api/v1/delivery-expenses/merchants/suggestions` |
+| **6. Análisis por categoría y mapa de calor** | `AnalysisScreen`: vista bloqueada con CTA `Ver Premium` para usuarios `FREE`; al estar `ACTIVE` en `PREMIUM`, despliega el `Mapa de calor de próximos cobros` y la distribución por categoría (`US09`). | `AnalysisScreen`: paywall conectado a `PremiumSheet` en cuentas gratuitas y visualización desbloqueada de distribución por rubro y calendario de cobros en cuentas `PREMIUM`. | `GET /api/v1/subscriptions`, `GET /api/v1/premium/status` |
+| **7. Checkout y gestión de CraveWallet Premium** | `PremiumScreen`: detalle del plan de S/ 9.99/mes (`US21`), botón `Ir a Mercado Pago` (`US22`), verificación de estado (`Actualizar estado`), cancelación al fin del período (`US23`) e historial de pagos (`US31`). | `PremiumSheet`: hoja modal en Material 3 con comparativa de beneficios, lanzamiento de `checkoutUrl` de Mercado Pago, refresco de vigencia y botón de cancelación. | `GET /api/v1/premium/status`, `POST /api/v1/premium/checkout`, `POST /api/v1/premium/cancel`, `GET /api/v1/premium/payments` |
+| **8. Perfil y recordatorios** | `ProfileScreen` y `RemindersScreen`: correo autenticado, moneda de referencia `PEN` (`US03`), insignia del plan (`FREE`/`PREMIUM`), configuración de anticipación de recordatorios y cierre de sesión (`US33`). | `ProfileScreen` y `RemindersScreen`: estado de membresía y fecha `periodEndsAt`, ajustes de recordatorio 24 h antes y botón de cierre de sesión. | `GET /api/v1/users/me`, `PATCH /api/v1/users/me`, `GET /api/v1/subscriptions/{id}/reminder`, `POST /api/v1/auth/logout` |
+
+*Fuente: inspección del código fuente en `CraveWallet-Flutter` (`lib/src/app.dart`) y `CraveWallet-Mobile` (`app/src/main/java/com/gastify/cravewallet/ui/`).*
+
+**[COMPLETAR: insertar capturas de pantalla de la ejecución en CraveWallet-Flutter y CraveWallet-Mobile (Kotlin) para las ocho vistas de la tabla 170: (1) Login/Registro, (2) Inicio/Dashboard, (3) Alta de suscripción, (4) Gastos y Detalle con ahorro estimado, (5) Delivery y presupuesto mensual, (6) Análisis por categoría y mapa de calor, (7) Checkout Premium con Mercado Pago y (8) Perfil y estado de membresía]**
+
+**Enlace al video de demostración de visualización y navegación del Sprint 2:** **[COMPLETAR: insertar URL pública (YouTube / OneDrive) del video de ejecución y navegación de las aplicaciones móviles del Sprint 2]**
 
 #### 4.2.2.7. Services Documentation Evidence for Sprint Review
 
-El [cliente REST de Flutter](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/blob/ad7ace8de934938d79f8301e96c7c9656cd8b4e3/lib/src/api_client.dart) permite configurar `API_BASE_URL`. Sus servicios principales cubren autenticación, perfil, suscripciones y gastos de delivery. El despliegue de referencia de TB1 publicó la [documentación Swagger](https://cravewallet-api.onrender.com/swagger-ui/index.html) y la [especificación OpenAPI](https://cravewallet-api.onrender.com/v3/api-docs).
+En el corte de AV2 (`origin/develop`), el backend en `CraveWallet-Backend` expone y documenta mediante OpenAPI 3 / Swagger UI un total de **22 endpoints REST** (`16` operaciones del corte TB1 más `6` operaciones nuevas incorporadas en el Sprint 2: cinco en `/api/v1/premium` y una en `/api/v1/delivery-expenses/merchants/suggestions`), cubriendo el **100 % (22 / 22)** del inventario de servicios del proyecto.
 
-La [documentación de Premium](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/3a59d60a8c15eebe29546e5bd69ef75b7ab776fd/docs/premium-api.md) describe las cinco operaciones bajo `/api/v1/premium`: `GET /status`, `POST /checkout`, `POST /cancel`, `GET /payments` y `POST /webhook`. El backend usa la API de Suscripciones de Mercado Pago, conserva la referencia del proveedor, verifica la firma de las notificaciones y consulta el recurso asociado antes de habilitar o renovar el acceso tras un pago aprobado [@mercadoPagoSubscriptions; @mercadoPagoWebhooks].
+- **URL de Swagger UI público:** <https://cravewallet-api.onrender.com/swagger-ui/index.html>
+- **URL de especificación OpenAPI 3 (JSON):** <https://cravewallet-api.onrender.com/v3/api-docs>
+- **Documentación técnica versionada en el repositorio del backend:** [`docs/premium-api.md`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/premium-api.md), [`docs/subscriptions-api.md`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/subscriptions-api.md), [`docs/delivery-places.md`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/delivery-places.md), [`docs/flutter-integration.md`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/flutter-integration.md) y [`docs/mobile-integration.md`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/mobile-integration.md).
+
+La tabla 171 documenta los 22 endpoints del REST API en la rama `develop`, especificando método HTTP, ruta, parámetros o cuerpo de entrada, estructura de respuesta y enlace a la documentación interactiva.
+
+*Tabla 171. Documentación de los endpoints del REST API en el corte de AV2.*
+
+| # | Verbo | Ruta | Parámetros / Cuerpo y Autenticación | Respuesta y descripción | Enlace de documentación |
+| :---: | :---: | --- | --- | --- | --- |
+| 1 | `POST` | `/api/v1/auth/register` | Público. Body JSON: `{"email", "password"}` (contraseña 8–72 caracteres). | `201 Created`: `AuthenticationResource` (`accessToken`, `refreshToken`, `expiresIn`, `user: {id, email, referenceCurrency: "PEN"}`). `409` si el correo ya existe. | [Swagger UI](https://cravewallet-api.onrender.com/swagger-ui/index.html) |
+| 2 | `POST` | `/api/v1/auth/login` | Público. Body JSON: `{"email", "password"}`. | `200 OK`: `AuthenticationResource` con par de tokens emitidos. `401` con mensaje opaco si las credenciales son inválidas. | [Swagger UI](https://cravewallet-api.onrender.com/swagger-ui/index.html) |
+| 3 | `POST` | `/api/v1/auth/refresh` | Público. Body JSON: `{"refreshToken"}`. | `200 OK`: `AuthenticationResource` rotando el `refreshToken` de un solo uso. `401` si el token fue usado, expiró o fue revocado. | [Swagger UI](https://cravewallet-api.onrender.com/swagger-ui/index.html) |
+| 4 | `POST` | `/api/v1/auth/logout` | Bearer JWT. Body opcional: `{"refreshToken"}`. | `204 No Content`: revoca las sesiones activas del usuario autenticado. | [Swagger UI](https://cravewallet-api.onrender.com/swagger-ui/index.html) |
+| 5 | `GET` | `/api/v1/users/me` | Bearer JWT. Sin parámetros. | `200 OK`: `ProfileResource` (`{"id", "email", "referenceCurrency": "PEN"}`). | [Swagger UI](https://cravewallet-api.onrender.com/swagger-ui/index.html) |
+| 6 | `PATCH` | `/api/v1/users/me` | Bearer JWT. Body JSON: `{"referenceCurrency": "PEN"}`. | `200 OK`: `ProfileResource` confirmando la moneda de referencia `PEN` (`US03`). `400` para otra divisa. | [Swagger UI](https://cravewallet-api.onrender.com/swagger-ui/index.html) |
+| 7 | `POST` | `/api/v1/subscriptions` | Bearer JWT. Body JSON: `{"name", "amount", "currency", "category", "billingCycle", "nextBillingDate"}`. | `201 Created`: `SubscriptionResource` con `estimatedPenAmount` y metadatos de tasa. `409 Conflict` si el usuario está en plan `FREE` y ya tiene 5 suscripciones activas (`US39`). | [subscriptions-api.md](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/subscriptions-api.md) |
+| 8 | `GET` | `/api/v1/subscriptions` | Bearer JWT. Query opcionales: `status` (`ACTIVE`/`CANCELLED`), `search`, `category`. | `200 OK`: `Portfolio` con `items` ordenados por `nextBillingDate` (`US10`), `monthlyTotalsByCurrency`, `monthlyTotalPen`, `conversionAvailable`, `exchangeRate` y `monthlyTotalsByCategory` en PEN (`US09`). | [subscriptions-api.md](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/subscriptions-api.md) |
+| 9 | `GET` | `/api/v1/subscriptions/{id}` | Bearer JWT. Path: `id` (UUID). | `200 OK`: `SubscriptionResource` del propietario (`US11`). `404` si no existe o pertenece a otro usuario. | [subscriptions-api.md](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/subscriptions-api.md) |
+| 10 | `PATCH` | `/api/v1/subscriptions/{id}` | Bearer JWT. Path: `id` (UUID). Body JSON parcial: `{"amount", "category", "nextBillingDate"}`. | `200 OK`: `SubscriptionResource` actualizado (`US06`). `400` si el cuerpo no incluye cambios. | [subscriptions-api.md](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/subscriptions-api.md) |
+| 11 | `POST` | `/api/v1/subscriptions/{id}/cancel` | Bearer JWT. Path: `id` (UUID). Sin body. | `200 OK`: `CancellationResource` con estado `CANCELLED`, `cancelledAt` y `estimatedSavings` (`{"amount", "currency", "amountPen", "exchangeRate"}`) si se cancela antes de `nextBillingDate` en Lima (`US35`). | [subscriptions-api.md](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/subscriptions-api.md) |
+| 12 | `GET` | `/api/v1/subscriptions/{id}/reminder` | Bearer JWT. Path: `id` (UUID). | `200 OK`: `ReminderResource` (`{"subscriptionId", "title", "reminderAt", "billingAt", "timeZone": "America/Lima", "description"}`) 24 h antes del cobro (`TS04`, `US12`). | [subscriptions-api.md](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/subscriptions-api.md) |
+| 13 | `GET` | `/api/v1/exchange-rate` | Bearer JWT. Query: `from` (default `USD`), `to` (default `PEN`). | `200 OK`: `Rate` (`{"from", "to", "rate", "updatedAt", "fetchedAt", "stale", "source", "attributionUrl"}`). `503` si el proveedor falla y no hay caché válida. | [Swagger UI](https://cravewallet-api.onrender.com/swagger-ui/index.html) |
+| 14 | `POST` | `/api/v1/delivery-expenses` | Bearer JWT. Body JSON: `{"requestId", "merchant", "amount", "category", "expenseDate"}`. | `201 Created` (nuevo) o `200 OK` (reintento idempotente con igual payload): `ExpenseResource`. `409` si `requestId` se reutiliza con datos distintos. | [Swagger UI](https://cravewallet-api.onrender.com/swagger-ui/index.html) |
+| 15 | `GET` | `/api/v1/delivery-expenses/summary` | Bearer JWT. Query: `year`, `month` (1–12). | `200 OK`: `Summary` (`{"year", "month", "currency": "PEN", "total", "spendingLimit", "remaining", "exceeded", "totalsByCategory", "totalsByWeek"}`). | [Swagger UI](https://cravewallet-api.onrender.com/swagger-ui/index.html) |
+| 16 | `PUT` | `/api/v1/delivery-expenses/budget` | Bearer JWT. Body JSON: `{"year", "month", "spendingLimit"}`. | `200 OK`: `BudgetResource` (`{"id", "year", "month", "spendingLimit", "accumulated", "exceeded"}`). | [Swagger UI](https://cravewallet-api.onrender.com/swagger-ui/index.html) |
+| 17 | `GET` | `/api/v1/delivery-expenses/merchants/suggestions` | Bearer JWT. Query: `query` (2–100 caracteres). | `200 OK`: `List<MerchantSuggestion>` (`[{"externalId", "name", "address"}]`) vía Google Places Text Search (`US18`). `503` si la clave o el proveedor no están disponibles. | [delivery-places.md](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/delivery-places.md) |
+| 18 | `GET` | `/api/v1/premium/status` | Bearer JWT. Sin parámetros. | `200 OK`: `PremiumStatusView` (`{"plan": "FREE"\|"PREMIUM", "premium": boolean, "membershipStatus", "periodEndsAt", "cancelAtPeriodEnd", "monthlyPrice": 9.99, "currency": "PEN"}`). | [premium-api.md](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/premium-api.md) |
+| 19 | `POST` | `/api/v1/premium/checkout` | Bearer JWT. Sin body (el servidor fija `S/ 9.99 PEN` y toma el correo de IAM). | `200 OK`: `CheckoutView` (`{"sessionId", "checkoutUrl", "status": "PENDING", "amount": 9.99, "currency": "PEN"}`) creando o reutilizando la suscripción en Mercado Pago (`US22`). | [premium-api.md](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/premium-api.md) |
+| 20 | `POST` | `/api/v1/premium/cancel` | Bearer JWT. Sin body. | `200 OK`: `PremiumStatusView` con `membershipStatus = "CANCELLED"` y `cancelAtPeriodEnd = true`, conservando el acceso Premium hasta `periodEndsAt` (`US23`). | [premium-api.md](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/premium-api.md) |
+| 21 | `GET` | `/api/v1/premium/payments` | Bearer JWT. Sin parámetros. | `200 OK`: `List<PaymentEntry>` (`[{"externalId", "invoiceId", "amount", "currency", "status", "paidAt", "recordedAt"}]`) ordenada de más reciente a más antiguo (`US31`). | [premium-api.md](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/premium-api.md) |
+| 22 | `POST` | `/api/v1/premium/webhook` | Público con firma HMAC-SHA256. Headers: `x-signature`, `x-request-id`. Query: `data.id`. Body JSON de notificación de Mercado Pago. | `200 OK`: `{"processed": boolean, "duplicate": boolean, "status": string}` tras verificar la firma y consultar el pago/factura en Mercado Pago. `401` si la firma es inválida. | [premium-api.md](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/premium-api.md) |
+
+*Fuente: controladores REST en `src/main/java/pe/edu/upc/gastify/cravewallet/**/interfaces/rest/*.java` y guías en `docs/*.md` de `CraveWallet-Backend`.*
+
+**[COMPLETAR: insertar capturas de pantalla de la interacción en Swagger UI con datos de muestra para los nuevos endpoints del Sprint 2: (1) GET /api/v1/premium/status, (2) POST /api/v1/premium/checkout, (3) POST /api/v1/premium/cancel, (4) GET /api/v1/premium/payments y (5) GET /api/v1/delivery-expenses/merchants/suggestions]**
+
+La tabla 172 registra los commits de documentación técnica realizados en los repositorios de código durante el Sprint 2.
+
+*Tabla 172. Commits de documentación técnica en el Sprint 2.*
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`27ee5ed`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/27ee5ed) | `docs(subscriptions): document category totals and cancellation savings` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-mercadopago` | [`4919bb0`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/4919bb0) | `docs(premium): document Mercado Pago integration` | Sin cuerpo | 12/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`1f5edaf`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/1f5edaf) | `docs(deploy): document Render and PostgreSQL deployment` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`d833674`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/d833674) | `docs(delivery): document Google Places merchant search` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`be8fe23`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/be8fe23) | `docs(subscriptions): update subscriptions API documentation` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`5e16c27`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/5e16c27) | `docs(mobile): document backend integration for mobile apps` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`04b94d0`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/04b94d0) | `docs(readme): update project setup and deployment instructions` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Backend` | `feature/av2-premium-backend` | [`47c7e1c`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/commit/47c7e1c) | `docs(mobile): document Flutter backend integration` | Sin cuerpo | 13/11/2026 |
+| `CraveWallet-Mobile` | `feature/premium` | [`cca6c2d`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/commit/cca6c2d) | `docs(api): document premium mobile integration` | Sin cuerpo | 13/11/2026 |
+
+*Fuente: historial Git de `CraveWallet-Backend` y `CraveWallet-Mobile`.*
 
 #### 4.2.2.8. Software Deployment Evidence for Sprint Review
 
-El [landing de CraveWallet](https://cravewallet-landing.vercel.app/es) respondió HTTP 200 en la revisión del 12 de noviembre de 2026. Ese día, las consultas al estado del backend de Render, Swagger y OpenAPI agotaron el tiempo de espera. Queda pendiente verificar la versión desplegada y su cobertura del alcance AV2. La compilación Flutter y su ejecución en dispositivo requieren evidencia identificada por versión.
+El despliegue de los componentes de CraveWallet en el Sprint 2 abarca el landing page en Vercel, el servicio web RESTful con PostgreSQL en Render y el empaquetado de las dos aplicaciones móviles (Android nativo en Kotlin y multiplataforma en Flutter).
 
-La figura AV2-6 muestra la página de inicio publicada en Vercel.
+##### 1. Despliegue del Landing Page en Vercel
+
+El sitio informativo [`cravewallet-landing`](https://cravewallet-landing.vercel.app/es) se despliega automáticamente en Vercel desde la rama `main` con soporte bilingüe (`/es` y `/en`) y enlace directo de descarga del instalador Android. La figura AV2-6 muestra la página publicada y verificada con respuesta HTTP 200.
 
 ![Figura AV2-6. Landing público de CraveWallet.](images/chapter_4/av2/landing.jpg)
 
@@ -998,7 +1330,13 @@ La figura AV2-6 muestra la página de inicio publicada en Vercel.
 
 *Fuente: captura del [landing público de CraveWallet](https://cravewallet-landing.vercel.app/es), 13 de noviembre de 2026.*
 
-**Base de datos de AV2.** La figura AV2-7 muestra las migraciones Flyway versionadas. V1–V3 definen usuarios, sesiones, suscripciones, gastos y presupuestos. V4 crea `premium_memberships`. V5 agrega `premium_checkouts`, `premium_payments` y `premium_webhook_deliveries`. Sus restricciones únicas evitan registrar dos veces el mismo pago o una factura aprobada. La aplicación de V1–V5 en PostgreSQL de Render queda pendiente de comprobar en el historial de Flyway.
+##### 2. Configuración y despliegue de los servicios RESTful (`CraveWallet-Backend`) en Render y PostgreSQL
+
+El backend incluye los descriptores [`Dockerfile`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/Dockerfile), [`render.yaml`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/render.yaml), [`compose.yaml`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/compose.yaml) y [`.env.example`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/.env.example), documentados paso a paso en [`docs/deploy-render.md`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/deploy-render.md):
+
+1. **Empaquetado multi-etapa con Docker (`Dockerfile`):** la primera etapa (`eclipse-temurin:21-jdk-jammy`) copia el wrapper de Maven y el código fuente y ejecuta `./mvnw -B verify` para compilar, ejecutar las 72 pruebas y empaquetar el JAR; la segunda etapa (`eclipse-temurin:21-jre-jammy`) crea el usuario sin privilegios `appuser`, expone el puerto `8080` y arranca la aplicación con `SPRING_PROFILES_ACTIVE=prod` respetando la variable `PORT` inyectada por Render.
+2. **Esquema de base de datos y migraciones Flyway V1–V5:** al iniciar con el perfil `prod`, Flyway aplica automáticamente las cinco migraciones versionadas en `src/main/resources/db/migration` sobre PostgreSQL 17, mientras Hibernate valida el esquema (`ddl-auto: validate`). Las migraciones `V1` a `V3` crean `iam_users`, `iam_sessions`, `subscriptions`, `exchange_rates`, `delivery_expenses` y `monthly_budgets`; `V4` crea `premium_memberships`; y `V5` crea `premium_checkouts`, `premium_payments` y `premium_webhook_deliveries` con restricciones únicas de idempotencia. La figura AV2-7 muestra el directorio de migraciones V1–V5.
+3. **Descriptor de infraestructura (`render.yaml`) y comprobación de salud:** define el servicio web Docker `cravewallet-api` en la región Oregon con ruta de salud `/actuator/health` y la base de datos administrada `cravewallet-db` (PostgreSQL 17).
 
 ![Figura AV2-7. Migraciones Flyway V1–V5 del backend de AV2.](images/chapter_4/av2/backend-flyway-migrations.jpg)
 
@@ -1010,14 +1348,205 @@ La figura AV2-6 muestra la página de inicio publicada en Vercel.
 
 *Fuente: captura del [directorio de migraciones en el commit 3a59d60](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/3a59d60a8c15eebe29546e5bd69ef75b7ab776fd/src/main/resources/db/migration), 13 de noviembre de 2026.*
 
+La tabla 173 detalla las variables de entorno requeridas para el despliegue del servicio en Render conforme a `.env.example` y `render.yaml` (sin exponer valores secretos).
+
+*Tabla 173. Variables de entorno del servicio CraveWallet-Backend para el despliegue de AV2.*
+
+| Variable de entorno | Propósito en el despliegue | Ejemplo / Formato (sin secretos) |
+| --- | --- | --- |
+| `SPRING_PROFILES_ACTIVE` | Activa la configuración de producción (`application-prod.yml`), PostgreSQL y Flyway. | `prod` |
+| `DATABASE_URL` | Cadena JDBC de conexión a la instancia PostgreSQL 17 en Render. | `jdbc:postgresql://<host>:5432/cravewallet` |
+| `DATABASE_USERNAME` | Usuario de conexión a PostgreSQL. | `cravewallet` |
+| `DATABASE_PASSWORD` | Contraseña de la base de datos PostgreSQL. | `<secreto administrado en Render>` |
+| `JWT_SECRET` | Clave secreta HMAC-SHA256 de al menos 32 bytes para firmar y verificar tokens JWT. | `<cadena aleatoria >= 32 caracteres>` |
+| `GOOGLE_PLACES_API_KEY` | Clave de Google Places API (New) para `GET /api/v1/delivery-expenses/merchants/suggestions`. | `<API Key de Google Cloud>` |
+| `MERCADOPAGO_ACCESS_TOKEN` | Token de acceso del vendedor en Mercado Pago para crear y consultar suscripciones y pagos. | `APP_USR-...` / `TEST-...` |
+| `MERCADOPAGO_WEBHOOK_SECRET` | Secreto de firma webhook de Mercado Pago para validar el encabezado `x-signature`. | `<secreto de webhook de Mercado Pago>` |
+| `MERCADOPAGO_BACK_URL` | URL HTTPS pública de retorno tras autorizar el checkout en Mercado Pago. | `https://cravewallet-landing.vercel.app/es` |
+| `MERCADOPAGO_EXPECTED_LIVE_MODE` | Indica si el webhook debe aceptar notificaciones de prueba (`false`) o de producción (`true`). | `false` (pruebas) / `true` (producción) |
+
+*Fuente: archivos `.env.example`, `render.yaml` y `docs/deploy-render.md` en `CraveWallet-Backend`.*
+
+**[COMPLETAR: insertar capturas del panel de Render mostrando el servicio cravewallet-api en estado Live con el commit de AV2 desplegado, la respuesta HTTP 200 de /actuator/health y la tabla flyway_schema_history con las migraciones V1–V5 aplicadas en PostgreSQL]**
+
+##### 3. Compilación y empaquetado de las aplicaciones móviles (Kotlin y Flutter)
+
+Ambas aplicaciones móviles parametrizan la dirección del backend mediante `API_BASE_URL` y se empaquetan como archivos APK instalables en dispositivos Android:
+
+- **Aplicación Android nativa (`CraveWallet-Mobile`, Kotlin):** se compila con Gradle inyectando la propiedad del proyecto `API_BASE_URL`:
+  ```powershell
+  .\gradlew.bat :app:assembleDebug "-PAPI_BASE_URL=https://cravewallet-api.onrender.com"
+  ```
+  El artefacto se genera en `app/build/outputs/apk/debug/app-debug.apk`.
+- **Aplicación móvil multiplataforma (`CraveWallet-Flutter`, Dart/Flutter):** se compila con el SDK de Flutter inyectando la constante de compilación `--dart-define`:
+  ```powershell
+  flutter build apk --debug --dart-define=API_BASE_URL=https://cravewallet-api.onrender.com
+  ```
+  El artefacto se genera en `build/app/outputs/flutter-apk/app-debug.apk`.
+
+**[COMPLETAR: insertar capturas y metadatos de la compilación e instalación de los APK de Kotlin y Flutter en dispositivo Android, indicando modelo del dispositivo, versión de Android y hash SHA-256 del artefacto utilizado en la demostración]**
+
 #### 4.2.2.9. Team Collaboration Insights during Sprint
 
-El [historial de Flutter](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commits/develop/) registra cuatro commits de `AlexanderAliaga19` en el corte, incluida la inicialización, la migración y los dos ajustes de dependencias. El [PR #1 del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/pull/1/commits) reúne los commits de la integración de Mercado Pago. La actividad del informe se consulta en **Project Report Collaboration Insights**.
+La actividad colaborativa del Sprint 2 se cuantifica a partir del historial de commits registrado entre el 11 de octubre y el 13 de noviembre de 2026 en los cinco repositorios de la organización, excluyendo los commits de integración (*merge commits*). En ese periodo, `CraveWallet-Backend` registra 57 commits de `josf17` (distribuidos en las ramas `feature/av2-premium-backend`, `feature/av2-mercadopago` y `develop`), `CraveWallet-Mobile` registra 10 commits de `josf17` en `feature/premium`, `CraveWallet-Flutter` registra 5 commits de `AlexanderAliaga19` en `main`, `develop` y `feature/av2-premium-flutter`, y `CraveWallet-Report` registra los commits de redacción y cierre documental de AV2 realizados por `AlexanderAliaga19` y `limozz05` (`Limos05`). La tabla 174 consolida el conteo de commits por integrante y repositorio en el Sprint 2.
 
-## 4.3. Validation Evidence for AV2
+*Tabla 174. Commits de cada integrante por repositorio en el Sprint 2.*
 
-| Video requerido | Contenido previsto | Estado de la evidencia |
-| --- | --- | --- |
-| Validación de la aplicación | Recorrido de los flujos principales en Flutter con un usuario de prueba, observaciones y resultado de la validación. | Pendiente de adjuntar la grabación y el registro de resultados. |
-| About-the-Product | Problema, propuesta de valor y demostración de suscripciones, gastos y presupuesto. | Pendiente de adjuntar el enlace a la primera versión. |
-| About-the-Team | Presentación del equipo y responsabilidades en el Sprint 2. | Pendiente de adjuntar el enlace a la primera versión. |
+| Integrante | Usuario GitHub | Landing page (`cravewallet-landing`) | App Android Kotlin (`CraveWallet-Mobile`) | App Flutter (`CraveWallet-Flutter`) | Servicios RESTful (`CraveWallet-Backend`) | Informe (`CraveWallet-Report`) |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| Carpio Peña, Josué Francisco | `josf17` | 0 | 10 | 0 | 57 | 0 |
+| Aliaga, Alexander | `AlexanderAliaga19` | 0 | 0 | 5 | 0 | 3 |
+| Faustino Hurtado, Anghelo Edwin | `Limos05` / `limozz05` | 0 | 0 | 0 | 0 | 3 **[COMPLETAR: actualizar conteo final de commits del informe al cerrar la entrega]** |
+| Roman Zeballos, Sebastian Jared | `Chebas19` | 0 | 0 | 0 | 0 | **[COMPLETAR: actualizar si registra commits al cierre de la entrega]** |
+| Sejuro Medina, Mario Gabriel | `maghetthi` | 0 | 0 | 0 | 0 | **[COMPLETAR: actualizar si registra commits al cierre de la entrega]** |
+
+*Fuente: `git shortlog -sn --no-merges --since="2026-10-11"` sobre todas las ramas de `cravewallet-landing`, `CraveWallet-Mobile`, `CraveWallet-Flutter`, `CraveWallet-Backend` y `CraveWallet-Report`.*
+
+La distribución de la tabla 174 muestra una especialización técnica definida durante el Sprint 2: mientras que en el Sprint 1 la implementación de código estuvo concentrada en Mario Sejuro, Sebastián Roman y Anghelo Faustino (tabla 160), en el Sprint 2 Josué Carpio asumió la totalidad de los commits del backend para el módulo de facturación recurrente con Mercado Pago, la búsqueda de comercios con Google Places y la actualización de la aplicación nativa en Kotlin, y Alexander Aliaga ejecutó la migración y el flujo Premium de la aplicación multiplataforma en Flutter, complementados por el trabajo de documentación técnica y consolidación del informe.
+
+**[COMPLETAR: insertar capturas de pantalla de GitHub Insights > Contributors y Pulse de los repositorios CraveWallet-Backend, CraveWallet-Mobile, CraveWallet-Flutter y CraveWallet-Report correspondientes al periodo del Sprint 2]**
+
+## 4.3. Validation Interviews
+
+### 4.3.1. Diseño de Entrevistas
+
+Las entrevistas de validación de AV2 tienen por objetivo evaluar, con usuarios reales pertenecientes a los dos segmentos objetivo definidos en la sección 1.3 (**Segmento 1: Estudiante Universitario Digital, 18 a 25 años** y **Segmento 2: Profesional Joven Activo, 25 a 32 años**), la comprensión de la propuesta de valor en el landing page y la usabilidad de los flujos implementados en las aplicaciones móviles de CraveWallet (`CraveWallet-Flutter` y `CraveWallet-Mobile`), contrastando los resultados con las hipótesis Lean UX `H1`–`H5` (sección 1.2.2.3).
+
+#### Estructura de la sesión y protocolo de validación
+
+Cada sesión de validación se estructura en cuatro etapas con una duración estimada de 15 a 20 minutos:
+
+1. **Contextualización y perfilamiento (2 min):** presentación del propósito académico de la prueba, solicitud de consentimiento para grabar la interacción (pantalla y cámara del participante), registro de datos demográficos (nombre, edad, distrito de residencia en Lima, ocupación y número actual de suscripciones o pedidos semanales de delivery).
+2. **Evaluación del Landing Page (3 min):** el participante explora libremente [`https://cravewallet-landing.vercel.app/es`](https://cravewallet-landing.vercel.app/es) aplicando el protocolo de pensamiento en voz alta (*think-aloud*) y responde qué problema resuelve CraveWallet, qué diferencia percibe entre el plan Free y el plan Premium (S/ 9.99/mes) y dónde descargaría la aplicación.
+3. **Ejecución de escenarios de tarea en la aplicación móvil (10 min):** el participante ejecuta cinco tareas concretas sin asistencia del moderador mientras se observa el tiempo empleado, las dudas de navegación y la interpretación de los montos en soles.
+4. **Preguntas de cierre y valoración posprueba (3 min):** preguntas abiertas sobre utilidad percibida, claridad del tipo de cambio USD/PEN, disposición de uso del presupuesto de delivery y valoración del plan Premium con Mercado Pago.
+
+La tabla 175 detalla los elementos del landing page, los cinco escenarios de flujo de usuario en la aplicación móvil y los criterios de validación específicos para cada segmento objetivo.
+
+*Tabla 175. Elementos del landing page y flujos móviles por validar según segmento objetivo.*
+
+| Componente / Flujo a validar | Tarea asignada al participante | Foco en Segmento 1 (Estudiante Universitario Digital, 18–25 años, Persona: Camila Torres) | Foco en Segmento 2 (Profesional Joven Activo, 25–32 años, Persona: Renzo Salazar) | Hipótesis / US vinculadas |
+| --- | --- | --- | --- | --- |
+| **Landing Page: Propuesta de valor, Planes y FAQ** | Recorrer las secciones *Hero*, *El problema*, *Cómo funciona*, *Planes (Free vs. Premium S/ 9.99)*, *FAQ* y *Descarga*, y explicar con sus palabras qué ofrece CraveWallet. | Claridad del beneficio de evitar cobros sorpresa en servicios de streaming/educación/gimnasio y comprensión del límite de 5 suscripciones gratuitas. | Confianza en que la aplicación no exige vincular cuentas bancarias (*Bank Account Linking*) y claridad del precio local en soles (S/ 9.99). | `US24`, `US25`, `US32` |
+| **Flujo Móvil 1: Registro/Login y moneda de referencia** | Crear una cuenta o iniciar sesión y verificar en la pestaña *Perfil* que la moneda de referencia configurada es el sol peruano (`PEN`). | Facilidad de onboarding inicial sin fricción. | Reconocimiento inmediato de la moneda base para consolidar gastos mixtos. | `US01`, `US02`, `US03` |
+| **Flujo Móvil 2: Alta de suscripción en USD y consulta en el Dashboard** | Registrar una suscripción facturada en dólares (por ejemplo, Netflix, Spotify o una herramienta cloud/productividad) y regresar a *Inicio* para explicar el total mensual en soles, la cotización aplicada y la fecha de próximo cobro. | Comprensión del monto total comprometido en el mes y del orden por fecha de próxima renovación (`H1`). | Comprensión del importe original en USD frente a la estimación en PEN con tipo de cambio fechado (`H3`). | `H1`, `H3`, `US04`, `US05`, `US08`, `US10`, `US15`–`US17` |
+| **Flujo Móvil 3: Búsqueda, detalle y cancelación con ahorro estimado** | Buscar una suscripción por nombre en *Gastos*, abrir su detalle, revisar su recordatorio 24 h antes y marcarla como cancelada, interpretando el ahorro estimado (`estimatedSavings`) y el historial de canceladas. | Utilidad del aviso anticipado y motivación al visualizar cuánto ahorra en el ciclo al dar de baja un servicio que ya no usa (`H2`). | Rapidez del buscador incremental para localizar un servicio dentro de un portafolio amplio y claridad de que la baja es un registro local. | `H2`, `US07`, `US11`, `US12`, `US26`, `US27`, `US35` |
+| **Flujo Móvil 4: Registro de gasto de delivery y presupuesto mensual** | Configurar un presupuesto mensual de delivery en soles, registrar un pedido buscando o ingresando un comercio frecuente (como Popeyes, Dunkin' o PedidosYa) y explicar el saldo restante y la categoría de mayor consumo. | Reconocimiento del impacto acumulado de pedidos pequeños de comida rápida frente a su presupuesto mensual (`H4`). | Control ágil del gasto semanal y mensual en delivery sin hojas de cálculo manuales (`H4`). | `H4`, `US18`, `US19`, `US38` |
+| **Flujo Móvil 5: Análisis por categoría y checkout de CraveWallet Premium** | Abrir la pestaña *Análisis*, revisar los subtotales por categoría / mapa de calor e iniciar el flujo de suscripción a CraveWallet Premium (S/ 9.99/mes) hacia el checkout de Mercado Pago. | Valor percibido del desglose visual por categoría y familiaridad con el entorno de pago de Mercado Pago (`H5`). | Disposición a contratar el plan de S/ 9.99/mes al superar las 5 suscripciones activas y requerir analítica consolidada (`H5`). | `H5`, `US09`, `US21`–`US23`, `US31`, `US39` |
+
+*Fuente: elaboración del equipo Gastify a partir de las secciones 1.2.2, 1.3, 2.4.1 y 4.2.2.*
+
+#### Guía de preguntas posteriores a la ejecución de tareas
+
+1. **Comprensión del portafolio y conversión (`H1`, `H3`):** *«Al mirar la pantalla de Inicio después de registrar tu suscripción en dólares, ¿qué tan claro te resultó distinguir el monto original en dólares del total estimado en soles y saber cuál será tu próximo cobro?»*
+2. **Anticipación y ahorro al cancelar (`H2`, `US35`):** *«Al consultar el detalle de la suscripción y marcarla como cancelada antes de su fecha de renovación, ¿cómo interpretaste el monto de ahorro estimado que mostró la aplicación?»*
+3. **Control de gastos de delivery (`H4`):** *«Después de fijar un presupuesto mensual y registrar un pedido de delivery, ¿puedes identificar cuánto margen te queda en el mes y en qué categoría se concentra tu gasto?»*
+4. **Valoración de CraveWallet Premium y Mercado Pago (`H5`):** *«Considerando el límite de 5 suscripciones en el plan gratuito y las vistas de análisis por categoría y mapa de calor, ¿qué opinas del precio de S/ 9.99 mensuales y del proceso de pago a través de Mercado Pago?»*
+5. **Fricciones y mejoras de usabilidad:** *«¿En cuál de las pantallas o pasos sentiste alguna duda, demora o etiqueta poco clara que cambiarías para la siguiente versión?»*
+
+### 4.3.2. Registro de Entrevistas
+
+La tabla 176 presenta la estructura de registro para las entrevistas de validación realizadas con representantes del **Segmento 1 (Estudiante Universitario Digital)** y del **Segmento 2 (Profesional Joven Activo)**, consignando los metadatos del entrevistado, captura de cuadro del video, enlace y marcas de tiempo (*timing*), y el resumen descriptivo de sus apreciaciones al interactuar con el landing page y la aplicación móvil.
+
+*Tabla 176. Registro de entrevistas de validación de AV2 por segmento objetivo.*
+
+| Entrevista # | Segmento objetivo | Nombres y apellidos | Edad | Distrito | Captura de cuadro de video | URL del video y Timing (inicio – duración) | Resumen descriptivo de apreciaciones sobre las tareas asignadas |
+| :---: | --- | --- | :---: | --- | --- | --- | --- |
+| **Entrevista 1** | Segmento 1: Estudiante Universitario Digital (18–25 años) | **[COMPLETAR: nombres y apellidos del entrevistado 1]** | **[COMPLETAR: edad]** | **[COMPLETAR: distrito]** | **[COMPLETAR: insertar captura de pantalla de la entrevista 1 mostrando al usuario interactuando con la app]** | **URL:** **[COMPLETAR: enlace YouTube / OneDrive]**<br>**Inicio:** **[COMPLETAR: hh:mm:ss]**<br>**Duración:** **[COMPLETAR: mm:ss]** | **[COMPLETAR: síntesis de cómo ejecutó los 5 flujos, si completó el alta de suscripción sin ayuda, su interpretación del monto en PEN, del presupuesto de delivery y del plan Premium]** |
+| **Entrevista 2** | Segmento 1: Estudiante Universitario Digital (18–25 años) | **[COMPLETAR: nombres y apellidos del entrevistado 2]** | **[COMPLETAR: edad]** | **[COMPLETAR: distrito]** | **[COMPLETAR: insertar captura de pantalla de la entrevista 2 mostrando al usuario interactuando con la app]** | **URL:** **[COMPLETAR: enlace YouTube / OneDrive]**<br>**Inicio:** **[COMPLETAR: hh:mm:ss]**<br>**Duración:** **[COMPLETAR: mm:ss]** | **[COMPLETAR: síntesis de cómo ejecutó los 5 flujos, observaciones de usabilidad y valoración de las alertas y del ahorro estimado]** |
+| **Entrevista 3** | Segmento 1: Estudiante Universitario Digital (18–25 años) | **[COMPLETAR: nombres y apellidos del entrevistado 3]** | **[COMPLETAR: edad]** | **[COMPLETAR: distrito]** | **[COMPLETAR: insertar captura de pantalla de la entrevista 3 mostrando al usuario interactuando con la app]** | **URL:** **[COMPLETAR: enlace YouTube / OneDrive]**<br>**Inicio:** **[COMPLETAR: hh:mm:ss]**<br>**Duración:** **[COMPLETAR: mm:ss]** | **[COMPLETAR: síntesis de cómo ejecutó los 5 flujos, observaciones sobre el landing page y disposición de uso frente a sus métodos actuales]** |
+| **Entrevista 4** | Segmento 2: Profesional Joven Activo (25–32 años) | **[COMPLETAR: nombres y apellidos del entrevistado 4]** | **[COMPLETAR: edad]** | **[COMPLETAR: distrito]** | **[COMPLETAR: insertar captura de pantalla de la entrevista 4 mostrando al usuario interactuando con la app]** | **URL:** **[COMPLETAR: enlace YouTube / OneDrive]**<br>**Inicio:** **[COMPLETAR: hh:mm:ss]**<br>**Duración:** **[COMPLETAR: mm:ss]** | **[COMPLETAR: síntesis de cómo ejecutó los 5 flujos, evaluación de la conversión USD/PEN, búsqueda de suscripciones y checkout con Mercado Pago]** |
+| **Entrevista 5** | Segmento 2: Profesional Joven Activo (25–32 años) | **[COMPLETAR: nombres y apellidos del entrevistado 5]** | **[COMPLETAR: edad]** | **[COMPLETAR: distrito]** | **[COMPLETAR: insertar captura de pantalla de la entrevista 5 mostrando al usuario interactuando con la app]** | **URL:** **[COMPLETAR: enlace YouTube / OneDrive]**<br>**Inicio:** **[COMPLETAR: hh:mm:ss]**<br>**Duración:** **[COMPLETAR: mm:ss]** | **[COMPLETAR: síntesis de cómo ejecutó los 5 flujos, percepción de los subtotales por categoría, presupuesto de delivery y valor de Premium a S/ 9.99]** |
+| **Entrevista 6** | Segmento 2: Profesional Joven Activo (25–32 años) | **[COMPLETAR: nombres y apellidos del entrevistado 6]** | **[COMPLETAR: edad]** | **[COMPLETAR: distrito]** | **[COMPLETAR: insertar captura de pantalla de la entrevista 6 mostrando al usuario interactuando con la app]** | **URL:** **[COMPLETAR: enlace YouTube / OneDrive]**<br>**Inicio:** **[COMPLETAR: hh:mm:ss]**<br>**Duración:** **[COMPLETAR: mm:ss]** | **[COMPLETAR: síntesis de cómo ejecutó los 5 flujos, dificultades encontradas y recomendaciones de mejora expresadas por el participante]** |
+
+*Fuente: elaboración del equipo Gastify.*
+
+### 4.3.3. Evaluaciones según heurísticas
+
+La evaluación heurística de usabilidad, diseño inclusivo y arquitectura de información se desarrolla siguiendo íntegramente el formato del **Anexo E** de la rúbrica del curso (*UX Heuristics & Principles Evaluation: Usability - Inclusive Design - Information Architecture*).
+
+#### Cabecera de la evaluación (Formato Anexo E)
+
+- **Carrera:** Ingeniería de Software
+- **Curso:** `1ACC0238` — Aplicaciones para dispositivos móviles
+- **NRC:** `4950`
+- **Auditor:** Equipo Gastify (Mario Gabriel Sejuro Medina, Anghelo Edwin Faustino Hurtado, Sebastian Jared Roman Zeballos, Josué Francisco Carpio Peña y Alexander Aliaga)
+- **Cliente(s):** **[COMPLETAR: nombres de las personas que participan en la sesión de evaluación heurística]**
+- **Site o App a evaluar:** CraveWallet — Landing Page (`https://cravewallet-landing.vercel.app/es`), Aplicación Android nativa en Kotlin (`CraveWallet-Mobile`) y Aplicación móvil multiplataforma en Flutter (`CraveWallet-Flutter`)
+- **Fecha:** **[COMPLETAR: fecha de realización de la evaluación heurística]**
+
+#### Tareas a evaluar
+
+1. Explorar el landing page de CraveWallet, identificar el problema que resuelve, comparar las características del plan Free frente al plan Premium (S/ 9.99/mes) y localizar la descarga del instalador móvil.
+2. Crear una cuenta o iniciar sesión en la aplicación móvil y verificar la configuración del sol peruano (`PEN`) como moneda de referencia en el perfil (`US01`–`US03`).
+3. Registrar una suscripción facturada en dólares (`USD`) con periodicidad mensual o anual y verificar en el Dashboard el total consolidado en soles (`PEN`) y la posición del servicio en la lista ordenada por próxima fecha de renovación (`US04`, `US05`, `US08`, `US10`, `US15`–`US17`).
+4. Buscar una suscripción por su nombre en la pantalla de *Gastos*, abrir su detalle, consultar los datos del recordatorio de 24 horas antes y marcarla como cancelada verificando el ahorro estimado (`estimatedSavings`) y su aparición en el historial de canceladas (`US07`, `US11`, `US12`, `US26`, `US27`, `US35`).
+5. Configurar un límite de presupuesto mensual en la pestaña *Delivery*, registrar un gasto de comida a domicilio seleccionando o escribiendo un comercio y verificar el acumulado y saldo restante del mes (`US18`, `US19`, `US38`).
+6. Acceder a la pestaña *Análisis* y a la pantalla *CraveWallet Premium*, iniciar el checkout mensual de S/ 9.99 hacia Mercado Pago, verificar la actualización del estado de la membresía, consultar el historial de pagos y ejecutar la cancelación al fin del período (`US09`, `US21`–`US23`, `US31`, `US39`).
+
+#### Tareas no incluidas en esta versión
+
+1. Edición o eliminación de un gasto individual de delivery ya registrado (`US30`), planificada en el Product Backlog para el Sprint 4.
+2. Visualización del historial de variaciones del tipo de cambio por cobro (`US29`, `US37`), asignada al Sprint 3.
+3. Envío de notificaciones *push* remotas desde un servidor externo (`US36`), dado que la arquitectura emplea recordatorios y alertas locales del dispositivo.
+
+#### Escala de severidad
+
+La tabla 177 define la escala de severidad de 1 a 4 utilizada para clasificar cada hallazgo heurístico conforme al Anexo E.
+
+*Tabla 177. Escala de severidad para la evaluación heurística.*
+
+| Nivel | Categoría | Descripción |
+| :---: | --- | --- |
+| **1** | **Problema superficial** | No necesita ser solucionado a menos que exista tiempo y presupuesto disponible; sin embargo, mejoraría mucho la experiencia de usuario. |
+| **2** | **Problema menor** | Arreglar este problema debe tener baja prioridad. |
+| **3** | **Problema mayor** | Es importante solucionar este problema, por lo que se le debe asignar alta prioridad. |
+| **4** | **Desastre de usabilidad** | Es imperativo solucionar este problema antes de lanzar el producto al mercado. |
+
+*Fuente: Anexo E del enunciado del proyecto del curso 1ACC0238.*
+
+#### Tabla resumen de problemas identificados
+
+La tabla 178 consolida los problemas de usabilidad, diseño inclusivo o arquitectura de información registrados durante la sesión de evaluación heurística.
+
+*Tabla 178. Tabla resumen de problemas identificados en la evaluación heurística.*
+
+| # | Problema | Escala de severidad (1–4) | Heurística / Principio violada(o) |
+| :---: | --- | :---: | --- |
+| 1 | **[COMPLETAR: título breve del problema #1 detectado en las sesiones de evaluación]** | **[COMPLETAR: 1 / 2 / 3 / 4]** | **[COMPLETAR: p. ej., Visibilidad del estado del sistema / Consistencia y estándares / Prevención de errores]** |
+| 2 | **[COMPLETAR: título breve del problema #2 detectado en las sesiones de evaluación]** | **[COMPLETAR: 1 / 2 / 3 / 4]** | **[COMPLETAR: heurística o principio violado]** |
+| 3 | **[COMPLETAR: título breve del problema #3 detectado en las sesiones de evaluación]** | **[COMPLETAR: 1 / 2 / 3 / 4]** | **[COMPLETAR: heurística o principio violado]** |
+| 4 | **[COMPLETAR: título breve del problema #4 detectado en las sesiones de evaluación]** | **[COMPLETAR: 1 / 2 / 3 / 4]** | **[COMPLETAR: heurística o principio violado]** |
+
+*Fuente: elaboración del equipo Gastify a partir de las sesiones de evaluación heurística de AV2.*
+
+#### Descripción de problemas
+
+La tabla 179 desarrolla la ficha detallada de cada problema listado en la tabla resumen, incluyendo severidad, heurística violada, explicación del hallazgo, captura de pantalla con anotaciones y recomendación accionable.
+
+*Tabla 179. Fichas descriptivas de problemas de la evaluación heurística.*
+
+| Campo | PROBLEMA #1 | PROBLEMA #2 | PROBLEMA #3 | PROBLEMA #4 |
+| --- | --- | --- | --- | --- |
+| **Título** | **[COMPLETAR: nombre del problema #1]** | **[COMPLETAR: nombre del problema #2]** | **[COMPLETAR: nombre del problema #3]** | **[COMPLETAR: nombre del problema #4]** |
+| **Severidad** | **[COMPLETAR: nivel 1–4]** | **[COMPLETAR: nivel 1–4]** | **[COMPLETAR: nivel 1–4]** | **[COMPLETAR: nivel 1–4]** |
+| **Heurística violada** | **[COMPLETAR: nombre de la heurística o principio]** | **[COMPLETAR: nombre de la heurística o principio]** | **[COMPLETAR: nombre de la heurística o principio]** | **[COMPLETAR: nombre de la heurística o principio]** |
+| **Problema** | **[COMPLETAR: explicación detallada de en qué consiste el problema #1 y cómo afectó al usuario durante la tarea]** | **[COMPLETAR: explicación detallada del problema #2]** | **[COMPLETAR: explicación detallada del problema #3]** | **[COMPLETAR: explicación detallada del problema #4]** |
+| **Captura de pantalla** | **[COMPLETAR: insertar imagen con anotaciones visuales señalando el problema #1]** | **[COMPLETAR: insertar imagen con anotaciones visuales señalando el problema #2]** | **[COMPLETAR: insertar imagen con anotaciones visuales señalando el problema #3]** | **[COMPLETAR: insertar imagen con anotaciones visuales señalando el problema #4]** |
+| **Recomendación** | **[COMPLETAR: acción concreta de diseño o código propuesta para corregir el problema #1]** | **[COMPLETAR: acción concreta propuesta para corregir el problema #2]** | **[COMPLETAR: acción concreta propuesta para corregir el problema #3]** | **[COMPLETAR: acción concreta propuesta para corregir el problema #4]** |
+
+*Fuente: elaboración del equipo Gastify siguiendo el formato del Anexo E.*
+
+#### Videos de validación y presentación de AV2
+
+Conforme a los lineamientos de la sección 4.3 del enunciado del curso, la entrega AV2 comprende tres grabaciones en video (alojadas en OneDrive y YouTube): el **Video App Validation** (con las entrevistas de validación en cámara y pantalla de cada segmento), el **Video About-the-Product** (primera versión con el problema, propuesta de valor y recorrido de funcionalidades de CraveWallet) y el **Video About-the-Team** (primera versión con la presentación y aportes de los cinco integrantes en el Sprint 2). La tabla 180 estructura el registro de enlaces, duración, secuencia de tiempos (*timing*) y capturas de cada video.
+
+*Tabla 180. Registro de videos requeridos en la entrega AV2.*
+
+| Video requerido | Descripción de contenido y secuencia (*Timing*) | Captura de cuadro del video | URL en OneDrive | URL en YouTube | Duración total |
+| --- | --- | --- | --- | --- | :---: |
+| **1. Video App Validation** | Consolidado de las entrevistas de validación con usuarios de los Segmentos 1 y 2 interactuando con el landing page y las aplicaciones móviles, seguido de las conclusiones del equipo.<br>- `00:00` Introducción y objetivos de validación<br>- **[COMPLETAR: hh:mm:ss]** Entrevistas Segmento 1 (Estudiantes)<br>- **[COMPLETAR: hh:mm:ss]** Entrevistas Segmento 2 (Profesionales)<br>- **[COMPLETAR: hh:mm:ss]** Hallazgos heurísticos y conclusiones | **[COMPLETAR: insertar captura de cuadro del Video App Validation]** | **[COMPLETAR: URL pública de OneDrive del Video App Validation]** | **[COMPLETAR: URL pública de YouTube del Video App Validation]** | **[COMPLETAR: mm:ss]** |
+| **2. Video About-the-Product (v1)** | Presentación del problema de los cobros recurrentes silenciosos y gastos de delivery, propuesta de valor de CraveWallet, demostración del landing page y recorrido en vivo de las aplicaciones móviles (suscripciones, conversión USD/PEN, delivery y plan Premium con Mercado Pago).<br>- `00:00` Problema y segmentos objetivo<br>- **[COMPLETAR: hh:mm:ss]** Recorrido del Landing Page<br>- **[COMPLETAR: hh:mm:ss]** Demostración de la aplicación móvil y backend<br>- **[COMPLETAR: hh:mm:ss]** Flujo Premium con Mercado Pago y cierre | **[COMPLETAR: insertar captura de cuadro del Video About-the-Product]** | **[COMPLETAR: URL pública de OneDrive del Video About-the-Product]** | **[COMPLETAR: URL pública de YouTube del Video About-the-Product]** | **[COMPLETAR: mm:ss]** |
+| **3. Video About-the-Team (v1)** | Presentación de la startup Gastify y participación individual en cámara de los cinco integrantes explicando su rol, las tareas asumidas en los Sprints 1 y 2, los aprendizajes técnicos (incluyendo Mercado Pago, Flutter, Kotlin y Spring Boot) y las lecciones de trabajo colaborativo.<br>- `00:00` Presentación del equipo Gastify<br>- **[COMPLETAR: hh:mm:ss]** Mario Gabriel Sejuro Medina<br>- **[COMPLETAR: hh:mm:ss]** Anghelo Edwin Faustino Hurtado<br>- **[COMPLETAR: hh:mm:ss]** Sebastian Jared Roman Zeballos<br>- **[COMPLETAR: hh:mm:ss]** Josué Francisco Carpio Peña<br>- **[COMPLETAR: hh:mm:ss]** Alexander Aliaga | **[COMPLETAR: insertar captura de cuadro del Video About-the-Team]** | **[COMPLETAR: URL pública de OneDrive del Video About-the-Team]** | **[COMPLETAR: URL pública de YouTube del Video About-the-Team]** | **[COMPLETAR: mm:ss]** |
+
+*Fuente: elaboración del equipo Gastify.*
