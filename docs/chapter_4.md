@@ -78,7 +78,7 @@ Los criterios de aceptación de las User Stories se escriben en Gherkin, como in
 | JUnit 5 y Spring Boot Test | Suite ejecutable del backend, con pruebas unitarias y de integración mediante MockMvc, JWT y H2. | [Suite versionada del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/a0aeabc/src/test/java/pe/edu/upc/gastify/cravewallet) |
 | Mockito y servidor HTTP local | Simulación de proveedores externos (ExchangeRate-API, Google Places y Mercado Pago) y comprobación de respuestas inválidas, caché y caídas sin depender de Internet. | [Pruebas de cotización](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/src/test/java/pe/edu/upc/gastify/cravewallet/ExchangeRateServiceTest.java) |
 | Flutter Test (`flutter_test`) | Pruebas unitarias de modelos y controladores, y pruebas de widgets del flujo Premium en `CraveWallet-Flutter`. | [Pruebas de Flutter](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/tree/d32ecc0/test) |
-| Swagger UI y OpenAPI | Ejecución manual de solicitudes y consulta de contratos del backend público y local. | [Swagger público](https://cravewallet-api.onrender.com/swagger-ui/index.html) |
+| Swagger UI y OpenAPI | Ejecución manual de solicitudes y consulta de contratos del backend público y local. | [Swagger público](https://cravewallet-api-av2.onrender.com/swagger-ui/index.html) |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -254,7 +254,7 @@ Los tres productos del hito TB1 se publican por separado. La tabla 145 resume la
 | Producto | Repositorio y rama | Plataforma | Mecanismo de despliegue | Dirección |
 | --- | --- | --- | --- | --- |
 | Landing page | `cravewallet-landing`, `main` | Vercel (equipo `gastify`) | Build `next build` automático en cada push a `main`. | <https://cravewallet-landing.vercel.app/es> |
-| REST API | `CraveWallet-Backend`, `feature/cloud-deployment` | Render Free (Docker, región Oregon) con PostgreSQL 17 | El `Dockerfile` ejecuta `mvnw verify` y empaqueta el JAR con Java 21; el servicio inicia con el perfil `prod`. | <https://cravewallet-api.onrender.com> |
+| REST API | `CraveWallet-Backend`, `feature/av2-premium-backend` (`feature/cloud-deployment` en TB1) | Render Free (Docker, región Oregon) con PostgreSQL 17 | El `Dockerfile` ejecuta `mvnw verify` y empaqueta el JAR con Java 21; el servicio inicia con el perfil `prod`. | <https://cravewallet-api-av2.onrender.com> (TB1: `cravewallet-api.onrender.com`) |
 | Aplicación Android | `CraveWallet-Mobile`, `develop` | Compilación con Gradle | APK `debug` que apunta a la URL del API definida en `API_BASE_URL`. | Descarga publicada desde el [landing de CraveWallet](https://cravewallet-landing.vercel.app/es); el artefacto corresponde al hash registrado en la evidencia móvil. |
 
 *Fuente: [configuración de despliegue del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/cloud-deployment.md), [guía de la aplicación](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/e72d283/README.md) y paneles de Vercel y Render.*
