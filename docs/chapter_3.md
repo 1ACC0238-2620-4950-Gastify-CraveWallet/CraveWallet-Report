@@ -284,7 +284,7 @@ Las animaciones siguen el sistema de motion de Material Design 3 con curvas de e
 
 #### 3.1.2.1. Organization Systems
 
-La arquitectura de información de CraveWallet organiza el contenido a través de tres esquemas complementarios, seleccionados según el tipo de tarea que el usuario realiza en cada pantalla.
+La arquitectura de información de CraveWallet organiza el contenido a través de tres esquemas complementarios, seleccionados según el tipo de tarea que el usuario realiza en cada pantalla y alineados con los atributos consolidados de usabilidad en aplicaciones móviles —eficiencia, carga cognitiva reducida y memorabilidad— [@weichbroth2024usability].
 
 ***
 
@@ -316,7 +316,7 @@ Los flujos de tarea multi-paso utilizan un esquema **secuencial lineal** que gu�
 | Flujo | Pasos | Pantalla guía |
 | --- | --- | --- |
 | Alta de suscripción | 3 pasos: (1) Seleccionar servicio o ingresar manual → (2) Configurar monto, ciclo y fecha → (3) Confirmar y activar recordatorio | Indicador de 3 pasos en un bottom sheet |
-| Activación Premium | 4 pasos: (1) Ver plan → (2) Elegir ciclo (mensual/anual) → (3) Ingresar datos de pago Stripe → (4) Confirmación | Pantalla a pantalla con barra de progreso |
+| Activación Premium | 4 pasos: (1) Ver plan → (2) Elegir ciclo mensual (S/ 9.99) → (3) Completar pago en checkout de Mercado Pago (diseñado inicialmente con Stripe en TB1) → (4) Confirmación | Pantalla a pantalla con barra de progreso |
 | Onboarding inicial | 3 pasos: (1) Segmento de usuario → (2) Agregar primera suscripción sugerida → (3) Activar recordatorios de calendario | Carrusel con ilustraciones |
 
 *Fuente: elaboración del equipo Gastify.*
@@ -405,7 +405,7 @@ La tabla 117 presenta las etiquetas de las acciones primarias.
 | Descartar cambios | **Descartar** | Botón secundario en formularios |
 | Activar recordatorio de calendario | **Activar recordatorio** | Paso 3 del flujo de alta |
 | Pasar a Premium | **Ver Premium** | Banner en Dashboard y pantalla de Perfil |
-| Convertir a Premium (CTA final) | **Suscribirme** | Pantalla de checkout Stripe |
+| Convertir a Premium (CTA final) | **Suscribirme / Ir a Mercado Pago** | Pantalla de checkout Mercado Pago (diseñada en TB1 con Stripe) |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -524,7 +524,7 @@ La tabla 120 presenta los campos de la ficha ASO en Google Play Store.
 | **Categoría principal** | Finanzas |
 | **Categoría secundaria** | Productividad |
 | **Content Rating** | Apto para todos (PEGI 3 / ESRB Everyone) |
-| **Permisos requeridos** | `READ_CALENDAR`, `WRITE_CALENDAR` (recordatorios), `INTERNET` (ExchangeRate-API, Stripe) |
+| **Permisos requeridos** | `READ_CALENDAR`, `WRITE_CALENDAR` (recordatorios), `INTERNET` (ExchangeRate-API, Google Places, Mercado Pago) |
 
 *Fuente: elaboración del equipo Gastify.*
 

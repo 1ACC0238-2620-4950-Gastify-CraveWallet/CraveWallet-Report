@@ -71,7 +71,7 @@ Ofrecer un catálogo de servicios frecuentes y un formulario corto para registra
 
 #### Estrategia 4. Proteger las reglas ante cambios externos
 
-Usar adaptadores para las cotizaciones, los comercios y la facturación, de modo que un cambio en ExchangeRate-API, Google Places o Stripe no afecte las reglas del producto. Los spikes SP01 a SP06 investigan y prototipan estas integraciones.
+Usar adaptadores para las cotizaciones, los comercios y la facturación, de modo que un cambio en ExchangeRate-API, Google Places o Mercado Pago (modelado inicialmente con Stripe en AV1/TB1 y adoptado en AV2 para cobros recurrentes en soles) no afecte las reglas del producto. Los spikes SP01 a SP06 investigan y prototipan estas integraciones.
 
 ## 2.2. Entrevistas
 
@@ -748,10 +748,10 @@ La tabla 26 lista las Epics con su identificador, nombre y alcance.
 | EP04 | Recordatorios vía calendario nativo | Agendado automático de un recordatorio 24 horas antes de cada cobro, integrado con el calendario del dispositivo. |
 | EP05 | Conversión de divisas con cotización fechada | Expresión del portafolio completo en soles, con conversión diaria de los montos facturados en dólares vía ExchangeRate-API. |
 | EP06 | Categorización de gastos de delivery | Registro y categorización de pedidos de delivery, con catálogo precargado de comercios limeños frecuentes. |
-| EP07 | CraveWallet Premium | Conversión al nivel Premium mediante el SDK de Stripe, con analítica avanzada y registro ilimitado de suscripciones. |
+| EP07 | CraveWallet Premium | Conversión al nivel Premium mediante la pasarela de suscripciones de Mercado Pago (evaluada inicialmente con Stripe en AV1/TB1), con analítica avanzada y registro ilimitado de suscripciones. |
 | EP08 | Landing page | Sitio informativo que explica el problema de los cobros recurrentes no anticipados, la propuesta de CraveWallet y el enlace de descarga de la aplicación. |
 | EP09 | Servicios RESTful | Technical Stories del backend propio que expone los endpoints consumidos por la aplicación móvil. |
-| EP10 | Investigación técnica | Spike Stories orientadas a despejar la incertidumbre técnica de las integraciones con Stripe y ExchangeRate-API antes de comprometerlas en el backlog. |
+| EP10 | Investigación técnica | Spike Stories orientadas a despejar la incertidumbre técnica de las integraciones de pagos recurrentes (Mercado Pago, tras evaluar Stripe en AV1/TB1), calendario nativo y ExchangeRate-API antes de comprometerlas en el backlog. |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -1411,8 +1411,8 @@ Los requisitos y criterios de US22 se detallan en la tabla 59.
 | Epic | EP07 |
 | **Title** | Suscribirme al plan Premium |
 | **Description** | Como usuario del plan gratuito, deseo pagar el plan Premium con mi tarjeta a través de un flujo seguro, para acceder de inmediato a sus beneficios. |
-| Acceptance Criteria | **Escenario 1: Pago exitoso**<br>Dado que el usuario ingresó los datos de una tarjeta válida en el flujo de pago de Stripe,<br>Cuando confirma la suscripción,<br>Entonces el sistema activa el plan Premium y elimina las restricciones del plan gratuito cuando el backend verifica la confirmación del pago; mientras espera esa confirmación, la interfaz muestra el estado pendiente. |
-| Acceptance Criteria | **Escenario 2: Pago rechazado**<br>Dado que el usuario intenta pagar con una tarjeta que Stripe rechaza,<br>Cuando confirma la suscripción,<br>Entonces el sistema no activa el plan Premium e indica que el pago fue rechazado, permitiendo intentar con otra tarjeta. |
+| Acceptance Criteria | **Escenario 1: Pago exitoso**<br>Dado que el usuario ingresó los datos de un medio de pago válido en el checkout alojado de Mercado Pago,<br>Cuando confirma la suscripción,<br>Entonces el sistema activa el plan Premium y elimina las restricciones del plan gratuito cuando el backend verifica la confirmación del pago; mientras espera esa confirmación, la interfaz muestra el estado pendiente. |
+| Acceptance Criteria | **Escenario 2: Pago rechazado**<br>Dado que el usuario intenta pagar con un medio de pago que Mercado Pago rechaza,<br>Cuando confirma la suscripción,<br>Entonces el sistema no activa el plan Premium e indica que el pago fue rechazado, permitiendo intentar nuevamente. |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -1665,7 +1665,7 @@ Los requisitos y criterios de TS05 se detallan en la tabla 71.
 
 Los requisitos y criterios de TS06 se detallan en la tabla 72.
 
-*Tabla 72. Historia TS06: Servicio de suscripción Premium y webhooks de Stripe.*
+*Tabla 72. Historia TS06: Servicio de suscripción Premium y webhooks de pasarela de pago (Mercado Pago).*
 
 | Campo | Contenido |
 | --- | --- |
@@ -1673,11 +1673,11 @@ Los requisitos y criterios de TS06 se detallan en la tabla 72.
 | User | Developer |
 | Priority | Media |
 | Epic | EP09 |
-| **Title** | Servicio de suscripción Premium y webhooks de Stripe |
-| **Description** | Como desarrollador, deseo contar con un endpoint que inicie el flujo de pago recurrente de Stripe y un webhook que reciba sus eventos de confirmación y cancelación, para activar o desactivar el plan Premium del usuario de forma confiable. |
-| Acceptance Criteria | **Escenario 1: Inicio del pago**<br>Dado un usuario autenticado en el plan gratuito,<br>Cuando envía POST /api/v1/premium/checkout,<br>Entonces el servicio responde 200 OK con la sesión de pago de Stripe a la que debe redirigirse el cliente. |
-| Acceptance Criteria | **Escenario 2: Confirmación por webhook**<br>Dado que Stripe confirma un pago exitoso,<br>Cuando el webhook POST /api/v1/premium/webhook recibe el evento `invoice.paid`,<br>Entonces el servicio activa el plan Premium del usuario correspondiente. |
-| Acceptance Criteria | **Escenario 3: Cancelación por webhook**<br>Dado que Stripe notifica el fin del período pagado tras una cancelación,<br>Cuando el webhook recibe el evento `customer.subscription.deleted`,<br>Entonces el servicio devuelve al usuario al plan gratuito. |
+| **Title** | Servicio de suscripción Premium y webhooks de pasarela de pago (Mercado Pago) |
+| **Description** | Como desarrollador, deseo contar con un endpoint que inicie el flujo de pago recurrente de Mercado Pago (planificado inicialmente con Stripe en AV1) y un webhook que reciba sus eventos de confirmación y cancelación, para activar o desactivar el plan Premium del usuario de forma confiable. |
+| Acceptance Criteria | **Escenario 1: Inicio del pago**<br>Dado un usuario autenticado en el plan gratuito,<br>Cuando envía POST /api/v1/premium/checkout,<br>Entonces el servicio responde 200 OK con la sesión de pago (`init_point`) de Mercado Pago a la que debe redirigirse el cliente. |
+| Acceptance Criteria | **Escenario 2: Confirmación por webhook**<br>Dado que Mercado Pago confirma un pago recurrente aprobado,<br>Cuando el webhook POST /api/v1/premium/webhook recibe la notificación firmada y verifica el recurso autorizado,<br>Entonces el servicio activa el plan Premium del usuario correspondiente. |
+| Acceptance Criteria | **Escenario 3: Cancelación y expiración**<br>Dado que el usuario cancela la renovación en POST /api/v1/premium/cancel y vence el período pagado (`periodEndsAt`),<br>Cuando el servicio reconcilia la vigencia de la membresía,<br>Entonces devuelve al usuario al plan gratuito. |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -1685,7 +1685,7 @@ Los requisitos y criterios de TS06 se detallan en la tabla 72.
 
 #### Spike Stories
 
-Las Spike Stories cubren la investigación técnica previa a dos integraciones que el equipo no ha usado en clase: el SDK de Stripe y ExchangeRate-API. Ambas son el componente de aprendizaje autónomo del proyecto declarado en la sección 1.1.1. Cada integración se investiga en dos spikes: uno de documentación y decisión, y otro de prototipo.
+Las Spike Stories cubren la investigación técnica previa a las integraciones que el equipo no ha usado en clase: la pasarela de suscripciones recurrentes (evaluada inicialmente con Stripe en AV1/TB1 e implementada con Mercado Pago en AV2 para cobros en soles en Perú) y ExchangeRate-API. Ambas son el componente de aprendizaje autónomo del proyecto declarado en la sección 1.1.1. Cada integración se investiga en dos spikes: uno de documentación y decisión, y otro de prototipo.
 
 **Definition of Done común a los seis spikes.** El prototipo o el informe de decisión queda registrado en una rama del repositorio; los hallazgos se comparten con el equipo en la sesión de refinamiento del backlog y se usan para crear o refinar las historias de implementación correspondientes; y cada spike se completa dentro del sprint en que se planifica.
 
@@ -1772,7 +1772,7 @@ Los requisitos y criterios de SP04 se detallan en la tabla 76.
 
 Los requisitos y criterios de SP05 se detallan en la tabla 77.
 
-*Tabla 77. Historia SP05: Investigar el flujo de suscripción recurrente del SDK de Stripe.*
+*Tabla 77. Historia SP05: Investigar el flujo de suscripción recurrente de la pasarela de pago (Mercado Pago / Stripe).*
 
 | Campo | Contenido |
 | --- | --- |
@@ -1780,10 +1780,10 @@ Los requisitos y criterios de SP05 se detallan en la tabla 77.
 | User | Developer |
 | Priority | Media |
 | Epic | EP10 |
-| **Title** | Investigar el flujo de suscripción recurrente del SDK de Stripe |
-| **Description** | Como desarrollador, deseo revisar la documentación de Stripe Billing y del SDK móvil, para decidir con evidencia el flujo de pago recurrente antes de prototiparlo para el plan Premium (US22). |
-| Acceptance Criteria | **Escenario 1: Documentación revisada**<br>Dado que el equipo necesita cobrar una suscripción mensual recurrente,<br>Cuando el desarrollador revisa la documentación de Stripe Billing y del SDK móvil correspondiente,<br>Entonces documenta el flujo de creación del cliente, el método de pago y la suscripción recurrente, junto con el manejo de webhooks para confirmar el cobro. |
-| Acceptance Criteria | **Escenario 2: Flujo documentado**<br>Dado el flujo revisado,<br>Cuando el equipo lo valida internamente,<br>Entonces el informe queda listo para orientar el prototipo del spike SP06. |
+| **Title** | Investigar el flujo de suscripción recurrente de la pasarela de pago (Mercado Pago / Stripe) |
+| **Description** | Como desarrollador, deseo revisar la documentación de suscripciones recurrentes (iniciada sobre Stripe en AV1 y consolidada con la API de Suscripciones y Webhooks de Mercado Pago en AV2), para decidir con evidencia el flujo de pago recurrente en soles antes de prototiparlo para el plan Premium (US22). |
+| Acceptance Criteria | **Escenario 1: Documentación revisada**<br>Dado que el equipo necesita cobrar una suscripción mensual recurrente en soles (S/ 9.99),<br>Cuando el desarrollador revisa la documentación del proveedor de suscripciones y su integración con aplicaciones móviles,<br>Entonces documenta el flujo de creación del checkout (`POST /preapproval`), la autorización del pagador y el manejo de webhooks firmados (`x-signature`) para confirmar el cobro. |
+| Acceptance Criteria | **Escenario 2: Flujo documentado**<br>Dado el flujo revisado,<br>Cuando el equipo lo valida internamente,<br>Entonces el informe queda listo para orientar el prototipo del spike SP06 y el contrato de `docs/premium-api.md`. |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -1792,7 +1792,7 @@ Los requisitos y criterios de SP05 se detallan en la tabla 77.
 
 Los requisitos y criterios de SP06 se detallan en la tabla 78.
 
-*Tabla 78. Historia SP06: Prototipar el pago recurrente con el SDK de Stripe.*
+*Tabla 78. Historia SP06: Prototipar el pago recurrente con la pasarela de pago (Mercado Pago).*
 
 | Campo | Contenido |
 | --- | --- |
@@ -1800,10 +1800,10 @@ Los requisitos y criterios de SP06 se detallan en la tabla 78.
 | User | Developer |
 | Priority | Media |
 | Epic | EP10 |
-| **Title** | Prototipar el pago recurrente con el SDK de Stripe |
+| **Title** | Prototipar el pago recurrente con la pasarela de pago (Mercado Pago) |
 | **Description** | Como desarrollador, deseo construir un prototipo del flujo documentado en SP05, para confirmar con evidencia que un pago de prueba se completa y confirma antes de implementar US21, US22 y US23. |
-| Acceptance Criteria | **Escenario 1: Prototipo con tarjeta de prueba**<br>Dado el flujo documentado en SP05,<br>Cuando el desarrollador construye un prototipo que completa un pago de prueba con una tarjeta de test de Stripe,<br>Entonces el prototipo recibe la confirmación del webhook y queda registrado en una rama del repositorio. |
-| Acceptance Criteria | **Escenario 2: Hallazgos y estimación**<br>Dado que el spike está completo,<br>Cuando el desarrollador compila los hallazgos,<br>Entonces el informe incluye el tratamiento de pagos rechazados y cancelaciones, y una estimación en puntos de historia para US21, US22 y US23. |
+| Acceptance Criteria | **Escenario 1: Prototipo con cuenta y tarjeta de prueba**<br>Dado el flujo documentado en SP05,<br>Cuando el desarrollador construye un prototipo que completa un checkout de prueba en Mercado Pago,<br>Entonces el prototipo recibe la confirmación del webhook firmado y queda registrado en una rama del repositorio. |
+| Acceptance Criteria | **Escenario 2: Hallazgos y estimación**<br>Dado que el spike está completo,<br>Cuando el desarrollador compila los hallazgos,<br>Entonces el informe incluye el tratamiento de pagos rechazados, duplicados y cancelaciones, y una estimación en puntos de historia para US21, US22 y US23. |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -1895,7 +1895,7 @@ La tabla 81 lista las User Stories que contribuyen a la retención por uso del D
 
 #### Business Goal 03: conversión a Premium
 
-El tercer mapa se concentra en los usuarios de mayor compromiso, con 6 o más suscripciones registradas. Se espera que, al acercarse al límite del plan gratuito, decidan pagar por eliminarlo en vez de dejar de registrar sus suscripciones. El plan Premium lo facilita con las historias de conocer el precio, suscribirse con Stripe, ver el historial de pagos y saber cuánto falta para el límite.
+El tercer mapa se concentra en los usuarios de mayor compromiso, con 6 o más suscripciones registradas. Se espera que, al acercarse al límite del plan gratuito, decidan pagar por eliminarlo en vez de dejar de registrar sus suscripciones. El plan Premium lo facilita con las historias de conocer el precio, suscribirse mediante Mercado Pago (inicialmente modelado con Stripe en AV1), ver el historial de pagos y saber cuánto falta para el límite.
 
 La figura 14 relaciona el objetivo de conversión a Premium con los actores, los cambios de comportamiento y las historias propuestas.
 
@@ -1973,7 +1973,7 @@ La tabla 84 conserva el orden de prioridad y los Story Points originales, y dist
 | --- | --- | --- | --- | --- | --- |
 | 1 | SP01 | Investigar y documentar la integración con ExchangeRate-API | 3 | 1 | 1 |
 | 2 | SP03 | Investigar las alternativas de integración con el calendario nativo | 3 | 1 | 1 |
-| 3 | SP05 | Investigar el flujo de suscripción recurrente del SDK de Stripe | 3 | 1 | 1 |
+| 3 | SP05 | Investigar el flujo de suscripción recurrente de la pasarela de pago (Mercado Pago / Stripe) | 3 | 1 | 1 |
 | 4 | US24 | Ver la propuesta de valor de CraveWallet | 2 | 1 | 1 |
 | 5 | US25 | Comparar el plan gratuito y el plan Premium | 2 | 1 | 1 |
 | 6 | US32 | Consultar preguntas frecuentes en el landing page | 2 | 1 | 1 |
@@ -2010,14 +2010,14 @@ La tabla 84 conserva el orden de prioridad y los Story Points originales, y dist
 | 37 | US14 | Otorgar permiso de acceso al calendario | 3 | 3 | 3 |
 | 38 | US28 | Ver la lista de mis próximos recordatorios agendados | 2 | 3 | 3 |
 | 39 | US36 | Recibir una notificación push además del recordatorio de calendario | 3 | 3 | 3 |
-| 40 | SP06 | Prototipar el pago recurrente con el SDK de Stripe | 5 | 4 | 4 |
+| 40 | SP06 | Prototipar el pago recurrente con la pasarela de pago (Mercado Pago) | 5 | 4 | 4 |
 | 41 | TS05 | Servicio de gastos de delivery | 3 | 4 | 1 |
 | 42 | US18 | Registrar un pedido de delivery desde un catálogo de comercios frecuentes | 3 | 4 | 4 |
 | 43 | US19 | Ver el total gastado en delivery en el mes | 2 | 4 | 1 |
 | 44 | US20 | Ver la tendencia de mi gasto de delivery por semana | 3 | 4 | 4 |
 | 45 | US30 | Editar o eliminar un gasto de delivery registrado por error | 2 | 4 | 4 |
 | 46 | US38 | Definir un límite mensual de gasto en delivery y recibir aviso al acercarme | 3 | 4 | 1 |
-| 47 | TS06 | Servicio de suscripción Premium y webhooks de Stripe | 5 | 4 | 4 |
+| 47 | TS06 | Servicio de suscripción Premium y webhooks de pasarela de pago (Mercado Pago) | 5 | 4 | 4 |
 | 48 | US21 | Ver la propuesta de valor y el precio de Premium | 2 | 4 | 4 |
 | 49 | US22 | Suscribirme al plan Premium | 5 | 4 | 4 |
 | 50 | US23 | Cancelar mi suscripción Premium | 2 | 4 | 4 |
@@ -2035,11 +2035,11 @@ El seguimiento de las 12 tareas de ingeniería se registra por separado en el [S
 
 ## 2.5. Strategic-Level Domain-Driven Design
 
-El diseño estratégico de Domain-Driven Design [@evans2003ddd] organiza las responsabilidades de CraveWallet a partir de las reglas del negocio. La gestión de las suscripciones que el usuario paga a terceros y la facturación del plan Premium de CraveWallet representan compromisos distintos. Por ello, se proponen fronteras separadas para conservar sus reglas y estados sin mezclar ambos ciclos de vida.
+El diseño estratégico de Domain-Driven Design [@evans2003ddd; @zhong2024ddd] organiza las responsabilidades de CraveWallet a partir de las reglas del negocio. La evidencia empírica sobre la adopción de DDD en arquitecturas de servicios confirma que delimitar Bounded Contexts y aplicar capas anticorrupción reduce el acoplamiento frente a sistemas externos [@zhong2024ddd]. La gestión de las suscripciones que el usuario paga a terceros y la facturación del plan Premium de CraveWallet representan compromisos distintos. Por ello, se proponen fronteras separadas para conservar sus reglas y estados sin mezclar ambos ciclos de vida.
 
 El trabajo parte del Big Picture EventStorming y del Ubiquitous Language del Needfinding (secciones 2.3.5 y 2.3.6), que describen cómo un usuario administra sus compromisos recurrentes hoy, sin CraveWallet. El segundo ejercicio de EventStorming cambia de propósito: diseña el proceso de la solución e incorpora los comandos, las políticas, los agregados y las vistas de lectura necesarios para registrar una suscripción, verla en el Dashboard, recibir un recordatorio con 24 horas de anticipación y, si corresponde, pasar a Premium.
 
-De ese segundo EventStorming surgen los Bounded Contexts candidatos, con dos técnicas. *Start-with-value* delimita la parte del dominio de la que depende la ventaja de CraveWallet: anticipar el cobro y expresar el portafolio en soles. *Look-for-pivotal-events* usa como señales de frontera los cambios de estado importantes, como registrar una suscripción, programar una alerta o pasar a Premium. El contexto core se separa de los subdominios de apoyo y genéricos; las relaciones y patrones de Context Mapping se detallarán en 2.5.2. Las respuestas de Stripe y ExchangeRate-API pasan por una capa de traducción, conforme a la Estrategia 4 de la sección 2.1.2.
+De ese segundo EventStorming surgen los Bounded Contexts candidatos, con dos técnicas. *Start-with-value* delimita la parte del dominio de la que depende la ventaja de CraveWallet: anticipar el cobro y expresar el portafolio en soles. *Look-for-pivotal-events* usa como señales de frontera los cambios de estado importantes, como registrar una suscripción, programar una alerta o pasar a Premium. El contexto core se separa de los subdominios de apoyo y genéricos; las relaciones y patrones de Context Mapping se detallarán en 2.5.2. Las respuestas de la pasarela de pago (modelada inicialmente con Stripe en AV1/TB1 e implementada con Mercado Pago en AV2) y ExchangeRate-API pasan por una capa de traducción, conforme a la Estrategia 4 de la sección 2.1.2.
 
 La arquitectura de software que cierra la sección se representará con el C4 Model, en sus niveles de contexto, contenedores y despliegue.
 
@@ -2098,7 +2098,7 @@ La tabla 85 resume los contextos candidatos, sus responsabilidades, sus eventos 
 *Fuente: elaboración del equipo Gastify.*
 
 
-La autenticación por el backend RESTful, las notificaciones locales, el calendario del dispositivo y el almacenamiento local son capacidades que colaboran con estos contextos. ExchangeRate-API, Google Places API y Stripe permanecen como dependencias externas. Su integración debe traducir las respuestas técnicas a conceptos propios del dominio antes de afectar una suscripción, un gasto o un nivel de acceso.
+La autenticación por el backend RESTful, las notificaciones locales, el calendario del dispositivo y el almacenamiento local son capacidades que colaboran con estos contextos. ExchangeRate-API, Google Places API y Mercado Pago (evaluado inicialmente como Stripe en AV1/TB1) permanecen como dependencias externas. Su integración debe traducir las respuestas técnicas a conceptos propios del dominio antes de afectar una suscripción, un gasto o un nivel de acceso.
 
 #### 2.5.1.2. Domain Message Flows Modeling
 
@@ -2174,11 +2174,11 @@ La tabla 88 distingue el inicio del checkout de la confirmación que habilita o 
 
 | Orden y tipo | Emisor → receptor | Mensaje y datos relevantes |
 | --- | --- | --- |
-| 1 — C | Aplicación móvil → Premium & Billing | Iniciar checkout con identidad autenticada. El servidor selecciona el precio de su catálogo; el cliente no define el importe a cobrar. |
-| 2 — C | Premium & Billing → Stripe | Crear sesión de suscripción y conservar la correlación entre usuario, cliente y operación. |
-| 3a — R | Stripe → Premium & Billing | Sesión creada: `sessionId` y enlace de checkout. |
-| 3b — R | Premium & Billing → aplicación móvil | Enlace de la sesión. El usuario completa el pago con Stripe; Premium se activa recién con la confirmación del paso 4. |
-| 4 — E externo | Stripe → adaptador de Premium & Billing | `invoice.paid`: identificadores de evento, factura, cliente y suscripción. Verificar firma, correlación, entorno de prueba y estado vigente de la suscripción antes de actualizar acceso. |
+| 1 — C | Aplicación móvil → Premium & Billing | Iniciar checkout con identidad autenticada. El servidor selecciona el precio de su catálogo (S/ 9.99 PEN); el cliente no define el importe a cobrar. |
+| 2 — C | Premium & Billing → Mercado Pago (pasarela de pago) | Crear suscripción pendiente (`POST /preapproval`) y conservar la correlación entre usuario, `external_reference` y operación. |
+| 3a — R | Mercado Pago → Premium & Billing | Suscripción creada: `sessionId` (`preapprovalId`) y enlace de checkout alojado (`init_point`). |
+| 3b — R | Premium & Billing → aplicación móvil | Enlace de la sesión. El usuario completa el pago con Mercado Pago; Premium se activa recién con la confirmación del paso 4. |
+| 4 — E externo | Mercado Pago → adaptador de Premium & Billing | Webhook firmado (`payment` / `subscription_authorized_payment` / `subscription_preapproval`): identificadores de entrega, pago, factura y suscripción. Verificar firma HMAC-SHA256 (`x-signature`), correlación, modo de operación (`live_mode`) y estado autorizado antes de actualizar acceso. |
 | 5 — E interno | SubscriptionPlan → manejadores del mismo contexto | `PlanUpgradedToPremium(planId, userId, billingPeriod)` cuando Free pasa a Premium. Una renovación actualiza la vigencia sin repetir esa transición. |
 | 6a — Q | Aplicación móvil → Premium & Billing | Consultar acceso del usuario autenticado. |
 | 6b — R | Premium & Billing → aplicación móvil | `PlanAccess`: nivel y vigencia confirmados. Mostrar pendiente mientras no exista confirmación válida. |
@@ -2186,7 +2186,7 @@ La tabla 88 distingue el inicio del checkout de la confirmación que habilita o 
 *Fuente: elaboración del equipo Gastify, adaptada de DDD Crew [@dddcrewMessageFlows].*
 
 
-Stripe documenta la confirmación por webhook y el control del estado de la suscripción [@stripeSubscriptionWebhooks]. La recepción debe admitir reintentos y notificaciones fuera de orden [@stripeWebhooks]. El registro único del identificador externo impide aplicar dos veces el mismo evento. SP05 y SP06 validan este flujo. La figura 20 separa la respuesta de Stripe al backend de la respuesta del backend al cliente.
+Mercado Pago documenta la creación de suscripciones y la confirmación asíncrona por webhook [@mercadoPagoSubscriptions; @mercadoPagoWebhooks], reemplazando en AV2 la propuesta inicial modelada con Stripe [@stripeSubscriptionWebhooks; @stripeWebhooks] para operar directamente en soles en el mercado peruano. La recepción debe admitir reintentos y notificaciones fuera de orden. El registro único del identificador externo impide aplicar dos veces el mismo evento. SP05 y SP06 validan este flujo. La figura 20 conserva el diagrama original de TB1 que separa la respuesta de la pasarela al backend de la respuesta del backend al cliente.
 
 ![Activación o renovación del plan Premium](images/chapter_2/message-flow-premium-activation.jpg)
 
@@ -2208,13 +2208,13 @@ La tabla 89 separa la solicitud de cancelación del fin efectivo del acceso paga
 | Orden y tipo | Emisor → receptor | Mensaje y datos relevantes |
 | --- | --- | --- |
 | 1 — C | Aplicación móvil → Premium & Billing | Solicitar cancelación de la renovación del plan propio. |
-| 2a — C | Premium & Billing → Stripe | Solicitar cancelación al fin del período de la suscripción correlacionada (`cancel_at_period_end`). |
-| 2b — R | Stripe → Premium & Billing | Confirmación y fecha de fin del período pagado. Premium sigue vigente hasta esa fecha. |
+| 2a — C | Premium & Billing → Mercado Pago (pasarela de pago) | Solicitar cancelación de la suscripción correlacionada (`PUT /preapproval/{id}` con `status = cancelled`). |
+| 2b — R | Mercado Pago → Premium & Billing | Confirmación de la cancelación remota. Premium sigue vigente localmente con `cancelAtPeriodEnd = true` hasta `periodEndsAt`. |
 | 2c — R | Premium & Billing → aplicación móvil | Renovación cancelada y vigencia restante. Si el proveedor rechaza la solicitud, informar el error sin confirmar cancelación. |
-| 3 — E externo | Stripe → adaptador de Premium & Billing | `customer.subscription.deleted` al finalizar la suscripción. Verificar firma y correlación, y reconciliar la vigencia. |
+| 3 — E externo / reconciliación | Mercado Pago / reloj de dominio → Premium & Billing | Al cumplirse `periodEndsAt` de la membresía cancelada, reconciliar la vigencia y expirar el período pagado. |
 | 4 — E interno | SubscriptionPlan → manejadores del mismo contexto | `PlanDowngradedToFree(planId, userId)` tras finalizar el acceso Premium. |
 | 5a — Q | Aplicación móvil → Premium & Billing | Consultar acceso del usuario autenticado. |
-| 5b — R | Premium & Billing → aplicación móvil | `PlanAccess`: nivel Free y límite vigente. El tratamiento de registros que excedan el límite gratuito debe acordarse con el equipo. |
+| 5b — R | Premium & Billing → aplicación móvil | `PlanAccess`: nivel Free y límite vigente (5 suscripciones activas). |
 
 *Fuente: elaboración del equipo Gastify, adaptada de DDD Crew [@dddcrewMessageFlows].*
 
@@ -2316,7 +2316,7 @@ La tabla 91 desarrolla el canvas de Delivery Expense Management, incluidos el pr
 
 ##### Canvas 3. Premium & Billing
 
-La figura 24 concentra las reglas del plan propio de CraveWallet, las colaboraciones con Stripe y el contrato de acceso que consume Subscription Management.
+La figura 24 concentra las reglas del plan propio de CraveWallet, las colaboraciones con la pasarela de pagos (modelada originalmente con Stripe en AV1/TB1 e implementada con Mercado Pago en AV2) y el contrato de acceso que consume Subscription Management.
 
 ![Bounded Context Canvas de Premium & Billing](images/chapter_2/canvas-premium.jpg)
 
@@ -2336,14 +2336,14 @@ La tabla 92 desarrolla el canvas de Premium & Billing y las reglas de vigencia d
 | --- | --- |
 | Nombre | **Premium & Billing — Plan Premium y facturación de CraveWallet.** |
 | Propósito | Mantener el nivel de acceso a CraveWallet y su vigencia a partir del resultado confirmado de la facturación del propio producto. El plan de CraveWallet es distinto de las suscripciones a servicios externos que registra Subscription Management. |
-| Clasificación estratégica | **Generic**, porque la facturación y los niveles de acceso son capacidades comunes. Modelo de negocio: **revenue generator**. Evolución propuesta: **product** para el proveedor Stripe, integrado con las reglas propias de acceso; el módulo permanece en etapa de diseño. |
+| Clasificación estratégica | **Generic**, porque la facturación y los niveles de acceso son capacidades comunes. Modelo de negocio: **revenue generator**. Evolución propuesta: **product** para el proveedor de pagos recurrentes Mercado Pago (evaluado inicialmente con Stripe en AV1/TB1), integrado con las reglas propias de acceso en el Sprint 2. |
 | Roles del dominio | **Execution context:** gestionar vigencia y nivel de acceso. **Gateway context:** interpretar y traducir el resultado externo de facturación al plan local. |
-| Comunicación entrante | **Aplicación móvil (cliente):** inicia checkout, consultas de plan e historial y cancelación; recibe sesión, estado y confirmación de la solicitud. **Stripe [U]:** inicia notificaciones `invoice.paid` y `customer.subscription.deleted`, verificadas y traducidas por ACL. **Subscription Management [D/C]:** inicia `GetPlanAccess` y recibe `PlanAccess` (Customer/Supplier propuesto). |
-| Comunicación saliente | **Stripe [U]:** Premium inicia creación de checkout, cancelación al fin del período y consultas para reconciliar estado; recibe sesión, vigencia y estado a través de `StripeGatewayAdapter`. Las respuestas al móvil y a Suscripciones pertenecen a colaboraciones entrantes. `PlanUpgradedToPremium` y `PlanDowngradedToFree` son eventos internos, conforme a 2.6.3. |
-| Colaboradores y relaciones | Stripe suministra el resultado de facturación; una capa anticorrupción lo convierte al lenguaje del plan de CraveWallet. Subscription Management consume la información de acceso. El cliente móvil presenta el flujo de pago; Premium se activa solo con la confirmación de Stripe. |
+| Comunicación entrante | **Aplicación móvil (cliente):** inicia checkout, consultas de plan e historial y cancelación; recibe sesión, estado y confirmación de la solicitud. **Mercado Pago [U]:** inicia notificaciones firmadas (`payment`, `subscription_authorized_payment`, `subscription_preapproval`), verificadas y traducidas por ACL. **Subscription Management [D/C]:** inicia `GetPlanAccess` y recibe `PlanAccess` (Customer/Supplier). |
+| Comunicación saliente | **Mercado Pago [U]:** Premium inicia creación de suscripción (`POST /preapproval`), cancelación (`PUT /preapproval/{id}`) y consultas de pagos/facturas para reconciliar estado; recibe sesión, vigencia y estado a través de `MercadoPagoPaymentAdapter`. Las respuestas al móvil y a Suscripciones pertenecen a colaboraciones entrantes. `PlanUpgradedToPremium` y `PlanDowngradedToFree` son eventos internos, conforme a 2.6.3. |
+| Colaboradores y relaciones | Mercado Pago suministra el resultado de facturación; una capa anticorrupción lo convierte al lenguaje del plan de CraveWallet. Subscription Management consume la información de acceso. El cliente móvil presenta el flujo de pago; Premium se activa solo con la confirmación verificada de Mercado Pago. |
 | Lenguaje ubicuo | **Plan Free:** nivel gratuito sujeto a un límite. **Plan Premium:** nivel con beneficios definidos. **Período de vigencia:** intervalo de acceso pagado. **Pago confirmado:** resultado verificado del proveedor. **Cancelación del plan:** fin de la renovación de CraveWallet; no cancela los servicios externos del usuario. |
-| Decisiones y reglas | El agregado `SubscriptionPlan` mantiene el nivel Free/Premium y la vigencia. La confirmación verificada activa Premium; abrir checkout no lo activa. Procesar dos veces una misma confirmación no debe duplicar la transición. TS06 propone conservar el acceso hasta el fin del período pagado y volver a Free tras la notificación correspondiente. Las pruebas con Stripe deben identificarse como operaciones de prueba y no como ingresos reales. |
-| Supuestos | El plan usa facturación recurrente. El precio es de S/ 9.99 al mes. SP05 investiga el flujo y SP06 lo comprueba mediante un prototipo. |
+| Decisiones y reglas | El agregado `PremiumMembership` (`SubscriptionPlan`) mantiene el nivel Free/Premium y la vigencia. La confirmación verificada activa Premium; abrir checkout no lo activa. Procesar dos veces una misma confirmación no duplica la transición. TS06 conserva el acceso hasta el fin del período pagado (`periodEndsAt`) tras cancelar y vuelve a Free al vencer el período. Las operaciones verifican el modo de ejecución (`live_mode`) configurado en el servidor. |
+| Supuestos | El plan usa facturación recurrente. El precio es de S/ 9.99 al mes en soles peruanos (PEN). SP05 investiga el flujo y SP06 lo comprueba mediante un prototipo. |
 | Métricas de verificación propuestas | Contar activaciones sin pago confirmado, discrepancias entre vigencia y acceso, y transiciones duplicadas al repetir una notificación de prueba. Registrar el tiempo entre confirmación y actualización del plan. |
 | Preguntas abiertas | ¿Qué acceso se mantiene ante un pago fallido? ¿Cómo se recuperan notificaciones que no llegaron? ¿Cómo se administran reembolsos? ¿Qué ocurre con los registros existentes al volver a Free? ¿Cuál es la política comercial definitiva de precio y beneficios? |
 | Trazabilidad | Epic EP07, US21–US23, US31, US39, TS06 y SP05–SP06; diseño táctico 2.6.3. |
@@ -2366,7 +2366,7 @@ La tabla 93 justifica cada relación del Context Map e identifica el contrato o 
 | Premium & Billing [U] → Subscription Management [D] | **Customer/Supplier** como acuerdo de diseño: las necesidades de registro y límites de Suscripciones deben formar parte de la planificación de Premium. | `GetPlanAccess(userId)` devuelve nivel, límite y vigencia. En la relación, Premium ocupa U/S (proveedor) y Suscripciones D/C (cliente). Suscripciones cuenta sus registros activos y decide si admite el nuevo registro. |
 | Subscription Management / Delivery Expense Management | **Separate Ways** para sus modelos de dominio: no se propone un flujo directo entre sus agregados. El cliente compone sus resúmenes en el Dashboard. | Cada módulo conserva su lenguaje y almacenamiento. El identificador del usuario sirve para correlacionar datos; no implica código o esquema compartido como Shared Kernel. |
 | ExchangeRate-API [U] → Subscription Management [D] | **Anti-Corruption Layer (ACL):** `ExchangeRateApiAdapter` traduce la respuesta del proveedor a cotización, monedas y fecha de consulta del modelo local. | `ExchangeRatePort`; el precio en moneda original permanece intacto. La frecuencia y la caché de TS03 se comprueban en SP01 y SP02. |
-| Stripe [U] → Premium & Billing [D] | **ACL:** el adaptador verifica y traduce las notificaciones a cambios del plan local. Los eventos técnicos de Stripe se conservan en la frontera de integración. | `PaymentGatewayPort`, correlación de facturación y deduplicación del identificador externo. Eventos internos: `PlanUpgradedToPremium` y `PlanDowngradedToFree`. |
+| Mercado Pago (inicialmente Stripe en AV1/TB1) [U] → Premium & Billing [D] | **ACL:** `MercadoPagoPaymentAdapter` y `MercadoPagoWebhookSignature` verifican y traducen las notificaciones y recursos remotos a cambios del plan local. Los eventos técnicos del proveedor se conservan en la frontera de integración. | `PremiumPaymentGateway`, correlación de facturación (`external_reference`) y deduplicación del identificador externo y factura. Eventos internos: `PlanUpgradedToPremium` y `PlanDowngradedToFree`. |
 | Google Places [U] → Delivery Expense Management [D] | **ACL:** `GooglePlacesAdapter` convierte la respuesta en `MerchantSuggestion`. Se protege el vocabulario de gastos y se mantiene la opción manual. | Consulta auxiliar de comercio. El importe pagado procede del usuario, no de Places. La API elegida y su versión deben probarse antes de fijar el adaptador [@googlePlacesTextSearch]. |
 
 *Fuente: elaboración del equipo Gastify.*
@@ -2390,13 +2390,13 @@ El calendario del dispositivo y la autenticación colaboran con los casos de uso
 
 Las vistas de arquitectura se elaboran en Structurizr a partir de un único [modelo editable DSL](diagrams/chapter_2/workspace.dsl), con un [archivo JSON que conserva la distribución](diagrams/chapter_2/workspace.json). Contexto y contenedores muestran usuarios, responsabilidades, fronteras y colaboraciones; despliegue ubica las instancias en la infraestructura. Los componentes de cada Bounded Context se presentan en 2.6 [@c4ModelDiagrams; @structurizrDsl]. Las figuras son exportaciones del renderizador de Structurizr.
 
-El modelo distingue el incremento documentado en 4.2.1.8 del diseño propuesto. Stripe, Google Places y las colaboraciones de Premium tienen contorno o flechas discontinuas de color ámbar y la indicación «propuesto». Las vistas de componentes describen el diseño por responsabilidades.
+El modelo distingue el incremento documentado en 4.2.1.8 del diseño completo. En los diagramas C4 exportados en TB1, la pasarela de pago (etiquetada como Stripe en el modelo inicial y materializada con Mercado Pago en el Sprint 2), Google Places y las colaboraciones de Premium tienen contorno o flechas discontinuas de color ámbar y la indicación «propuesto». Las vistas de componentes describen el diseño por responsabilidades.
 
 #### 2.5.3.1. Software Architecture Context Level Diagrams
 
-CraveWallet reúne la landing, la experiencia móvil y el backend. El visitante conoce la propuesta y accede a la app; el usuario registra y consulta suscripciones y gastos. ExchangeRate-API proporciona cotizaciones y el calendario de Android recibe eventos desde el cliente. La integración futura con Stripe corresponde al plan propio de CraveWallet; registrar una suscripción no paga ni cancela el contrato con el proveedor externo.
+CraveWallet reúne la landing, la experiencia móvil y el backend. El visitante conoce la propuesta y accede a la app; el usuario registra y consulta suscripciones y gastos. ExchangeRate-API proporciona cotizaciones y el calendario de Android recibe eventos desde el cliente. La integración con la pasarela de pago (Mercado Pago en AV2, modelada inicialmente como Stripe en TB1) corresponde al plan propio de CraveWallet; registrar una suscripción no paga ni cancela el contrato con el proveedor externo.
 
-La figura 26 muestra dos roles, CraveWallet como un único sistema y cuatro colaboradores externos. Omite tecnologías, almacenes y módulos internos para conservar el nivel de contexto. La solicitud a Stripe y las notificaciones del proveedor tienen relaciones separadas, identificadas como propuestas; las flechas expresan colaboraciones y no una secuencia de ejecución.
+La figura 26 muestra dos roles, CraveWallet como un único sistema y cuatro colaboradores externos. Omite tecnologías, almacenes y módulos internos para conservar el nivel de contexto. La solicitud a la pasarela de pago y las notificaciones del proveedor tienen relaciones separadas; las flechas expresan colaboraciones y no una secuencia de ejecución.
 
 ![Diagrama de contexto del sistema CraveWallet](images/chapter_2/system-context-revised.png)
 
@@ -2434,13 +2434,13 @@ La tabla 94 define los cinco contenedores. La tecnología móvil y el almacenami
 
 *Fuente: elaboración del equipo Gastify; exportación de Structurizr, vista Containers.*
 
-La figura 27 muestra las tecnologías de las colaboraciones: HTTPS/JSON entre Android y backend, JPA/JDBC hacia PostgreSQL y APIs locales hacia SharedPreferences y CalendarContract. El calendario recibe operaciones desde Android. WorkManager prepara notificaciones locales; no se introduce un servidor de notificaciones push remotas. La colaboración con Stripe conserva el webhook firmado hacia el backend y el checkout del proveedor, ambos propuestos. El retorno al cliente no confirma el acceso Premium.
+La figura 27 muestra las tecnologías de las colaboraciones: HTTPS/JSON entre los clientes móviles (Android nativo en Kotlin/Compose y multiplataforma en Flutter) y el backend, JPA/JDBC hacia PostgreSQL y APIs locales hacia SharedPreferences y CalendarContract. El calendario recibe operaciones desde Android. WorkManager prepara notificaciones locales; no se introduce un servidor de notificaciones push remotas. La colaboración con la pasarela de pago (Mercado Pago en AV2; etiquetada como Stripe en la vista de TB1) conserva el webhook firmado hacia el backend y el checkout alojado del proveedor. El retorno al cliente no confirma el acceso Premium.
 
 #### 2.5.3.3. Software Architecture Deployment Diagrams
 
-La figura 28 asigna instancias de los contenedores a nodos de despliegue anidados, conforme al diagrama de despliegue C4 [@c4Deployment]. El incremento TB1 ejecuta el REST API como servicio Docker de Java 21 en Render, región Oregon, y conserva sus datos en PostgreSQL 17 administrado por Render. El servicio usa el perfil `prod`, variables privadas y conexión interna a la base, con migraciones Flyway V1–V3. El endpoint público es [cravewallet-api.onrender.com](https://cravewallet-api.onrender.com). La evidencia de publicación y persistencia tras reinicio se presenta en la tabla 158 de 4.2.1.8.
+La figura 28 asigna instancias de los contenedores a nodos de despliegue anidados, conforme al diagrama de despliegue C4 [@c4Deployment]. El incremento TB1 ejecuta el REST API como servicio Docker de Java 21 en Render, región Oregon, y conserva sus datos en PostgreSQL 17 administrado por Render. El servicio usa el perfil `prod`, variables privadas y conexión interna a la base, con migraciones Flyway V1–V3 en TB1 y V4–V5 en AV2. El endpoint público es [cravewallet-api.onrender.com](https://cravewallet-api.onrender.com). La evidencia de publicación y persistencia tras reinicio se presenta en la tabla 158 de 4.2.1.8 y se amplía en 4.2.2.8.
 
-La landing se aloja por separado en Vercel. El nodo Android representa el destino del APK generado y su almacenamiento local. La integración del cliente se probó contra el HTTPS público, según la evidencia citada en 4.2.1.8. Stripe y Google Places no aparecen como servicios desplegados porque sus integraciones quedan fuera del alcance del Sprint 1.
+La landing se aloja por separado en Vercel. El nodo móvil representa el destino de los artefactos generados (Kotlin y Flutter) y su almacenamiento local. La integración del cliente se probó contra el HTTPS público, según la evidencia citada en 4.2.1.8 y 4.2.2.8. En la figura 28 (corte TB1), la pasarela de pago y Google Places no aparecían aún como servicios integrados porque se incorporaron en el Sprint 2 (AV2) con Mercado Pago y Google Places Text Search.
 
 Render Free es un entorno de demostración temporal: el servicio puede suspenderse por inactividad y la base gratuita requiere renovación o migración antes de vencer. La configuración y las evidencias del corte publicado están disponibles en la [guía del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/740aba0/docs/cloud-deployment.md).
 
@@ -2457,6 +2457,13 @@ Render Free es un entorno de demostración temporal: el servicio puede suspender
 ## 2.6. Tactical-Level Domain-Driven Design
 
 Se detallan los tres contextos del mapa de 2.5.2. Cada módulo distingue Domain Layer, Interface Layer, Application Layer e Infrastructure Layer. Las reglas se expresan en el lenguaje del proyecto y en contratos que orientan la implementación. El dominio conserva sus invariantes y la aplicación coordina repositorios, transacciones e integraciones.
+
+Además de los tres Bounded Contexts de negocio (`subscriptions`, `delivery` y `premium`), el backend en `CraveWallet-Backend` organiza la capacidad técnica transversal de identidad y sesiones (correspondiente a la historia técnica `TS01` y las historias `US01`–`US03` y `US33`) en el paquete modular `pe.edu.upc.gastify.cravewallet.iam` (*Identity and Access Management*), siguiendo la misma estructura por capas:
+
+- **Domain Layer (`iam.domain.model`):** entidades `User` (identificador UUID, correo normalizado, hash BCrypt de contraseña y moneda de referencia `PEN`) y `Session` (hash SHA-256 del *refresh token* de un solo uso, fechas de expiración y revocación), junto con los contratos `UserRepository`, `SessionRepository` y `TokenProvider`.
+- **Interface Layer (`iam.interfaces.rest`):** controladores `AuthenticationController` (`POST /api/v1/auth/register`, `/login`, `/refresh`, `/logout`) y `UserController` (`GET /api/v1/users/me`, `PATCH /api/v1/users/me`).
+- **Application Layer (`iam.application.internal`):** `AuthApplicationService`, que coordina el alta de cuentas, la rotación transaccional de sesiones y la configuración de la moneda de referencia.
+- **Infrastructure Layer (`iam.infrastructure`):** repositorios JPA (`JpaUserRepository`, `JpaSessionRepository`) sobre las tablas `iam_users` e `iam_sessions` (migración Flyway `V1__init_schema.sql`), proveedor criptográfico `JwtTokenProvider` (HMAC-SHA256) y filtro `JwtAuthenticationFilter`. En coherencia con la sección 2.5.2, `iam` actúa como capacidad de soporte transversal de autenticación y provee la identidad autenticada (`AuthenticatedUser`) sin constituir un cuarto Bounded Context de negocio ni introducir un *Shared Kernel* entre los agregados de suscripciones, delivery y facturación.
 
 ### 2.6.1. Bounded Context: Subscription Management
 
@@ -2669,7 +2676,7 @@ La figura 34 muestra las tablas propuestas para persistir Delivery Expense Manag
 
 #### 2.6.3.1. Domain Layer
 
-**`SubscriptionPlan`** representa el nivel de acceso a CraveWallet. Mantiene propietario, Free/Premium, período de vigencia y referencias para correlacionar facturación. La cancelación del plan propio no cambia los registros externos del usuario.
+**`SubscriptionPlan`** (implementado en el código de AV2 como **`PremiumMembership`**) representa el nivel de acceso a CraveWallet. Mantiene propietario, nivel `FREE`/`PREMIUM`, estado de membresía (`MembershipStatus`: `FREE`, `PENDING`, `ACTIVE`, `CANCELLED`, `EXPIRED`), período de vigencia y referencias para correlacionar la facturación recurrente. La cancelación del plan propio no cambia los registros externos del usuario.
 
 La tabla 99 describe los elementos de la Domain Layer de Premium & Billing y sus reglas.
 
@@ -2677,53 +2684,53 @@ La tabla 99 describe los elementos de la Domain Layer de Premium & Billing y sus
 
 | Elemento | Responsabilidad o regla |
 | --- | --- |
-| `PlanType` | FREE / PREMIUM. El nivel cambia tras una decisión sustentada en una notificación verificada. |
-| `BillingPeriod` | Inicio y fin del acceso pagado, con fin posterior al inicio. Una renovación actualiza la vigencia sin volver a emitir una transición Free → Premium. |
-| `StripeCustomerId` / `StripeSubscriptionId` | Referencias de correlación encapsuladas. Los payloads completos del proveedor no entran al agregado. |
-| `PlanUpgradedToPremium` | Transición confirmada de Free a Premium. |
-| `PlanDowngradedToFree` | Fin confirmado del acceso Premium y retorno a Free. |
-| `PlanRepository` | Persistencia y consultas por usuario y referencias de facturación. |
-| `PaymentGatewayPort` | Contrato para checkout y cancelación de renovación; la verificación entrante del webhook es una responsabilidad distinta. |
+| `PlanType` / `MembershipStatus` | `FREE` / `PREMIUM` y estados de ciclo de vida (`FREE`, `PENDING`, `ACTIVE`, `CANCELLED`, `EXPIRED`). El acceso Premium se habilita solo tras una confirmación verificada del pago; iniciar un checkout deja el estado en `PENDING` sin otorgar privilegios. |
+| `BillingPeriod` (`periodEndsAt`, `cancelAtPeriodEnd`) | Fin del acceso pagado e indicador de cancelación al cierre del período. Una renovación amplía la vigencia sin duplicar la activación; al cancelar, el acceso se conserva hasta `periodEndsAt`. |
+| Referencias de correlación (`externalReference`, `preapprovalId`, `invoiceId`) | Referencias encapsuladas de la suscripción y los pagos en Mercado Pago (modeladas originalmente como `StripeCustomerId` / `StripeSubscriptionId` en AV1/TB1). Los payloads completos del proveedor no entran al agregado. |
+| `PlanUpgradedToPremium` | Transición confirmada de Free a Premium tras un cobro aprobado. |
+| `PlanDowngradedToFree` | Fin confirmado del acceso Premium y retorno a Free al expirar `periodEndsAt`. |
+| `PremiumMembershipRepository` / `PremiumBillingRepository` | Contratos de persistencia y consultas por usuario, sesiones de checkout, pagos confirmados y entregas de webhook. |
+| `PremiumPaymentGateway` (`PaymentGatewayPort`) | Contrato de dominio para crear sesiones de suscripción (`createCheckoutSession`), consultar estado remoto (`fetchSubscription`, `fetchPayment`, `fetchAuthorizedPayment`) y cancelar la renovación (`cancelSubscription`). |
 
 *Fuente: elaboración del equipo Gastify.*
 
 
-`upgradeToPremium` debe conservar o ampliar el período confirmado, incluso si el plan ya es Premium. La deduplicación se basa en el evento externo y la factura; una notificación antigua no debe reducir la vigencia actual. `downgradeToFree` comprueba antes el fin del acceso. Las referencias de facturación se conservan para trazabilidad, en lugar de borrarlas al cancelar.
+La activación (`activate`) conserva o amplía el período confirmado (`periodEndsAt`), incluso si el plan ya es Premium. La deduplicación se basa en el identificador externo del pago y de la factura autorizada; una notificación antigua o fuera de orden no reduce la vigencia actual. Al vencer `periodEndsAt`, la reconciliación transiciona la membresía a `EXPIRED` y restablece el nivel `FREE`. Las referencias de facturación se conservan para trazabilidad e historial, en lugar de borrarlas al cancelar.
 
 #### 2.6.3.2. Interface Layer
 
-`PremiumController` atiende al usuario autenticado. `StripeWebhookController` recibe notificaciones del proveedor; no requiere el JWT del usuario, pero sí la verificación de firma y correlación antes de afectar un plan.
+`PremiumController` atiende al usuario autenticado. `PremiumWebhookController` (denominado `StripeWebhookController` en el diseño inicial de TB1) recibe notificaciones firmadas de Mercado Pago; no requiere el JWT del usuario, pero sí la verificación criptográfica de firma HMAC-SHA256 (`x-signature`) y correlación antes de afectar un plan.
 
-La tabla 100 lista los endpoints de Premium & Billing y el contrato propuesto para cada uno.
+La tabla 100 lista los endpoints de Premium & Billing y el contrato de cada uno.
 
 *Tabla 100. Interface Layer.*
 
-| Método y ruta base `/api/v1/premium` | Contrato propuesto |
+| Método y ruta base `/api/v1/premium` | Contrato |
 | --- | --- |
-| POST `/checkout` | Inicia sesión de pago y devuelve enlace; no confirma Premium. |
-| GET `/status` | Devuelve nivel y vigencia confirmados. |
-| POST `/cancel` | Solicita cancelar la renovación al fin del período pagado. |
-| GET `/payments` | Historial de operaciones confirmadas del usuario. |
-| POST `/webhook` | Entrada de Stripe verificada; no acepta una declaración de pago desde el móvil. |
+| POST `/checkout` | Inicia o reutiliza sesión de suscripción (`S/ 9.99 PEN`) y devuelve el enlace de checkout alojado; no confirma Premium. |
+| GET `/status` | Devuelve plan (`FREE`/`PREMIUM`), estado de membresía, vigencia (`periodEndsAt`) y precio mensual. |
+| POST `/cancel` | Cancela la renovación en Mercado Pago y conserva el acceso hasta el fin del período pagado (`cancelAtPeriodEnd = true`). |
+| GET `/payments` | Historial de pagos aprobados del usuario autenticado. |
+| POST `/webhook` | Entrada de Mercado Pago verificada con HMAC-SHA256 (`x-signature`, `x-request-id`, `data.id`); no acepta declaraciones de pago desde el móvil. |
 
 *Fuente: elaboración del equipo Gastify.*
 
 
 #### 2.6.3.3. Application Layer
 
-`PremiumApplicationService` crea o recupera el plan y conserva la correlación usuario/cliente/suscripción antes de procesar una confirmación. `handlePaymentConfirmed` comprueba evento/factura no procesados y estado vigente, actualiza el período y registra el resultado en una transacción. `handleSubscriptionCancelled` reconcilia la vigencia antes de volver a Free. Las respuestas a `GetPlanAccess` publican un contrato local de nivel y límite para Suscripciones; no exponen el objeto Stripe.
+`PremiumBillingService` y `PremiumApplicationService` crean o recuperan la membresía y conservan la correlación usuario/checkout/suscripción antes de procesar una confirmación. Al procesar un webhook, el servicio comprueba la firma, verifica que el pago pertenezca a una suscripción autorizada en el modo configurado (`live_mode`), valida importe (`9.99`) y moneda (`PEN`), actualiza el período y registra el pago en una transacción idempotente. Al cancelar, confirma primero la baja en Mercado Pago y mantiene el acceso hasta `periodEndsAt`. `PremiumPlanAccessAdapter` responde a `SubscriptionPlanAccessPort` (`GetPlanAccess`) publicando un contrato local de nivel y límite (5 suscripciones en Free, ilimitadas en Premium) para Suscripciones, sin exponer objetos del proveedor externo.
 
 #### 2.6.3.4. Infrastructure Layer
 
-**`StripeGatewayAdapter`** implementa el puerto de salida para checkout/cancelación. **`StripeWebhookAdapter`** verifica firma, registra el identificador del evento y traduce la notificación para la aplicación. Separar ambos evita que el servicio de aplicación dependa de un adaptador que a su vez llama al mismo servicio. La correlación y actualización deben soportar reintentos y mensajes fuera de orden [@stripeWebhooks].
+**`MercadoPagoPaymentAdapter`** (evolución en AV2 del `StripeGatewayAdapter` proyectado en TB1) implementa `PremiumPaymentGateway` consumiendo la API REST de Mercado Pago (`/preapproval`, `/preapproval/search`, `/v1/payments/{id}`, `/authorized_payments/{id}`) [@mercadoPagoSubscriptions]. **`MercadoPagoWebhookSignature`** verifica el manifiesto criptográfico `id:[data.id];request-id:[x-request-id];ts:[ts];` con HMAC-SHA256 y ventana máxima de tolerancia de 5 minutos [@mercadoPagoWebhooks]. La correlación y actualización soportan reintentos, entregas duplicadas y mensajes fuera de orden.
 
-Para una factura pagada, se consulta y valida la suscripción vinculada antes de actualizar el acceso. `customer.subscription.deleted` permite reconciliar el fin del plan [@stripeSubscriptionWebhooks]. Un evento no relevante y verificado puede reconocerse sin cambiar el plan; una firma inválida o una falla de procesamiento no se trata como éxito por defecto.
+Para cada notificación de pago o factura autorizada, el adaptador consulta el recurso en Mercado Pago y valida la suscripción vinculada antes de actualizar el acceso. Un evento no relevante pero válidamente firmado se registra como reconocido sin alterar el plan; una firma inválida o un cuerpo alterado se rechaza con `401 Unauthorized`.
 
-`JpaPlanRepository` persiste los planes y sus referencias. El registro `billing_events` impone unicidad al identificador externo y conserva estado de procesamiento. Las pruebas de SP05–SP06 deben demostrar correlación, duplicados, renovación y cancelación; no hay resultados documentados en este avance. El precio y beneficios siguen siendo propuestas comerciales.
+`JpaPremiumMembershipRepository` y `JdbcPremiumBillingRepository` persisten las membresías y el ciclo de facturación sobre las tablas creadas en las migraciones Flyway `V4__add_premium_memberships.sql` y `V5__add_premium_billing.sql`: `premium_memberships`, `premium_checkouts`, `premium_payments` (con índices únicos sobre `external_id` e `invoice_id` aprobado) y `premium_webhook_deliveries`. Las 30 pruebas automatizadas de Premium en el backend (documentadas en 4.2.2.5) verifican correlación, duplicados, firmas, modo de ejecución, renovación y cancelación.
 
 #### 2.6.3.5. Bounded Context Software Architecture Component Level Diagrams
 
-La figura 35 presenta el diseño de componentes de Premium & Billing dentro del REST API. Las dependencias separan interfaz, aplicación, dominio y adaptadores; el almacenamiento y los sistemas externos se sitúan fuera de la frontera del backend. Los elementos y relaciones ámbar discontinuos son propuestas pendientes de integración. Esta vista describe responsabilidades y no una extracción automática de clases implementadas.
+La figura 35 presenta el diseño de componentes de Premium & Billing dentro del REST API (exportado en TB1 con la etiqueta de la pasarela original y materializado en AV2 mediante los adaptadores de Mercado Pago). Las dependencias separan interfaz, aplicación, dominio y adaptadores; el almacenamiento y los sistemas externos se sitúan fuera de la frontera del backend. Esta vista describe responsabilidades y no una extracción automática de clases implementadas.
 
 ![Componentes de Premium & Billing](images/chapter_2/premium-components-revised.png)
 
@@ -2755,7 +2762,7 @@ La figura 36 muestra las clases de la Domain Layer de Premium & Billing.
 
 ##### 2.6.3.6.2. Bounded Context Database Design Diagram
 
-`user_plans` tiene un único registro por usuario. `billing_events` conserva identificador externo único, plan correlacionado, tipo, fecha y estado de procesamiento. La correlación se verifica antes de cambiar el plan.
+En el diseño conceptual inicial (`user_plans` y `billing_events`), cada usuario mantiene un único registro de membresía y cada evento de facturación conserva un identificador externo único, correlación, tipo, fecha y estado de procesamiento. En la implementación de AV2 (migraciones Flyway `V4__add_premium_memberships.sql` y `V5__add_premium_billing.sql`), este esquema se materializa en cuatro tablas especializadas: `premium_memberships` (estado y vigencia por usuario), `premium_checkouts` (correlación entre `external_reference` y la suscripción de Mercado Pago), `premium_payments` (historial de cobros con unicidad por `external_id` e `invoice_id` aprobado) y `premium_webhook_deliveries` (auditoría e idempotencia de notificaciones entrantes). La correlación se verifica antes de cambiar el plan.
 
 La figura 37 muestra las tablas propuestas para persistir Premium & Billing.
 
