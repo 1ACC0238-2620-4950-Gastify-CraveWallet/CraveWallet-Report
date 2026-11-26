@@ -6,23 +6,23 @@ Las seis entrevistas sustentan las hipótesis de centralizar suscripciones, esti
 
 Los artefactos de Needfinding y la especificación conectan las necesidades de Camila Torres y Renzo Salazar con 52 historias priorizadas en el Product Backlog, cuyo tablero se presenta en el Anexo A.
 
-El diseño estratégico separa tres contextos: Subscription Management, Delivery Expense Management y Premium & Billing. Esta separación distingue las suscripciones que el usuario paga a terceros, los gastos puntuales de delivery y la facturación del plan de CraveWallet, y protege cada modelo de los cambios en ExchangeRate-API, Google Places y Stripe mediante capas anticorrupción.
+El diseño estratégico separa tres contextos: Subscription Management, Delivery Expense Management y Premium & Billing. Esta separación distingue las suscripciones que el usuario paga a terceros, los gastos puntuales de delivery y la facturación del plan de CraveWallet, y protege cada modelo de los cambios en ExchangeRate-API, Google Places y Mercado Pago (evaluado inicialmente con Stripe en AV1 y TB1) mediante capas anticorrupción.
 
 El diseño de la aplicación móvil y del landing page aplica un mismo Design System y permite recorrer, en el prototipo, los tres objetivos principales del usuario: agregar una suscripción, revisar su gasto mensual y configurar una alerta de pago.
 
-Los seis spikes (SP01–SP06) investigan las integraciones con ExchangeRate-API, el calendario nativo y Stripe, y sus resultados alimentarán las historias de implementación de los siguientes sprints.
+Los seis spikes (SP01–SP06) investigan las integraciones con ExchangeRate-API, el calendario nativo y la pasarela de pago recurrente (Mercado Pago en AV2, tras evaluar Stripe en AV1/TB1), orientando las historias de implementación de los sprints.
 
-En el Sprint 1 el equipo publicó el landing en Vercel, desplegó en Render un REST API con PostgreSQL y autenticación JWT que cubre funcionalmente 16 de 16 operaciones del alcance TB1 y supera 32 pruebas automatizadas, y compiló la aplicación Android en Kotlin y Jetpack Compose, recorrida en LDPlayer y conectada al API público con 9 pruebas de integración. La evidencia versionada no acredita todavía una ejecución en teléfono físico. Siguen en investigación las integraciones con Stripe y con el calendario nativo.
+En el Sprint 1 el equipo publicó el landing en Vercel, desplegó en Render un REST API con PostgreSQL y autenticación JWT que cubre funcionalmente 16 de 16 operaciones del alcance TB1 y supera 32 pruebas automatizadas, y compiló la aplicación Android en Kotlin y Jetpack Compose, recorrida en LDPlayer y conectada al API público con 9 pruebas de integración.
 
 ## Conclusiones de AV2
 
-El Sprint 2 trasladó a Flutter los flujos de acceso, suscripciones y gastos de delivery. El cliente reutiliza el contrato REST y conserva un modo demostración para recorrer la interfaz. El código y las pruebas de modelos quedan vinculados a los commits de la sección 4.2.2.
+En el Sprint 2 el equipo consolidó la experiencia móvil en dos implementaciones complementarias: actualizó la aplicación Android nativa en Kotlin y Jetpack Compose (`CraveWallet-Mobile`) con el flujo completo de membresía Premium, y construyó la aplicación móvil multiplataforma en Dart y Flutter 3 (`CraveWallet-Flutter`) para acceso, portafolio de suscripciones, gastos de delivery y suscripción Premium con Mercado Pago, respaldadas por 10 pruebas automatizadas en Kotlin y 8 en Flutter.
 
-El backend de AV2 integra Mercado Pago para el checkout mensual, la consulta de estado, la cancelación, el historial de pagos y los webhooks. Las migraciones V4 y V5 incorporan la persistencia de membresías y facturación. GitHub Actions confirmó la validación automatizada del commit integrado. La verificación en PostgreSQL de Render, el pago de prueba de extremo a extremo y las tres grabaciones requieren evidencias propias de esta entrega.
+El backend de AV2 (`CraveWallet-Backend`) amplió su inventario a 22 endpoints REST documentados con OpenAPI y verificados con 72 pruebas automatizadas en 13 clases de prueba. Incorporó el Bounded Context `Premium & Billing` con la API de Suscripciones y Webhooks firmados (HMAC-SHA256) de Mercado Pago para el plan de S/ 9.99 mensuales, las migraciones Flyway V4 y V5, el control del límite de 5 suscripciones en el plan gratuito, los subtotales mensuales por categoría y el ahorro estimado al cancelar, así como el adaptador de sugerencias de comercios con Google Places Text Search.
 
 # Glosario
 
-**Anti-Corruption Layer (ACL).** Patrón de Context Mapping que interpone un adaptador entre dos Bounded Contexts, o entre un contexto y un sistema externo, para traducir modelos sin contaminar el dominio propio. En CraveWallet se propone en las integraciones con ExchangeRate-API, Stripe y Google Places.
+**Anti-Corruption Layer (ACL).** Patrón de Context Mapping que interpone un adaptador entre dos Bounded Contexts, o entre un contexto y un sistema externo, para traducir modelos sin contaminar el dominio propio. En CraveWallet se implementa en las integraciones con ExchangeRate-API, Mercado Pago (diseñado inicialmente con Stripe en AV1/TB1) y Google Places.
 
 **Bounded Context.** Límite explícito dentro del cual un modelo de dominio es coherente y un mismo término tiene un único significado. CraveWallet propone tres: Subscription Management, Delivery Expense Management y Premium & Billing.
 
@@ -32,9 +32,11 @@ El backend de AV2 integra Mercado Pago para el checkout mensual, la consulta de 
 
 **EventStorming.** Taller colaborativo de modelado que descubre el flujo de Domain Events de un sistema mediante notas adhesivas, distinguiendo eventos, comandos, actores, políticas y sistemas externos. El equipo lo aplicó en dos modalidades: Big Picture (As-Is y To-Be) y detalle por Bounded Context.
 
+**Flutter y Dart.** Flutter es el toolkit multiplataforma de Google y Dart su lenguaje tipado para compilar aplicaciones móviles, web y de escritorio desde una sola base de código con Material 3. Conforman el stack de la aplicación móvil multiplataforma (`CraveWallet-Flutter`) incorporada en el Sprint 2.
+
 **GitFlow.** Estrategia de ramificación para Git que organiza el trabajo en ramas de largo plazo (`main`, `develop`) y ramas de corto plazo (`feature/`, `fix/`, `release/`), facilitando el desarrollo paralelo y los releases controlados.
 
-**Kotlin y Jetpack Compose.** Kotlin es el lenguaje oficial de Android y Jetpack Compose, el toolkit declarativo de Google para construir interfaces nativas con Material 3. Son el stack de la capa móvil de CraveWallet.
+**Kotlin y Jetpack Compose.** Kotlin es el lenguaje oficial de Android y Jetpack Compose, el toolkit declarativo de Google para construir interfaces nativas con Material 3. Conforman el stack de la aplicación móvil nativa para Android (`CraveWallet-Mobile`).
 
 **Lean UX.** Marco de trabajo que combina pensamiento de diseño, metodologías ágiles y modelo de negocio Lean para validar hipótesis sobre el usuario antes de invertir en construcción. El equipo aplicó sus artefactos principales: Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas.
 
@@ -57,51 +59,71 @@ El backend de AV2 integra Mercado Pago para el checkout mensual, la consulta de 
 
 <!-- pdf:omit-start -->
 
-Brown, S. (s. f.-a). Deployment diagram. Recuperado 9 de octubre de 2026, de https://c4model.com/diagrams/deployment
+## Dominio de negocio
 
-Brown, S. (s. f.-b). The C4 model for visualising software architecture. Recuperado 7 de octubre de 2026, de https://c4model.com/
+BudgetBakers. (2026). *Everything about Premium*. Wallet Help Center. https://support.budgetbakers.com/hc/en-us/articles/7151349344018-Everything-about-Premium
 
-BudgetBakers. (2026). Everything about Premium. Wallet Help Center. https://support.budgetbakers.com/hc/en-us/articles/7151349344018-Everything-about-Premium
+Fintonic. (s. f.). *Organiza tu dinero y ahorra con la app de Fintonic*. Fintonic. Recuperado 7 de octubre de 2026, de https://www.fintonic.com/es-ES/inicio/
 
-DDD Crew. (s. f.-a). Context Mapping. Recuperado 7 de octubre de 2026, de https://github.com/ddd-crew/context-mapping
+Rejón-Guardia, F. (2024). The influence of aesthetics and emotions on reuse intention and compulsive behaviour in food delivery usage. *British Food Journal*, *126*(13), 353–377. https://doi.org/10.1108/BFJ-03-2024-0222
 
-DDD Crew. (s. f.-b). Domain Message Flow Modelling. Recuperado 7 de octubre de 2026, de https://github.com/ddd-crew/domain-message-flow-modelling
+Shi, W., Ali, M., & Leong, C.-M. (2025). Dynamics of personal financial management: A bibliometric and systematic review on financial literacy, financial capability and financial behavior. *International Journal of Bank Marketing*, *43*(1), 125–165. https://doi.org/10.1108/IJBM-06-2023-0359
 
-DDD Crew. (s. f.-c). The Bounded Context Canvas. Recuperado 6 de octubre de 2026, de https://github.com/ddd-crew/bounded-context-canvas
+Škudienė, V., Augutytė-Kvedaravičienė, I., Truncienė, G., & Legotė, I. (2026). Antecedents of retention: Digital subscription perspectives of Generation Z. *Management Decision*, *64*(2), 610–629. https://doi.org/10.1108/MD-04-2024-0961
 
-Evans, E. (2003). Domain-Driven Design: Tackling Complexity in the Heart of Software. Addison-Wesley.
+Spendee. (2025). *What is Spendee Premium?* Spendee Help Center. https://help.spendee.com/article/202-what-is-spendee-premium
 
-ExchangeRate-API. (s. f.). Pair conversion requests. Recuperado 7 de octubre de 2026, de https://www.exchangerate-api.com/docs/pair-conversion-requests
+Superintendencia de Banca, Seguros y AFP, & CAF. (s. f.). *Encuesta de Medición de Capacidades Financieras: Perú 2022*. SBS y CAF. Recuperado 6 de octubre de 2026, de https://www.sbs.gob.pe/Portals/4/jer/CIFRAS-ENCUESTA/2022/Brochure_ENCUESTA_CAPACIDADES%20FINANACIERAS%202022_vr.pdf
 
-Fintonic. (s. f.). Organiza tu dinero y ahorra con la app de Fintonic. Fintonic. Recuperado 7 de octubre de 2026, de https://www.fintonic.com/es-ES/inicio/
+## Métodos, técnicas y enfoques de ingeniería de software
 
-Google. (s. f.-a). Material Design 3. Recuperado 8 de octubre de 2026, de https://m3.material.io/
+Brown, S. (s. f.-a). *Deployment diagram*. Recuperado 9 de octubre de 2026, de https://c4model.com/diagrams/deployment
 
-Google. (s. f.-b). Text Search (New). Recuperado 7 de octubre de 2026, de https://developers.google.com/maps/documentation/places/web-service/text-search
+Brown, S. (s. f.-b). *The C4 model for visualising software architecture*. Recuperado 7 de octubre de 2026, de https://c4model.com/
 
-Gothelf, J. (2021). How to use the Lean UX Canvas. https://jeffgothelf.com/blog/how-to-use-the-lean-ux-canvas/
+DDD Crew. (s. f.-a). *Context Mapping*. Recuperado 7 de octubre de 2026, de https://github.com/ddd-crew/context-mapping
 
-Gothelf, J., & Seiden, J. (2021). Lean UX: Creating Great Products with Agile Teams (3.ª ed.). O’Reilly Media.
+DDD Crew. (s. f.-b). *Domain Message Flow Modelling*. Recuperado 7 de octubre de 2026, de https://github.com/ddd-crew/domain-message-flow-modelling
 
-Laubheimer, P. (2016). Wireflows: A UX Deliverable for Workflows and Apps. Nielsen Norman Group. https://www.nngroup.com/articles/wireflows/
+DDD Crew. (s. f.-c). *The Bounded Context Canvas*. Recuperado 6 de octubre de 2026, de https://github.com/ddd-crew/bounded-context-canvas
 
-Mercado Pago. (s. f.-a). Suscripciones: resumen. Recuperado 12 de noviembre de 2026, de https://www.mercadopago.com.pe/developers/es/docs/subscriptions/overview
+Evans, E. (2003). *Domain-Driven Design: Tackling Complexity in the Heart of Software*. Addison-Wesley.
 
-Mercado Pago. (s. f.-b). Webhooks. Recuperado 12 de noviembre de 2026, de https://www.mercadopago.com.pe/developers/es/docs/subscriptions/additional-content/your-integrations/notifications/webhooks
+Gothelf, J. (2021). *How to use the Lean UX Canvas*. https://jeffgothelf.com/blog/how-to-use-the-lean-ux-canvas/
 
-Portigal, S. (2013). Interviewing Users: How to Uncover Compelling Insights. Rosenfeld Media.
+Gothelf, J., & Seiden, J. (2021). *Lean UX: Creating Great Products with Agile Teams* (3.ª ed.). O’Reilly Media.
 
-Spendee. (2025). What is Spendee Premium? Spendee Help Center. https://help.spendee.com/article/202-what-is-spendee-premium
+Laubheimer, P. (2016). *Wireflows: A UX Deliverable for Workflows and Apps*. Nielsen Norman Group. https://www.nngroup.com/articles/wireflows/
 
-Stripe. (s. f.-a). Receive Stripe events in your webhook endpoint. Recuperado 7 de octubre de 2026, de https://docs.stripe.com/webhooks
+Mahmud, T., Che, M., Ngu, A. H. H., & Yang, G. (2025). Why Android app testing falls short: Empirical insights from open-source projects and a practitioner survey. *Empirical Software Engineering*, *30*(6), Article 163. https://doi.org/10.1007/s10664-025-10726-x
 
-Stripe. (s. f.-b). Using webhooks with subscriptions. Recuperado 7 de octubre de 2026, de https://docs.stripe.com/billing/subscriptions/webhooks
+Portigal, S. (2013). *Interviewing Users: How to Uncover Compelling Insights*. Rosenfeld Media.
 
-Structurizr. (s. f.). Structurizr DSL: Language reference. Recuperado 9 de octubre de 2026, de https://docs.structurizr.com/dsl/language
+Weichbroth, P. (2024). Usability of mobile applications: A consolidated model. *IEEE Access*, *12*, 62378–62391. https://doi.org/10.1109/ACCESS.2024.3395528
 
-Superintendencia de Banca, Seguros y AFP, & CAF. (s. f.). Encuesta de Medición de Capacidades Financieras: Perú 2022. SBS y CAF. Recuperado 6 de octubre de 2026, de https://www.sbs.gob.pe/Portals/4/jer/CIFRAS-ENCUESTA/2022/Brochure_ENCUESTA_CAPACIDADES%20FINANACIERAS%202022_vr.pdf
+World Wide Web Consortium. (2018). *Web Content Accessibility Guidelines (WCAG) 2.1*. https://www.w3.org/TR/WCAG21/
 
-World Wide Web Consortium. (2018). Web Content Accessibility Guidelines (WCAG) 2.1. https://www.w3.org/TR/WCAG21/
+Zhong, C., Li, S., Huang, H., Liu, X., Chen, Z., Zhang, Y., & Zhang, H. (2024). Domain-Driven Design for microservices: An evidence-based investigation. *IEEE Transactions on Software Engineering*, *50*(6), 1425–1449. https://doi.org/10.1109/TSE.2024.3385835
+
+## Lenguajes, frameworks y herramientas
+
+ExchangeRate-API. (s. f.). *Pair conversion requests*. Recuperado 7 de octubre de 2026, de https://www.exchangerate-api.com/docs/pair-conversion-requests
+
+Google. (s. f.-a). *Material Design 3*. Recuperado 8 de octubre de 2026, de https://m3.material.io/
+
+Google. (s. f.-b). *Text Search (New)*. Recuperado 7 de octubre de 2026, de https://developers.google.com/maps/documentation/places/web-service/text-search
+
+Jošt, G., & Taneski, V. (2025). State-of-the-art cross-platform mobile application development frameworks: A comparative study of market and developer trends. *Informatics*, *12*(2), Article 45. https://doi.org/10.3390/informatics12020045
+
+Mercado Pago. (s. f.-a). *Suscripciones: resumen*. Recuperado 12 de noviembre de 2026, de https://www.mercadopago.com.pe/developers/es/docs/subscriptions/overview
+
+Mercado Pago. (s. f.-b). *Webhooks*. Recuperado 12 de noviembre de 2026, de https://www.mercadopago.com.pe/developers/es/docs/subscriptions/additional-content/your-integrations/notifications/webhooks
+
+Stripe. (s. f.-a). *Receive Stripe events in your webhook endpoint*. Recuperado 7 de octubre de 2026, de https://docs.stripe.com/webhooks
+
+Stripe. (s. f.-b). *Using webhooks with subscriptions*. Recuperado 7 de octubre de 2026, de https://docs.stripe.com/billing/subscriptions/webhooks
+
+Structurizr. (s. f.). *Structurizr DSL: Language reference*. Recuperado 9 de octubre de 2026, de https://docs.structurizr.com/dsl/language
 
 <!-- pdf:omit-end -->
 
@@ -127,9 +149,12 @@ La figura 128 muestra una vista parcial del tablero después de la revisión TB1
 
 ## Anexo B. Evidencias del Sprint 2
 
-- [Código Flutter en el corte de AV2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/tree/ad7ace8de934938d79f8301e96c7c9656cd8b4e3) y [pruebas de modelos](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/blob/ad7ace8de934938d79f8301e96c7c9656cd8b4e3/test/models_test.dart).
-- [Código del backend revisado para AV2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/3a59d60a8c15eebe29546e5bd69ef75b7ab776fd), [contrato de Premium](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/3a59d60a8c15eebe29546e5bd69ef75b7ab776fd/docs/premium-api.md), [landing público](https://cravewallet-landing.vercel.app/es) y [Swagger del backend](https://cravewallet-api.onrender.com/swagger-ui/index.html).
-- El estado de los videos de validación, About-the-Product y About-the-Team se registra en la sección 4.3. Al adjuntarlos, se registrarán el enlace y la fecha de cada grabación.
+- [Código de la aplicación Flutter en el corte de AV2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/tree/d32ecc0), [pruebas de modelos](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/blob/d32ecc0/test/models_test.dart) y [pruebas del flujo Premium](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/blob/d32ecc0/test/premium_flow_test.dart).
+- [Código de la aplicación Android en Kotlin en el corte de AV2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/tree/c94e795) y [guía de integración Premium en Kotlin](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile/blob/c94e795/docs/premium-integration.md).
+- [Código del backend revisado para AV2](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/tree/a0aeabc), [contrato de Premium con Mercado Pago](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/blob/a0aeabc/docs/premium-api.md), [landing público](https://cravewallet-landing.vercel.app/es) y [Swagger del backend AV2](https://cravewallet-api-av2.onrender.com/swagger-ui/index.html).
+- El diseño de validación, la evaluación heurística (Anexo E) y la estructura de los tres videos de AV2 se registran en la sección 4.3. La tabla 181 relaciona las figuras de evidencia de AV2 con las secciones correspondientes del Capítulo IV.
+
+*Tabla 181. Índice de evidencias visuales del Sprint 2 (AV2).*
 
 | Figura | Evidencia | Sección del informe |
 | --- | --- | --- |
@@ -140,3 +165,5 @@ La figura 128 muestra una vista parcial del tablero después de la revisión TB1
 | AV2-5 | Validación del backend en GitHub Actions | [4.2.2.5. Pruebas](chapter_4.md#4225-testing-suite-evidence-for-sprint-review) |
 | AV2-6 | Landing publicado | [4.2.2.8. Despliegue](chapter_4.md#4228-software-deployment-evidence-for-sprint-review) |
 | AV2-7 | Migraciones Flyway V1–V5 | [4.2.2.8. Despliegue](chapter_4.md#4228-software-deployment-evidence-for-sprint-review) |
+
+*Fuente: elaboración del equipo Gastify.*
