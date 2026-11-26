@@ -24,6 +24,7 @@ La tabla 1 registra las versiones del informe, su fecha, su autor y los cambios 
 | AV2 — Flutter conectado y despliegue | 13/11/2026 | Alexander Aliaga | Integración de Premium en Flutter, ocho pruebas, compilación web y preparación de la publicación en Render con CORS restringido al origen del sitio. |
 | AV2 — cierre de Sprint 2, validación y bibliografía | 13/11/2026 | Anghelo Faustino | Completado de las secciones 4.2.2.1–4.2.2.9 (Sprint Planning 2, matriz LACX, Sprint Backlog 2, tablas de commits, suite de 72 pruebas de backend y suites móviles en Kotlin y Flutter, especificaciones Gherkin, inventario de 22 endpoints REST y guías de despliegue), estructuración de la sección 4.3 (Validation Interviews y evaluación heurística Anexo E), alineación transversal de Mercado Pago e IAM y reorganización de la bibliografía según Anexo G con artículos Q1/Q2 (2024–2026). |
 | TB2 — integración y verificación del Sprint 2 | 26/11/2026 | Equipo Gastify | Integración de la rama de cierre de AV2 con el despliegue Flutter, conteo de commits del Sprint 2 sobre todas las ramas de los cinco repositorios y verificación HTTP de landing, API, OpenAPI, Flutter Web y CORS (tabla 174). |
+| TB2 — Sprint 3 | 26/11/2026 | Sebastian Roman | Sección 4.2.3 (Sprint 3): planificación, matriz LACX, Sprint Backlog 3, commits, pruebas, Gherkin de US29, US30 y US37, cuatro endpoints nuevos, pasos de despliegue y colaboración del sprint (tablas 176–184). |
 
 *Fuente: elaboración del equipo Gastify*
 
@@ -105,6 +106,7 @@ En TB1 el informe se elaboró con GitFlow: cada sección se redactó en una rama
 - [4.2. Landing Page & Mobile Application Implementation](docs/chapter_4.md#42-landing-page--mobile-application-implementation)
   - [4.2.1. Sprint 1](docs/chapter_4.md#421-sprint-1)
   - [4.2.2. Sprint 2](docs/chapter_4.md#422-sprint-2)
+  - [4.2.3. Sprint 3](docs/chapter_4.md#423-sprint-3)
 - [4.3. Validation Interviews](docs/chapter_4.md#43-validation-interviews)
   - [4.3.1. Diseño de Entrevistas](docs/chapter_4.md#431-diseño-de-entrevistas)
   - [4.3.2. Registro de Entrevistas](docs/chapter_4.md#432-registro-de-entrevistas)
