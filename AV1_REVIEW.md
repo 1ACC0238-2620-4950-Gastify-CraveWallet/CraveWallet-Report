@@ -1,4 +1,4 @@
-# Revisión de AV1 — 7 de octubre de 2026
+ Revisión de AV1 — 7 de octubre de 2026
 
 Este archivo registra las correcciones y los pendientes para la revisión del equipo. No forma parte del informe exportado ni acredita una calificación.
 
