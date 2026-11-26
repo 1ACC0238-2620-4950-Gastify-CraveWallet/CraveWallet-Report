@@ -1405,25 +1405,44 @@ Ambas aplicaciones móviles parametrizan la dirección del backend mediante `API
 
 **[COMPLETAR: insertar capturas y metadatos de la compilación e instalación de los APK de Kotlin y Flutter en dispositivo Android, indicando modelo del dispositivo, versión de Android y hash SHA-256 del artefacto utilizado en la demostración]**
 
+##### 4. Verificación posterior del despliegue (26 de noviembre de 2026)
+
+La tabla 174 resume una verificación HTTP de los servicios públicos, hecha después del cierre del Sprint 2 para conciliar las notas del 13 de noviembre con el estado vigente.
+
+*Tabla 174. Estado de los servicios públicos de CraveWallet el 26 de noviembre de 2026.*
+
+| Componente | URL | Resultado | Observación |
+| --- | --- | --- | --- |
+| Landing page | <https://cravewallet-landing.vercel.app/es> | HTTP 200 | Versión publicada desde `main`. |
+| REST API (AV2) | <https://cravewallet-api-av2.onrender.com/actuator/health> | `{"status":"UP"}` tras el arranque en frío de Render | El servicio de AV2 está operativo. |
+| Especificación OpenAPI | <https://cravewallet-api-av2.onrender.com/v3/api-docs> | HTTP 200, OpenAPI 3.1.0 con 22 operaciones | Coincide con el inventario de 22 endpoints de la sección 4.2.2.7. |
+| REST API anterior | `https://cravewallet-api.onrender.com` | Sin respuesta | Ya no es el servicio de referencia. |
+| Flutter Web | <https://cravewallet-flutter.onrender.com/> | HTTP 200 | La compilación publicada apunta al API anterior; se corrige en `CraveWallet-Flutter` PR #2. |
+| CORS desde Flutter Web | Preflight `OPTIONS /api/v1/auth/login` | HTTP 401 sin `Access-Control-Allow-Origin` | La configuración de origen de producción se integra en `CraveWallet-Backend` PR #3 y requiere definir `FLUTTER_WEB_ORIGIN` en Render. |
+
+*Fuente: solicitudes HTTP realizadas por el equipo el 26 de noviembre de 2026.*
+
+La verificación confirma que el backend de AV2 y su documentación están desplegados y accesibles. Las aplicaciones Android no dependen de CORS. El cliente Flutter Web requiere recompilarse contra el API de AV2 y que el backend autorice su origen.
+
 #### 4.2.2.9. Team Collaboration Insights during Sprint
 
-La actividad colaborativa del Sprint 2 se cuantifica a partir del historial de commits registrado entre el 11 de octubre y el 13 de noviembre de 2026 en los cinco repositorios de la organización, excluyendo los commits de integración (*merge commits*). En ese periodo, `CraveWallet-Backend` registra 57 commits de `josf17` (distribuidos en las ramas `feature/av2-premium-backend`, `feature/av2-mercadopago` y `develop`), `CraveWallet-Mobile` registra 10 commits de `josf17` en `feature/premium`, `CraveWallet-Flutter` registra 5 commits de `AlexanderAliaga19` en `main`, `develop` y `feature/av2-premium-flutter`, y `CraveWallet-Report` registra los commits de redacción y cierre documental de AV2 realizados por `AlexanderAliaga19` y `limozz05` (`Limos05`). La tabla 174 consolida el conteo de commits por integrante y repositorio en el Sprint 2.
+La actividad colaborativa del Sprint 2 se cuantifica a partir del historial de commits registrado entre el 11 de octubre y el 13 de noviembre de 2026 en todas las ramas remotas de los cinco repositorios de la organización, excluyendo los commits de integración (*merge commits*). En ese periodo, `CraveWallet-Backend` registra 57 commits de `josf17` (Premium con Mercado Pago, Google Places, seguridad y documentación), 3 de `limozz05` (mensajes de la API en inglés y español) y 2 de `AlexanderAliaga19` (origen CORS de Flutter Web en producción). `CraveWallet-Mobile` registra 10 commits de `josf17` en `feature/premium` y 5 de `limozz05` en `feature/i18n-terms`. `CraveWallet-Flutter` registra 10 commits de `AlexanderAliaga19` (migración, Premium, publicación web y compilación del APK) y 4 de `limozz05` (localización, términos, recordatorios y accesibilidad). `cravewallet-landing` registra 4 commits de `limozz05` (i18n, términos, sección de videos y accesibilidad), y `CraveWallet-Report` registra 6 commits de `AlexanderAliaga19` y 5 de `limozz05`. La tabla 175 consolida el conteo de commits por integrante y repositorio en el Sprint 2.
 
 El [historial de Flutter](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/commits/feature/av2-premium-flutter/) registra la migración, los ajustes de dependencias, la integración Premium y el pipeline web de `AlexanderAliaga19`. El [PR #1 del backend](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend/pull/1/commits) y la rama `feature/av2-premium-backend` reúnen los aportes de Premium, Mercado Pago, Delivery, PostgreSQL, seguridad y documentación. La actividad del informe se consulta en **Project Report Collaboration Insights**. Separar Flutter en un repositorio propio permite revisar la migración sin reescribir el historial Android y deja trazabilidad independiente para cada cliente.
 
-*Tabla 174. Commits de cada integrante por repositorio en el Sprint 2.*
+*Tabla 175. Commits de cada integrante por repositorio en el Sprint 2.*
 
 | Integrante | Usuario GitHub | Landing page (`cravewallet-landing`) | App Android Kotlin (`CraveWallet-Mobile`) | App Flutter (`CraveWallet-Flutter`) | Servicios RESTful (`CraveWallet-Backend`) | Informe (`CraveWallet-Report`) |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | Carpio Peña, Josué Francisco | `josf17` | 0 | 10 | 0 | 57 | 0 |
-| Aliaga, Alexander | `AlexanderAliaga19` | 0 | 0 | 5 | 0 | 3 |
-| Faustino Hurtado, Anghelo Edwin | `Limos05` / `limozz05` | 0 | 0 | 0 | 0 | 3 **[COMPLETAR: actualizar conteo final de commits del informe al cerrar la entrega]** |
-| Roman Zeballos, Sebastian Jared | `Chebas19` | 0 | 0 | 0 | 0 | **[COMPLETAR: actualizar si registra commits al cierre de la entrega]** |
-| Sejuro Medina, Mario Gabriel | `maghetthi` | 0 | 0 | 0 | 0 | **[COMPLETAR: actualizar si registra commits al cierre de la entrega]** |
+| Aliaga, Alexander | `AlexanderAliaga19` | 0 | 0 | 10 | 2 | 6 |
+| Faustino Hurtado, Anghelo Edwin | `Limos05` / `limozz05` | 4 | 5 | 4 | 3 | 5 |
+| Roman Zeballos, Sebastian Jared | `Chebas19` | 0 | 0 | 0 | 0 | 0 |
+| Sejuro Medina, Mario Gabriel | `maghetthi` | 0 | 0 | 0 | 0 | 0 |
 
-*Fuente: `git shortlog -sn --no-merges --since="2026-10-11"` sobre todas las ramas de `cravewallet-landing`, `CraveWallet-Mobile`, `CraveWallet-Flutter`, `CraveWallet-Backend` y `CraveWallet-Report`.*
+*Fuente: `git log --remotes --no-merges --since=2026-10-11 --until=2026-11-13` agrupado por autor sobre `cravewallet-landing`, `CraveWallet-Mobile`, `CraveWallet-Flutter`, `CraveWallet-Backend` y `CraveWallet-Report`; conteo realizado el 26 de noviembre de 2026.*
 
-La distribución de la tabla 174 muestra una especialización técnica definida durante el Sprint 2: mientras que en el Sprint 1 la implementación de código estuvo concentrada en Mario Sejuro, Sebastián Roman y Anghelo Faustino (tabla 160), en el Sprint 2 Josué Carpio asumió la totalidad de los commits del backend para el módulo de facturación recurrente con Mercado Pago, la búsqueda de comercios con Google Places y la actualización de la aplicación nativa en Kotlin, y Alexander Aliaga ejecutó la migración y el flujo Premium de la aplicación multiplataforma en Flutter, complementados por el trabajo de documentación técnica y consolidación del informe.
+La distribución de la tabla 175 muestra una especialización técnica durante el Sprint 2. En el Sprint 1 la implementación de código estuvo concentrada en Mario Sejuro, Sebastián Roman y Anghelo Faustino (tabla 160). En el Sprint 2, Josué Carpio asumió casi todo el backend (facturación recurrente con Mercado Pago y búsqueda de comercios con Google Places) y la integración Premium en Kotlin. Alexander Aliaga ejecutó la migración a Flutter, su flujo Premium y la publicación web. Anghelo Faustino incorporó internacionalización, términos y condiciones y accesibilidad en los cuatro productos. Sebastián Roman y Mario Sejuro no registran commits en los repositorios durante este periodo. Los aportes de i18n, CORS de producción y compilación del APK se hicieron en ramas que recién se integraron a `develop` mediante pull requests el 26 de noviembre de 2026.
 
 **[COMPLETAR: insertar capturas de pantalla de GitHub Insights > Contributors y Pulse de los repositorios CraveWallet-Backend, CraveWallet-Mobile, CraveWallet-Flutter y CraveWallet-Report correspondientes al periodo del Sprint 2]**
 
@@ -1442,9 +1461,9 @@ Cada sesión de validación se estructura en cuatro etapas con una duración est
 3. **Ejecución de escenarios de tarea en la aplicación móvil (10 min):** el participante ejecuta cinco tareas concretas sin asistencia del moderador mientras se observa el tiempo empleado, las dudas de navegación y la interpretación de los montos en soles.
 4. **Preguntas de cierre y valoración posprueba (3 min):** preguntas abiertas sobre utilidad percibida, claridad del tipo de cambio USD/PEN, disposición de uso del presupuesto de delivery y valoración del plan Premium con Mercado Pago.
 
-La tabla 175 detalla los elementos del landing page, los cinco escenarios de flujo de usuario en la aplicación móvil y los criterios de validación específicos para cada segmento objetivo.
+La tabla 176 detalla los elementos del landing page, los cinco escenarios de flujo de usuario en la aplicación móvil y los criterios de validación específicos para cada segmento objetivo.
 
-*Tabla 175. Elementos del landing page y flujos móviles por validar según segmento objetivo.*
+*Tabla 176. Elementos del landing page y flujos móviles por validar según segmento objetivo.*
 
 | Componente / Flujo a validar | Tarea asignada al participante | Foco en Segmento 1 (Estudiante Universitario Digital, 18–25 años, Persona: Camila Torres) | Foco en Segmento 2 (Profesional Joven Activo, 25–32 años, Persona: Renzo Salazar) | Hipótesis / US vinculadas |
 | --- | --- | --- | --- | --- |
@@ -1467,9 +1486,9 @@ La tabla 175 detalla los elementos del landing page, los cinco escenarios de flu
 
 ### 4.3.2. Registro de Entrevistas
 
-La tabla 176 presenta la estructura de registro para las entrevistas de validación realizadas con representantes del **Segmento 1 (Estudiante Universitario Digital)** y del **Segmento 2 (Profesional Joven Activo)**, consignando los metadatos del entrevistado, captura de cuadro del video, enlace y marcas de tiempo (*timing*), y el resumen descriptivo de sus apreciaciones al interactuar con el landing page y la aplicación móvil.
+La tabla 177 presenta la estructura de registro para las entrevistas de validación realizadas con representantes del **Segmento 1 (Estudiante Universitario Digital)** y del **Segmento 2 (Profesional Joven Activo)**, consignando los metadatos del entrevistado, captura de cuadro del video, enlace y marcas de tiempo (*timing*), y el resumen descriptivo de sus apreciaciones al interactuar con el landing page y la aplicación móvil.
 
-*Tabla 176. Registro de entrevistas de validación de AV2 por segmento objetivo.*
+*Tabla 177. Registro de entrevistas de validación de AV2 por segmento objetivo.*
 
 | Entrevista # | Segmento objetivo | Nombres y apellidos | Edad | Distrito | Captura de cuadro de video | URL del video y Timing (inicio – duración) | Resumen descriptivo de apreciaciones sobre las tareas asignadas |
 | :---: | --- | --- | :---: | --- | --- | --- | --- |
@@ -1513,9 +1532,9 @@ La evaluación heurística de usabilidad, diseño inclusivo y arquitectura de in
 
 #### Escala de severidad
 
-La tabla 177 define la escala de severidad de 1 a 4 utilizada para clasificar cada hallazgo heurístico conforme al Anexo E.
+La tabla 178 define la escala de severidad de 1 a 4 utilizada para clasificar cada hallazgo heurístico conforme al Anexo E.
 
-*Tabla 177. Escala de severidad para la evaluación heurística.*
+*Tabla 178. Escala de severidad para la evaluación heurística.*
 
 | Nivel | Categoría | Descripción |
 | :---: | --- | --- |
@@ -1528,9 +1547,9 @@ La tabla 177 define la escala de severidad de 1 a 4 utilizada para clasificar ca
 
 #### Tabla resumen de problemas identificados
 
-La tabla 178 consolida los problemas de usabilidad, diseño inclusivo o arquitectura de información registrados durante la sesión de evaluación heurística.
+La tabla 179 consolida los problemas de usabilidad, diseño inclusivo o arquitectura de información registrados durante la sesión de evaluación heurística.
 
-*Tabla 178. Tabla resumen de problemas identificados en la evaluación heurística.*
+*Tabla 179. Tabla resumen de problemas identificados en la evaluación heurística.*
 
 | # | Problema | Escala de severidad (1–4) | Heurística / Principio violada(o) |
 | :---: | --- | :---: | --- |
@@ -1543,9 +1562,9 @@ La tabla 178 consolida los problemas de usabilidad, diseño inclusivo o arquitec
 
 #### Descripción de problemas
 
-La tabla 179 desarrolla la ficha detallada de cada problema listado en la tabla resumen, incluyendo severidad, heurística violada, explicación del hallazgo, captura de pantalla con anotaciones y recomendación accionable.
+La tabla 180 desarrolla la ficha detallada de cada problema listado en la tabla resumen, incluyendo severidad, heurística violada, explicación del hallazgo, captura de pantalla con anotaciones y recomendación accionable.
 
-*Tabla 179. Fichas descriptivas de problemas de la evaluación heurística.*
+*Tabla 180. Fichas descriptivas de problemas de la evaluación heurística.*
 
 | Campo | PROBLEMA #1 | PROBLEMA #2 | PROBLEMA #3 | PROBLEMA #4 |
 | --- | --- | --- | --- | --- |
@@ -1560,9 +1579,9 @@ La tabla 179 desarrolla la ficha detallada de cada problema listado en la tabla 
 
 #### Videos de validación y presentación de AV2
 
-Conforme a los lineamientos de la sección 4.3 del enunciado del curso, la entrega AV2 comprende tres grabaciones en video (alojadas en OneDrive y YouTube): el **Video App Validation** (con las entrevistas de validación en cámara y pantalla de cada segmento), el **Video About-the-Product** (primera versión con el problema, propuesta de valor y recorrido de funcionalidades de CraveWallet) y el **Video About-the-Team** (primera versión con la presentación y aportes de los cinco integrantes en el Sprint 2). La tabla 180 estructura el registro de enlaces, duración, secuencia de tiempos (*timing*) y capturas de cada video.
+Conforme a los lineamientos de la sección 4.3 del enunciado del curso, la entrega AV2 comprende tres grabaciones en video (alojadas en OneDrive y YouTube): el **Video App Validation** (con las entrevistas de validación en cámara y pantalla de cada segmento), el **Video About-the-Product** (primera versión con el problema, propuesta de valor y recorrido de funcionalidades de CraveWallet) y el **Video About-the-Team** (primera versión con la presentación y aportes de los cinco integrantes en el Sprint 2). La tabla 181 estructura el registro de enlaces, duración, secuencia de tiempos (*timing*) y capturas de cada video.
 
-*Tabla 180. Registro de videos requeridos en la entrega AV2.*
+*Tabla 181. Registro de videos requeridos en la entrega AV2.*
 
 | Video requerido | Descripción de contenido y secuencia (*Timing*) | Captura de cuadro del video | URL en OneDrive | URL en YouTube | Duración total |
 | --- | --- | --- | --- | --- | :---: |
