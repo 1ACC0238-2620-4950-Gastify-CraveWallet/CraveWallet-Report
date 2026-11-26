@@ -16,7 +16,7 @@ CraveWallet propone reunir en una experiencia móvil tres tipos de registro:
 2. **Suscripciones digitales y herramientas:** Plataformas de entretenimiento, educación en línea (Netzun, Cisco Networking Academy), herramientas de productividad (PedidosYa Plus), servicios de infraestructura cloud (MongoDB Atlas) con facturación recurrente en dólares.
 3. **Gastos recurrentes de delivery:** Categorización y registro de consumos habituales en establecimientos frecuentes como Up Burger, Dunkin', Popeyes, Little Caesars, Papa John's, Burgerboy, Pollivoro, Chifa Delicious y Chifa Monteoro, permitiendo al usuario visualizar el impacto acumulado de sus hábitos de entrega a domicilio.
 
-Los valores fundacionales de Gastify son: **transparencia financiera**, **diseño centrado en el usuario**, **aprendizaje continuo** y **responsabilidad técnica**. Este último valor se relaciona con el Student Outcome 7 del curso: el equipo investiga, evalúa e integra tecnologías nuevas, como el SDK de Stripe y la ExchangeRate-API, y documenta ese aprendizaje durante el desarrollo del producto.
+Los valores fundacionales de Gastify son: **transparencia financiera**, **diseño centrado en el usuario**, **aprendizaje continuo** y **responsabilidad técnica**. Este último valor se relaciona con el Student Outcome 7 del curso: el equipo investiga, evalúa e integra tecnologías nuevas, como la API de Suscripciones y Webhooks de Mercado Pago (tras evaluar Stripe durante AV1 y TB1), la ExchangeRate-API y Google Places, y documenta ese aprendizaje durante el desarrollo del producto.
 
 ***
 
@@ -57,7 +57,7 @@ La tabla 9 presenta a cada integrante con su fotografía, código de estudiante 
 **How (¿Cómo?):** algunos participantes llevan el control mentalmente, otros consultan el banco o una hoja de cálculo. CraveWallet les permite registrar sus servicios y consultar la próxima renovación con su importe estimado en soles.
 
 **How Much (¿Cuánto?):**
-Según la Encuesta de Medición de Capacidades Financieras: Perú 2022, el 41 % de la población adulta se ubica por debajo del nivel mínimo de educación financiera [@sbs2022capacidades, p. 10]. En las seis entrevistas de la sección 2.2, todos los participantes relatan al menos un cobro automático que descubrieron después de producirse.
+Según la Encuesta de Medición de Capacidades Financieras: Perú 2022, el 41 % de la población adulta se ubica por debajo del nivel mínimo de educación financiera [@sbs2022capacidades, p. 10]. La literatura reciente sobre gestión financiera personal confirma que la alfabetización y la capacidad financiera determinan directamente el comportamiento de presupuestación y el control del gasto cotidiano [@shi2025dynamics]. Asimismo, estudios empíricos sobre la Generación Z evidencian que la retención en servicios de suscripción digital depende del valor percibido y la visibilidad del cobro recurrente [@skudiene2026antecedents], mientras que en las aplicaciones de entrega de comida a domicilio los estímulos visuales y emocionales incrementan la frecuencia de reutilización y el gasto compulsivo [@rejon2024influence]. En las seis entrevistas de la sección 2.2, todos los participantes relatan al menos un cobro automático que descubrieron después de producirse.
 
 ***
 
