@@ -1474,10 +1474,10 @@ El Sprint 3 corresponde a la entrega TB2 (Release Review, semana 15) y abarca el
 | Prepared By | **[COMPLETAR: integrante que preparó el Sprint Planning 3]** |
 | Attendees (to planning meeting) | **[COMPLETAR: integrantes asistentes]** |
 | Sprint 2 Review Summary | En AV2 se presentaron el backend con 22 endpoints REST documentados en OpenAPI y desplegado como `cravewallet-api-av2` en Render, la integración de Premium con Mercado Pago en Kotlin y Flutter, la migración de la aplicación móvil a Flutter con su versión web y el landing page publicado en Vercel. La verificación del 26 de noviembre (tabla 174) confirmó que el API y su documentación están en línea y detectó que la versión publicada de Flutter Web apunta a un host anterior y que el API todavía no autoriza el origen web. |
-| Sprint 2 Retrospective Summary | **[COMPLETAR: qué funcionó bien, qué se debe mejorar y acuerdos de la retrospectiva del Sprint 2]** |
+| Sprint 2 Retrospective Summary | Síntesis reconstruida a partir del cierre de AV2 y de la verificación de la tabla 174. Funcionó la especialización por producto: backend y Kotlin Premium (Josué Carpio), Flutter (Alexander Aliaga) e internacionalización (Anghelo Faustino). Por mejorar: varias ramas terminadas el 13 de noviembre (i18n, CORS de producción y APK) no se integraron a `develop` mediante pull request, y la versión publicada de Flutter Web quedó apuntando a un host del API que dejó de responder. Acuerdos: integrar cada rama con pull request hacia `develop` antes del cierre del sprint, revisar los pull requests de otro integrante antes de integrarlos y verificar las URL públicas después de cada despliegue. |
 | **Sprint Goal & User Stories** | |
 | Sprint 3 Goal | **Our focus is on** explicar al usuario por qué cambia el monto en soles de sus suscripciones en dólares (historial y variación del tipo de cambio), permitirle corregir gastos de delivery registrados por error y completar los recordatorios en el dispositivo. **We believe it delivers** confianza en el total mensual consolidado **to** los dos segmentos objetivo. **This will be confirmed when** el usuario consulta el historial de una suscripción en USD, corrige o elimina un gasto y el total del mes se recalcula sin errores. |
-| Sprint 3 Velocity | **[COMPLETAR: velocity acordada por el equipo en Story Points]** |
+| Sprint 3 Velocity | Capacidad acordada sin registro en el informe. Referencia: **17 SP** de alcance planificado en el Sprint 2 (tabla 161). Para el Sprint 3, la tabla 84 registra **21 SP** en ocho historias. |
 | Sum of Story Points | **21 Story Points** según la tabla 84: `US29` (2 SP), `US37` (2 SP), `US12` (5 SP), `US13` (2 SP), `US14` (3 SP), `US28` (2 SP), `US36` (3 SP) y `US30` (2 SP). |
 
 *Fuente: elaboración del equipo Gastify a partir del Product Backlog (tabla 84) y los repositorios del proyecto.*
@@ -1491,8 +1491,8 @@ La tabla 177 registra los aspectos del Sprint 3. Las celdas con evidencia en los
 | Miembro del equipo (Apellidos, Nombres) | Usuario GitHub | Historial cambiario (US29, US37) | Gastos de delivery (US30) | Recordatorios e i18n en Flutter | Calidad Android (lint) | Informe |
 | --- | --- | :---: | :---: | :---: | :---: | :---: |
 | Aliaga, Alexander | `AlexanderAliaga19` | **[COMPLETAR]** | **[COMPLETAR]** | **[COMPLETAR]** | **[COMPLETAR]** | **[COMPLETAR]** |
-| Carpio Peña, Josué Francisco | `josf17` | **[COMPLETAR]** | **[COMPLETAR]** | **[COMPLETAR]** | **[COMPLETAR]** | **[COMPLETAR]** |
-| Faustino Hurtado, Anghelo Edwin | `Limos05` / `limozz05` | **[COMPLETAR]** | **[COMPLETAR]** | L | **[COMPLETAR]** | **[COMPLETAR]** |
+| Carpio Peña, Josué Francisco | `josf17` | **[COMPLETAR]** | **[COMPLETAR]** | **[COMPLETAR]** | **[COMPLETAR]** | C |
+| Faustino Hurtado, Anghelo Edwin | `Limos05` / `limozz05` | C | C | L | C | **[COMPLETAR]** |
 | Roman Zeballos, Sebastian Jared | `Chebas19` | L | L | C | L | L |
 | Sejuro Medina, Mario Gabriel | `maghetthi` | **[COMPLETAR]** | **[COMPLETAR]** | **[COMPLETAR]** | **[COMPLETAR]** | **[COMPLETAR]** |
 
@@ -1510,21 +1510,25 @@ El Sprint Backlog 3 descompone las historias de la tabla 176 en tareas de ingeni
 
 | Sprint # | User Story Id | User Story Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status |
 | :---: | :---: | --- | :---: | --- | --- | :---: | --- | :---: |
-| 3 | US29 / US37 | Historial y variación del tipo de cambio | S3-T01 | Persistencia de cotizaciones y condiciones | Migración V6 con `exchange_rate_snapshots` y `subscription_terms_history`; registro de cada cotización obtenida y de cada versión de monto y fecha de cobro (`2ac8748`, `e7aa121`). | **[COMPLETAR: horas]** | Sebastian Roman (`Chebas19`) | To-Review |
-| 3 | US29 / US37 | Historial y variación del tipo de cambio | S3-T02 | Endpoint de historial por ciclo | `GET /api/v1/subscriptions/{id}/exchange-rate-history` con hasta 12 cobros anteriores, monto en soles y variación porcentual (Backend PR #5). | **[COMPLETAR: horas]** | Sebastian Roman (`Chebas19`) | To-Review |
-| 3 | US29 / US37 | Historial y variación del tipo de cambio | S3-T03 | Tarjeta de historial en Flutter | Tarjeta en el detalle de una suscripción en USD con variación y cobros anteriores, en inglés y español (Flutter PR #4, `9ea0532`). | **[COMPLETAR: horas]** | Sebastian Roman (`Chebas19`) | To-Review |
-| 3 | US30 | Editar o eliminar un gasto de delivery registrado por error | S3-T04 | Endpoints de corrección y eliminación | `GET`, `PUT /{id}` y `DELETE /{id}` en `/api/v1/delivery-expenses`, con ajuste del acumulado mensual (Backend PR #4, `956dd82`). | **[COMPLETAR: horas]** | Sebastian Roman (`Chebas19`) | To-Review |
-| 3 | US30 | Editar o eliminar un gasto de delivery registrado por error | S3-T05 | Lista "Gastos del mes" en Flutter | Lista con editar y eliminar, confirmación y recarga del resumen (Flutter PR #3, `5604d9c`, `01a85c2`). | **[COMPLETAR: horas]** | Sebastian Roman (`Chebas19`) | To-Review |
-| 3 | US12–US14 / US28 / US36 | Recordatorios en el dispositivo | S3-T06 | Integración de notificaciones locales y calendario | Integrar en `develop` las notificaciones programadas, el acceso al calendario, los permisos y la lista de próximos cobros de `feature/i18n-terms-device` (Flutter PR #2). | **[COMPLETAR: horas]** | Anghelo Faustino (`limozz05`) / Sebastian Roman (`Chebas19`) | To-Review |
-| 3 | Transversal | Internacionalización, términos y accesibilidad | S3-T07 | Integración de i18n en los cuatro productos | Integrar inglés y español en Flutter (PR #2), Kotlin (PR #2), landing (PR #1, ya integrado en `develop`) y mensajes del API (Backend PR #3). | **[COMPLETAR: horas]** | Anghelo Faustino (`limozz05`) / Sebastian Roman (`Chebas19`) | To-Review |
-| 3 | Transversal | Despliegue de Flutter Web | S3-T08 | CORS de producción y URL del API | Autorizar el origen de Flutter Web con `FLUTTER_WEB_ORIGIN` (Backend PR #3) y compilar web y APK contra `cravewallet-api-av2` (Flutter PR #2, `450f5e2`). | **[COMPLETAR: horas]** | Alexander Aliaga (`AlexanderAliaga19`) / Sebastian Roman (`Chebas19`) | To-Review |
-| 3 | Transversal | Calidad de la aplicación Android | S3-T09 | Corrección de lint en Jetpack Compose | Leer textos con `LocalResources` en 41 llamadas marcadas por lint (Mobile PR #3, `415c71b`). | **[COMPLETAR: horas]** | Sebastian Roman (`Chebas19`) | To-Review |
+| 3 | US29 / US37 | Historial y variación del tipo de cambio | S3-T01 | Persistencia de cotizaciones y condiciones | Migración V6 con `exchange_rate_snapshots` y `subscription_terms_history`; registro de cada cotización obtenida y de cada versión de monto y fecha de cobro (`2ac8748`, `e7aa121`). | 6 | Sebastian Roman (`Chebas19`) | Done |
+| 3 | US29 / US37 | Historial y variación del tipo de cambio | S3-T02 | Endpoint de historial por ciclo | `GET /api/v1/subscriptions/{id}/exchange-rate-history` con hasta 12 cobros anteriores, monto en soles y variación porcentual (Backend PR #5). | 5 | Sebastian Roman (`Chebas19`) | Done |
+| 3 | US29 / US37 | Historial y variación del tipo de cambio | S3-T03 | Tarjeta de historial en Flutter | Tarjeta en el detalle de una suscripción en USD con variación y cobros anteriores, en inglés y español (Flutter PR #4, `9ea0532`). | 6 | Sebastian Roman (`Chebas19`) | Done |
+| 3 | US30 | Editar o eliminar un gasto de delivery registrado por error | S3-T04 | Endpoints de corrección y eliminación | `GET`, `PUT /{id}` y `DELETE /{id}` en `/api/v1/delivery-expenses`, con ajuste del acumulado mensual (Backend PR #4, `956dd82`). | 6 | Sebastian Roman (`Chebas19`) | Done |
+| 3 | US30 | Editar o eliminar un gasto de delivery registrado por error | S3-T05 | Lista "Gastos del mes" en Flutter | Lista con editar y eliminar, confirmación y recarga del resumen (Flutter PR #3, `5604d9c`, `01a85c2`). | 6 | Sebastian Roman (`Chebas19`) | Done |
+| 3 | US12–US14 / US28 / US36 | Recordatorios en el dispositivo | S3-T06 | Integración de notificaciones locales y calendario | Integrar en `develop` las notificaciones programadas, el acceso al calendario, los permisos y la lista de próximos cobros de `feature/i18n-terms-device` (Flutter PR #2). | 4 | Anghelo Faustino (`limozz05`) / Sebastian Roman (`Chebas19`) | Done |
+| 3 | Transversal | Internacionalización, términos y accesibilidad | S3-T07 | Integración de i18n en los cuatro productos | Integrar inglés y español en Flutter (PR #2), Kotlin (PR #2), landing (PR #1, ya integrado en `develop`) y mensajes del API (Backend PR #3). | 4 | Anghelo Faustino (`limozz05`) / Sebastian Roman (`Chebas19`) | Done |
+| 3 | Transversal | Despliegue de Flutter Web | S3-T08 | CORS de producción y URL del API | Autorizar el origen de Flutter Web con `FLUTTER_WEB_ORIGIN` (Backend PR #3) y compilar web y APK contra `cravewallet-api-av2` (Flutter PR #2, `450f5e2`). | 3 | Alexander Aliaga (`AlexanderAliaga19`) / Sebastian Roman (`Chebas19`) | To-Review |
+| 3 | Transversal | Calidad de la aplicación Android | S3-T09 | Corrección de lint en Jetpack Compose | Leer textos con `LocalResources` en 41 llamadas marcadas por lint (Mobile PR #3, `415c71b`). | 3 | Sebastian Roman (`Chebas19`) | Done |
+| 3 | US29 / US37 / US30 | Historial cambiario y gastos de delivery en Kotlin | S3-T10 | Pantallas de Delivery e historial del tipo de cambio en la app Android | Lista de gastos con edición y eliminación en `DeliveryScreen`, tarjeta `ExchangeRateHistoryCard` en el detalle y consumo de los nuevos endpoints, con pruebas de API y de interfaz (Mobile PR #4, `1e17767`, `66c5bc0`). | 10 | Anghelo Faustino (`limozz05`) | Done |
+| 3 | US29 / US37 / US30 | Historial cambiario y gastos de delivery en Flutter | S3-T11 | Pruebas de widget y corrección de fallos de interfaz | Pruebas de widget de Delivery y del historial; corrección de un controlador liberado antes de tiempo, del límite inferior del selector de fecha y del desbordamiento con texto al 180 % (Flutter PR #5, `11ca4af`). | 8 | Anghelo Faustino (`limozz05`) | Done |
 
 *Fuente: elaboración del equipo Gastify a partir del Product Backlog y los pull requests de los repositorios del proyecto.*
 
+Las horas son estimaciones retrospectivas del esfuerzo de implementación, revisión y pruebas, calculadas con el tamaño de cada pull request, como en la tabla 163. Las tareas en *Done* están integradas en `develop` desde el 26 de noviembre de 2026. S3-T08 queda en *To Review* hasta que el equipo configure `FLUTTER_WEB_ORIGIN` en Render y republique Flutter Web (tabla 182).
+
 #### 4.2.3.4. Development Evidence for Sprint Review
 
-En el Sprint 3 se implementaron US29, US37 y US30 en el backend y en Flutter, se corrigieron los errores de lint de la aplicación Kotlin y se integró en `develop` el trabajo pendiente de AV2. La tabla 179 lista los commits de implementación del periodo. Los commits de integración (*merge commits*) no se incluyen.
+En el Sprint 3 se implementaron US29, US37 y US30 en el backend, en Flutter y en la aplicación Kotlin, se corrigieron los errores de lint de la aplicación Kotlin y se integró en `develop` el trabajo pendiente de AV2. La tabla 179 lista los commits de implementación del periodo. Los commits de integración (*merge commits*) no se incluyen.
 
 *Tabla 179. Commits de desarrollo del Sprint 3.*
 
@@ -1536,7 +1540,10 @@ En el Sprint 3 se implementaron US29, US37 y US30 en el backend y en Flutter, se
 | `CraveWallet-Flutter` | `chore/integrate-av2-flutter-branches` | `450f5e2` | fix(config): point web and APK builds to cravewallet-api-av2 | La compilación web apuntaba a un host que ya no responde. | 26/11/2026 |
 | `CraveWallet-Flutter` | `feature/us30-edit-delete-delivery-expense` | `5604d9c` | feat(delivery): edit and delete delivery expenses from the app (US30) | Lista de gastos del mes con editar y eliminar. | 26/11/2026 |
 | `CraveWallet-Flutter` | `feature/us29-us37-exchange-rate-history` | `9ea0532` | feat(subscriptions): show exchange rate history and variation (US29, US37) | Tarjeta de historial en el detalle de suscripciones en USD. | 26/11/2026 |
+| `CraveWallet-Flutter` | `codex/test-delivery-history-widgets` | `11ca4af` | fix(ui): cover and stabilize delivery and history widgets | Pruebas de widget de Delivery e historial y corrección de los fallos de interfaz que reproducen. | 26/11/2026 |
 | `CraveWallet-Mobile` | `fix/compose-resource-lint` | `415c71b` | fix(ui): read strings through LocalResources in composables | Corrección de 41 errores `LocalContextGetResourceValueCall`. | 26/11/2026 |
+| `CraveWallet-Mobile` | `codex/feat-kotlin-delivery-history` | `1e17767` | feat(mobile): add delivery management and exchange rate history | Gastos de delivery con edición y eliminación, y tarjeta del historial del tipo de cambio en Kotlin. | 26/11/2026 |
+| `CraveWallet-Mobile` | `codex/feat-kotlin-delivery-history` | `66c5bc0` | chore(android): reduce lint warnings without a baseline | Reducción de advertencias de lint sin archivo de línea base. | 26/11/2026 |
 
 *Fuente: historial Git de `CraveWallet-Backend`, `CraveWallet-Flutter` y `CraveWallet-Mobile`.*
 
@@ -1555,13 +1562,17 @@ Cada historia del Sprint 3 se valida con pruebas automatizadas en el backend (Sp
 | `CraveWallet-Backend` | `HistoryAmountRegressionReviewTest` | 1 | US29 | Regresión de la revisión independiente: cambiar el precio actual no modifica los montos pasados. |
 | `CraveWallet-Flutter` | `test/delivery_expenses_test.dart` | 2 | US30 | Llamadas `GET`, `PUT` y `DELETE` y lectura de los gastos. |
 | `CraveWallet-Flutter` | `test/exchange_rate_history_test.dart` | 2 | US29, US37 | Ruta consumida, ciclos y variación, y respuesta sin variación. |
+| `CraveWallet-Flutter` | `test/delivery_history_widgets_test.dart` | 13 | US29, US30, US37 | Lista, edición, cancelación y confirmación de eliminación, validación, error del servidor, fecha anterior a 2020, estados de carga, vacío y error del historial, variación UP, DOWN y UNCHANGED, inglés y español y texto al 180 %. |
+| `CraveWallet-Mobile` | `RemoteRecordsApiTest` | 4 | US29, US30 | Lectura de gastos y del historial desde el API y envío de correcciones y eliminaciones. |
+| `CraveWallet-Mobile` | `DeliveryExpenseEditorTest` | 3 | US30 | Validación del formulario de edición de un gasto. |
+| `CraveWallet-Mobile` | `ExchangeRateHistoryCardTest` | 8 | US29, US37 | Presentación de los ciclos, la variación y los estados de la tarjeta del historial. |
 
-*Fuente: repositorios `CraveWallet-Backend` y `CraveWallet-Flutter`.*
+*Fuente: repositorios `CraveWallet-Backend`, `CraveWallet-Flutter` y `CraveWallet-Mobile`.*
 
 Resultados al 26 de noviembre de 2026:
-- `./mvnw -B verify` en local: 81 pruebas sin fallos en la rama de US30 y 85 en la de US29/US37. El workflow `Backend build` terminó correctamente en ambas.
-- `Flutter CI` (analyze, test y compilación web) terminó correctamente en los PR #3 y #4.
-- En Kotlin, `gradlew testDebugUnitTest lintDebug assembleDebug` terminó correctamente: 11 pruebas (10 aprobadas y 1 omitida) y lint con 0 errores, frente a 42 antes de la corrección.
+- `./mvnw -B test` en local sobre `develop` con US30 integrado: 87 pruebas sin fallos. El workflow `Backend build` terminó correctamente en los PR #3, #4 y #5.
+- `Flutter CI` (analyze, test y compilación web) terminó correctamente en los PR #2 a #5. Según el PR #5, `flutter test` aprueba 26 pruebas, entre ellas las 13 de widget.
+- En Kotlin, `gradlew testDebugUnitTest lintDebug assembleDebug` sobre la rama del PR #4, que contiene los PR #2 y #3, terminó correctamente: 26 pruebas (25 aprobadas y 1 omitida), lint sin errores y APK de depuración generado.
 
 Estas pruebas no reemplazan la verificación en un dispositivo físico, que se registra en la sección 4.2.3.6.
 
@@ -1593,7 +1604,7 @@ Feature: US30 Editar o eliminar un gasto de delivery registrado por error
 
 #### 4.2.3.6. Execution Evidence for Sprint Review
 
-En Flutter, la pantalla de Delivery muestra ahora la sección "Gastos del mes", con acciones para editar (en un diálogo con selector de fecha) y eliminar (con confirmación). El detalle de una suscripción en USD muestra la tarjeta "Historial del tipo de cambio": la variación respecto al cobro anterior y la lista de cobros con su tipo de cambio y monto en soles. Si todavía no hay cotizaciones guardadas, la tarjeta lo indica.
+La aplicación Kotlin incorpora las mismas funciones en `DeliveryScreen` y en la tarjeta `ExchangeRateHistoryCard` del detalle de suscripción (Mobile PR #4). En Flutter, la pantalla de Delivery muestra ahora la sección "Gastos del mes", con acciones para editar (en un diálogo con selector de fecha) y eliminar (con confirmación). El detalle de una suscripción en USD muestra la tarjeta "Historial del tipo de cambio": la variación respecto al cobro anterior y la lista de cobros con su tipo de cambio y monto en soles. Si todavía no hay cotizaciones guardadas, la tarjeta lo indica.
 
 **[COMPLETAR: capturas en un dispositivo físico de la lista "Gastos del mes", el diálogo de edición, la confirmación de eliminación y la tarjeta de historial del tipo de cambio]**
 
@@ -1614,7 +1625,7 @@ El Sprint 3 agrega cuatro operaciones REST documentadas con anotaciones OpenAPI.
 
 *Fuente: controladores `DeliveryController` y `SubscriptionController` de `CraveWallet-Backend`.*
 
-Todas las operaciones requieren JWT. La documentación publicada en <https://cravewallet-api-av2.onrender.com/swagger-ui/index.html> mostrará estas operaciones cuando el servicio se redespliegue desde `develop` con los PR #4 y #5 integrados.
+Todas las operaciones requieren JWT. La documentación publicada en <https://cravewallet-api-av2.onrender.com/swagger-ui/index.html> mostrará estas operaciones cuando el servicio se redespliegue desde `develop`, donde los PR #4 y #5 ya están integrados.
 
 **[COMPLETAR: capturas de Swagger UI ejecutando las cuatro operaciones con la cuenta de prueba en el servicio desplegado]**
 
@@ -1626,9 +1637,9 @@ Durante el Sprint 3 se prepararon los cambios de configuración necesarios para 
 
 | Paso | Componente | Acción | Estado |
 | :---: | --- | --- | --- |
-| 1 | Backend | Integrar en `develop` los PR #3, #4 y #5 y redesplegar `cravewallet-api-av2`. Flyway aplica V6 al arrancar. | **[COMPLETAR: fecha y captura del despliegue]** |
+| 1 | Backend | Integrar en `develop` los PR #3, #4 y #5 y redesplegar `cravewallet-api-av2`. Flyway aplica V6 al arrancar. | PR integrados el 26/11/2026. Redespliegue: **[COMPLETAR: fecha y captura del despliegue]** |
 | 2 | Backend | Definir `FLUTTER_WEB_ORIGIN` en Render con el origen de Flutter Web, sin `/` final. | **[COMPLETAR]** |
-| 3 | Flutter Web | Integrar los PR #2, #3 y #4 y republicar con `API_BASE_URL=https://cravewallet-api-av2.onrender.com`. | **[COMPLETAR]** |
+| 3 | Flutter Web | Integrar los PR #2 a #5 y republicar con `API_BASE_URL=https://cravewallet-api-av2.onrender.com`. | PR integrados el 26/11/2026. Republicación: **[COMPLETAR]** |
 | 4 | Android | Generar el APK con el workflow `android-apk` e instalarlo en un dispositivo físico. | **[COMPLETAR: modelo, versión de Android y SHA-256 del APK]** |
 | 5 | Landing | Publicar en Vercel la i18n, los términos y la sección de videos mediante el PR `develop → main`. | **[COMPLETAR]** |
 
@@ -1643,32 +1654,36 @@ Entre el 14 y el 26 de noviembre de 2026, sin contar los *merge commits*, los re
 | Integrante | Usuario GitHub | Landing page | App Kotlin | App Flutter | Servicios RESTful | Informe |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | Aliaga, Alexander | `AlexanderAliaga19` | 0 | 0 | 0 | 0 | 0 |
-| Carpio Peña, Josué Francisco | `josf17` | 0 | 0 | 0 | 0 | 0 |
-| Faustino Hurtado, Anghelo Edwin | `Limos05` / `limozz05` | 0 | 0 | 0 | 0 | 0 |
-| Roman Zeballos, Sebastian Jared | `Chebas19` | 0 | 1 | 4 | 3 | 4 |
+| Carpio Peña, Josué Francisco | `josf17` | 0 | 0 | 0 | 0 | 3 |
+| Faustino Hurtado, Anghelo Edwin | `Limos05` / `limozz05` | 0 | 2 | 1 | 0 | 0 |
+| Roman Zeballos, Sebastian Jared | `Chebas19` | 0 | 1 | 4 | 3 | 5 |
 | Sejuro Medina, Mario Gabriel | `maghetthi` | 0 | 0 | 0 | 0 | 0 |
 
 *Fuente: `git log --remotes --no-merges --since=2026-11-14` sobre los cinco repositorios, conteo al 26 de noviembre de 2026. **[COMPLETAR: actualizar al cierre del Sprint 3]***
 
 *Tabla 184. Pull requests del Sprint 3.*
 
-| Repositorio | PR | Contenido | Estado al 26/11/2026 |
-| --- | :---: | --- | --- |
-| `CraveWallet-Report` | #28 | Integración del cierre de AV2 | Integrado |
-| `CraveWallet-Report` | #29 | Evidencia verificada del Sprint 2 | Abierto |
-| `CraveWallet-Backend` | #3 | CORS de producción e i18n del API | Abierto |
-| `CraveWallet-Backend` | #4 | US30 | Abierto |
-| `CraveWallet-Backend` | #5 | US29 y US37 | Abierto |
-| `CraveWallet-Flutter` | #2 | i18n, términos, recordatorios, web y APK | Abierto |
-| `CraveWallet-Flutter` | #3 | US30 | Abierto |
-| `CraveWallet-Flutter` | #4 | US29 y US37 | Abierto |
-| `CraveWallet-Mobile` | #2 | i18n y términos en Kotlin | Abierto |
-| `CraveWallet-Mobile` | #3 | Corrección de lint | Abierto |
-| `cravewallet-landing` | #1 | i18n, términos, sección de videos y accesibilidad | Integrado en `develop` |
+| Repositorio | PR | Contenido | Autor | Estado al 26/11/2026 |
+| --- | :---: | --- | --- | --- |
+| `CraveWallet-Report` | #28 | Integración del cierre de AV2 | `Chebas19` | Integrado |
+| `CraveWallet-Report` | #29 | Evidencia verificada del Sprint 2 | `Chebas19` | Integrado |
+| `CraveWallet-Report` | #30 | Sección 4.2.3 (Sprint 3) | `Chebas19` | Este pull request |
+| `CraveWallet-Report` | #31 | Planificación, matriz LACX, Trello y horas del Sprint 2 | `josf17` | Integrado |
+| `CraveWallet-Backend` | #3 | CORS de producción e i18n del API | `Chebas19` | Integrado |
+| `CraveWallet-Backend` | #4 | US30 | `Chebas19` | Integrado |
+| `CraveWallet-Backend` | #5 | US29 y US37 | `Chebas19` | Integrado |
+| `CraveWallet-Flutter` | #2 | i18n, términos, recordatorios, web y APK | `Chebas19` | Integrado |
+| `CraveWallet-Flutter` | #3 | US30 | `Chebas19` | Integrado |
+| `CraveWallet-Flutter` | #4 | US29 y US37 | `Chebas19` | Integrado mediante el PR #5 |
+| `CraveWallet-Flutter` | #5 | Pruebas de widget y corrección de fallos de interfaz | `Limos05` | Integrado |
+| `CraveWallet-Mobile` | #2 | i18n y términos en Kotlin | `Chebas19` | Integrado |
+| `CraveWallet-Mobile` | #3 | Corrección de lint | `Chebas19` | Integrado |
+| `CraveWallet-Mobile` | #4 | Delivery e historial del tipo de cambio en Kotlin | `Limos05` | Integrado |
+| `cravewallet-landing` | #1 | i18n, términos, sección de videos y accesibilidad | `Chebas19` | Integrado en `develop` |
 
 *Fuente: pull requests de la organización en GitHub.*
 
-Hasta el corte del 26 de noviembre de 2026, los commits nuevos del Sprint 3 los registra una sola cuenta. Para que la matriz LACX (tabla 177) y el criterio de colaboración de la rúbrica reflejen el aporte de todo el equipo, el resto de los integrantes debe registrar sus aportes al Sprint 3 (revisión y merge de pull requests, despliegue, validación y redacción) antes del cierre. **[COMPLETAR: interpretación final del equipo sobre la distribución del trabajo del Sprint 3]**
+Al corte del 26 de noviembre de 2026, tres integrantes registran commits en el Sprint 3. Sebastián Roman implementó US29, US37 y US30 en el backend y en Flutter e integró las ramas pendientes de AV2. Anghelo Faustino llevó esas historias a Kotlin y revisó las pantallas de Flutter con pruebas de widget, que encontraron tres fallos de interfaz corregidos en el PR #5. Josué Carpio completó la documentación del Sprint 2 en el informe. Alexander Aliaga y Mario Sejuro no registran commits en este periodo. Para que la matriz LACX (tabla 177) refleje el aporte de todo el equipo, falta registrar el despliegue, la validación y la redacción restantes. **[COMPLETAR: interpretación final del equipo sobre la distribución del trabajo del Sprint 3]**
 
 ## 4.3. Validation Interviews
 
