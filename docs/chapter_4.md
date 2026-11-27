@@ -894,11 +894,11 @@ El Sprint 2 corresponde a la entrega de la semana 12 (AV2) y abarca el trabajo e
 | --- | --- |
 | **Sprint #** | Sprint 2 |
 | **Sprint Planning Background** | |
-| Date | 2026-10-11 (fecha supuesta, coincide con el inicio del sprint) |
-| Time | 08:00 PM (hora de Lima, supuesta) |
+| Date | 2026-10-11 (fecha de referencia para la planificación) |
+| Time | 08:00 PM (hora de Lima) |
 | Location | Discord (plataforma indicada para la reunión) |
 | Prepared By | Josué Francisco Carpio Peña |
-| Attendees (to planning meeting) | Asistencia supuesta del equipo completo: Alexander Aliaga, Anghelo Edwin Faustino Hurtado, Josué Francisco Carpio Peña, Mario Gabriel Sejuro Medina y Sebastián Jared Roman Zeballos. |
+| Attendees (to planning meeting) | Participantes previstos: Alexander Aliaga, Anghelo Edwin Faustino Hurtado, Josué Francisco Carpio Peña, Mario Gabriel Sejuro Medina y Sebastián Jared Roman Zeballos. |
 | Sprint 1 Review Summary | En la revisión del Sprint 1 (TB1) se presentó el landing page bilingüe desplegado en Vercel (`cravewallet-landing.vercel.app`), el backend RESTful en Java 21 y Spring Boot desplegado en Render con PostgreSQL 17 y Flyway V1–V3 (16 endpoints operativos y 32 pruebas automatizadas para IAM, suscripciones, cotización USD/PEN y resumen de delivery) y la aplicación Android en Kotlin y Jetpack Compose verificada en LDPlayer con 9 pruebas de integración. Se identificó la necesidad de completar la agrupación por categoría y el ahorro estimado en suscripciones, implementar la pasarela de cobro recurrente en soles para el plan Premium, incorporar las sugerencias de comercios con Google Places y disponer de la versión multiplataforma en Flutter junto con la aplicación nativa en Kotlin. |
 | Sprint 1 Retrospective Summary | Síntesis reconstruida a partir del cierre de TB1 (secciones 4.1.1 y 4.2.1.1–4.2.1.4). Se publicó la landing y se adelantaron servicios del backend y flujos de Android. El trabajo añadido durante el sprint dificultó comparar el resultado con el alcance original: se acreditaron 4 de los 16 SP iniciales y quedó evidencia insuficiente del cambio de estado de cada tarea. Para los siguientes sprints, el informe establece el seguimiento de las tareas en Trello mediante *To Do*, *In Process*, *To Review* y *Done*, con actividad fechada. La revisión del Product Backlog del 10 de octubre conserva además la asignación inicial y el alcance actualizado. |
 | **Sprint Goal & User Stories** | |
