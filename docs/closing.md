@@ -20,6 +20,14 @@ En el Sprint 2 el equipo consolidó la experiencia móvil en dos implementacione
 
 El backend de AV2 (`CraveWallet-Backend`) amplió su inventario a 22 endpoints REST documentados con OpenAPI y verificados con 72 pruebas automatizadas en 13 clases de prueba. Incorporó el Bounded Context `Premium & Billing` con la API de Suscripciones y Webhooks firmados (HMAC-SHA256) de Mercado Pago para el plan de S/ 9.99 mensuales, las migraciones Flyway V4 y V5, el control del límite de 5 suscripciones en el plan gratuito, los subtotales mensuales por categoría y el ahorro estimado al cancelar, así como el adaptador de sugerencias de comercios con Google Places Text Search.
 
+## Conclusiones de TB2
+
+En el Sprint 3 el equipo explicó por qué cambia el monto en soles de una suscripción en dólares. El backend guarda cada cotización y cada versión de las condiciones, y las aplicaciones muestran el historial por ciclo y la variación respecto al cobro anterior (US29 y US37). Una revisión independiente detectó que editar el precio cambiaba los cobros pasados; la corrección conserva el monto vigente en cada fecha.
+
+Con la corrección y eliminación de gastos de delivery (US30), las preguntas frecuentes y el registro de correos del landing (US32 y US40), y las nueve historias completadas en Flutter el 28 de noviembre, la aplicación cubre las historias del Product Backlog. Esas nueve historias son el catálogo de servicios, la edición, el detalle desde el Dashboard, el tipo de cambio con su fecha, la previsualización en soles, el ahorro estimado al cancelar, la moneda de referencia, el catálogo de comercios y la tendencia semanal. El API documenta 27 operaciones con OpenAPI, y Flutter Web se publica en GitHub Pages con cada integración en `develop`.
+
+Las pruebas automatizadas crecieron a 90 en el backend y 39 en Flutter, y se mantienen las suites de Kotlin. Integrar mediante pull requests las ramas que habían quedado sueltas al cierre de AV2 mostró que el trabajo cuenta solo cuando llega a `develop` y se verifica en las URL públicas. Por eso cada despliegue de la tabla 182 registra su estado.
+
 # Glosario
 
 **Anti-Corruption Layer (ACL).** Patrón de Context Mapping que interpone un adaptador entre dos Bounded Contexts, o entre un contexto y un sistema externo, para traducir modelos sin contaminar el dominio propio. En CraveWallet se implementa en las integraciones con ExchangeRate-API, Mercado Pago (diseñado inicialmente con Stripe en AV1/TB1) y Google Places.
@@ -109,6 +117,12 @@ Zhong, C., Li, S., Huang, H., Liu, X., Chen, Z., Zhang, Y., & Zhang, H. (2024). 
 
 ExchangeRate-API. (s. f.). *Pair conversion requests*. Recuperado 7 de octubre de 2026, de https://www.exchangerate-api.com/docs/pair-conversion-requests
 
+Flutter. (s. f.-a). *An introduction to widget testing*. Recuperado 28 de noviembre de 2026, de https://docs.flutter.dev/cookbook/testing/widget/introduction
+
+Flutter. (s. f.-b). *Internationalizing Flutter apps*. Recuperado 28 de noviembre de 2026, de https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization
+
+GitHub. (s. f.). *Using custom workflows with GitHub Pages*. Recuperado 27 de noviembre de 2026, de https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+
 Google. (s. f.-a). *Material Design 3*. Recuperado 8 de octubre de 2026, de https://m3.material.io/
 
 Google. (s. f.-b). *Text Search (New)*. Recuperado 7 de octubre de 2026, de https://developers.google.com/maps/documentation/places/web-service/text-search
@@ -167,3 +181,13 @@ La figura 128 muestra una vista parcial del tablero después de la revisión TB1
 | AV2-7 | Migraciones Flyway V1–V5 | [4.2.2.8. Despliegue](chapter_4.md#4228-software-deployment-evidence-for-sprint-review) |
 
 *Fuente: elaboración del equipo Gastify.*
+
+## Anexo C. Productos y evidencias de TB2
+
+- [Landing page en Vercel](https://cravewallet-landing.vercel.app/es) y [repositorio `cravewallet-landing`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/cravewallet-landing).
+- [Servicios RESTful en Render](https://cravewallet-api-av2.onrender.com/actuator/health), [documentación OpenAPI (Swagger UI)](https://cravewallet-api-av2.onrender.com/swagger-ui/index.html) y [repositorio `CraveWallet-Backend`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Backend).
+- [Aplicación Flutter Web en GitHub Pages](https://1acc0238-2620-4950-gastify-cravewallet.github.io/CraveWallet-Flutter/) y [repositorio `CraveWallet-Flutter`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter), con las pruebas de las historias completadas en [`test/backlog_completion_test.dart`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/blob/develop/test/backlog_completion_test.dart).
+- [Repositorio de la aplicación Android en Kotlin `CraveWallet-Mobile`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile).
+- [Tablero del Sprint 3 en Trello](https://trello.com/b/7kXm7rmW/cravewallet-sprint-3).
+- Distribución de la aplicación Android para pruebas: **[COMPLETAR: enlace de invitación de Firebase App Distribution]**
+- Videos App Validation, About-the-Product y About-the-Team: enlaces en la sección 4.3.3.
