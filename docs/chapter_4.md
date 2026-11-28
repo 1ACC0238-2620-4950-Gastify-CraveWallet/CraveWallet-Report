@@ -1521,14 +1521,14 @@ El Sprint Backlog 3 descompone las historias de la tabla 176 en tareas de ingeni
 | 3 | Transversal | Calidad de la aplicación Android | [S3-T09](https://trello.com/c/Nf7wpfV2) | Corrección de lint en Jetpack Compose | Leer textos con `LocalResources` en 41 llamadas marcadas por lint (Mobile PR #3, `415c71b`). | 3 | Sebastian Roman (`Chebas19`) | Done |
 | 3 | US29 / US37 / US30 | Historial cambiario y gastos de delivery en Kotlin | [S3-T10](https://trello.com/c/PC2BXnxw) | Pantallas de Delivery e historial del tipo de cambio en la app Android | Lista de gastos con edición y eliminación en `DeliveryScreen`, tarjeta `ExchangeRateHistoryCard` en el detalle y consumo de los nuevos endpoints, con pruebas de API y de interfaz (Mobile PR #4, `1e17767`, `66c5bc0`). | 10 | Anghelo Faustino (`limozz05`) | Done |
 | 3 | US29 / US37 / US30 | Historial cambiario y gastos de delivery en Flutter | [S3-T11](https://trello.com/c/ImangQCM) | Pruebas de widget y corrección de fallos de interfaz | Pruebas de widget de Delivery y del historial; corrección de un controlador liberado antes de tiempo, del límite inferior del selector de fecha y del desbordamiento con texto al 180 % (Flutter PR #5, `11ca4af`). | 8 | Anghelo Faustino (`limozz05`) | Done |
-| 3 | US40 | Dejar mi correo para recibir novedades del lanzamiento | S3-T12 | Registro de correos en el API | `POST /api/v1/launch-subscribers` público, migración V7 con `launch_subscribers`, un registro por correo sin distinguir mayúsculas y respuesta `202` igual para correos nuevos y repetidos (`47780fd`). | 4 | Sebastian Roman (`Chebas19`) | To-Review |
-| 3 | US32 | Consultar preguntas frecuentes en el landing page | S3-T13 | Sección FAQ bilingüe | Cinco preguntas con `<details>` nativo, usable con teclado y lector de pantalla sin JavaScript, y enlace `#faq` en la barra de navegación (`6385387`). | 3 | Sebastian Roman (`Chebas19`) | To-Review |
-| 3 | US40 | Dejar mi correo para recibir novedades del lanzamiento | S3-T14 | Formulario de novedades conectado al API | Formulario con estados de éxito, correo inválido y error en inglés y español; la ruta `/api/newsletter` reenvía el correo al API y el middleware de idioma ya no redirige `/api/*` (`238ace0`). | 4 | Sebastian Roman (`Chebas19`) | To-Review |
-| 3 | US29 / US30 | Correcciones detectadas al integrar | S3-T15 | CORS de `DELETE` e historial de condiciones | Permitir `DELETE` en CORS para que Flutter Web elimine gastos (`45c102c`) y evitar el `409` cuando una suscripción se crea y se edita en el mismo instante (`0da60a5`). | 3 | Sebastian Roman (`Chebas19`) | To-Review |
+| 3 | US40 | Dejar mi correo para recibir novedades del lanzamiento | S3-T12 | Registro de correos en el API | `POST /api/v1/launch-subscribers` público, migración V7 con `launch_subscribers`, un registro por correo sin distinguir mayúsculas y respuesta `202` igual para correos nuevos y repetidos (Backend PR #6, `47780fd`). | 4 | Sebastian Roman (`Chebas19`) | Done |
+| 3 | US32 | Consultar preguntas frecuentes en el landing page | S3-T13 | Sección FAQ bilingüe | Cinco preguntas con `<details>` nativo, usable con teclado y lector de pantalla sin JavaScript, y enlace `#faq` en la barra de navegación (Landing PR #2, `6385387`). | 3 | Sebastian Roman (`Chebas19`) | Done |
+| 3 | US40 | Dejar mi correo para recibir novedades del lanzamiento | S3-T14 | Formulario de novedades conectado al API | Formulario con estados de éxito, correo inválido y error en inglés y español; la ruta `/api/newsletter` reenvía el correo al API y el middleware de idioma ya no redirige `/api/*` (Landing PR #2, `238ace0`). | 4 | Sebastian Roman (`Chebas19`) | Done |
+| 3 | US29 / US30 | Correcciones detectadas al integrar | S3-T15 | CORS de `DELETE` e historial de condiciones | Permitir `DELETE` en CORS para que Flutter Web elimine gastos (`45c102c`) y evitar el `409` cuando una suscripción se crea y se edita en el mismo instante (`0da60a5`), ambas en el Backend PR #6. | 3 | Sebastian Roman (`Chebas19`) | Done |
 
 *Fuente: elaboración del equipo Gastify a partir del Product Backlog y los pull requests de los repositorios del proyecto.*
 
-Las quince tareas suman **75 horas**. Las horas son estimaciones retrospectivas del esfuerzo de implementación, revisión y pruebas, calculadas con el tamaño de cada pull request, como en la tabla 163. Las tareas en *Done* están integradas en `develop` desde el 26 de noviembre de 2026. S3-T08 queda en *To Review* hasta que el equipo configure `FLUTTER_WEB_ORIGIN` en Render y republique Flutter Web (tabla 182). S3-T12 a S3-T15 se agregaron el 27 de noviembre, después de la captura del tablero, y quedan en *To Review* hasta que se integren en `develop` las ramas `feature/us40-launch-subscribers` (Backend) y `feature/landing-faq-newsletter` (landing).
+Las quince tareas suman **75 horas**. Las horas son estimaciones retrospectivas del esfuerzo de implementación, revisión y pruebas, calculadas con el tamaño de cada pull request, como en la tabla 163. Las tareas en *Done* están integradas en `develop` desde el 26 de noviembre de 2026. S3-T08 queda en *To Review* hasta que el equipo configure `FLUTTER_WEB_ORIGIN` en Render y republique Flutter Web (tabla 182). S3-T12 a S3-T15 se agregaron el 27 de noviembre, después de la captura del tablero, y ese mismo día se integraron en `develop` mediante el Backend PR #6 y el Landing PR #2.
 
 #### 4.2.3.4. Development Evidence for Sprint Review
 
@@ -1663,7 +1663,7 @@ El Sprint 3 agrega cinco operaciones REST documentadas con anotaciones OpenAPI. 
 
 *Fuente: controladores `DeliveryController`, `SubscriptionController` y `LaunchSubscriberController` de `CraveWallet-Backend`.*
 
-Las cuatro primeras operaciones requieren JWT. `POST /api/v1/launch-subscribers` es pública porque la usa el landing, y responde lo mismo ante un correo nuevo y uno repetido para no revelar qué correos están registrados. La documentación publicada en <https://cravewallet-api-av2.onrender.com/swagger-ui/index.html> mostrará estas operaciones cuando el servicio se redespliegue desde `develop`, donde los PR #4 y #5 ya están integrados. La operación de US40 aparecerá cuando se integre la rama `feature/us40-launch-subscribers`.
+Las cuatro primeras operaciones requieren JWT. `POST /api/v1/launch-subscribers` es pública porque la usa el landing, y responde lo mismo ante un correo nuevo y uno repetido para no revelar qué correos están registrados. La documentación publicada en <https://cravewallet-api-av2.onrender.com/swagger-ui/index.html> mostrará estas operaciones cuando el servicio se redespliegue desde `develop`, donde los PR #4 y #5 ya están integrados. La operación de US40 está en `develop` desde el Backend PR #6 y también aparecerá con ese redespliegue.
 
 **[COMPLETAR: capturas de Swagger UI ejecutando las cuatro operaciones con la cuenta de prueba en el servicio desplegado]**
 
@@ -1680,7 +1680,7 @@ Durante el Sprint 3 se prepararon los cambios de configuración necesarios para 
 | 3 | Flutter Web | Integrar los PR #2 a #5 y republicar con `API_BASE_URL=https://cravewallet-api-av2.onrender.com`. | PR integrados el 26/11/2026. Republicación: **[COMPLETAR]** |
 | 4 | Android | Generar el APK con el workflow `android-apk` e instalarlo en un dispositivo físico. | **[COMPLETAR: modelo, versión de Android y SHA-256 del APK]** |
 | 5 | Landing | Publicar en Vercel la i18n, los términos y la sección de videos mediante el PR `develop → main`. | **[COMPLETAR]** |
-| 6 | Backend y landing | Integrar `feature/us40-launch-subscribers` y `feature/landing-faq-newsletter` en `develop`; al redesplegar el backend, Flyway aplica V7. En Vercel, `CRAVEWALLET_API_URL` es opcional: si no se define, el landing usa `https://cravewallet-api-av2.onrender.com`. | Ramas publicadas el 27/11/2026, pendientes de pull request. |
+| 6 | Backend y landing | Integrar US40 y US32 en `develop` (Backend PR #6 y Landing PR #2); al redesplegar el backend, Flyway aplica V7. En Vercel, `CRAVEWALLET_API_URL` es opcional: si no se define, el landing usa `https://cravewallet-api-av2.onrender.com`. | PR integrados el 27/11/2026. Redespliegue del backend y publicación del landing: **[COMPLETAR]** |
 
 *Fuente: elaboración del equipo Gastify.*
 
@@ -1695,7 +1695,7 @@ Entre el 14 y el 27 de noviembre de 2026, sin contar los *merge commits*, los re
 | Aliaga, Alexander | `AlexanderAliaga19` | 0 | 0 | 0 | 0 | 0 |
 | Carpio Peña, Josué Francisco | `josf17` | 0 | 0 | 0 | 0 | 4 |
 | Faustino Hurtado, Anghelo Edwin | `Limos05` / `limozz05` | 0 | 2 | 1 | 0 | 0 |
-| Roman Zeballos, Sebastian Jared | `Chebas19` | 2 | 1 | 4 | 6 | 6 |
+| Roman Zeballos, Sebastian Jared | `Chebas19` | 2 | 1 | 4 | 6 | 7 |
 | Sejuro Medina, Mario Gabriel | `maghetthi` | 0 | 0 | 0 | 0 | 0 |
 
 *Fuente: `git log --remotes --no-merges --since=2026-11-14` sobre los cinco repositorios, conteo al 27 de noviembre de 2026 que incluye el commit de este pull request. **[COMPLETAR: actualizar al cierre del Sprint 3]***
@@ -1709,6 +1709,7 @@ Entre el 14 y el 27 de noviembre de 2026, sin contar los *merge commits*, los re
 | `CraveWallet-Report` | #30 | Sección 4.2.3 (Sprint 3) | `Chebas19` | Integrado |
 | `CraveWallet-Report` | #31 | Planificación, matriz LACX, Trello y horas del Sprint 2 | `josf17` | Integrado |
 | `CraveWallet-Report` | #32 | Sprint Planning 3 y tablero de Trello del Sprint 3 | `josf17` | Integrado |
+| `CraveWallet-Report` | #33 | Evidencia de US32, US40 y de las correcciones de integración | `Chebas19` | Integrado |
 | `CraveWallet-Backend` | #3 | CORS de producción e i18n del API | `Chebas19` | Integrado |
 | `CraveWallet-Backend` | #4 | US30 | `Chebas19` | Integrado |
 | `CraveWallet-Backend` | #5 | US29 y US37 | `Chebas19` | Integrado |
@@ -1720,8 +1721,8 @@ Entre el 14 y el 27 de noviembre de 2026, sin contar los *merge commits*, los re
 | `CraveWallet-Mobile` | #3 | Corrección de lint | `Chebas19` | Integrado |
 | `CraveWallet-Mobile` | #4 | Delivery e historial del tipo de cambio en Kotlin | `Limos05` | Integrado |
 | `cravewallet-landing` | #1 | i18n, términos, sección de videos y accesibilidad | `Chebas19` | Integrado en `develop` |
-| `CraveWallet-Backend` | — | US40 y correcciones de CORS y del historial de condiciones (`feature/us40-launch-subscribers`) | `Chebas19` | Rama publicada, pull request pendiente |
-| `cravewallet-landing` | — | US32 y US40 (`feature/landing-faq-newsletter`) | `Chebas19` | Rama publicada, pull request pendiente |
+| `CraveWallet-Backend` | #6 | US40 y correcciones de CORS y del historial de condiciones | `Chebas19` | Integrado |
+| `cravewallet-landing` | #2 | US32 y US40 | `Chebas19` | Integrado en `develop` |
 
 *Fuente: pull requests de la organización en GitHub.*
 
