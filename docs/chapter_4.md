@@ -1460,7 +1460,7 @@ La distribución de la tabla 175 muestra una especialización técnica durante e
 
 #### 4.2.3.1. Sprint Planning 3
 
-El Sprint 3 corresponde a la entrega TB2 (Release Review, semana 15) y abarca el trabajo registrado desde el 14 de noviembre de 2026. Según la tabla 84, al Sprint 3 le corresponden el servicio de conversión de divisas (TS03, US15–US17, US29 y US37) y el servicio de recordatorios (TS04, US12–US14, US28 y US36). TS03, US15, US16 y US17 ya estaban implementadas desde TB1, así que el sprint se concentra en el historial y la variación del tipo de cambio (US29 y US37) y en los recordatorios en el dispositivo. A ellas se suma US30 (editar o eliminar un gasto de delivery), del Sprint 4, que era la única historia de delivery que seguía pendiente. El sprint también integra en `develop` el trabajo de internacionalización, términos y condiciones, accesibilidad y CORS de producción que quedó en ramas sin integrar al cierre del Sprint 2. Por último, el 27 de noviembre se cerraron dos historias del landing que venían del Sprint 1 sin aceptación completa (tabla 147): US32 (preguntas frecuentes, 2 SP) y US40 (registro de correo para novedades del lanzamiento, 1 SP). Para US40 el backend guarda ahora los correos, de modo que el formulario ya no es solo visual.
+El Sprint 3 corresponde a la entrega TB2 (Release Review, semana 15) y abarca el trabajo registrado desde el 14 de noviembre de 2026. Según la tabla 84, al Sprint 3 le corresponden el servicio de conversión de divisas (TS03, US15–US17, US29 y US37) y el servicio de recordatorios (TS04, US12–US14, US28 y US36). TS03, US15, US16 y US17 ya estaban implementadas desde TB1, así que el sprint se concentra en el historial y la variación del tipo de cambio (US29 y US37) y en los recordatorios en el dispositivo. A ellas se suma US30 (editar o eliminar un gasto de delivery), del Sprint 4, que era la única historia de delivery que seguía pendiente. El sprint también integra en `develop` el trabajo de internacionalización, términos y condiciones, accesibilidad y CORS de producción que quedó en ramas sin integrar al cierre del Sprint 2. Por último, el 27 de noviembre se cerraron dos historias del landing que venían del Sprint 1 sin aceptación completa (tabla 147): US32 (preguntas frecuentes, 2 SP) y US40 (registro de correo para novedades del lanzamiento, 1 SP). Para US40 el backend guarda ahora los correos, de modo que el formulario ya no es solo visual. El 28 de noviembre se completaron en la aplicación Flutter las nueve historias del Product Backlog que aún no tenían todos sus criterios de aceptación implementados, de modo que la versión TB2 cubre el backlog completo. Siete de esas historias venían del Sprint 2 (US03, US04, US06, US11, US16, US34 y US35) y dos del Sprint 4 (US18 y US20). En total suman 21 SP según la tabla 84.
 
 *Tabla 176. Sprint Planning 3.*
 
@@ -1525,14 +1525,18 @@ El Sprint Backlog 3 descompone las historias de la tabla 176 en tareas de ingeni
 | 3 | US32 | Consultar preguntas frecuentes en el landing page | S3-T13 | Sección FAQ bilingüe | Cinco preguntas con `<details>` nativo, usable con teclado y lector de pantalla sin JavaScript, y enlace `#faq` en la barra de navegación (Landing PR #2, `6385387`). | 3 | Sebastian Roman (`Chebas19`) | Done |
 | 3 | US40 | Dejar mi correo para recibir novedades del lanzamiento | S3-T14 | Formulario de novedades conectado al API | Formulario con estados de éxito, correo inválido y error en inglés y español; la ruta `/api/newsletter` reenvía el correo al API y el middleware de idioma ya no redirige `/api/*` (Landing PR #2, `238ace0`). | 4 | Sebastian Roman (`Chebas19`) | Done |
 | 3 | US29 / US30 | Correcciones detectadas al integrar | S3-T15 | CORS de `DELETE` e historial de condiciones | Permitir `DELETE` en CORS para que Flutter Web elimine gastos (`45c102c`) y evitar el `409` cuando una suscripción se crea y se edita en el mismo instante (`0da60a5`), ambas en el Backend PR #6. | 3 | Sebastian Roman (`Chebas19`) | Done |
+| 3 | US04 / US34 / US06 | Registro y edición de suscripciones | S3-T16 | Catálogo, previsualización en soles y edición | Catálogo de 28 servicios con buscador que ignora tildes, previsualización en soles al ingresar un monto en USD y formulario de edición de monto, fecha de cobro, categoría y notas (Flutter PR #7, `3f5be0d`). | 8 | Sebastian Roman (`Chebas19`) | Done |
+| 3 | US11 / US16 / US35 | Detalle, conversión y cancelación | S3-T17 | Detalle desde el Dashboard, tipo de cambio con fecha y ahorro estimado | El detalle se abre desde el Dashboard y muestra el monto original, el equivalente en soles, la categoría, la renovación, el tipo de cambio y la fecha y hora de la cotización. La cancelación pide confirmación y muestra el ahorro potencial estimado (Flutter PR #7, `3f5be0d`). | 6 | Sebastian Roman (`Chebas19`) | Done |
+| 3 | US03 | Configurar mi moneda de referencia | S3-T18 | Moneda de referencia en el perfil | Opción del perfil con PEN preseleccionado y confirmación mediante `PATCH /api/v1/users/me` (Flutter PR #7, `3f5be0d`). | 2 | Sebastian Roman (`Chebas19`) | Done |
+| 3 | US18 / US20 | Catálogo de comercios y tendencia semanal | S3-T19 | Comercios frecuentes y tendencia de cuatro semanas | Sugerencias de 22 comercios de Lima al registrar un gasto, que también acepta un comercio escrito a mano, y tarjeta con el total de cada una de las últimas cuatro semanas (Flutter PR #7, `3f5be0d`). | 6 | Sebastian Roman (`Chebas19`) | Done |
 
 *Fuente: elaboración del equipo Gastify a partir del Product Backlog y los pull requests de los repositorios del proyecto.*
 
-Las quince tareas suman **75 horas**. Las horas son estimaciones retrospectivas del esfuerzo de implementación, revisión y pruebas, calculadas con el tamaño de cada pull request, como en la tabla 163. Las tareas en *Done* están integradas en `develop` desde el 26 de noviembre de 2026. S3-T08 queda en *To Review* hasta que el equipo configure `FLUTTER_WEB_ORIGIN` en Render y republique Flutter Web (tabla 182). S3-T12 a S3-T15 se agregaron el 27 de noviembre, después de la captura del tablero, y ese mismo día se integraron en `develop` mediante el Backend PR #6 y el Landing PR #2.
+Las diecinueve tareas suman **97 horas**. Las horas son estimaciones retrospectivas del esfuerzo de implementación, revisión y pruebas, calculadas con el tamaño de cada pull request, como en la tabla 163. Las tareas en *Done* están integradas en `develop` desde el 26 de noviembre de 2026. S3-T08 queda en *To Review* hasta que el equipo configure `FLUTTER_WEB_ORIGIN` en Render y republique Flutter Web (tabla 182). S3-T12 a S3-T15 se agregaron el 27 de noviembre, después de la captura del tablero, y ese mismo día se integraron en `develop` mediante el Backend PR #6 y el Landing PR #2. S3-T16 a S3-T19 se agregaron el 28 de noviembre y se integraron en `develop` mediante el Flutter PR #7.
 
 #### 4.2.3.4. Development Evidence for Sprint Review
 
-En el Sprint 3 se implementaron US29, US37 y US30 en el backend, en Flutter y en la aplicación Kotlin, se corrigieron los errores de lint de la aplicación Kotlin y se integró en `develop` el trabajo pendiente de AV2. La tabla 179 lista los commits de implementación del periodo. Los commits de integración (*merge commits*) no se incluyen.
+En el Sprint 3 se implementaron US29, US37 y US30 en el backend, en Flutter y en la aplicación Kotlin, se corrigieron los errores de lint de la aplicación Kotlin y se integró en `develop` el trabajo pendiente de AV2. Al cierre se completaron en Flutter las nueve historias restantes del backlog (`3f5be0d`). La tabla 179 lista los commits de implementación del periodo. Los commits de integración (*merge commits*) no se incluyen.
 
 *Tabla 179. Commits de desarrollo del Sprint 3.*
 
@@ -1553,6 +1557,8 @@ En el Sprint 3 se implementaron US29, US37 y US30 en el backend, en Flutter y en
 | `CraveWallet-Backend` | `feature/us40-launch-subscribers` | `47780fd` | feat(launch): store launch notification sign-ups from the landing page (US40) | Endpoint público y migración V7 para los correos del landing. | 27/11/2026 |
 | `cravewallet-landing` | `feature/landing-faq-newsletter` | `6385387` | feat(landing): add bilingual FAQ section (US32) | Sección de preguntas frecuentes en inglés y español con criterios Gherkin. | 27/11/2026 |
 | `cravewallet-landing` | `feature/landing-faq-newsletter` | `238ace0` | feat(landing): register launch sign-ups through the CraveWallet API (US40) | Formulario de novedades conectado al API y corrección del middleware de idioma. | 27/11/2026 |
+| `CraveWallet-Flutter` | `fix/web-canvaskit-base-url` | `dc68750` | fix(web): load CanvasKit relative to the base href | En GitHub Pages el sitio se sirve bajo `/CraveWallet-Flutter/` y la ruta absoluta de CanvasKit dejaba la página en blanco. | 27/11/2026 |
+| `CraveWallet-Flutter` | `feature/tb2-backlog-completion` | `3f5be0d` | feat(app): complete the remaining product backlog stories | US03, US04, US06, US11, US16, US18, US20, US34 y US35, con textos en inglés y español y 13 pruebas nuevas. | 28/11/2026 |
 
 *Fuente: historial Git de `CraveWallet-Backend`, `CraveWallet-Flutter`, `CraveWallet-Mobile` y `cravewallet-landing`.*
 
@@ -1581,6 +1587,7 @@ Cada historia del Sprint 3 se valida con pruebas automatizadas en el backend (Sp
 | `CraveWallet-Backend` | `TermsHistorySameInstantTest` | 1 | US29 | Dos versiones de las condiciones en el mismo instante: se conserva la más reciente. |
 | `CraveWallet-Backend` | `BackendBootstrapTest` | 1 ampliada | US30 | La respuesta CORS de verificación previa admite `DELETE`. |
 | `cravewallet-landing` | `tests/features/US32-preguntas-frecuentes.feature`, `tests/features/US40-registro-novedades.feature` | 3 escenarios | US32, US40 | Criterios de aceptación de la tabla 65 y la tabla 66. |
+| `CraveWallet-Flutter` | `test/backlog_completion_test.dart` | 13 | US03, US04, US06, US11, US16, US18, US20, US34, US35 | Búsqueda en los catálogos sin distinguir tildes, totales de las cuatro semanas y semana sin gastos, cálculo del ahorro, detalle desde el Dashboard con tipo de cambio y fecha (inglés y español), cancelación con ahorro estimado, previsualización en soles, edición con campos bloqueados y confirmación de la moneda de referencia. |
 
 *Fuente: repositorios `CraveWallet-Backend`, `CraveWallet-Flutter`, `CraveWallet-Mobile` y `cravewallet-landing`.*
 
@@ -1592,6 +1599,10 @@ Resultados al 26 de noviembre de 2026:
 Resultados al 27 de noviembre de 2026 (US32, US40 y correcciones):
 - `./mvnw -B test` en local sobre `feature/us40-launch-subscribers`: 90 pruebas sin fallos.
 - En el landing, `npm run lint` y `npm run build` terminaron sin errores. Con el landing (`next start`) y el backend de la rama US40 levantados en local sobre H2 en memoria, `POST /api/newsletter` respondió `202` con un correo válido, `202` con el mismo correo en mayúsculas sin crear un segundo registro y `400` con un texto sin formato de correo. Con el backend apagado respondió `502`.
+
+Resultados al 28 de noviembre de 2026 (historias restantes del backlog):
+- En Flutter, `flutter analyze` no reporta problemas, `flutter test` aprueba 39 pruebas (26 anteriores y 13 nuevas) y `flutter build web` termina correctamente. `Flutter CI` y `Deploy Flutter Web` terminaron correctamente en `develop` después de integrar el PR #7.
+- Se revisó la compilación web en Chrome en modo demostración: detalle desde el Dashboard, cancelación con ahorro estimado, previsualización en soles de una suscripción en USD y formulario de edición.
 
 Estas pruebas no reemplazan la verificación en un dispositivo físico, que se registra en la sección 4.2.3.6.
 
@@ -1635,6 +1646,68 @@ Feature: US40 Dejar mi correo para recibir novedades del lanzamiento
     Given que el visitante ingresa un texto que no tiene formato de correo
     When intenta enviarlo
     Then el sistema no lo registra e indica que el formato no es válido
+
+Feature: US03 Configurar mi moneda de referencia
+  Scenario: Confirmación por defecto
+    Given que el usuario completa su perfil por primera vez
+    When llega a la sección de moneda de referencia
+    Then el sistema muestra el sol peruano (PEN) preseleccionado y permite confirmarlo
+
+Feature: US04 Registrar una suscripción desde el catálogo precargado
+  Scenario: Selección desde el catálogo
+    Given que el usuario abre el catálogo precargado
+    When selecciona un servicio e ingresa el monto y la fecha de su próximo cobro
+    Then el sistema registra la suscripción con el nombre y la moneda de facturación definidos por el catálogo
+  Scenario: Búsqueda dentro del catálogo
+    Given que el catálogo tiene más de veinte servicios
+    When el usuario escribe parte del nombre en el buscador
+    Then el sistema filtra la lista para mostrar solo las coincidencias
+
+Feature: US06 Editar una suscripción registrada
+  Scenario: Edición exitosa
+    Given que el usuario tiene una suscripción registrada
+    When modifica su monto, fecha de cobro o categoría y guarda los cambios
+    Then el sistema actualiza la suscripción con los nuevos valores
+
+Feature: US11 Ver el detalle de una suscripción desde el Dashboard
+  Scenario: Apertura del detalle
+    Given que el usuario está en el Dashboard
+    When selecciona una suscripción de la lista
+    Then el sistema abre su detalle con el monto original, la moneda, el monto en soles, la categoría y el historial de cobros pasados
+
+Feature: US16 Ver el tipo de cambio utilizado y su fecha de actualización
+  Scenario: Consulta del tipo de cambio
+    Given que el usuario está viendo el detalle de una suscripción en dólares
+    When abre la información de conversión
+    Then el sistema muestra el tipo de cambio aplicado y la fecha y hora en que se obtuvo
+
+Feature: US18 Registrar un pedido de delivery desde un catálogo de comercios frecuentes
+  Scenario: Registro desde el catálogo
+    Given que el usuario abre el registro de un nuevo gasto de delivery
+    When selecciona un comercio del catálogo e ingresa el monto del pedido
+    Then el sistema registra el gasto con la fecha del día, el comercio y el monto
+  Scenario: Comercio no listado
+    Given que el comercio no aparece en el catálogo
+    When el usuario escribe manualmente su nombre y confirma el registro
+    Then el sistema lo guarda como un gasto de delivery personalizado
+
+Feature: US20 Ver la tendencia de mi gasto de delivery por semana
+  Scenario: Comparación entre semanas
+    Given que el usuario tiene gastos de delivery en al menos dos semanas distintas
+    When abre la tendencia semanal
+    Then el sistema muestra el total gastado en cada una de las últimas cuatro semanas
+
+Feature: US34 Previsualizar el monto en soles antes de guardar una suscripción en dólares
+  Scenario: Previsualización en tiempo real
+    Given que el usuario registra una suscripción y elige dólares como moneda de facturación
+    When ingresa el monto original
+    Then el sistema muestra junto al campo el equivalente estimado en soles antes de que confirme el registro
+
+Feature: US35 Ver el ahorro estimado por cancelar una suscripción antes de su renovación
+  Scenario: Cancelación antes del cobro
+    Given que el usuario cancela una suscripción activa antes de su próxima fecha de cobro
+    When confirma la cancelación
+    Then el sistema muestra un ahorro potencial estimado y aclara que marcarla como cancelada no cancela el servicio real
 ```
 
 #### 4.2.3.6. Execution Evidence for Sprint Review
@@ -1642,6 +1715,13 @@ Feature: US40 Dejar mi correo para recibir novedades del lanzamiento
 La aplicación Kotlin incorpora las mismas funciones en `DeliveryScreen` y en la tarjeta `ExchangeRateHistoryCard` del detalle de suscripción (Mobile PR #4). En Flutter, la pantalla de Delivery muestra ahora la sección "Gastos del mes", con acciones para editar (en un diálogo con selector de fecha) y eliminar (con confirmación). El detalle de una suscripción en USD muestra la tarjeta "Historial del tipo de cambio": la variación respecto al cobro anterior y la lista de cobros con su tipo de cambio y monto en soles. Si todavía no hay cotizaciones guardadas, la tarjeta lo indica.
 
 En el landing, la sección de preguntas frecuentes (US32) responde cinco dudas comunes, entre ellas la seguridad de los datos, la moneda y el costo de Premium. Cada respuesta se despliega al seleccionar su pregunta, y la barra de navegación enlaza a la sección en los dos idiomas. El formulario de novedades (US40) confirma el registro, indica cuándo el correo no tiene un formato válido y muestra un mensaje de error si el servicio no responde. El navegador no llama al API directamente: la ruta `/api/newsletter` del propio landing reenvía el correo.
+
+Con las historias completadas el 28 de noviembre, la aplicación Flutter cubre el resto del backlog:
+- **Alta de suscripción:** un botón abre el catálogo de servicios frecuentes, con buscador, y completa el nombre, la moneda y la categoría (US04). Si la moneda es USD, el formulario muestra el equivalente en soles mientras se escribe el monto (US34).
+- **Detalle:** al tocar una suscripción, también desde el Dashboard, se abre su detalle (US11). Muestra el monto original, el equivalente en soles, la categoría, la próxima renovación, el tipo de cambio aplicado y la fecha y hora de la cotización (US16).
+- **Edición y cancelación:** el botón *Editar* cambia el monto, la fecha de cobro, la categoría y las notas (US06). Antes de cancelar, la app muestra el ahorro potencial estimado del ciclo y aclara que no cancela el servicio con el proveedor (US35).
+- **Perfil:** muestra la moneda de referencia con PEN preseleccionado y permite confirmarla (US03).
+- **Delivery:** el campo de comercio sugiere comercios frecuentes de Lima y también acepta uno escrito a mano (US18). La tarjeta de tendencia semanal muestra el total de cada una de las últimas cuatro semanas (US20).
 
 **[COMPLETAR: capturas en un dispositivo físico de la lista "Gastos del mes", el diálogo de edición, la confirmación de eliminación y la tarjeta de historial del tipo de cambio]**
 
@@ -1677,7 +1757,7 @@ Durante el Sprint 3 se prepararon los cambios de configuración necesarios para 
 | :---: | --- | --- | --- |
 | 1 | Backend | Integrar en `develop` los PR #3, #4 y #5 y redesplegar `cravewallet-api-av2`. Flyway aplica V6 al arrancar. | PR integrados el 26/11/2026. Redespliegue: **[COMPLETAR: fecha y captura del despliegue]** |
 | 2 | Backend | Definir `FLUTTER_WEB_ORIGIN` en Render con el origen de Flutter Web, sin `/` final. | **[COMPLETAR]** |
-| 3 | Flutter Web | Integrar los PR #2 a #5 y republicar con `API_BASE_URL=https://cravewallet-api-av2.onrender.com`. | PR integrados el 26/11/2026. Republicación: **[COMPLETAR]** |
+| 3 | Flutter Web | Integrar los PR #2 a #7 y publicar con `API_BASE_URL=https://cravewallet-api-av2.onrender.com`. | Publicado en GitHub Pages en <https://1acc0238-2620-4950-gastify-cravewallet.github.io/CraveWallet-Flutter/> mediante el workflow `deploy-pages.yml`, que se ejecuta con cada push a `develop`. La última publicación, del 28/11/2026, incluye el PR #7. Para iniciar sesión contra el API faltan los pasos 1 y 2; mientras tanto, la app funciona en modo demostración. |
 | 4 | Android | Generar el APK con el workflow `android-apk` e instalarlo en un dispositivo físico. | **[COMPLETAR: modelo, versión de Android y SHA-256 del APK]** |
 | 5 | Landing | Publicar en Vercel la i18n, los términos y la sección de videos mediante el PR `develop → main`. | **[COMPLETAR]** |
 | 6 | Backend y landing | Integrar US40 y US32 en `develop` (Backend PR #6 y Landing PR #2); al redesplegar el backend, Flyway aplica V7. En Vercel, `CRAVEWALLET_API_URL` es opcional: si no se define, el landing usa `https://cravewallet-api-av2.onrender.com`. | PR integrados el 27/11/2026. Redespliegue del backend y publicación del landing: **[COMPLETAR]** |
@@ -1695,14 +1775,14 @@ Entre el 14 y el 27 de noviembre de 2026, sin contar los *merge commits*, los re
 | Aliaga, Alexander | `AlexanderAliaga19` | 0 | 0 | 0 | 0 | 0 |
 | Carpio Peña, Josué Francisco | `josf17` | 0 | 0 | 0 | 0 | 4 |
 | Faustino Hurtado, Anghelo Edwin | `Limos05` / `limozz05` | 0 | 2 | 1 | 0 | 0 |
-| Roman Zeballos, Sebastian Jared | `Chebas19` | 2 | 1 | 4 | 6 | 7 |
+| Roman Zeballos, Sebastian Jared | `Chebas19` | 2 | 1 | 6 | 6 | 8 |
 | Sejuro Medina, Mario Gabriel | `maghetthi` | 0 | 0 | 0 | 0 | 0 |
 
-*Fuente: `git log --remotes --no-merges --since=2026-11-14` sobre los cinco repositorios, conteo al 27 de noviembre de 2026 que incluye el commit de este pull request. **[COMPLETAR: actualizar al cierre del Sprint 3]***
+*Fuente: `git log --remotes --no-merges --since=2026-11-14` sobre los cinco repositorios, conteo al 28 de noviembre de 2026 que incluye el commit de este pull request. **[COMPLETAR: actualizar al cierre del Sprint 3]***
 
 *Tabla 184. Pull requests del Sprint 3.*
 
-| Repositorio | PR | Contenido | Autor | Estado al 27/11/2026 |
+| Repositorio | PR | Contenido | Autor | Estado al 28/11/2026 |
 | --- | :---: | --- | --- | --- |
 | `CraveWallet-Report` | #28 | Integración del cierre de AV2 | `Chebas19` | Integrado |
 | `CraveWallet-Report` | #29 | Evidencia verificada del Sprint 2 | `Chebas19` | Integrado |
@@ -1723,10 +1803,13 @@ Entre el 14 y el 27 de noviembre de 2026, sin contar los *merge commits*, los re
 | `cravewallet-landing` | #1 | i18n, términos, sección de videos y accesibilidad | `Chebas19` | Integrado en `develop` |
 | `CraveWallet-Backend` | #6 | US40 y correcciones de CORS y del historial de condiciones | `Chebas19` | Integrado |
 | `cravewallet-landing` | #2 | US32 y US40 | `Chebas19` | Integrado en `develop` |
+| `CraveWallet-Report` | #34 | Estado de integración de US32 y US40 | `Chebas19` | Integrado |
+| `CraveWallet-Flutter` | #6 | Ruta relativa de CanvasKit para GitHub Pages | `Chebas19` | Integrado |
+| `CraveWallet-Flutter` | #7 | Historias restantes del backlog | `Chebas19` | Integrado |
 
 *Fuente: pull requests de la organización en GitHub.*
 
-Al corte del 27 de noviembre de 2026, tres integrantes registran commits en el Sprint 3. Sebastián Roman implementó US29, US37 y US30 en el backend y en Flutter, completó US32 y US40 en el landing y en el backend, e integró las ramas pendientes de AV2. Anghelo Faustino llevó US29, US37 y US30 a Kotlin y revisó las pantallas de Flutter con pruebas de widget, que encontraron tres fallos de interfaz corregidos en el PR #5. Josué Carpio completó la documentación del Sprint 2 y registró la planificación y el tablero del Sprint 3 en el informe. Alexander Aliaga y Mario Sejuro no registran commits en este periodo. Para que la matriz LACX (tabla 177) refleje el aporte de todo el equipo, falta registrar el despliegue, la validación y la redacción restantes. **[COMPLETAR: interpretación final del equipo sobre la distribución del trabajo del Sprint 3]**
+Al corte del 28 de noviembre de 2026, tres integrantes registran commits en el Sprint 3. Sebastián Roman implementó US29, US37 y US30 en el backend y en Flutter, completó US32 y US40 en el landing y en el backend, integró las ramas pendientes de AV2, publicó Flutter Web en GitHub Pages y completó en Flutter las nueve historias restantes del backlog. Anghelo Faustino llevó US29, US37 y US30 a Kotlin y revisó las pantallas de Flutter con pruebas de widget, que encontraron tres fallos de interfaz corregidos en el PR #5. Josué Carpio completó la documentación del Sprint 2 y registró la planificación y el tablero del Sprint 3 en el informe. Alexander Aliaga y Mario Sejuro no registran commits en este periodo. Para que la matriz LACX (tabla 177) refleje el aporte de todo el equipo, falta registrar el despliegue, la validación y la redacción restantes. **[COMPLETAR: interpretación final del equipo sobre la distribución del trabajo del Sprint 3]**
 
 ## 4.3. Validation Interviews
 
