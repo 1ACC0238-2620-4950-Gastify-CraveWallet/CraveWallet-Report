@@ -189,5 +189,5 @@ La figura 128 muestra una vista parcial del tablero después de la revisión TB1
 - [Aplicación Flutter Web en GitHub Pages](https://1acc0238-2620-4950-gastify-cravewallet.github.io/CraveWallet-Flutter/) y [repositorio `CraveWallet-Flutter`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter), con las pruebas de las historias completadas en [`test/backlog_completion_test.dart`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/blob/develop/test/backlog_completion_test.dart).
 - [Repositorio de la aplicación Android en Kotlin `CraveWallet-Mobile`](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Mobile).
 - [Tablero del Sprint 3 en Trello](https://trello.com/b/7kXm7rmW/cravewallet-sprint-3).
-- Distribución de la aplicación Android para pruebas: **[COMPLETAR: enlace de invitación de Firebase App Distribution]**
+- Aplicación Flutter para Android, versión 1.0.0 (build 1), publicada en Firebase App Distribution. El enlace de invitación se comparte con el equipo y el docente por el canal de entrega. [Compilación de GitHub Actions](https://github.com/1ACC0238-2620-4950-Gastify-CraveWallet/CraveWallet-Flutter/actions/runs/46118288698).
 - Videos App Validation, About-the-Product y About-the-Team: enlaces en la sección 4.3.3.
